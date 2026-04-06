@@ -142,6 +142,30 @@ export const epilepsyAdults: Note = {
       ],
     },
 
+    // ── ADULT DOSES ───────────────────────────────────────────────────────────
+    {
+      type: 'heading',
+      level: 2,
+      text: 'Common Adult Doses (BNF Reference)',
+    },
+    {
+      type: 'table',
+      headers: ['Drug', 'Starting dose', 'Usual maintenance', 'Maximum dose', 'Notes'],
+      rows: [
+        ['Lamotrigine (monotherapy)', '25mg OD for 2 weeks, then 50mg OD for 2 weeks', '100–200mg OD or BD', '500mg/day', 'Slow titration essential — rash/SJS risk; halve doses if on valproate'],
+        ['Lamotrigine (+ valproate)', '25mg every other day for 2 weeks, then 25mg OD', '100–200mg/day', '200mg/day', 'Valproate inhibits lamotrigine — much lower doses required'],
+        ['Levetiracetam', '250mg BD for 2 weeks', '1000–2000mg BD', '3000mg/day', 'Dose reduce in renal impairment; no titration issues'],
+        ['Sodium valproate', '600mg/day in 2 divided doses', '1000–2000mg/day', '2500mg/day', 'Avoid in women of childbearing potential; modified-release preferred'],
+        ['Carbamazepine', '100–200mg OD or BD', '800–1200mg/day in divided doses', '1600–2000mg/day', 'Titrate slowly; auto-induces own metabolism; prescribe by brand'],
+        ['Phenytoin', '150–300mg OD (at night)', '200–500mg/day', '500mg/day', 'Zero-order kinetics — small dose changes cause large level changes; prescribe by brand; check levels if toxicity suspected'],
+        ['Ethosuximide', '500mg OD for 1 week', '500–1500mg/day', '2000mg/day', 'Absence seizures only; can be given OD or BD'],
+        ['Topiramate', '25mg OD for 1 week', '200–400mg/day in 2 doses', '400mg/day', 'Slow titration; cognitive side effects; teratogenic — avoid in women of childbearing potential'],
+        ['Lacosamide', '50mg BD for 1 week', '100–200mg BD', '400mg/day', 'Adjunct for focal seizures; fewer interactions'],
+        ['Clobazam', '10mg OD (at night)', '20–30mg/day', '60mg/day', 'Adjunct; tolerance develops; useful for catamenial epilepsy'],
+      ],
+      caption: 'Doses based on BNF for adults. All AEDs should be initiated/adjusted by a specialist. Doses may differ in renal/hepatic impairment and in combination therapy.',
+    },
+
     // ── MONITORING IN PRIMARY CARE ────────────────────────────────────────────
     {
       type: 'heading',
