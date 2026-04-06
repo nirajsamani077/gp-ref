@@ -128,14 +128,11 @@ export const actinicKeratosis: Note = {
     {
       type: 'callout',
       variant: 'warning',
-      title: 'When Efudix (5-FU 5% cream) is unavailable',
+      title: 'When Efudix (5-FU 5% cream) is unavailable — 5-FU alternatives',
       items: [
-        'Actikerall (5-FU 0.5% + salicylic acid 10%) — best substitute for individual/few thicker lesions; longer course (12 weeks) but less inflammatory; more tolerable for patients who struggled with Efudix reaction',
-        'Aldara (imiquimod 5%) — best substitute for field change; 3× weekly for 4 weeks; different mechanism so still effective when 5-FU unavailable',
-        'Imiquimod 3.75% (Zyclara) — alternative if imiquimod 5% also unavailable; daily application for two 2-week cycles',
-        'Solaraze gel (diclofenac 3%) — weaker option; suitable for grade 1 or thin field if other options unavailable; 8–12 weeks BD',
-        'Cryotherapy — refer to minor ops / dermatology for individual lesions if topicals not available or not tolerated',
-        'Check local formulary and NHS tariff — some imiquimod generics may be available when branded products are on shortage',
+        'Tolak (5-FU 4% cream) — same drug, slightly lower concentration; apply ON once daily for 4 weeks; counsel identically to Efudix',
+        'Actikerall (5-FU 0.5% + salicylic acid 10% solution) — lower-strength 5-FU left on longer (12-week course); less inflammatory reaction; good for thicker or individual lesions',
+        'Fluorouracil cream (specials/imports) — 5% cream available via some specialist or NHS specials manufacturers if branded products on shortage; check with pharmacy',
       ],
     },
 
