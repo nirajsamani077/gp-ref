@@ -45,6 +45,61 @@ export const acneVulgaris: Note = {
     {
       type: 'heading',
       level: 2,
+      text: 'How Treatments Work',
+    },
+    {
+      type: 'table',
+      caption: 'Mechanism of action by drug class and target lesion type',
+      headers: ['Drug class', 'Examples', 'Mechanism', 'Best for'],
+      rows: [
+        [
+          'Retinoids (topical)',
+          'Adapalene (Differin, Epiduo), tretinoin (Treclin)',
+          'Bind retinoic acid receptors → normalise keratinocyte differentiation → prevent follicular plugging; anti-inflammatory at higher doses',
+          'Comedones (primary target); also reduces inflammatory lesions; maintains remission',
+        ],
+        [
+          'Benzoyl peroxide (BPO)',
+          'BPO 5% gel (Acneicide), Epiduo, Duac',
+          'Releases free oxygen radicals → bactericidal against C. acnes; mild keratolytic (loosens plugs); does not cause antibiotic resistance',
+          'Inflammatory papules and pustules; prevents resistance when combined with antibiotics',
+        ],
+        [
+          'Topical antibiotics',
+          'Clindamycin (Duac), erythromycin (Aknemycin)',
+          'Inhibit bacterial protein synthesis → reduce C. acnes load → reduce inflammation; limited comedolytic activity',
+          'Papules and pustules; always combine with BPO to prevent resistance; never use as monotherapy',
+        ],
+        [
+          'Oral antibiotics',
+          'Lymecycline, doxycycline, erythromycin',
+          'Systemic reduction of C. acnes; tetracyclines also have direct anti-inflammatory effects (inhibit matrix metalloproteinases)',
+          'Moderate–widespread papulopustular disease; not effective for comedones alone',
+        ],
+        [
+          'Azelaic acid',
+          'Skinoren 15% gel, 20% cream',
+          'Inhibits C. acnes growth; normalises keratinisation; anti-inflammatory; inhibits tyrosinase (reduces post-inflammatory pigmentation)',
+          'Inflammatory lesions + comedones; post-inflammatory hyperpigmentation (PIH); only option safe in pregnancy/BF',
+        ],
+        [
+          'COCP / anti-androgens',
+          'Mercilon, Eloine, Dianette; spironolactone (specialist)',
+          'Reduce circulating androgens → decrease sebum production → less follicular plugging and bacterial overgrowth',
+          'Hormonal/cyclical acne in women; PCOS-associated acne; adjunct to topical treatment',
+        ],
+        [
+          'Isotretinoin (oral)',
+          'Roaccutane (specialist only)',
+          'Acts on all four pathways: reduces sebum production (>90%), normalises keratinisation, reduces C. acnes colonisation, potent anti-inflammatory',
+          'Severe nodulocystic acne; scarring acne; cases failed after 2 oral antibiotic courses',
+        ],
+      ],
+    },
+
+    {
+      type: 'heading',
+      level: 2,
       text: 'Skin Care Advice (All Grades)',
     },
     {
@@ -221,12 +276,6 @@ export const acneVulgaris: Note = {
       type: 'heading',
       level: 2,
       text: 'Treatment Pathway',
-    },
-    {
-      type: 'image',
-      src: '/images/acne-pathway.jpeg',
-      alt: 'Acne vulgaris treatment pathway by severity',
-      caption: 'PCDS acne treatment pathway by severity',
     },
     {
       type: 'image',
