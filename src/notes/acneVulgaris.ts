@@ -329,6 +329,7 @@ export const acneVulgaris: Note = {
         { label: 'Dorset Treatment Pathway', url: '/pdfs/acne-treatment-pathway-dorset.pdf' },
         { label: 'PCDS Acne Guidelines', url: 'https://www.pcds.org.uk/clinical-guidance/acne-vulgaris' },
         { label: 'CKS Acne Vulgaris', url: 'https://cks.nice.org.uk/topics/acne-vulgaris/' },
+        { label: 'Acne Support (patient)', url: 'https://www.acnesupport.org.uk' },
       ],
     },
   ],
