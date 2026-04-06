@@ -206,7 +206,7 @@ export const epilepsyAdults: Note = {
     },
     {
       type: 'image',
-      src: '/images/epilepsy pregnancy.jpeg',
+      src: '/images/epilepsy-pregnancy.jpeg',
       alt: 'Management algorithm for women with epilepsy in childbearing years \u2014 pre-pregnancy planning, early pregnancy, and postpartum',
       caption: 'Epilepsy in pregnancy \u2014 management pathway',
     },

@@ -43,7 +43,7 @@ export const seizureEmergency: Note = {
     // ── IMAGE ─────────────────────────────────────────────────────────────────
     {
       type: 'image',
-      src: '/images/seizure algorithm.jpg',
+      src: '/images/seizure-algorithm.jpg',
       alt: 'Treatment algorithm for tonic-clonic status epilepticus in adults: 0\u20135 min initial management, 5\u201315 min first line lorazepam or buccal midazolam, 15+ min second line levetiracetam/phenytoin/valproate IV',
       caption: 'Status epilepticus treatment algorithm \u2014 adult',
     },
