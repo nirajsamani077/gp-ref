@@ -309,7 +309,7 @@ function Block({ block, onImageClick, searchQuery }: BlockProps) {
           {block.links.map((link, i) => (
             <a
               key={i}
-              href={link.url}
+              href={link.url.startsWith('/') ? resolveImg(link.url) : link.url}
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '6px 12px', backgroundColor: '#eef4fb', border: '1px solid #c3d9f0', borderRadius: 20, fontSize: 13, fontWeight: 600, color: '#2b6cb0', textDecoration: 'none', transition: 'background 0.15s, color 0.15s' }}
@@ -340,6 +340,13 @@ const navBtnStyle: React.CSSProperties = {
   lineHeight: 1.5,
 }
 
+// Resolve image src: strip leading slash then prepend Vite BASE_URL
+// so paths work both locally (/images/foo.jpg) and on GitHub Pages (/gp-ref/images/foo.jpg)
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
+function resolveImg(src: string) {
+  return BASE + (src.startsWith('/') ? src : '/' + src)
+}
+
 function ImageBlock({
   block,
   onImageClick,
@@ -348,14 +355,15 @@ function ImageBlock({
   onImageClick: (img: LightboxImage) => void
 }) {
   const [errored, setErrored] = useState(false)
+  const resolvedSrc = resolveImg(block.src)
 
   return (
     <figure data-block style={{ margin: '0 0 20px' }}>
       {!errored ? (
         <img
-          src={block.src}
+          src={resolvedSrc}
           alt={block.alt}
-          onClick={() => onImageClick({ src: block.src, alt: block.alt, caption: block.caption })}
+          onClick={() => onImageClick({ src: resolvedSrc, alt: block.alt, caption: block.caption })}
           style={{ width: '100%', borderRadius: 8, border: '1px solid #dce6f0', display: 'block', cursor: 'zoom-in', transition: 'opacity 0.15s' }}
           onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.85' }}
           onMouseLeave={(e) => { e.currentTarget.style.opacity = '1' }}

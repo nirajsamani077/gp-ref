@@ -7,13 +7,6 @@
       "Bash(npm install:*)",
       "mcp__Claude_Preview__preview_start",
       "Bash(grep -iE \"\\\\.\\(png|jpg|jpeg|webp|gif|svg\\)$\")",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:5173/images/Iron-panel-1-800x253.jpg.webp\")",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:5173/images/559d2c_628a22661db446e29916a88e44bd97e3~mv2.png\")",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:5173/images/bjsports-2025-July-59-13-891-F2.large.jpg\")",
-      "Bash(curl -s -I \"http://localhost:5173/images/Iron-panel-1-800x253.jpg.webp\")",
-      "Bash(grep -i content-type curl -s -I \"http://localhost:5173/images/bjsports-2025-July-59-13-891-F2.large.jpg\")",
-      "Bash(grep -i content-type curl -s -I \"http://localhost:5173/images/Achilles-Tendonitis-Infographic-ultime-guide-page-2.png\")",
-      "Bash(grep -i content-type curl -s -I \"http://localhost:5173/images/Coeliac-Cheat-Sheet.gif\")",
       "Bash(node -e \":*)",
       "Bash(grep -h \"tags:\" /Users/nirajsamani/Desktop/gp-ref/src/notes/*.ts)",
       "WebFetch(domain:www.mindwell-leeds.org.uk)",
@@ -25,7 +18,8 @@
       "Bash(git push:*)",
       "Bash(gh auth:*)",
       "Bash(git add:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(curl:*)"
     ]
   }
 }
