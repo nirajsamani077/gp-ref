@@ -19,7 +19,12 @@
       "WebFetch(domain:www.mindwell-leeds.org.uk)",
       "WebFetch(domain:rms.cornwall.nhs.uk)",
       "WebFetch(domain:www.nationalmigrainecentre.org.uk)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)",
+      "Bash(gh auth:*)",
+      "Bash(git add:*)"
     ]
   }
 }
