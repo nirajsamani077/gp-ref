@@ -78,21 +78,21 @@ export default function NotesTab() {
       <div style={{
         padding: '10px 16px 8px',
         backgroundColor: '#fff',
-        borderBottom: '1px solid #e8edf2',
+        borderBottom: '1px solid #dde6f0',
         flexShrink: 0,
       }}>
         <div style={{
           display: 'flex',
           alignItems: 'center',
           gap: 8,
-          backgroundColor: '#f0f4f8',
-          border: '1.5px solid transparent',
+          backgroundColor: '#f4f8fc',
+          border: '1.5px solid #dde6f0',
           borderRadius: 10,
           padding: '7px 12px',
-          transition: 'border-color 0.15s',
+          transition: 'border-color 0.15s, box-shadow 0.15s',
         }}
-          onFocusCapture={e => (e.currentTarget.style.borderColor = '#90cdf4')}
-          onBlurCapture={e => (e.currentTarget.style.borderColor = 'transparent')}
+          onFocusCapture={e => { e.currentTarget.style.borderColor = '#3b82f6'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(59,130,246,0.12)' }}
+          onBlurCapture={e => { e.currentTarget.style.borderColor = '#dde6f0'; e.currentTarget.style.boxShadow = 'none' }}
         >
           <span style={{ fontSize: 15, color: '#a0aec0', flexShrink: 0 }}>🔍</span>
           <input
@@ -136,7 +136,7 @@ export default function NotesTab() {
         padding: '8px 16px',
         overflowX: 'auto',
         backgroundColor: '#fff',
-        borderBottom: '1px solid #e8edf2',
+        borderBottom: '1px solid #dde6f0',
         flexShrink: 0,
         scrollbarWidth: 'none',
       }}>
@@ -150,7 +150,7 @@ export default function NotesTab() {
       </div>
 
       {/* ── Notes list ── */}
-      <div style={{ flex: 1, overflowY: 'auto', padding: '12px 16px 40px' }}>
+      <div style={{ flex: 1, overflowY: 'auto', padding: '12px 16px 40px', backgroundColor: '#f0f5fb' }}>
 
         {/* Result count when filtering */}
         {!showingAll && (
@@ -177,12 +177,14 @@ export default function NotesTab() {
                 style={{
                   marginBottom: 10,
                   backgroundColor: isOpen ? sp.bg : '#fff',
-                  border: '1px solid #dce6f0',
+                  border: `1px solid ${isOpen ? sp.border + '55' : '#dde6f0'}`,
                   borderLeft: `5px solid ${sp.border}`,
-                  borderRadius: 10,
-                  boxShadow: '0 1px 4px rgba(0,0,0,0.05)',
+                  borderRadius: 12,
+                  boxShadow: isOpen
+                    ? `0 4px 16px rgba(0,0,0,0.1), 0 0 0 1px ${sp.border}22`
+                    : '0 2px 6px rgba(26,54,93,0.08)',
                   overflow: 'visible',
-                  transition: 'box-shadow 0.2s, background 0.2s',
+                  transition: 'box-shadow 0.2s, background 0.2s, border 0.2s',
                 }}
               >
                 {/* Header / toggle */}
@@ -203,26 +205,27 @@ export default function NotesTab() {
                 >
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-                      <span style={{ fontSize: 15, fontWeight: 700, color: '#1a365d' }}>
+                      <span style={{ fontSize: 15, fontWeight: 700, color: '#0f2a4a' }}>
                         {note.title}
                       </span>
                       <span style={{
                         fontSize: 10, fontWeight: 700, color: sp.text,
-                        backgroundColor: sp.pill, padding: '2px 7px',
+                        backgroundColor: sp.pill, padding: '2px 8px',
                         borderRadius: 20, textTransform: 'uppercase',
-                        letterSpacing: '0.05em', whiteSpace: 'nowrap',
+                        letterSpacing: '0.06em', whiteSpace: 'nowrap',
+                        border: `1px solid ${sp.border}44`,
                       }}>
                         {sp.label}
                       </span>
                     </div>
-                    <div style={{ fontSize: 12, color: '#8a9bb0', marginTop: 2 }}>
+                    <div style={{ fontSize: 12, color: '#64748b', marginTop: 3 }}>
                       {note.subtitle}
                     </div>
                   </div>
                   <span style={{
-                    color: '#8a9bb0', fontSize: 18, flexShrink: 0,
+                    color: isOpen ? sp.border : '#94a3b8', fontSize: 18, flexShrink: 0,
                     transform: isOpen ? 'rotate(180deg)' : 'none',
-                    transition: 'transform 0.2s',
+                    transition: 'transform 0.2s, color 0.2s',
                   }}>▾</span>
                 </button>
 
@@ -243,7 +246,7 @@ export default function NotesTab() {
 
                 {/* Body */}
                 {isOpen && (
-                  <div style={{ padding: '10px 14px 18px', borderTop: '1px solid #f0f4f8' }}>
+                  <div style={{ padding: '10px 14px 18px', borderTop: `1px solid ${sp.border}22` }}>
                     <NoteRenderer
                       blocks={note.content}
                       searchQuery={filterQuery.trim() || undefined}
@@ -267,12 +270,13 @@ function FilterPill({ label, active, activeColour, onClick }: {
     <button
       onClick={onClick}
       style={{
-        flexShrink: 0, padding: '5px 14px', borderRadius: 20,
+        flexShrink: 0, padding: '5px 15px', borderRadius: 20,
         fontSize: 13, fontWeight: 600, cursor: 'pointer',
-        border: `1.5px solid ${active ? activeColour : '#dce6f0'}`,
-        backgroundColor: active ? activeColour : '#fff',
-        color: active ? '#fff' : '#4a5568',
+        border: `1.5px solid ${active ? activeColour : '#c8d8ea'}`,
+        backgroundColor: active ? activeColour : '#f8fafc',
+        color: active ? '#fff' : '#374151',
         transition: 'all 0.15s', whiteSpace: 'nowrap',
+        boxShadow: active ? `0 2px 8px ${activeColour}44` : 'none',
       }}
     >
       {label}

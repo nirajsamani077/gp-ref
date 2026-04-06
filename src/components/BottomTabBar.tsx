@@ -16,9 +16,10 @@ export default function BottomTabBar({ tabs, active, onSelect }: Props) {
         bottom: 0,
         left: 0,
         right: 0,
-        height: 60,
+        height: 62,
         backgroundColor: '#fff',
-        borderTop: '1px solid #e8edf2',
+        borderTop: '1px solid #dde6f0',
+        boxShadow: '0 -2px 12px rgba(26,54,93,0.1)',
         display: 'flex',
         zIndex: 100,
       }}
@@ -38,14 +39,15 @@ export default function BottomTabBar({ tabs, active, onSelect }: Props) {
               gap: 3,
               background: 'transparent',
               border: 'none',
-              borderTop: isActive ? `2px solid ${NAVY}` : '2px solid transparent',
+              borderTop: isActive ? `3px solid ${NAVY}` : '3px solid transparent',
               cursor: 'pointer',
-              color: isActive ? NAVY : '#8a9bb0',
+              color: isActive ? NAVY : '#94a3b8',
               padding: 0,
+              transition: 'color 0.15s',
             }}
           >
-            <span style={{ fontSize: 20 }}>{tab.icon}</span>
-            <span style={{ fontSize: 10, fontWeight: isActive ? 600 : 400 }}>
+            <span style={{ fontSize: 21 }}>{tab.icon}</span>
+            <span style={{ fontSize: 10, fontWeight: isActive ? 700 : 400, letterSpacing: isActive ? '0.02em' : 'normal' }}>
               {tab.label}
             </span>
           </button>

@@ -89,23 +89,23 @@ export default function Header({ onNavigate }: Props) {
   return (
     <header style={{
       position: 'sticky', top: 0, zIndex: 100,
-      backgroundColor: NAVY,
+      background: 'linear-gradient(135deg, #1a3558 0%, #2563a8 100%)',
       display: 'flex', alignItems: 'center',
-      padding: '0 16px', height: 52,
-      boxShadow: '0 1px 3px rgba(0,0,0,0.3)',
+      padding: '0 16px', height: 54,
+      boxShadow: '0 2px 14px rgba(0,0,0,0.32)',
       gap: 12,
     }}>
-      <span style={{ color: '#fff', fontWeight: 700, fontSize: 18, letterSpacing: '0.3px', flexShrink: 0 }}>
-        GP Ref
+      <span style={{ color: '#fff', fontWeight: 800, fontSize: 19, letterSpacing: '-0.2px', flexShrink: 0 }}>
+        GP <span style={{ color: '#93c5fd' }}>Ref</span>
       </span>
 
       {/* Global search — links & calculators */}
       <div ref={containerRef} style={{ marginLeft: 'auto', position: 'relative', width: '100%', maxWidth: 280 }}>
         <div style={{
           display: 'flex', alignItems: 'center', gap: 7,
-          backgroundColor: 'rgba(255,255,255,0.12)',
-          border: '1px solid rgba(255,255,255,0.2)',
-          borderRadius: 8, padding: '5px 10px',
+          backgroundColor: 'rgba(255,255,255,0.15)',
+          border: '1px solid rgba(255,255,255,0.28)',
+          borderRadius: 10, padding: '6px 11px',
         }}>
           <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: 14, flexShrink: 0 }}>🔍</span>
           <input

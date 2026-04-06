@@ -260,7 +260,7 @@ function Block({ block, onImageClick, searchQuery }: BlockProps) {
             <thead>
               <tr>
                 {block.headers.map((h, i) => (
-                  <th key={i} style={{ padding: '8px 12px', textAlign: 'left', backgroundColor: '#eef4fb', color: NAVY, fontWeight: 700, fontSize: 12, borderBottom: '2px solid #dce6f0', whiteSpace: 'nowrap' }}>
+                  <th key={i} style={{ padding: '8px 12px', textAlign: 'left', backgroundColor: '#dbeafe', color: '#1e3a5f', fontWeight: 700, fontSize: 12, borderBottom: '2px solid #93c5fd', whiteSpace: 'nowrap' }}>
                     {hl(h)}
                   </th>
                 ))}
@@ -268,7 +268,7 @@ function Block({ block, onImageClick, searchQuery }: BlockProps) {
             </thead>
             <tbody>
               {block.rows.map((row, ri) => (
-                <tr key={ri} style={{ backgroundColor: ri % 2 === 0 ? '#fff' : '#f7f9fb' }}>
+                <tr key={ri} style={{ backgroundColor: ri % 2 === 0 ? '#fff' : '#f4f8fc' }}>
                   {row.map((cell, ci) => (
                     <td key={ci} style={{ padding: '8px 12px', borderBottom: '1px solid #e8edf2', color: ci === 0 ? '#1a365d' : '#1a202c', fontWeight: ci === 0 ? 600 : 400, whiteSpace: 'normal' }}>
                       {hl(cell)}
