@@ -4,7 +4,7 @@ export const acneVulgaris: Note = {
   id: 'acne-vulgaris',
   title: 'Acne Vulgaris',
   subtitle: 'Classification, prescribing guide, and referral criteria for acne in primary care',
-  tags: ['dermatology', 'acne', 'skin', 'isotretinoin', 'roaccutane', 'epiduo', 'duac', 'lymecycline', 'doxycycline', 'tretinoin', 'adapalene', 'benzoyl peroxide', 'COCP', 'PCOS', 'scarring', 'comedones', 'papules', 'pustules', 'nodules', 'azelaic acid', 'treclin'],
+  tags: ['dermatology', 'acne', 'skin', 'scarring', 'isotretinoin', 'PCOS', 'COCP'],
 
   body: 'acne vulgaris mild moderate severe comedones papules pustules nodules cysts scarring nodulocystic hormonal PCOS isotretinoin roaccutane epiduo duac benzoyl peroxide adapalene tretinoin lymecycline doxycycline azelaic acid COCP dianette spironolactone pregnancy breastfeeding prescribing referral dermatology',
 
@@ -50,64 +50,57 @@ export const acneVulgaris: Note = {
     {
       type: 'list',
       items: [
-        'Avoid picking — can cause permanent scarring',
-        'Use a non-alkaline synthetic detergent face wash BD (e.g. Acneicide) — alkaline soaps alter skin flora and worsen acne',
-        'Avoid oil-based moisturisers and make-up; remove make-up daily, never leave on overnight',
-        'Human skin is slightly acidic (pH 4–6.5) — alkaline products disrupt this barrier',
+        'Cleanse: use a non-alkaline synthetic detergent face wash BD (e.g. Acneicide, CeraVe Foaming, La Roche-Posay Effaclar) — alkaline soaps (pH >7) disrupt the slightly acidic skin barrier (pH 4–6.5) and worsen acne flora',
+        'Do not over-wash or scrub — this irritates the skin and triggers more sebum production; twice daily is enough',
+        'Avoid picking or squeezing spots — this worsens inflammation, increases scarring risk, and spreads bacteria',
+        'Moisturise: use a light, oil-free, non-comedogenic moisturiser (especially important when starting retinoids or BPO which cause dryness) — e.g. Simple Kind to Skin, Cetaphil, La Roche-Posay Toleriane',
+        'SPF daily: essential if using retinoids (photosensitising) or doxycycline; use a non-comedogenic SPF 30+ — e.g. Altruist, La Roche-Posay Anthelios',
+        'Make-up: use oil-free, non-comedogenic products; mineral-based make-up is better tolerated; always remove fully before bed',
+        'Avoid applying hair products (gels, waxes, oils) to the forehead — these can block follicles',
+        'Diet: limited evidence but some patients notice worsening with high-glycaemic foods and dairy — worth trialling reduction if suspected',
       ],
     },
 
     {
       type: 'heading',
       level: 2,
-      text: 'Treatment by Grade',
+      text: 'Stepped Treatment by Grade',
     },
     {
-      type: 'heading',
-      level: 3,
-      text: 'Mild (Mainly Comedonal)',
-    },
-    {
-      type: 'list',
-      items: [
-        'Preferred: Epiduo gel (adapalene 0.1% + BPO 2.5%) — dual agents reduce antibiotic resistance; apply thinly ON',
-        'Higher strength if needed: Epiduo Forte (adapalene 0.3% + BPO 2.5%)',
-        'Alternative: Differin (adapalene 0.1%) alone ON — gentler, available OTC',
-        'BPO monotherapy: Benzoyl peroxide 5% gel OD–BD — safe in pregnancy/BF; available OTC (Acneicide)',
-        'Starting BPO: leave on 30–60 mins before bed then wash off; slowly increase to overnight as tolerated',
-        'Warn: BPO causes photosensitivity, irritation, and bleaches fabrics/pillowcases',
-      ],
-    },
-    {
-      type: 'heading',
-      level: 3,
-      text: 'Mild–Moderate (+ Papules/Pustules)',
-    },
-    {
-      type: 'list',
-      items: [
-        'Fixed-combo topical for 12 weeks (dual agents reduce bacterial resistance)',
-        'Epiduo gel (adapalene + BPO) — first choice',
-        'Duac gel (BPO 3% or 5% + clindamycin 1%) — apply ON; two strengths available',
-        'Alternatives: Treclin gel (tretinoin 0.025% + clindamycin 1%) or Aknemycin (erythromycin + tretinoin)',
-        'NEVER combine oral and topical antibiotics simultaneously (promotes resistance)',
-        'If using any retinoid: counsel on need for effective contraception (teratogenic)',
-      ],
-    },
-    {
-      type: 'heading',
-      level: 3,
-      text: 'Moderate (Widespread Papulopustular)',
-    },
-    {
-      type: 'list',
-      items: [
-        'Epiduo gel + oral antibiotic for 12 weeks (up to 6 months if good partial response)',
-        'First-line oral: Lymecycline 408mg capsules OD (84-cap pack)',
-        'Alternative first-line: Doxycycline 100mg OD (84-cap pack) — take with food; photosensitising',
-        'Second-line (children <12 / tetracycline-intolerant): Clarithromycin',
-        'Second-line: Trimethoprim 300mg BD — small risk of severe skin reaction & agranulocytosis; monitor FBC',
-        'Azelaic acid 15% gel or 20% cream BD — useful adjunct; only option safe in pregnancy/BF',
+      type: 'table',
+      caption: 'Stepped care — all courses 12 weeks; extend oral antibiotics up to 6 months if partial response',
+      headers: ['Grade', 'Topical (first-line)', 'Oral antibiotic', 'Key points'],
+      rows: [
+        [
+          'Mild — comedonal',
+          'Epiduo 0.1%/2.5% gel ON (adapalene + BPO)\nAlt: Differin 0.1% ON (gentler, OTC)\nIf retinoid CI: BPO 5% gel OD–BD (pregnancy/BF safe, OTC)',
+          'None',
+          'Start BPO wash-off method: 30–60 min then rinse, build to overnight\nEpiduo bleaches fabrics/pillowcases — warn patient\nRetinoids are teratogenic — ensure contraception',
+        ],
+        [
+          'Mild–moderate — + papules/pustules',
+          'Epiduo gel ON (first choice)\nDuac gel ON (BPO 3 or 5% + clindamycin 1%)\nAlt: Treclin ON (tretinoin + clindamycin)',
+          'Usually none; add if poor response',
+          'Fixed combos preferred — dual agents reduce resistance\nNEVER oral + topical antibiotic together\nRetinoid component — contraception needed',
+        ],
+        [
+          'Moderate — widespread papulopustular',
+          'Epiduo gel ON\nAzelaic acid 15% gel BD (adjunct; only option safe in pregnancy/BF)',
+          '1st line: Lymecycline 408mg OD\nAlt: Doxycycline 100mg OD\n2nd line: Trimethoprim 300mg BD (monitor FBC — agranulocytosis risk)\n<12 yrs or tetracycline intolerant: Clarithromycin',
+          'Combine topical + oral for 12 weeks\nExtend oral to 6 months if significant partial response\nTetracyclines: unsafe <12 yrs and in pregnancy',
+        ],
+        [
+          'Severe — nodulocystic / scarring',
+          'Continue topical while awaiting referral',
+          'None routinely — isotretinoin is definitive',
+          'Refer to dermatology for isotretinoin (≥12 yrs only)\nPre-referral: bloods (FBC, U&E, LFTs, fasting lipids), discuss pregnancy prevention programme\nContraception 1 month before, during, ≥1 month after',
+        ],
+        [
+          'Pregnancy / breastfeeding',
+          'BPO 5% gel (safest)\nTopical azelaic acid\nTopical erythromycin 2%',
+          'Oral erythromycin 500mg BD if needed (risk-benefit)',
+          'AVOID: all retinoids, tetracyclines, trimethoprim, spironolactone\nIsotretinoin absolutely contraindicated',
+        ],
       ],
     },
     {
@@ -115,25 +108,10 @@ export const acneVulgaris: Note = {
       variant: 'warning',
       title: 'Antibiotic prescribing rules',
       items: [
-        'NEVER prescribe oral AND topical antibiotics together (promotes bacterial resistance)',
-        'Tetracyclines (lymecycline, doxycycline) are unsafe in pregnancy and those under 12 years',
-        'Oral erythromycin (250mg x2 BD) is the only oral antibiotic safe in pregnancy/BF — use only if risks outweigh benefits',
-        'Do not use topical erythromycin or clindamycin as monotherapy — combine with BPO to reduce resistance',
-      ],
-    },
-    {
-      type: 'heading',
-      level: 3,
-      text: 'Severe (Nodulocystic / Scarring)',
-    },
-    {
-      type: 'list',
-      items: [
-        'Refer for oral isotretinoin (Roaccutane) — only if aged ≥12 years',
-        '4–5 month course; takes at least 1 month to see change; 50% cured after 1 course, 20% need a second',
-        'Pre-referral: discuss pregnancy prevention programme, arrange baseline bloods (FBC, U&E, LFTs, fasting lipids)',
-        'Contraception required 1 month before, throughout, and ≥1 month after (highly teratogenic)',
-        'Counsel on side effects before referral: dry skin/eyes/lips, deranged LFTs and lipids, potential severe effect on mental health and sexual function',
+        'NEVER prescribe oral AND topical antibiotics together — promotes bacterial resistance',
+        'Tetracyclines (lymecycline, doxycycline) unsafe in pregnancy and in those under 12 years',
+        'Do not use topical clindamycin or erythromycin as monotherapy — always combine with BPO',
+        'Oral erythromycin (500mg BD) is the only oral antibiotic safe in pregnancy/BF — use only if benefits outweigh risks',
       ],
     },
 
