@@ -152,7 +152,6 @@ export const sixEightWeekCheck: Note = {
     {
       type: 'image',
       src: '/images/6-8 week check.webp',
-      align: 'full',
       alt: 'General overview of the 6-8 week baby examination',
       caption: 'General overview of the newborn examination — systematic head-to-toe approach.',
     },
@@ -237,7 +236,6 @@ export const sixEightWeekCheck: Note = {
     {
       type: 'image',
       src: '/images/Abnormal-red-reflex-information-poster.png.webp',
-      align: 'full',
       alt: 'Red reflex checking poster showing normal, absent and abnormal red reflex with referral outcomes',
       caption: 'Normal = no referral. Absent/asymmetric = urgent referral. Abnormal = urgent referral.',
     },
@@ -416,7 +414,6 @@ export const sixEightWeekCheck: Note = {
     {
       type: 'image',
       src: '/images/undescended testicles pathway.jpg',
-      align: 'full',
       alt: 'Undescended testicle clinical pathway — unilateral vs bilateral, palpable vs impalpable',
       caption: 'Undescended testis pathway: unilateral palpable → routine paediatric surgical referral; bilateral impalpable → urgent referral (exclude CAH).',
     },
@@ -472,7 +469,6 @@ export const sixEightWeekCheck: Note = {
     {
       type: 'image',
       src: '/images/Ortolani and Barlow.jpeg',
-      align: 'full',
       alt: 'Barlow and Ortolani manoeuvre diagrams for DDH screening',
       caption: 'Barlow: adduct + posterior pressure → dislocates unstable hip. Ortolani: abduct + anterior lift → relocates with clunk.',
     },

@@ -50,7 +50,6 @@ export const aaa: Note = {
     {
       type: 'image',
       src: '/images/aaa-rupture-risk.jpg',
-      align: 'full',
       alt: 'Diagram showing four AAA sizes with annual rupture risk: 3.0–5.4 cm (0–1.6%), 5.5–6.0 cm (2.2–5.4%), 6.1–7.0 cm (3.2–6.4%), >7.0 cm (5.2–7.9%)',
       caption: 'Annual rupture risk increases sharply above 5.5 cm. Surgery is indicated when operative risk < risk of rupture.',
     },

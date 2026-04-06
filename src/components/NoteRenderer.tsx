@@ -56,48 +56,6 @@ function highlightText(text: string, query: string | undefined): React.ReactNode
   return parts.length ? <>{parts}</> : text
 }
 
-// Pair a non-full image with the immediately-following list/para/callout
-function renderPaired(
-  blocks: ContentBlock[],
-  onImageClick: (img: LightboxImage) => void,
-  searchQuery?: string,
-): React.ReactNode[] {
-  const out: React.ReactNode[] = []
-  let i = 0
-  while (i < blocks.length) {
-    const b = blocks[i]
-    const next = blocks[i + 1]
-    const isPairableImage =
-      b.type === 'image' && b.align !== 'full'
-    const isPairableContent =
-      next && (next.type === 'list' || next.type === 'para' || next.type === 'callout')
-
-    if (isPairableImage && isPairableContent) {
-      const imgAlign = (b as Extract<ContentBlock, { type: 'image' }>).align ?? 'right'
-      const imgEl = (
-        <div key={`img-${i}`} style={{ flexShrink: 0, width: 200 }}>
-          <ImageBlock block={b as Extract<ContentBlock, { type: 'image' }>} onImageClick={onImageClick} />
-        </div>
-      )
-      const contentEl = (
-        <div key={`content-${i}`} style={{ flex: 1, minWidth: 0 }}>
-          <Block block={next} onImageClick={onImageClick} searchQuery={searchQuery} />
-        </div>
-      )
-      out.push(
-        <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start', margin: '0 0 12px' }}>
-          {imgAlign === 'left' ? [imgEl, contentEl] : [contentEl, imgEl]}
-        </div>
-      )
-      i += 2
-    } else {
-      out.push(<Block key={i} block={b} onImageClick={onImageClick} searchQuery={searchQuery} />)
-      i++
-    }
-  }
-  return out
-}
-
 export default function NoteRenderer({ blocks, searchQuery }: Props) {
   const [lightbox, setLightbox]         = useState<LightboxImage | null>(null)
   const [matchIndex, setMatchIndex]     = useState(-1)   // -1 = none jumped to yet
@@ -209,7 +167,9 @@ export default function NoteRenderer({ blocks, searchQuery }: Props) {
       )}
 
       <div ref={containerRef} style={{ fontSize: 14, lineHeight: 1.65, color: '#1a202c' }}>
-        {renderPaired(blocks, setLightbox, searchQuery)}
+        {blocks.map((block, i) => (
+          <Block key={i} block={block} onImageClick={setLightbox} searchQuery={searchQuery} />
+        ))}
       </div>
 
       {lightbox && (
@@ -388,15 +348,9 @@ function ImageBlock({
   onImageClick: (img: LightboxImage) => void
 }) {
   const [errored, setErrored] = useState(false)
-  const align = block.align ?? 'right'
-
-  // full = full width; left/right = small standalone (pairing handles side-by-side layout)
-  const figureStyle: React.CSSProperties = align === 'full'
-    ? { margin: '0 0 16px' }
-    : { margin: '0 0 8px', maxWidth: 220 }
 
   return (
-    <figure data-block style={figureStyle}>
+    <figure data-block style={{ margin: '0 0 20px' }}>
       {!errored ? (
         <img
           src={block.src}
@@ -414,7 +368,7 @@ function ImageBlock({
         </div>
       )}
       {!errored && block.caption && (
-        <figcaption style={{ fontSize: 12, color: MUTED, marginTop: 4, fontStyle: 'italic', fontSize: 11 } as React.CSSProperties}>
+        <figcaption style={{ fontSize: 12, color: MUTED, marginTop: 6, fontStyle: 'italic' }}>
           {block.caption} · <span style={{ color: '#2b6cb0' }}>tap to enlarge</span>
         </figcaption>
       )}

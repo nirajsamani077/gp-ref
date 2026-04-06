@@ -41,7 +41,6 @@ export const abdominalMigraine: Note = {
     {
       type: 'image',
       src: '/images/F1.large.jpg',
-      align: 'full',
       alt: 'Flowchart: abdominal pain in a child. Red flags → acute (emergency referral) or chronic (investigate). No red flags → consider abdominal migraine or other functional abdominal pain.',
       caption: 'Key decision: red flags present? If yes, emergency referral or investigate. If no, consider functional diagnoses including abdominal migraine, functional dyspepsia, IBS.',
     },

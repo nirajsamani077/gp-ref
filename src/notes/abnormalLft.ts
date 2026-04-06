@@ -59,14 +59,12 @@ export const abnormalLft: Note = {
     {
       type: 'image',
       src: '/images/Abnormal-LFT.jpg',
-      align: 'full',
       alt: 'Flowchart showing approach to abnormal LFTs: raised bilirubin + ALP/ALT (jaundice → immediate referral; no jaundice → urgent hepatology); isolated raised bilirubin (check for Gilbert\'s vs haemolysis); isolated raised ALP (check GGT — if raised, USS + liver screen; if normal, consider bone); raised ALT (<300 repeat with screen; >300 urgent advice)',
       caption: 'Systematic approach based on pattern of LFT abnormality',
     },
     {
       type: 'image',
       src: '/images/lft algorithm.png',
-      align: 'full',
       alt: 'Detailed LFT algorithm showing hepatic, cholestatic, synthetic failure, and isolated bilirubin pathways with management steps',
       caption: 'Clinical pattern recognition: hepatic (↑ALT/AST), cholestatic (↑ALP/GGT), synthetic failure, isolated bilirubin',
     },

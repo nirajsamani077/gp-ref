@@ -168,7 +168,6 @@ export const otitisExterna: Note = {
     {
       type: 'image',
       src: '/images/e7932c4cf78bd2ca262c767bc6977a98607bcade-800x800.jpg',
-      align: 'full',
       alt: 'Box of Ennogen Dexamethasone/Neomycin sulfate/Acetic acid ear spray — generic equivalent of Otomize',
       caption: 'Generic Otomize: Dexamethasone 0.1% / Neomycin sulfate 0.5% / Acetic acid 2% ear spray (Ennogen, 5ml). Prescribe generically for cost saving.',
     },

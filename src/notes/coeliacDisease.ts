@@ -133,7 +133,6 @@ export const coeliacDisease: Note = {
     {
       type: 'image',
       src: '/images/Coeliac-Cheat-Sheet.gif',
-      align: 'full',
       alt: 'Coeliac disease food cheat sheet — GO, CAUTION, STOP',
       caption: 'Quick reference: green = safe, amber = check labels carefully, red = avoid.',
     },

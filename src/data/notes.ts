@@ -3,7 +3,7 @@ export type ContentBlock =
   | { type: 'para'; text: string }
   | { type: 'list'; items: string[] }
   | { type: 'table'; headers: string[]; rows: string[][]; caption?: string }
-  | { type: 'image'; src: string; alt: string; caption?: string; align?: 'left' | 'right' | 'full' }
+  | { type: 'image'; src: string; alt: string; caption?: string }
   | { type: 'callout'; variant: 'info' | 'warning' | 'tip' | 'danger'; title: string; items: string[] }
   | { type: 'linkrow'; links: Array<{ label: string; url: string }> }
 
