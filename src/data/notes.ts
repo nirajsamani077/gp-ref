@@ -31,6 +31,26 @@ import { aaa }                    from '../notes/aaa'
 import { abdominalMigraine }      from '../notes/abdominalMigraine'
 import { abnormalLft }           from '../notes/abnormalLft'
 
+// Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
+function enrichBody(note: Note): Note {
+  const extra: string[] = []
+  for (const block of note.content) {
+    if (block.type === 'image' && block.caption) extra.push(block.caption)
+    if (block.type === 'image' && block.alt)     extra.push(block.alt)
+    if (block.type === 'heading')                extra.push(block.text)
+    if (block.type === 'para')                   extra.push(block.text)
+    if (block.type === 'list')                   extra.push(...block.items)
+    if (block.type === 'callout')                extra.push(block.title, ...block.items)
+    if (block.type === 'table') {
+      extra.push(...block.headers)
+      block.rows.forEach(row => extra.push(...row))
+      if (block.caption) extra.push(block.caption)
+    }
+    if (block.type === 'linkrow') extra.push(...block.links.map(l => l.label))
+  }
+  return { ...note, body: note.body + ' ' + extra.join(' ') }
+}
+
 export const NOTES: Note[] = [
   microcyticAnaemia,
   coeliacDisease,
@@ -45,4 +65,4 @@ export const NOTES: Note[] = [
   aaa,
   abdominalMigraine,
   abnormalLft,
-]
+].map(enrichBody)
