@@ -17,4 +17,10 @@ export const CALCULATORS: CalculatorMeta[] = [
     searchText:
       '6CIT 6-CIT six item cognitive impairment test dementia screening memory MMSE MoCA orientation recall year month time backwards months reverse address phrase John Smith Bedford referral memory clinic cognitive assessment',
   },
+  {
+    id: 'fib4',
+    name: 'FIB-4 Index — Liver Fibrosis',
+    searchText:
+      'FIB4 FIB-4 fibrosis index liver fibrosis NAFLD MASLD ARLD alcohol fatty liver ALT AST platelets age cirrhosis advanced fibrosis ELF elastography fibroscan gastroenterology hepatology',
+  },
 ]

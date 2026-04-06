@@ -15,6 +15,7 @@ interface SearchResult {
 const CALC_ENTRIES: SearchResult[] = [
   { label: 'FeNO Calculator',               sublabel: 'Calculator · Fractional Exhaled Nitric Oxide', tab: 'calculators', id: 'feno' },
   { label: '6-CIT Cognitive Test',          sublabel: 'Calculator · Six Item Cognitive Impairment Test', tab: 'calculators', id: '6cit' },
+  { label: 'FIB-4 Index',                   sublabel: 'Calculator · Liver Fibrosis — NAFLD MASLD ALT AST Platelets', tab: 'calculators', id: 'fib4' },
 ]
 
 const LINK_ENTRIES: SearchResult[] = LINK_CATEGORIES.flatMap(cat =>
