@@ -12,16 +12,37 @@ export const actinicKeratosis: Note = {
     {
       type: 'heading',
       level: 2,
-      text: 'Overview',
+      text: 'Pathophysiology & Epidemiology',
+    },
+    {
+      type: 'image',
+      src: '/images/ak-pathophysiology.png',
+      alt: 'Pathophysiology of actinic keratosis development and progression to SCC',
+      caption: 'UV radiation generates reactive oxygen species (ROS) → p53 mutation in basal keratinocytes → dysplastic proliferation, Langerhans cell depletion, local immunosuppression → AK → SCC',
     },
     {
       type: 'list',
       items: [
-        'Rough, scaly macules on sun-exposed skin caused by cumulative UV damage to keratinocytes',
-        '25% resolve spontaneously without treatment — watchful waiting is reasonable for grade 1 isolated lesions',
-        'Rarely transform to squamous cell carcinoma (SCC) — risk higher with: >1cm, rapid growth, multiple/confluent lesions, immunocompromised patients',
+        'Cumulative UV exposure damages basal keratinocyte DNA → p53 tumour suppressor mutation → loss of apoptosis control → clonal expansion of atypical keratinocytes',
+        'UV also generates reactive oxygen species (ROS) and depletes Langerhans cells → local immunosuppression, reducing immune surveillance',
+        'Very common: affects ~15% of the UK adult population; prevalence rises sharply over 60; higher in outdoor workers, fair skin (Fitzpatrick I–II), immunosuppressed',
+        'Conversion to SCC: individual AK risk ~0.1% per year; patients with multiple lesions carry a cumulative risk of ~10% over 10 years — field change substantially increases this',
+        'Higher SCC risk: lesion >1cm, rapid growth, erythematous base, immunocompromised (organ transplant patients have up to 250× increased SCC risk)',
+        '25% of AKs resolve spontaneously without treatment — watchful waiting is reasonable for isolated grade 1 lesions in low-risk patients',
+      ],
+    },
+
+    {
+      type: 'heading',
+      level: 2,
+      text: 'Overview & Red Flags',
+    },
+    {
+      type: 'list',
+      items: [
+        'Rough, scaly macules on sun-exposed skin (face, scalp, dorsum of hands, forearms)',
         'If papule, nodule or ulcer >3 weeks that is growing, bleeding, keratotic, or ulcerating — 2-week wait referral (likely SCC, not AK)',
-        'Advise SPF 50+ sunscreen and sun avoidance for all patients; supplement vitamin D if using high-factor SPF regularly',
+        'Advise SPF 50+ sunscreen and sun avoidance for all; supplement vitamin D if using high-factor SPF regularly',
       ],
     },
     {
