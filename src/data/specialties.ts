@@ -22,6 +22,7 @@ export const SPECIALTY_STYLES: Record<string, SpecialtyStyle> = {
   oncology:         { label: 'Oncology',          border: '#f56565', bg: '#fff5f5', text: '#742a2a', pill: '#feb2b2' },
   obstetrics:       { label: 'Obstetrics',        border: '#f9a8d4', bg: '#fdf2f8', text: '#831843', pill: '#fbcfe8' },
   vascular:         { label: 'Vascular',          border: '#667eea', bg: '#ebf4ff', text: '#3c366b', pill: '#c3dafe' },
+  symptoms:         { label: 'Symptoms / DDx',    border: '#38a169', bg: '#f0fff4', text: '#1a4731', pill: '#9ae6b4' },
 }
 
 // Fallback for unrecognised tags
