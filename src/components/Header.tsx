@@ -13,6 +13,7 @@ interface SearchResult {
 }
 
 const CALC_ENTRIES: SearchResult[] = [
+  { label: 'QRISK3 — Cardiovascular Risk',  sublabel: 'Calculator · 10-year CVD risk · statin atorvastatin heart attack stroke TIA cholesterol HDL BP diabetes AF', tab: 'calculators', id: 'qrisk3' },
   { label: 'FeNO Calculator',               sublabel: 'Calculator · Fractional Exhaled Nitric Oxide', tab: 'calculators', id: 'feno' },
   { label: '6-CIT Cognitive Test',          sublabel: 'Calculator · Six Item Cognitive Impairment Test', tab: 'calculators', id: '6cit' },
   { label: 'FIB-4 Index',                   sublabel: 'Calculator · Liver Fibrosis — NAFLD MASLD ALT AST Platelets', tab: 'calculators', id: 'fib4' },

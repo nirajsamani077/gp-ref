@@ -18,6 +18,12 @@ export const CALCULATORS: CalculatorMeta[] = [
       '6CIT 6-CIT six item cognitive impairment test dementia screening memory MMSE MoCA orientation recall year month time backwards months reverse address phrase John Smith Bedford referral memory clinic cognitive assessment',
   },
   {
+    id: 'qrisk3',
+    name: 'QRISK3 — Cardiovascular Risk',
+    searchText:
+      'QRISK3 QRISK2 cardiovascular risk CVD 10 year heart attack stroke TIA statin atorvastatin lipid cholesterol HDL TC ratio systolic BP BMI Townsend deprivation ethnicity smoking diabetes atrial fibrillation hypertension treated CKD SLE rheumatoid arthritis migraine corticosteroids antipsychotics erectile dysfunction impotence severe mental illness',
+  },
+  {
     id: 'fib4',
     name: 'FIB-4 Index — Liver Fibrosis',
     searchText:

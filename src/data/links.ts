@@ -39,6 +39,16 @@ export const LINK_CATEGORIES: LinkCategory[] = [
     ],
   },
   {
+    title: 'Calculators & Risk Tools',
+    links: [
+      { name: 'QRISK3 (official)',    url: 'https://qrisk.org' },
+      { name: 'QRISK2 (2015)',        url: 'https://qrisk.org/2015/' },
+      { name: 'MDCalc',               url: 'https://www.mdcalc.com' },
+      { name: 'CKD-EPI (eGFR)',       url: 'https://www.mdcalc.com/calc/3939/ckd-epi-equations-glomerular-filtration-rate-gfr' },
+      { name: 'FRAX (fracture risk)', url: 'https://www.sheffield.ac.uk/FRAX/tool.aspx?country=1' },
+    ],
+  },
+  {
     title: 'Referrals & Tools',
     links: [
       { name: 'e-RS (NHS referrals)', url: 'https://www.e-referral.nhs.uk' },

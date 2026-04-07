@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import FenoCalculator from '../calculators/FenoCalculator'
 import SixCitCalculator from '../calculators/SixCitCalculator'
 import Fib4Calculator from '../calculators/Fib4Calculator'
+import Qrisk3Calculator from '../calculators/Qrisk3Calculator'
 
 interface Props {
   highlightedId?: string
@@ -15,6 +16,12 @@ interface CalcEntry {
 }
 
 const ENTRIES: CalcEntry[] = [
+  {
+    id: 'qrisk3',
+    title: 'QRISK3 — 10-year Cardiovascular Risk',
+    subtitle: 'QRISK3-2017 algorithm · Heart attack, stroke & TIA risk · Statin prescribing threshold',
+    component: <Qrisk3Calculator />,
+  },
   {
     id: 'feno',
     title: 'FeNO Calculator',
