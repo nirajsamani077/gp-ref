@@ -291,8 +291,8 @@ export default function Qrisk3Calculator() {
   const [rati,  setRati]  = useState('')
   const [bmi,   setBmi]   = useState('')
 
-  // Advanced (defaulted to population means)
-  const [sbps5, setSbps5] = useState('9')
+  // Advanced (sbps5 defaults to 0 = no variability data, matching official qrisk.org blank-field behaviour)
+  const [sbps5, setSbps5] = useState('0')
   const [town,  setTown]  = useState('0')
   const [showAdv, setShowAdv] = useState(false)
 
@@ -449,7 +449,7 @@ export default function Qrisk3Calculator() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 18, padding: '14px 16px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e8edf2' }}>
           <div>
             <Num label="SBP variability (SD)" unit="mmHg" val={sbps5} set={setSbps5} placeholder="SD last 5 readings" min={0} max={60} step={0.1} />
-            <p style={{ fontSize: 11, color: '#8a9bb0', margin: '4px 0 0' }}>Standard deviation of last 5 systolic BP readings. Default 9 = population mean (no effect on score).</p>
+            <p style={{ fontSize: 11, color: '#8a9bb0', margin: '4px 0 0' }}>SD of ≥2 recent systolic BP readings. Leave at 0 if unknown — this matches the official qrisk.org blank-field default and gives the same result.</p>
           </div>
           <div>
             <Num label="Townsend deprivation score" unit="" val={town} set={setTown} placeholder="-7 (affluent) to +12" min={-10} max={14} step={0.1} />
