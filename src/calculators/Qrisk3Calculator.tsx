@@ -5,6 +5,112 @@ import { useState, useMemo } from 'react'
 // Reference: Hippisley-Cox J et al. BMJ 2017;357:j2099
 // ─────────────────────────────────────────────────────────────────────────────
 
+// ─── QRISK2-2015 Algorithm ────────────────────────────────────────────────────
+// Coefficients from ClinRisk LGPL source / HealthDiagnostics/QRisk port
+// Reference: Hippisley-Cox J et al. Heart 2010;96:1741-1748
+// Note: smk here is 0=non, 1=ex, 2=light, 3=moderate, 4=heavy (one less than QRISK3)
+// ─────────────────────────────────────────────────────────────────────────────
+
+function qrisk2Female(
+  age: number, eth: number, smk: number,
+  sbp: number, rati: number, bmi: number, town: number,
+  b_AF: boolean, b_ra: boolean, b_ren: boolean,
+  b_htn: boolean, b_t1: boolean, b_t2: boolean, b_fhx: boolean
+): number {
+  const d = age / 10, bm = bmi / 10
+  const a1 = Math.sqrt(d) - 2.086397409439087
+  const a2 = d            - 4.353054523468018
+  const b1 = bm ** -2 - 0.152244374155998
+  const b2 = bm ** -2 * Math.log(bm) - 0.143282383680344
+  const rc  = rati - 3.506655454635620
+  const sc  = sbp  - 125.040039062500000
+  const tc  = town - 0.416743695735931
+
+  const eArr = [0,0,0.25740993498319259,0.61297954305717794,0.33621598416696213,
+    0.15125173032243364,-0.17941562596577681,-0.35034236100577454,-0.27783724832332168,-0.15927341226653660]
+  const sArr = [0,0.21193771087603852,0.66186343796859415,0.75707145871323056,0.94962982514570360]
+
+  let a = (eArr[eth] ?? 0) + (sArr[smk] ?? 0)
+  a += a1 *  4.4417863976316578 + a2 *  0.02816372106729992
+  a += b1 *  0.89423653047106633 + b2 * -6.5748047596104335
+  a += rc *  0.14339005616214209 + sc *  0.01289717958436137 + tc *  0.06647726300114389
+
+  if (b_AF)  a += 1.6284780236484424
+  if (b_ra)  a += 0.29012331040887707
+  if (b_ren) a += 1.0043796680368302
+  if (b_htn) a += 0.61804305627881295
+  if (b_t1)  a += 1.8400348250874599
+  if (b_t2)  a += 1.1711626412196512
+  if (b_fhx) a += 0.51472612036651955
+
+  if (smk===1){a+=a1* 0.74644061443916665+a2*-0.19270577417482310}
+  if (smk===2){a+=a1* 0.25685417118796666+a2*-0.15269650634589327}
+  if (smk===3){a+=a1*-1.5452226707866523 +a2* 0.23135639765214294}
+  if (smk===4){a+=a1*-1.7113013709043405 +a2* 0.23071650138682967}
+  if (b_AF)  {a+=a1*-7.0177986441269269  +a2* 1.1395776028337732}
+  if (b_ren) {a+=a1*-2.9684019256454390  +a2* 0.43569632083309406}
+  if (b_htn) {a+=a1*-4.2219906452967848  +a2* 0.72659471088872396}
+  if (b_t1)  {a+=a1* 1.6835769546040080  +a2*-0.63209777662756539}
+  if (b_t2)  {a+=a1*-2.9371798540034648  +a2* 0.40232704348710868}
+  if (b_fhx) {a+=a1* 0.14399792407539067 +a2*-0.13302600182737204}
+  a += a1*b1*  0.17971962070446823 + a1*b2* 40.242816676065814
+  a += a2*b1*  0.13192766227118777 + a2*b2* -7.3211322435546409
+  a += a1*sc* -0.03625752338997745 + a2*sc*  0.0045842850495397955
+  a += a1*tc*  0.37351380314334426 + a2*tc* -0.09523703008459908
+
+  return 100 * (1 - 0.989747583866119 ** Math.exp(a))
+}
+
+function qrisk2Male(
+  age: number, eth: number, smk: number,
+  sbp: number, rati: number, bmi: number, town: number,
+  b_AF: boolean, b_ra: boolean, b_ren: boolean,
+  b_htn: boolean, b_t1: boolean, b_t2: boolean, b_fhx: boolean
+): number {
+  const d = age / 10, bm = bmi / 10
+  const a1 = d ** -1 - 0.233734160661697
+  const a2 = d **  2 - 18.304403305053711
+  const b1 = bm ** -2 - 0.146269768476486
+  const b2 = bm ** -2 * Math.log(bm) - 0.140587374567986
+  const rc  = rati - 4.321151256561279
+  const sc  = sbp  - 130.589752197265620
+  const tc  = town - 0.551009356975555
+
+  const eArr = [0,0,0.31733214304819191,0.47385907860811155,0.51713146559681455,
+    0.13703011573664192,-0.38855223049726639,-0.38124954853121945,-0.40644613816509945,-0.22857155213773361]
+  const sArr = [0,0.26844791581580202,0.63076749738775917,0.71780788833786957,0.87041725334654851]
+
+  let a = (eArr[eth] ?? 0) + (sArr[smk] ?? 0)
+  a += a1 * -18.043731255037727 + a2 *  0.02364864542543069
+  a += b1 *   2.5388084343581578 + b2 * -9.1034725871528597
+  a += rc *   0.16843976361369095 + sc *  0.01050030893807548 + tc *  0.03238016376344876
+
+  if (b_AF)  a += 1.0363048000259454
+  if (b_ra)  a += 0.25199531347910126
+  if (b_ren) a += 0.8359352886995286
+  if (b_htn) a += 0.66034596959178626
+  if (b_t1)  a += 1.3309170433446138
+  if (b_t2)  a += 0.94543488927744179
+  if (b_fhx) a += 0.59860378971362815
+
+  if (smk===1){a+=a1* 0.61868646993796839+a2*-0.0040893975066796338}
+  if (smk===2){a+=a1* 1.5522017055600055 +a2*-0.0056065852346001768}
+  if (smk===3){a+=a1* 2.4407210657517648 +a2*-0.0018261006189440492}
+  if (smk===4){a+=a1* 3.5140494491884624 +a2*-0.0014997157296173290}
+  if (b_AF)  {a+=a1* 8.0382925558108482  +a2* 0.0052471594895864343}
+  if (b_ren) {a+=a1*-1.6389521229064483  +a2*-0.017966358619354639}
+  if (b_htn) {a+=a1* 8.4621771382346651  +a2* 0.0092088445323379176}
+  if (b_t1)  {a+=a1* 5.4977016563835504  +a2* 0.0047493510223424558}
+  if (b_t2)  {a+=a1* 3.3974747488766690  +a2*-0.0048113775783491563}
+  if (b_fhx) {a+=a1* 2.0858333154353321  +a2*-0.0049971149213281010}
+  a += a1*b1*  33.848988101276760 + a1*b2*-140.67070254048971
+  a += a2*b1*   0.062741075751394565 + a2*b2*-0.23829149093857321
+  a += a1*sc*   0.05012836688307205 + a2*sc*-0.000052370098795143509
+  a += a1*tc*  -0.19882682171868507 + a2*tc*-0.0012518116569283104
+
+  return 100 * (1 - 0.978794217109680 ** Math.exp(a))
+}
+
 function qrisk3Female(
   age: number, eth: number, smk: number,
   sbp: number, sbps5: number, rati: number, bmi: number, town: number,
@@ -205,34 +311,43 @@ export default function Qrisk3Calculator() {
   const [b_fhx,  setFhx]  = useState(false)
   const [b_imp,  setImp]  = useState(false) // male only
 
-  const result = useMemo<number | null>(() => {
+  const results = useMemo<{ q3: number | null; q2: number | null }>(() => {
     const ageN  = parseFloat(age)
     const sbpN  = parseFloat(sbp)
     const ratiN = parseFloat(rati)
     const bmiN  = parseFloat(bmi)
     const s5N   = parseFloat(sbps5) || 9
     const townN = parseFloat(town)  || 0
+    const smk2  = smk - 1  // QRISK2 uses 0-based smoking codes
 
     if (
       !ageN || ageN < 25 || ageN > 84 ||
       !sbpN || sbpN < 70 || sbpN > 210 ||
       !ratiN || ratiN < 1 || ratiN > 12 ||
       !bmiN || bmiN < 15 || bmiN > 47
-    ) return null
+    ) return { q3: null, q2: null }
 
     try {
-      if (sex === 'female') {
-        return qrisk3Female(ageN, eth, smk, sbpN, s5N, ratiN, bmiN, townN,
-          b_AF, b_aap, b_cort, b_mig, b_ra, b_ren, b_semi, b_sle, b_htn, b_t1, b_t2, b_fhx)
-      } else {
-        return qrisk3Male(ageN, eth, smk, sbpN, s5N, ratiN, bmiN, townN,
-          b_AF, b_aap, b_cort, b_mig, b_ra, b_ren, b_semi, b_sle, b_htn, b_t1, b_t2, b_fhx, b_imp)
-      }
-    } catch { return null }
+      const q3 = sex === 'female'
+        ? qrisk3Female(ageN, eth, smk, sbpN, s5N, ratiN, bmiN, townN,
+            b_AF, b_aap, b_cort, b_mig, b_ra, b_ren, b_semi, b_sle, b_htn, b_t1, b_t2, b_fhx)
+        : qrisk3Male(ageN, eth, smk, sbpN, s5N, ratiN, bmiN, townN,
+            b_AF, b_aap, b_cort, b_mig, b_ra, b_ren, b_semi, b_sle, b_htn, b_t1, b_t2, b_fhx, b_imp)
+
+      const q2 = sex === 'female'
+        ? qrisk2Female(ageN, eth, smk2, sbpN, ratiN, bmiN, townN,
+            b_AF, b_ra, b_ren, b_htn, b_t1, b_t2, b_fhx)
+        : qrisk2Male(ageN, eth, smk2, sbpN, ratiN, bmiN, townN,
+            b_AF, b_ra, b_ren, b_htn, b_t1, b_t2, b_fhx)
+
+      return { q3, q2 }
+    } catch { return { q3: null, q2: null } }
   }, [age, sex, eth, smk, sbp, sbps5, rati, bmi, town,
       b_AF, b_aap, b_cort, b_mig, b_ra, b_ren, b_semi, b_sle, b_htn, b_t1, b_t2, b_fhx, b_imp])
 
-  const band = result !== null ? getBand(result) : null
+  const { q3: result, q2: result2 } = results
+  const band  = result  !== null ? getBand(result)  : null
+  const band2 = result2 !== null ? getBand(result2) : null
 
   function reset() {
     setAge(''); setSbp(''); setRati(''); setBmi(''); setSbps5('9'); setTown('0')
@@ -362,43 +477,27 @@ export default function Qrisk3Calculator() {
         ))}
       </div>
 
-      {/* ── RESULT ── */}
-      {result !== null && band ? (
-        <div style={{
-          background: band.bg, border: `1px solid ${band.border}`,
-          borderLeft: `5px solid ${band.color}`, borderRadius: 10,
-          padding: '20px 24px', marginBottom: 20,
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', marginBottom: 10 }}>
-            <span style={{
-              fontSize: 11, fontWeight: 700, letterSpacing: '0.08em',
-              color: band.color, background: band.border,
-              padding: '2px 8px', borderRadius: 4,
-            }}>{band.label}</span>
-            <span style={{ fontSize: 36, fontWeight: 800, color: band.color, fontVariantNumeric: 'tabular-nums' }}>
-              {result.toFixed(1)}%
-            </span>
-            <span style={{ fontSize: 14, color: band.color, fontWeight: 600 }}>10-year CVD risk</span>
+      {/* ── RESULTS (side by side) ── */}
+      {result !== null && result2 !== null && band && band2 ? (
+        <div style={{ marginBottom: 20 }}>
+          {/* Side by side score boxes */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
+            <ResultBox score={result} band={band} label="QRISK3" sublabel="Current standard (2017)" primary />
+            <ResultBox score={result2} band={band2} label="QRISK2" sublabel="Superseded (2015)" />
           </div>
 
-          {/* Visual bar */}
-          <div style={{ position: 'relative', height: 22, display: 'flex', borderRadius: 5, overflow: 'hidden', marginBottom: 14 }}>
-            <div style={{ width: '10%',  background: '#68d391', display:'flex', alignItems:'center', justifyContent:'center' }}><span style={barLbl}>5%</span></div>
-            <div style={{ width: '10%',  background: '#4299e1', display:'flex', alignItems:'center', justifyContent:'center' }}><span style={barLbl}>10%</span></div>
-            <div style={{ width: '20%',  background: '#ed8936', display:'flex', alignItems:'center', justifyContent:'center' }}><span style={barLbl}>20%</span></div>
-            <div style={{ flex: 1,       background: '#fc8181', display:'flex', alignItems:'center', justifyContent:'center' }}><span style={barLbl}>≥30%</span></div>
-            <div style={{
-              position: 'absolute', top: -3, bottom: -3,
-              left: `${Math.min(result / 40 * 100, 97)}%`,
-              width: 3, background: '#1a365d', borderRadius: 2,
-              transform: 'translateX(-50%)', boxShadow: '0 0 0 2px #fff',
-            }} />
+          {/* Shared visual bar (QRISK3 score) */}
+          <div style={{ marginBottom: 12 }}>
+            <RiskBar score3={result} score2={result2} />
           </div>
 
-          <p style={{ fontSize: 14, fontWeight: 600, color: band.color, margin: '0 0 6px' }}>{band.headline}</p>
-          <p style={{ fontSize: 13, color: '#2d3748', margin: 0 }}>
-            <strong>Action:</strong> {band.action}
-          </p>
+          {/* Action based on QRISK3 (current standard) */}
+          <div style={{ background: band.bg, border: `1px solid ${band.border}`, borderLeft: `4px solid ${band.color}`, borderRadius: 8, padding: '12px 16px' }}>
+            <p style={{ fontSize: 13, fontWeight: 700, color: band.color, margin: '0 0 4px' }}>{band.headline}</p>
+            <p style={{ fontSize: 13, color: '#2d3748', margin: 0 }}>
+              <strong>Action (based on QRISK3):</strong> {band.action}
+            </p>
+          </div>
         </div>
       ) : (
         <div style={{ padding: '20px', background: '#f8fafc', border: '1px dashed #dde6f0', borderRadius: 10, marginBottom: 20, textAlign: 'center', color: '#94a3b8', fontSize: 13 }}>
@@ -418,14 +517,82 @@ export default function Qrisk3Calculator() {
 
       {/* Disclaimer + links */}
       <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 16 }}>
-        Results use the QRISK3-2017 algorithm (LGPL licence). Minor floating-point differences (&lt;0.5%) vs qrisk.org may occur.
-        Always verify with the <a href="https://qrisk.org" target="_blank" rel="noopener noreferrer" style={{ color: '#3b82f6' }}>official QRISK3 calculator</a> for clinical use.
-        QRISK2 (superseded): <a href="https://qrisk.org/2015/" target="_blank" rel="noopener noreferrer" style={{ color: '#3b82f6' }}>qrisk.org/2015</a>.
+        QRISK3-2017 and QRISK2-2015 algorithms (ClinRisk, LGPL licence). QRISK3 is the current standard — use this for clinical decisions.
+        Minor floating-point differences (&lt;0.5%) vs official calculators may occur. Verify at{' '}
+        <a href="https://qrisk.org" target="_blank" rel="noopener noreferrer" style={{ color: '#3b82f6' }}>qrisk.org</a> (QRISK3) or{' '}
+        <a href="https://qrisk.org/2015/" target="_blank" rel="noopener noreferrer" style={{ color: '#3b82f6' }}>qrisk.org/2015</a> (QRISK2).
       </div>
 
       {(age || sbp || rati || bmi) && (
         <button onClick={reset} style={resetBtn}>Reset</button>
       )}
+    </div>
+  )
+}
+
+// ─── Result sub-components ────────────────────────────────────────────────────
+
+function ResultBox({ score, band, label, sublabel, primary = false }: {
+  score: number; band: Band; label: string; sublabel: string; primary?: boolean
+}) {
+  return (
+    <div style={{
+      background: band.bg,
+      border: `1px solid ${band.border}`,
+      borderTop: `4px solid ${band.color}`,
+      borderRadius: 10,
+      padding: '16px 18px',
+      position: 'relative',
+    }}>
+      {primary && (
+        <span style={{
+          position: 'absolute', top: -1, right: 10,
+          background: '#1a365d', color: '#fff',
+          fontSize: 9, fontWeight: 700, letterSpacing: '0.08em',
+          padding: '2px 7px', borderRadius: '0 0 5px 5px',
+          textTransform: 'uppercase',
+        }}>Use this</span>
+      )}
+      <p style={{ fontSize: 11, fontWeight: 700, color: band.color, margin: '0 0 2px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{label}</p>
+      <p style={{ fontSize: 11, color: '#8a9bb0', margin: '0 0 10px' }}>{sublabel}</p>
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
+        <span style={{ fontSize: 38, fontWeight: 800, color: band.color, fontVariantNumeric: 'tabular-nums', lineHeight: 1 }}>
+          {score.toFixed(1)}
+        </span>
+        <span style={{ fontSize: 18, fontWeight: 700, color: band.color }}>%</span>
+      </div>
+      <span style={{
+        display: 'inline-block', marginTop: 8,
+        fontSize: 11, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase',
+        color: band.color, background: band.border, padding: '2px 8px', borderRadius: 4,
+      }}>{band.label}</span>
+    </div>
+  )
+}
+
+function RiskBar({ score3, score2 }: { score3: number; score2: number }) {
+  const pct3 = Math.min(score3 / 40 * 100, 97)
+  const pct2 = Math.min(score2 / 40 * 100, 97)
+  return (
+    <div>
+      <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#8a9bb0', margin: '0 0 6px' }}>
+        10-year CVD risk scale (0–40%)
+      </p>
+      <div style={{ position: 'relative', height: 24, display: 'flex', borderRadius: 6, overflow: 'hidden' }}>
+        <div style={{ width: '12.5%', background: '#68d391', display:'flex', alignItems:'center', justifyContent:'center' }}><span style={barLbl}>5%</span></div>
+        <div style={{ width: '12.5%', background: '#4299e1', display:'flex', alignItems:'center', justifyContent:'center' }}><span style={barLbl}>10%</span></div>
+        <div style={{ width: '25%',   background: '#ed8936', display:'flex', alignItems:'center', justifyContent:'center' }}><span style={barLbl}>20%</span></div>
+        <div style={{ flex: 1,        background: '#fc8181', display:'flex', alignItems:'center', justifyContent:'center' }}><span style={barLbl}>≥30%</span></div>
+        {/* QRISK3 marker */}
+        <div style={{ position:'absolute', top:-3, bottom:-3, left:`${pct3}%`, width:3, background:'#1a365d', transform:'translateX(-50%)', boxShadow:'0 0 0 2px #fff', borderRadius:2, zIndex:2 }} />
+        {/* QRISK2 marker */}
+        <div style={{ position:'absolute', top:-3, bottom:-3, left:`${pct2}%`, width:3, background:'#6b7280', transform:'translateX(-50%)', boxShadow:'0 0 0 2px #fff', borderRadius:2, zIndex:1 }} />
+      </div>
+      <div style={{ display:'flex', gap: 16, marginTop: 6, fontSize: 11, color: '#6b7280' }}>
+        <span>▌ <span style={{ color: '#1a365d', fontWeight: 700 }}>QRISK3</span> = {score3.toFixed(1)}%</span>
+        <span>▌ <span style={{ color: '#6b7280', fontWeight: 700 }}>QRISK2</span> = {score2.toFixed(1)}%</span>
+        <span style={{ marginLeft: 'auto', color: '#94a3b8' }}>Δ {Math.abs(score3 - score2).toFixed(1)}%</span>
+      </div>
     </div>
   )
 }
