@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import Fuse from 'fuse.js'
 import type { Note } from '../data/notes'
 import { NOTES } from '../data/notes'
-import { getSpecialtyStyle } from '../data/specialties'
+import { getSpecialtyStyle, SPECIALTY_STYLES } from '../data/specialties'
 import NoteRenderer from './NoteRenderer'
 
 // ── Fuse instance for live note filtering ────────────────────────────────────
@@ -27,10 +27,12 @@ function getSpecialties() {
   const seen = new Set<string>()
   const list: { tag: string; label: string }[] = []
   for (const note of NOTES) {
-    const tag = note.tags[0]
-    if (tag && !seen.has(tag)) {
-      seen.add(tag)
-      list.push({ tag, label: getSpecialtyStyle(tag).label })
+    for (const tag of note.tags) {
+      const key = tag.toLowerCase()
+      if (key && !seen.has(key) && key in SPECIALTY_STYLES) {
+        seen.add(key)
+        list.push({ tag: key, label: getSpecialtyStyle(key).label })
+      }
     }
   }
   return list
@@ -50,7 +52,7 @@ export default function NotesTab() {
   // Then apply specialty filter on top
   const visible = specialty === 'all'
     ? filtered
-    : filtered.filter(n => n.tags[0] === specialty)
+    : filtered.filter(n => n.tags.map(t => t.toLowerCase()).includes(specialty))
 
   // Auto-open the note when only one result remains
   useEffect(() => {
