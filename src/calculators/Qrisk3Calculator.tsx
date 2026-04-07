@@ -316,8 +316,8 @@ export default function Qrisk3Calculator() {
     const sbpN  = parseFloat(sbp)
     const ratiN = parseFloat(rati)
     const bmiN  = parseFloat(bmi)
-    const s5N   = parseFloat(sbps5) || 9
-    const townN = parseFloat(town)  || 0
+    const s5N   = sbps5 !== '' ? parseFloat(sbps5) : 0
+    const townN = town  !== '' ? parseFloat(town)  : 0
     const smk2  = smk - 1  // QRISK2 uses 0-based smoking codes
 
     if (
