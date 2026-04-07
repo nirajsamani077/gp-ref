@@ -112,6 +112,45 @@ export const chronicCough: Note = {
     {
       type: 'heading',
       level: 2,
+      text: 'Intranasal Corticosteroid Sprays — Reference Guide',
+    },
+    {
+      type: 'para',
+      text: 'First-line treatment for Upper Airway Cough Syndrome (UACS / post-nasal drip) and allergic rhinitis contributing to chronic cough. Allow 4–6 weeks for full effect — patients often stop early expecting immediate relief.',
+    },
+    {
+      type: 'table',
+      headers: ['Brand (generic)', 'Strength', 'Adult dose', 'Age licence', 'OTC / Rx', 'Notes'],
+      rows: [
+        ['Beconase (beclomethasone dipropionate)', '50 mcg/spray', '2 sprays each nostril twice daily (200 mcg/day); or 1 spray each nostril up to 4× daily', '≥6 years', 'OTC (≥18y) / Rx', 'Widely used; good evidence. Rinse nose first with saline for best deposition. Older formulation — slightly more systemic absorption than newer agents'],
+        ['Nasonex (mometasone furoate)', '50 mcg/spray', '2 sprays each nostril once daily (200 mcg/day); can reduce to 1 spray each nostril OD for maintenance', '≥3 years (1 spray OD for 3–11y)', 'Rx / OTC (≥18y, pharmacist only)', 'Very low systemic bioavailability (<1%). Good first-line choice, especially if systemic effects a concern. Also licensed for nasal polyps'],
+        ['Flixonase / Pirinase (fluticasone propionate)', '50 mcg/spray', '2 sprays each nostril once daily in the morning (200 mcg/day); reduce to 1 spray each nostril OD when controlled', '≥4 years', 'OTC (Pirinase ≥18y) / Rx', 'Pirinase is OTC equivalent. Low systemic absorption. Commonly used; good tolerability. Rinse/blow nose before use'],
+        ['Avamys (fluticasone furoate)', '27.5 mcg/spray', '2 sprays each nostril once daily (110 mcg/day)', '≥6 years (2 sprays OD); ≥2 years for some indications', 'Rx', 'Highest affinity for glucocorticoid receptor of available INCS. Once-daily dosing. Good option when compliance with BD regimens is poor'],
+        ['Rhinocort Aqua (budesonide)', '64 mcg/spray', '2 sprays each nostril once daily (256 mcg/day); reduce to 1 spray each nostril OD for maintenance', '≥6 years', 'Rx / Some OTC formulations', 'Good evidence for allergic and non-allergic rhinitis. Available as Rhinocort aqueous spray. Moderate systemic absorption compared to fluticasone'],
+        ['Dymista (fluticasone propionate + azelastine)', '50 mcg + 137 mcg/spray', '1 spray each nostril twice daily', '≥12 years', 'Rx', 'Combination INCS + antihistamine — useful when allergic component prominent. More effective than either component alone in allergic rhinitis with significant symptoms'],
+      ],
+      caption: 'All intranasal corticosteroids should be sprayed away from the nasal septum (aim towards the outer wall of the nostril) to reduce risk of epistaxis and septal perforation.',
+    },
+    {
+      type: 'callout',
+      variant: 'tip',
+      title: 'How to use intranasal sprays — instructions for patients',
+      items: [
+        'Blow your nose gently before using the spray',
+        'Shake the bottle and prime it (pump until spray appears) if not used recently',
+        'Tilt your head slightly forward — do not tip it back',
+        'Insert the nozzle into one nostril and aim it slightly outward (towards your ear, away from the central septum)',
+        'Spray and breathe in gently through the nose at the same time — do not sniff hard',
+        'Breathe out through your mouth. Repeat for the other nostril',
+        'Do not blow your nose for at least 10 minutes after using the spray',
+        'It takes 1–2 weeks to start working and 4–6 weeks for full benefit — continue even if you don\'t notice immediate improvement',
+        'Common side effect: minor nosebleeds or dryness — apply a little petroleum jelly (Vaseline) to the nostrils if this occurs',
+      ],
+    },
+
+    {
+      type: 'heading',
+      level: 2,
       text: 'Chronic Cough in Children',
     },
     {

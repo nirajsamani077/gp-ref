@@ -1,4 +1,4 @@
-export type TabId = 'notes' | 'links' | 'calculators' | 'forms' | 'images'
+export type TabId = 'notes' | 'symptoms' | 'links' | 'calculators' | 'forms' | 'images'
 
 export interface Tab {
   id: TabId
