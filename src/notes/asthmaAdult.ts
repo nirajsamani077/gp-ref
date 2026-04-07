@@ -59,6 +59,53 @@ export const asthmaAdult: Note = {
     {
       type: 'heading',
       level: 2,
+      text: 'MART & AIR — Which Inhalers Are Licensed, and at What Age?',
+    },
+    {
+      type: 'callout',
+      variant: 'info',
+      title: 'MART vs AIR — what\'s the difference?',
+      items: [
+        'MART (Maintenance And Reliever Therapy): fixed maintenance dose BD + same inhaler as reliever PRN. Both controller and rescue in one device',
+        'AIR (Anti-Inflammatory Reliever): no regular maintenance dose — inhaler used as reliever ONLY (PRN). Each puff delivers ICS + formoterol. Step 1 in GINA Track 1',
+        'Only ICS-formoterol inhalers are licensed for MART/AIR — formoterol is fast-acting enough to use as a reliever. Salmeterol-based inhalers (e.g. Seretide) are NOT suitable',
+        'On MART or AIR: remove SABA from repeat prescriptions — the MART inhaler IS the reliever',
+        'Max total puffs/day: normally ≤8 (maintenance + relief combined). Up to 12 puffs/day for limited periods with medical review',
+        'Using >6–8 puffs daily regularly = poor control → step up or refer',
+      ],
+    },
+    {
+      type: 'table',
+      headers: ['Inhaler', 'Drug', 'Device', 'Strength', 'MART licensed?', 'AIR licensed?', 'Min age', 'Maintenance dose', 'Max/day'],
+      rows: [
+        ['Symbicort Turbohaler', 'Budesonide / Formoterol', 'DPI', '100/6 mcg', 'Yes', 'No', 'MART ≥6 yrs*', '1 puff BD + 1 puff PRN', '8 (12 short-term)'],
+        ['Symbicort Turbohaler', 'Budesonide / Formoterol', 'DPI', '200/6 mcg', 'Yes', 'Yes (AIR ≥12)', '≥12 yrs', '1 puff BD + 1 puff PRN', '8 (12 short-term)'],
+        ['Symbicort Turbohaler', 'Budesonide / Formoterol', 'DPI', '400/12 mcg', 'No', 'No', '—', 'Not for MART/AIR', '—'],
+        ['Fobumix Easyhaler', 'Budesonide / Formoterol', 'DPI', '80/4.5 mcg (≡100/6)', 'Off-label', 'Off-label', '≥12 (off-label)', '1 puff BD + 1 puff PRN', '8 (12 short-term)'],
+        ['Fobumix Easyhaler', 'Budesonide / Formoterol', 'DPI', '160/4.5 mcg (≡200/6)', 'Yes', 'Yes', '≥12 yrs', '1 puff BD + 1 puff PRN', '8 (12 short-term)'],
+        ['DuoResp Spiromax', 'Budesonide / Formoterol', 'DPI', '160/4.5 mcg (≡200/6)', 'Yes', 'Yes', '≥12 yrs', '1 puff BD + 1 puff PRN', '8 (12 short-term)'],
+        ['Fostair NEXThaler', 'BDP extra-fine / Formoterol', 'DPI', '100/6 mcg', 'Yes', 'No', '≥18 yrs', '1 puff BD + 1 puff PRN', '8'],
+        ['Luforbec MDI', 'BDP extra-fine / Formoterol', 'pMDI + spacer', '100/6 mcg', 'Yes', 'No', '≥18 yrs', '1 puff BD + 1 puff PRN', '8'],
+        ['Fostair MDI', 'BDP extra-fine / Formoterol', 'pMDI + spacer', '100/6 mcg', 'Yes', 'No', '≥18 yrs', '1 puff BD + 1 puff PRN', '8'],
+      ],
+      caption: '* Symbicort 100/6 Turbohaler is the ONLY inhaler licensed for MART in children aged 6–11 years. All other MART inhalers are ≥12 or ≥18. BDP extra-fine (Fostair/Luforbec) 100 mcg ≡ ~250 mcg standard BDP — not interchangeable by strength. Fobumix: 4-month expiry after opening foil wrapping.',
+    },
+    {
+      type: 'callout',
+      variant: 'warning',
+      title: 'Common MART prescribing pitfalls',
+      items: [
+        'Do NOT prescribe Symbicort 400/12 or Fostair 200/6 for MART — high dose ICS not licensed for this indication',
+        'Do NOT continue SABA alongside MART — remove salbutamol from repeat. If patient insists on keeping it, document counselling',
+        'BDP extra-fine (Fostair/Luforbec) potency: 100 mcg extra-fine ≠ 100 mcg standard BDP. Extra-fine ≡ ~250 mcg standard — ensure like-for-like switching is done carefully',
+        'Salmeterol-based inhalers (Seretide, Relvar, AirFluSal) are NOT suitable for MART — salmeterol onset is too slow (10–20 min) to act as reliever',
+        'Emergency: >6 puffs with no response → call 999. MART is not a substitute for emergency care',
+      ],
+    },
+
+    {
+      type: 'heading',
+      level: 2,
       text: 'GINA Track 2: Traditional Controller + Reliever (Alternative)',
     },
     {
