@@ -80,9 +80,9 @@ export const asthmaAdult: Note = {
     },
     {
       type: 'image',
-      src: '/images/inhaler-devices.jpg',
-      alt: 'Inhaler formulary table — ICS, ICS/LABA, ICS/LABA/LAMA devices by DPI and MDI',
-      caption: 'Local inhaler formulary: ICS, ICS/LABA, and triple therapy options grouped by device type (DPI preferred, low carbon footprint symbol shown). SABA choices at bottom. Prescribe Aerochamber Plus spacer with all MDIs.',
+      src: '/images/inhaler-identifier-chart.jpg',
+      alt: 'NHS Inhaler Identifier Chart — SABA, SAMA, LABA, LAMA, ICS, ICS/LABA, triple therapy inhalers with images',
+      caption: 'NHS Inhaler Identifier Chart (Bristol, North Somerset & South Gloucestershire CCG): visual guide to all inhaler types — relievers (SABA), preventers (ICS, LAMA, LABA), combination (ICS/LABA), triple therapy (ICS/LABA/LAMA). Key: MDI = metered dose inhaler, BA MDI = breath-actuated, DPI = dry powder inhaler.',
     },
     {
       type: 'table',
