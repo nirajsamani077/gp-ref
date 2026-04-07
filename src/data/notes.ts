@@ -44,6 +44,7 @@ import { asthmaDiagnosis }       from '../notes/asthmaDiagnosis'
 import { asthmaAdult }           from '../notes/asthmaAdult'
 import { asthmaChild }           from '../notes/asthmaChild'
 import { asthmaEmergency }       from '../notes/asthmaEmergency'
+import { acuteTesticularPain }   from '../notes/acuteTesticularPain'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -93,4 +94,5 @@ export const NOTES: Note[] = [
   asthmaAdult,
   asthmaChild,
   asthmaEmergency,
+  acuteTesticularPain,
 ].map(enrichBody)
