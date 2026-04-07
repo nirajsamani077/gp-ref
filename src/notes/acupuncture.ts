@@ -11,7 +11,7 @@ export const acupuncture: Note = {
   content: [
     {
       type: 'image',
-      src: '/images/acupuncture.avif',
+      src: '/images/acupuncture.jpg',
       alt: 'Acupuncture needles in skin',
       caption: 'Traditional acupuncture — fine needles inserted at specific points, left in situ for up to 30 minutes',
     },
