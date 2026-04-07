@@ -80,9 +80,9 @@ export const asthmaAdult: Note = {
     },
     {
       type: 'image',
-      src: '/images/inhaler-pictures.jpeg',
-      alt: 'Common inhaler device types — Easyhaler, Turbohaler, NEXThaler, Ellipta, pMDI',
-      caption: 'Inhaler devices: DPI (dry powder) preferred over pMDI for lower carbon footprint. Requires adequate inspiratory flow — screen with quick deep breath over 3 seconds.',
+      src: '/images/inhaler-devices.jpg',
+      alt: 'Inhaler formulary table — ICS, ICS/LABA, ICS/LABA/LAMA devices by DPI and MDI',
+      caption: 'Local inhaler formulary: ICS, ICS/LABA, and triple therapy options grouped by device type (DPI preferred, low carbon footprint symbol shown). SABA choices at bottom. Prescribe Aerochamber Plus spacer with all MDIs.',
     },
     {
       type: 'table',
