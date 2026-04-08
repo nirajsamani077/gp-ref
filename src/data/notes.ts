@@ -47,6 +47,10 @@ import { asthmaEmergency }       from '../notes/asthmaEmergency'
 import { acuteTesticularPain }   from '../notes/acuteTesticularPain'
 import { acutelyDisturbedPerson } from '../notes/acutelyDisturbedPerson'
 import { adrenalInsufficiency }   from '../notes/adrenalInsufficiency'
+import { diabetesDiagnosis }      from '../notes/diabetesDiagnosis'
+import { diabetesT2DM }           from '../notes/diabetesT2DM'
+import { diabetesT1DM }           from '../notes/diabetesT1DM'
+import { diabeticComplications }  from '../notes/diabeticComplications'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -99,4 +103,8 @@ export const NOTES: Note[] = [
   acuteTesticularPain,
   acutelyDisturbedPerson,
   adrenalInsufficiency,
+  diabetesDiagnosis,
+  diabetesT2DM,
+  diabetesT1DM,
+  diabeticComplications,
 ].map(enrichBody)
