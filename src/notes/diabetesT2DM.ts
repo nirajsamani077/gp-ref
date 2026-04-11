@@ -6,9 +6,74 @@ export const diabetesT2DM: Note = {
   subtitle: 'NICE 2026 algorithm, metformin, SGLT2i, GLP-1, DPP4i, insulin, targets & sick day rules',
   tags: ['endocrinology'],
 
-  body: 'type 2 diabetes T2DM management NICE 2026 NG28 metformin SGLT2 inhibitor dapagliflozin empagliflozin canagliflozin GLP-1 semaglutide liraglutide tirzepatide Mounjaro Ozempic Wegovy dulaglutide Trulicity DPP4 inhibitor sitagliptin alogliptin gliptin sulfonylurea gliclazide pioglitazone insulin HbA1C target QRISK cardiovascular renal CKD heart failure obesity ASCVD frailty early onset diabetes sick day rules SADMAN metformin MR Sukkarto Forxiga Jardiance statin atorvastatin BP ACE ARB lipids weight loss bariatric surgery',
+  body: 'type 2 diabetes T2DM management NICE 2026 NG28 metformin SGLT2 inhibitor dapagliflozin empagliflozin canagliflozin GLP-1 semaglutide liraglutide tirzepatide Mounjaro Ozempic Wegovy dulaglutide Trulicity DPP4 inhibitor sitagliptin alogliptin gliptin sulfonylurea gliclazide pioglitazone insulin HbA1C target QRISK cardiovascular renal CKD heart failure obesity ASCVD frailty early onset diabetes sick day rules SADMAN metformin MR Sukkarto Forxiga Jardiance statin atorvastatin BP ACE ARB lipids weight loss bariatric surgery remission DiRECT path to remission very low calorie diet VLCD',
 
   content: [
+    {
+      type: 'heading',
+      level: 2,
+      text: 'Diet, Lifestyle & Remission',
+    },
+    {
+      type: 'image',
+      src: '/images/unwin-sugar-chart.jpg',
+      alt: 'Unwin glycaemic index sugar chart — how foods affect blood glucose compared to teaspoons of sugar',
+      caption: 'Unwin sugar equivalence charts: shows how common foods (cereals, bread, rice, pasta, fruit) affect blood glucose relative to teaspoons of table sugar. Useful patient education tool for low-carb dietary counselling.',
+    },
+    {
+      type: 'list',
+      items: [
+        'Low-carbohydrate and Mediterranean diets have best evidence for glucose reduction and sustainability',
+        'Simple calorie restriction has most evidence overall but long-term adherence is the challenge',
+        'Intermittent fasting (16:8 or 5:2) — emerging evidence; discuss individually',
+        'Avoid liquid calories — alcohol (especially beer), fruit juice, sugary drinks raise glucose rapidly',
+        'Exercise (the 4 Ss): Sit less, Step more (5–10k steps), Sweat (aerobic = improves insulin sensitivity), Strength training (muscle stores glucose as glycogen)',
+        'Sleep: poor sleep worsens insulin resistance — underrecognised',
+        'Weight management: refer if BMI >30 (>27.5 BAME). GLP-1 or tirzepatide first-line pharmacological option. Bariatric surgery most effective (40% T2DM remission) — refer if BMI >35, consider at BMI >30',
+      ],
+    },
+
+    {
+      type: 'heading',
+      level: 3,
+      text: 'NHS Path to Remission (DiRECT Trial)',
+    },
+    {
+      type: 'callout',
+      variant: 'info',
+      title: 'T2DM Remission — Definition & Criteria',
+      items: [
+        'Remission = HbA1C <48 mmol/mol sustained for ≥3 months WITHOUT any diabetes medication',
+        'DiRECT trial (Diabetes Remission Clinical Trial): 800 kcal/day very low calorie diet (VLCD) for 12 weeks → 46% in remission at 1 year; 36% at 2 years',
+        'Key driver is weight loss — >10 kg associated with higher rates of remission; >15 kg loss associated with ~80% remission rate in the trial',
+        'Mechanism: weight loss reduces intra-hepatic and intra-pancreatic fat → restores first-phase insulin secretion and hepatic insulin sensitivity',
+      ],
+    },
+    {
+      type: 'table',
+      headers: ['Element', 'Detail'],
+      rows: [
+        ['Eligibility', 'T2DM diagnosed within last 6 years (longer duration reduces success — beta cell reserve diminished). BMI 27–45 kg/m² (>25 in South Asian/BAME). Not on insulin. Clinically stable. No recent major CV event (<3 months)'],
+        ['VLCD phase (weeks 1–12)', '800–900 kcal/day. Total diet replacement (soups, shakes, bars — e.g. Cambridge Weight Plan, Exante). All food-based eating replaced. Support from dietitian or structured programme'],
+        ['Medication during VLCD', 'STOP sulfonylureas and insulin BEFORE starting (hypo risk). STOP SGLT2i (DKA risk on VLCD). Continue metformin (reduces lactic acidosis risk at low calorie intake). Monitor BMs closely'],
+        ['Reintroduction phase (weeks 12–16)', 'Structured reintroduction of food over 4–8 weeks. Low carbohydrate approach preferred. Regular BM and HbA1C monitoring'],
+        ['Maintenance phase', 'Monthly support (face-to-face or digital). Continued physical activity. Weight management. HbA1C every 3–6 months. Relapse common — manage as recurrence, not failure'],
+        ['NHS Referral pathway', 'NHS Low Calorie Diet Programme (LCDP) commissioned in many ICBs. Refer via GP system. Check local formulary for available tier. Also refer to Healthier You NHS DPP for prediabetes/early T2DM'],
+        ['Remission monitoring', 'If HbA1C rises back to ≥48 off medication: diabetes has returned. Restart medications and lifestyle support. May still delay complications even if not sustained'],
+      ],
+      caption: 'Path to Remission is most successful when T2DM is recent (<6 years), patient is motivated, and support structure is in place. It is a valid and evidence-based treatment goal — not a niche or fringe approach.',
+    },
+
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG28 T2DM Guideline (Feb 2026)', url: 'https://www.nice.org.uk/guidance/ng28' },
+        { label: 'SSOT Formulary — Diabetes', url: 'https://www.staffordshiremedicinesoptimisation.com/' },
+        { label: 'Diabetes UK — Patient Resources', url: 'https://www.diabetes.org.uk' },
+        { label: 'Low Carb Diet Leaflet — Unwin (PDF)', url: '/pdfs/low-carb-diet-unwin.pdf' },
+      ],
+    },
+
     {
       type: 'heading',
       level: 2,
@@ -158,10 +223,41 @@ export const diabetesT2DM: Note = {
       type: 'table',
       headers: ['Drug', 'Dose', 'Key points'],
       rows: [
-        ['Gliclazide (preferred SU)', '40–80mg OM (max 160mg BD). Start low. MR formulation available (30–120mg OD)', 'Risk of hypoglycaemia especially at higher doses and in CKD. Increase monitoring. Do not use in eGFR <30 (accumulates)'],
+        [
+          'Gliclazide (preferred SU)',
+          'Standard release: Start 40mg OD with breakfast. Usual effective dose 80mg OD. Increase to 80mg BD if needed. Max 160mg BD (320mg/day total).\nModified release (MR): Start 30mg OD with breakfast → 60mg OD → 90mg OD → 120mg OD (max). Take at same time each day with breakfast.',
+          'HYPOGLYCAEMIA RISK — highest of oral agents. Especially at doses >80mg, eGFR <45, elderly patients, irregular meals, alcohol. Always counsel: carry fast-acting glucose (e.g. 3–4 Glucotabs or 150ml fruit juice), recognise symptoms (sweating, shakiness, confusion, palpitations), do not skip meals.\nMonitoring: HbA1C at 3 months after dose change then 6-monthly. BM diary if on higher doses. Annual U&E (accumulates in renal impairment — avoid if eGFR <30; use with caution and reduced dose eGFR 30–45). Review if patient loses weight, reduces food intake, or has intercurrent illness (dose reduction often needed).\nSADMAN: STOP gliclazide if vomiting or not eating (hypo risk).',
+        ],
         ['Glibenclamide / glipizide', 'Avoid in elderly — long half-life, high hypo risk', 'Not recommended in UK for new starts'],
         ['Pioglitazone', '15mg OD increasing to 30–45mg OD', 'Useful in insulin resistance / high insulin doses not working. Avoid in HF (fluid retention), bladder cancer (monitor haematuria), osteoporosis, macular oedema. Can use in renal failure'],
         ['Acarbose', '50mg TDS with meals, increase to 100mg TDS', 'GI side effects limit use. Occasionally useful for postprandial spikes. Rarely used in UK'],
+      ],
+    },
+    {
+      type: 'callout',
+      variant: 'warning',
+      title: 'Gliclazide — Patient Counselling & Hypo Risk',
+      items: [
+        'Always take with breakfast — taking on an empty stomach or skipping breakfast significantly increases hypo risk',
+        'Hypo symptoms to warn about: sweating, shaking/tremor, palpitations, dizziness, pallor, hunger, difficulty concentrating, irritability, confusion',
+        'Action if hypo: take 15–20g fast-acting glucose immediately (3–4 Glucotabs, 150ml fruit juice or non-diet fizzy drink, 5–6 glucose sweets). Recheck BM after 15 min. Repeat if still <4. Follow with slow-release carbohydrate (toast, biscuit)',
+        'High-risk situations for hypo: dose >80mg, eGFR <45 (drug accumulates), age >70, weight loss or reduced appetite, alcohol, irregular meals, vomiting, intercurrent illness, exercise without additional food',
+        'Always carry fast-acting glucose — at work, in the car, at the gym. Advise family/carers to recognise symptoms',
+        'Sick day rules: STOP gliclazide if vomiting or unable to eat — hypo risk is high. Restart when eating normally',
+        'Reduce dose proactively when: patient loses significant weight, starts GLP-1 RA, reduces carbohydrate intake substantially, develops AKI or eGFR worsens',
+      ],
+    },
+    {
+      type: 'callout',
+      variant: 'info',
+      title: 'Gliclazide — DVLA & Driving Rules',
+      items: [
+        'Gliclazide carries a risk of hypoglycaemia and therefore has DVLA implications (unlike metformin, SGLT2i, DPP4i)',
+        'Group 1 licence (car/motorcycle): Must not drive if BM <4 mmol/L. If hypo occurs while driving — stop safely, remove keys, move to passenger seat, treat hypo, wait 45 minutes after BM >5 before driving again',
+        'Must inform DVLA if: experiencing hypoglycaemic episodes requiring third-party assistance, or if hypo awareness is impaired',
+        'Group 2 licence (HGV/bus): Stricter rules — DVLA must be notified when starting a sulfonylurea. No hypo requiring third-party assistance in past 12 months. Must check BM before every drive and every 2 hours on longer journeys. If BM <5: do not drive; treat and recheck',
+        'Advise all patients on gliclazide to carry fast-acting glucose in the vehicle at all times',
+        'Document driving discussion in notes — especially at prescription or dose change',
       ],
     },
 
@@ -171,16 +267,36 @@ export const diabetesT2DM: Note = {
       text: 'Insulin in T2DM',
     },
     {
-      type: 'list',
-      items: [
-        'Consider insulin when: HbA1C >86 mmol/mol despite triple therapy, symptomatic hyperglycaemia, GLP-1 unavailable/contraindicated, rapid glycaemic reduction needed',
-        'First-line T2DM insulin: NPH intermediate-acting (Humulin I or Insulatard) OD or BD — fewer hypos and less weight gain vs analogues. OR premixed ordinary insulin (Humulin M3 BD)',
-        'Second-line: long-acting analogues (Lantus/glargine, Levemir/detemir, Toujeo 300 units/ml OD) or premixed analogues (Novomix 30, Humalog Mix)',
-        'Ultra-long acting (Tresiba/degludec 300 units/ml) — specialist initiation only',
-        'Starting dose: typically 10 units NPH at bedtime; titrate by 2 units every 3 days based on fasting glucose',
-        'Always continue metformin with insulin unless contraindicated (reduces insulin dose needed)',
-        'Counsel: injection technique, site rotation to avoid lipodystrophy, hypo recognition and treatment, sick day rules, driving rules',
+      type: 'table',
+      headers: ['Stage', 'Insulin / Regimen', 'Starting Dose & Titration'],
+      rows: [
+        [
+          'Step 1 — Basal insulin (first-line in T2DM)',
+          'NPH intermediate-acting: Humulin I or Insulatard OD at bedtime (preferred — cheaper, fewer hypos cf. analogues in T2DM). Alternative: Long-acting analogue (Lantus/glargine OD, Levemir/detemir OD or BD) if recurrent nocturnal hypos on NPH.',
+          'Start 10 units at bedtime. Titrate: increase by 2 units every 3 days if fasting BM consistently >7 mmol/L. Target fasting BM 5–7 mmol/L. Review at 4 weeks. Always continue metformin.',
+        ],
+        [
+          'Step 2 — Split to BD if needed',
+          'NPH BD (Humulin I or Insulatard morning + evening). Or switch to premixed (Humulin M3 BD — 30% short / 70% intermediate).',
+          'Split to BD when: total daily dose (TDD) reaches 30 units on once-daily, OR fasting BM controlled but postprandial BMs high. Typically start as 2/3 dose in morning, 1/3 at night. Monitor pre-meal BMs.',
+        ],
+        [
+          'Step 3 — Premixed analogue (if BD NPH insufficient)',
+          'Novomix 30 BD (30% aspart + 70% protamine aspart). Humalog Mix 25 BD. Usually specialist-initiated.',
+          'BD before meals. Doses titrated by pre-meal BM targets. More flexible mealtimes than NPH.',
+        ],
+        [
+          'Step 4 — Basal-bolus (complex T2DM)',
+          'Long-acting basal (Lantus/Levemir OD or BD) + rapid-acting bolus pre-meal (NovoRapid/Humalog). Specialist initiation recommended.',
+          'Basal dose: start 10 units OD. Bolus dose: 4 units per meal initially, or carb-count based (1 unit per 10–15g carbohydrate). Correction dose = TDD ÷ 10 per 3 mmol/L above target BM.',
+        ],
+        [
+          'Analogue switching criteria',
+          'Switch NPH to long-acting analogue (Lantus, Levemir, Toujeo) when: ≥2 documented nocturnal hypos on NPH; patient needs flexibility in injection timing; HbA1C not at target despite titrated NPH.',
+          'Lantus (glargine U100): OD at same time each day. Toujeo (glargine U300): OD — less nocturnal hypo than U100. Tresiba (degludec): OD flexible timing, 36h+ duration — specialist-initiated only.',
+        ],
       ],
+      caption: 'Always continue metformin unless contraindicated — reduces total insulin dose requirement. Counsel: injection technique (90° angle, SC not IM), site rotation (abdomen/thigh/upper arm), lipodystrophy avoidance, hypo recognition and glucagon kit. Driving rules apply (see T1DM note). Review insulin regularly — many T2DM patients on high doses (>80 units) may benefit from GLP-1 RA addition to reduce insulin requirement.',
     },
     {
       type: 'image',
@@ -192,6 +308,23 @@ export const diabetesT2DM: Note = {
       type: 'linkrow',
       links: [
         { label: 'Insulin Guidelines (Adults & Children) PDF', url: '/pdfs/insulin-guidelines.pdf' },
+      ],
+    },
+    {
+      type: 'callout',
+      variant: 'warning',
+      title: 'Insulin in T2DM — Patient Counselling',
+      items: [
+        'Injection technique: 90° angle into subcutaneous tissue (pinch skin in lean patients). Use short needles (4–6mm). Avoid injecting through clothing',
+        'Site rotation: rotate systematically within each site (abdomen, thigh, upper arm, buttock). Never inject into same spot repeatedly — causes lipodystrophy (lumpy/hard tissue) which impairs absorption and causes erratic BMs',
+        'Inspect injection sites at every review — lipodystrophy is common and often missed. Advise patient to avoid affected areas',
+        'Storage: unopened insulin in fridge (2–8°C). In-use pen at room temperature for up to 28–30 days (varies by product). Do not freeze. Discard cloudy or discoloured insulin',
+        'Hypo recognition and treatment: same as gliclazide counselling above. All insulin-treated patients should have glucagon kit (GlucaGen IM 1mg or Baqsimi nasal glucagon) — train patient and family in use',
+        'Sick day rules: NEVER stop insulin even if not eating. Continue basal; reduce or omit bolus if not eating. Monitor BMs every 4 hours. Increase corrective doses if BMs rising. Contact GP or diabetes team if ketones elevated',
+        'Alcohol: can cause delayed hypoglycaemia hours later — monitor overnight BMs. Always eat carbohydrate with alcohol',
+        'Exercise: can lower BMs significantly for up to 24 hours. May need to reduce insulin dose or eat additional carbohydrate before/after activity',
+        'Driving: insulin carries DVLA requirements — see T1DM note for full Group 1 and Group 2 rules. Check BM before every drive. Carry fast-acting glucose in vehicle at all times',
+        'When to seek urgent help: BM consistently >14 despite correction doses, vomiting with elevated BMs, blood ketones >1 mmol/L, or symptoms of DKA (vomiting, abdominal pain, breathlessness)',
       ],
     },
 
@@ -232,39 +365,6 @@ export const diabetesT2DM: Note = {
         ['GLP-1 RAs', 'If vomiting/not tolerating: withhold. Risk of dehydration. Monitor closely'],
       ],
       caption: 'SADMAN = Sulfonylureas, ACE/ARBs, Diuretics, Metformin, NSAIDs, SGLT2i — all hold if vomiting/dehydrated. Increase BM monitoring to every 4 hours. Increase fluid intake. Monitor ketones.',
-    },
-
-    {
-      type: 'heading',
-      level: 2,
-      text: 'Diet & Lifestyle',
-    },
-    {
-      type: 'image',
-      src: '/images/unwin-sugar-chart.jpg',
-      alt: 'Unwin glycaemic index sugar chart — how foods affect blood glucose compared to teaspoons of sugar',
-      caption: 'Unwin sugar equivalence charts: shows how common foods (cereals, bread, rice, pasta, fruit) affect blood glucose relative to teaspoons of table sugar. Useful patient education tool for low-carb dietary counselling.',
-    },
-    {
-      type: 'list',
-      items: [
-        'Low-carbohydrate and Mediterranean diets have best evidence for glucose reduction and sustainability',
-        'Simple calorie restriction has most evidence overall but long-term adherence is the challenge',
-        'Intermittent fasting (16:8 or 5:2) — emerging evidence; discuss individually',
-        'Avoid liquid calories — alcohol (especially beer), fruit juice, sugary drinks raise glucose rapidly',
-        'Exercise (the 4 Ss): Sit less, Step more (5–10k steps), Sweat (aerobic = improves insulin sensitivity), Strength training (muscle stores glucose as glycogen)',
-        'Sleep: poor sleep worsens insulin resistance — underrecognised',
-        'Weight management: refer if BMI >30 (>27.5 BAME). GLP-1 or tirzepatide first-line pharmacological option. Bariatric surgery most effective (40% T2DM remission) — refer if BMI >35, consider at BMI >30',
-      ],
-    },
-    {
-      type: 'linkrow',
-      links: [
-        { label: 'NICE NG28 T2DM Guideline (Feb 2026)', url: 'https://www.nice.org.uk/guidance/ng28' },
-        { label: 'SSOT Formulary — Diabetes', url: 'https://www.staffordshiremedicinesoptimisation.com/' },
-        { label: 'Diabetes UK — Patient Resources', url: 'https://www.diabetes.org.uk' },
-        { label: 'Low Carb Diet Leaflet — Unwin (PDF)', url: '/pdfs/low-carb-diet-unwin.pdf' },
-      ],
     },
   ],
 }
