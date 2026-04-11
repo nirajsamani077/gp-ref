@@ -15,6 +15,12 @@ export const adhdChild: Note = {
       text: 'Presentation & Diagnostic Criteria',
     },
     {
+      type: 'image',
+      src: '/images/adhd-symptoms-cards.jpeg',
+      alt: 'ADHD core symptom domains — impulsivity, inattention, and hyperactivity with key features listed',
+      caption: 'The three core ADHD symptom domains. All must be persistent (≥6 months), pervasive (≥2 settings), present before age 12, and causing significant functional impairment.',
+    },
+    {
       type: 'para',
       text: 'ADHD prevalence is ~2.5–5% in children. It is more commonly diagnosed in males (3:1). Most diagnoses are made between ages 3–7. Symptoms must be present in at least two settings (home, school, social) and cause significant functional impairment.',
     },
@@ -75,6 +81,12 @@ export const adhdChild: Note = {
       type: 'heading',
       level: 2,
       text: 'Referral Pathways — Children (South Staffordshire MPFT)',
+    },
+    {
+      type: 'image',
+      src: '/images/adhd-neurodev-referral-mpft.png',
+      alt: 'MPFT neurodevelopmental referrals page — ADHD and autism referral pathways for children and young people',
+      caption: 'MPFT integrated neurodevelopmental referral form — covers ADHD (Community Paediatrics age 6–11; CAMHS age 11–18) and autism (CYP Autism Service). School involvement is strongly recommended and usually required.',
     },
     {
       type: 'callout',
@@ -164,6 +176,12 @@ export const adhdChild: Note = {
       type: 'heading',
       level: 2,
       text: 'Medications — Children & Young People',
+    },
+    {
+      type: 'image',
+      src: '/images/adhd-medications-table.jpeg',
+      alt: 'ADHD medications guide for healthcare professionals — methylphenidate, lisdexamfetamine, guanfacine and atomoxetine with doses and titration',
+      caption: 'ADHD medications reference: stimulant medications (MPH-based: Medikinet, Ritalin, Concerta XL; amphetamine-based: Elvanse) and non-stimulants (Guanfacine/Intuniv, Atomoxetine/Strattera). IR:MR ratio determines timing and duration of effect.',
     },
     {
       type: 'para',

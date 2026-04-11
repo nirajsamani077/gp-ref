@@ -15,6 +15,12 @@ export const adhdAdult: Note = {
       text: 'Diagnosis & NICE Criteria (NG87)',
     },
     {
+      type: 'image',
+      src: '/images/adhd-symptoms-cards.jpeg',
+      alt: 'ADHD core symptom domains — impulsivity, inattention, and hyperactivity with key features listed',
+      caption: 'The three core ADHD symptom domains. In adults ≥5 symptoms per domain (not 6) are required. Symptoms must be persistent, pervasive (≥2 settings), onset before age 12, and cause moderate-severe functional impairment.',
+    },
+    {
       type: 'para',
       text: 'ADHD affects ~5% of adults. It is a valid neurodevelopmental condition with genetic and environmental contributions. Most patients will self-present requesting assessment — consider ADHD when there is significant impact on work, relationships, self-esteem, or mental health.',
     },
@@ -171,6 +177,12 @@ export const adhdAdult: Note = {
       type: 'heading',
       level: 2,
       text: 'Medication Monitoring — GP Role Under Shared Care',
+    },
+    {
+      type: 'image',
+      src: '/images/adhd-medications-table.jpeg',
+      alt: 'ADHD medications guide for healthcare professionals — methylphenidate, lisdexamfetamine, guanfacine and atomoxetine with doses and titration',
+      caption: 'Full ADHD medication reference including IR:MR ratios, titration schedules, equivalent doses and maximum daily doses. MPH = methylphenidate; IR = immediate release; MR = modified release.',
     },
     {
       type: 'table',
