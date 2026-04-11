@@ -3,6 +3,8 @@ import FenoCalculator from '../calculators/FenoCalculator'
 import SixCitCalculator from '../calculators/SixCitCalculator'
 import Fib4Calculator from '../calculators/Fib4Calculator'
 import Qrisk3Calculator from '../calculators/Qrisk3Calculator'
+import Cha2ds2VascCalculator from '../calculators/Cha2ds2VascCalculator'
+import OrbitAfCalculator from '../calculators/OrbitAfCalculator'
 
 interface Props {
   highlightedId?: string
@@ -39,6 +41,18 @@ const ENTRIES: CalcEntry[] = [
     title: 'FIB-4 Index — Liver Fibrosis',
     subtitle: 'Fibrosis staging in NAFLD, MASLD and liver disease — Age × AST ÷ (Platelets × √ALT)',
     component: <Fib4Calculator />,
+  },
+  {
+    id: 'cha2ds2vasc',
+    title: 'CHA₂DS₂-VASc — AF Stroke Risk',
+    subtitle: 'Annual stroke risk in atrial fibrillation · Anticoagulation threshold · DOAC indication',
+    component: <Cha2ds2VascCalculator />,
+  },
+  {
+    id: 'orbit',
+    title: 'ORBIT-AF — Bleeding Risk',
+    subtitle: 'Major bleeding risk before starting anticoagulation in AF · Identifies modifiable risk factors',
+    component: <OrbitAfCalculator />,
   },
 ]
 

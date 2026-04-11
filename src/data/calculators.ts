@@ -29,4 +29,16 @@ export const CALCULATORS: CalculatorMeta[] = [
     searchText:
       'FIB4 FIB-4 fibrosis index liver fibrosis NAFLD MASLD ARLD alcohol fatty liver ALT AST platelets age cirrhosis advanced fibrosis ELF elastography fibroscan gastroenterology hepatology',
   },
+  {
+    id: 'cha2ds2vasc',
+    name: 'CHA₂DS₂-VASc — AF Stroke Risk',
+    searchText:
+      'CHA2DS2VASc CHA2DS2-VASc stroke risk atrial fibrillation AF flutter anticoagulation DOAC apixaban edoxaban rivaroxaban dabigatran warfarin CHF heart failure hypertension age diabetes TIA thromboembolism vascular disease female sex',
+  },
+  {
+    id: 'orbit',
+    name: 'ORBIT-AF — Bleeding Risk',
+    searchText:
+      'ORBIT ORBIT-AF bleeding risk atrial fibrillation anticoagulation haemoglobin haematocrit anaemia renal function eGFR antiplatelet NSAID age bleeding history major bleed intracranial haemorrhage',
+  },
 ]

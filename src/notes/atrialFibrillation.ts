@@ -141,7 +141,6 @@ export const atrialFibrillation: Note = {
       ]
     },
 
-    { type: 'calculator', id: 'chadsvasc' },
 
     { type: 'callout', variant: 'info', title: 'Anticoagulation Decision \u2014 Key Points', items: [
       'Applies to all AF types including PAF and post-cardioversion',
@@ -180,7 +179,6 @@ export const atrialFibrillation: Note = {
       ]
     },
 
-    { type: 'calculator', id: 'orbit' },
 
     { type: 'callout', variant: 'warning', title: 'High ORBIT/HAS-BLED Score', items: [
       'High bleeding score is NOT a reason to withhold anticoagulation alone',

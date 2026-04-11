@@ -6,7 +6,6 @@ export type ContentBlock =
   | { type: 'image'; src: string; alt: string; caption?: string }
   | { type: 'callout'; variant: 'info' | 'warning' | 'tip' | 'danger'; title: string; items: string[] }
   | { type: 'linkrow'; links: Array<{ label: string; url: string }> }
-  | { type: 'calculator'; id: 'chadsvasc' | 'orbit' }
 
 export interface Note {
   id: string
