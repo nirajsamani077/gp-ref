@@ -303,6 +303,80 @@ export const atrialFibrillation: Note = {
       'Some patients need amiodarone for 3 months post-ablation to maintain SR',
     ]},
 
+    // ── Atrial Flutter ─────────────────────────────────────────────
+    { type: 'heading', level: 2, text: 'Atrial Flutter' },
+
+    { type: 'para', text: 'Atrial flutter is a macro-re-entrant atrial arrhythmia with a characteristic sawtooth pattern on ECG. It is closely related to AF and the two often coexist or convert between each other. Management differs significantly \u2014 catheter ablation is first-line for flutter (unlike AF where it is second-line).' },
+
+    { type: 'image', src: '/images/af-flutter-ecg.webp', alt: 'ECG strip showing atrial flutter with 2:1, 3:1 and 4:1 AV block conduction ratios at 25mm/sec', caption: 'Atrial flutter with variable AV block: 2:1 block gives ventricular rate ~150bpm; 3:1 gives ~100bpm; 4:1 gives ~75bpm. Sawtooth flutter waves best seen in inferior leads and V1.' },
+
+    { type: 'heading', level: 3, text: 'ECG Features of Atrial Flutter' },
+    { type: 'table',
+      headers: ['Feature', 'Description'],
+      rows: [
+        ['Atrial rate', '~300bpm (range 250\u2013350bpm); regular sawtooth flutter waves'],
+        ['Sawtooth pattern', 'Negative flutter waves best seen in leads II, III, aVF; positive in V1; no isoelectric baseline between waves'],
+        ['Ventricular rate (2:1 block)', '~150bpm \u2014 regular tachycardia at exactly 150bpm = flutter until proven otherwise'],
+        ['Ventricular rate (3:1 block)', '~100bpm \u2014 may appear deceptively normal; flutter waves between QRS complexes'],
+        ['Ventricular rate (4:1 block)', '~75bpm \u2014 can be missed clinically; look carefully for flutter waves'],
+        ['Variable block', 'Irregular ventricular rhythm if AV block ratio changes \u2014 can mimic AF'],
+        ['QRS morphology', 'Typically narrow unless bundle branch block or aberrant conduction'],
+      ]
+    },
+
+    { type: 'callout', variant: 'tip', title: 'ECG Tips \u2014 Spotting Flutter', items: [
+      'Regular tachycardia at ~150bpm: always suspect flutter; look for sawtooth waves \u201chidden\u201d in T waves or QRS complexes',
+      'Use adenosine 6mg IV (hospital setting) to temporarily increase AV block and reveal flutter waves \u2014 for diagnosis only, not treatment',
+      'Flutter waves are usually negative (inverted) in inferior leads (II, III, aVF); positive in V1',
+      'If flutter waves not obvious: try calipers at 300bpm spacing \u2014 every other wave may be partially buried in QRS/T',
+      'Variable block (2:1 then 3:1 then 4:1) creates an irregular rhythm which can be mistaken for AF',
+    ]},
+
+    { type: 'heading', level: 3, text: 'Types of Atrial Flutter' },
+    { type: 'table',
+      headers: ['Type', 'Circuit', 'Features'],
+      rows: [
+        ['Typical (type I)', 'Counter-clockwise re-entry around tricuspid valve via cavotricuspid isthmus (CTI)', 'Most common; classic sawtooth in inferior leads; highly amenable to catheter ablation (CTI ablation)'],
+        ['Reverse typical (type I)', 'Clockwise re-entry through same CTI circuit', 'Positive flutter waves in inferior leads; still CTI-dependent; ablation effective'],
+        ['Atypical (type II)', 'Re-entry circuit outside CTI (e.g. around pulmonary veins, mitral annulus, scar tissue)', 'Less common; often post-cardiac surgery or ablation; more complex ablation required'],
+      ]
+    },
+
+    { type: 'heading', level: 3, text: 'Anticoagulation in Atrial Flutter' },
+    { type: 'callout', variant: 'info', title: 'Same CHA\u2082DS\u2082-VASc Approach as AF', items: [
+      'Stroke risk in atrial flutter is comparable to AF \u2014 anticoagulate using the same CHA\u2082DS\u2082-VASc thresholds',
+      'DOACs are first-line; same dose reduction criteria and monitoring as for AF (see DOAC section above)',
+      'Anticoagulation required for minimum 4 weeks post-cardioversion regardless of flutter duration; or 3 weeks before if >48h duration',
+      'If planning catheter ablation: continue anticoagulation for at least 8 weeks post-procedure',
+      'Do NOT withhold anticoagulation assuming flutter is \u201cless risky\u201d than AF',
+    ]},
+
+    { type: 'heading', level: 3, text: 'Rate Control in Atrial Flutter' },
+    { type: 'para', text: 'Rate control is harder to achieve in atrial flutter than in AF. The strong and regular re-entrant circuit resists drug-induced slowing of AV nodal conduction. Definitive treatment with ablation is preferred over long-term rate control.' },
+    { type: 'list', items: [
+      'Beta-blockers (bisoprolol, atenolol) and rate-limiting CCBs (diltiazem, verapamil): less effective than in AF; often cannot achieve adequate rate control at tolerable doses',
+      'Digoxin: similarly limited effectiveness in flutter; not first-line',
+      'High-dose drug combinations may be needed but carry toxicity risk \u2014 ablation is preferable',
+      'If haemodynamically unstable: same-day DC cardioversion (synchronised); usually reverts quickly with low energy (50\u2013100J)',
+      'If rate can be controlled: proceed to definitive ablation electively',
+    ]},
+
+    { type: 'heading', level: 3, text: 'Rhythm Control \u2014 Catheter Ablation (First-line for Flutter)' },
+    { type: 'callout', variant: 'info', title: 'CTI Ablation \u2014 Highly Effective', items: [
+      'Cavotricuspid isthmus (CTI) ablation is first-line definitive treatment for typical atrial flutter',
+      'Success rate >95% for typical flutter; low recurrence rate',
+      'Preferred over long-term antiarrhythmic drug therapy',
+      'Refer cardiology / electrophysiology for all patients with symptomatic or recurrent flutter',
+      'Atypical flutter: more complex circuits; discuss with specialist; may need different approach',
+    ]},
+    { type: 'list', items: [
+      'DC cardioversion (DCCV): effective for acute termination; flutter often reverts with low energy (50\u2013100J synchronised)',
+      'Chemical cardioversion: IV flecainide or amiodarone (hospital); note flecainide can paradoxically accelerate AV conduction in flutter \u2014 give a rate-limiting agent first',
+      'Antiarrhythmics (amiodarone, flecainide, dronedarone): less effective for flutter than for AF; ablation preferred for long-term management',
+      'Post-ablation: continue anticoagulation for at least 8 weeks; then review CHA\u2082DS\u2082-VASc',
+      'After successful ablation some patients develop AF \u2014 ongoing monitoring required',
+    ]},
+
     // ── Paroxysmal AF ──────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Paroxysmal AF (PAF)' },
 
