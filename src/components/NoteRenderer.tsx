@@ -213,6 +213,165 @@ export default function NoteRenderer({ blocks, searchQuery }: Props) {
   )
 }
 
+// ── CHA₂DS₂-VASc Calculator ──────────────────────────────────────────────────
+function ChadsvascCalculator() {
+  const [checked, setChecked] = useState<Record<string, boolean>>({
+    c: false, h: false, a2: false, d: false, s2: false, v: false, a: false, sc: false,
+  })
+
+  const toggle = (key: string) => {
+    setChecked(prev => {
+      const next = { ...prev, [key]: !prev[key] }
+      if (key === 'a2' && next.a2) next.a = false
+      if (key === 'a'  && next.a)  next.a2 = false
+      return next
+    })
+  }
+
+  const score =
+    (checked.c  ? 1 : 0) + (checked.h  ? 1 : 0) + (checked.a2 ? 2 : 0) +
+    (checked.d  ? 1 : 0) + (checked.s2 ? 2 : 0) + (checked.v  ? 1 : 0) +
+    (checked.a  ? 1 : 0) + (checked.sc ? 1 : 0)
+
+  const getResult = () => {
+    if (score === 0) return { text: 'No anticoagulation recommended', rate: '~0%', color: '#276749', bg: '#f0fff4', border: '#9ae6b4' }
+    if (score === 1 && checked.sc && !checked.c && !checked.h && !checked.a2 && !checked.d && !checked.s2 && !checked.v && !checked.a)
+      return { text: 'Female sex only — no anticoagulation', rate: '~0%', color: '#276749', bg: '#f0fff4', border: '#9ae6b4' }
+    if (score === 1)
+      return { text: 'Consider anticoagulation (male, 1 risk factor)', rate: '~1.3%/yr', color: '#744210', bg: '#fffbeb', border: '#fbd38d' }
+    const rates: Record<number, string> = { 2: '~2.2%', 3: '~3.2%', 4: '~4.0%', 5: '~6.7%', 6: '~9.8%', 7: '~9.8%', 8: '~15%', 9: '~15%' }
+    return { text: 'Anticoagulation recommended', rate: `${rates[score] ?? '>10%'}/yr`, color: '#742a2a', bg: '#fff5f5', border: '#feb2b2' }
+  }
+
+  const result = getResult()
+
+  const factors = [
+    { key: 'c',  letter: 'C',   name: 'Congestive heart failure / LV dysfunction',          pts: 1 },
+    { key: 'h',  letter: 'H',   name: 'Hypertension',                                        pts: 1 },
+    { key: 'a2', letter: 'A₂',  name: 'Age ≥75 years',                                       pts: 2 },
+    { key: 'd',  letter: 'D',   name: 'Diabetes mellitus',                                   pts: 1 },
+    { key: 's2', letter: 'S₂',  name: 'Stroke / TIA / systemic thromboembolism (history)',   pts: 2 },
+    { key: 'v',  letter: 'V',   name: 'Vascular disease (prior MI, PAD, aortic plaque)',     pts: 1 },
+    { key: 'a',  letter: 'A',   name: 'Age 65–74 years',                                     pts: 1 },
+    { key: 'sc', letter: 'Sc',  name: 'Sex category: Female',                                pts: 1 },
+  ]
+
+  return (
+    <div data-block style={{ margin: '0 0 16px', border: '1px solid #93c5fd', borderRadius: 10, overflow: 'hidden' }}>
+      <div style={{ backgroundColor: '#1e3a5f', padding: '10px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <span style={{ color: '#fff', fontWeight: 700, fontSize: 13 }}>CHA₂DS₂-VASc Calculator</span>
+        <span style={{ color: '#93c5fd', fontSize: 12 }}>Stroke risk in AF / flutter</span>
+      </div>
+      <div style={{ padding: '10px 14px', display: 'flex', flexDirection: 'column', gap: 5, backgroundColor: '#f8fbff' }}>
+        {factors.map(f => (
+          <button
+            key={f.key}
+            onClick={() => toggle(f.key)}
+            style={{
+              display: 'flex', alignItems: 'center', gap: 10, padding: '7px 11px',
+              border: checked[f.key] ? '2px solid #2b6cb0' : '1px solid #c3d9f0',
+              borderRadius: 8, cursor: 'pointer',
+              backgroundColor: checked[f.key] ? '#dbeafe' : '#fff',
+              textAlign: 'left', transition: 'all 0.12s', width: '100%',
+            }}
+          >
+            <span style={{
+              width: 28, height: 28, borderRadius: 6, flexShrink: 0,
+              backgroundColor: checked[f.key] ? '#2b6cb0' : '#e2e8f0',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              color: checked[f.key] ? '#fff' : '#64748b', fontWeight: 700, fontSize: 11,
+            }}>{f.letter}</span>
+            <span style={{ flex: 1, fontSize: 13, color: '#1a202c', textAlign: 'left' }}>{f.name}</span>
+            <span style={{ fontSize: 13, fontWeight: 700, color: checked[f.key] ? '#2b6cb0' : '#94a3b8', flexShrink: 0 }}>+{f.pts}</span>
+          </button>
+        ))}
+      </div>
+      <div style={{ borderTop: '1px solid #c3d9f0', padding: '12px 16px', display: 'flex', gap: 14, alignItems: 'center', backgroundColor: '#f8fbff' }}>
+        <div style={{ textAlign: 'center', minWidth: 56 }}>
+          <div style={{ fontSize: 36, fontWeight: 800, color: '#1e3a5f', lineHeight: 1 }}>{score}</div>
+          <div style={{ fontSize: 10, color: '#8a9bb0', marginTop: 2, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Score</div>
+        </div>
+        <div style={{ flex: 1, backgroundColor: result.bg, borderRadius: 8, padding: '10px 14px', borderLeft: `4px solid ${result.border}` }}>
+          <div style={{ fontSize: 13, fontWeight: 700, color: result.color }}>{result.text}</div>
+          <div style={{ fontSize: 12, color: result.color, marginTop: 3, opacity: 0.85 }}>Annual stroke risk: {result.rate}</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── ORBIT-AF Calculator ───────────────────────────────────────────────────────
+function OrbitCalculator() {
+  const [checked, setChecked] = useState<Record<string, boolean>>({
+    o: false, r: false, b: false, i: false, t: false,
+  })
+
+  const toggle = (key: string) => setChecked(prev => ({ ...prev, [key]: !prev[key] }))
+
+  const score =
+    (checked.o ? 1 : 0) + (checked.r ? 2 : 0) + (checked.b ? 2 : 0) +
+    (checked.i ? 1 : 0) + (checked.t ? 1 : 0)
+
+  const getResult = () => {
+    if (score <= 2) return { risk: 'Low Risk', rate: '~2.4 bleeds / 100 pt-years', advice: 'Benefits of anticoagulation generally outweigh risk', color: '#276749', bg: '#f0fff4', border: '#9ae6b4' }
+    if (score === 3) return { risk: 'Medium Risk', rate: '~4.7 bleeds / 100 pt-years', advice: 'Address modifiable bleeding risks; monitor closely', color: '#744210', bg: '#fffbeb', border: '#fbd38d' }
+    return { risk: 'High Risk', rate: '~8.1 bleeds / 100 pt-years', advice: 'High score alone should NOT stop anticoagulation — identify & address modifiable risk factors', color: '#742a2a', bg: '#fff5f5', border: '#feb2b2' }
+  }
+
+  const result = getResult()
+
+  const factors = [
+    { key: 'o', letter: 'O', name: 'Older age: >75 years',                                                                              pts: 1 },
+    { key: 'r', letter: 'R', name: 'Reduced Hb / Hct  (Hb <13 g/dL men or <12 g/dL women; Hct <40% men or <36% women)',               pts: 2 },
+    { key: 'b', letter: 'B', name: 'Bleeding history (prior major bleed, intracranial bleed or severe menorrhagia)',                     pts: 2 },
+    { key: 'i', letter: 'I', name: 'Insufficient kidney function: eGFR <60 mL/min/1.73m² or on dialysis',                              pts: 1 },
+    { key: 't', letter: 'T', name: 'Treatment with antiplatelet agents or NSAIDs',                                                      pts: 1 },
+  ]
+
+  return (
+    <div data-block style={{ margin: '0 0 16px', border: '1px solid #fbd38d', borderRadius: 10, overflow: 'hidden' }}>
+      <div style={{ backgroundColor: '#7b341e', padding: '10px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <span style={{ color: '#fff', fontWeight: 700, fontSize: 13 }}>ORBIT-AF Bleeding Risk Calculator</span>
+        <span style={{ color: '#fbd38d', fontSize: 12 }}>Before starting anticoagulation</span>
+      </div>
+      <div style={{ padding: '10px 14px', display: 'flex', flexDirection: 'column', gap: 5, backgroundColor: '#fffdf8' }}>
+        {factors.map(f => (
+          <button
+            key={f.key}
+            onClick={() => toggle(f.key)}
+            style={{
+              display: 'flex', alignItems: 'center', gap: 10, padding: '7px 11px',
+              border: checked[f.key] ? '2px solid #c05621' : '1px solid #fbd38d',
+              borderRadius: 8, cursor: 'pointer',
+              backgroundColor: checked[f.key] ? '#feebc8' : '#fff',
+              textAlign: 'left', transition: 'all 0.12s', width: '100%',
+            }}
+          >
+            <span style={{
+              width: 28, height: 28, borderRadius: 6, flexShrink: 0,
+              backgroundColor: checked[f.key] ? '#c05621' : '#e2e8f0',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              color: checked[f.key] ? '#fff' : '#64748b', fontWeight: 700, fontSize: 11,
+            }}>{f.letter}</span>
+            <span style={{ flex: 1, fontSize: 13, color: '#1a202c', textAlign: 'left' }}>{f.name}</span>
+            <span style={{ fontSize: 13, fontWeight: 700, color: checked[f.key] ? '#c05621' : '#94a3b8', flexShrink: 0 }}>+{f.pts}</span>
+          </button>
+        ))}
+      </div>
+      <div style={{ borderTop: '1px solid #fbd38d', padding: '12px 16px', display: 'flex', gap: 14, alignItems: 'center', backgroundColor: '#fffdf8' }}>
+        <div style={{ textAlign: 'center', minWidth: 56 }}>
+          <div style={{ fontSize: 36, fontWeight: 800, color: '#7b341e', lineHeight: 1 }}>{score}</div>
+          <div style={{ fontSize: 10, color: '#8a9bb0', marginTop: 2, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Score</div>
+        </div>
+        <div style={{ flex: 1, backgroundColor: result.bg, borderRadius: 8, padding: '10px 14px', borderLeft: `4px solid ${result.border}` }}>
+          <div style={{ fontSize: 13, fontWeight: 700, color: result.color }}>{result.risk} — {result.rate}</div>
+          <div style={{ fontSize: 12, color: result.color, marginTop: 3, opacity: 0.85 }}>{result.advice}</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 interface BlockProps {
   block: ContentBlock
   onImageClick: (img: LightboxImage) => void
@@ -302,6 +461,9 @@ function Block({ block, onImageClick, searchQuery }: BlockProps) {
 
     case 'image':
       return <ImageBlock block={block} onImageClick={onImageClick} />
+
+    case 'calculator':
+      return block.id === 'chadsvasc' ? <ChadsvascCalculator /> : <OrbitCalculator />
 
     case 'linkrow':
       return (

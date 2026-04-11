@@ -128,6 +128,8 @@ export const atrialFibrillation: Note = {
       ]
     },
 
+    { type: 'image', src: '/images/af-chadsvasc-table.png', alt: 'CHA2DS2-VASc risk factor scoring table showing each letter, factor and points', caption: 'CHA\u2082DS\u2082-VASc scoring reference' },
+
     { type: 'table',
       caption: 'Anticoagulation decision by CHA\u2082DS\u2082-VASc score',
       headers: ['Score', 'Stroke rate (%/yr)', 'Decision'],
@@ -138,6 +140,8 @@ export const atrialFibrillation: Note = {
         ['\u22652 (or \u22651 in men with another risk factor)', '2.2\u201315%', 'Offer anticoagulation'],
       ]
     },
+
+    { type: 'calculator', id: 'chadsvasc' },
 
     { type: 'callout', variant: 'info', title: 'Anticoagulation Decision \u2014 Key Points', items: [
       'Applies to all AF types including PAF and post-cardioversion',
@@ -165,14 +169,18 @@ export const atrialFibrillation: Note = {
       ]
     },
 
+    { type: 'image', src: '/images/af-orbit-scoring.jpg', alt: 'ORBIT-AF scoring system table showing variables and points for bleeding risk prediction', caption: 'ORBIT-AF scoring reference' },
+
     { type: 'table',
       headers: ['ORBIT Score', 'Bleeding Risk', 'Major bleeds per 100 pt-years'],
       rows: [
-        ['0\u20132', 'Low', '~2%/year'],
-        ['3', 'Medium', '~4%/year'],
-        ['4+', 'High', '~8%/year'],
+        ['0\u20132', 'Low', '~2.4/year'],
+        ['3', 'Medium', '~4.7/year'],
+        ['4+', 'High', '~8.1/year'],
       ]
     },
+
+    { type: 'calculator', id: 'orbit' },
 
     { type: 'callout', variant: 'warning', title: 'High ORBIT/HAS-BLED Score', items: [
       'High bleeding score is NOT a reason to withhold anticoagulation alone',
