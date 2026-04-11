@@ -56,6 +56,7 @@ import { adhdChild }              from '../notes/adhdChild'
 import { scoliosis }              from '../notes/scoliosis'
 import { adultConstipation }      from '../notes/adultConstipation'
 import { palliativeEOL }          from '../notes/palliativeEOL'
+import { atrialFibrillation }     from '../notes/atrialFibrillation'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -117,4 +118,5 @@ export const NOTES: Note[] = [
   scoliosis,
   adultConstipation,
   palliativeEOL,
+  atrialFibrillation,
 ].map(enrichBody)
