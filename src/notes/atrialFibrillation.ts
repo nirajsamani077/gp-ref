@@ -308,6 +308,8 @@ export const atrialFibrillation: Note = {
 
     { type: 'para', text: 'Atrial flutter is a macro-re-entrant atrial arrhythmia with a characteristic sawtooth pattern on ECG. It is closely related to AF and the two often coexist or convert between each other. Management differs significantly \u2014 catheter ablation is first-line for flutter (unlike AF where it is second-line).' },
 
+    { type: 'image', src: '/images/af-flutter-vs-af-diagram.jpg', alt: 'Diagram comparing atrial flutter (single circular re-entrant circuit in right atrium around AV node) versus atrial fibrillation (multiple chaotic wavelets throughout both atria)', caption: 'Flutter vs AF: flutter has one organised circular re-entrant circuit (right atrium, around AV node) producing a regular fast signal. AF has multiple chaotic simultaneous wavelets firing throughout both atria \u2014 explaining why flutter is regular and treatable with ablation, while AF is irregular and harder to cure.' },
+
     { type: 'image', src: '/images/af-flutter-ecg.webp', alt: 'ECG strip showing atrial flutter with 2:1, 3:1 and 4:1 AV block conduction ratios at 25mm/sec', caption: 'Atrial flutter with variable AV block: 2:1 block gives ventricular rate ~150bpm; 3:1 gives ~100bpm; 4:1 gives ~75bpm. Sawtooth flutter waves best seen in inferior leads and V1.' },
 
     { type: 'heading', level: 3, text: 'ECG Features of Atrial Flutter' },
