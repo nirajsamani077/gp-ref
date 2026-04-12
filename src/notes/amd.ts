@@ -16,7 +16,7 @@ export const amd: Note = {
 
     {
       type: 'image',
-      src: '/images/amd-fundus-anatomy.jpg',
+      src: '/images/amd-fundus-anatomy.webp',
       alt: 'Fundus photographs showing normal macula/fovea anatomy and drusen deposits in AMD',
       caption: 'Left: Normal fundus — macula (outer dashed circle) and fovea (inner circle). Right: Drusen deposits — hallmark of dry AMD.',
     },
@@ -79,7 +79,7 @@ export const amd: Note = {
 
     {
       type: 'image',
-      src: '/images/amd-types-diagram.png',
+      src: '/images/amd-types-diagram.webp',
       alt: 'Diagram comparing normal eye, wet AMD and dry AMD fundus appearances with eye anatomy',
       caption: 'Eye anatomy and fundus comparison — normal (left), wet AMD exudative (centre), dry AMD atrophic (right).',
     },
