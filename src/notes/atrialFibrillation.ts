@@ -110,6 +110,10 @@ export const atrialFibrillation: Note = {
     // ── Stroke Risk ────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Stroke Risk \u2014 CHA\u2082DS\u2082-VASc Score' },
 
+    { type: 'callout', variant: 'tip', title: 'Interactive Calculator Available', items: [
+      'Use the CHA\u2082DS\u2082-VASc calculator in the Calculators tab \u2014 tick each risk factor for an instant score, annual stroke rate and anticoagulation recommendation.',
+    ]},
+
     { type: 'para', text: 'Calculate for all patients with AF (including PAF). Anticoagulation reduces stroke risk by approximately 2/3. For most patients the benefits of anticoagulation outweigh bleeding risks.' },
 
     { type: 'table',
@@ -154,6 +158,10 @@ export const atrialFibrillation: Note = {
 
     // ── Bleeding Risk ──────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Bleeding Risk \u2014 ORBIT Score' },
+
+    { type: 'callout', variant: 'tip', title: 'Interactive Calculator Available', items: [
+      'Use the ORBIT-AF calculator in the Calculators tab \u2014 tick each factor for bleeding risk category, bleeds per 100 patient-years and advice on modifiable risk factors.',
+    ]},
 
     { type: 'table',
       caption: 'ORBIT bleeding risk score (preferred over HAS-BLED in primary care)',
