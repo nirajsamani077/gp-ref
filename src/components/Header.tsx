@@ -39,9 +39,10 @@ function searchEntries(q: string): SearchResult[] {
 // ── Props ─────────────────────────────────────────────────────────────────────
 interface Props {
   onNavigate: (tab: TabId, id: string) => void
+  onHome: () => void
 }
 
-export default function Header({ onNavigate }: Props) {
+export default function Header({ onNavigate, onHome }: Props) {
   const [query, setQuery]       = useState('')
   const [results, setResults]   = useState<SearchResult[]>([])
   const [open, setOpen]         = useState(false)
@@ -101,9 +102,26 @@ export default function Header({ onNavigate }: Props) {
       boxShadow: '0 2px 14px rgba(0,0,0,0.32)',
       gap: 12,
     }}>
-      <span style={{ color: '#fff', fontWeight: 800, fontSize: 19, letterSpacing: '-0.2px', flexShrink: 0 }}>
+      <button
+        onClick={() => { setQuery(''); setOpen(false); onHome() }}
+        title="Return to home"
+        aria-label="GP Ref — return to home"
+        style={{
+          background: 'none', border: 'none', cursor: 'pointer',
+          padding: '4px 6px', borderRadius: 8, flexShrink: 0,
+          color: '#fff', fontWeight: 800, fontSize: 19, letterSpacing: '-0.2px',
+          transition: 'opacity 0.15s, transform 0.15s',
+          WebkitTapHighlightColor: 'transparent',
+        }}
+        onMouseEnter={e => { e.currentTarget.style.opacity = '0.75' }}
+        onMouseLeave={e => { e.currentTarget.style.opacity = '1' }}
+        onMouseDown={e  => { e.currentTarget.style.transform = 'scale(0.93)' }}
+        onMouseUp={e    => { e.currentTarget.style.transform = 'scale(1)' }}
+        onTouchStart={e => { e.currentTarget.style.opacity = '0.75'; e.currentTarget.style.transform = 'scale(0.93)' }}
+        onTouchEnd={e   => { e.currentTarget.style.opacity = '1';    e.currentTarget.style.transform = 'scale(1)' }}
+      >
         GP <span style={{ color: '#93c5fd' }}>Ref</span>
-      </span>
+      </button>
 
       {/* Global search — links & calculators */}
       <div ref={containerRef} style={{ marginLeft: 'auto', position: 'relative', width: '100%', maxWidth: 280 }}>

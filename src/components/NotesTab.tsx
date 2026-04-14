@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import Fuse from 'fuse.js'
 import type { Note } from '../data/notes'
 import { NOTES } from '../data/notes'
@@ -67,7 +67,22 @@ export default function NotesTab() {
   const [filterQuery, setFilterQuery] = useState('')
   const [openId, setOpenId]           = useState<string | null>(null)
   const [specialty, setSpecialty]     = useState<string>('all')
+  // Incremented on home reset — used as key to remount the list with a fade-in
+  const [resetKey, setResetKey]       = useState(0)
   const inputRef = useRef<HTMLInputElement>(null)
+
+  const resetHome = useCallback(() => {
+    setFilterQuery('')
+    setOpenId(null)
+    setSpecialty('all')
+    setResetKey(k => k + 1)
+  }, [])
+
+  // Listen for logo-tap / Notes-re-tap events dispatched by App.tsx
+  useEffect(() => {
+    window.addEventListener('gpr-home', resetHome)
+    return () => window.removeEventListener('gpr-home', resetHome)
+  }, [resetHome])
 
   // Notes matching the text filter
   const filtered = filterQuery ? filterNotes(filterQuery) : NOTES
@@ -175,7 +190,16 @@ export default function NotesTab() {
       </div>
 
       {/* ── Notes list ── */}
-      <div style={{ flex: 1, overflowY: 'auto', padding: '12px 16px 40px', backgroundColor: '#f0f5fb' }}>
+      {/* Keyframe is static — browser deduplicates identical <style> blocks */}
+      <style>{`@keyframes gpr-notes-in{from{opacity:.5;transform:translateY(6px)}to{opacity:1;transform:none}}`}</style>
+      <div
+        key={resetKey}
+        style={{
+          flex: 1, overflowY: 'auto', padding: '12px 16px 40px',
+          backgroundColor: '#f0f5fb',
+          animation: resetKey > 0 ? 'gpr-notes-in 0.22s ease-out' : 'none',
+        }}
+      >
 
         {/* Result count when filtering */}
         {!showingAll && (

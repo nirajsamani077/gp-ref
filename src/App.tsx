@@ -25,7 +25,18 @@ export default function App() {
   const isDesktop = useIsDesktop()
 
   const handleTabSelect = useCallback((tabId: TabId) => {
-    setActiveTab(tabId)
+    if (tabId === 'notes' && activeTab === 'notes') {
+      // Re-tapping the active Notes tab resets to the home list view
+      window.dispatchEvent(new CustomEvent('gpr-home'))
+    } else {
+      setActiveTab(tabId)
+    }
+  }, [activeTab])
+
+  // Tapping the logo from any state: switch to Notes + reset its internal state
+  const handleGoHome = useCallback(() => {
+    setActiveTab('notes')
+    window.dispatchEvent(new CustomEvent('gpr-home'))
   }, [])
 
   // Called by the header search when user picks a link or calculator
@@ -52,7 +63,7 @@ export default function App() {
       height: '100dvh', backgroundColor: '#fff',
       fontFamily: "system-ui, 'Segoe UI', Roboto, sans-serif",
     }}>
-      <Header onNavigate={handleNavigate} />
+      <Header onNavigate={handleNavigate} onHome={handleGoHome} />
 
       <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
         {isDesktop && (
