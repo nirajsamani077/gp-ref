@@ -323,6 +323,43 @@ function Block({ block, onImageClick, searchQuery }: BlockProps) {
         </div>
       )
 
+    case 'calclink':
+      return (
+        <div data-block style={{ margin: '0 0 18px' }}>
+          <div style={{ fontSize: 12, fontWeight: 700, color: '#718096', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>
+            🧮 Interactive Calculators
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+            {block.calculators.map((calc, i) => (
+              <button
+                key={i}
+                onClick={() => window.dispatchEvent(new CustomEvent('navigate-calc', { detail: calc.id }))}
+                style={{
+                  display: 'flex', flexDirection: 'column', alignItems: 'flex-start',
+                  gap: 2, padding: '10px 16px',
+                  background: 'linear-gradient(135deg, #ebf8ff 0%, #e6fffa 100%)',
+                  border: '1.5px solid #90cdf4', borderRadius: 12,
+                  cursor: 'pointer', textAlign: 'left',
+                  transition: 'all 0.15s',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'linear-gradient(135deg, #2b6cb0 0%, #2c7a7b 100%)'; e.currentTarget.style.borderColor = '#2b6cb0' }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'linear-gradient(135deg, #ebf8ff 0%, #e6fffa 100%)'; e.currentTarget.style.borderColor = '#90cdf4' }}
+              >
+                <span style={{ fontSize: 13, fontWeight: 700, color: '#2b6cb0' }}
+                  onMouseEnter={e => (e.currentTarget.style.color = '#fff')}
+                  onMouseLeave={e => (e.currentTarget.style.color = '#2b6cb0')}
+                >
+                  🧮 {calc.label}
+                </span>
+                {calc.subtitle && (
+                  <span style={{ fontSize: 11, color: '#718096' }}>{calc.subtitle}</span>
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+      )
+
     default:
       return null
   }

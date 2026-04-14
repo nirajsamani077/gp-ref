@@ -11,9 +11,9 @@ export const alcoholEtoh: Note = {
     { type: 'heading', level: 2, text: 'UK Alcohol Units & Safe Limits' },
     {
       type: 'image',
-      src: '/images/alcohol-units.jpeg',
-      alt: 'Drinkaware infographic showing what one unit of alcohol looks like across different drinks',
-      caption: 'One unit = 25 ml spirit (40%) = 76 ml wine (12%) = 250 ml beer (4%). Image: Drinkaware.',
+      src: '/images/figure-12.1-alcohol-unit-reference.svg',
+      alt: 'Alcohol unit reference chart showing drinks and their unit equivalents',
+      caption: 'One unit = 25 ml spirit (40%) = 76 ml wine (12%) = 250 ml beer (4%).',
     },
     {
       type: 'table',
@@ -64,19 +64,13 @@ export const alcoholEtoh: Note = {
     { type: 'heading', level: 2, text: 'AUDIT-C Screening (3 Questions)' },
     {
       type: 'para',
-      text: 'AUDIT-C is a rapid 3-question screen. Score ≥5 = positive → proceed to full AUDIT. Use the interactive AUDIT-C calculator in the Calculators tab.',
+      text: 'AUDIT-C is a rapid 3-question screen. Score ≥5 = positive → proceed to full AUDIT.',
     },
     {
-      type: 'image',
-      src: '/images/audit-c-scoring-table.jpg',
-      alt: 'AUDIT-C scoring table showing 3 questions with columns 0-4',
-      caption: 'AUDIT-C scoring table — score ≥5 positive.',
-    },
-    {
-      type: 'image',
-      src: '/images/audit-fast-screening.jpeg',
-      alt: 'FAST alcohol screening test showing 4 questions with scoring 0-4',
-      caption: 'FAST screening questions — score ≥3 indicates hazardous/harmful/dependent drinking.',
+      type: 'calclink',
+      calculators: [
+        { id: 'audit-c', label: 'AUDIT-C Calculator', subtitle: '3-question screen · Score ≥5 positive' },
+      ],
     },
     {
       type: 'table',
@@ -101,7 +95,13 @@ export const alcoholEtoh: Note = {
     { type: 'heading', level: 2, text: 'Full AUDIT (10 Questions)' },
     {
       type: 'para',
-      text: 'Full AUDIT is a validated 10-question tool (max 40). Questions 1–8 score 0–4; Questions 9–10 score 0/2/4. Use the interactive AUDIT calculator in the Calculators tab for quick scoring with patients.',
+      text: 'Full AUDIT is a validated 10-question tool (max 40). Questions 1–8 score 0–4; Questions 9–10 score 0/2/4.',
+    },
+    {
+      type: 'calclink',
+      calculators: [
+        { id: 'audit', label: 'Full AUDIT Calculator', subtitle: '10 questions · Hazardous / harmful / dependence + action guidance' },
+      ],
     },
     {
       type: 'image',

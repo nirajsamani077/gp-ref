@@ -34,6 +34,17 @@ export default function App() {
     if (tab === 'calculators') setHighlightedCalcId(id)
   }, [])
 
+  // Listen for in-note calculator link clicks (dispatched by NoteRenderer calclink blocks)
+  useEffect(() => {
+    function handler(e: Event) {
+      const calcId = (e as CustomEvent<string>).detail
+      setActiveTab('calculators')
+      setHighlightedCalcId(calcId)
+    }
+    window.addEventListener('navigate-calc', handler)
+    return () => window.removeEventListener('navigate-calc', handler)
+  }, [])
+
   return (
     <div style={{
       display: 'flex', flexDirection: 'column',
