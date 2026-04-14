@@ -1,0 +1,308 @@
+import type { Note } from '../data/notes'
+
+export const rhinosinusitis: Note = {
+  id: 'rhinosinusitis',
+  title: 'Rhinosinusitis & Rhinitis',
+  subtitle: 'Acute sinusitis · Allergic rhinitis · Chronic rhinosinusitis · Nasal sprays · Technique',
+  tags: ['ent'],
+  body: 'rhinosinusitis sinusitis rhinitis allergic hayfever hay fever chronic acute nasal spray mometasone fluticasone beclometasone azelastine dymista nasal polyps douching saline ARIA perennial seasonal intermittent persistent house dust mite HDM pollen antihistamine cetirizine loratadine immunotherapy grazax double sickening anosmia metamorphopsia facial pain frontal ethmoid maxillary sphenoid turbinate',
+  content: [
+
+    { type: 'heading', level: 2, text: 'Anatomy' },
+    {
+      type: 'image',
+      src: '/images/nasal sinus anatomy.webp',
+      alt: 'Parasagittal section showing frontal, ethmoid and sphenoid sinuses, nasal cavity and eustachian tube',
+      caption: 'Sinus anatomy — note narrow frontal drainage pathway and partitioned air cells that harbour biofilms.',
+    },
+    {
+      type: 'image',
+      src: '/images/turbinates.jpg',
+      alt: 'Sagittal section showing superior, middle and inferior turbinates',
+      caption: 'Turbinates — the inferior turbinate is the most commonly visible on anterior rhinoscopy and swells in rhinitis.',
+    },
+
+    { type: 'heading', level: 2, text: 'Red Flags — Urgent ENT Referral' },
+    {
+      type: 'callout',
+      variant: 'danger',
+      title: 'Same-Day / Urgent ENT — Do Not Miss',
+      items: [
+        'Orbital involvement: periorbital oedema/erythema, displaced globe, diplopia/reduced vision, ophthalmoplegia',
+        'Intracranial extension: severe frontal headache/swelling, signs of meningitis, neurological signs',
+        'Unilateral symptoms + blood-stained discharge (exclude malignancy)',
+        'Unilateral polyp with no prior history of polyps — risk of inverted papilloma or carcinoma',
+        'Suspected CSF leak — persistent clear unilateral watery drip from nose like a tap',
+        '2WW referral: unilateral nasal mass, epistaxis + nasal obstruction, orbital/facial swelling',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Acute Sinusitis' },
+    {
+      type: 'para',
+      text: 'Inflammation of the sinuses (most often maxillary) lasting <12 weeks. Vast majority are viral and self-limiting within 2–3 weeks. Antibiotics make little or no difference to most cases.',
+    },
+    {
+      type: 'table',
+      caption: 'Viral (post-cold) vs Bacterial sinusitis',
+      headers: ['Feature', 'Viral / Post-Viral', 'Bacterial (suspect if)'],
+      rows: [
+        ['Duration', 'Sx improving ≤10 days', 'Sx >10 days, or worsening after 5 days initial improvement'],
+        ['Double-sickening', 'Absent', 'Present — initial improvement then marked deterioration'],
+        ['Discharge', 'Clear or mucoid', 'Persistent purulent (unilateral > bilateral)'],
+        ['Pain', 'Dull facial discomfort', 'Severe localised facial/dental pain'],
+        ['Fever', 'Low-grade or none', 'Temperature >38°C'],
+        ['Blood tests', 'Normal or mildly raised CRP', 'Raised CRP/ESR, raised WCC'],
+      ],
+    },
+    {
+      type: 'list',
+      items: [
+        'Self-care: simple analgesia (paracetamol ± ibuprofen), oral fluids, warm face packs',
+        'Nasal saline douching — clears discharge, reduces inflammation (see below)',
+        'Intranasal decongestants (e.g. xylometazoline) — max 1 week only; risk of rhinitis medicamentosa if prolonged',
+        'Steam inhalation — limited evidence but can be advised as self-care if patient wishes',
+        'High-dose intranasal steroid: if sx >10 days consider mometasone 2 sprays/nostril BD for 14 days (off-label)',
+      ],
+    },
+    {
+      type: 'callout',
+      variant: 'warning',
+      title: 'Antibiotics in Acute Sinusitis — When to Use',
+      items: [
+        'Offer ONLY if: sx >10 days AND no improvement, OR features of bacterial sinusitis (fever, severe pain, purulent discharge, double-sickening)',
+        '1st line: Phenoxymethylpenicillin (Pen V) 500mg QDS for 5 days',
+        'Severe / systemically unwell: Co-amoxiclav 625mg TDS for 5 days',
+        'Penicillin allergy: Doxycycline 200mg day 1 then 100mg OD, or Clarithromycin 500mg BD, or Erythromycin 500mg QDS — 5 days',
+        'Consider immediate or back-up prescription strategy — most improve without antibiotics',
+        'Refer if not improving after antibiotics or acutely unwell (orbital / intracranial complications)',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Allergic Rhinitis / Hayfever' },
+    {
+      type: 'para',
+      text: 'Most common form of rhinitis. The ARIA (Allergic Rhinitis and its Impact on Asthma) classification divides by frequency (intermittent <4 days/week or <4 weeks vs persistent) and severity (mild vs moderate–severe based on QoL impact). Always ask about asthma — treating rhinitis benefits asthma control.',
+    },
+    {
+      type: 'table',
+      caption: 'Common allergens, timing and avoidance',
+      headers: ['Allergen', 'Season / Timing', 'Avoidance Advice'],
+      rows: [
+        ['Grass pollen', 'Late Spring – early Summer (June/July peak)', 'Avoid grassy open spaces in morning/evening; keep windows closed; change car pollen filters'],
+        ['Tree pollen', 'Early–late Spring', 'Monitor pollen forecast; start INS spray 2 weeks before season'],
+        ['Weed pollen', 'Early Spring – early Autumn', 'Avoid open spaces; stay indoors when count high'],
+        ['House dust mite (HDM)', 'Year-round; peaks Spring + Autumn', 'Mite-proof mattress/pillow covers; wash bedding 60°C weekly; hard flooring; wipe surfaces damp. Evidence limited but consider if specific IgE confirmed'],
+        ['Pets (cat/dog)', 'Year-round', 'Avoidance best; if not possible — HEPA air filters, keep pets off furniture. Immunotherapy NOT offered for animal dander'],
+        ['Occupational (flour, latex, wood dust)', 'Occupational exposure', 'Consider if sx improve away from work; refer to occupational physician'],
+      ],
+    },
+    {
+      type: 'callout',
+      variant: 'info',
+      title: 'DDx of Rhinitis — Not Always Allergic',
+      items: [
+        'Nasal polyps, deviated nasal septum, adenoids (children), foreign body',
+        'Vasomotor/non-allergic: triggered by temperature change, strong smells, exercise, humidity',
+        'Drug-induced: aspirin/NSAIDs, ACE inhibitors, beta-blockers, COCP, cocaine',
+        'Endocrine: pregnancy rhinitis (self-limiting), hypothyroidism',
+        'Immunological: Churg-Strauss (eosinophilic granulomatosis), granulomatosis with polyangiitis (GPA/Wegener\'s)',
+        'Rhinitis medicamentosa: rebound from prolonged decongestant nasal spray use',
+      ],
+    },
+    { type: 'heading', level: 3, text: 'Allergic Rhinitis Treatment Ladder' },
+    {
+      type: 'table',
+      caption: 'Step-up treatment ladder — Allergic Rhinoconjunctivitis (ARIA / Notts pathway)',
+      headers: ['Step', 'Indication', 'Treatment'],
+      rows: [
+        ['Step 1', 'Mild intermittent (<4d/wk or <4wks)', 'OTC non-sedating antihistamine: cetirizine 10mg OD or loratadine 10mg OD. Nasal saline douching. OTC sodium cromoglicate eye drops if ocular sx. Allergen avoidance.'],
+        ['Step 1+', 'Mild intermittent — inadequate after 1 month', 'Add intranasal corticosteroid (Step 2 below)'],
+        ['Step 2', 'Moderate–severe or persistent; or Step 1 failure', 'Add intranasal corticosteroid (INCS) — trial for 1 month. See nasal sprays table. If at least 2 INCS tried and INEFFECTIVE → Step 4. If INCS not tolerated → Step 3.'],
+        ['Step 3', 'INCS not tolerated (≥2 tried)', 'Azelastine 0.1% nasal spray (Rhinolast) 1 spray each nostril BD'],
+        ['Step 4', 'INCS ineffective (≥2 tried, 1 month each)', 'STOP all other treatments. Start: Dymista® (fluticasone propionate/azelastine) 1 spray each nostril BD — OR — Ryaltris® (mometasone/olopatadine) 2 sprays each nostril BD. If severe: add short course prednisolone 30mg OD for 5–10 days.'],
+        ['Refractory', 'Symptoms persist after 2 months of Step 4', 'Refer to secondary care — allergy (for immunotherapy if seasonal IgE positive) or ENT (if non-allergic rhinitis suspected).'],
+      ],
+    },
+    {
+      type: 'callout',
+      variant: 'tip',
+      title: 'Immunotherapy / Desensitisation',
+      items: [
+        'Offered when pathway completed and specific IgE positive',
+        'Grazax (sublingual Timothy grass pollen tablet) — licensed for grass pollen rhinitis in adults',
+        'Referral for tree or HDM immunotherapy if appropriate',
+        'NOT offered for animal dander (unless occupational); NOT available for weed or mould allergy',
+        'Consider occupational allergy if symptoms reliably improve away from work environment',
+      ],
+    },
+    {
+      type: 'callout',
+      variant: 'info',
+      title: 'Allergic Rhinitis in Pregnancy',
+      items: [
+        'Pregnancy-induced rhinitis is self-limiting — reassure',
+        'Nasal saline irrigation — safest first-line option',
+        'Intranasal fluticasone furoate (Avamys) — preferred INCS in pregnancy; very low systemic absorption',
+        'Oral antihistamines — loratadine and cetirizine considered safe; avoid chlorphenamine if breastfeeding',
+        'Avoid oral decongestants (pseudoephedrine) in pregnancy',
+        'See SPS (Specialist Pharmacy Service) guidance for full pregnancy/breastfeeding detail',
+      ],
+    },
+    {
+      type: 'callout',
+      variant: 'warning',
+      title: "Samter's Triad",
+      items: [
+        'Triad of: nasal polyps + asthma + aspirin/NSAID sensitivity',
+        'NSAIDs precipitate severe bronchospasm and rhinitis flare',
+        'Treat with avoidance of aspirin/NSAIDs; consider montelukast (LTRA)',
+        'Refer to ENT and/or allergy',
+        'Paracetamol safe at standard doses (higher doses may cross-react — advise caution)',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Chronic Rhinosinusitis (without polyps)' },
+    {
+      type: 'para',
+      text: 'Defined as ≥2 symptoms for >12 weeks without complete resolution, one of which must be nasal obstruction/discharge. Affects ~10% of UK adults. Causes significant QoL impairment and absenteeism.',
+    },
+    {
+      type: 'callout',
+      variant: 'info',
+      title: 'Diagnosis — 2 or More of the Following for >12 Weeks',
+      items: [
+        'Nasal obstruction/blockage/congestion (must be present)',
+        'Nasal discharge — anterior or posterior (must be present)',
+        'Facial pain/pressure/fullness',
+        'Hyposmia or anosmia (reduced sense of smell)',
+        'Assess for predisposing factors: allergic rhinitis, asthma, immunosuppression, chronic dental infection',
+      ],
+    },
+    {
+      type: 'list',
+      items: [
+        'Nasal saline irrigation — daily; first-line self-management (see recipe below)',
+        'Intranasal corticosteroid spray — long-term; mometasone 2 sprays each nostril OD or fluticasone furoate 2 sprays OD',
+        'Short course nasal steroid drops (betamethasone) if spray inadequate — head hanging position; 4–6 weeks then step down to spray',
+        'Short course macrolide (azithromycin 500mg 3 days/week for 12 weeks) in recalcitrant cases — anti-inflammatory effect; seek specialist advice',
+        'Analgesia for facial pain/pressure: paracetamol or ibuprofen',
+        'Oral decongestants — NOT recommended (insufficient evidence, side effects)',
+        'Intranasal decongestants — max 1 week only if severe congestion; risk rhinitis medicamentosa',
+        'Address underlying triggers: treat allergic rhinitis, optimise asthma, dental review if dental cause suspected',
+        'Refer ENT: if >3 acute exacerbations/year requiring antibiotics, progressive symptoms, or poor response after 3 months of adequate treatment',
+      ],
+    },
+    {
+      type: 'callout',
+      variant: 'warning',
+      title: 'Antibiotics in Chronic Rhinosinusitis',
+      items: [
+        'Short course (5–7 days) may be appropriate for acute-on-chronic exacerbation with purulent discharge',
+        'Antibiotics do NOT treat underlying CRS — address the cause',
+        'Long-term antibiotics (macrolides — azithromycin, clarithromycin): anti-inflammatory rather than antimicrobial use; seek specialist advice before prescribing',
+        'Refer for culture-guided treatment if recurrent or antibiotic-resistant',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Non-Allergic / Vasomotor Rhinitis' },
+    {
+      type: 'list',
+      items: [
+        'Perennial symptoms without identifiable allergen — triggered by temperature change, humidity, strong smells, exercise, emotion, alcohol',
+        'Diagnose by exclusion — negative skin prick test / specific IgE',
+        'Nasal saline irrigation + intranasal corticosteroid spray (2–3 month trial)',
+        'Ipratropium 0.03% nasal spray (Rinatec) — for predominantly watery/drippy nose (vasomotor); 2 sprays each nostril BD–TDS',
+        'Avoid precipitating factors',
+        'Refer ENT if poor response — endoscopy to exclude structural cause',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Nasal Sprays — UK Prescribing Reference' },
+    {
+      type: 'table',
+      caption: 'Intranasal Corticosteroids (INCS) — key properties and dosing',
+      headers: ['Drug', 'Brand', 'Strength', 'Dose (adult)', 'OTC?', 'Key Notes'],
+      rows: [
+        ['Beclometasone dipropionate', 'Beconase, generic', '50 mcg/spray', '2 sprays each nostril BD; reduce to 1 spray BD when controlled', 'Yes (OTC)', 'High systemic bioavailability (~44%); suitable short-term only; NOT for long-term use; OTC suitable for short courses'],
+        ['Mometasone furoate', 'Nasonex, Clarinaze (OTC), generic', '50 mcg/spray', 'Rhinitis: 2 sprays each nostril OD; reduce to 1 OD when controlled. Polyps: 2 sprays each nostril BD initially → OD maintenance', 'Clarinaze OTC', '0.5% bioavailability; preferred long-term INCS; ~£1.94/28 days generic; POM for polyps dose'],
+        ['Fluticasone furoate', 'Avamys', '27.5 mcg/spray', '2 sprays each nostril OD; reduce to 1 OD when controlled', 'POM', '0.5% bioavailability; preferred if ocular symptoms alongside rhinitis; safe in pregnancy; ~£3.00/28 days'],
+        ['Fluticasone propionate', 'Flixonase, Nasofan', '50 mcg/spray', '2 sprays each nostril OD', 'POM', 'Alternative INCS; also available as nasal drops (for polyps — see polyps note)'],
+        ['Budesonide', 'Rhinocort (Rx)', '64 mcg/spray', '2 sprays each nostril OD', 'Rhinocort Aqua OTC', 'Less commonly prescribed; used in specific formulations'],
+        ['Betamethasone sodium phosphate', 'Generic', '0.1% drops', '2–3 drops each nostril BD', 'POM', 'Short-term use only; head-hanging position; step-2 in CRS/polyps ladder; NOT for long-term'],
+      ],
+    },
+    {
+      type: 'table',
+      caption: 'Antihistamine, Combination and Other Nasal Sprays',
+      headers: ['Drug', 'Brand', 'Dose', 'Indication', 'Notes'],
+      rows: [
+        ['Azelastine 0.1%', 'Rhinolast', '1 spray each nostril BD', 'Allergic rhinitis (Step 3)', 'POM; intranasal antihistamine; rapid onset (~15 min); 50% more efficacious than oral antihistamine for nasal sx; bitter taste if swallowed'],
+        ['Fluticasone propionate + Azelastine', 'Dymista', '1 spray each nostril BD', 'Seasonal/perennial allergic rhinitis inadequately controlled by INCS alone (Step 4)', 'POM; ~£14.80/120 doses; stop other antihistamines and INCS when starting'],
+        ['Mometasone furoate + Olopatadine', 'Ryaltris', '2 sprays each nostril BD', 'Seasonal allergic rhinitis (Step 4 alternative)', 'POM; ~£13.32/240 doses; stop other treatments when starting'],
+        ['Ipratropium bromide 0.03%', 'Rinatec', '2 sprays each nostril 2–3× daily', 'Rhinorrhoea — vasomotor/non-allergic (watery drip)', 'POM; anticholinergic; effective for predominant watery rhinorrhoea; not for congestion'],
+        ['Sodium cromoglicate', 'Rynacrom, Vividrin', '1 spray each nostril 4–6× daily', 'Allergic rhinitis prevention', 'OTC; mast cell stabiliser; preventive only — must be used regularly from before allergen season; less effective than INCS but very safe including in pregnancy'],
+        ['Xylometazoline / Oxymetazoline', 'Otrivine, generic', 'As directed', 'Acute nasal congestion (decongestant)', 'OTC; MAX 7 days — risk of rhinitis medicamentosa (rebound) with prolonged use'],
+      ],
+    },
+    {
+      type: 'image',
+      src: '/images/nasal spray full guide.webp',
+      alt: 'Reference chart of nasal spray products including anticholinergic, antihistamine and corticosteroid classes',
+      caption: 'Nasal spray reference guide — product classes, doses and instructions.',
+    },
+
+    { type: 'heading', level: 2, text: 'Nasal Spray Technique' },
+    {
+      type: 'callout',
+      variant: 'tip',
+      title: 'Correct Nasal Spray Technique — 6 Steps',
+      items: [
+        '1. Gently blow nose to clear it first',
+        '2. Shake bottle well',
+        '3. Look downwards (chin towards chest) — keeps spray in nasal cavity',
+        '4. Use RIGHT hand for LEFT nostril — aim nozzle towards the outer wall (away from midline/septum)',
+        '5. Breathe in slowly and gently through the nostril while pressing the pump — DO NOT sniff hard (drives spray too far back, swallowed not absorbed)',
+        '6. Breathe out through the mouth. Change hands and repeat for other nostril.',
+        'Tip: Two sprays = squirt in two slightly different directions for better coverage',
+        'Tip: Do not tilt head back — this causes the spray to run down the throat',
+        'Tip: Spray needs daily use for full effect — takes 3–7 days for onset; optimal effect at 2 weeks',
+      ],
+    },
+    {
+      type: 'image',
+      src: '/images/nasal spray use.png',
+      alt: 'Diagram showing correct nasal spray technique with look-down posture',
+      caption: 'Nasal spray technique — look down, outside wall, do not sniff hard.',
+    },
+
+    { type: 'heading', level: 2, text: 'Nasal Saline Douching / Irrigation' },
+    {
+      type: 'callout',
+      variant: 'tip',
+      title: 'Nasal Douching — DIY Recipe and Method',
+      items: [
+        'Recipe: 240 mL cooled boiled water + ¼ tsp table salt + ¼ tsp bicarbonate of soda (baking soda)',
+        'Alternatively (Camden recipe): ½ pint warm clean water + ½ tsp salt + ½ tsp bicarbonate of soda',
+        'Mix until dissolved; use at room temperature (not from fridge); discard after 24 hours',
+        'Method: Lean over sink; pour solution into palm of hand or use syringe/Neti pot; sniff slowly into one nostril (block other); let it drain out; repeat other side',
+        'After douching: blow nose GENTLY; wait 10–20 minutes before applying nasal spray',
+        'Commercial options: SinuRinse, Sterimar, NeilMed (OTC from pharmacy)',
+        'Frequency: once or twice daily; can be used more often if advised',
+        'Clears allergens, thins mucus, reduces mucosal oedema; evidence strongest in CRS and post-operative care',
+      ],
+    },
+
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — Sinusitis', url: 'https://cks.nice.org.uk/topics/sinusitis/' },
+        { label: 'NICE CKS — Allergic Rhinitis', url: 'https://cks.nice.org.uk/topics/allergic-rhinitis/' },
+        { label: 'BJGP — CRS in Primary Care', url: 'https://bjgp.org/content/63/616/611' },
+        { label: 'Allergy UK', url: 'https://www.allergyuk.org/' },
+        { label: 'BSACI Rhinitis Guidelines', url: 'https://www.bsaci.org/guidelines/bsaci-guidelines/allergic-and-non-allergic-rhinitis/' },
+        { label: 'Think Allergy', url: 'https://www.allergyuk.org/resources/nasal-douching/' },
+      ],
+    },
+  ],
+}

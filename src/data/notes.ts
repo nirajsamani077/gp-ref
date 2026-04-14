@@ -59,6 +59,8 @@ import { palliativeEOL }          from '../notes/palliativeEOL'
 import { atrialFibrillation }     from '../notes/atrialFibrillation'
 import { amd }                    from '../notes/amd'
 import { aki }                    from '../notes/aki'
+import { rhinosinusitis }         from '../notes/rhinosinusitis'
+import { nasalPolyps }            from '../notes/nasalPolyps'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -123,4 +125,6 @@ export const NOTES: Note[] = [
   atrialFibrillation,
   amd,
   aki,
+  rhinosinusitis,
+  nasalPolyps,
 ].map(enrichBody)
