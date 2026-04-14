@@ -11,7 +11,7 @@ export const rhinosinusitis: Note = {
     { type: 'heading', level: 2, text: 'Anatomy' },
     {
       type: 'image',
-      src: '/images/nasal sinus anatomy.webp',
+      src: '/images/nasal-sinus-anatomy.webp',
       alt: 'Parasagittal section showing frontal, ethmoid and sphenoid sinuses, nasal cavity and eustachian tube',
       caption: 'Sinus anatomy — note narrow frontal drainage pathway and partitioned air cells that harbour biofilms.',
     },
@@ -247,7 +247,7 @@ export const rhinosinusitis: Note = {
     },
     {
       type: 'image',
-      src: '/images/nasal spray full guide.webp',
+      src: '/images/nasal-spray-full-guide.webp',
       alt: 'Reference chart of nasal spray products including anticholinergic, antihistamine and corticosteroid classes',
       caption: 'Nasal spray reference guide — product classes, doses and instructions.',
     },
@@ -271,7 +271,7 @@ export const rhinosinusitis: Note = {
     },
     {
       type: 'image',
-      src: '/images/nasal spray use.png',
+      src: '/images/nasal-spray-steps.png',
       alt: 'Diagram showing correct nasal spray technique with look-down posture',
       caption: 'Nasal spray technique — look down, outside wall, do not sniff hard.',
     },

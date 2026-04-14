@@ -55,6 +55,24 @@ export const nasalPolyps: Note = {
 
     { type: 'heading', level: 2, text: 'Diagnosis & Examination' },
     {
+      type: 'image',
+      src: '/images/nasal-polyp-anatomy.png',
+      alt: 'Diagram showing nasal polyps in the nasal cavity — frontal and sagittal views',
+      caption: 'Nasal polyps arise from the paranasal sinuses and prolapse into the nasal passages, causing progressive obstruction.',
+    },
+    {
+      type: 'image',
+      src: '/images/nasal-polyp-clinical.jpeg',
+      alt: 'Clinical photograph of a large nasal polyp visible at the nostril',
+      caption: 'Large nasal polyp — pale, glistening, insensate mass prolapsing to the nostril. Note smooth translucent appearance.',
+    },
+    {
+      type: 'image',
+      src: '/images/nasal-polyps-exam.png',
+      alt: 'Three-panel photograph showing turbinate vs polyp on anterior rhinoscopy, normal nasal cavity, and Thudichum speculum examination',
+      caption: 'Anterior rhinoscopy — turbinate (pink, sensitive) vs polyp (pale, insensate). Bottom: Thudichum\'s nasal speculum examination technique.',
+    },
+    {
       type: 'callout',
       variant: 'tip',
       title: 'Distinguishing Polyps from Turbinates on Examination',
