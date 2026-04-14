@@ -5,6 +5,8 @@ import Fib4Calculator from '../calculators/Fib4Calculator'
 import Qrisk3Calculator from '../calculators/Qrisk3Calculator'
 import Cha2ds2VascCalculator from '../calculators/Cha2ds2VascCalculator'
 import OrbitAfCalculator from '../calculators/OrbitAfCalculator'
+import AuditCCalculator from '../calculators/AuditCCalculator'
+import AuditCalculator from '../calculators/AuditCalculator'
 
 interface Props {
   highlightedId?: string
@@ -53,6 +55,18 @@ const ENTRIES: CalcEntry[] = [
     title: 'ORBIT-AF — Bleeding Risk',
     subtitle: 'Major bleeding risk before starting anticoagulation in AF · Identifies modifiable risk factors',
     component: <OrbitAfCalculator />,
+  },
+  {
+    id: 'audit-c',
+    title: 'AUDIT-C — Alcohol Screening',
+    subtitle: '3-question alcohol consumption screen · Score ≥5 positive · Proceed to full AUDIT',
+    component: <AuditCCalculator />,
+  },
+  {
+    id: 'audit',
+    title: 'AUDIT — Alcohol Use Disorders',
+    subtitle: '10-question full AUDIT · Hazardous / harmful / dependence · Brief intervention guidance',
+    component: <AuditCalculator />,
   },
 ]
 

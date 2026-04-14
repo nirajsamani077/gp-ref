@@ -1,0 +1,302 @@
+import type { Note } from '../data/notes'
+
+export const alcoholEtoh: Note = {
+  id: 'alcohol-etoh',
+  title: 'Alcohol & ETOH Excess',
+  subtitle: 'Units · AUDIT-C/AUDIT · Brief intervention · Withdrawal · Detox · Relapse prevention',
+  tags: ['mental', 'lifestyle'],
+  body: 'alcohol ETOH units AUDIT AUDIT-C screening hazardous harmful dependence dependant brief intervention FRAMES motivational interviewing withdrawal delirium tremens seizure chlordiazepoxide detox thiamine Wernickes Korsakoffs acamprosate naltrexone disulfiram nalmefene liver GGT ELF fibroscan DVLA AA alcoholics anonymous drinkaware carbohydrate deficient transferrin CDT SADQ',
+  content: [
+
+    { type: 'heading', level: 2, text: 'UK Alcohol Units & Safe Limits' },
+    {
+      type: 'image',
+      src: '/images/alcohol units.jpeg',
+      alt: 'Drinkaware infographic showing what one unit of alcohol looks like across different drinks',
+      caption: 'One unit = 25 ml spirit (40%) = 76 ml wine (12%) = 250 ml beer (4%). Image: Drinkaware.',
+    },
+    {
+      type: 'table',
+      caption: 'Common drinks and their unit content',
+      headers: ['Drink', 'Approximate Units'],
+      rows: [
+        ['Single shot of spirits (25 ml, 40% ABV)', '1 unit'],
+        ['Small glass of wine (125 ml, 12% ABV)', '1.5 units'],
+        ['Large glass of wine (250 ml, 12% ABV)', '3 units'],
+        ['Half pint of regular beer/lager (4% ABV)', '1 unit'],
+        ['Pint of regular beer/lager (4% ABV)', '2 units'],
+        ['Pint of strong beer/lager (6% ABV)', '3 units'],
+        ['Bottle of wine (750 ml, 12%)', '9 units'],
+        ['Formula: any drink', 'ml × %ABV ÷ 1000 = units'],
+      ],
+    },
+    {
+      type: 'callout',
+      variant: 'info',
+      title: 'UK CMO Safe Drinking Guidelines',
+      items: [
+        'Both men and women: no more than 14 units per week',
+        'Spread over 3 or more days — avoid binge drinking (>6 units in one session)',
+        'Have at least 2 alcohol-free days per week',
+        'No safe level in pregnancy — advise complete abstinence',
+        'Any alcohol increases risk of some cancers — previous "cardioprotective" benefit is outweighed by overall risks',
+        'Dependent drinkers / significant liver disease: complete abstinence — no amount is safe',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Screening — Who and When' },
+    {
+      type: 'callout',
+      variant: 'tip',
+      title: 'When to Screen for Alcohol Problems',
+      items: [
+        'New patient registration',
+        'Annual health checks / chronic disease reviews / medication reviews',
+        'Relevant physical presentations: raised LFTs, raised MCV, low platelets, hypertension, gastritis, pancreatitis, gout',
+        'Relevant mental health presentations: depression, anxiety, insomnia, self-harm',
+        'Patients who have been assaulted or attended with minor injuries/falls',
+        'Examination findings: >5 spider naevi, palmar erythema, hepatomegaly, splenomegaly',
+        'Antenatal appointments',
+        'Active request for help',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'AUDIT-C Screening (3 Questions)' },
+    {
+      type: 'para',
+      text: 'AUDIT-C is a rapid 3-question screen. Score ≥5 = positive → proceed to full AUDIT. Use the interactive AUDIT-C calculator in the Calculators tab.',
+    },
+    {
+      type: 'image',
+      src: '/images/audit c.jpeg',
+      alt: 'FAST alcohol screening test showing 4 questions with scoring 0-4',
+      caption: 'FAST / AUDIT-C screening questions — score ≥3 (FAST) or ≥5 (AUDIT-C) indicates increasing risk.',
+    },
+    {
+      type: 'table',
+      caption: 'AUDIT-C questions and scoring',
+      headers: ['Question', '0', '1', '2', '3', '4'],
+      rows: [
+        ['How often do you have a drink containing alcohol?', 'Never', 'Monthly or less', '2–4×/month', '2–3×/week', '4+×/week'],
+        ['How many units on a typical drinking day?', '1–2', '3–4', '5–6', '7–9', '10+'],
+        ['How often ≥6 units (F) or ≥8 units (M) in one occasion?', 'Never', '<monthly', 'Monthly', 'Weekly', 'Daily/almost daily'],
+      ],
+    },
+    {
+      type: 'callout',
+      variant: 'tip',
+      title: 'AUDIT-C interpretation',
+      items: [
+        'Score 0–4: Negative — low risk (reinforce safe limits)',
+        'Score ≥5: Positive — increasing or higher risk (proceed to full AUDIT)',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Full AUDIT (10 Questions)' },
+    {
+      type: 'para',
+      text: 'Full AUDIT is a validated 10-question tool (max 40). Questions 1–8 score 0–4; Questions 9–10 score 0/2/4. Use the interactive AUDIT calculator in the Calculators tab for quick scoring with patients.',
+    },
+    {
+      type: 'image',
+      src: '/images/How-is-the-AUDIT-Scored-1024x768.jpg',
+      alt: 'AUDIT score decision flowchart showing bands from low risk to probable dependence',
+      caption: 'AUDIT scoring bands — 0–7 low risk, 8–15 hazardous, 16–19 harmful, 20+ probable dependence.',
+    },
+    {
+      type: 'table',
+      caption: 'AUDIT score interpretation and action',
+      headers: ['Score', 'Category', 'Action'],
+      rows: [
+        ['0–7', 'Low risk', 'Reinforce benefits of safe drinking. No further action.'],
+        ['8–15', 'Hazardous drinking', 'Brief intervention (FRAMES). Advise <14u/week spread over ≥3 days. Signpost Drinkaware, AA, local alcohol service.'],
+        ['16–19', 'Harmful drinking', 'Extended brief intervention / motivational interviewing. Check LFTs + FBC + GGT. Consider thiamine. Refer to specialist alcohol service. Review closely.'],
+        ['≥20', 'Probable dependence', 'Refer to specialist alcohol service. Withdrawal assessment (SADQ). Community detox if suitable. LFTs, GGT, FBC, ELF. Prescribe thiamine. DVLA notification required.'],
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Brief Intervention — FRAMES' },
+    {
+      type: 'callout',
+      variant: 'tip',
+      title: 'FRAMES — Brief Advice Structure (≤10 minutes, AUDIT 8–15)',
+      items: [
+        'F — Feedback: "Your score shows you\'re drinking at a level that increases your risk of harm — your GGT/LFT are also raised."',
+        'R — Responsibility: "It\'s not easy, but only you can make the change."',
+        'A — Advice: "I\'d recommend cutting down to under 14 units/week spread over 3+ days."',
+        'M — Menu: Practical options — lower-ABV drinks, alcohol-free alternatives, drink tracking apps, avoiding rounds.',
+        'E — Empathy: "I understand it\'s not easy, and I\'m not here to judge."',
+        'S — Self-efficacy: "Many people find cutting down makes a huge difference to how they feel."',
+        'Extended brief intervention (AUDIT 16–19): motivational interviewing, 20–30 min, up to 4 sessions — refer to alcohol worker or trained GP.',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Liver Pathway & Investigations' },
+    {
+      type: 'callout',
+      variant: 'warning',
+      title: 'When to Investigate for Alcohol-Related Liver Disease',
+      items: [
+        'AUDIT-C ≥5 (or any AUDIT ≥8): check LFTs (including GGT), FBC',
+        'Excess defined: Male >50 units/week OR Female >35 units/week → treat as high risk regardless of LFT result',
+        'GGT >100 → treat as high risk (as per threshold criteria above)',
+        'ELF (Enhanced Liver Fibrosis) test — gold top tube — if: AUDIT >19, or excess drinking as above',
+        'ELF ≥9.8 → referral for fibroscan (high risk of advanced fibrosis)',
+        'ELF <9.8 + ongoing excess → repeat ELF in 1–3 years',
+        'Fibroscan negative → repeat at 2 years if ongoing excess',
+        'Also check: FBC (raised MCV, thrombocytopaenia), coagulation (prothrombin time), hepatitis B/C serology',
+        'USS liver/spleen: evidence of cirrhosis, splenomegaly',
+        'Refer to hepatology if: cirrhosis/fibrosis on scan, persistently raised bilirubin, low platelets <130, prolonged PT, spider naevi, splenomegaly',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Thiamine Supplementation' },
+    {
+      type: 'callout',
+      variant: 'danger',
+      title: 'Thiamine — Prescribe to Prevent Wernicke\'s Encephalopathy',
+      items: [
+        'Risk in alcohol excess: poor diet + poor GI absorption + high metabolic demand = thiamine deficiency',
+        'Wernicke\'s Encephalopathy (WE): ophthalmoplegia, nystagmus, ataxia, confusion — REVERSIBLE with thiamine',
+        'Untreated WE → Korsakoff\'s syndrome: irreversible amnesia and confabulation',
+        'Prescribe oral thiamine 100–200 mg TDS (200–300 mg/day total) if: malnourished, decompensated liver disease, in acute withdrawal, or before/during medically assisted withdrawal',
+        'Continue during abstinence for at least 6 weeks; restart if patient starts drinking again',
+        'Vitamin B complex / Vitamin B Co-Strong — NOT recommended (insufficient evidence); stick to thiamine alone',
+        'Pabrinex IV/IM: hospital use for severe malnutrition/detox — not primary care',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Alcohol Withdrawal' },
+    {
+      type: 'table',
+      caption: 'Withdrawal timeline after last drink',
+      headers: ['Timeframe', 'Features'],
+      rows: [
+        ['6–12 hours', 'Tremor, sweating, tachycardia, palpitations, anxiety, hypertension'],
+        ['12–24 hours', 'Intensifying tremor, nausea/vomiting, insomnia, visual disturbance'],
+        ['24–48 hours (peak ~36h)', 'Seizures (generalised tonic-clonic) — risk highest 24–48 hours'],
+        ['48–72 hours', 'Delirium tremens (DT): coarse tremor, severe confusion, hallucinations (visual/tactile), fever, autonomic instability — CAN BE FATAL'],
+        ['Late', 'Wernicke\'s if thiamine-deficient — can occur at any stage'],
+      ],
+    },
+    {
+      type: 'callout',
+      variant: 'danger',
+      title: 'Admit if Any of the Following',
+      items: [
+        'Seizures or history of withdrawal seizures / delirium tremens',
+        'Current delirium, hallucinations or confusion',
+        'Jaundice, ascites, GI bleeding or encephalopathy',
+        'Drinking >30 units/day or SADQ >30',
+        'Multiple substance misuse',
+        'Elderly, homeless, cognitive impairment, severe malnutrition',
+        'Suicidal intent or psychosis',
+        'Failed previous community detox',
+        'IV thiamine (Pabrinex) and benzodiazepine reducing regimen given in hospital',
+      ],
+    },
+    {
+      type: 'callout',
+      variant: 'warning',
+      title: 'Key Advice if NOT Admitting',
+      items: [
+        'NEVER advise sudden cessation — risk of seizures and death',
+        'Gradual reduction: no more than one-quarter reduction every fortnight',
+        'Only community detox if: age <75, no seizure/DT history, SADQ <30, drinking 15–30 units/day, supportive home environment',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Community Detox (Chlordiazepoxide)' },
+    {
+      type: 'callout',
+      variant: 'info',
+      title: 'Community Detox — Eligibility & Prescribing',
+      items: [
+        'Only for GPs with training/experience; patients aged <75 years',
+        'Complete SADQ (Severity of Alcohol Dependence Questionnaire) first',
+        'SADQ <16: mild dependence; SADQ 16–30: moderate — community detox suitable',
+        'SADQ >30: refer for inpatient/residential detox',
+        'Confirm abstinence at each visit (breathalyser or breath alcohol); prescribe max 2 days at a time',
+        'Monitor every 1–2 days: BP, pulse, respiratory rate, mental state',
+        'Use CIWA-Ar tool (available on MDCalc) for formal withdrawal assessment',
+        'Chlordiazepoxide ONLY — do not use if severe liver disease, >75 years, or pregnant',
+        'Typical regimen (mild/moderate, 15–25 units/day): 15mg QDS → taper to zero over 7–10 days',
+        'Accompany with psychosocial interventions and referral to alcohol service',
+        'Avoid in: epilepsy, previous seizures/DTs, concurrent multiple substances, unsupportive home, severe psychiatric comorbidity',
+      ],
+    },
+    {
+      type: 'table',
+      caption: 'Chlordiazepoxide detox — example reducing regimen (mild/moderate dependence, SADQ <16)',
+      headers: ['Day', 'Dose'],
+      rows: [
+        ['Day 1', '15 mg QDS'],
+        ['Day 2', '10 mg QDS'],
+        ['Day 3', '10 mg TDS'],
+        ['Day 4', '5 mg TDS'],
+        ['Day 5', '5 mg BD'],
+        ['Day 6', '5 mg nocte'],
+        ['Day 7', 'Stop'],
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Relapse Prevention Medications' },
+    {
+      type: 'callout',
+      variant: 'info',
+      title: 'Relapse Prevention — Specialist Initiation; Can Continue in Primary Care',
+      items: [
+        'All require specialist initiation with established care plan before GP continues prescribing',
+        'Acamprosate — reduces craving and anxiety triggers; start immediately after abstinence; continue up to 6–12 months; must stop if drinking persists >4–6 weeks after starting; check renal function (renally cleared)',
+        'Naltrexone — opioid antagonist; reduces craving and pleasure from alcohol; monthly monitoring for 6 months; must not use if patient on opioids (risk of acute withdrawal); check LFTs (hepatotoxic at high doses)',
+        'Disulfiram — "deterrent" drug; causes severe flushing, vomiting, collapse if alcohol consumed within 10–15 days; review every 6 months; requires motivated, cooperative patient; not for covert prescription',
+        'Nalmefene (Selincro) — reduces alcohol consumption in dependence without immediate detox; NICE TA325; specialist initiation only; psychosocial support required concurrently',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'DVLA & Driving' },
+    {
+      type: 'callout',
+      variant: 'warning',
+      title: 'DVLA Notification',
+      items: [
+        'Alcohol dependence (AUDIT ≥20): patient MUST notify DVLA — licence revoked until abstinence confirmed',
+        'Harmful drinking (AUDIT 16–19): advise patient of their legal responsibility not to drink and drive; delayed effects; if they cannot control drinking they should inform DVLA',
+        'Hazardous drinking (AUDIT 8–15): no mandatory notification but advise on drink-driving risk',
+        'If patient refuses to notify DVLA and poses road safety risk → you have a duty to inform DVLA yourself (advise patient first)',
+        'Abstinence can be assessed via carbohydrate-deficient transferrin (CDT) — more specific than GGT; specialist use',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Support & Referral' },
+    {
+      type: 'list',
+      items: [
+        'Local drug and alcohol service (Staffordshire): STARS — self-referral at www.staffstars.org',
+        'Medically assisted withdrawal or dependence (AUDIT ≥20 or >14 units/day) → refer to specialist alcohol service',
+        'Relapse prevention medications → specialist alcohol service initiation',
+        'Alcohol-focused psychological therapy (CBT, motivational enhancement) → alcohol service or IAPT',
+        'Alcoholics Anonymous (AA): 0800 917 7650 — www.alcoholics-anonymous.org.uk; free peer support',
+        'Al-Anon: 0800 0086 811 — support for families and friends of people with alcohol problems',
+        'SMART Recovery: evidence-based self-management alternative to AA',
+        'Drinkaware (www.drinkaware.co.uk) — units calculator, drink diary, advice tools',
+        'Drinkline national helpline: 0300 123 1110',
+        'Children of Alcoholics: NACOA 0800 358 3456 — www.nacoa.org.uk',
+      ],
+    },
+
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'STARS (Staffordshire)', url: 'https://www.staffstars.org' },
+        { label: 'Alcoholics Anonymous', url: 'https://www.alcoholics-anonymous.org.uk/' },
+        { label: 'NICE CKS — Alcohol Problem Drinking', url: 'https://cks.nice.org.uk/topics/alcohol-problem-drinking/' },
+        { label: 'NICE CG115 — Harmful Drinking', url: 'https://www.nice.org.uk/guidance/cg115' },
+        { label: 'Drinkaware', url: 'https://www.drinkaware.co.uk' },
+        { label: 'AUDIT Tool (MDCalc)', url: 'https://www.mdcalc.com/calc/1729/audit-alcohol-use-disorders-identification-test' },
+        { label: 'CIWA-Ar Withdrawal Tool', url: 'https://www.mdcalc.com/calc/1729/ciwa-ar-alcohol-withdrawal' },
+        { label: 'DVLA — Alcohol & Driving', url: 'https://www.gov.uk/drug-driving-law' },
+      ],
+    },
+  ],
+}

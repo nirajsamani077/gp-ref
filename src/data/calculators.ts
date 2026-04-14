@@ -41,4 +41,16 @@ export const CALCULATORS: CalculatorMeta[] = [
     searchText:
       'ORBIT ORBIT-AF bleeding risk atrial fibrillation anticoagulation haemoglobin haematocrit anaemia renal function eGFR antiplatelet NSAID age bleeding history major bleed intracranial haemorrhage',
   },
+  {
+    id: 'audit-c',
+    name: 'AUDIT-C — Alcohol Screening',
+    searchText:
+      'AUDIT-C AUDITC alcohol screening consumption hazardous harmful drinking units week frequency binge brief intervention FRAMES',
+  },
+  {
+    id: 'audit',
+    name: 'AUDIT — Alcohol Use Disorders',
+    searchText:
+      'AUDIT alcohol use disorders identification test hazardous harmful dependence dependant drinking units week screening brief intervention FRAMES motivational interviewing withdrawal detox',
+  },
 ]

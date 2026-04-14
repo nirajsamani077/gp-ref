@@ -19,6 +19,8 @@ const CALC_ENTRIES: SearchResult[] = [
   { label: 'FIB-4 Index',                   sublabel: 'Calculator · Liver Fibrosis — NAFLD MASLD ALT AST Platelets', tab: 'calculators', id: 'fib4' },
   { label: 'CHA₂DS₂-VASc — AF Stroke Risk', sublabel: 'Calculator · Stroke risk atrial fibrillation · DOAC anticoagulation apixaban edoxaban rivaroxaban warfarin', tab: 'calculators', id: 'cha2ds2vasc' },
   { label: 'ORBIT-AF — Bleeding Risk',       sublabel: 'Calculator · Bleeding risk before anticoagulation in AF · haemoglobin renal eGFR antiplatelet', tab: 'calculators', id: 'orbit' },
+  { label: 'AUDIT-C — Alcohol Screening',    sublabel: 'Calculator · 3-question alcohol screen · hazardous drinking units FRAMES', tab: 'calculators', id: 'audit-c' },
+  { label: 'AUDIT — Alcohol Use Disorders',  sublabel: 'Calculator · Full 10-question AUDIT · harmful dependence withdrawal detox brief intervention', tab: 'calculators', id: 'audit' },
 ]
 
 const LINK_ENTRIES: SearchResult[] = LINK_CATEGORIES.flatMap(cat =>

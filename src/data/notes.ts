@@ -61,6 +61,8 @@ import { amd }                    from '../notes/amd'
 import { aki }                    from '../notes/aki'
 import { rhinosinusitis }         from '../notes/rhinosinusitis'
 import { nasalPolyps }            from '../notes/nasalPolyps'
+import { alcoholEtoh }            from '../notes/alcoholEtoh'
+import { substanceMisuse }        from '../notes/substanceMisuse'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -127,4 +129,6 @@ export const NOTES: Note[] = [
   aki,
   rhinosinusitis,
   nasalPolyps,
+  alcoholEtoh,
+  substanceMisuse,
 ].map(enrichBody)
