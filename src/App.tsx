@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import BottomTabBar from './components/BottomTabBar'
 import TabContent from './components/TabContent'
+import { UpdateBanner } from './components/UpdateBanner'
 
 function useIsDesktop() {
   const [isDesktop, setIsDesktop] = useState(() => window.innerWidth >= 768)
@@ -67,6 +68,8 @@ export default function App() {
       {!isDesktop && (
         <BottomTabBar tabs={TABS} active={activeTab} onSelect={handleTabSelect} />
       )}
+
+      <UpdateBanner />
     </div>
   )
 }
