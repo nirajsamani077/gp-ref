@@ -29,7 +29,8 @@ export default function SearchBar({ onNavigate }: Props) {
     const timer = setTimeout(() => {
       const hits = search(q)
       setResults(hits)
-      setOpen(hits.length > 0)
+      // Keep the dropdown open even on zero results so the empty state is visible
+      setOpen(true)
       setActiveIdx(-1)
     }, DEBOUNCE)
     return () => clearTimeout(timer)
@@ -121,7 +122,16 @@ export default function SearchBar({ onNavigate }: Props) {
             overflowY: 'auto',
           }}
         >
-          {results.map((r, idx) => {
+          {results.length === 0 ? (
+            <div style={{ padding: '20px 16px', textAlign: 'center' }}>
+              <p style={{ fontSize: 13, fontWeight: 600, color: '#4a5568', marginBottom: 4 }}>
+                No results for "{query.trim()}"
+              </p>
+              <p style={{ fontSize: 12, color: '#a0aec0', lineHeight: 1.5 }}>
+                Try different terms or search the <strong>Notes</strong> tab for clinical content.
+              </p>
+            </div>
+          ) : results.map((r, idx) => {
             const isActive = idx === activeIdx
             return (
               <button

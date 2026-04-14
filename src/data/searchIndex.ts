@@ -52,19 +52,36 @@ function computeSnippet(note: Note, query: string): SnippetPart | undefined {
   const q = query.toLowerCase()
   const CONTEXT = 50
 
+  // Fallback candidates: significant words (>2 chars) sorted longest-first
+  // so we highlight the most specific term when the full phrase isn't found
+  const words = q.split(/\s+/)
+    .filter(w => w.length > 2)
+    .sort((a, b) => b.length - a.length)
+
   for (const block of note.content) {
-    const text = blockToText(block)
+    const text  = blockToText(block)
     const lower = text.toLowerCase()
-    const idx = lower.indexOf(q)
+
+    // Try full phrase first, then fall back word by word
+    let idx      = lower.indexOf(q)
+    let matchLen = q.length
+
+    if (idx === -1) {
+      for (const word of words) {
+        idx = lower.indexOf(word)
+        if (idx !== -1) { matchLen = word.length; break }
+      }
+    }
+
     if (idx === -1) continue
 
     const start = Math.max(0, idx - CONTEXT)
-    const end   = Math.min(text.length, idx + q.length + CONTEXT)
+    const end   = Math.min(text.length, idx + matchLen + CONTEXT)
 
     return {
       before: (start > 0 ? '…' : '') + text.slice(start, idx),
-      match:  text.slice(idx, idx + q.length),
-      after:  text.slice(idx + q.length, end) + (end < text.length ? '…' : ''),
+      match:  text.slice(idx, idx + matchLen),
+      after:  text.slice(idx + matchLen, end) + (end < text.length ? '…' : ''),
     }
   }
   return undefined
@@ -118,13 +135,20 @@ const NOTE_MAP  = new Map<string, Note>(NOTES.map(n => [n.id, n]))
 
 const fuse = new Fuse(ALL_ITEMS, {
   keys: [
-    { name: 'name',       weight: 3 },
+    // Title gets 6× weight — a title match should always beat a body match
+    { name: 'name',       weight: 6 },
+    // label is "Title — Notes/Calculators/Links"; small weight to break ties
     { name: 'label',      weight: 1 },
-    { name: 'searchText', weight: 2 },
+    // Body/search text is supporting context, not primary signal
+    { name: 'searchText', weight: 1 },
   ],
-  threshold: 0.3,
+  // 0.45 comfortably handles 1–2 char typos in longer medical terms
+  // (e.g. "sinusitus", "atral fibrilation", "eosnophil") without
+  // flooding results with irrelevant items
+  threshold: 0.45,
   includeScore: true,
-  minMatchCharLength: 3,
+  // 2 allows short but meaningful abbreviations: AF, AKI, DM, PV
+  minMatchCharLength: 2,
   ignoreLocation: true,
 })
 

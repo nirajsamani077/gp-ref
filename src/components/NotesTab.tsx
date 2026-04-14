@@ -8,18 +8,41 @@ import NoteRenderer from './NoteRenderer'
 // ── Fuse instance for live note filtering ────────────────────────────────────
 const fuse = new Fuse(NOTES, {
   keys: [
-    { name: 'title',    weight: 4 },
+    // Title is the strongest signal — 6× weight ensures "atrial fibrillation"
+    // beats a note that merely mentions it in body text
+    { name: 'title',    weight: 6 },
     { name: 'subtitle', weight: 2 },
     { name: 'body',     weight: 1 },
   ],
-  threshold: 0.35,
+  // 0.45 tolerates 1–2 char typos in medical terms (sinusitus, leukaemia variants)
+  threshold: 0.45,
   ignoreLocation: true,
-  minMatchCharLength: 1,
+  // 2 lets abbreviations like AF, AKI, DM work
+  minMatchCharLength: 2,
+  includeScore: true,
 })
 
 function filterNotes(query: string): Note[] {
   if (!query.trim()) return NOTES
-  return fuse.search(query.trim()).map(r => r.item)
+  const q = query.trim().toLowerCase()
+  const raw = fuse.search(query.trim())
+
+  // Re-rank: explicit title matches always beat fuzzy body matches
+  return raw
+    .map(r => {
+      const titleLower = r.item.title.toLowerCase()
+      let priority = 0
+      if (titleLower === q)               priority = 10000
+      else if (titleLower.startsWith(q))  priority = 8000
+      else if (titleLower.includes(q))    priority = 6000
+      return { item: r.item, score: r.score ?? 1, priority }
+    })
+    .sort((a, b) =>
+      b.priority !== a.priority
+        ? b.priority - a.priority
+        : a.score - b.score          // lower Fuse score = better match
+    )
+    .map(r => r.item)
 }
 
 // ── Specialty list derived from NOTES order ──────────────────────────────────
@@ -165,8 +188,21 @@ export default function NotesTab() {
         )}
 
         {visible.length === 0 ? (
-          <div style={{ padding: '40px 0', textAlign: 'center', color: '#a0aec0', fontSize: 15 }}>
-            {filterQuery ? `No notes match "${filterQuery}"` : 'No notes in this specialty yet'}
+          <div style={{ padding: '40px 20px', textAlign: 'center' }}>
+            {filterQuery ? (
+              <>
+                <div style={{ fontSize: 32, marginBottom: 12 }}>🔍</div>
+                <p style={{ fontSize: 15, fontWeight: 600, color: '#4a5568', marginBottom: 6 }}>
+                  No notes found for "{filterQuery}"
+                </p>
+                <p style={{ fontSize: 13, color: '#a0aec0', lineHeight: 1.5 }}>
+                  Try a broader term (e.g. <em>asthma</em> instead of <em>salbutamol</em>),
+                  check your spelling, or search by condition rather than drug name.
+                </p>
+              </>
+            ) : (
+              <p style={{ fontSize: 15, color: '#a0aec0' }}>No notes in this specialty yet</p>
+            )}
           </div>
         ) : (
           visible.map((note: Note) => {
