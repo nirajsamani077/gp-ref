@@ -192,6 +192,13 @@ export const abnormalLft: Note = {
       ],
     },
 
+    {
+      type: 'calclink',
+      calculators: [
+        { id: 'fib4', label: 'FIB-4 Index — Liver Fibrosis', subtitle: 'Fibrosis staging in NAFLD, MASLD, ARLD — Age × AST ÷ (Platelets × √ALT)' },
+      ],
+    },
+
     // ── REFERRAL SUMMARY ─────────────────────────────────────────────────────
     {
       type: 'callout',

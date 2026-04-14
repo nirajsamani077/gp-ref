@@ -161,6 +161,13 @@ export const diabetesT1DM: Note = {
     },
 
     {
+      type: 'calclink',
+      calculators: [
+        { id: 'qrisk3', label: 'QRISK3 — Cardiovascular Risk', subtitle: '10-year CVD risk — statin threshold ≥10%' },
+      ],
+    },
+
+    {
       type: 'linkrow',
       links: [
         { label: 'JDRF (Juvenile Diabetes Research Foundation)', url: 'https://jdrf.org.uk' },

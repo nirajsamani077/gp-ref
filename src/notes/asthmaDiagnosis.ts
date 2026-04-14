@@ -93,6 +93,13 @@ export const asthmaDiagnosis: Note = {
     },
 
     {
+      type: 'calclink',
+      calculators: [
+        { id: 'feno', label: 'FeNO Calculator', subtitle: 'Fractional Exhaled Nitric Oxide — eosinophilic airway inflammation' },
+      ],
+    },
+
+    {
       type: 'linkrow',
       links: [
         { label: 'FeNO Calculator', url: '#feno' },

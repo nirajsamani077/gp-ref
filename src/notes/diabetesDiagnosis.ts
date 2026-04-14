@@ -163,6 +163,13 @@ export const diabetesDiagnosis: Note = {
     },
 
     {
+      type: 'calclink',
+      calculators: [
+        { id: 'qrisk3', label: 'QRISK3 — Cardiovascular Risk', subtitle: '10-year CVD risk — statin threshold ≥10%' },
+      ],
+    },
+
+    {
       type: 'linkrow',
       links: [
         { label: 'NHS Diabetes Prevention Programme (Healthier You)', url: 'https://www.england.nhs.uk/diabetes/diabetes-prevention/' },

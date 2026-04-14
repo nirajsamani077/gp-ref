@@ -175,6 +175,13 @@ export const asthmaAdult: Note = {
     },
 
     {
+      type: 'calclink',
+      calculators: [
+        { id: 'feno', label: 'FeNO Calculator', subtitle: 'Fractional Exhaled Nitric Oxide — eosinophilic airway inflammation' },
+      ],
+    },
+
+    {
       type: 'linkrow',
       links: [
         { label: 'Rightbreathe — inhaler choice tool', url: 'https://www.rightbreathe.com' },

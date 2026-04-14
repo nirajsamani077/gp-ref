@@ -441,11 +441,17 @@ export const atrialFibrillation: Note = {
       'Signpost to: British Heart Foundation (BHF) AF page, AF Association UK (atrialfibrillation.org.uk)',
     ]},
 
+    {
+      type: 'calclink',
+      calculators: [
+        { id: 'cha2ds2vasc', label: 'CHA₂DS₂-VASc — Stroke Risk', subtitle: 'Anticoagulation threshold in AF' },
+        { id: 'orbit', label: 'ORBIT-AF — Bleeding Risk', subtitle: 'Bleeding risk before starting anticoagulation' },
+      ],
+    },
+
     { type: 'linkrow', links: [
       { label: 'NICE CG180 \u2014 Atrial Fibrillation', url: 'https://www.nice.org.uk/guidance/cg180' },
       { label: 'NICE Patient Decision Aid \u2014 AF & Anticoagulation', url: 'https://www.nice.org.uk/guidance/cg180/resources/patient-decision-aid-pdf-243734797' },
-      { label: 'MDCalc \u2014 CHA\u2082DS\u2082-VASc Calculator', url: 'https://www.mdcalc.com/cha2ds2-vasc-score-atrial-fibrillation-stroke-risk' },
-      { label: 'MDCalc \u2014 ORBIT Bleeding Risk Score', url: 'https://www.mdcalc.com/calc/10227/orbit-bleeding-risk-score-atrial-fibrillation' },
       { label: 'MDCalc \u2014 Cockcroft-Gault CrCl', url: 'https://www.mdcalc.com/creatinine-clearance-cockcroft-gault-equation' },
       { label: 'AF Association UK', url: 'https://www.atrialfibrillation.org.uk' },
     ]},

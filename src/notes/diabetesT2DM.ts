@@ -329,6 +329,13 @@ export const diabetesT2DM: Note = {
     },
 
     {
+      type: 'calclink',
+      calculators: [
+        { id: 'qrisk3', label: 'QRISK3 — Cardiovascular Risk', subtitle: '10-year CVD risk — statin threshold ≥10%' },
+      ],
+    },
+
+    {
       type: 'heading',
       level: 2,
       text: 'Cardiovascular & Metabolic Targets',
