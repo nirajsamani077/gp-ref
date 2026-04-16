@@ -179,6 +179,28 @@ export const allergicReactions: Note = {
       ],
     },
 
+    { type: 'heading', level: 3, text: 'Antihistamine Doses' },
+
+    {
+      type: 'table',
+      headers: ['Drug', 'Age / Weight', 'Dose & Formulation', 'Frequency'],
+      rows: [
+        // ── Sedating ──
+        ['Chlorphenamine 2 mg/5 ml oral solution (sedating)', '1 month – 2 years', '2.5 ml (1 mg)', 'Up to twice daily (unlicensed <1 yr)'],
+        ['Chlorphenamine 2 mg/5 ml oral solution (sedating)', '2 – 6 years', '2.5 ml (1 mg)', 'Every 4–6 hours, max 6 doses/24 h'],
+        ['Chlorphenamine 2 mg/5 ml oral solution (sedating)', '6 – 12 years', '5 ml (2 mg)', 'Every 4–6 hours, max 6 doses/24 h'],
+        ['Chlorphenamine 4 mg tablets (sedating)', '>12 years / adult', '1 tablet (4 mg)', 'Every 4–6 hours, max 6 tablets/day'],
+        // ── Non-sedating ──
+        ['Loratadine 5 mg/5 ml oral solution (non-sedating)', '2 – 11 years, <31 kg', '5 ml (5 mg)', 'Once daily'],
+        ['Loratadine 5 mg/5 ml oral solution (non-sedating)', '2 – 11 years, ≥31 kg', '10 ml (10 mg)', 'Once daily'],
+        ['Loratadine 10 mg tablets (non-sedating)', '>12 years / adult', '1 tablet (10 mg)', 'Once daily'],
+        ['Cetirizine 5 mg/5 ml oral solution (non-sedating)', '2 – 6 years', '2.5 ml (2.5 mg)', 'Twice daily (unlicensed <2 yr)'],
+        ['Cetirizine 5 mg/5 ml oral solution (non-sedating)', '6 – 12 years', '5 ml (5 mg)', 'Once or twice daily'],
+        ['Cetirizine 10 mg tablets (non-sedating)', '>12 years / adult', '1 tablet (10 mg)', 'Once daily'],
+      ],
+      caption: 'For chronic urticaria non-sedating antihistamines (loratadine, cetirizine) are preferred. Dose can be increased up to 4× the standard dose in refractory chronic urticaria before stepping up to specialist review. Chlorphenamine is useful acutely (faster onset) but causes sedation — avoid in school-age children during school hours.',
+    },
+
     // ── ANAPHYLAXIS ───────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Anaphylaxis' },
 
