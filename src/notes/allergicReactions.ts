@@ -239,9 +239,9 @@ export const allergicReactions: Note = {
 
     {
       type: 'image',
-      src: '/images/epipen.jpeg',
+      src: '/images/epipen technique.jpeg',
       alt: 'Three-step EpiPen technique: pull blue cap, press orange end to outer thigh, hold 3 seconds',
-      caption: 'EpiPen technique: (1) Pull off blue safety cap. (2) Press orange tip firmly against outer thigh — can be used through clothing. (3) Hold for 3 seconds, remove, rub site.',
+      caption: 'EpiPen technique: (1) Form fist and pull off blue safety cap. (2) Press orange tip firmly against outer mid-thigh — can be used through clothing. (3) Push down hard until click is heard or felt; hold 3 seconds, then remove.',
     },
 
     {
@@ -252,17 +252,33 @@ export const allergicReactions: Note = {
         ['Emerade', '150 mcg, 300 mcg, 500 mcg'],
         ['Jext', '150 mcg, 300 mcg'],
       ],
-      caption: 'Emerade 500 mcg is the only device offering the full adult dose — consider for adults at high risk',
+      caption: 'Emerade 500 mcg is the only device offering the full adult dose — consider for higher-risk adults',
+    },
+
+    { type: 'heading', level: 3, text: 'How Many to Prescribe' },
+
+    {
+      type: 'table',
+      headers: ['Setting', 'Quantity', 'Rationale'],
+      rows: [
+        ['Adults (no school-age dependants)', '2 pens', 'Carry both at all times — one may misfire or be unavailable; second dose may be needed if no response after 5 min'],
+        ['School-age child', '4 pens (2 + 2)', '2 to carry on their person (bag/kit); 2 to be kept at school/nursery under an Individual Healthcare Plan (IHP)'],
+        ['Child at nursery', '4 pens (2 + 2)', '2 to carry; 2 held by nursery staff — essential as young children cannot self-administer'],
+        ['Child transitioning to secondary school', '4 pens (2 + 2)', 'Secondary school pupils may self-carry; school still requires a spare set on site'],
+      ],
+      caption: 'Prescribe on FP10. Schools are permitted to hold AAIs under Medicines in Schools guidance — ensure IHP is completed.',
     },
 
     {
-      type: 'list',
+      type: 'callout',
+      variant: 'tip',
+      title: 'Practical prescribing tips',
       items: [
-        'Dose by weight: <15 kg → 150 mcg pen; ≥15 kg → 300 mcg pen; adults → 300–500 mcg',
-        'Prescribe 2 devices — patient must carry both at all times (school, work, and home)',
-        'Be pragmatic: the aim is two devices on their person, not duplicate sets in every location — patients should take devices with them wherever they go',
-        'Provide written anaphylaxis action plan (BSACI or Anaphylaxis UK template)',
-        'Ensure patient, family, school/work are all trained in recognition and AAI use',
+        'Dose by weight: <15 kg → 150 mcg pen; ≥15 kg → 300 mcg; adults → 300 mcg (or 500 mcg Emerade if higher risk)',
+        'Be pragmatic about quantity — the goal is 2 pens on their person at all times; patients should carry their pens with them rather than leaving one set at home and one at work',
+        'For school-age children: prescribe 4 total; write a covering letter / complete school IHP so the school set is held safely and staff are trained',
+        'AAIs expire (check date) — most last 12–18 months; prescribe replacement before expiry; some CCGs/ICBs have a repeat prescription protocol',
+        'Provide written anaphylaxis action plan (BSACI or Anaphylaxis UK template) and ensure patient, family, and school/work contacts are all trained',
       ],
     },
 
