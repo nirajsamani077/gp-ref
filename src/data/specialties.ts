@@ -29,6 +29,7 @@ export const SPECIALTY_STYLES: Record<string, SpecialtyStyle> = {
   palliative:       { label: 'Palliative & EOL',   border: '#718096', bg: '#f7fafc', text: '#2d3748', pill: '#e2e8f0' },
   ophthalmology:    { label: 'Ophthalmology',      border: '#4299e1', bg: '#ebf8ff', text: '#2a4365', pill: '#bee3f8' },
   renal:            { label: 'Renal',              border: '#ed8936', bg: '#fffaf0', text: '#7b341e', pill: '#feebc8' },
+  allergy:          { label: 'Allergy',            border: '#84cc16', bg: '#f7fee7', text: '#365314', pill: '#d9f99d' },
 }
 
 // Fallback for unrecognised tags

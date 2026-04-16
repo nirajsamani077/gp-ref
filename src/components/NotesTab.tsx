@@ -54,6 +54,31 @@ function getSpecialties() {
 }
 const SPECIALTIES = getSpecialties()
 
+// ── Recently Viewed — localStorage persistence ───────────────────────────────
+const RECENT_KEY = 'gpr-recent'
+const RECENT_MAX = 4
+
+function useRecentlyViewed() {
+  const [ids, setIds] = useState<string[]>(() => {
+    try {
+      const raw = localStorage.getItem(RECENT_KEY)
+      return raw ? (JSON.parse(raw) as string[]) : []
+    } catch {
+      return []
+    }
+  })
+
+  useEffect(() => {
+    try { localStorage.setItem(RECENT_KEY, JSON.stringify(ids)) } catch { /* quota */ }
+  }, [ids])
+
+  const push = useCallback((id: string) => {
+    setIds(prev => [id, ...prev.filter(x => x !== id)].slice(0, RECENT_MAX))
+  }, [])
+
+  return { recentIds: ids, pushRecent: push }
+}
+
 // ── Favourites — localStorage persistence ────────────────────────────────────
 const FAV_KEY = 'gpr-favourites'
 
@@ -94,6 +119,7 @@ export default function NotesTab() {
   const inputRef = useRef<HTMLInputElement>(null)
 
   const { favouriteIds, toggleFavourite } = useFavourites()
+  const { recentIds, pushRecent }         = useRecentlyViewed()
 
   const resetHome = useCallback(() => {
     setFilterQuery('')
@@ -129,12 +155,25 @@ export default function NotesTab() {
 
   const showingAll = !filterQuery && specialty === 'all'
 
-  // When not searching, split into pinned favourites + everything else.
-  // When searching, show all results in one flat list (starred cards still show their star).
+  // When not searching, split into: favourites → recently viewed → all notes.
+  // When searching, show a flat list (starred cards still show their star).
   const searching          = Boolean(filterQuery)
   const favouritedVisible  = searching ? [] : visible.filter(n => favouriteIds.has(n.id))
-  const unfavouritedVisible = searching ? visible : visible.filter(n => !favouriteIds.has(n.id))
-  const hasFavSection      = favouritedVisible.length > 0
+
+  // Recently viewed: in recency order, not a favourite, and present in visible set
+  const visibleIds = new Set(visible.map(n => n.id))
+  const NOTE_BY_ID = new Map(NOTES.map(n => [n.id, n]))
+  const recentVisible = searching ? [] : recentIds
+    .filter(id => visibleIds.has(id) && !favouriteIds.has(id))
+    .map(id => NOTE_BY_ID.get(id)!)
+    .filter(Boolean) as Note[]
+
+  // Main list: everything else
+  const pinnedIds          = new Set([...favouriteIds, ...recentVisible.map(n => n.id)])
+  const unfavouritedVisible = searching ? visible : visible.filter(n => !pinnedIds.has(n.id))
+
+  const hasFavSection    = favouritedVisible.length > 0
+  const hasRecentSection = recentVisible.length > 0
 
   // ── Shared card renderer ─────────────────────────────────────────────────
   function renderCard(note: Note) {
@@ -164,7 +203,11 @@ export default function NotesTab() {
 
           {/* Toggle button — opens/closes body */}
           <button
-            onClick={() => setOpenId(isOpen ? null : note.id)}
+            onClick={() => {
+              const next = isOpen ? null : note.id
+              setOpenId(next)
+              if (next) pushRecent(next)
+            }}
             style={{
               flex: 1, minWidth: 0,
               padding: '13px 6px 13px 14px',
@@ -333,41 +376,60 @@ export default function NotesTab() {
             {/* ── Favourites section ── */}
             {hasFavSection && (
               <>
-                <div style={{
-                  display: 'flex', alignItems: 'center', gap: 5,
-                  marginBottom: 8,
-                  fontSize: 11, fontWeight: 800, color: '#92400e',
-                  textTransform: 'uppercase', letterSpacing: '0.08em',
-                }}>
-                  <span style={{ fontSize: 13, color: '#f59e0b' }}>★</span>
-                  Favourites
-                </div>
-
+                <SectionHeading icon="★" iconColour="#f59e0b" label="Favourites" colour="#92400e" />
                 {favouritedVisible.map(renderCard)}
+                {(hasRecentSection || unfavouritedVisible.length > 0) && <SectionDivider />}
+              </>
+            )}
 
-                {/* Divider between favourites and rest */}
-                {unfavouritedVisible.length > 0 && (
-                  <div style={{
-                    display: 'flex', alignItems: 'center', gap: 10,
-                    margin: '4px 0 14px',
-                  }}>
-                    <div style={{ flex: 1, height: 1, backgroundColor: '#dde6f0' }} />
-                    <span style={{
-                      fontSize: 10, fontWeight: 700, color: '#a0aec0',
-                      textTransform: 'uppercase', letterSpacing: '0.07em',
-                      whiteSpace: 'nowrap',
-                    }}>All notes</span>
-                    <div style={{ flex: 1, height: 1, backgroundColor: '#dde6f0' }} />
-                  </div>
-                )}
+            {/* ── Recently Viewed section ── */}
+            {hasRecentSection && (
+              <>
+                <SectionHeading icon="◷" iconColour="#6366f1" label="Recently Viewed" colour="#3730a3" />
+                {recentVisible.map(renderCard)}
+                {unfavouritedVisible.length > 0 && <SectionDivider label="All notes" />}
               </>
             )}
 
             {/* ── Main / remaining notes ── */}
+            {!hasFavSection && !hasRecentSection && unfavouritedVisible.length > 0 && <div style={{ marginBottom: 2 }} />}
             {unfavouritedVisible.map(renderCard)}
           </>
         )}
       </div>
+    </div>
+  )
+}
+
+// ── Section heading ──────────────────────────────────────────────────────────
+function SectionHeading({ icon, iconColour, label, colour }: {
+  icon: string; iconColour: string; label: string; colour: string
+}) {
+  return (
+    <div style={{
+      display: 'flex', alignItems: 'center', gap: 5,
+      marginBottom: 8,
+      fontSize: 11, fontWeight: 800, color: colour,
+      textTransform: 'uppercase', letterSpacing: '0.08em',
+    }}>
+      <span style={{ fontSize: 13, color: iconColour }}>{icon}</span>
+      {label}
+    </div>
+  )
+}
+
+// ── Section divider ───────────────────────────────────────────────────────────
+function SectionDivider({ label }: { label?: string }) {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 10, margin: '4px 0 14px' }}>
+      <div style={{ flex: 1, height: 1, backgroundColor: '#dde6f0' }} />
+      {label && (
+        <span style={{
+          fontSize: 10, fontWeight: 700, color: '#a0aec0',
+          textTransform: 'uppercase', letterSpacing: '0.07em', whiteSpace: 'nowrap',
+        }}>{label}</span>
+      )}
+      {label && <div style={{ flex: 1, height: 1, backgroundColor: '#dde6f0' }} />}
     </div>
   )
 }
