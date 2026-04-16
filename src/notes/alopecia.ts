@@ -75,10 +75,10 @@ export const alopecia: Note = {
       headers: ['Type', 'Pattern', 'Key Features', 'First-line management'],
       rows: [
         ['Alopecia areata', 'Patchy (round/oval)', 'Well-circumscribed smooth bald patches; exclamation mark hairs at margins; normal or slightly red skin; can affect beard/brows/lashes; nail pitting', 'Watchful waiting if <50% or regrowth present; topical steroid if >50% and no regrowth; see below'],
-        ['Androgenetic — male', 'Patterned (frontal + vertex)', 'Frontal triangular recession → vertex involvement; family history; no scalp inflammation', 'Minoxidil 5% foam OTC (Regaine); finasteride 1 mg OD (Rx)'],
-        ['Androgenetic — female', 'Diffuse (centroparietal)', 'Crown and parietal thinning; frontal hairline preserved; Ludwig scale I–III; can overlap with PCOS', 'Minoxidil 5% OTC (Regaine for Women); refer if severe or androgen excess'],
-        ['Telogen effluvium', 'Diffuse (all-over)', 'Acute diffuse shedding 2–6 months after trigger; pull test positive; typically self-limiting', 'Identify/treat trigger; ferritin >70; reassure; minoxidil 5% if persistent'],
-        ['Traction alopecia', 'Fronto-temporal hairline', 'History of tight hairstyles; fringe sign — small spared hairs at hairline; early = reversible', 'Stop causative styling; minoxidil OTC; camouflage'],
+        ['Androgenetic — male', 'Patterned (frontal + vertex)', 'Frontal triangular recession → vertex involvement; family history; no scalp inflammation', 'Minoxidil 5% foam OTC (Regaine) — blacklisted on NHS, purchase OTC; finasteride 1 mg — private prescription only (not NHS for hair loss)'],
+        ['Androgenetic — female', 'Diffuse (centroparietal)', 'Crown and parietal thinning; frontal hairline preserved; Ludwig scale I–III; can overlap with PCOS', 'Minoxidil 5% OTC (Regaine for Women) — blacklisted on NHS; refer if severe or androgen excess'],
+        ['Telogen effluvium', 'Diffuse (all-over)', 'Acute diffuse shedding 2–6 months after trigger; pull test positive; typically self-limiting', 'Identify/treat trigger; ferritin >70; reassure; minoxidil 5% OTC if persistent (not NHS prescribable)'],
+        ['Traction alopecia', 'Fronto-temporal hairline', 'History of tight hairstyles; fringe sign — small spared hairs at hairline; early = reversible', 'Stop causative styling; minoxidil 5% OTC (not NHS prescribable); camouflage'],
         ['Trichotillomania', 'Irregular patchy (often vertex)', 'Self-inflicted pulling (often subconscious); irregular bizarre-shaped patches; broken hairs of varying length; may deny', 'Psychological support; CBT; safeguarding if child'],
       ],
       caption: 'Mnemonic for non-scarring causes: AATT — Areata, Androgenetic, Telogen, Traction/Trichotillomania',
@@ -86,6 +86,13 @@ export const alopecia: Note = {
 
     // ── ALOPECIA AREATA ───────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Alopecia Areata' },
+
+    {
+      type: 'image',
+      src: '/images/person-with-alopecia-areata-653778784.webp',
+      alt: 'Close-up of a man\'s scalp showing multiple well-circumscribed smooth bald patches of alopecia areata on the crown and occipital area',
+      caption: 'Alopecia areata: multiple well-demarcated, smooth, totally bald patches. The surrounding scalp appears entirely normal — no scarring, scale or inflammation. Exclamation mark hairs (short broken hairs tapering at the root) may be visible at the active patch margins.',
+    },
 
     {
       type: 'image',
@@ -149,14 +156,21 @@ export const alopecia: Note = {
         'Affects ~50% of men by age 50 — DHT-mediated miniaturisation of hair follicles',
         'Pattern: frontal triangular recession → vertex involvement; Hamilton-Norwood scale I–VII',
         'No investigation usually needed — clinical diagnosis; check ferritin/TFTs if any atypical features',
-        'Minoxidil 5% foam (Regaine for Men) — OTC; apply once daily; takes up to 12 months for visible effect; must continue indefinitely or hair loss resumes; not prescribable on NHS',
-        'Finasteride 1 mg OD — 5-alpha reductase inhibitor; prescription only; review at 4–6 months; continue if effective, stop if no response after 1 year; side effects: sexual dysfunction (~2%), post-finasteride syndrome (rare)',
+        'Minoxidil 5% foam (Regaine for Men) — OTC only; blacklisted on NHS (cannot be prescribed); apply once daily; takes up to 12 months for visible effect; must continue indefinitely or hair loss resumes',
+        'Finasteride 1 mg OD — 5-alpha reductase inhibitor; NOT prescribable on NHS for hair loss (only licensed on NHS for BPH); private prescription only; review at 4–6 months; continue if effective, stop if no response after 1 year; side effects: sexual dysfunction (~2%), post-finasteride syndrome (rare)',
         'Hair transplant — not available on NHS; private only',
         'Do not refer to dermatology for male pattern baldness alone',
       ],
     },
 
     { type: 'heading', level: 3, text: 'Female Pattern Hair Loss' },
+
+    {
+      type: 'image',
+      src: '/images/female-pattern-hair-loss-vs-telogen-effluvium-main-1024x683.png.webp',
+      alt: 'Side-by-side illustration comparing female pattern hair loss (thinning on crown, hairline preserved) with telogen effluvium (diffuse thinning across whole scalp)',
+      caption: 'Key distinction: female pattern hair loss shows centroparietal thinning with the frontal hairline preserved. Telogen effluvium causes diffuse thinning across the entire scalp. Both can coexist — treat the underlying cause first.',
+    },
 
     {
       type: 'image',
@@ -176,7 +190,7 @@ export const alopecia: Note = {
       type: 'list',
       items: [
         'Diffuse centroparietal thinning with preserved frontal hairline (distinguish from telogen effluvium by gradual onset and pattern)',
-        'Ludwig Scale I–III — all grades consider Minoxidil 5% solution once daily (OTC, Regaine for Women); review at 6 months; continue indefinitely if effective',
+        'Ludwig Scale I–III — all grades consider Minoxidil 5% solution once daily (OTC, Regaine for Women); blacklisted on NHS — patients must purchase OTC; review at 6 months; continue indefinitely if effective',
         'Pre-menopausal: check FSH, LH, prolactin, testosterone, SHBG, DHEAS, 17-hydroxyprogesterone; USS pelvis if PCOS suspected',
         'Post-menopausal: check ferritin, TFTs, ANA',
         'If acne or hirsutism: check free androgen index (FAI) + prolactin; consider PCOS or androgen-secreting tumour',
@@ -189,6 +203,13 @@ export const alopecia: Note = {
     { type: 'heading', level: 2, text: 'Telogen Effluvium' },
 
     {
+      type: 'image',
+      src: '/images/1-hair-growth-cycle.jpg',
+      alt: 'Hair growth cycle diagram showing anagen (growing), catagen (transition), telogen (resting) and telogen effluvium (shedding) phases with cross-sectional follicle illustrations',
+      caption: 'The hair growth cycle. In telogen effluvium, a systemic stressor triggers a mass shift of follicles from anagen into the telogen (resting) phase. When these hairs are shed 2–6 months later, diffuse thinning results. Follicles remain intact — regrowth occurs once the trigger resolves.',
+    },
+
+    {
       type: 'list',
       items: [
         'Diffuse hair shedding due to a shift of follicles into the resting (telogen) phase en masse — occurs 2–6 months after a physiological stressor',
@@ -196,7 +217,7 @@ export const alopecia: Note = {
         'Drug causes: chemotherapy, TCAs, allopurinol, retinoids, anticoagulants, anticonvulsants, beta-blockers, lithium, OCP cessation',
         'Pull test: positive (>6 hairs); diffuse thinning across entire scalp',
         'Investigations: FBC, ferritin (aim >70 µg/L), TFTs, ANA, vitamin D, B12/folate; zinc/magnesium if restricted diet',
-        'Treatment: identify and treat underlying cause; reassure that regrowth occurs in 6–9 months; correct nutritional deficiencies; minoxidil 5% can accelerate recovery',
+        'Treatment: identify and treat underlying cause; reassure that regrowth occurs in 6–9 months; correct nutritional deficiencies; minoxidil 5% OTC (blacklisted on NHS — purchase OTC) can accelerate recovery',
         'Refer to dermatology if no improvement after 9 months — to exclude diffuse alopecia areata or chronic telogen effluvium',
         'Chronic telogen effluvium (>6 months): more common in women; often multifactorial — ongoing stress, thyroid, iron deficiency; may overlap with female pattern',
       ],
@@ -255,6 +276,13 @@ export const alopecia: Note = {
     },
 
     {
+      type: 'image',
+      src: '/images/329-tinea-capitis-with-associated-alopecia-1-1024x1024.jpg',
+      alt: 'Clinical photograph of tinea capitis showing a scaly, erythematous, inflamed patch of hair loss on the scalp being examined with gloved hands',
+      caption: 'Tinea capitis: inflamed, scaly, erythematous patch with associated hair loss. Note the scaling and erythema distinguishing this from the smooth, non-inflamed patches of alopecia areata. Send skin scrapings and plucked hairs for mycology before starting treatment.',
+    },
+
+    {
       type: 'callout',
       variant: 'danger',
       title: 'Kerion — refer urgently to dermatology',
@@ -264,6 +292,13 @@ export const alopecia: Note = {
         'Hairs fall out leaving boggy bald area; if untreated → permanent scarring alopecia',
         'Refer urgently — may require systemic steroids alongside antifungals to reduce scarring',
       ],
+    },
+
+    {
+      type: 'image',
+      src: '/images/kerion.jpg',
+      alt: 'Clinical photograph of a kerion on the scalp — a boggy, pustular, inflammatory mass with yellow crusting and hair loss',
+      caption: 'Kerion: a boggy, painful, pustular mass representing an intense inflammatory reaction to tinea capitis. Associated lymphadenopathy is common. Without urgent treatment (oral antifungals ± systemic steroids), permanent scarring alopecia results. Refer urgently to dermatology.',
     },
 
     {
