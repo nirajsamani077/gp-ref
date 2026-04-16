@@ -197,8 +197,12 @@ export const allergicReactions: Note = {
         ['Cetirizine 5 mg/5 ml oral solution (non-sedating)', '2 – 6 years', '2.5 ml (2.5 mg)', 'Twice daily (unlicensed <2 yr)'],
         ['Cetirizine 5 mg/5 ml oral solution (non-sedating)', '6 – 12 years', '5 ml (5 mg)', 'Once or twice daily'],
         ['Cetirizine 10 mg tablets (non-sedating)', '>12 years / adult', '1 tablet (10 mg)', 'Once daily'],
+        // ── Fexofenadine ──
+        ['Fexofenadine 30 mg tablets (non-sedating)', '6 – 11 years', '1 tablet (30 mg)', 'Twice daily'],
+        ['Fexofenadine 120 mg tablets (non-sedating)', '>12 years / adult', '1 tablet (120 mg)', 'Once daily — allergic rhinitis'],
+        ['Fexofenadine 180 mg tablets (non-sedating)', '>12 years / adult', '1 tablet (180 mg)', 'Once daily — urticaria'],
       ],
-      caption: 'For chronic urticaria non-sedating antihistamines (loratadine, cetirizine) are preferred. Dose can be increased up to 4× the standard dose in refractory chronic urticaria before stepping up to specialist review. Chlorphenamine is useful acutely (faster onset) but causes sedation — avoid in school-age children during school hours.',
+      caption: 'For chronic urticaria non-sedating antihistamines (loratadine, cetirizine, fexofenadine) are preferred. Dose can be increased up to 4× the standard dose in refractory chronic urticaria before stepping up to specialist review. Chlorphenamine is useful acutely (faster onset) but causes sedation — avoid in school-age children during school hours.',
     },
 
     // ── ANAPHYLAXIS ───────────────────────────────────────────────────────────
