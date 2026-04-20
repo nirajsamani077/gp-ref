@@ -220,18 +220,32 @@ export const dementia: Note = {
       caption: 'Pulse checks required at: baseline, 1 month, 3 months, annually and 1 week after any dose increase. Memantine does NOT require pulse monitoring.',
     },
 
+    { type: 'heading', level: 3, text: 'Side Effects' },
+
+    {
+      type: 'table',
+      headers: ['Drug', 'Very common / common', 'Watch out for'],
+      rows: [
+        ['Donepezil', 'Nausea, vomiting, diarrhoea, headache, dizziness, muscle cramps, fatigue', 'Vivid dreams / nightmares / insomnia — try switching to morning dose. Bradycardia — check pulse at every review. Rare: hepatotoxicity, seizures'],
+        ['Rivastigmine', 'Nausea, vomiting, diarrhoea, anorexia, dizziness, headache', 'GI side effects more pronounced than donepezil — consider patch formulation. Re-titrate from start if interrupted'],
+        ['Galantamine', 'Nausea, vomiting, diarrhoea, dizziness, headache', 'Arrhythmias more common than with donepezil. Rare: serious skin reactions (SJS) — stop at first rash'],
+        ['Memantine', 'Dizziness, headache, drowsiness, constipation, hypertension', 'Confusion, hallucinations (uncommon). No bradycardia risk. Rare: seizures, hepatitis'],
+      ],
+      caption: 'Side effects are most common on starting or dose increase — usually settle within a few days. Reduce dose before stopping if not severe.',
+    },
+
     {
       type: 'callout',
       variant: 'warning',
-      title: 'AChEI cautions & side effects',
+      title: 'AChEI cautions — check before prescribing',
       items: [
-        'Cautions: cardiac disease, sick sinus syndrome, 2nd/3rd degree heart block (do NOT prescribe if unpaced), history of peptic ulceration, asthma/COPD (↑ bronchospasm risk), seizures',
-        'Common side effects (all AChEI): nausea, vomiting, diarrhoea, headache, dizziness',
-        'Donepezil specifically: vivid dreams, nightmares, insomnia (consider giving in morning if problematic), uncommon bradycardia',
-        'Memantine side effects: dizziness, constipation, hypertension, drowsiness, confusion',
-        'If side effects severe: discontinue. If not severe: reduce dose first',
-        'Review: at 4 weeks, 3 months, then 6-monthly to yearly. Use objective cognitive tools + carer view',
-        'If interrupted for several days: re-titrate from starting dose',
+        'Cardiac: sick sinus syndrome, 2nd/3rd degree heart block (do NOT prescribe if unpaced), supraventricular conduction abnormalities — ↑ bradycardia risk',
+        'GI: active or history of peptic ulceration — ↑ ulcer risk',
+        'Respiratory: asthma/COPD — ↑ bronchospasm risk',
+        'Neurological: history of seizures/epilepsy — ↑ convulsion risk',
+        'If side effects severe: discontinue. If mild-moderate: reduce dose first, then re-titrate',
+        'If interrupted for several days: always re-titrate from the starting dose',
+        'Review at 4 weeks, 3 months, then 6-monthly to yearly — carer view often more informative than cognitive scales',
       ],
     },
 
