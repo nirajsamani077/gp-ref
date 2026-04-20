@@ -134,6 +134,13 @@ export const dementia: Note = {
       ],
     },
 
+    {
+      type: 'calclink',
+      calculators: [
+        { id: '6cit', label: '6-CIT Calculator', subtitle: 'Six Item Cognitive Impairment Test — score ≥8 suggests significant impairment' },
+      ],
+    },
+
     // ── INVESTIGATIONS ────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Investigations & Referral' },
 
