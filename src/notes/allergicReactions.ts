@@ -265,7 +265,7 @@ export const allergicReactions: Note = {
 
     {
       type: 'image',
-      src: '/images/epipen technique.jpeg',
+      src: '/images/epipen-technique.jpeg',
       alt: 'Three-step EpiPen technique: pull blue cap, press orange end to outer thigh, hold 3 seconds',
       caption: 'EpiPen technique: (1) Form fist and pull off blue safety cap. (2) Press orange tip firmly against outer mid-thigh — can be used through clothing. (3) Push down hard until click is heard or felt; hold 3 seconds, then remove.',
     },

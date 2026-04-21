@@ -151,7 +151,7 @@ export const sixEightWeekCheck: Note = {
     },
     {
       type: 'image',
-      src: '/images/6-8 week check.webp',
+      src: '/images/6-8-week-check.webp',
       alt: 'General overview of the 6-8 week baby examination',
       caption: 'General overview of the newborn examination — systematic head-to-toe approach.',
     },
@@ -413,7 +413,7 @@ export const sixEightWeekCheck: Note = {
     },
     {
       type: 'image',
-      src: '/images/undescended testicles pathway.jpg',
+      src: '/images/undescended-testicles-pathway.jpg',
       alt: 'Undescended testicle clinical pathway — unilateral vs bilateral, palpable vs impalpable',
       caption: 'Undescended testis pathway: unilateral palpable → routine paediatric surgical referral; bilateral impalpable → urgent referral (exclude CAH).',
     },
@@ -468,7 +468,7 @@ export const sixEightWeekCheck: Note = {
     },
     {
       type: 'image',
-      src: '/images/Ortolani and Barlow.jpeg',
+      src: '/images/Ortolani-and-Barlow.jpeg',
       alt: 'Barlow and Ortolani manoeuvre diagrams for DDH screening',
       caption: 'Barlow: adduct + posterior pressure → dislocates unstable hip. Ortolani: abduct + anterior lift → relocates with clunk.',
     },
@@ -532,37 +532,37 @@ export const sixEightWeekCheck: Note = {
 
     {
       type: 'image',
-      src: '/images/salmon patch stork mark.jpg',
+      src: '/images/salmon-patch-stork-mark.jpg',
       alt: 'Salmon patch / stork mark on newborn face — flat pink-red patches',
       caption: 'Salmon patch / Stork mark — flat pink-red patch; face, nape of neck, eyelids. Very common. Fades by 1–2 years. No treatment needed.',
     },
     {
       type: 'image',
-      src: '/images/strawberry naevus haemangioma.jpg',
+      src: '/images/strawberry-naevus-haemangioma.jpg',
       alt: 'Infantile haemangioma — raised bright red strawberry naevus',
       caption: 'Infantile haemangioma (strawberry naevus) — raised, bright red; appears weeks 1–4, peaks 3–6 months, involutes over years. Refer if near eye (amblyopia risk), airway involvement, or ulcerated → propranolol effective.',
     },
     {
       type: 'image',
-      src: '/images/port wine stain.jpg',
+      src: '/images/port-wine-stain.jpg',
       alt: 'Port wine stain — flat purple-red birthmark on face',
       caption: 'Port wine stain — flat, pink-red to purple; does NOT fade. Extensive facial: ? Sturge-Weber syndrome (glaucoma, epilepsy) → refer ophthalmology. Laser treatment available.',
     },
     {
       type: 'image',
-      src: '/images/cafe au lait spot.jpg',
+      src: '/images/cafe-au-lait-spot.jpg',
       alt: 'Café-au-lait spot — flat coffee-coloured oval patch',
       caption: 'Café-au-lait spot — flat, coffee-coloured, oval. Single spots common and benign. >6 spots >5mm (pre-pubertal) → consider neurofibromatosis type 1.',
     },
     {
       type: 'image',
-      src: '/images/mongolian blue spot (now called blue grey spot).jpg',
+      src: '/images/mongolian-blue-spot.jpg',
       alt: 'Mongolian blue spot / congenital dermal melanocytosis — blue-grey sacral patch',
       caption: 'Mongolian blue spot (blue-grey spot / congenital dermal melanocytosis) — flat, blue-grey; lumbosacral; commoner in darker-skinned infants. Fades by school age. Document clearly to avoid confusion with bruising.',
     },
     {
       type: 'image',
-      src: '/images/congenital melanocytic naevus.jpg',
+      src: '/images/congenital-melanocytic-naevus.jpg',
       alt: 'Congenital melanocytic naevus — brown pigmented lesion present from birth',
       caption: 'Congenital melanocytic naevus — brown/black, may have hair. Risk of melanoma increases with size (giant >20cm). Refer dermatology for large lesions.',
     },

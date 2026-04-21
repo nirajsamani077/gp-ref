@@ -65,7 +65,7 @@ export const alopecia: Note = {
 
     {
       type: 'image',
-      src: '/images/alopecia types.jpg',
+      src: '/images/alopecia-types.jpg',
       alt: 'Types of alopecia illustrated: alopecia areata, androgenetic, traction areata, central centrifugal cicatricial, chemotherapy-induced, lichen planopilaris, trichotillomania',
       caption: 'Common types of alopecia. Alopecia areata (round patches), androgenetic (patterned thinning), and traction (hairline/temple loss from tight styling) are the most common in GP practice.',
     },

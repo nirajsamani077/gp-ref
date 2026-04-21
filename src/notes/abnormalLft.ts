@@ -64,7 +64,7 @@ export const abnormalLft: Note = {
     },
     {
       type: 'image',
-      src: '/images/lft algorithm.png',
+      src: '/images/lft-algorithm.png',
       alt: 'Detailed LFT algorithm showing hepatic, cholestatic, synthetic failure, and isolated bilirubin pathways with management steps',
       caption: 'Clinical pattern recognition: hepatic (↑ALT/AST), cholestatic (↑ALP/GGT), synthetic failure, isolated bilirubin',
     },

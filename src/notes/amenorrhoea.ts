@@ -26,7 +26,7 @@ export const amenorrhoea: Note = {
     // ── HPO AXIS ──────────────────────────────────────────────────────────────
     {
       type: 'image',
-      src: '/images/hormone basic.png',
+      src: '/images/hormone-basic.png',
       alt: 'Hypothalamic-pituitary-ovarian axis diagram: GnRH from hypothalamus stimulates anterior pituitary to release FSH and LH; FSH acts on granulosa cells to produce oestrogen and inhibin; LH acts on theca cells to produce androgens which are converted to oestrogen; oestrogen and inhibin provide negative feedback',
       caption: 'The hypothalamic-pituitary-ovarian (HPO) axis. Disruption at any level produces amenorrhoea: hypothalamic (FHA, Kallmann), pituitary (prolactinoma, Sheehan\'s), ovarian (POI, PCOS) or outflow tract (Asherman\'s, structural). FSH/LH pattern identifies the level of disruption.',
     },
@@ -70,7 +70,7 @@ export const amenorrhoea: Note = {
     // ── FHA PATHWAY ──────────────────────────────────────────────────────────
     {
       type: 'image',
-      src: '/images/amoenorrhoea pathway.png',
+      src: '/images/amoenorrhoea-pathway.png',
       alt: 'Functional hypothalamic amenorrhoea diagnosis of exclusion pathway showing: Beta hCG to exclude pregnancy, FSH/LH to identify primary ovarian failure, prolactin to identify prolactinoma, testosterone/SHBG/FAI to identify PCOS or CAH, TSH to identify thyroid cause, leading to functional hypothalamic amenorrhoea as diagnosis of exclusion',
       caption: 'Functional hypothalamic amenorrhoea is a diagnosis of exclusion. Work through: pregnancy → POI (high FSH) → PCOS/CAH (raised testosterone/FAI) → prolactinoma (high prolactin) → thyroid disease (abnormal TSH) — if all normal, FHA is confirmed.',
     },

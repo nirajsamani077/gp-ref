@@ -121,7 +121,7 @@ export const acuteOtitisMedia: Note = {
     },
     {
       type: 'image',
-      src: '/images/aom pharmacy first pathway.jpeg',
+      src: '/images/aom-pharmacy-first-pathway.jpeg',
       alt: 'Pharmacy First Acute Otitis Media clinical pathway flowchart',
       caption: 'Pharmacy First AOM pathway (NHS England). Tap to enlarge.',
     },

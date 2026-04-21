@@ -33,7 +33,7 @@ export const analFissure: Note = {
 
     {
       type: 'image',
-      src: '/images/anal fissure schema.jpg',
+      src: '/images/anal-fissure-schema.jpg',
       alt: 'Anatomical cross-section showing rectum, external anal sphincter, internal anal sphincter and location of anal fissure between them',
       caption: 'The fissure lies in the distal anal canal between the internal and external sphincters. Internal anal sphincter hypertonia reduces perfusion to the posterior commissure, the poorest-supplied area — explaining why most fissures occur at the 6 o\'clock position.',
     },
@@ -112,7 +112,7 @@ export const analFissure: Note = {
 
     {
       type: 'image',
-      src: '/images/anal fissure pic.jpg',
+      src: '/images/anal-fissure-pic.jpg',
       alt: 'Anatomical illustration showing anal fissure location in the distal anal canal with inset showing the perianal view',
       caption: 'Typical posterior midline fissure location. Most fissures are visible on gentle parting of the buttocks without proctoscopy — which should be avoided acutely due to pain.',
     },

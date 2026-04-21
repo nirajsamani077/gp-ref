@@ -26,7 +26,7 @@ export const dementia: Note = {
 
     {
       type: 'image',
-      src: '/images/dementia types.png',
+      src: '/images/dementia-types.png',
       alt: 'Dementia umbrella diagram showing proportions: Alzheimer\'s disease 60-70%, vascular dementia 10-20%, frontotemporal dementia 10%, Lewy body dementia 5%, other dementias 5%',
       caption: 'Dementia is an umbrella term. Alzheimer\'s disease accounts for 60–70% of cases; vascular dementia 10–20%; frontotemporal and Lewy body 5–10% each. Mixed dementia (Alzheimer\'s + vascular) is the most common presentation in older adults.',
     },
@@ -193,7 +193,7 @@ export const dementia: Note = {
 
     {
       type: 'image',
-      src: '/images/dementia drugs.avif',
+      src: '/images/dementia-drugs.avif',
       alt: 'Summary chart of dementia drug treatments including donepezil, rivastigmine, galantamine and memantine with their indications, dosing and monitoring requirements',
       caption: 'Overview of dementia pharmacotherapy. Donepezil is the preferred first-line AChEI in primary care. Pulse monitoring is required for all AChEIs (not memantine). eGFR check required before memantine.',
     },

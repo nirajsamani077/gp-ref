@@ -25,7 +25,7 @@ export const analCancer: Note = {
 
     {
       type: 'image',
-      src: '/images/hpv anal cancer.png',
+      src: '/images/hpv-anal-cancer.png',
       alt: 'Diagram showing HPV infecting the anal canal epithelium, HPV genome with oncoproteins E6 and E7 inactivating tumour suppressor proteins p53 and pRb, leading to progression from normal epithelium through squamous intraepithelial lesions (AIN) to invasive squamous cell carcinoma',
       caption: 'HPV (especially types 16 and 18) infects the anal canal transformation zone. Oncoproteins E6 and E7 inactivate p53 and pRb, driving uncontrolled proliferation. Progression: normal epithelium → AIN (precancer) → invasive SCC — mirroring cervical carcinogenesis.',
     },
