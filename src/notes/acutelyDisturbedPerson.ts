@@ -4,7 +4,7 @@ export const acutelyDisturbedPerson: Note = {
   id: 'acutely-disturbed-person',
   title: 'Acutely Disturbed / Altered Person',
   subtitle: 'Delirium vs psychosis, Mental Capacity Act, MHA sections, and GP escalation',
-  tags: ['mental', 'symptoms', 'emergency'],
+  tags: ['symptoms', 'mental', 'emergency'],
 
   body: 'acutely disturbed altered person mental health delirium psychosis acute stress drug intoxication encephalopathy 4AT AMT4 confusion agitation aggression Mental Health Act MHA sections 2 3 4 5 136 135 17A CTO community treatment order Mental Capacity Act MCA capacity consent AMHP AMCP approved mental health practitioner section 12 approved RMP best interests 999 police crisis team CRHT home treatment place of safety psychiatric emergency DOLS deprivation liberty safeguards',
 

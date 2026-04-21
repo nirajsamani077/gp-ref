@@ -4,7 +4,7 @@ export const limpingChild: Note = {
   id: 'limpingChild',
   title: 'Limping Child & Paediatric Hip Conditions',
   subtitle: 'Age-based differential, red flags, DDH, Perthes, SUFE, transient synovitis and JIA',
-  tags: ['Paediatrics', 'MSK', 'Orthopaedics', 'Hip'],
+  tags: ['symptoms', 'paediatrics', 'msk'],
 
   body: 'limping child hip knee limp paediatric septic arthritis DDH developmental dysplasia Perthes SUFE slipped upper femoral epiphysis transient synovitis irritable hip JIA juvenile idiopathic arthritis Barlow Ortolani Pavlik toddler fracture Osgood Schlatter Sever NAI non-accidental injury osteomyelitis avascular necrosis frog leg X-ray',
 

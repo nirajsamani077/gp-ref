@@ -4,7 +4,7 @@ export const ankleInjury: Note = {
   id: 'ankle-injury',
   title: 'Ankle Injury',
   subtitle: 'Ottawa ankle rules, sprain management, and when to X-ray',
-  tags: ['msk'],
+  tags: ['symptoms', 'msk'],
 
   body: 'ankle injury sprain fracture Ottawa rules malleolar midfoot zone ATFL anterior talofibular calcaneofibular ligament navicular fifth metatarsal base weight bearing tenderness RICE moonboot crutches lateral medial malleolus bony point',
 

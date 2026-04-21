@@ -4,7 +4,7 @@ export const benignBreast: Note = {
   id: 'benign-breast',
   title: 'Benign Breast Conditions',
   subtitle: 'Mastalgia, breast lumps, nipple discharge, mastitis, and when to refer',
-  tags: ['breast', 'symptoms'],
+  tags: ['symptoms', 'breast'],
 
   body: `benign breast conditions mastalgia breast pain cyclical non-cyclical breast lump fibroadenoma breast cyst fibrocystic change fat necrosis nipple discharge nipple inversion mastitis breast abscess lactational non-lactational periductal mastitis 2WW two week wait referral reassure triple assessment evening primrose oil EPO flucloxacillin co-amoxiclav erythromycin clarithromycin paracetamol NSAID diclofenac topical supportive bra costochondritis Tietze galactorrhoea prolactin TSH duct papilloma duct ectasia ductal carcinoma Paget disease Staphylococcus aureus perimenopausal premenopausal HRT pregnancy breast mouse upper outer quadrant`,
 

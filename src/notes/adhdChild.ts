@@ -4,7 +4,7 @@ export const adhdChild: Note = {
   id: 'adhd-child',
   title: 'ADHD (Children & Young People)',
   subtitle: 'Diagnosis, watchful waiting, MPFT neurodevelopmental referral pathway, CAMHS, Community Paediatrics & medication monitoring',
-  tags: ['mental', 'paediatrics', 'symptoms'],
+  tags: ['symptoms', 'paediatrics', 'mental'],
 
   body: 'ADHD child children young people neurodevelopmental referral CAMHS Community Paediatrics CYP autism ASD inattention hyperactivity impulsivity watchful waiting watchful wait 10 weeks parental training Medikinet Concerta XL lisdexamfetamine Elvanse methylphenidate Ritalin Equasym atomoxetine Strattera guanfacine Intuniv height weight monitoring BP HR Staffordshire MPFT CaFSPA graduated response SENCO school',
 

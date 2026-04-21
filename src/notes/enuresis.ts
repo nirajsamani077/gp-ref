@@ -4,7 +4,7 @@ export const enuresis: Note = {
   id: 'enuresis',
   title: 'Enuresis (Bedwetting)',
   subtitle: 'Nocturnal enuresis in children — assessment, alarm therapy, desmopressin, and referral',
-  tags: ['paediatrics', 'urology'],
+  tags: ['symptoms', 'paediatrics'],
 
   body: 'enuresis bedwetting nocturnal wetting primary secondary desmopressin desmomelts desmotabs alarm moisture sensor enuresis alarm ERIC continence nurse paediatrics vasopressin ADH nocturnal polyuria overactive bladder constipation reward star chart dry nights fluid restriction hyponatraemia nasal spray blacklisted NICE CKS daytime wetting LUTS bladder dysfunction arousal',
 

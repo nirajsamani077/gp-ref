@@ -4,7 +4,7 @@ export const adhdAdult: Note = {
   id: 'adhd-adult',
   title: 'ADHD (Adult)',
   subtitle: 'Diagnosis criteria, ASRS screening, RTC vs NHS referral pathways, Blueteq, shared care & medication monitoring',
-  tags: ['mental', 'symptoms'],
+  tags: ['symptoms', 'mental'],
 
   body: 'ADHD adult attention deficit hyperactivity disorder inattention impulsivity hyperactivity ASRS screening NICE NG87 right to choose RTC NHS referral Blueteq shared care agreement methylphenidate Ritalin Concerta XL Medikinet lisdexamfetamine Elvanse atomoxetine Strattera guanfacine Intuniv monitoring BP heart rate weight titration EMIS SystmOne Darwin ICB Staffordshire Midlands Partnership MPFT',
 

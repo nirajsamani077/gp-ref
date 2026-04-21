@@ -4,7 +4,7 @@ export const anosmia: Note = {
   id: 'anosmia',
   title: 'Anosmia',
   subtitle: 'Loss of smell — causes, olfactory training, nasal steroids, and when to refer',
-  tags: ['ent'],
+  tags: ['symptoms', 'ent'],
 
   body: 'anosmia hyposmia loss of smell olfaction post-COVID post-viral sensorineural olfactory training AbScent Fifth Sense nasal steroids INCS parosmia phantosmia taste flavour retronasal olfactory bulb turbinate ENT referral 2WW MRI stroke Parkinson Alzheimer Kallmann space occupying lesion epistaxis otalgia neck lump postnasal space',
 

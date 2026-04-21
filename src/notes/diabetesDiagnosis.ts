@@ -4,7 +4,7 @@ export const diabetesDiagnosis: Note = {
   id: 'diabetes-diagnosis',
   title: 'Diabetes — Diagnosis & Types',
   subtitle: 'HbA1C thresholds, prediabetes, diabetes types, MODY, GDM, Ramadan & screening',
-  tags: ['endocrinology', 'symptoms'],
+  tags: ['symptoms', 'endocrinology'],
 
   body: 'diabetes diagnosis HbA1C fasting glucose OGTT prediabetes impaired fasting glucose IFG impaired glucose tolerance IGT type 1 T1DM type 2 T2DM MODY maturity onset diabetes young LADA latent autoimmune adults gestational GDM Ramadan fasting C-peptide anti-GAD screening risk score pancreatic cancer weight loss new diagnosis steroid-induced secondary diabetes Healthier You NHS DPP diabetes prevention programme',
 

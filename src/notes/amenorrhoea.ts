@@ -4,7 +4,7 @@ export const amenorrhoea: Note = {
   id: 'amenorrhoea',
   title: 'Amenorrhoea & Oligomenorrhoea',
   subtitle: 'Primary and secondary amenorrhoea — causes, investigation pathway, progestogen challenge and management',
-  tags: ['gynaecology', 'symptoms'],
+  tags: ['symptoms', 'gynaecology'],
 
   body: 'amenorrhoea amenorrhea oligomenorrhoea periods no period absent menstruation primary secondary functional hypothalamic FHA female athlete triad PCOS polycystic ovarian POI premature ovarian insufficiency failure POF Turner syndrome Kallmann testicular feminisation AIS androgen insensitivity imperforate hymen Asherman intrauterine adhesions prolactinoma hyperprolactinaemia Sheehan syndrome FSH LH oestradiol estradiol prolactin testosterone SHBG FAI free androgen index TFT thyroid progestogen challenge MPA medroxyprogesterone withdrawal bleed oestrogen patch Rotterdam criteria Tanner staging secondary sexual characteristics SSC',
 

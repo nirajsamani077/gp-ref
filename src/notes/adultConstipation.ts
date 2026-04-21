@@ -4,7 +4,7 @@ export const adultConstipation: Note = {
   id: 'adult-constipation',
   title: 'Adult Constipation',
   subtitle: 'Laxative types, doses, faecal impaction, OIC, newer agents & complications',
-  tags: ['gastroenterology', 'symptoms'],
+  tags: ['symptoms', 'gastroenterology'],
 
   body: 'constipation adult laxative bulk forming osmotic stimulant stool softener ispaghula husk Fybogel Movicol Laxido macrogol lactulose senna bisacodyl docusate sodium picosulfate glycerol suppository prucalopride linaclotide naloxegol naldemedine methylnaltrexone opioid induced OIC faecal impaction disimpaction Bristol stool chart red flags CIBH FIT 2WW fissure proctalgia rectal prolapse NICE IBS-C slow transit constipation',
 

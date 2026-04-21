@@ -4,7 +4,7 @@ export const alopecia: Note = {
   id: 'alopecia',
   title: 'Alopecia & Hair Loss',
   subtitle: 'Distinguishing scarring from non-scarring alopecia — areata, androgenetic, telogen effluvium, tinea capitis and scarring causes',
-  tags: ['dermatology', 'symptoms'],
+  tags: ['symptoms', 'dermatology'],
 
   body: 'alopecia hair loss scarring non-scarring androgenetic male female pattern baldness androgenic alopecia areata totalis universalis ophiasis telogen effluvium traction trichotillomania tinea capitis ringworm kerion lichen planopilaris discoid lupus folliculitis decalvans frontal fibrosing alopecia CCCA central centrifugal cicatricial exclamation mark hairs pull test Ludwig scale minoxidil Regaine finasteride terbinafine griseofulvin ketoconazole Nizoral betamethasone valerate dermovate clobetasol ferritin TFT thyroid FBC FAI prolactin PCOS androgen excess intralesional triamcinolone dithranol',
 

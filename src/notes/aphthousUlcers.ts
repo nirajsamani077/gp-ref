@@ -4,7 +4,7 @@ export const aphthousUlcers: Note = {
   id: 'aphthous-ulcers',
   title: 'Mouth Ulcers',
   subtitle: 'Aphthous ulcers — types, triggers, mouthwashes, investigations, and when to refer',
-  tags: ['ent', 'symptoms'],
+  tags: ['symptoms', 'ent'],
 
   body: 'mouth ulcer aphthous canker sore minor major herpetiform oral mucosa recurrent stomatitis painful white slough erythematous border chlorhexidine Corsodyl benzydamine Difflam hydrocortisone Corlan lozenge lidocaine Bonjela Orabase betamethasone doxycycline nicorandil NSAID haematinics B12 folate ferritin coeliac FBC ESR two week wait malignancy oral cancer lichen planus 2WW referral trauma dentures SLS sodium lauryl sulphate',
 

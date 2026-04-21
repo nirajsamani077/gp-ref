@@ -4,7 +4,7 @@ export const atrialFibrillation: Note = {
   id: 'atrialFibrillation',
   title: 'Atrial Fibrillation (AF)',
   subtitle: 'Diagnosis, CHA\u2082DS\u2082-VASc, DOACs, rate control & rhythm control',
-  tags: ['cardiology', 'symptoms'],
+  tags: ['symptoms', 'cardiology'],
   body: 'atrial fibrillation AF flutter PAF paroxysmal persistent permanent ECG DOAC anticoagulation CHA2DS2-VASc ORBIT HAS-BLED apixaban dabigatran edoxaban rivaroxaban warfarin bisoprolol diltiazem digoxin cardioversion ablation rate control rhythm control stroke palpitations',
   content: [
 
