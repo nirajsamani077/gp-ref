@@ -34,25 +34,36 @@ export const amenorrhoea: Note = {
     // ── CAUSES ────────────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Causes' },
 
+    { type: 'heading', level: 3, text: 'Primary Amenorrhoea' },
+
     {
       type: 'table',
-      headers: ['Type', 'Cause', 'Key clues'],
+      headers: ['Cause', 'Key clues'],
       rows: [
-        ['Primary', 'Functional hypothalamic (most common primary)', 'Low BMI, excessive exercise, stress, eating disorder; low FSH/LH'],
-        ['Primary', 'Constitutional delay', 'Family history; otherwise healthy; reassurance + review'],
-        ['Primary', 'Turner syndrome (45,XO)', 'Short stature, webbed neck, wide-carrying angle; absent SSC; high FSH/LH; karyotype'],
-        ['Primary', 'Kallmann syndrome', 'Hypogonadotrophic hypogonadism + anosmia; low FSH/LH'],
-        ['Primary', 'Androgen insensitivity syndrome (AIS)', '46,XY genotype; female phenotype; absent uterus; blind vaginal pouch; karyotype'],
-        ['Primary', 'Congenital adrenal hyperplasia (CAH)', 'Ambiguous genitalia; raised androgens; 17-OHP elevated'],
-        ['Primary', 'Structural: imperforate hymen / absent vagina', 'Cyclical pelvic pain (cryptomenorrhoea); bulging hymen; USS pelvis'],
-        ['Secondary / oligo', 'PCOS (most common secondary)', 'Oligomenorrhoea, androgen excess, polycystic ovaries on USS (Rotterdam criteria — separate note)'],
-        ['Secondary / oligo', 'Functional hypothalamic amenorrhoea (FHA)', 'Low BMI, female athlete triad, stress, disordered eating; low FSH/LH/oestradiol'],
-        ['Secondary / oligo', 'Premature ovarian insufficiency (POI)', 'FSH >25 IU/L on two occasions ≥4–6 weeks apart in women <40; hot flushes, vaginal dryness'],
-        ['Secondary / oligo', 'Hyperprolactinaemia / prolactinoma', 'Galactorrhoea, headache, visual field defect; prolactin >1000 mIU/L (or 500–1000 × 2)'],
-        ['Secondary / oligo', 'Hypothyroidism', 'Fatigue, weight gain, cold intolerance, bradycardia; raised TSH; ↓ T4'],
-        ['Secondary / oligo', 'Sheehan\'s syndrome', 'Postpartum haemorrhage → pituitary infarction; failure to lactate; pan-hypopituitarism'],
-        ['Secondary / oligo', 'Asherman\'s syndrome', 'Intrauterine adhesions post-ERPC, D&C, uterine surgery or endometritis; normal hormones; structural on USS/hysteroscopy'],
-        ['Secondary / oligo', 'Drugs', 'Antipsychotics (↑ prolactin), high-dose progestogens, GnRH analogues, chemotherapy, steroids'],
+        ['Functional hypothalamic (most common)', 'Low BMI, excessive exercise, stress, eating disorder; low FSH/LH'],
+        ['Constitutional delay', 'Family history; otherwise healthy; reassurance + review'],
+        ['Turner syndrome (45,XO)', 'Short stature, webbed neck, wide-carrying angle; absent SSC; high FSH/LH; karyotype'],
+        ['Kallmann syndrome', 'Hypogonadotrophic hypogonadism + anosmia; low FSH/LH'],
+        ['Androgen insensitivity syndrome (AIS)', '46,XY genotype; female phenotype; absent uterus; blind vaginal pouch; karyotype'],
+        ['Congenital adrenal hyperplasia (CAH)', 'Ambiguous genitalia; raised androgens; 17-OHP elevated'],
+        ['Structural: imperforate hymen / absent vagina', 'Cyclical pelvic pain (cryptomenorrhoea); bulging hymen; USS pelvis'],
+      ],
+    },
+
+    { type: 'heading', level: 3, text: 'Secondary Amenorrhoea & Oligomenorrhoea' },
+
+    {
+      type: 'table',
+      headers: ['Cause', 'Key clues'],
+      rows: [
+        ['PCOS (most common)', 'Oligomenorrhoea, androgen excess, polycystic ovaries on USS (Rotterdam criteria — separate note)'],
+        ['Functional hypothalamic amenorrhoea (FHA)', 'Low BMI, female athlete triad, stress, disordered eating; low FSH/LH/oestradiol'],
+        ['Premature ovarian insufficiency (POI)', 'FSH >25 IU/L on two occasions ≥4–6 weeks apart in women <40; hot flushes, vaginal dryness'],
+        ['Hyperprolactinaemia / prolactinoma', 'Galactorrhoea, headache, visual field defect; prolactin >1000 mIU/L (or 500–1000 × 2)'],
+        ['Hypothyroidism', 'Fatigue, weight gain, cold intolerance, bradycardia; raised TSH; ↓ T4'],
+        ['Sheehan\'s syndrome', 'Postpartum haemorrhage → pituitary infarction; failure to lactate; pan-hypopituitarism'],
+        ['Asherman\'s syndrome', 'Intrauterine adhesions post-ERPC, D&C, uterine surgery or endometritis; normal hormones; USS/hysteroscopy'],
+        ['Drugs', 'Antipsychotics (↑ prolactin), high-dose progestogens, GnRH analogues, chemotherapy, steroids'],
       ],
     },
 
