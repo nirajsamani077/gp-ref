@@ -18,6 +18,7 @@ export interface Flowchart {
   title: string
   description: string
   category: FlowCategory
+  lastReviewed?: string
   nodes: Node<GPOsNodeData>[]
   edges: Edge<GPOsEdgeData>[]
 }
@@ -43,4 +44,8 @@ export const NODE_VARIANT_META: Record<NodeVariant, { bg: string; border: string
   monitor:  { bg: '#ede9fe', border: '#8b5cf6', text: '#3b0764', label: 'Monitor / Review' },
 }
 
-export const FLOWCHARTS: Flowchart[] = []
+import { abnormalLFTs } from './flows/abnormalLFTs'
+
+export const FLOWCHARTS: Flowchart[] = [
+  abnormalLFTs,
+]

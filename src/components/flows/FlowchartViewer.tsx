@@ -34,8 +34,8 @@ function FlowchartViewerInner({ flowchart, onBack }: Props) {
   const edges = flowchart.edges.map(e => ({
     ...e,
     type: 'smoothstep' as const,
-    animated: true,
-    style: { stroke: '#94a3b8', strokeWidth: 2 },
+    animated: e.animated !== undefined ? e.animated : true,
+    style: { stroke: '#94a3b8', strokeWidth: 2, ...(e.style ?? {}) },
     labelStyle: { fontSize: 11, fontWeight: 600, fill: '#475569' },
     labelBgStyle: { fill: '#fff', fillOpacity: 0.9 },
     labelBgPadding: [4, 6] as [number, number],
@@ -73,6 +73,11 @@ function FlowchartViewerInner({ flowchart, onBack }: Props) {
           }}>
             {flowchart.title}
           </div>
+          {flowchart.lastReviewed && (
+            <div style={{ fontSize: 10, color: '#94a3b8', marginTop: 1 }}>
+              Last reviewed: {flowchart.lastReviewed} · Source: NICE / BSG guidelines
+            </div>
+          )}
         </div>
       </div>
 
