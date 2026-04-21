@@ -37,11 +37,11 @@ export const FLOW_CATEGORY_META: Record<FlowCategory, { label: string; border: s
 }
 
 export const NODE_VARIANT_META: Record<NodeVariant, { bg: string; border: string; text: string; label: string }> = {
-  start:    { bg: '#dbeafe', border: '#3b82f6', text: '#1e3a8a', label: 'Presentation' },
-  decision: { bg: '#fef3c7', border: '#f59e0b', text: '#78350f', label: 'Decision' },
-  action:   { bg: '#d1fae5', border: '#10b981', text: '#064e3b', label: 'Action / Treat' },
-  urgent:   { bg: '#fee2e2', border: '#ef4444', text: '#7f1d1d', label: 'Urgent / Refer' },
-  monitor:  { bg: '#ede9fe', border: '#8b5cf6', text: '#3b0764', label: 'Monitor / Review' },
+  start:    { bg: '#1d4ed8', border: '#1e40af', text: '#ffffff', label: 'Presentation' },
+  decision: { bg: '#d97706', border: '#b45309', text: '#ffffff', label: 'Decision' },
+  action:   { bg: '#15803d', border: '#166534', text: '#ffffff', label: 'Action / Treat' },
+  urgent:   { bg: '#dc2626', border: '#b91c1c', text: '#ffffff', label: 'Urgent / Refer' },
+  monitor:  { bg: '#7c3aed', border: '#6d28d9', text: '#ffffff', label: 'Monitor / Review' },
 }
 
 import { abnormalLFTs } from './flows/abnormalLFTs'

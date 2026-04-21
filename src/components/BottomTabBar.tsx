@@ -46,7 +46,9 @@ export default function BottomTabBar({ tabs, active, onSelect }: Props) {
               transition: 'color 0.15s',
             }}
           >
-            <span style={{ fontSize: 21 }}>{tab.icon}</span>
+            <span style={{ fontSize: 21, display: 'flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24 }}>
+              {tab.iconNode ?? tab.icon}
+            </span>
             <span style={{ fontSize: 10, fontWeight: isActive ? 700 : 400, letterSpacing: isActive ? '0.02em' : 'normal' }}>
               {tab.label}
             </span>

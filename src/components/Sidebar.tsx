@@ -45,7 +45,9 @@ export default function Sidebar({ tabs, active, onSelect }: Props) {
               transition: 'background 0.12s',
             }}
           >
-            <span style={{ fontSize: 16 }}>{tab.icon}</span>
+            <span style={{ fontSize: 16, display: 'flex', alignItems: 'center', width: 20, height: 20, flexShrink: 0 }}>
+              {tab.iconNode ?? tab.icon}
+            </span>
             {tab.label}
           </button>
         )

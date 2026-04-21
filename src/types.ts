@@ -4,4 +4,5 @@ export interface Tab {
   id: TabId
   label: string
   icon: string
+  iconNode?: React.ReactNode
 }
