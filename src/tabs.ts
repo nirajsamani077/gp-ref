@@ -5,5 +5,6 @@ export const TABS: Tab[] = [
   { id: 'symptoms',    label: 'Symptoms',    icon: '🩺' },
   { id: 'links',       label: 'Links',       icon: '🔗' },
   { id: 'calculators', label: 'Calculators', icon: '🧮' },
+  { id: 'flows',       label: 'Flows',       icon: '⬡' },
   { id: 'forms',       label: 'Forms',       icon: '📋' },
 ]
