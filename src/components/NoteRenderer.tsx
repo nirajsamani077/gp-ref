@@ -226,11 +226,11 @@ function Block({ block, onImageClick, searchQuery }: BlockProps) {
 
     case 'heading':
       return block.level === 2 ? (
-        <h2 data-block style={{ fontSize: 15, fontWeight: 700, color: NAVY, margin: '24px 0 8px', paddingBottom: 6, borderBottom: '2px solid #e8edf2' }}>
+        <h2 data-block style={{ fontSize: 15, fontWeight: 700, color: NAVY, margin: '24px 0 8px', paddingBottom: 6, borderBottom: '2px solid #e8edf2', clear: 'both' }}>
           {hl(block.text)}
         </h2>
       ) : (
-        <h3 data-block style={{ fontSize: 13, fontWeight: 700, color: '#2b6cb0', margin: '16px 0 6px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+        <h3 data-block style={{ fontSize: 13, fontWeight: 700, color: '#2b6cb0', margin: '16px 0 6px', textTransform: 'uppercase', letterSpacing: '0.05em', clear: 'both' }}>
           {hl(block.text)}
         </h3>
       )
@@ -394,8 +394,18 @@ function ImageBlock({
   const [errored, setErrored] = useState(false)
   const resolvedSrc = resolveImg(block.src)
 
+  const isFloated = !!block.float
+  const figureStyle: React.CSSProperties = {
+    margin: isFloated
+      ? (block.float === 'right' ? '0 0 12px 16px' : '0 16px 12px 0')
+      : '0 0 20px',
+    float: block.float ?? undefined,
+    maxWidth: block.maxWidth ?? (isFloated ? '40%' : undefined),
+    width: isFloated ? (block.maxWidth ?? '40%') : undefined,
+  }
+
   return (
-    <figure data-block style={{ margin: '0 0 20px' }}>
+    <figure data-block style={figureStyle}>
       {!errored ? (
         <img
           src={resolvedSrc}

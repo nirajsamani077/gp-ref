@@ -60,33 +60,29 @@ export const analFissure: Note = {
     {
       type: 'image',
       src: '/images/rectogesic.png',
-      alt: 'Rectogesic glyceryl trinitrate 0.4% ointment box and tube — pharmacist only medicine for anal fissures',
-      caption: 'GTN 0.4% ointment (Rectogesic) — first-line topical treatment for chronic anal fissure. Nitric oxide donor → smooth muscle relaxation → reduced internal sphincter tone → improved anodermal blood flow → promotes healing.',
+      alt: 'Rectogesic glyceryl trinitrate 0.4% ointment box and tube',
+      caption: 'GTN 0.4% (Rectogesic) — 1st line. Nitric oxide donor → sphincter relaxation → improved blood flow → healing.',
+      float: 'right',
+      maxWidth: '38%',
     },
 
     {
       type: 'callout',
       variant: 'tip',
-      title: 'GTN 0.4% ointment (Rectogesic) — prescribing specifics',
+      title: 'GTN 0.4% ointment (Rectogesic) — Ardens 1st line',
       items: [
-        'Dose: apply a 2.5 cm strip (approximately 375 mcg GTN) to the anal margin twice daily — use a gloved finger or the supplied applicator',
-        'Duration: 6–8 weeks; healing rates ~50–70%; continue for full course even if pain improves',
-        'Side effects: headache in up to 50% of patients — usually mild and settles with continued use; advise patients in advance',
-        'If headache intolerable: reduce application frequency to once daily for a week, then increase back to BD',
+        'Prescription: glyceryl trinitrate 0.4% rectal ointment — 30 g tube',
+        'Dose: apply a 2.5 cm strip to the anus 12-hourly (BD) — use a gloved finger or supplied applicator',
+        'Duration: until symptoms resolve or maximum 8 weeks',
+        'Side effects: headache in up to 50% — usually mild and settles; warn patients in advance',
+        'If headache intolerable: try reducing to once daily for a week, then back to BD; if still intolerable → switch to diltiazem',
         'Cost: ~£30 per 30 g tube on NHS',
-        'Cautions: avoid in patients taking PDE5 inhibitors (sildenafil, tadalafil) — risk of severe hypotension; caution with antihypertensives',
-        'Continue stool softeners alongside GTN throughout treatment',
+        'Cautions: avoid with PDE5 inhibitors (sildenafil, tadalafil) — severe hypotension risk; caution with antihypertensives',
+        'Continue stool softeners throughout treatment',
       ],
     },
 
-    {
-      type: 'image',
-      src: '/images/Anal fissure.png',
-      alt: 'Diagram of chronic anal fissure showing the three hallmark features: hypertrophied anal papilla superiorly, fissure with heaped-up scarred edges, and sentinel skin tag inferiorly',
-      caption: 'The three signs of a chronic anal fissure: hypertrophied anal papilla (proximal), fissure with indurated/heaped scarred edges, and sentinel skin tag (distal). All three may be visible on gentle perianal inspection without instrumentation.',
-    },
-
-    { type: 'heading', level: 3, text: 'If GTN Fails — Diltiazem 2% Ointment' },
+    { type: 'heading', level: 3, text: 'If GTN Fails — Diltiazem 2% Ointment (Ardens 2nd line)' },
 
     {
       type: 'table',
@@ -99,7 +95,7 @@ export const analFissure: Note = {
         ['Availability', 'Licensed (Rectogesic); prescribable on FP10', 'Unlicensed — check local formulary; may need special order'],
         ['Healing rate', '~50–70%', 'Similar to GTN (~65%)'],
       ],
-      caption: 'Switch to diltiazem 2% if GTN causes intolerable headache or fails after a full 8-week course. Continue stool softeners with both.',
+      caption: 'Ardens 2nd line: switch to diltiazem 2% if GTN causes intolerable headache or fails after a full course. Unlicensed — check local formulary. Continue stool softeners with both.',
     },
 
     { type: 'heading', level: 2, text: 'When to Refer' },
@@ -129,6 +125,7 @@ export const analFissure: Note = {
       links: [
         { label: 'NICE CKS — Anal Fissure', url: 'https://cks.nice.org.uk/topics/anal-fissure/' },
         { label: 'ACPGBI — Anal Fissure Guideline', url: 'https://www.acpgbi.org.uk/content/uploads/2019/07/ACPGBI-Anal-Fissure-Position-Statement.pdf' },
+        { label: 'BUPA — Anal Fissure PIL', url: 'https://www.bupa.co.uk/health-information/digestive-gut-health/anal-fissure' },
       ],
     },
 
