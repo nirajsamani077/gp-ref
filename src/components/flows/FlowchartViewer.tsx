@@ -4,7 +4,6 @@ import {
   Background,
   Controls,
   BackgroundVariant,
-  useReactFlow,
   ReactFlowProvider,
   type NodeTypes,
   type Edge,
@@ -117,7 +116,6 @@ function DetailSheet({ data, onClose }: { data: GPOsNodeData; onClose: () => voi
 
 // ── Inner viewer (inside ReactFlowProvider) ───────────────────────────────────
 function FlowchartViewerInner({ flowchart, onBack }: Props) {
-  const { fitView } = useReactFlow()
   const [activeNode, setActiveNode] = useState<GPOsNodeData | null>(null)
 
   // Apply dagre layout once per flowchart
@@ -143,12 +141,6 @@ function FlowchartViewerInner({ flowchart, onBack }: Props) {
     labelBgPadding: [5, 7] as [number, number],
     labelBgBorderRadius: 6,
   }))
-
-  // Fit view after layout settles
-  useEffect(() => {
-    const t = setTimeout(() => fitView({ padding: 0.18, duration: 400 }), 80)
-    return () => clearTimeout(t)
-  }, [flowchart.id, fitView])
 
   // Listen for node tap events from GPOsNode
   useEffect(() => {
@@ -218,8 +210,7 @@ function FlowchartViewerInner({ flowchart, onBack }: Props) {
           nodes={nodes}
           edges={edges}
           nodeTypes={nodeTypes}
-          fitView
-          fitViewOptions={{ padding: 0.18 }}
+          defaultViewport={{ x: 30, y: 30, zoom: 0.85 }}
           nodesDraggable={false}
           nodesConnectable={false}
           elementsSelectable={true}
