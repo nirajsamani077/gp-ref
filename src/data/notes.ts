@@ -68,6 +68,7 @@ import { haemMalignancies }       from '../notes/haemMalignancies'
 import { allergicReactions }      from '../notes/allergicReactions'
 import { alopecia }               from '../notes/alopecia'
 import { dementia }               from '../notes/dementia'
+import { amenorrhoea }            from '../notes/amenorrhoea'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -140,4 +141,5 @@ export const NOTES: Note[] = [
   allergicReactions,
   alopecia,
   dementia,
+  amenorrhoea,
 ].map(enrichBody)
