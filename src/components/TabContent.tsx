@@ -3,7 +3,6 @@ import LinksTab from './LinksTab'
 import CalculatorsTab from './CalculatorsTab'
 import NotesTab from './NotesTab'
 import SymptomsTab from './SymptomsTab'
-import FlowsTab from './flows/FlowsTab'
 
 const PLACEHOLDERS: Partial<Record<TabId, string>> = {
   forms:  'Forms coming soon',
@@ -45,14 +44,6 @@ export default function TabContent({ active, highlightedLinkUrl, highlightedCalc
     return (
       <main style={{ flex: 1, overflowY: 'auto', backgroundColor: '#f7f9fb' }}>
         <CalculatorsTab highlightedId={highlightedCalcId ?? undefined} />
-      </main>
-    )
-  }
-
-  if (active === 'flows') {
-    return (
-      <main style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-        <FlowsTab />
       </main>
     )
   }
