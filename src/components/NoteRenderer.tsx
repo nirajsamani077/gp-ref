@@ -283,11 +283,27 @@ function Block({ block, onImageClick, searchQuery }: BlockProps) {
 
     case 'callout': {
       const s = CALLOUT_STYLES[block.variant]
+      const img = block.image
+      const imgFloat = img?.float ?? 'right'
       return (
-        <div data-block style={{ backgroundColor: s.bg, border: `1px solid ${s.border}`, borderLeft: `4px solid ${s.border}`, borderRadius: 8, padding: '12px 16px', margin: '0 0 14px' }}>
+        <div data-block style={{ backgroundColor: s.bg, border: `1px solid ${s.border}`, borderLeft: `4px solid ${s.border}`, borderRadius: 8, padding: '12px 16px', margin: '0 0 14px', overflow: 'hidden' }}>
           <p style={{ fontSize: 12, fontWeight: 700, color: s.text, margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             {hl(block.title)}
           </p>
+          {img && (
+            <img
+              src={resolveImg(img.src)}
+              alt={img.alt}
+              style={{
+                float: imgFloat,
+                maxWidth: img.maxWidth ?? '30%',
+                width: img.maxWidth ?? '30%',
+                borderRadius: 6,
+                margin: imgFloat === 'right' ? '0 0 8px 12px' : '0 12px 8px 0',
+                display: 'block',
+              }}
+            />
+          )}
           <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 5 }}>
             {block.items.map((item, i) => (
               <li key={i} style={{ display: 'flex', gap: 8, fontSize: 13, color: s.text }}>

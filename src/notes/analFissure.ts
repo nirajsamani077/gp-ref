@@ -58,18 +58,15 @@ export const analFissure: Note = {
     { type: 'heading', level: 3, text: 'Chronic Fissure (>6 weeks) — GTN Ointment' },
 
     {
-      type: 'image',
-      src: '/images/rectogesic.png',
-      alt: 'Rectogesic glyceryl trinitrate 0.4% ointment box and tube',
-      caption: 'GTN 0.4% (Rectogesic) — 1st line. Nitric oxide donor → sphincter relaxation → improved blood flow → healing.',
-      float: 'right',
-      maxWidth: '38%',
-    },
-
-    {
       type: 'callout',
       variant: 'tip',
       title: 'GTN 0.4% ointment (Rectogesic) — Ardens 1st line',
+      image: {
+        src: '/images/rectogesic.png',
+        alt: 'Rectogesic GTN 0.4% ointment box and tube',
+        maxWidth: '28%',
+        float: 'right',
+      },
       items: [
         'Prescription: glyceryl trinitrate 0.4% rectal ointment — 30 g tube',
         'Dose: apply a 2.5 cm strip to the anus 12-hourly (BD) — use a gloved finger or supplied applicator',
