@@ -1,7 +1,7 @@
 {
-  "name": "GP Reference",
-  "short_name": "GP Ref",
-  "description": "Clinical reference for GPs — notes, calculators and guidelines",
+  "name": "GP Os",
+  "short_name": "GP Os",
+  "description": "Primary care operating system — clinical notes, calculators and guidelines",
   "start_url": "/gp-ref/",
   "scope": "/gp-ref/",
   "display": "standalone",

@@ -2,8 +2,6 @@ import { useState, useRef, useEffect } from 'react'
 import { LINK_CATEGORIES } from '../data/links'
 import type { TabId } from '../types'
 
-const NAVY = '#1a365d'
-
 // ── Search index: links + calculators ────────────────────────────────────────
 interface SearchResult {
   label: string
@@ -105,22 +103,37 @@ export default function Header({ onNavigate, onHome }: Props) {
       <button
         onClick={() => { setQuery(''); setOpen(false); onHome() }}
         title="Return to home"
-        aria-label="GP Ref — return to home"
+        aria-label="GP Os — return to home"
         style={{
           background: 'none', border: 'none', cursor: 'pointer',
           padding: '4px 6px', borderRadius: 8, flexShrink: 0,
-          color: '#fff', fontWeight: 800, fontSize: 19, letterSpacing: '-0.2px',
           transition: 'opacity 0.15s, transform 0.15s',
           WebkitTapHighlightColor: 'transparent',
+          display: 'flex', alignItems: 'center', gap: 8,
         }}
-        onMouseEnter={e => { e.currentTarget.style.opacity = '0.75' }}
+        onMouseEnter={e => { e.currentTarget.style.opacity = '0.8' }}
         onMouseLeave={e => { e.currentTarget.style.opacity = '1' }}
-        onMouseDown={e  => { e.currentTarget.style.transform = 'scale(0.93)' }}
+        onMouseDown={e  => { e.currentTarget.style.transform = 'scale(0.94)' }}
         onMouseUp={e    => { e.currentTarget.style.transform = 'scale(1)' }}
-        onTouchStart={e => { e.currentTarget.style.opacity = '0.75'; e.currentTarget.style.transform = 'scale(0.93)' }}
-        onTouchEnd={e   => { e.currentTarget.style.opacity = '1';    e.currentTarget.style.transform = 'scale(1)' }}
+        onTouchStart={e => { e.currentTarget.style.opacity = '0.8'; e.currentTarget.style.transform = 'scale(0.94)' }}
+        onTouchEnd={e   => { e.currentTarget.style.opacity = '1';   e.currentTarget.style.transform = 'scale(1)' }}
       >
-        GP <span style={{ color: '#93c5fd' }}>Ref</span>
+        {/* Power-button icon mark */}
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
+          <line x1="12" y1="3" x2="12" y2="12" stroke="white" strokeWidth="2.4" strokeLinecap="round"/>
+          <path d="M17.9 6 A8.5 8.5 0 1 1 6.1 6" fill="none" stroke="white" strokeWidth="2.4" strokeLinecap="round"/>
+        </svg>
+        {/* Wordmark */}
+        <span style={{ display: 'flex', alignItems: 'baseline', gap: 0, lineHeight: 1 }}>
+          <span style={{ color: '#fff', fontWeight: 800, fontSize: 18, letterSpacing: '-0.3px' }}>GP</span>
+          <span style={{
+            fontWeight: 700, fontSize: 18, letterSpacing: '-0.3px',
+            background: 'linear-gradient(135deg, #a5f3fc 0%, #a78bfa 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}>&thinsp;Os</span>
+        </span>
       </button>
 
       {/* Global search — links & calculators */}
