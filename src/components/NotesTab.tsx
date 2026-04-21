@@ -54,31 +54,6 @@ function getSpecialties() {
 }
 const SPECIALTIES = getSpecialties()
 
-// ── Recently Viewed — localStorage persistence ───────────────────────────────
-const RECENT_KEY = 'gpr-recent'
-const RECENT_MAX = 4
-
-function useRecentlyViewed() {
-  const [ids, setIds] = useState<string[]>(() => {
-    try {
-      const raw = localStorage.getItem(RECENT_KEY)
-      return raw ? (JSON.parse(raw) as string[]) : []
-    } catch {
-      return []
-    }
-  })
-
-  useEffect(() => {
-    try { localStorage.setItem(RECENT_KEY, JSON.stringify(ids)) } catch { /* quota */ }
-  }, [ids])
-
-  const push = useCallback((id: string) => {
-    setIds(prev => [id, ...prev.filter(x => x !== id)].slice(0, RECENT_MAX))
-  }, [])
-
-  return { recentIds: ids, pushRecent: push }
-}
-
 // ── Favourites — localStorage persistence ────────────────────────────────────
 const FAV_KEY = 'gpr-favourites'
 
@@ -119,7 +94,6 @@ export default function NotesTab() {
   const inputRef = useRef<HTMLInputElement>(null)
 
   const { favouriteIds, toggleFavourite } = useFavourites()
-  const { recentIds, pushRecent }         = useRecentlyViewed()
 
   const resetHome = useCallback(() => {
     setFilterQuery('')
@@ -155,25 +129,15 @@ export default function NotesTab() {
 
   const showingAll = !filterQuery && specialty === 'all'
 
-  // When not searching, split into: favourites → recently viewed → all notes.
+  // When not searching, split into: favourites → all notes.
   // When searching, show a flat list (starred cards still show their star).
   const searching          = Boolean(filterQuery)
   const favouritedVisible  = searching ? [] : visible.filter(n => favouriteIds.has(n.id))
 
-  // Recently viewed: in recency order, not a favourite, and present in visible set
-  const visibleIds = new Set(visible.map(n => n.id))
-  const NOTE_BY_ID = new Map(NOTES.map(n => [n.id, n]))
-  const recentVisible = searching ? [] : recentIds
-    .filter(id => visibleIds.has(id) && !favouriteIds.has(id))
-    .map(id => NOTE_BY_ID.get(id)!)
-    .filter(Boolean) as Note[]
+  // Main list: everything that isn't a favourite
+  const unfavouritedVisible = searching ? visible : visible.filter(n => !favouriteIds.has(n.id))
 
-  // Main list: everything else
-  const pinnedIds          = new Set([...favouriteIds, ...recentVisible.map(n => n.id)])
-  const unfavouritedVisible = searching ? visible : visible.filter(n => !pinnedIds.has(n.id))
-
-  const hasFavSection    = favouritedVisible.length > 0
-  const hasRecentSection = recentVisible.length > 0
+  const hasFavSection = favouritedVisible.length > 0
 
   // ── Shared card renderer ─────────────────────────────────────────────────
   function renderCard(note: Note) {
@@ -206,7 +170,6 @@ export default function NotesTab() {
             onClick={() => {
               const next = isOpen ? null : note.id
               setOpenId(next)
-              if (next) pushRecent(next)
             }}
             style={{
               flex: 1, minWidth: 0,
@@ -378,21 +341,12 @@ export default function NotesTab() {
               <>
                 <SectionHeading icon="★" iconColour="#f59e0b" label="Favourites" colour="#92400e" />
                 {favouritedVisible.map(renderCard)}
-                {(hasRecentSection || unfavouritedVisible.length > 0) && <SectionDivider />}
-              </>
-            )}
-
-            {/* ── Recently Viewed section ── */}
-            {hasRecentSection && (
-              <>
-                <SectionHeading icon="◷" iconColour="#6366f1" label="Recently Viewed" colour="#3730a3" />
-                {recentVisible.map(renderCard)}
-                {unfavouritedVisible.length > 0 && <SectionDivider label="All notes" />}
+                {unfavouritedVisible.length > 0 && <SectionDivider />}
               </>
             )}
 
             {/* ── Main / remaining notes ── */}
-            {!hasFavSection && !hasRecentSection && unfavouritedVisible.length > 0 && <div style={{ marginBottom: 2 }} />}
+            {!hasFavSection && unfavouritedVisible.length > 0 && <div style={{ marginBottom: 2 }} />}
             {unfavouritedVisible.map(renderCard)}
           </>
         )}
