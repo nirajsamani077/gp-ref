@@ -129,6 +129,14 @@ export const anxiety: Note = {
     },
 
     {
+      type: 'notelink',
+      notes: [
+        { id: 'antidepressants', label: 'Antidepressants', subtitle: 'Dosing, drug choices, switching, discontinuation' },
+        { id: 'ocd-bdd', label: 'OCD & BDD', subtitle: 'Higher-dose SSRIs, ERP therapy' },
+      ],
+    },
+
+    {
       type: 'callout',
       variant: 'danger',
       title: 'What to avoid',

@@ -22,6 +22,7 @@ export default function App() {
   const [activeTab, setActiveTab]           = useState<TabId>('notes')
   const [highlightedLinkUrl, setHighlightedLinkUrl] = useState<string | null>(null)
   const [highlightedCalcId, setHighlightedCalcId]   = useState<string | null>(null)
+  const [highlightedNoteId, setHighlightedNoteId]   = useState<string | null>(null)
   const isDesktop = useIsDesktop()
 
   const handleTabSelect = useCallback((tabId: TabId) => {
@@ -57,6 +58,17 @@ export default function App() {
     return () => window.removeEventListener('navigate-calc', handler)
   }, [])
 
+  // Listen for in-note cross-note link clicks (dispatched by NoteRenderer notelink blocks)
+  useEffect(() => {
+    function handler(e: Event) {
+      const noteId = (e as CustomEvent<string>).detail
+      setActiveTab('notes')
+      setHighlightedNoteId(noteId)
+    }
+    window.addEventListener('navigate-note', handler)
+    return () => window.removeEventListener('navigate-note', handler)
+  }, [])
+
   return (
     <div style={{
       display: 'flex', flexDirection: 'column',
@@ -73,6 +85,7 @@ export default function App() {
           active={activeTab}
           highlightedLinkUrl={highlightedLinkUrl}
           highlightedCalcId={highlightedCalcId}
+          highlightedNoteId={highlightedNoteId}
         />
       </div>
 

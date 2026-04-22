@@ -177,6 +177,14 @@ export const lithiumBipolar: Note = {
     },
 
     {
+      type: 'notelink',
+      notes: [
+        { id: 'antidepressants', label: 'Antidepressants', subtitle: 'SSRI caution in bipolar, switching guidance' },
+        { id: 'depression', label: 'Depression', subtitle: 'Depression screening, stepped care' },
+      ],
+    },
+
+    {
       type: 'linkrow',
       links: [
         { label: 'NICE — Bipolar Disorder (NG185)', url: 'https://www.nice.org.uk/guidance/ng185' },

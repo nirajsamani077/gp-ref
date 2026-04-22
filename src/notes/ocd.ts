@@ -99,6 +99,14 @@ export const ocd: Note = {
       caption: 'OCD pharmacotherapy. Higher doses and longer durations are needed compared to depression. Always combine with ERP if possible.',
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'antidepressants', label: 'Antidepressants', subtitle: 'Dosing, switching, discontinuation guidance' },
+        { id: 'anxiety-gad', label: 'Anxiety Disorders', subtitle: 'GAD, panic, social anxiety management' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Body Dysmorphic Disorder (BDD)' },
 
     {

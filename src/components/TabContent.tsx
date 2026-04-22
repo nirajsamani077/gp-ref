@@ -13,13 +13,14 @@ interface Props {
   active: TabId
   highlightedLinkUrl?: string | null
   highlightedCalcId?: string | null
+  highlightedNoteId?: string | null
 }
 
-export default function TabContent({ active, highlightedLinkUrl, highlightedCalcId }: Props) {
+export default function TabContent({ active, highlightedLinkUrl, highlightedCalcId, highlightedNoteId }: Props) {
   if (active === 'notes') {
     return (
       <main style={{ flex: 1, overflow: 'hidden', backgroundColor: '#f7f9fb', display: 'flex', flexDirection: 'column' }}>
-        <NotesTab />
+        <NotesTab highlightedNoteId={highlightedNoteId} />
       </main>
     )
   }

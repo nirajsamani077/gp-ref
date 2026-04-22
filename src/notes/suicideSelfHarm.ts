@@ -140,6 +140,16 @@ export const suicideSelfHarm: Note = {
     },
 
     {
+      type: 'notelink',
+      notes: [
+        { id: 'depression', label: 'Depression', subtitle: 'PHQ-9 screening, safety planning, stepped care' },
+        { id: 'anxiety-gad', label: 'Anxiety Disorders', subtitle: 'GAD, panic disorder management' },
+        { id: 'ptsd', label: 'PTSD', subtitle: 'Trauma-focused CBT, EMDR' },
+        { id: 'stress-grief-adjustment', label: 'Stress, Grief & Adjustment', subtitle: 'Adjustment disorder, bereavement' },
+      ],
+    },
+
+    {
       type: 'linkrow',
       links: [
         { label: 'MPFT — Emergency Mental Health Help (24/7)', url: 'https://www.mpft.nhs.uk/service-users-and-carers/emergency-help' },

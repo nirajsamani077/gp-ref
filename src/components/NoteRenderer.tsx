@@ -339,6 +339,44 @@ function Block({ block, onImageClick, searchQuery }: BlockProps) {
         </div>
       )
 
+    case 'notelink':
+      return (
+        <div data-block style={{ margin: '0 0 18px' }}>
+          <div style={{ fontSize: 12, fontWeight: 700, color: '#553c9a', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>
+            📋 See also
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+            {block.notes.map((n, i) => (
+              <button
+                key={i}
+                onClick={() => window.dispatchEvent(new CustomEvent('navigate-note', { detail: n.id }))}
+                style={{
+                  display: 'flex', flexDirection: 'column', alignItems: 'flex-start',
+                  gap: 2, padding: '10px 16px',
+                  background: '#faf5ff',
+                  border: '1.5px solid #d6bcfa', borderRadius: 12,
+                  cursor: 'pointer', textAlign: 'left',
+                  transition: 'all 0.15s',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background = '#553c9a'; e.currentTarget.style.borderColor = '#553c9a' }}
+                onMouseLeave={e => { e.currentTarget.style.background = '#faf5ff'; e.currentTarget.style.borderColor = '#d6bcfa' }}
+              >
+                <span
+                  style={{ fontSize: 13, fontWeight: 700, color: '#553c9a', transition: 'color 0.15s' }}
+                  onMouseEnter={e => (e.currentTarget.style.color = '#fff')}
+                  onMouseLeave={e => (e.currentTarget.style.color = '#553c9a')}
+                >
+                  → {n.label}
+                </span>
+                {n.subtitle && (
+                  <span style={{ fontSize: 11, color: '#718096' }}>{n.subtitle}</span>
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+      )
+
     case 'calclink':
       return (
         <div data-block style={{ margin: '0 0 18px' }}>

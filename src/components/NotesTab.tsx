@@ -84,7 +84,11 @@ function useFavourites() {
 }
 
 // ── Component ────────────────────────────────────────────────────────────────
-export default function NotesTab() {
+interface NotesTabProps {
+  highlightedNoteId?: string | null
+}
+
+export default function NotesTab({ highlightedNoteId }: NotesTabProps) {
   const [filterQuery, setFilterQuery] = useState('')
   const [openId, setOpenId]           = useState<string | null>(null)
   const [specialty, setSpecialty]     = useState<string>('all')
@@ -107,6 +111,18 @@ export default function NotesTab() {
     window.addEventListener('gpr-home', resetHome)
     return () => window.removeEventListener('gpr-home', resetHome)
   }, [resetHome])
+
+  // Open and scroll to a note when navigated from a notelink block
+  useEffect(() => {
+    if (!highlightedNoteId) return
+    setFilterQuery('')
+    setSpecialty('all')
+    setOpenId(highlightedNoteId)
+    setTimeout(() => {
+      const el = document.querySelector(`[data-note-id="${highlightedNoteId}"]`)
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 120)
+  }, [highlightedNoteId])
 
   const filtered = filterQuery ? filterNotes(filterQuery) : NOTES
   const visible  = specialty === 'all'
@@ -149,6 +165,7 @@ export default function NotesTab() {
     return (
       <article
         key={note.id}
+        data-note-id={note.id}
         style={{
           marginBottom: 10,
           backgroundColor: isOpen ? sp.bg : '#fff',

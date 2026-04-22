@@ -135,6 +135,13 @@ export const depression: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'antidepressants', label: 'Antidepressants', subtitle: 'Dosing, drug choices, switching, discontinuation' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Bipolar Affective Disorder (BAD)' },
 
     {
@@ -148,6 +155,13 @@ export const depression: Note = {
         'Refer all suspected new BAD urgently to CMHT/psychiatry for diagnosis and initiation of mood stabiliser (lithium, valproate, quetiapine, olanzapine, aripiprazole)',
         'In shared care: lithium monitoring 3-monthly (levels, U&E, TFTs, LFTs, Ca) — see lithium & bipolar note for full detail',
         'Antipsychotics: annual metabolic monitoring (BMI, HbA1c, lipids, BP, ECG, prolactin) — only reduce/stop on specialist advice',
+      ],
+    },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'lithium-bipolar', label: 'Lithium & Bipolar Disorder', subtitle: 'Lithium monitoring, toxicity, bipolar medications' },
       ],
     },
 

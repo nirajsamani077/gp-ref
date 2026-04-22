@@ -110,6 +110,14 @@ export const ptsd: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'antidepressants', label: 'Antidepressants', subtitle: 'Sertraline dosing, switching guidance' },
+        { id: 'anxiety-gad', label: 'Anxiety Disorders', subtitle: 'Anxiety management and CBT' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Complex PTSD' },
 
     {

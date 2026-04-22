@@ -278,6 +278,17 @@ export const antidepressants: Note = {
     },
 
     {
+      type: 'notelink',
+      notes: [
+        { id: 'depression', label: 'Depression', subtitle: 'Stepped care, CBT, safety planning' },
+        { id: 'anxiety-gad', label: 'Anxiety Disorders', subtitle: 'GAD, panic disorder, social anxiety' },
+        { id: 'ocd-bdd', label: 'OCD & BDD', subtitle: 'Higher-dose SSRIs, ERP therapy' },
+        { id: 'ptsd', label: 'PTSD', subtitle: 'Trauma-focused CBT, EMDR, pharmacotherapy' },
+        { id: 'lithium-bipolar', label: 'Lithium & Bipolar', subtitle: 'Lithium monitoring, mood stabilisers' },
+      ],
+    },
+
+    {
       type: 'linkrow',
       links: [
         { label: 'NICE NG222 — Depression in Adults', url: 'https://www.nice.org.uk/guidance/ng222' },
