@@ -44,6 +44,15 @@ export const ocd: Note = {
     { type: 'heading', level: 2, text: 'CBT and ERP' },
 
     {
+      type: 'image',
+      src: '/images/The-OCD-cycle-300x300.png',
+      alt: 'The OCD cycle diagram showing obsessive thought leading to anxiety then compulsion then temporary relief then back to obsessive thought',
+      caption: 'The OCD cycle — compulsions provide only temporary relief and reinforce the obsession. ERP breaks this cycle.',
+      float: 'right',
+      maxWidth: '280px',
+    },
+
+    {
       type: 'callout',
       variant: 'info',
       title: 'Exposure and Response Prevention (ERP) — first-line treatment',
@@ -143,6 +152,7 @@ export const ocd: Note = {
         { label: 'Staffordshire Local MH Support Services', url: 'https://www.staffordshire.gov.uk/health-and-wellbeing/mental-wellbeing-services/mental-health-support/local-support-services-and' },
         { label: 'OCD UK', url: 'https://www.ocduk.org' },
         { label: 'BDD Foundation', url: 'https://bddfoundation.org' },
+        { label: 'SilverCloud (computerised CBT — prescribe via Talking Therapies)', url: 'https://www.silvercloudhealth.com' },
       ],
     },
 

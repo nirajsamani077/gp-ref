@@ -179,6 +179,7 @@ export const anxiety: Note = {
         { label: 'NICE NG189 — Generalised Anxiety Disorder', url: 'https://www.nice.org.uk/guidance/cg113' },
         { label: 'Anxiety UK', url: 'https://www.anxietyuk.org.uk' },
         { label: 'MIND — Anxiety', url: 'https://www.mind.org.uk/information-support/types-of-mental-health-problems/anxiety-and-panic-attacks/' },
+        { label: 'SilverCloud (computerised CBT — prescribe via Talking Therapies)', url: 'https://www.silvercloudhealth.com' },
       ],
     },
 
