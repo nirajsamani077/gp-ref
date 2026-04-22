@@ -121,8 +121,8 @@ export const antidepressants: Note = {
       type: 'table',
       headers: ['Switching FROM', 'Switching TO', 'Method', 'Key notes'],
       rows: [
-        ['SSRI (not fluoxetine)', 'SSRI (not fluoxetine)', 'Cross-taper cautiously OR taper/stop/start next day', 'Most switches between SSRIs — taper down, start new at low dose'],
-        ['Any SSRI/SNRI (not fluoxetine)', 'Venlafaxine', 'Cross-taper cautiously, start at 37.5 mg', ''],
+        ['SSRI (not fluoxetine)', 'SSRI (not fluoxetine)', 'Taper current SSRI to lowest dose → stop → start new SSRI next day at low dose (direct switch)', 'Direct switch is the standard approach for SSRI→SSRI; no washout gap needed; full cross-taper is not usually necessary'],
+        ['SSRI (not fluoxetine)', 'Venlafaxine or Duloxetine (SNRI)', 'Taper current SSRI to lowest dose → stop → start SNRI next day at low dose (direct switch)', 'Same direct switch approach; start venlafaxine at 37.5 mg or duloxetine at 30 mg'],
         ['Any SSRI/SNRI (not fluoxetine)', 'Mirtazapine', 'Cross-taper cautiously, start at 15 mg', 'Usually well tolerated; mirtazapine started while SSRI tapers down'],
         ['MIRTAZAPINE', 'SSRI or SNRI (not fluoxetine)', 'Cross-taper cautiously; start SSRI/SNRI at low dose while tapering mirtazapine', 'Generally well tolerated; taper mirtazapine slowly as new drug introduced; watch for discontinuation (anxiety, insomnia, nausea on mirtazapine withdrawal)'],
         ['MIRTAZAPINE', 'Fluoxetine', 'Cross-taper cautiously; start fluoxetine at 10–20 mg while tapering mirtazapine', 'Fluoxetine\'s long half-life means no gap needed after stopping mirtazapine; can overlap; titrate fluoxetine up once mirtazapine stopped'],
