@@ -80,6 +80,10 @@ import { antidepressants }        from '../notes/antidepressants'
 import { lithiumBipolar }         from '../notes/lithiumBipolar'
 import { anxiety }                from '../notes/anxiety'
 import { ocd }                    from '../notes/ocd'
+import { depression }             from '../notes/depression'
+import { ptsd }                   from '../notes/ptsd'
+import { stressGrief }            from '../notes/stressGrief'
+import { suicideSelfHarm }        from '../notes/suicideSelfHarm'
 import { benignBreast }          from '../notes/benignBreast'
 import { breastCancer }          from '../notes/breastCancer'
 import { breastHormonalTherapy } from '../notes/breastHormonalTherapy'
@@ -170,4 +174,8 @@ export const NOTES: Note[] = [
   lithiumBipolar,
   anxiety,
   ocd,
+  depression,
+  ptsd,
+  stressGrief,
+  suicideSelfHarm,
 ].map(enrichBody)
