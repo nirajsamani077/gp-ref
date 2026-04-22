@@ -76,6 +76,8 @@ import { angina }                 from '../notes/angina'
 import { enuresis }               from '../notes/enuresis'
 import { ankleInjury }            from '../notes/ankleInjury'
 import { anosmia }                from '../notes/anosmia'
+import { antidepressants }        from '../notes/antidepressants'
+import { lithiumBipolar }         from '../notes/lithiumBipolar'
 import { benignBreast }          from '../notes/benignBreast'
 import { breastCancer }          from '../notes/breastCancer'
 import { breastHormonalTherapy } from '../notes/breastHormonalTherapy'
@@ -162,4 +164,6 @@ export const NOTES: Note[] = [
   benignBreast,
   breastCancer,
   breastHormonalTherapy,
+  antidepressants,
+  lithiumBipolar,
 ].map(enrichBody)
