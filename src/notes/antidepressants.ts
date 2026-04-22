@@ -60,6 +60,39 @@ export const antidepressants: Note = {
       ],
     },
 
+    { type: 'heading', level: 2, text: 'Doses — GP Formulary' },
+
+    {
+      type: 'table',
+      headers: ['Drug', 'Starting dose', 'Usual effective dose', 'Maximum dose', 'Notes'],
+      rows: [
+        ['Sertraline', '50 mg OD', '50–100 mg OD', '200 mg OD', 'Do not prescribe 150 mg or 200 mg tablets — very expensive; use 50 mg tablets. Take with food in morning.'],
+        ['Citalopram', '20 mg OD (10 mg if elderly)', '20–40 mg OD', '40 mg OD (20 mg if elderly or hepatic impairment)', 'QTc risk — consider ECG before starting in elderly or those on other QT-prolonging drugs. Also available as oral drops.'],
+        ['Escitalopram', '10 mg OD (5 mg if elderly)', '10–20 mg OD', '20 mg OD (10 mg if elderly or liver dysfunction)', 'QTc risk — same caution as citalopram. Consider ECG.'],
+        ['Fluoxetine', '20 mg OD (morning)', '20 mg OD', '60 mg OD (40 mg if elderly)', 'Take in morning (activating). Long half-life — fewer missed-dose problems but slower washout when switching.'],
+        ['Paroxetine', '20 mg OD (morning with food)', '20–40 mg OD', '40 mg OD', 'Avoid if possible — high discontinuation risk, most interactions. Take with food.'],
+        ['Duloxetine', '60 mg OD', '60 mg OD', '120 mg OD (higher doses specialist-advised)', 'Check BP before starting; monitor at each review. Take with food.'],
+        ['Venlafaxine IR', '37.5 mg BD', '75 mg BD', '75 mg BD (150 mg/day)', 'IR tablets: twice daily dosing. Check BP before starting and at each review.'],
+        ['Venlafaxine MR', '75 mg OD', '75–150 mg OD', '375 mg in 2 divided doses (specialist)', 'MR preferred — once daily. Check BP. High discontinuation risk — taper slowly.'],
+        ['Mirtazapine', '15 mg nocte (7.5 mg if very sensitive)', '15–30 mg nocte', '45 mg nocte', 'Counter-intuitive: MORE sedating at lower doses (7.5–15 mg) due to histamine blockade predominating; less sedation at higher doses. Take at bedtime.'],
+        ['Lofepramine', '70 mg BD', '70–140 mg BD', '210 mg/day (TDS)', 'Preferred TCA in primary care — lower cardiotoxicity. Usually secondary care-initiated.'],
+        ['Imipramine (TCA)', '10 mg OD (elderly) or 25 mg BD', '25 mg BD–TDS', '150–200 mg/day (specialist)', 'Secondary care-initiated. High overdose risk.'],
+      ],
+      caption: 'GP antidepressant doses (Ardens formulary). For SSRIs: start at standard dose, review at 4 weeks — if partial response, increase dose before switching. SNRI: always check BP at baseline and each review. Mirtazapine: prescribe 15 mg tablets (can halve for 7.5 mg). Secondary care initiates: vortioxetine, trazodone, moclobemide, reboxetine.',
+    },
+
+    {
+      type: 'callout',
+      variant: 'tip',
+      title: 'Gastroprotection and other prescribing caveats',
+      items: [
+        'Add a PPI if prescribing SSRI/SNRI to elderly patients also taking NSAIDs or aspirin — significantly increases GI bleeding risk',
+        'Discuss pregnancy: SSRIs generally safer than untreated depression in pregnancy, but discuss risks/benefits; paroxetine associated with foetal cardiac defects — avoid',
+        'SNRI: check BP before starting and at every review — venlafaxine and duloxetine can raise blood pressure',
+        'Citalopram/escitalopram: consider ECG before starting in elderly, patients on other QT-prolonging drugs, or those with cardiac disease',
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Condition-Specific Choices' },
 
     {
