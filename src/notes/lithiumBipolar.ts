@@ -163,6 +163,35 @@ export const lithiumBipolar: Note = {
       caption: 'Bipolar medications overview for GP awareness. Most are initiated in secondary care; GP role is ongoing prescribing and monitoring.',
     },
 
+    { type: 'heading', level: 2, text: 'Mania vs Hypomania' },
+
+    {
+      type: 'table',
+      headers: ['Feature', 'Mania', 'Hypomania'],
+      rows: [
+        ['Duration', '>7 days (or any duration if hospitalised)', '>4 days'],
+        ['Functional impairment', 'Severe — unable to function normally', 'Mild — still functioning'],
+        ['Psychotic symptoms', 'May be present (grandiose delusions, hallucinations)', 'Absent by definition'],
+        ['Bipolar type (if also depressed)', 'Type 1 BAD', 'Type 2 BAD'],
+        ['Hospitalisation', 'Often required', 'Usually not required'],
+      ],
+      caption: 'The mania vs hypomania distinction determines bipolar type and drives management intensity. Both require specialist assessment.',
+    },
+
+    {
+      type: 'callout',
+      variant: 'warning',
+      title: 'Antidepressant-induced mania & DVLA',
+      items: [
+        'If a patient on an SSRI/SNRI (particularly venlafaxine) develops manic or hypomanic symptoms → STOP the antidepressant; start an antipsychotic (e.g. risperidone); refer urgently to CMHT',
+        'DVLA driving rules:',
+        '• Stable disease (fewer than 4 mood swings per year): must not drive for 6 months after each episode, then may reapply',
+        '• Unstable disease (≥4 mood swings per year): must not drive for 3 months — notify DVLA; DVLA will request medical reports',
+        '• Acute mania or psychosis: must not drive — advise patient clearly and document this in the notes',
+        'DVLA notification is the patient\'s legal responsibility — advise at each relevant contact and document',
+      ],
+    },
+
     {
       type: 'callout',
       variant: 'danger',

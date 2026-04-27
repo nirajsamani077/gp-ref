@@ -27,7 +27,7 @@ export const antipsychoticsSmi: Note = {
 
     {
       type: 'image',
-      src: '/images/antipsychotic-side-effects.png',
+      src: '/images/antipsychotic-side-effects.jpeg',
       alt: 'Comparison table of antipsychotic side effect profiles showing extrapyramidal, sedation, weight gain, hyperglycaemia, anticholinergic and orthostatic hypotension risk for atypical and typical antipsychotics',
       caption: 'Antipsychotic side effect comparison — frequency of key adverse effects across atypical and typical agents.',
       maxWidth: '640px',
