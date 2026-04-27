@@ -91,6 +91,7 @@ import { notifiableDiseases }    from '../notes/notifiableDiseases'
 import { antiphospholipidSyndrome } from '../notes/antiphospholipidSyndrome'
 import { psychosisSchizophrenia }  from '../notes/psychosisSchizophrenia'
 import { antipsychoticsSmi }       from '../notes/antipsychoticsSmi'
+import { perinatalMH }             from '../notes/perinatalMH'
 import { benignBreast }          from '../notes/benignBreast'
 import { breastCancer }          from '../notes/breastCancer'
 import { breastHormonalTherapy } from '../notes/breastHormonalTherapy'
@@ -191,4 +192,5 @@ export const NOTES: Note[] = [
   antiphospholipidSyndrome,
   psychosisSchizophrenia,
   antipsychoticsSmi,
+  perinatalMH,
 ].map(enrichBody)
