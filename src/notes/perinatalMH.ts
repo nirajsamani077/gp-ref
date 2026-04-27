@@ -14,7 +14,7 @@ export const perinatalMH: Note = {
 
     {
       type: 'image',
-      src: '/images/postpartum-mh-types.png',
+      src: '/images/postpartum-mh-types.gif',
       alt: 'Table comparing postpartum blues, perinatal depression and postpartum psychosis by incidence, onset and DSM-5 symptoms',
       caption: 'Three perinatal mental health conditions — very different incidence, onset and severity. Postpartum psychosis is a psychiatric emergency.',
       maxWidth: '600px',
