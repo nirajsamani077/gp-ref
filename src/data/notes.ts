@@ -88,6 +88,7 @@ import { suicideSelfHarm }        from '../notes/suicideSelfHarm'
 import { childAnxietyDepression } from '../notes/childAnxietyDepression'
 import { malaria }               from '../notes/malaria'
 import { notifiableDiseases }    from '../notes/notifiableDiseases'
+import { antiphospholipidSyndrome } from '../notes/antiphospholipidSyndrome'
 import { benignBreast }          from '../notes/benignBreast'
 import { breastCancer }          from '../notes/breastCancer'
 import { breastHormonalTherapy } from '../notes/breastHormonalTherapy'
@@ -185,4 +186,5 @@ export const NOTES: Note[] = [
   childAnxietyDepression,
   malaria,
   notifiableDiseases,
+  antiphospholipidSyndrome,
 ].map(enrichBody)
