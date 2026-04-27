@@ -182,6 +182,13 @@ export const allergicReactions: Note = {
     { type: 'heading', level: 3, text: 'Antihistamine Doses' },
 
     {
+      type: 'image',
+      src: '/images/antihistamines.jpg',
+      alt: 'Antihistamines dosage table by age and drug — sedating (chlorphenamine) and non-sedating (loratadine, cetirizine)',
+      caption: 'Antihistamine prescribing by age. Non-sedating agents (loratadine, cetirizine) are first-line for ongoing management; chlorphenamine is useful acutely but sedating.',
+    },
+
+    {
       type: 'table',
       headers: ['Drug', 'Age / Weight', 'Dose & Formulation', 'Frequency'],
       rows: [
@@ -271,14 +278,28 @@ export const allergicReactions: Note = {
     },
 
     {
-      type: 'table',
-      headers: ['Device', 'Available Doses'],
-      rows: [
-        ['EpiPen / EpiPen Jr', '150 mcg (Jr), 300 mcg'],
-        ['Emerade', '150 mcg, 300 mcg, 500 mcg'],
-        ['Jext', '150 mcg, 300 mcg'],
+      type: 'callout',
+      variant: 'danger',
+      title: 'Emerade — MHRA Alert: Do Not Prescribe',
+      items: [
+        'MHRA has issued an alert regarding Emerade auto-injectors due to device failure risk — the needle may not deploy correctly',
+        'Do NOT prescribe Emerade adrenaline auto-injectors until further notice',
+        'Prescribe EpiPen or Jext as alternatives — both are equally effective',
+        'Patients currently holding Emerade devices should be switched to EpiPen or Jext at their next review',
       ],
-      caption: 'Emerade 500 mcg is the only device offering the full adult dose — consider for higher-risk adults',
+    },
+
+    {
+      type: 'table',
+      headers: ['Device', 'Available Doses', 'Weight Threshold', 'Status'],
+      rows: [
+        ['EpiPen Jr', '150 mcg (1:2,000)', '<25 kg', '✅ Prescribe'],
+        ['EpiPen', '300 mcg (1:1,000)', '>25 kg / adults', '✅ Prescribe'],
+        ['Jext', '150 mcg (1:1,000)', '<30 kg', '✅ Prescribe (alternative to EpiPen)'],
+        ['Jext', '300 mcg (1:1,000)', '>30 kg / adults', '✅ Prescribe (alternative to EpiPen)'],
+        ['Emerade', '150 mcg, 300 mcg, 500 mcg', 'All weights', '⛔ DO NOT PRESCRIBE — MHRA device failure alert'],
+      ],
+      caption: 'EpiPen and Jext have slightly different weight thresholds for the junior vs adult dose. Both are acceptable; EpiPen is most widely recognised by patients and schools. Jext 150 mcg threshold is <30 kg; EpiPen Jr threshold is <25 kg.',
     },
 
     { type: 'heading', level: 3, text: 'How Many to Prescribe' },
@@ -300,7 +321,7 @@ export const allergicReactions: Note = {
       variant: 'tip',
       title: 'Practical prescribing tips',
       items: [
-        'Dose by weight: <15 kg → 150 mcg pen; ≥15 kg → 300 mcg; adults → 300 mcg (or 500 mcg Emerade if higher risk)',
+        'Dose by weight: EpiPen — <25 kg → EpiPen Jr 150 mcg; >25 kg → EpiPen 300 mcg. Jext — <30 kg → Jext 150 mcg; >30 kg → Jext 300 mcg. Do NOT prescribe Emerade (MHRA device failure alert)',
         'Be pragmatic about quantity — the goal is 2 pens on their person at all times; patients should carry their pens with them rather than leaving one set at home and one at work',
         'For school-age children: prescribe 4 total; write a covering letter / complete school IHP so the school set is held safely and staff are trained',
         'AAIs expire (check date) — most last 12–18 months; prescribe replacement before expiry; some CCGs/ICBs have a repeat prescription protocol',
