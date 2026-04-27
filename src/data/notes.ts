@@ -95,6 +95,7 @@ import { perinatalMH }             from '../notes/perinatalMH'
 import { antiemeticsVertigo }     from '../notes/antiemeticsVertigo'
 import { antispasmodics }         from '../notes/antispasmodics'
 import { boilsStaphCarriage }     from '../notes/boilsStaphCarriage'
+import { insomnia }              from '../notes/insomnia'
 import { benignBreast }          from '../notes/benignBreast'
 import { breastCancer }          from '../notes/breastCancer'
 import { breastHormonalTherapy } from '../notes/breastHormonalTherapy'
@@ -199,4 +200,5 @@ export const NOTES: Note[] = [
   antiemeticsVertigo,
   antispasmodics,
   boilsStaphCarriage,
+  insomnia,
 ].map(enrichBody)
