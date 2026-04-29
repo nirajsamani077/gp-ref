@@ -624,5 +624,12 @@ export const sixEightWeekCheck: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'neonatal-head-lumps', label: 'Neonatal Head Lumps', subtitle: 'Caput, cephalohaematoma, chignon, subgaleal — differentiating scalp swellings' },
+      ],
+    },
+
   ],
 }

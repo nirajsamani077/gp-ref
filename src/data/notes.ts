@@ -97,6 +97,7 @@ import { antispasmodics }         from '../notes/antispasmodics'
 import { boilsStaphCarriage }     from '../notes/boilsStaphCarriage'
 import { insomnia }              from '../notes/insomnia'
 import { vitaminB12 }           from '../notes/vitaminB12'
+import { neonatalHeadLumps }    from '../notes/neonatalHeadLumps'
 import { benignBreast }          from '../notes/benignBreast'
 import { breastCancer }          from '../notes/breastCancer'
 import { breastHormonalTherapy } from '../notes/breastHormonalTherapy'
@@ -203,4 +204,5 @@ export const NOTES: Note[] = [
   boilsStaphCarriage,
   insomnia,
   vitaminB12,
+  neonatalHeadLumps,
 ].map(enrichBody)
