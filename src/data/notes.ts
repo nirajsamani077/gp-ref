@@ -100,6 +100,7 @@ import { vitaminB12 }           from '../notes/vitaminB12'
 import { neonatalHeadLumps }    from '../notes/neonatalHeadLumps'
 import { balanitis }            from '../notes/balanitis'
 import { phimosisCircumcision } from '../notes/phimosisCircumcision'
+import { barrettsOesophagus }  from '../notes/barrettsOesophagus'
 import { benignBreast }          from '../notes/benignBreast'
 import { breastCancer }          from '../notes/breastCancer'
 import { breastHormonalTherapy } from '../notes/breastHormonalTherapy'
@@ -209,4 +210,5 @@ export const NOTES: Note[] = [
   neonatalHeadLumps,
   balanitis,
   phimosisCircumcision,
+  barrettsOesophagus,
 ].map(enrichBody)
