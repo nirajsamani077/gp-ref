@@ -16,6 +16,7 @@ export const phimosisCircumcision: Note = {
       src: '/images/phimosis-image.png.webp',
       alt: 'Diagram comparing phimosis (non-retractile foreskin) with normal foreskin anatomy showing foreskin and glans',
       caption: 'Phimosis: the foreskin cannot be fully retracted over the glans. This is normal in young children (physiological) and only requires treatment when causing symptoms (pathological).',
+      sensitive: true,
     },
 
     {
