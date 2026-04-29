@@ -51,14 +51,16 @@ export const acuteTesticularPain: Note = {
       src: '/images/bell-clapper-torsion.jpg',
       alt: 'Bell clapper deformity and testicular torsion of spermatic cord diagram',
       caption: 'Bell clapper deformity: high insertion of tunica vaginalis allows testis to rotate freely within the scrotum. Torsion of the spermatic cord cuts off blood supply — surgical emergency within 6 hours.',
-    },
+          sensitive: true,
+},
 
     {
       type: 'image',
       src: '/images/cremasteric-reflex.jpg',
       alt: 'Cremasteric reflex — stroke inner thigh causes ipsilateral testis to elevate',
       caption: 'Cremasteric reflex: stroking the inner thigh (1) causes reflex elevation of the ipsilateral testis (2). Absent in testicular torsion — a key clinical sign.',
-    },
+          sensitive: true,
+},
 
     {
       type: 'heading',
@@ -70,7 +72,8 @@ export const acuteTesticularPain: Note = {
       src: '/images/scrotum-anatomy.jpg',
       alt: 'Scrotal anatomy showing epididymis, testis, vas deferens and surrounding structures',
       caption: 'Normal scrotal anatomy. Epididymis lies posterolaterally. Epididymitis: tender swelling at the back/top of testicle. Orchitis: entire testis involved. Hydrocele: anterior, transilluminates, you can get above it. Epididymal cyst: posterior, separate from testis.',
-    },
+          sensitive: true,
+},
     {
       type: 'table',
       headers: ['Condition', 'Features', 'Action'],

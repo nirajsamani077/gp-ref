@@ -23,7 +23,8 @@ export const adenomyosis: Note = {
       src: '/images/adenomyosis.jpg.webp',
       alt: 'Anatomical diagram of adenomyosis showing endometrium invading uterus wall',
       caption: 'Adenomyosis: endometrial tissue invading through the myometrium. Often co-exists with fibroids and endometriosis.',
-    },
+          sensitive: true,
+},
     {
       type: 'callout',
       variant: 'info',
@@ -100,7 +101,8 @@ export const adenomyosis: Note = {
       src: '/images/MRI-Adenomyosis-1.jpg',
       alt: 'Sagittal MRI pelvis showing enlarged uterus with adenomyosis',
       caption: 'Sagittal T2 MRI pelvis: grossly enlarged uterus with heterogeneous myometrial signal and loss of the junctional zone — typical of adenomyosis.',
-    },
+          sensitive: true,
+},
     {
       type: 'callout',
       variant: 'warning',

@@ -29,14 +29,16 @@ export const analFissure: Note = {
       src: '/images/anal_fissure.jpg',
       alt: 'Cross-sectional diagrams of acute and chronic anal fissure: acute shows a simple tear at the dentate line; chronic shows hypertrophied anal papilla, exposed internal sphincter muscle fibres, raised edges and a sentinel pile (external skin tag), with clinical photographs of each',
       caption: 'Acute vs chronic anal fissure. Chronicity is marked by the triad: sentinel skin tag (external), hypertrophied anal papilla (internal), and exposed internal sphincter fibres with raised, indurated edges.',
-    },
+          sensitive: true,
+},
 
     {
       type: 'image',
       src: '/images/anal-fissure-schema.jpg',
       alt: 'Anatomical cross-section showing rectum, external anal sphincter, internal anal sphincter and location of anal fissure between them',
       caption: 'The fissure lies in the distal anal canal between the internal and external sphincters. Internal anal sphincter hypertonia reduces perfusion to the posterior commissure, the poorest-supplied area — explaining why most fissures occur at the 6 o\'clock position.',
-    },
+          sensitive: true,
+},
 
     { type: 'heading', level: 2, text: 'Management' },
 
@@ -115,7 +117,8 @@ export const analFissure: Note = {
       src: '/images/anal-fissure-pic.jpg',
       alt: 'Anatomical illustration showing anal fissure location in the distal anal canal with inset showing the perianal view',
       caption: 'Typical posterior midline fissure location. Most fissures are visible on gentle parting of the buttocks without proctoscopy — which should be avoided acutely due to pain.',
-    },
+          sensitive: true,
+},
 
     {
       type: 'linkrow',

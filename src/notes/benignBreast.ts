@@ -41,7 +41,8 @@ export const benignBreast: Note = {
       src: '/images/breast-quadrants.png',
       alt: 'Diagram of breast anatomy showing quadrants: upper outer, upper inner, lower outer, lower inner, central, axillary tail, nipple and areola',
       caption: 'Breast anatomy quadrants — upper outer is the most common site for both benign and malignant lesions',
-    },
+          sensitive: true,
+},
 
     // ── BREAST LUMP — REFERRAL ────────────────────────────────────────────────
     {
@@ -80,13 +81,15 @@ export const benignBreast: Note = {
       src: '/images/fibroadenoma-breast.jpg',
       alt: 'Cross-section diagram comparing breast cysts (fluid-filled) versus fibroadenoma (solid mass)',
       caption: 'Breast cysts (fluid-filled, may fluctuate with cycle) vs fibroadenoma (solid, mobile, rubbery)',
-    },
+          sensitive: true,
+},
     {
       type: 'image',
       src: '/images/fibroadenoma-1.jpg',
       alt: 'Diagram showing types of breast lesions — abscess, fibroadenoma, cyst, fibroadenomatosis, tumour; and types of cyst — atypical, fibrous, multilocular, fat, solitary',
       caption: 'Types of breast lesions and breast cyst subtypes',
-    },
+          sensitive: true,
+},
 
     // Fibroadenoma
     {

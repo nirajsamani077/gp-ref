@@ -28,7 +28,8 @@ export const analCancer: Note = {
       src: '/images/hpv-anal-cancer.png',
       alt: 'Diagram showing HPV infecting the anal canal epithelium, HPV genome with oncoproteins E6 and E7 inactivating tumour suppressor proteins p53 and pRb, leading to progression from normal epithelium through squamous intraepithelial lesions (AIN) to invasive squamous cell carcinoma',
       caption: 'HPV (especially types 16 and 18) infects the anal canal transformation zone. Oncoproteins E6 and E7 inactivate p53 and pRb, driving uncontrolled proliferation. Progression: normal epithelium → AIN (precancer) → invasive SCC — mirroring cervical carcinogenesis.',
-    },
+          sensitive: true,
+},
 
     { type: 'heading', level: 2, text: 'Risk Factors' },
 
@@ -77,7 +78,8 @@ export const analCancer: Note = {
       src: '/images/Stage-IIIa-Anal-Cancer-1284x786_Sing-920x570.png',
       alt: 'Cross-sectional anatomical diagram of stage IIIa anal cancer showing a tumour at the anus no bigger than 5cm with spread to nearby lymph nodes, with rectum, sphincter muscles and anus labelled',
       caption: 'Stage IIIa anal cancer: tumour ≤5 cm with regional lymph node involvement. Staging is by TNM: T1 (≤2 cm) to T4 (adjacent organ invasion); N0–N3 (inguinal/mesorectal nodes); M0/M1. Most anal cancers present at stage I–III and are curable with chemoradiotherapy.',
-    },
+          sensitive: true,
+},
 
     { type: 'heading', level: 2, text: 'Investigation & Referral' },
 

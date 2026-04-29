@@ -15,7 +15,8 @@ export const balanitis: Note = {
       src: '/images/balanitis.jpeg',
       alt: 'Balanitis diagram showing healthy glans vs inflamed glans with redness, blotchy rash and white discharge',
       caption: 'Balanitis: inflammation of the glans penis (and foreskin when involved = balanoposthitis). Features include redness, blotchy rash and white discharge. Most cases are benign and treatable in primary care — the key task is identifying the cause.',
-    },
+          sensitive: true,
+},
 
     // ── FIRST STEPS ───────────────────────────────────────────────────────────────
     {

@@ -29,7 +29,8 @@ export const perinealTears: Note = {
       src: '/images/perineal-tears-86f420.jpg',
       alt: 'Diagram showing four degrees of perineal tear with anatomical labels',
       caption: 'Perineal tear classification: 1st (skin), 2nd (perineal muscle), 3rd (anal sphincter), 4th (sphincter + rectum).',
-    },
+          sensitive: true,
+},
 
     {
       type: 'heading',

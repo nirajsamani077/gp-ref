@@ -33,7 +33,8 @@ export const breastCancer: Note = {
       src: '/images/suspected-cancer-referral-breast-lumps.jpg',
       alt: 'NICE referral table for breast lumps: age under 30 — non-urgent referral for unexplained lump; age 30 to 50 — always 2WW for unexplained lump with or without pain; age over 50 — always 2WW for nipple changes including discharge and retraction; all ages — consider 2WW for skin changes suggestive of breast cancer',
       caption: 'NICE NG12 breast referral criteria. Age ≥30 unexplained lump → always 2WW. Age ≥50 unilateral nipple changes → always 2WW. Skin changes → consider 2WW at any age.',
-    },
+          sensitive: true,
+},
 
     {
       type: 'table',
@@ -104,7 +105,8 @@ export const breastCancer: Note = {
       src: '/images/breast-quadrants.png',
       alt: 'Breast anatomy diagram showing the four quadrants: upper outer quadrant (most common site for breast cancer), upper inner quadrant, lower outer quadrant, and lower inner quadrant, with the axillary tail labelled',
       caption: 'Breast quadrant anatomy. The upper outer quadrant (including the axillary tail) is the most common site for breast cancer, accounting for approximately 50% of tumours. Lesion location should be documented using clock position and distance from the nipple.',
-    },
+          sensitive: true,
+},
 
     // ── TYPES ─────────────────────────────────────────────────────────────────
 
@@ -115,7 +117,8 @@ export const breastCancer: Note = {
       src: '/images/breast-ca-types.jpg',
       alt: 'Pie chart of breast cancer subtypes by hormone receptor and HER2 status: HR-positive HER2-negative most common at 73 percent, triple positive HR-positive HER2-positive at 10 percent, triple negative HR-negative HER2-negative at 13 percent, and HR-negative HER2-positive at 5 percent',
       caption: 'Breast cancer subtypes by receptor status. HR+/HER2− accounts for 73% of cases and responds well to hormonal therapy. Triple-negative (ER−/PR−/HER2−) accounts for ~13% and is more aggressive with limited targeted therapy options.',
-    },
+          sensitive: true,
+},
 
     {
       type: 'table',
@@ -137,7 +140,8 @@ export const breastCancer: Note = {
       src: '/images/lobular-breast-ca.jpg',
       alt: 'Diagram showing lobular breast cancer origin: lobules where milk is produced, ducts carrying milk to the nipple, and comparison of lobular carcinoma in situ (LCIS — cells confined within the lobule) versus invasive lobular carcinoma (ILC — cells breaking through the lobule wall into surrounding tissue)',
       caption: 'Lobular carcinoma in situ (LCIS) is a non-invasive precursor lesion confined within the lobule — considered a marker of increased risk rather than a direct precancer. Invasive lobular carcinoma (ILC) has broken through the lobular basement membrane. ILC is notoriously difficult to detect on mammography due to its diffuse growth pattern.',
-    },
+          sensitive: true,
+},
 
     // ── STAGING ───────────────────────────────────────────────────────────────
 

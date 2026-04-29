@@ -41,7 +41,8 @@ export const breastHormonalTherapy: Note = {
       src: '/images/breast-ca-types.jpg',
       alt: 'Breast cancer subtypes: HR+/HER2- most common 73%, Triple negative 13%, Triple positive 10%, HR-/HER2+ 5%',
       caption: 'Breast cancer subtypes — hormone receptor positive (HR+) disease is most common and most amenable to hormonal therapy',
-    },
+          sensitive: true,
+},
 
     // ── MECHANISM ────────────────────────────────────────────────────────────
     {
