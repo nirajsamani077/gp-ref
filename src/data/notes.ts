@@ -3,7 +3,7 @@ export type ContentBlock =
   | { type: 'para'; text: string }
   | { type: 'list'; items: string[] }
   | { type: 'table'; headers: string[]; rows: string[][]; caption?: string }
-  | { type: 'image'; src: string; alt: string; caption?: string; float?: 'left' | 'right'; maxWidth?: string }
+  | { type: 'image'; src: string; alt: string; caption?: string; float?: 'left' | 'right'; maxWidth?: string; sensitive?: boolean }
   | { type: 'callout'; variant: 'info' | 'warning' | 'tip' | 'danger'; title: string; items: string[]; image?: { src: string; alt: string; maxWidth?: string; float?: 'left' | 'right' } }
   | { type: 'linkrow'; links: Array<{ label: string; url: string }> }
   | { type: 'calclink'; calculators: Array<{ id: string; label: string; subtitle?: string }> }
@@ -99,6 +99,7 @@ import { insomnia }              from '../notes/insomnia'
 import { vitaminB12 }           from '../notes/vitaminB12'
 import { neonatalHeadLumps }    from '../notes/neonatalHeadLumps'
 import { balanitis }            from '../notes/balanitis'
+import { phimosisCircumcision } from '../notes/phimosisCircumcision'
 import { benignBreast }          from '../notes/benignBreast'
 import { breastCancer }          from '../notes/breastCancer'
 import { breastHormonalTherapy } from '../notes/breastHormonalTherapy'
@@ -207,4 +208,5 @@ export const NOTES: Note[] = [
   vitaminB12,
   neonatalHeadLumps,
   balanitis,
+  phimosisCircumcision,
 ].map(enrichBody)

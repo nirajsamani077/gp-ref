@@ -445,7 +445,8 @@ function ImageBlock({
   block: Extract<ContentBlock, { type: 'image' }>
   onImageClick: (img: LightboxImage) => void
 }) {
-  const [errored, setErrored] = useState(false)
+  const [errored,  setErrored]  = useState(false)
+  const [revealed, setRevealed] = useState(false)
   const resolvedSrc = resolveImg(block.src)
 
   const isFloated = !!block.float
@@ -458,18 +459,48 @@ function ImageBlock({
     width: isFloated ? (block.maxWidth ?? '40%') : undefined,
   }
 
+  const isSensitive = !!block.sensitive && !revealed
+
   return (
     <figure data-block style={figureStyle}>
       {!errored ? (
-        <img
-          src={resolvedSrc}
-          alt={block.alt}
-          onClick={() => onImageClick({ src: resolvedSrc, alt: block.alt, caption: block.caption })}
-          style={{ width: '100%', borderRadius: 8, border: '1px solid #dce6f0', display: 'block', cursor: 'zoom-in', transition: 'opacity 0.15s' }}
-          onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.85' }}
-          onMouseLeave={(e) => { e.currentTarget.style.opacity = '1' }}
-          onError={() => setErrored(true)}
-        />
+        <div style={{ position: 'relative', borderRadius: 8, overflow: 'hidden' }}>
+          <img
+            src={resolvedSrc}
+            alt={block.alt}
+            onClick={() => !isSensitive && onImageClick({ src: resolvedSrc, alt: block.alt, caption: block.caption })}
+            style={{
+              width: '100%', borderRadius: 8, border: '1px solid #dce6f0', display: 'block',
+              cursor: isSensitive ? 'default' : 'zoom-in',
+              transition: 'opacity 0.15s, filter 0.3s',
+              filter: isSensitive ? 'blur(18px) brightness(0.7)' : 'none',
+            }}
+            onMouseEnter={(e) => { if (!isSensitive) e.currentTarget.style.opacity = '0.85' }}
+            onMouseLeave={(e) => { if (!isSensitive) e.currentTarget.style.opacity = '1' }}
+            onError={() => setErrored(true)}
+          />
+          {isSensitive && (
+            <div
+              onClick={() => setRevealed(true)}
+              style={{
+                position: 'absolute', inset: 0,
+                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                cursor: 'pointer', gap: 8,
+                background: 'rgba(0,0,0,0.15)',
+                borderRadius: 8,
+              }}
+            >
+              <span style={{ fontSize: 32 }}>🔒</span>
+              <span style={{
+                fontSize: 13, fontWeight: 700, color: '#fff',
+                background: 'rgba(0,0,0,0.55)', padding: '6px 14px', borderRadius: 20,
+                letterSpacing: '0.02em',
+              }}>
+                Tap to reveal clinical image
+              </span>
+            </div>
+          )}
+        </div>
       ) : (
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 80, border: '2px dashed #dce6f0', borderRadius: 8, color: MUTED, fontSize: 13, gap: 8 }}>
           <span>🖼</span>
@@ -478,7 +509,8 @@ function ImageBlock({
       )}
       {!errored && block.caption && (
         <figcaption style={{ fontSize: 12, color: MUTED, marginTop: 6, fontStyle: 'italic' }}>
-          {block.caption} · <span style={{ color: '#2b6cb0' }}>tap to enlarge</span>
+          {block.caption}
+          {!isSensitive && <> · <span style={{ color: '#2b6cb0' }}>tap to enlarge</span></>}
         </figcaption>
       )}
     </figure>

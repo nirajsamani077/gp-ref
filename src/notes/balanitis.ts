@@ -150,6 +150,13 @@ export const balanitis: Note = {
     },
 
     {
+      type: 'notelink',
+      notes: [
+        { id: 'phimosis-circumcision', label: 'Phimosis & Circumcision', subtitle: 'Steroid treatment, paraphimosis emergency, NHS circumcision indications' },
+      ],
+    },
+
+    {
       type: 'linkrow',
       links: [
         { label: 'NICE CKS — Balanitis', url: 'https://cks.nice.org.uk/topics/balanitis/' },
