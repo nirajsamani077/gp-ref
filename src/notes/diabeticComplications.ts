@@ -155,5 +155,17 @@ export const diabeticComplications: Note = {
       ],
       caption: 'CKD in diabetes: SGLT2i provide nephroprotection independent of glucose-lowering. Dapagliflozin licensed for CKD with ACR >22.6 mg/mmol (eGFR 25–75) even without diabetes. Do NOT use SGLT2i in T1DM (euglycaemic DKA risk).',
     },
+
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — Diabetic Foot', url: 'https://cks.nice.org.uk/topics/diabetic-foot-problems/' },
+        { label: 'NICE CKS — Neuropathic Pain', url: 'https://cks.nice.org.uk/topics/neuropathic-pain-drug-treatment/' },
+        { label: 'NICE NG19 — Diabetic Foot', url: 'https://www.nice.org.uk/guidance/ng19' },
+        { label: 'NICE NG28 — T2DM Management', url: 'https://www.nice.org.uk/guidance/ng28' },
+        { label: 'Diabetes UK — Complications', url: 'https://www.diabetes.org.uk/guide-to-diabetes/complications' },
+        { label: 'NHS — Diabetic Retinopathy', url: 'https://www.nhs.uk/conditions/diabetic-retinopathy/' },
+      ],
+    },
   ],
 }

@@ -64,7 +64,7 @@ export const angina: Note = {
     {
       type: 'callout',
       variant: 'tip',
-      title: 'RACPC — Who to refer (UHNM / South Staffordshire)',
+      title: 'RACPC — Who to refer (UHB / Good Hope, Birmingham)',
       items: [
         'Refer adults with NEW onset chest pain with intermediate-to-high probability of stable angina from coronary disease',
         'Start aspirin 75 mg daily whilst awaiting appointment; give GTN spray with instructions',
@@ -83,7 +83,7 @@ export const angina: Note = {
         ['Worsening exertional symptoms in a patient with no prior cardiac history', 'Suspected ACS or unstable angina — call 999 / admit same day'],
         ['', 'Chest pain clearly non-cardiac in nature (musculoskeletal, pleuritic, GI) with <10% CAD probability'],
       ],
-      caption: 'RACPC inclusion/exclusion criteria (UHNM — Royal Stoke/Stafford, serving South Staffordshire). Patients are seen within 2 weeks. Risk stratified using clinical pre-test probability on receipt.',
+      caption: 'RACPC inclusion/exclusion criteria (UHB — Good Hope Hospital, serving North Birmingham). Patients are seen within 2 weeks. Risk stratified using clinical pre-test probability on receipt.',
     },
 
     {
@@ -223,7 +223,7 @@ export const angina: Note = {
       links: [
         { label: 'NICE CG126 — Stable Angina', url: 'https://www.nice.org.uk/guidance/cg126' },
         { label: 'NICE CG95 — Chest Pain of Recent Onset', url: 'https://www.nice.org.uk/guidance/cg95' },
-        { label: 'UHNM RACPC Referral Info', url: 'https://www.uhnm.nhs.uk/our-services/cardiology/' },
+        { label: 'UHB Good Hope — Cardiology Referrals', url: 'https://www.uhb.nhs.uk/cardiology.htm' },
         { label: 'SIGN 96 — Stable Angina', url: 'https://www.sign.ac.uk/our-guidelines/management-of-stable-angina/' },
       ],
     },

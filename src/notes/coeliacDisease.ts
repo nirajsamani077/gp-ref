@@ -251,5 +251,16 @@ export const coeliacDisease: Note = {
         'Patients with NCGS should be advised that long-term adherence to GFD should be guided by symptom response, not fear of complications.',
       ],
     },
+
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — Coeliac Disease', url: 'https://cks.nice.org.uk/topics/coeliac-disease/' },
+        { label: 'NICE NG20 — Coeliac Disease', url: 'https://www.nice.org.uk/guidance/ng20' },
+        { label: 'NHS — Coeliac Disease', url: 'https://www.nhs.uk/conditions/coeliac-disease/' },
+        { label: 'Coeliac UK — Clinicians', url: 'https://www.coeliac.org.uk/healthcare-professionals/' },
+        { label: 'Patient PIL — Coeliac UK', url: 'https://www.coeliac.org.uk/information-and-support/' },
+      ],
+    },
   ],
 }

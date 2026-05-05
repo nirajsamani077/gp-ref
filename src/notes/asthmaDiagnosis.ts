@@ -4,7 +4,7 @@ export const asthmaDiagnosis: Note = {
   id: 'asthmaDiagnosis',
   title: 'Asthma — Diagnosis',
   subtitle: 'Symptoms, objective testing, FeNO, spirometry, and differential diagnosis',
-  tags: ['Respiratory'],
+  tags: ['respiratory'],
 
   body: 'asthma diagnosis symptoms wheeze breathlessness cough chest tightness spirometry reversibility FeNO fractional exhaled nitric oxide peak flow variability PEFR differential COPD vocal cord dysfunction hyperventilation eosinophilic',
 
@@ -92,6 +92,40 @@ export const asthmaDiagnosis: Note = {
       ],
     },
 
+    // ── OCCUPATIONAL ASTHMA ───────────────────────────────────────────────────
+    { type: 'heading', level: 2, text: 'Occupational Asthma' },
+
+    {
+      type: 'callout',
+      variant: 'warning',
+      title: 'Suspect occupational asthma if symptoms vary with work schedule',
+      items: [
+        'Better on days off / holidays and worse on return to work — classic pattern',
+        'Common causes: flour/grain dust (bakers), isocyanates (paint sprayers, foam manufacture), latex, wood dust, animal proteins (lab workers, vets), colophony (soldering), enzymes',
+        'Serial PEFR: ask patient to record peak flow ≥4×/day for 4 weeks across working and non-working days — ≥20% variation linked to work pattern is diagnostic',
+        'Refer to occupational health / respiratory medicine — early diagnosis and removal from exposure gives better prognosis; chronic exposure leads to fixed obstruction',
+        'Notifiable disease: occupational asthma is a prescribed disease (D7) — inform patient of statutory sick pay/compensation rights via RIDDOR reporting',
+        'Do not simply switch inhalers — if still exposed, disease will progress regardless of pharmacological treatment',
+      ],
+    },
+
+    // ── WHEN TO REFER ─────────────────────────────────────────────────────────
+    { type: 'heading', level: 2, text: 'When to Refer to Secondary Care' },
+
+    {
+      type: 'table',
+      headers: ['Indication', 'Refer to'],
+      rows: [
+        ['Diagnostic uncertainty — spirometry and FeNO inconclusive but symptoms persist', 'Respiratory medicine — bronchial provocation testing (histamine/methacholine challenge)'],
+        ['Occupational asthma suspected', 'Occupational health + respiratory medicine'],
+        ['Step 4+ asthma not controlled on high-dose ICS + LABA', 'Severe asthma clinic — biologic eligibility assessment (dupilumab, mepolizumab, benralizumab)'],
+        ['Blood eosinophils ≥300/µL + uncontrolled asthma', 'Severe asthma MDT — consider anti-IL-5/IL-4 biologic'],
+        ['Frequent exacerbations (≥2/year requiring OCS)', 'Respiratory medicine — review diagnosis, triggers, adherence, inhaler technique'],
+        ['Child with atypical symptoms or poor response to treatment', 'Paediatric respiratory / allergy'],
+      ],
+      caption: 'BTS/SIGN Step 5 = add-on therapy with biologics (NHS England approved) — requires ≥3 severe exacerbations/year or continuous OCS, with evidence of eosinophilic inflammation.',
+    },
+
     {
       type: 'calclink',
       calculators: [
@@ -106,6 +140,8 @@ export const asthmaDiagnosis: Note = {
         { label: 'PEFR Diary (print)', url: '/pdfs/pefr-diary.pdf' },
         { label: 'PEFR Normal Ranges', url: '/pdfs/pefr-normal-ranges.pdf' },
         { label: 'NICE CKS — Asthma diagnosis', url: 'https://cks.nice.org.uk/topics/asthma/' },
+        { label: 'NICE NG80 — Asthma', url: 'https://www.nice.org.uk/guidance/ng80' },
+        { label: 'BTS/SIGN — Asthma Guidelines', url: 'https://www.brit-thoracic.org.uk/quality-improvement/guidelines/asthma/' },
         { label: 'Rightbreathe — inhaler choice', url: 'https://www.rightbreathe.com' },
       ],
     },

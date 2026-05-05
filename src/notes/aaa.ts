@@ -141,5 +141,16 @@ export const aaa: Note = {
         'Include in referral: USS report, BP, BMI, PMH, medications, smoking status, renal function (U&E within 6 weeks), ABPI if available',
       ],
     },
+
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — AAA', url: 'https://cks.nice.org.uk/topics/abdominal-aortic-aneurysm/' },
+        { label: 'NHS — AAA Screening', url: 'https://www.nhs.uk/conditions/abdominal-aortic-aneurysm/screening/' },
+        { label: 'NHS — AAA Overview', url: 'https://www.nhs.uk/conditions/abdominal-aortic-aneurysm/' },
+        { label: 'NICE NG156 — AAA Surveillance', url: 'https://www.nice.org.uk/guidance/ng156' },
+        { label: 'Vascular Society — Patient Info', url: 'https://www.vascularsociety.org.uk/patients/conditions/6/abdominal_aortic_aneurysm' },
+      ],
+    },
   ],
 }

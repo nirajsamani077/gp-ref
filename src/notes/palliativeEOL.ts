@@ -67,7 +67,7 @@ export const palliativeEOL: Note = {
     ]},
 
     { type: 'linkrow', links: [
-      { label: 'UHNM ReSPECT Information', url: 'https://www.uhnm.nhs.uk/our-services/respect/' },
+      { label: 'UHDB ReSPECT Information', url: 'https://www.uhdb.nhs.uk/service/palliative-care/' },
       { label: 'Digital ReSPECT \u2014 Staffordshire (GraphNet)', url: 'https://www.graphnethealth.com/knowledge-hub/news/digital-respect-forms-rolled-out-in-staffordshire-and-stoke-on-trent-for-first-time-enabling-personalised-clinical-care-during-emergency-situations' },
       { label: 'West Midlands Palliative Care \u2014 Syringe Drivers', url: 'https://www.westmidspallcare.co.uk/wmpcp/guide/syringe-driver-pump/' },
     ]},

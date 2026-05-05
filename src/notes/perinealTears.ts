@@ -100,5 +100,33 @@ export const perinealTears: Note = {
         'May require endoanal USS, anorectal physiology studies, or further surgical repair',
       ],
     },
+
+    // ── FUTURE PREGNANCIES ─────────────────────────────────────────────────────
+    { type: 'heading', level: 2, text: 'Future Pregnancies — Counselling & Decision-Making' },
+
+    {
+      type: 'callout',
+      variant: 'info',
+      title: 'Mode of Delivery after 3rd/4th Degree Tear',
+      items: [
+        'Refer to an obstetrician (or specialist OASI/perineal clinic) at ~16 weeks to discuss mode of delivery — this is a joint decision with the woman',
+        'Factors favouring elective caesarean section (ELCS): persistent sphincter defect on anorectal physiology/endoanal USS, ongoing faecal incontinence or urgency, patient preference after counselling',
+        'Factors favouring vaginal birth: recovered sphincter function (confirmed on investigation), no ongoing symptoms, absence of further significant risk factors for re-tear',
+        'Recurrence risk: women who had a 3rd/4th degree tear have a higher risk (~6–8%) of repeat OASI in a subsequent vaginal birth — but most heal well and can safely have a vaginal delivery',
+        'RCOG guidance (GTG No.29): do not withhold ELCS from women who have had a previous OASI and request it after informed counselling',
+        'If vaginal birth is planned: risk-reduction strategies — mediolateral episiotomy, controlled delivery of the head, optimise maternal position and pushing technique',
+        'Physiotherapy assessment prior to labour: confirm pelvic floor recovery with women\'s health physiotherapist before planned vaginal delivery',
+      ],
+    },
+
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'RCOG GTG No.29 — 3rd & 4th Degree Tears', url: 'https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/third-and-fourth-degree-perineal-tears-management-green-top-guideline-no-29/' },
+        { label: 'NICE CKS — Perineal Tears', url: 'https://cks.nice.org.uk/topics/perineal-tears-post-natal-assessment/' },
+        { label: 'MASIC Foundation — Patient Support', url: 'https://www.masic.org.uk/' },
+        { label: 'NHS — Perineal Tears in Childbirth', url: 'https://www.nhs.uk/pregnancy/labour-and-birth/what-happens/tears-stitches-and-episiotomies/' },
+      ],
+    },
   ],
 }

@@ -272,5 +272,15 @@ export const microcyticAnaemia: Note = {
         ['TSAT (transferrin saturation)', 'Ratio of serum iron to TIBC: Fe/TIBC × 100, or Fe/TF × 70.9', 'Better test for iron overload than deficiency; normal <45%'],
       ],
     },
+
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — Iron Deficiency Anaemia', url: 'https://cks.nice.org.uk/topics/anaemia-iron-deficiency/' },
+        { label: 'NHS — Iron Deficiency Anaemia', url: 'https://www.nhs.uk/conditions/iron-deficiency-anaemia/' },
+        { label: 'BSH — IDA Guidelines', url: 'https://b-s-h.org.uk/guidelines/guidelines/guideline-for-the-management-of-iron-deficiency-in-adults/' },
+        { label: 'Patient.info — Iron Deficiency', url: 'https://patient.info/blood-conditions/iron-deficiency-anaemia-leaflet' },
+      ],
+    },
   ],
 }

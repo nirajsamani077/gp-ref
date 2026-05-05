@@ -88,12 +88,68 @@ export const antispasmodics: Note = {
       ],
     },
 
+    // ── SECOND-LINE & SPECIALIST MEDICINES ───────────────────────────────────
+    { type: 'heading', level: 2, text: 'Second-Line & Specialist Medicines' },
+
+    {
+      type: 'table',
+      headers: ['Drug', 'Indication', 'Dose', 'Notes'],
+      rows: [
+        [
+          'Linaclotide 290 mcg',
+          'IBS-C — moderate to severe, after laxatives failed',
+          'ONE capsule OD, taken ≥30 minutes before the first meal of the day',
+          'NICE-approved (TA354) for IBS-C after 12 months of diet + laxatives. Available on NHS — check local ICB formulary for initiation criteria. Common SE: diarrhoea. Stop if severe diarrhoea. Contraindicated in children <18.',
+        ],
+        [
+          'Prucalopride 1–2 mg',
+          'Chronic constipation / IBS-C after laxatives failed',
+          '2 mg OD (1 mg OD if ≥65 years or eGFR <30)',
+          'Serotonin 5-HT4 agonist — prokinetic, increases colonic motility. NICE TA211 for women; now available for all adults. Not specifically licensed for IBS-C but widely used. GI side effects in first few days — usually settles.',
+        ],
+        [
+          'Loperamide 2 mg',
+          'IBS-D — acute diarrhoea episodes',
+          '2 mg after each loose stool; max 16 mg/day',
+          'Available OTC. Not for regular long-term use. Effective for acute/travel IBS episodes. Caution: do not use if acute inflammatory bowel disease or pseudomembranous colitis.',
+        ],
+        [
+          'Amitriptyline 10–30 mg nocte',
+          'IBS with refractory pain, or IBS-D',
+          'Start 10 mg ON; increase by 10 mg every 4 weeks up to 30–75 mg as tolerated',
+          'Off-label for IBS — low dose for central sensitisation, not for depression. Evidence from primary care RCT (ATLANTIS trial). Anticholinergic SE: dry mouth, constipation (can be helpful in IBS-D). Avoid abrupt withdrawal.',
+        ],
+        [
+          'Rifaximin 400 mg TDS',
+          'IBS-D — not widely available on NHS',
+          '400 mg three times daily for 14 days',
+          'Non-absorbable antibiotic targeting gut microbiome. Evidence for IBS-D (NICE does not currently recommend routinely). May be considered by gastroenterology for refractory IBS-D. Private prescription only in most settings.',
+        ],
+      ],
+      caption: 'Second-line medicines require evidence of first-line failure (diet, antispasmodics). Linaclotide requires NICE TA354 criteria. Amitriptyline is the most practical option in primary care for refractory IBS pain — explain the rationale carefully as patients may be confused by an antidepressant being used for bowel symptoms.',
+    },
+
+    {
+      type: 'callout',
+      variant: 'tip',
+      title: 'When to Refer to Gastroenterology',
+      items: [
+        'Diagnostic uncertainty — red flags present or unusual symptom pattern',
+        'Age >45 at first presentation — consider colonoscopy to exclude colorectal cancer',
+        'Raised faecal calprotectin (>200 µg/g) — suggests inflammatory bowel disease, not IBS',
+        'IBS-C refractory to laxatives and lifestyle — for consideration of linaclotide or prucalopride initiation',
+        'Refractory IBS not responding to ≥2 drug classes — gut-directed hypnotherapy or psychological therapies via gastro',
+        'Any patient with significant weight loss, nocturnal symptoms, or family history of GI cancer',
+      ],
+    },
+
     {
       type: 'linkrow',
       links: [
         { label: 'BNF — Antispasmodics', url: 'https://bnf.nice.org.uk/treatment-summaries/antispasmodics/' },
         { label: 'NICE CKS — IBS', url: 'https://cks.nice.org.uk/topics/irritable-bowel-syndrome/' },
-        { label: 'NICE NG12 — IBS in Adults', url: 'https://www.nice.org.uk/guidance/ng212' },
+        { label: 'NICE NG212 — IBS in Adults', url: 'https://www.nice.org.uk/guidance/ng212' },
+        { label: 'NICE TA354 — Linaclotide', url: 'https://www.nice.org.uk/guidance/ta354' },
         { label: 'The IBS Network', url: 'https://www.theibsnetwork.org/' },
         { label: 'PIL — Antispasmodic Medicines', url: 'https://patient.info/digestive-health/irritable-bowel-syndrome-leaflet/antispasmodic-medicines' },
       ],
