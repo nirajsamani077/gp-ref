@@ -1,0 +1,14 @@
+COPD exacerbation RW
+
+?Admission needed - sats <88%, lethargic/flap, CO2 retention, not improving on rescue pack
+
+Rescue pack 
+• Pred 30mg 5d - use if sob distressing 
+• Doxy or Amox/Clary (500mg bd) 5d - use if sputum change (colour thickness etc), resistance and high risk may need co-amox/levoflox based on previous sputum cultures (if on prophylactic azithro - continue during exac but give above abx on top as long as not also macrolide) 
+• NNT to prevent 1 admission = 15 
+• 1 issue on repeat and arrange RV within 2w for further supply, call for help anyway (should not replace clinical RV as may be something else) 
+
+Don’t forget SABA - can follow wheeze plan strategy up to 10 puffs 4 hourly and stretch, don’t give ipratropium (atorvent) if on LAMA 
+
+Tags:
+  respiratory

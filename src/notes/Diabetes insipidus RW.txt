@@ -1,0 +1,19 @@
+Diabetes insipidus RW
+
+Rare condition with reduced ADH meaning more kidney water loss so concentrated plasma/high Na
+• Cranial DI - pituitary, head trauma, infiltrative (HH sarcoid), DIDMOAD (Wolframs) = desmopressin (oral or IN spray which is ADH - can cause significant hyponatraemia esp if significant water intake at the time of taking as will all be reabsorbed)
+• Nephrogenic DI - ADHr mutation, hypokalaemia, hypercalcaemia, lithium= good hydration, low salt/protein diet, TZD under specialist 
+
+Polyuria, polydipsia - with normal glucose & hypernatraemia (DDx = DM & primary polydipsia psychiatric condition)
+
+24h urine volume = <2.5L unlikely, if >2.5L 
+• Paired serum urine osmolality 
+   - If urine osmolality >700 = unlikely as can concentrate urine 
+   - If serum osm (>300, actually 295) & urine osm low (<300) = likely Dx so refer to endocrine for water deprivation test 
+• Any hypernatraemia should be referred same day (high risk emergency risk of CPM cerebral oedema, close monitoring & correction)
+
+Rx as above - cranial DI = desmopressin, nephrogenic DI = fluid intake, low salt, under renal 
+
+
+Tags:
+  endocrine

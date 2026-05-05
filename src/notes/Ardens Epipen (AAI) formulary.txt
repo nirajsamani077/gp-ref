@@ -1,0 +1,17 @@
+Epipen
+- <25kg = EpiPen Jr. 150micrograms/0.3ml (1 in 2,000) solution for injection auto-injectors (Viatris UK Healthcare Ltd) - 2 pre-filled disposable injection - Use if symptoms of anaphylaxis develop and call 999. If not improving after 5-15minutes, use a second auto-injector. Always carry two auto-injectors at all times.
+- >25kg = EpiPen 300micrograms/0.3ml (1 in 1,000) solution for injection auto-injectors (Viatris UK Healthcare Ltd) - 2 pre-filled disposable injection - Use if symptoms of anaphylaxis develop and call 999. If not improving after 5-15minutes, use a second auto-injector. Always carry two auto-injectors at all times.
+
+Jext = alternative (not Emerade MHRA alert re failure)
+- <30kg = Jext 150micrograms/0.15ml (1 in 1,000) solution for injection auto-injectors (ALK-Abello Ltd) - 2 pre-filled disposable injection - Use if symptoms of anaphylaxis develop and call 999. If not improving after 5-15minutes, use a second auto-injector. Always carry two auto-injectors at all times.
+- >30kg = Jext 300micrograms/0.3ml (1 in 1,000) solution for injection auto-injectors (ALK-Abello Ltd) - 2 pre-filled disposable injection - Use if symptoms of anaphylaxis develop and call 999. If not improving after 5-15minutes, use a second auto-injector. Always carry two auto-injectors at all times
+
+Advice to carry 2x AAIs at all times and check in date
+Advice for school to have an AAI and action plan
+Education on using AAI & family/friend should be trained
+Advice to use if symptoms, call 999, use 2nd if needed after 5min
+
+PIL on anaphylaxis = https://patient.info/allergies-blood-immune/allergies/anaphylaxis
+PIL on use of AAI = https://patient.info/medicine/adrenaline-epinephrine-for-anaphylaxis-emerade-epipen-jext
+
+

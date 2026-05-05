@@ -1,0 +1,87 @@
+Heart failure (HFREF, HFPEF) RW
+
+BEAT-HF campaign - Breathless, Exhausted, Ankle Swelling = Time for a simple blood test (BNP)
+• SOBOE, orthopnea, PND, ankle swelling, fatigue 
+
+Major causes = IHD & HTN
+• Other causes = Valve, AF, CM, congenital, infection (HIV, Lyme, myocarditis) 
+• Rare causes = HH, Freidrichs ataxia/muscular dystrophy, chemo (transtuzumab, doxorubicin)
+
+Categories 
+• HFREF = HF with reduced EF <40% (old = LVSD) most often caused by IHD/MI 
+• HFPEF = Preserved EF >40% (old = diastolic failure), poor filling/relaxing of heart but contraction/emptying of blood intact, most often HTN cause with gradual remodelling, can progress to HFREF 
+• Can have HFMREF = HF with mildly reduced EF 40-50% (mild systolic & diastolic dysfunction) 
+
+Use NT-proBNP (more sensitive than BNP) 
+• <400 = HF unlikely 
+• 400-2000 = Echo within 6w with specialist MDT
+• >2000 = Echo within 2w (poor prognosis) 
+• False high BNP - COPD, PE, liver failure, CKD
+• False low BNP - Afro-Caribbean, ACE/Bb/diuretic 
+
+Check 
+• Examination - BP, chest, overload, ?murmur 
+• ECG & renal function/HbA1C/lipids + UACR 
+• Consider CXR (CTR), spirometry ? DDx 
+
+Management 
+• MDT with important non-medical interventions = 
+   - Cardiac rehab (exercise/education programme)
+   - Smoking cessation 
+   - Annual flu and one off pneumococcal jabs 
+   - Malnutrition & depression screening (common)
+   - Preventing admission (self weighing, FR <1.5L)
+   - Advanced care planning (RESPECT form) 
+• ABCDEF of drugs for HFREF 
+ACE/ARB 
+• For all, start low & go slow to max tolerated dose
+   - Ramipril 10mg, Lisinopril/Enalapril 20-35/40mg 
+   - Losartan 150mg, Candesartan 32mg 
+• Check U&E 1-2w after starting/increasing dose
+• If not tolerating /Afro Caribbean = hydralazine + nitrate (ISDN) under specialist 
+• ARNI (entresto: sacubitril/valsartan) - ARB + Nephrolysin inhibitor new drug under specialist if still symptomatic on max dose ACE/ARB (instead, start after washout period). Specific criteria 
+• Specialist may combine ACE & ARB (not for us!)
+
+Beta-blocker (Bb) licensed for HF 
+• For all, start low & go slow to max tolerated dose
+   - Bisoprolol 10mg, Carvedilol 50mg 
+• Check BP & HR after each increase in dose 
+• Caution (not C/I) in COPD, PVD, ED, DM 
+
+Check K & add Mineralocorticoid receptor antagonist (spironoloctone/epleronone) if still Sx
+• Spironolactone 25-50mg 
+• Check K initially (<5) & 1-2w after increasing dose (esp in combo with ACE/ARB) - risk of hyperkalaemia +++
+• Monitor 3 monthly U&E once in max dose and even closer if coexist CKD 
+
+Dapagliflozin & Digooxin 
+• Dapa 10mg OD licensed for HFREF with or without T2DM, start if still Sx (under specialist)
+• Digoxin if severe/worsening HFREF despite other treatments (best if also slow AF sedentary)
+
+Extra/Extended treatments (all under specialist) - specific criteria LVEF <35%, NYHA >2 (symptoms)
+• Swap ACE /ARB max dose = ARNI (Entresto) 
+• Swap Bb max dose = Ivabradine (if SR >75), better than Bb which also slows SA node to reduce myocardial demand bur Bb also reduces contractility which Ivabradine doesn’t 
+• Cardiac resynchronisation therapy (CRT) or ICD if wide QRS on ECG 
+
+Fluid overloaded?? - Furosemide for Sx only 
+• Furosemide up to 80mg/d if fluid overload signs 
+• No mortality benefit unlike other Rx above 
+• Monitor U&E 1-2w post starting/increasing dose 
+• Self weighing -gain of >1kg/d would need increasing of furosemide 
+
+HFPEF /MREF treatment 
+• Up to 50% of HF, similar mortality (50% 5y) & admission rate, but hard to diagnose (SOBOE, fluid overload ++, 1 in 5 have normal BNP as less LV wall stress), underlying factors inflamm obesity HTN AF
+• On echo mild LVH, LA dilation, PHTN 
+• No specific drug treatments or mortality benefit 
+   - Rx underlying factors 
+   - Furosemide for fluid overload /Sx - high doses
+   - Dapa +/- ARNI recently approved (specialist)
+
+Anaemia common in HF and worsens SOB/high output HF situation 
+• Often IDA or ACD due to malnutrition, malabsorption and chronic inflammation 
+• Correct often with ferrinject rather than EPO
+
+DVLA only Notifiable if Group 1 NYHA 4 severe HF or group 2 (HGV) any NYHA (EF and symptom criteria to drive)
+
+
+Tags:
+  cardiology

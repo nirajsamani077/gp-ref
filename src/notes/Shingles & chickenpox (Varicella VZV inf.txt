@@ -1,0 +1,53 @@
+Shingles & chickenpox (Varicella VZV infection) RW
+
+Chickenpox common in children (primary VZV)
+Shingles common in older adults (reactivation of VZV after chickenpox which is dormant in nerve roots - usually thoracic dorsal root ganglia & CNs) - occurs when unwell or IC (HIV, DMARDs/chemo) 
+
+Painful vesicular blistering rash generalised in chickenpox but dermatomal crops in shingles 
+• Often starts with burning dermatomal pain 2-3d prior to rash with constitutional symptoms (fevers)
+• Then initial macpap —> vesicular classic UL dermatomal rash (doesn’t cross midline)
+• Clinical Dx,if unsure HZV/HSV do viral swab PCR 
+
+Chickenpox specifics 
+• Contagious 4d before rash until crusted over (usually 5d after rash started), spread via resp route with couple weeks incubation periods 
+• Common cause of childhood viral fever with generalised spotty rash becoming vesicular then crusting over, often start centrally & spread out 
+• Rx = reassurance, keep away from anybody IC or pregnant, calamine lotion, trim nails, para for fever/pain (BUT NOT NSAIDs - risk of severe nec fasc)
+• Consider if unwell - bacterial superinfection/nec fasc or disseminated/pneumonitis etc = admit
+
+Management for non complicated shingles 
+• Avoid immunosuppressed/pregnant people until lesions crust over (usually 5d from onset),covering them can reduce transmission too 
+• Oral acyclovir within 72h (3d) of onset (if moderate pain/ rash, if non thoracic, comorbid) but if any IC or unwell should be admitting /discussing 
+ - Aciclovir 800mg 5x/day for 7-10d (> than HSV!)
+ - Alternatives Val or Fam effective but expensive 
+• Supportive treatment for acute pain
+   - Calamine lotion & para/cocodamol if severe
+   - Can use NSAIDs in adult shingles but not in childhood chickenpox - risk of nec fasc
+   - If severe oral steroids, topical lidocaine gel or nerve blocks (under pain team)
+• Post-herpetic neuralgia (very common 1/3 pts)
+   - Usually resolves by 6mo but can be debilitating 
+   - Antivirals & steroids in acute Rx don’t prevent 
+   - Menthoderm/capsacin or neuropathic drugs 
+
+Management of herpes zoster ophthalmicus (HZO) affecting ophthalmic branch of CN5 causing 
+• Periocular facial rash/red eye & Hutchinson’s sign (nosetip rash) = very high risk of blindness
+• Refer immediately to eye casualty but don’t delay starting high dose aciclovir 800mg till reviewed (will be 5x/day for 10d) +/- fluclox for superadded bacterial infection 
+• Ophthalmology will sort rest of topicals (lubricants, steroids, antibiotic)
+
+Other comps of shingles 
+• Ramsey Hunt causing CN7 palsy (vesicles in ear)
+• Bacterial superinfection 
+• VZV pneumonitis, encephalitis & disseminated (especially if IC so should be admitting all shingles of this group same day)- need IV aciclovir/ABx
+• Consider testing for HIV in shingles (if IC)
+
+Shingles vaccine (Shigrix, replaced Zostavax) 
+• Protects against shingles in those between 60-79 with a 2nd dose once they’ve turned 80
+• If severely IC can give >50
+• Not a live vaccine (subunit) whereas Zostavax was live attenuated & prevents 97%!
+
+NB: Monkeypox 
+• Resp droplet virus direct contact/fomites, consider if fever typical rash hx of contact with M-pox or endemic country, or MSM with higher risk
+• Discuss all cases with ID, use PPE, advise quarantine & public health notify for further 
+• Contact tracing needed & condoms for 3mo
+
+Tags:
+  infection

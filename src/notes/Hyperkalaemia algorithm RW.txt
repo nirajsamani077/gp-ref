@@ -1,0 +1,19 @@
+Hyperkalaemia algorithm RW
+
+K >6.5 or >6 with ECG changes (tented T waves, long PR, wide QRS) = admit for IV gluconate, insulin/Dex etc 
+• Symptoms (myalgias, cardiac, neuro) or high risk group (diabetic, HF, IHD, on digoxin, dialysis) = low threshold to admit 
+• Any AKI with hyperkalaemia = admit 
+
+Causes if not spurious /haemolysed sample 
+• Meds - ACE/ARB/spiro, eplerenone, SandoK, dig toxicity causes high K (low K ppts)
+• Addisons - check morning cortisol, BM, Na 
+• Rare severe - rhabdo, tumour lysis, XS diet 
+
+Manage in primary care if mild hyperkalaemia (5.5-5.9), no risks no symptoms no AKI or a normal immediate ECG if K>6 (probably admitting) 
+• Repeat U&E 1-3d depending on situation if no clear cause (avoid bananas tomato’s avocados)
+• If ACE/ARB/spiro either halve or stop & repeat U&E up to 1w later, if only on it for HTN consider alternative but if on it for HFREF or proteinuric CKD /Diabetes restart once K normal and monitor closely 
+• Refer to renal for refractory hyperkalaemia if not admitting - may consider bicarb etc 
+
+
+Tags:
+  endocrine

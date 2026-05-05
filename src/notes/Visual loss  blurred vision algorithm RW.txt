@@ -1,0 +1,39 @@
+Visual loss / blurred vision algorithm RW
+
+Hx - what mean by (complete loss, loss of sharpness, loss of colour), sudden or gradual, UL/BL, trauma, central or peripheral vision, improves with blinking (? dry eye) 
+• Painful/red eye (AACG, AU, corneal, scleritis, OC)
+• Sudden painless (TIA amarosis fugax, CRAO, CRVO, retinal detachment (RD), vitreous haemorrhage (VH), wet AMD) 
+• Swelling/discharge (conjunctivitis, periorbital cell)
+• Temporal headache/jaw claud/scalp tender (GCA)
+• Floaters/flashes/curtain down - TIA or RD 
+• Other eye sx (dc gritty watery photophobia) 
+
+BG - Contact lens, eye issues /surgery, trauma/work (eg mechanic), FHx glaucoma or retinitis pigmentosa, old age (?GCA) young age (?MS)
+
+Ex 
+• External - swollen lids (periorbital), proptosis (orbital), conjunctiva (uniform redness = conjunctivitis, sectoral (episcleritis/scleritis if central), circumcorneal (AACG or AV)
+• VA - Snellen, use pinhole if no glasses to correct 
+• Pupils - abnormal size/shape suggests anterior uveitis (AV) if painful red dilated, 3rd nerve palsy (dilated, down and out eye, ptosis - fixed pupil = compressive, accommodating pupil = ischaemic) or Horners (constricted miosis, ptosis, anhydrosis)
+• RAPD - screen for optic nerve pathology 
+• EOM - painful movements with loss of colour, RAPD suggests optic neuritis, ?3rd nerve/LR 6th nerve palsy
+ - Monocular Diplopia - double vision persists with one eye closed suggests UL eye issue (cataract) 
+ - Binocular Diplopia - double vision improves with one eye closed suggests CN palsy (malignment) or IC lesion so take more seriously 
+• Fundi - red reflex, papilledema/ haemorrhages 
+• Fluorescin staining if available - yellow with blue light ?corneal abrasion /FB/ ulcer 
+
+DDx and Rx 
+• Sudden onset (all same day eye cas/stroke Ref) 
+  - Painless = TIA (AF), CRAO/VO, RD, VH, wet AMD
+  - Painful = AACG, AV, cornea/trauma, Orb cellulitis 
+  - Maybe = GCA, Optic neuritis
+  - Bilateral painless = ?Stroke or ICP (papilledema) 
+• Gradual onset (usually opticians + routine Ref)
+  - Refractive error (corrects with pinhole)
+  - POAG, diabetic retinopathy, dry AMD, cataracts 
+  - Systemic (AI rheum or drugs amiodarone HCQ)
+
+
+
+
+Tags:
+  opthalmology

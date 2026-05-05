@@ -1,0 +1,48 @@
+GINA pathway = 2 options
+
+Track 1: ICS-formoterol MART
+- Step 1 = ICS-formoterol low dose PRN only
+- Step 2 = ICS-formoterol low dose + PRN ...can add LTRA
+- Step 3 = ICS-formoterol med dose + PRN ...can add LTRA 
+- Step 4 = ICS-formoterol med-high (usually not though) dose + PRN... can add LTRA or LAMA
+
+Track 2: Controller + Alternative Reliever
+- Step 1 = SABA PRN but ICS used when SABA taken
+- Step 2 = ICS low dose (400mcg/d) + SABA PRN ...can add LTRA 
+- Step 3 = ICS-LABA low dose + SABA PRN ....can add LTRA 
+- Step 4 = ICS-LABA med-high dose (800mcg/d) + SABA PRN ...can add LTRA or LAMA
+
+Can add oral pred or azithro on specialist advice in step 4 
+
+SABA choices - GO WITH EASYHALER SALBUTAMOL Breath activated DPI with low cost and low environmental impact: 
+= Easyhaler Salbutamol sulfate 100micrograms/dose dry powder inhaler (Orion Pharma (UK) Ltd) - 200 dose - Inhale ONE to TWO doses as needed $3
+= OR 	Ventolin 200micrograms/dose Accuhaler (GlaxoSmithKline UK Ltd) - 60 dose - Inhale ONE dose as needed $2
+NB pMDIs with higher environmental impact : Salamol, Ventolin Evohaler, Airomir 
+
+ICS choices - GO WITH EASYHALER BECLOMETASONE BA DPIs 
+= LOW DOSE - Easyhaler Beclometasone 200micrograms/dose dry powder inhaler (Orion Pharma (UK) Ltd) - 200 dose - Inhale ONE dose TWICE a day $4
+= MED DOSE - Easyhaler Beclometasone 200micrograms/dose dry powder inhaler (Orion Pharma (UK) Ltd) - 200 dose - Inhale TWO doses TWICE a day $8
+NB Budesonides equivalents - Easyhaler Budesonide, Pulmicort Turbohaler slightly more expensive. Remember 200mcg 1 puff BD = low dose, 200mcg 2 puff BD  = med dose
+NB pMDIs like Clenil modulite (worst environment), other Beclos ( Sobrobec (cheap), Kellhale (cheap, extra fine particles), QVAR (mid, extra fine particles)), Flixotide (Fluticasone), QVAR Easi-breathe (only BA DPI)
+
+ICS+LABA choices = GO WITH FOSTAIR NEXThaler or SYMBICORT TURBOHALER DPIs 
+= LOW DOSE - Fostair NEXThaler 100micrograms/dose / 6micrograms/dose dry powder inhaler (Chiesi Ltd) - 120 dose - Inhale ONE dose TWICE a day OR  Symbicort 200/6 Turbohaler (AstraZeneca UK Ltd) - 120 dose - Inhale ONE dose TWICE daily (Please return your empty or unwanted inhalers to a pharmacy for disposal)
+= MED DOSE - Fostair NEXThaler 100micrograms/dose / 6micrograms/dose dry powder inhaler (Chiesi Ltd) - 120 dose - Inhale TWO doses TWICE a day OR Symbicort 400/12 Turbohaler (AstraZeneca UK Ltd) - 60 dose - Inhale ONE dose TWICE daily 
+NB other DPI include Duoresp Spiromax, Relvar Ellipta, Seretide Accuhaler. pMDI includes Fostair Inhaler, Seretide Evohaler, Sirdupla, Flutiform  
+
+MART regimen of choice = GO WITH ABOVE 100/6s DPIs
+- Symbicort 100/6 Turbohaler (AstraZeneca UK Ltd) - 120 dose - Maintenance, ONE puff TWICE a day. For immediate relief of symptoms, 1 puff as required, increased if necessary up to 6 puffs as required, max. 8 puffs per day. Up to 12 puffs daily can be used for a short time but medical assessment is recommended. 
+- Fostair NEXThaler 100micrograms/dose / 6micrograms/dose dry powder inhaler (Chiesi Ltd) - 120 dose - Maintenance, ONE puff twice a day. For immediate relief of symptoms, ONE puff as required, maximum 8 puffs per day 
+
+LTRA 
+-Montelukast 10mg tablets - 28 tablet - ONE to be taken at NIGHT for adults (>15)
+- Montelukast 5mg chewable tablets sugar free - 28 tablet - ONE to be taken AT NIGHT (6-14 child)
+
+EXACERBATION 
+- Advice to quadruple ICS dose up to 14/7 or Oral steroid therapy for acute exacerbation
+- Prednisolone 5mg tablets - 40 tablet - EIGHT to be taken ONCE daily for FIVE day
+- RESCUE PACK - Prednisolone 5mg tablets - 40 tablet - Rescue pack.  EIGHT to be taken ONCE daily for FIVE days. Use as directed as part of care plan to treat exacerbations.
+
+
+
+

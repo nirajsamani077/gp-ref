@@ -1,0 +1,6 @@
+IQ and LD
+
+70-50 = mild
+50-35 = mod 
+35-20 = severe 
+<20 = profound 

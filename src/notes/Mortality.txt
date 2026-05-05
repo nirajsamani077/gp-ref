@@ -1,0 +1,14 @@
+ Mortality 
+
+Mortatily rate - no. of deaths in a particualr population for a particualr year for adults 
+
+Maternal mortality - maternal deaths per 100,000 live births/year 
+neonatal mortality - no of babies <28 days die per 1000live births/year 
+Inflant mortality - children <1 who die per 1000 per year 
+
+Standardised mortality ratio (SMR)
+
+Compares mortality within different populations, taking into acc confounding factors 
+
+Observed deaths/expected deaths x100
+SMR 100 = same/equivalent, anything more = higher %

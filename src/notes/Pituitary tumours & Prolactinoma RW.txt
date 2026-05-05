@@ -1,0 +1,45 @@
+Pituitary tumours & Prolactinoma RW
+
+Benign tumour of hormone producing cells anterior pituitary gland - can be 
+• Incidentaloma (microadenoma) or large with mass effect >1cm (headache, visual loss bitemporal hemianopia, CNs346, fundi = admit
+• Functioning (hormone producing eg Prolactinoma most common) or non-functioning, but can both cause hypopituitarism (deficiency)
+- GH = fatigue, less muscle, more fat 
+- LH/FSH = ED, libido, sperm count, irregular periods, infertility, anaemia (testosterone normally stimulates production of RBC)
+- TSH (secondary hypothyroid) & ACTH (secondary adrenal insufficiency) less common 
+
+In excess can cause 
+• Prolactin = prolactinoma (most common) 
+   - F - Irreg periods, galactorrhoea, hirsuitism
+   - M - ED, libido, gynaecomastia, galactorrhoea 
+   - Both - infertility 
+• GH = acromegaly 
+   - Large hands/feet, sweating, coarse facies, prognathism, ID separation, CM, HTN, OSA, DM
+• ACTH = secondary Cushings (Cushings disease) 
+• TSH = secondary hyperthyroid (TSHoma rare)
+
+If suspecting need fasted morning 9am bloods 
+• Testosterone, LH, FSH, oestradiol, prolactin
+• Cortisol, IGF1, TSH 
+Refer endocrine if abnormal (urgent if any mass effect & admit if sudden onset via A&E ?apoplexy (bleed/infarct into pituitary - urgent decompress)
+
+Ix - Needs MRI pituitary, formal visual fields 
+
+Rx
+• Surgical transphenoidal removal (apart from Prolactinoma = dopamine agonists, esp good at decompressing chiasm)
+• Replace hormone deficiencies 
+• Surveillance if no mass effect no hypopituitarism 
+
+Prolactinoma specifics 
+• Check prolactin 9am fasting with other bloods
+   - >400 = raised, repeat, >1000 = suggestive 
+• Other causes of Hyperprolactinaemia = Ps 
+   - Pregnancy/BF
+   - Physiological (stress, exercise, sex)
+   - PCOS 
+   - Primary hypothyroidism (TRH stimulates PRL)
+   - Prescription (metoclopramide, domperidone, phenothiazines, haloperidol) 
+• Dopamine agonists (ergot derived) mainstay = bromocriptine daily or cabergoline weekly - consider risks of organ fibrosis, need ECG CXR ESR UE prior to starting, if resistant then surgery 
+• Aim for normal prolactin (<400) prior to conception, stop any dopamine agonst, can see increase in tumour size in pregnancy and fields checking each trimester (involve specialist), most women can BF as lesser effect on prolactin 
+
+Tags:
+  endocrine

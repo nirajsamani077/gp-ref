@@ -1,0 +1,39 @@
+PCOS RW
+
+Common, 10% of women, characterised by Rotterdam criteria (at least 2 of)
+• Menstrual irregularity /subfertility
+• Hyperandrogenism (acne, hirsuitism/alopecia or biochemical FAI >5)
+• Polycystic ovaries on USS (20% women have this anyway but without other symptoms is not PCOS)
+
+Ovary normally functions to convert cholesterol to androgens (LH) then to oestradiol (FSH) which causes ovulation but in PCOS 
+• Too much androgen (testosterone) production - high LH:FSH probably genetic
+• Hyperinsulinaemia (obesity DM) which increases LH driven androgen production 
+• Reduced SHBG from both factors which means less androgen mopped up = more free androgen  
+High androgen levels cause the sx, and cause multiple small follicles in ovary which stops larger follicular growth which stops ovulation 
+
+Best test = FREE ANDROGEN INDEX (FAI) >5
+Total testosterone x100/SHBG shows circulating active androgens which is 1 of Rotterdam 
+Refer urgent if total testosterone >5, rapid virilisation or suspect CAH or Cushings 
+Screen all from DM with HbA1C
+
+Management
+• Weight loss 5-10% can restore fertility and bring back periods 
+• COCP as have anti androgen properties (stops ovulation, reduces LH surge, increase SHBG) and regulates periods. Microgynon older pill first line, newer 3/4th gen Marvelon/Femodene/Yasmin can be used, Dianette only short periods if hirsuitism/acne as ++ antiandrogenic but ++VTE/ meningioma
+• Endometrial protection- TV USS pelvis for all (usually would have as part of Dx) to assess ET as much higher relative risk of endometrial CA as anovulatory cycles cause unopposed oestrogen so if thick >10mm will need hysteroscopy/Bx & if <1 period every 3 months 
+A) COCP max tricycle to give bleed 
+B) Mirena for local progesterone to avoid unopp
+C) Induce bleed MPA 10mg OD 14d then withdraw every 3mo to induce bleed 
+
+Androgenic stuff 
+• Hirsuitism - apart from COCP traditional (Dianette not first line as above) then can shave wax laser or use topical eflornithine cream (Vaniqa) which is v expensive!
+• Acne - treat as usual, as above really, 20mcg Eloine Marvelon good antiandogen
+
+Subfertiity stuff 
+• All should be referred if haven’t conceived >6mo or age >36 (most common cause of subfertility)
+• Weight loss and metformin have a role (should screen all PCOS for diabetes anyway, and even prediabetes with PCOS offer metformin, monitor HbA1C annually, OGTT could be preferable), not yet licensed for PCOS symptoms or subfertility though 
+• Specialist options for ovulation induction = clomiphene (oestrogen antagonist), letrozole (aromatase inhibitor which allows androgen to oestrodiol) 
+
+Avoid labelling PCOS, doesn’t change management, individualise management 
+
+Tags:
+  gynaecology

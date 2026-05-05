@@ -1,0 +1,4 @@
+Disease rates stats
+
+Attributable risk -rate in the exposed group - rate in unexposed group (absolute risk)
+Relative risk - risk of an event relative to exposure. (risk ratio) - 1 = no risk, on usual contingency chart a/(a+b) divided by c/(c+d)

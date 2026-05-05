@@ -1,0 +1,13 @@
+Diabetic incretin drugs 
+
+GLP-1 mimetics (liraglutide, exenatide) 
+- in T2DM oral glucose load causes less insulin release than IV load, due to lower levels of GLP-1 (an incretin) which is released by small intenstine (incretin effect is normally where oral causes more insulin release to bring sugar down)
+- GLP-1 mimetics increase GLP-1 therefore reduce sugar level from oral glucose load 
+- SC injection, exenatide BD 1h before meals, liraglutide OD. Exenatide has risk of severe pancreatitis.
+- causes weight loss ++ so consider if BMI >35 or less if insulin unacceptable, good addition as triple therapy 
+- aim for HbA1C drop >11 and 3% weight loss after 6 months 
+
+DPP4 inhibitors (sitagliptin, alogliptin)
+- inhibits peripheral breakdown of GLP-1 to increase incretin effect 
+- well tolerated, no hypo or weight gain 
+- good option in TZD failed/can’t be given 

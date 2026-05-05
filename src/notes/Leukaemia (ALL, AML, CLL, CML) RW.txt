@@ -1,0 +1,45 @@
+Leukaemia (ALL, AML, CLL, CML) RW
+
+8000 diagnosed a year, increasing incidence 
+
+Cancer of WBC
+• Acute = immature cells called blasts proliferate & invade back into BM where they are made, organs 
+• Chronic = mature cells proliferate, usually less invading so stay put and grow where they are found (LN, HSM) 
+• Lympocytic = affecting lymphocytes (T/B cell)
+• Myeloid = affecting others neuts/eo/baso/mono
+
+3 cardinal things 
+• Pancytopenia symptoms (fatigue, bleeding/bruising, recurrent infections)
+• B-symptoms (fever night sweats WL)
+• Examination for LN & HSM
+
+If concerned re above, have very low threshold as symptoms are not predictive but FBC is cheap & very predictive
+• FBC & blood film within 48h - completely normal FBC makes leukaemia extremely unlikely 
+• If significantly abnormal FBC with pancytopenia, blasts on film or acutely unwell = acute admission & discuss with on-call haem (risk of neutropenic sepsis, DIC, tumour lysis syndrome) 
+• If lymphocytosis suggesting CLL (degree does not = severity) - do flow cytometry on EDTA (FBC) tube & refer urgent to haem 
+
+Haem will do flow cytometry, BMAT/biopsy, cytogenetics & DNA mutation analysis to diagnose the specific form of leukaemia & treatment 
+• CLL - most common in adults & slow growing 
+   - Stage A (lymphocytosis + <3 groups of LN) = very common & chemo often harmful in this group so usually urgent A&G to haem who will advise monitoring FBC in 3mo then 6monthly for 1y & if stable annually (if rising or B symptoms refer urgent) & counsel risk of neutropenic sepsis 
+   - Stage B (lymphocytosis + >3 groups of LN) = refer urgent for work-up & chemo (chlorambucil)
+   - Stage C (lymphocytosis + Hb or Plts <100) = refer 2WW for work-up & chemo (chlorambucil)
+• CML - much rarer in adults, Philadelphia chromosome, often massive splenomegaly & polycythaemia/hyperviscocity. Refer all 2WW for lifelong imantinib (tyrosine kinase inhibitor)
+• ALL - sick child with blasts, for radical chemo & stem cell/BM transplant, better outcome than AML but early relapse poor prognostic sign 
+• AML - sick adult with blasts, for radical chemo & stem cell/BM transplant, worse outcome than ALL
+
+Neutropenic sepsis risk in all patients 
+• Any leukaemia or anti cancer treatment becoming unwell with fever (temp >38) or signs of sepsis consider this & admit urgently - in hospital will have FBC showing neuts <0.5 & will need IV ABx/antiviral/antifungal & G-CSF
+• “Neutrophil nadir” time usually 1-2w post chemo 
+• Avoid dental work, DRE or any imms 2w prior to 6w post chemo, no live vaccines at any point as IC
+• Don’t prescribe para (masks fever) or NSAIDs (affects platelets) in those having chemo 
+
+Transfusions in anaemia/thrombocytopenia if 
+• Hb <70 in all, <80-100 if cardiac/resp disease 
+• Plts <10 in all, <20 if fever, <50 if bleeding (bleeding main factor esp if other diathesis)
+
+Recurrence can happen - remission/cured usually after 5y F/U surveillance post Rx but any illness should have low threshold to do FBC & film within 48h 
+
+Chronic GVHD post BM transplant causes multi organ dysfunction (rash, myositis, SOB, dysphagia, neuropathy) - refer back to transplant clinic. 
+
+Tags:
+  Cancer, haematology

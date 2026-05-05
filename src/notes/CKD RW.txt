@@ -1,0 +1,57 @@
+CKD RW
+
+For diagnosis 
+• eGFR <60 and/or UACR >3 x2 results 3mo apart
+• Structural kidney problems regardless of above 
+
+Kidneys less efficient at getting rid of toxins in urine, causes issues with blood vessels fluid build up and when severe needs things like dialysis/Tx
+
+Is it AKI
+• If new eGFR <60 repeat again in 2w or sooner depending on clinical picture 
+
+UACR 
+• Ideally early morning urine
+• If >3 raised - repeat early morning if between 3-70 to ensure accurate, if >70 don’t repeat 
+• A1 is <3, A2 >3, A3 >30 on grading 
+
+When CKD is formally diagnosed 
+• BP, usual target clinic <140/90 unless ACR >70
+• Urine dip r/o haematuria (doesn’t need micro)
+• Other baseline bloods inc lipids HbA1C
+• Renal USS only if eGFR <30, accelerated drop 25% (usually 15) per year or change category, any haematuria any obstruction or FHx PCKD - usually alongside renal referral 
+• Calculate 5 year risk of RRT score (Kidney failure Risk equation /QRISK for kidneys , if >5% = refer) - Excel spreadsheet 
+
+Management = all 5 A’s 
+• Advice to pt- weight loss, smoking, annual RV at least (if eGFR <30 or ACR >30 6 monthly or more), annual influenza and pneumococcal, avoid nephrotoxics 
+
+• ACE/ARB - if persistent UACR > 70 without diabetes or >3 with diabetes offer ACE ARB and titrate to max tolerated dose, and offer dapaglifozin (only one licensed in CKD as long as eGFR >15) esp if UACR >30 (but can offer >3) all for Renoprotection. Tight BP control with CKD due to CVD risk but only lower target (<130/80 clinic) if UACR >70 (only instance where this is target). Newer drug finerone (Kerendia) been approved after dapa 
+
+• Atorva - offer to all 20mg, regardless of lipids, can’t use QRISK in CKD, if eGFR <30 and suboptimal drop <40% non-HDL discuss with renal rather than increasing dose 
+
+• Anaemia - CKD as cause of normocytic or microcytic ACD, rarely the cause if eGFR >30 but often the cause if <30. If 30-60 usually investigate haematinics etc 
+
+• Advice from renal - refer if 
+  - 5 year KFRE score >5% (need phosphate and bicarb on next blds) 
+  - ACR >70
+  - ACR >30 + haematuria 
+  - Progressive /accelerated drop (3 readings)
+  - Rare cause suspected (RAS, PCKD)
+  - Poorly controlled HTN 4 agents 
+  - Suspected obstruction with hydronephrosis (urology)
+
+Starting/upping ACE/ARB - don’t start if K>5 or AKI
+• U&E after 2 weeks - if >25% drop eGFR or K >6 stop and check for other factors eg NSAID, dehydration but could be RAS
+
+Other drugs
+• Avoid NSAIDs , unhappy triad 
+• DOACs need monitoring & calculate Cockcroft gault creatinine clearance - always check BNF as eGFR can over-estimate renal function (esp if old or extremes of muscle mass) and DOAC are renally excreted (like vanc, dig) so bleeding risk if done wrong 
+• Nitro, tetracyclines, opiates all significant caution 
+• Bisphosphonates only if eGFR >30
+
+NB nephrotic syndrome - rare in adults 3/100k
+• Usually GN, many secondary causes (DM, SLE, amyloid, myeloma, drugs, infections)
+• Urine PCR >300 (rather than ACR), also severe hyperlipidaemia (TC >10)
+• Oedema +++, HTN, refer all renal urgent 
+
+Tags:
+  renal

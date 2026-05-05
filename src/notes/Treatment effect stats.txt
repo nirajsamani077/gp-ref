@@ -1,0 +1,26 @@
+Treatment effect stats 
+
+Absolute risk reduction/increase 
+
+                    Outcome present     Outcome absent 
+Exposed                 a                                   b
+Control                   c                                   d
+
+Experimental event ratio (EER) = a/a+b 
+Control event ratio (CER) = c/c+d 
+
+Absolute risk reduction = CER - EER 
+
+eg: 20 olanzipine takers, 16 achieved remission, 4 didn’t vs 40 placebo takers 12 achieved remission 28 didn’t 
+EER = 16/20 = 0.8
+CER = 12/40 = 0.3
+ARR = 0.3 - 0.8 = -0.5 = 50% ARR
+
+Relative risk is EER/CER rather than so for this would be 0.8/0.3 = 2.66 so 2.6x more likely to achieve remission with olanzipine 
+For relative risk reduction (RRR) = ARR/CER or
+CER-ERR/CER = 0.5/0.3 = 1.6 or 160%
+
+NNT is the reciprocal of ARR so 
+1/ARR = 1/0.5 = 2 
+
+NNT = how many patients would require an intervention to reduce the expected number of outcomes by 1

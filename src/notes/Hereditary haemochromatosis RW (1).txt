@@ -1,0 +1,30 @@
+Hereditary haemochromatosis RW
+
+Iron overload with HFE gene mutation (AR, homozygous C282Y or H63D, variable expression) 
+
+1 in 7 Northern Europeans carriers of mutation
+
+Causes increased Fe GI absorption/release stores 
+
+Consider if 
+• Symptoms of HH (liver disease in M, arthritis usually MCPs first in F, rarer endocrine (DM hypogonad Addisons), restrictive CM, bronze skin) 
+• Raised ferritin, raised TSAT or deranged LFTs
+   - Ferritin >200 in F, >300 in M
+   - TSAT >40% in F, >50% in M 
+   - If both or either raised test for HFE gene 
+• FHx of HH in first degree relative/North European (rare outside of this group) 
+
+TSAT = Fe/TIBC x100 (check using iron studies) or Fe/TF x 70.9
+HFE gene = C282Y or H63D homo/heterozygous 
+
+If HH suspected and positive tests as above refer to haem (ensure done LFT, CRP) & will usually do 
+• Liver MRI/fibroscan +/- Bx
+• ECG/echo 
+• Involve rheum (arthritis), endocrine (DM, Addisons, hypogonadism)
+
+Rx - venesection weekly till low TSAT/ferritin <50 then maintainance venesection 3-4x, desferroxamine = 2nd line
+
+If liver cirhosis = 200x increase risk of HCC (normal life expectancy if not and treated) - so HCC surveillance with AFPs/USS and ETOH avoidance 
+
+Tags:
+  gastroenterology, haematology

@@ -1,0 +1,9 @@
+Skewed data 
+
+For normally distributed - mode=median=mean
+
+For positively skewed data - mean>median>mode
+(tail of curve towards positive) - mean is highest 
+
+For negatively skewed data - mode>median>mean
+(tail of curve towards negative) - mean is lowest 

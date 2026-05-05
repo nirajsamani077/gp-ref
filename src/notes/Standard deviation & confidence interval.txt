@@ -1,0 +1,20 @@
+Standard deviation & confidence intervals 
+
+Standard deviation 
+- Average spread of values from the mean, only used in ND data 
+- square root of variance 
+
+- 1 SD = 68.3% of values  
+- 2 DD = 95.4 % 
+- 3 SD = 99.7 %  
+
+Standed error of mean (SEM) = precision of mean 
+- how close is the calucated mean to the true population mean 
+- measure of precision, therefore larger sample size, smaller sem 
+- SEM = SD/square root of (n) 
+
+Confidence intervals 
+- a 95% CI means that you are 95% confident that the true population mean is within this range 
+- smaller CI, usually larger study 
+- lower limit = mean - (1.96 x SEM) 
+- upper limit = mean + (1.96 x SEM) 

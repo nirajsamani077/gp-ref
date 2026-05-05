@@ -1,0 +1,37 @@
+Hirsuitism & hypertrichosis RW
+
+Hirsuitism = androgen dependent hair growth 
+• PCOS (common), obesity (insulin resistance) 
+• Idiopathic (together PCOS & iat = 95% of cases)
+• Endocrine (Cushings, CAH, androgen therapy)
+• Androgen secreting adrenal/ovarian tumour
+• Drugs (steroids, phenytoin)
+
+Assess with Ferriman-Gallwey score (https://bhns.org.uk/ccs_files/web_data/Resources/Diseases%20(severity%20scoring)/Hirsuitism.pdf) 
+
+Concerning for tumour = recent onset /rapid virilisation 
+
+If Rotterdam features of PCOS (irregular periods, androgenic, Uss PCO) then diagnose, otherwise 
+• Morning testosterone + SHBG (FAI) - anyway
+   - FAI = Total testosterone x100/SHBG 
+   - FAI <3% normal, >5% suggests PCOS
+   - Total testosterone <5 more likely PCOS, >5 consider androgen secreting tumour & refer 
+• TFT, prolactin, 24h urinary cortisol, pelvic USS 
+• 17-hydroxyprogesterone follicular morning as a test for non classical CAH (partial 21-hydroxylase deficiency) - refer if >5 
+
+Management (won’t get full improvement, <50%)
+• Cosmetic hair removal (waxing, shaving, laser)
+• Depilatory cream - topical eflornithine (Vaniqa), only used if cosmetic & systemic options failed, but blacklisted as expensive & not so effective 
+• Dianette (COCP with antiandrogen cocyprindiol) but ++ VTE risk so not long term <3mo max, Yasmin good alternative 
+• Secondary care treatments (all teratogenic) - spironolactone, finasteride, metformin 
+
+Certain genetic phenotype (olive skin, dark hair) means hair is more apparent & thick, shaving increases coarseness of hair but not growth
+
+Hypertrichosis = non androgen dependent & much rarer/severe with excess growth whole body 
+• Congenital (languinosa, terminalis)
+• Porphyria cutanea tarda (PCT)
+• Anorexia 
+• Drugs (minoxidil, ciclosporin)
+
+Tags:
+  endocrine

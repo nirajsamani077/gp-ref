@@ -1,0 +1,65 @@
+HTN for RW practical bits  
+
+Clinic BP 
+• Repeat if >140/90 x3, use lowest 
+• Check cuff size and pulse, if irregular won’t have accurate BP and needs ECG! 
+• Check both arms if >15mmHg diff then use BP in higher arm and consider why 
+• ABPM or HBPM for all to DIAGNOSE, clinic only for screening opportunistically or checking response 
+
+Clinic BP <140/90 = normotensive, recheck in 5y
+
+Clinic BP >140/90 but <180/120 
+• ABPM ideally (2 readings/h when awake, need min of 14 readings to average), or HBPM if can’t get or tolerate (2 readings morning and night for 4-7d, discard first day and average all other days) 
+• If ABPM shows raised BP >135/85 = stage 1, if >150/95 = stage 2, if fine then recheck 5y
+• Doesn’t account for non-dippers at night (Bp usually drops at night) who have higher CVD risk.
+• Equally variable BP has high risk too and consider CCB as best agent for this 
+
+ABPM confirmed new HTN
+• End organ damage - U&E (as well as lipids HBA1C), UACR (& dip ?blood), ECG (LVH) & fundoscopy/optician check (htn retinopathy) 
+• QRISK (3 has additional SBP variability, CKD, ED, migraine, antipsychotics/steroids) - use QRISK3
+• Check for postural drop if Sx, elderly or DM (BP sitting then standing for 1min, if drop >20 then review meds and take standing BP is the measure)
+
+Stage 1 HTN (ABPM >135/85)
+• Lifestyle for all (smoking, weight loss 1kg = 1mmHg SBP, diet exercise, reducing salt/ETOH, remember effervescent tabs contain salt)
+• If >80 can’t QRISK, consider drugs if above higher limit >150/90 clinic (>145/85 home)
+• QRISK >10% or CVD/DM/CKD/end organ then discuss and offer drugs 
+
+Stage 2 HTN (ABPM >150/95)
+• Drugs for all, consider age frailty postural etc 
+
+Refer 
+• Malignant /accelerated HTN >180/120
+   - SDEC if symptomatic cardiac/headache/neuro, end organ damage (retinal haemorrhages/papilledema, ECG strain changes, AKI), or signs of phaeochromocytoma (labile BP, palpitations, tremor, sweating, headache) 
+   - Treat ASAP (even if based on clinic BP whilst aw HBPM if no end organ damage and repeat 7d)
+
+Drugs 
+• If DM or <55 = ACE/ARB (DM trumps everything)
+• If Afrocarribean or >55 =CCB (ACE less effective)
+• 2nd line = add ACE (ARB if Afrocarribean as less angioedema risk), CCB or TZD (indapamide)
+• 3rd line = triple therapy A + C + D
+• 4th line 
+   - Check really compliant, postural Bp (standing)
+   - Check U&E for K 
+     • K <4.5 = spiro, K >4.5 and recheck U&E 2-4w 
+     • K >4.5 = Doxa (a-blocker), bisoprolol (Bb)
+• If not controlled on 4 drugs = REFER 
+• Special situations 
+   - CKD without DM - if ACR >30 ACE 1st line 
+   - HF - would be on ACE/Bb, TZD 1st line 
+   - AF - try to change to rate limiting CCB
+   - Asthma/copd - avoid Bb or use cardioselective
+   - Gout - avoid TZD risks urate crystals 
+   - WCBA planning preg - labetalol, nifedipine, avoid statins, if pregnant aspirin till 12w PET risk 
+
+Refer any <40 with confirmed HTN regardless of stage as QRISK underestimates risk and need to Ix UL cause (adrenal, endocrine, CoA, RAS, renal) 
+
+Targets (review annually) - have been simplified 
+• Usual = <140/90 clinic, <135/85 ABPM
+• Old >80 = <150/90 clinic, <145/85 ABPM harder vessels so SBP higher 
+• CKD or DM with ACR >70 (proteinuric kidney disease) = <130/80 clinic, <125/75 ABPM (otherwise usual if ACR <70)
+
+White coat = >20/10 difference home/ABPM Vs clinic. Masked = other way round (rarer) 
+In future may have “polypills”
+
+Tags:
+  cardiology

@@ -1,0 +1,53 @@
+Cancer pain options & maths RW 
+
+Pain relief for cancer pain = MORPHINE + laxative 
+• Initial para +/- NSAID +/- adjuvants (neuropathics, steroids) but weak opiates (codeine tramadol) rarely helpful and best to start on low dose stronger opiates (oral morphine sustained release BD + prn immediate release breakthrough) 
+
+• If normal renal/liver function typical start = 
+   - Zomorph/MST 15mg BD (TDD 30mg) 
+   - Oramorph/sevredol tabs 5mg PRN (1/6 dose) - max 6 daily (can use 1/10 of dose if lower BD dose)
+   - If frail consider lower dose (10mg BD + 2.5mg)
+  
+• If renal impairment (eGFR <30) get advice from palliative & consider fentanyl, alfentanyl, buprenorphine & oxycodone if moderate renal impairment only (1.5x more potent than morphine so lower doses - OxyContin sustained release, Oxynorm immediate release) & not in liver disease
+
+• NB diamorphine only SC & is 66% strength of SC morphine which is 1/2 strength of oral morphine (6mg oral morphine = 3mg SC morphine = 2mg SC diamorphine)
+
+• Always coprescribe laxative as will always get constipated (senna + docusate not highest dose as a softener, not osmotic laxatives as already dehydrated!), newer naloxegol licenced for opiate induced constipation resistant to laxatives 
+• Nausea & sedation/drowsiness usually transient unless dose is too high 
+
+• Specific conversion maths 
+  - Oral codeine or tramadol to morphine = /10
+  - Oral morphine to oxycodone = /2
+  - 12mcg fent patch = 30mg oral morphine
+  - 10mcg buprenorphine patch = 24mg oral morph
+
+Opioid patches in palliative (swallow/absorption) 
+• Fentanyl or buprenorphine (lidocaine expensive)
+• Can be useful if above but shouldn’t be used if pain unstable (can’t titrate & takes a while to reach level), fever can cause XS absorption & skin reactions common so if thinking anticipatories towards EOL do not use (also very costly)
+• Don’t use if opiate naive as very potent - fatal 
+• Apply non broken skin, can shower, don’t soak 
+• Fentanyl patch
+   - Matrifen 12/25/50/75/100mcg change 72h (3d)
+   - 12mcg = 30mg oral morphine so very potent!
+   - Can be cut (Matrix patch only) but specialist 
+   - If switching from SR morphine, start from last dose at the equivalent of TDD 
+   - Also durogesic & D-trans, always Px by brand 
+• Buprenorphine patch 
+   - Butrans 5/10/15/20mcg change weekly (7d) 
+   - 10mcg = 24mg oral morphine, potent but less 
+   - Takes 72h to reach steady state and 24h clear 
+   - Don’t apply same site again (unlike Matrifen)
+   - Also transtec which is every 4d takes less time 
+• NB Lidocaine patch 5% (Versatis) only be specialist pain clinic for palliative neuropathic pain, should be reviewed at 2w and stopped after 4w 
+
+• Specific conversion maths 
+  - Oral codeine or tramadol to morphine = /10
+  - Oral morphine to oxycodone = /2
+  - Oral morphine to SC diamorphine = /3 
+  - 12mcg fent patch = 30mg oral morphine
+  - 10mcg buprenorphine patch = 24mg oral morph.
+
+
+
+Tags:
+  Cancer, Drugs, eol

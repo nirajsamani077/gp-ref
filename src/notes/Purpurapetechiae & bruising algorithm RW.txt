@@ -1,0 +1,47 @@
+Purpura/petechiae & bruising algorithm RW 
+
+Non-blanching rash 
+• 1cm = petechia, >1cm or raised = purpura
+• Ask speed of onset, triggers (new drugs/trauma)
+• Ask about FHx clotting/bleeding disorder 
+• Examine for fever/sepsis, LN HSM & signs of NAI 
+
+Acutely unwell? = Meningococcal sepsis or ALL, call 999 and give IM benpen whilst waiting (>10y = 1.2g, 1-10y = 600mg, <1y = 300mg)
+
+If not acutely unwell = urgent FBC & clotting (same day for children with admission, <48h adult) - DDx 
+• Abnormal FBC/clotting 
+   - ALL/leukaemia or pancytopenia (BM failure) 
+   - ITP or drug induced thrombocytopenia 
+   - Clotting disorder (heavy bleeds, FHx) eg VWD
+• Normal FBC/clotting 
+   - NAI in children 
+   - Vasculitis (HSP children, SLE adults) 
+   - Senile purpura, vit K/ C def (liver, GI) in elderly 
+   - Innocent causes 
+      • SVC pressure cough/vomiting in well child
+      • Easy bruising purpura simplex arms legs F 
+
+ITP = most common cause, well with extensive petechiae sometimes mucosal, often prior infection or vaccination, refer haem may consider steroids etc (common drug induced = AEDs antiplatelets heparin DOACs & steroids!)
+
+HSP = IgA small vessel vasculitis post-infection
+• Palpable purpuric rash over buttocks/extensors
+• Polyarthritis, abdo pain, haematuria/renal failure
+Rx = supportive (even for renal failure) with excellent prognosis. Monitor BP/urine regimen & if worsening may need steroid/immunosuppressants. 1/3 relapse 
+
+Always consider NAI & if this then immediate SG referral admission as active evidence of possible abuse 
+
+Bruising (rather than petechiae/purpura) more suggests clotting disorder & if considering with FHx check clotting screen (PT APRT fibrinogen) as well as INR only if on warfarin & UE LFT for all 
+• Isolated long PT = Warfarin, vitamin K deficiency 
+• Isolated long APTT = VWD, heparin, factor Defs 
+• Long PT & APTT = Warfarin, vit K or factor 2/5/10 deficiency 
+• Long PT/APTT & low plts = liver disease or DIC!
+
+Management of bruising after above Ix 
+• Stop any drug trigger, try alternative 
+• Trial Vit K or Vit C replacement 3mo 
+• Reassure if all Bt normal bud otherwise usual practice refer haem coag clinic esp if FHx, significant heavy prolonged bleeding .
+
+
+
+Tags:
+  dermatology, haematology, paediatrics

@@ -1,0 +1,24 @@
+UTI in children RW
+
+Any <3mo child with ?UTI refer to paeds 
+
+Otherwise may not have typical sx (dysuria, frequency, urgency, haematuria, abdo/loin pain, smelly cloudy urine, new bedwetting, fever, dehydration) - dip urine all & send for MC&S if <3y or RFs >3y & start ABx based on dip of clean catch 
+• Upper UTI = fever >38 + bacteriuria +/- pain 
+• Lower UTI = bacteriuria, no fever/loin pain 
+
+Abx for children >3mo = 3d for lower, 7d for upper (if not referring to hospital = low threshold)
+• Lower UTI 
+   - TMP 4mg/kg (max 200mg) BD if low resistance
+   - Nitro 750mcg/kg (50mg QDS) or 100mg MR BD
+   - 2nd line = Cefalexin or Amox
+• Upper UTI 
+   - Cefalexin 12.5mg/kg BD (125 BD to 500 TDS) 
+   - Coamox (only if culture) 0.25-0.5ml/kg TDS of 125/31 suspension or 5ml TDS of 125/62 if 6-11yo
+
+Further Ix /imaging after UTI (to identify obstruction, vesicoureteric reflux VUR or renal scarring) - USS all <6mo
+• If <6mo & responds well to ABx after 48h - USS within 6wks, DMSA (identifies renal scars) or MCUG (identifies VUR) depending on result 
+• If <6mo with atypical (ill, obstruction, AKI, non-E Coli) or recurrent UTI (3 cystitis, 1 pyelo 1 lower or 2 pyelo) then USS during admission + DMSA +/- MCUG in 4-6mo
+• If >6mo only USS during infection & DMSA 4-6mo after infection if atypical or recurrent .
+
+Tags:
+  infection, paediatrics

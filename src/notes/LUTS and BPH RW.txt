@@ -1,0 +1,43 @@
+LUTS and BPH RW
+
+Nearly half of men >50 have LUTS to some degree
+
+2 categories in history 
+• Storage - more OAB type sx urgency frequency nocturia incontinence 
+• Voiding - classic obstructive BPH type hesitancy poor stream straining incomplete emptying terminal dribbling 
+
+Ask all with LUTS to do IPSS (impact on QOL)
+• <7 mild, >20 severe 
+
+Examine abdo, genitalia, DRE prostate 
+Urine dip +/ MC&S
+Consider PSA (counsel) deps sx (WL, back, FH)
+Consider U&E if obstructive evidence (bladder) 
+Urine frequency volume chart (usually normal 3 cups of urine per void, 3h between each, total 3L per day, most younger won’t have to wake up to void) - chart for 3d using a jug, if reduced volumes more frequent variations OAB, if good volumes more frequent night excess fluid or polyuria, if reduced volume no variation red flag CA)
+
+Management 
+• Lifestyle - modify fluid caffeine etoh timings amount decaf, don’t reduce intake overall of water
+• Containment products via Bladder Bowel UK if incontinence , urethral milking if terminal dribbling 
+• If OAB storage sx go down continence nurses route for bladder retraining anticholingergics etc
+• For voiding sx with suspected BPH
+   - Tamsulosin (Alpha blocker, Flomax)- relaxes prostate muscle to open up urethra if moderate + IPSS not responding to lifestyle, works rapidly, 400mcg OD, main S/E dizziness and postural HTN take at bedtime , hypotension 
+   - Finasteride (5ARI) - reduces prostate size (inhibits testosterone to DHtestosterone) only in large prostate >30g golf ball size or bigger considered high risk of progression (older). Delayed effect 3-6mo, main risk ED/sexual dysfunction and masks a high PSA
+   - Consider OAB management anticholingerics, mirabegron etc if elements of storage sx not responding to initial Rx 
+   - Both diuretic in mid afternoon and desmopressin for nocturia unlicensed 
+
+Refer to consider TURP 
+• Any obstruction (retention, AKI,CUR)
+• Failed above management 
+• Suspected Ca via 2WW
+
+LTC if above failed, not suitable for surgery , tried ISC, distress etc (remember acute retention catheter before twoc give tamsulosin for 2 before to relax prostate 
+
+TURP
+• cystoscope, shave off urethral prostate using an electric loop
+• Comps = Bleeding, UTI, retrograde ejaculation (almost all), ED (10%)
+• Minimally invasive surgery (eg prostatic urethral lift, microwave, water vapour tx) emerging 
+
+
+
+Tags:
+  urology

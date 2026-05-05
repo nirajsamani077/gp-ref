@@ -1,0 +1,28 @@
+Postural tachycardia syndrome (POTS) & postural hypotension RW
+
+Postural hypotension 
+• Common cause of lightheaded, falls/syncope 
+• SBP drop >20mmHg sitting to standing for at least 1min (can also check at 3min for delayed) 
+ - If HR doesn’t rise >15bpm then suggests neurogenic/autonomic cause (T2DM, PD, B12) as dodgy nerves don’t increase HR otherwise more common causes 
+ • Old age, deconditioning 
+ • Hypovolaemia (dehydration, anaemia, Addisons)
+ • ETOH/med (anti HTNs, nitrates, diuretics, psych)
+ • Cardiac disease (HF, AS, vascular calcification)
+• DDx
+   - Vasovagal (3 Ps posture, provoked, prodrome)
+   - Carotid sinus hypersensitivity in older 
+• Examine, bloods, ECG, echo work up syncope, refer for tilt table test if Dx uncertainty 
+• Management (treat symptoms, not drop) 
+   - Treat UC (reduce anti-HTN burden, hydration)
+   - Falls prev (slow transition, avoid prolonged sitting/standing, consider compression stockings if oedema to help venous return) 
+   - Specialist may consider fludrocortisone (renal fluid reabsorber, initial 100mcg/d, risk of adrenal suppression, low K (monitor U&E), psychosis) or midodrine (sympathomimetic, initial 2.5mg TDS up to 10mg TDS, risk of HTN /headache/ falls /liver & may cause supine HTN) 
+
+POTS 
+• Multifactorial cluster of Sx with postural lightheadedness/or symptoms (fatigue palpitations weakness etc) WITHOUT postural drop
+• HR increases by >30bpm when standing, can take up to 10mins to appear - formal Dx tilt table 
+• Mostly young women (15-25) & post-COVID
+• Related to hypovolaemia, ANS dysfunction & deconditioning with poor exercise tolerance 
+• No specific Rx but seated resistance training (rowing, cycling), fluid hydration & sometimes fludrocortisone/midodrine like postural hypotension. Refer long COVID clinic 
+
+Tags:
+  cardiology

@@ -1,0 +1,38 @@
+Study types/hierarchy 
+
+RCT - subjects randomly allocated to intervention or control group
+
+Cohort (look forward) - subjects selected based on exposure & followed up to see if they get outcome/disease (result in relative risk)
+Try to match groups
+Risk ratios 
+
+• 20 subjects given paracetamol, 16 had >50% pain relief after 6 months, 4 did not 
+• 20 subjects given no paracetamol/placebo - 10 had >50% pain relief after 6 months, 10 did not 
+• Experimental event rate (EER) = 16/20 = 0.8
+• Control event rate (CER) = 10/20 = 0.5
+• Relative risk ratio = 1.6 
+• Risk ratio >1 means rate of event increased by exposure & can calculate relative risk increase (RRI) = EER-CER/CER = 0.6 = 60% (RRR is opposite) 
+• Hazard ratio similar to relative risk ratio but used when risk is not constant to time (like survival over time, which is lower with age etc)
+
+Case-control (look back) - subject selected based on whether they are cases (ie have disease/outcome) or controls & look back to see whether they were exposed or not (results in odds ratio). Quick, inexpensive, better for rarer diseases/cases but prone to confounding 
+• Out of 10 cases of MI, 8 were smokers & 2 not whereas 10 controls (no MI) 5 smoke 5 not 
+• Odds of MI when smoking = 8/2= 0.8
+• Odds of no MI when smoking = 5/5 = 0.5
+• Odds ratio = 4/1  = 4
+
+Cross-sectional (snapshot) - prevalence right now, weak evidence of cause/effect 
+
+EBM hierarchy 
+1a = systemic review of homogenous RCTs
+1b = individual narrow CI RCT
+1c = all or none RCT
+2a = systematic review of cohort studies 
+2b = individual cohort study or low quality RCT
+2c = outcomes research
+3a = systematic review of case control study 
+3b = individual case control study 
+4 = case series or poor cohort/case control study 
+5 = expert opinion 
+
+Tags:
+  statistics

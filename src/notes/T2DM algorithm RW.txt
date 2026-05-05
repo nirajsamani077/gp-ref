@@ -1,0 +1,75 @@
+T2DM algorithm RW
+
+Explanation: Complex cardiorenometabolic disease 
+High sugar levels in blood stream, regulated by organ called pancreas which produces hormone called insulin which lowers sugar levels after we eat. Type 2 most common, type 1 is younger often genetic related where body attacks pancreas meaning can’t produce insulin so very high sugar level. Type 2 is where over time due to lifestyle factors (weight, diet, sedentary, etoh & FHx component) although pancreas still makes insulin the body doesn’t respond to it properly to bring sugar down so sugar goes up and eventually the pancreas makes less insulin (fatty liver pancreas model) as it gets tired of the hyperinsulinaemia. 
+
+High sugar causes lots of damage inside the blood vessels esp heart (causing MI), brain (causing stroke and dementia), kidneys (causing kidney failure esp leaking of protein due to damage), back of eye (causing blindness) and circulation to extremities esp feet (causing infections, ulcers and amputation). Treatment is to reverse the high sugar levels by reducing intake and this resets the body’s inability to respond to insulin (called insulin resistance) which is very closely linked to weight loss. Oral drugs like metformin can also improve this but in the end if can’t get control would eventually have to give insulin injections for life which won’t cure the problem and probably makes it worse in the long term. 
+
+Diagnosis 
+• HbA1C >48 (6.5), diabetes - repeat after 2w if AS (HbA1C >42 (6.0) pre-diabetes) 
+• Fasting glucose >7, Random glucose >11.1
+• Prediabetes IFG >6.1, IGT > 7.8 (on OGTT) 
+• New DM >60 + WL refer for CT AP ?panc CA
+
+First diabetic check & then at least annually 
+• BMI, BP, UACR, U&E, lipids 
+• Foot check & annual retinal screening 
+• Diet, exercise & lifestyle!
+• HbA1C targets & intervention thresholds 
+
+Diet, exercise & lifestyle 
+• Healthy sustainable weight loss significantly improves all outcomes and can put DM into remission (>10% body weight) 
+• Low carb and Mediterranean diets best evidence & can be sustainable, IF/TRF 16:8 or 5:2 emerging evidence. Simple calorie restriction has most evidence  webut sustainable? Avoid ETOH /beer liquid toast. Look at Unwin sugar charts for glycaemic index (GI) 
+• Exercise (S)- Sit less (sedentary), step more (5-10k), sweat more (improves insulin sensitivity - ability to bring sugar down after meal), strength/resistance training (more muscle to mop up sugar stored as glycogen) & sleep better (under-recognised, worsens insulin resistance) 
+• Weight management referral - drugs & surgical options, orlistat or GLP-1 injections (semaglutide, liraglutide), bariatric surgery most effective early into DM (40% remission) so refer if BMI >35, consider if BMI >30 (or 27.5 in high risk ethnicity) 
+
+HbA1C targets 
+• Personalised based on patient, frailty, age, poly pharmacy (eg tighter if younger, relaxed if older)
+• Lifestyle or just metformin = 48
+• >1 drug or hypo drug = 53 
+• Intervention threshold on metformin = 58
+
+First-line drugs  
+• Metformin alone (or metformin + SGLT2 dapaglifozin if known CVD/HF/QRISK >10%- 2nd agent dapa most of time 
+• Metformin 500mg OD to TDS increased each week with meal, max dose 2g, if diarrhoea can change to MR (Sukkarto) 500mg OD initially to 1g OD to 2g OD/1g BD increased every 2 weeks, don’t use if eGFR <30 & max 1g if eGFR <45
+• Dapa (Forxiga) 10mg OD, counsel re common UTI/GU infections (peeing out sugar) & rare but serious euglycaemic DKA (stop & check ketones if unwell) & Fourniers gangrene, cardio/renoprotective & can be used in CKD or HFREF without DM, don’t use if eGFR <15 & less effective at lowering glucose at eGFR <45
+• SADMAN drugs so pause if unwell/dehydrated 
+
+Second-line /add on/ intensification drugs 
+• Choice of sulfonyureas (gliclazide), DPP4 (gliptins) = mets mates & GLP-1, glitazones,  insulin = if choose to in specific circumstances 
+• If needing rapid reduction with symptomatic hyperglycaemia - gliclazide +/- insulin 
+• If weight gain /hypos concern - gliptins 
+• If obese (BMI >35 or lower if BAME or would benefit from WL/not suitable for insulin) - GLP-1 (liraglutide, semaglutide) 
+• If eGFR <30 - probably insulin (or pioglitazone)
+
+Specific doses 
+  - Gliclazide 40-80mg OM (max 160mg BD), higher risk of hypos at higher doses & CKD
+  - Alopglitin (Vipidia) 25mg OD, weight and hypo neutral but less effective, check CrCl and reduce dose if <50 (12.5mg) & <30 (6.25mg)
+  - Pioglitazone 15-45mg OD, risks ++ HF bladder CA fractures but ok in renal failure, for insulin resistance (high doses of insulin not working) 
+  - Liraglutide (Victoza for DM, Saxenda for WL) SC 0.6mg OD 1w then 1.2mg OD 1w then 1.8mg. Semaglutide (generic for DM, Wegovy for WL) SC 0.25mg OW 4w then 0.5mg OW 4w then 1mg. GLP-1s cardio/renoprotective, aim 3% WL 6mo + HbA1C drop by 11 to continue
+
+BP targets 
+• Aim clinic <140/90 (home <135/85) unless old (age >80 = clinic <150/90 or home <145/85)
+• Use ACE/ARB first line for all 
+• If CKD with
+   - ACR >3 should be on ACE/ARB regardless of BP (and consider dapa if not improving)
+   - ACR >30 offer dapa to all (along with Max ACE)
+   - ACR >70 BP target down clinic <130/80 (home <125/75)
+
+Statins & lipids in DM
+• Primary prev = QRISK >10% offer 20mg atorva 
+• Secondary prev (CVD) = 80mg atorva 
+• Any CKD (even if CVD) = 20mg atorva, don’t increase dose unless specialist advice if eGFR <30
+• Aim >40% reduction non HDL 3mo/1y & increase dose to reflect (40, 60, 80mg) unless CKD 
+
+GLP-1 unavailability 
+• Prioritise review of highest risk & work on lifestyle 
+• Look at other available options instead & with HbA1C >86= insulin or gliclazide for rapid reduce 
+• If available should be for BMI >35 (or lower in BAME) or <35 but weight related comorbidity, aiming in 6mo for WL >3% and HbA1C drop >11 in order to continue 
+
+Insulins in T2DM 
+• If starting rather than using insulin analogue preferred use intermediate acting NPH ordinary insulin (Insulatard, Humulin I) first line or premixed ordinary insulins (Humulin M3 Bd) - less risks of hypos and weight gain, alongside metformin etc
+• Second line = long acting (Lantus/Toujeo/Levemir) insulin analogue OD (ultra long acting Tresiba only specialist), or premixed insulin analogues (Novomix/HumalogMix).
+
+Tags:
+  diabetes, endocrine

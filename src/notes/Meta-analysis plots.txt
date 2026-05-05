@@ -1,0 +1,9 @@
+ Meta-analysis plots 
+
+Box plot - shows median & quartiles of data set
+
+Forest plot - main meta-analysis plot to show results of multiple studies stacked vertically with (effect size) odds ratio on horizontal axis
+
+Funnel plot - meta analytic plot with effect size (odds ratio) on horizontal axis & measure of standard error on vertical axis - if symmetrical suggests no publication bias but if assymetrical suggests publication bias 
+
+Q-Q plot - scatter plot to show whether normal distributor or not 

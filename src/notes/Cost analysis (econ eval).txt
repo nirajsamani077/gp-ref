@@ -1,0 +1,15 @@
+Cost analysis (econ eval)
+
+Cost effectiveness analysis (CEA) - cost per single clinical measure or effectiveness (eg lives saved, symptom reduction) - done when cost benefit can’t be done as benefits can’t be monetised
+
+Cost benefit analysis (CBA) - costs and benefits of intervention all measured relative to money and things like life years saved given monetary value 
+
+Cost utility analysis (CUA) - things like QALYs which are where outcomes are measured more broadly eg 1 year of life in perfect health (DALY = loss of 1 year of life in perfect health) 
+
+Cost minimisation analysis (CMA) - least costly way to achieve same outcome 
+
+Costs can be 
+• direct - costs directly associated with healthcare intervention (staff time, supplies, travel cost) 
+• indirect - costs from reduced patient productivity (time off work, time spent caring for relatives)
+
+

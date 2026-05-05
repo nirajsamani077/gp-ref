@@ -1,0 +1,9 @@
+Correlation & regression 
+
+Correlation assess association between 2 variables
+Linear regression done only if correlation - to predict values of other dependent variables from independent variables 
+Correlation coefficient = r
+Parametric = Pearsons
+Non parametric = Spearman’s rank 
+r = 1 is strong positive correlation, 0 is no correlation and -1 is strong negative correlation 
+Regression is a line through the data to predict more - y = a + bx 

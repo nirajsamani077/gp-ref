@@ -1,0 +1,36 @@
+Hypocalcaemia, hypoparathyroidism, hypomagnesia RW
+
+<1.8 or <2 with Sx (myalgia, neuro, QTc) = ADMIT
+
+<2.2 or <2 without Sx = Investigate 
+• Check PTH, Vit D, LFT, U&E and Mg
+
+4 main causes
+• True Vit D def - diet, Sun, Coeliac 
+• Functional Vit D def (can’t hydroxylate) - RF, LF
+• Hypomagnesiaemia
+• Hypoparathyroidism 
+
+So if
+• PTH high (expected) - if Vit D <30 = true def so correct, if Vit D >30 = functional (usually renal so refer ?renal bone disease, esp if eGFR <30)
+• If PTH normal/low (not expected) - if Mg <0.7= hypomag so replace & recheck, if Mg >0.7 = hypoparathyroidism so refer endocrine 
+
+Hypoparathyroidism = rare 
+• Low ca, high phos
+• Refer as above
+• Risk of kidney stones due to hypercalciuria
+• Associated with CKD, CVD, cataracts and dental
+• Usually need 3-6 monthly bone, Mg, U&E, Vit D as well as 6-12 monthly urinary calcium/Na (stone risk), will usually check renal USS for nephrocalcinosis and stones & ECG
+• Rx is calcium/Vit D replacement (vit d needed for gut Ca absorption, calcium carbonate preferred or citrate if on PPI, never take with thyroxine as won’t absorb with Ca, low salt diet (risk of stones), TZD (reduces urinary calcium, prevents stones), PTH analogues /teriperatide under specialist 
+
+Hypomagnesiaemia = common, causes low Ca/K
+• <0.3 or <0.7 with Sx (as above) = ADMIT
+• <0.7 check ECG same day, if long QT or TWI = ADMIT needs IV replacement, otherwise PO Mg aspartate 10mmol sachet 1-2/d (avoid if GFR <30), often causes diarrhoea, check Mg after 1-2w
+• Causes are GI malabsorption (esp Coeliac, laxative abuse) or renal loss (PPI, diuretic, osmotic diuresis in hyperglycaemia, RTA, ETOH) 
+• If ongoing despite cause checked and replaced then endocrine A&G
+
+
+
+
+Tags:
+  endocrine

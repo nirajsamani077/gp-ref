@@ -1,0 +1,40 @@
+Valve disease RW
+
+Refer any murmur, along with FHx/symptoms/ECG for an echo & cardiologist assessment 
+
+Aortic stenosis (AS) 
+• Common, usually older 
+• ESM 2nd ICS RSE louder end expiration, carotids 
+• Usually degenerative calcification or bicuspid AV in younger (normally tricuspid), rare = rheum fever in developing countries 
+• Important signs - quiet S2, slow rising pulse 
+• Any symptoms = angina, SOB, syncope/dizziness = poor prognosis would need surgery (AVR, TAVI if high surgical risk), if A/S depends on echo valve gradient, surveillance etc 
+• Statins improve mortality (coexistent IHD), avoid ACE/nitrates in severe AS (preload reduction along with increased afterload = cardiogenic shock), use aspirin LT post TAVI  
+
+Aortic regurgitation (AR) 
+• Rare, usually younger 
+• EDM 2nd ICS RSE down to LSE 3rd leant forward (high pitched, hard to hear, “sound in diastole”)
+• Extra signs - Quinke De Musset, collapsing pulse 
+• Acute: IE, MI, aortic root. Chronic: Bicuspid AV,RF
+• LV volume overload - causes SOB CCF 
+• Surgical management - AVR, TAVI if high risk 
+
+Mitral regurgitation (MR)
+• Common, with AF 
+• PSM 5th ICS mid clav line to axilla, end expiration 
+• Primary: Degenerative, IE, RF, CT disease. Secondary to LV dysfunction with normal valve (functional MR)
+• LV volume overload - causes SOB CCF
+• Surgical - MVR or repair/TEER with a clip 
+
+Mitral stenosis (MS)
+• MDM rumbling apex, snapping S1, malar flush 
+• Rheumatic (RF) which usually causes left sided valve disease or degenerative 
+• Surgical MVR or valvulotomy 
+• Diuretucs, Bb, LA nitrates for symptoms 
+
+Rheumatic fever - rare “carditis” & “arthritis” in developing countries with L sided valve lesions (MS most common) - usually post strep infection (scarlet fever, swab for GAS). Refer cardiology, long term pen V to prevent recurrence 
+• Other signs - chorea, erythema marginatum, nodules (Modified Jones criteria GAS + criteria) 
+
+Endocarditis ABx prophylaxis for mechanical valve should not be routinely offered for dental procedures (no evidence it prevents IE) but maintain good oral hygeine
+
+Tags:
+  cardiology

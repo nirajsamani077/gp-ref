@@ -1,0 +1,41 @@
+Lung CA RW 
+
+2WW /Urgent CXR with 2w criteria 
+• >40 with haemoptysis or CXR suggestive = 2WW 
+• >40 & 1 symptom if smoker/asbestos or 2 symptoms if not for Urgent CXR (within 2w) 
+ - Resp/gen sx = Cough, SOB, CP, weight loss etc 
+ - Resp/gen ex = Recurrent LRTI/signs, LN,clubbing 
+ - Abnormal FBC (ie raised plts /thrombocytosis)
+
+Interestingly haemoptysis only in 5% of diagnosed lung CA (best were cough & SOB) so consider as possible Dx of ILD COPD may mask 
+
+Rarer HP effects 
+• Hoarseness due to RLN palsy 
+• Horners syndrome from apical tumour (miosis, partial ptosis, anhydrosis, shoulder pain)
+• HPOA/clubbing of fingers 
+• Paraneoplastic syndrome (SIADH low Na in SCC) 
+
+Smoking ++++ risk (90% of lung Ca) but rising number of non smokers - link with gene mutations (EGFR, BRAF) & targets for immunotherapy 
+• If treated & in remission stopping smoking reduces recurrence & success of treatment!
+
+Ix
+• CXR although has low pick up & misses 20% of cancers so if concerned get direct access CT thorax or 2WW
+   - FBC if doesn’t meet top criteria as thrombocytosis >40 warrants referral urgent CXR
+   - If less concern - spiro, PPI trial silent reflux, routine resp referral & consider repeat CXR
+• Secondary care will arrange staging CT NTAP/PET, biopsy (bronchoscopic or VATS) for immunogenetics & tissue Dx which split into
+  - Small cell (worst prog but most chemosensitive)
+  - Non small cell (SCC, adenocarcinoma,large cell)
+
+Treatment (MDT, depends stage, operative fitness)
+• Localised = Lobectomy (open or VATS) or DXT
+• Locally advanced (nodal involvement) = Surgery & neoadjuvant chemo /immunotherapy esp SCLC
+• Metastatic 
+   - SCLC = Palliative chemo/DXT/pleurodesis/stent
+   - NSCLC = Immunotherapy in some, palliative 
+
+Signpost McMillan cancer support & CRUK website, Cancer care map local services 
+
+Low-dose CT thorax for smokers may be used to screen for early lung CA (already implemented in USA) - not yet completely approved in UK, issue surrounding correct coding of smokers & incidental coronary artery calcification (CTCA).
+
+Tags:
+  Cancer, respiratory

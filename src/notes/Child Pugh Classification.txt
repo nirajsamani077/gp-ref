@@ -1,0 +1,12 @@
+Child Pugh Classification
+
+Liver cirrhosis, link with mortality 
+A, B, C
+
+Albumin 
+BR
+Clotting 
+Distension (ascites) 
+Encephalopathy 
+
+Mortality 50% in 1y for C 

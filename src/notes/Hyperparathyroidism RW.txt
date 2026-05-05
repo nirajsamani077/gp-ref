@@ -1,0 +1,22 @@
+Hyperparathyroidism RW
+
+See hypercalcaemia algorithm 
+
+PTH produced by parathyroid glands in neck, controls calcium metab by adjusting GI absorption and renal loss, bone mineralisation and conversion of vit D from diet/ sunlight to calcium 
+
+Types 
+• Primary (PHPT) - adenoma of parathyroid, high Ca, high/normal PTH, often found incidentally, bones stones moans groans
+• Secondary - usually due to v low calcium level from severe vit D def, renal/liver disease, GI malabsorption causing PTH to rise to compensate, so low/normal Ca and high PTH, replacing vit D can unmask PHPT
+• Tertiary - chronic secondary due to CKD means chronically raised PTH and calcium with loss of the feedback loop (parathyroid starts to produce PTH independently of Ca levels), high Ca high PTH
+
+Refer all suspected to endocrine 
+Will check Vit D, urinary calcium, renal USS, DEXA
+
+Management
+• Hydration ++, avoid TZD lithium, keep vit D normal range >50
+• Surgical management (parathyroidectomy) more likely if Ca >2.85, symptoms or renal/bone disease 
+• If declined/unsuitable - cinacalcet (increases sensitivity of Ca receptors to help reduce PTH and calcium), consider bisphosphonates under specialist advice if increased FRAX/DEXA
+• Usually needs annual bone profile U&E whether had surgery or not, DEXA 2-3 yearly 
+
+Tags:
+  endocrine

@@ -1,0 +1,49 @@
+Chronic pain algorithm RW
+
+Pain > 3mo which can be primary (no clear cause or impact of cause OOP to pain) often chronic pain syndromes (fibromyalgia, CRPS) Vs secondary to underlying cause (Oa, endometriosis) 
+
+Main management for primary (and secondary) chronic pain 
+• Exercise programme (not physio) - supervised group based physical activity 
+• Psychological therapy (CBT or ACT acceptance & commitment therapy for helping with psychological distress associated with chronic pain , mindfulness techniques)
+• Acupuncture - 5h total, may help, via community based physio or FCP
+• Consider antidepressant (off -label) even in absence of depression (amitryptilline, duloxetine, SSRI) - may help for chronic pain but studies not conclusive and shared care decision /trial 
+• Refer pain clinic 
+
+Do not offer for chronic primary pain
+• Para, NSAIDs, opiates, gabapentinoids, steroid injections, TENS /biofeedback (no evidence for chronic pain, may have some harm, shared care decisions) 
+• Mindfullness, chiropractor massage need more research 
+
+PAIN
+• Physical activity/Psychological (CBT ACT)
+• Acupuncture & Antidepressants
+• Involve pain team /integrated pain team 
+• No para NSAIDs opiates gabas tens 
+
+Specific chronic secondary pain syndromes 
+• LBP/sciatica - START Back tool for non specific to help advise re self help, physio, CBT, pain clinic. If meds - non specific = NSAID + PPI short term, not para alone. If neuro/sciatica - NSAID + PPI short term, weak opiate max 12 weeks then refer if not helping, not neuropathic meds, can consider spinal LA/Steroid injection and surgery (microdisectomy), can consider v short term diazepam as muscle or mind relaxant 
+• Neuropathic pain (non sciatic) - general = amitryptiline, gapapentinoid or duloxetine, tramadol only for rescue therapy (no other opiates), trigeminal neuralgia CBZ
+• Complex regional pain syndrome (CRPS) - post fracture or surgery, disproportionate pain/sensory change, acute phase usually resolves without intervention <1y, chronic persists with cool oedematous limb. PT OT useful, refer pain clinic, oral pred and bisphosphonate may have role 
+• Headache/migraine - acute nsaid/aspirin, para, triptan. Prophylaxis and avoid overuse of acute = MOH. No opiates or gabapentinoids 
+• IBS - Initial FODMAP mebeverine buscopan, if failed low dose TCA (5-10mg amitryptilline), SSRI 2nd line, no opiates! CBT/hypnotherapy if >12mo (refractory IBS)
+• OA - Weight loss, ice packs, exercises/physio, topical NSAIDs, then oral NSAIDS + PPI, then steroid injection (short lived benefits, max 3-4x/y), don’t routinely offer para/codeine/opiates 
+
+Deprescribing drugs of dependency 5 R’s
+• Refrain from prescribing in first place 
+• Review the medication and the patient 
+• Reframe their understanding of chronic pain, biopsychosocial & CBT framework 
+• Reorganise the medication with a suitiable weaning plan and alternatives (PAIN)
+• Refer to pain clinic or CMHT if not working 
+
+Morphine conversion equivalents & tapering 
+• 1mg oral morphine = 10mg oral codeine/tramadol
+• 1mg oral morphine = 750mcg oral oxycodone
+• 12mcg fentanyl Matrifen patch = 30mg oral morphine & 10mcg butrans patch = 24mg oral morphine (see cancer pain section) - very potent!
+• Taper dose by 10% every 1-2w & ideally don’t change to different type as high risk of OD or acute withdrawal (anyone taking >300mg TDD morphine should be done via pain clinic or formal detox service where will be converted to long acting methadone or buprenorphine then tapered)
+• If starting as a trial only ever prescribe 1w worth and review - start with immediate release oramorph & if single dose of 20mg doesn’t reduce pain then opiates will not benefit at all in LT
+• Inform patients of driving risks (30x more likely to have accident on road, similar to drunk driving) .
+
+link - Living Well With Pain - self help &goal setting. Faculty of Pain Medicine - Opioid Aware 
+
+
+Tags:
+  Drugs, rheumatology

@@ -1,0 +1,43 @@
+Coeliac disease RW 
+
+Common (1%), underdiagnosed, never Dx IBS without checking TTG first or considering FIT/ calprotectin /CA125
+
+Autoimmune inflammation of small bowel lining in response to gluten (wheat, rye, barley, oats) with genetic/environmental factors - causing malabsorption & symptoms 
+• Rare to see classic diarrhoea, WL, FTT in child 
+• Any GI sx (CIBH, bloating, indigestion) 
+• Deficencies (IDA, B12, calcium/Vit D & manifestations (fatigue, osteoporosis, neuropathy)
+• Dermatitis herpetiformis rash (extensors)
+• Delayed puberty, short stature, infertility 
+• Other AI diseases (T1DM, thyroid, Addisons) 
+
+Testing with IgA TTG (with total IgA as deficiency common meaning test won’t show anything) as long as gluten in diet (at least 10g or 4 slices of bread for 6w prior to testing)
+• Strong positive = likely, refer all to gastro for OGD duodenal Dx to confirm Dx, don’t start GFD yet 
+• Weak positive = check IgA EMA (endomysial) unless child & refer (if negative or child) 
+• IgA deficiency = check IgG TTG or EMA 
+• Negative = low threshold to retest or refer if high index of suspicion (eg other AI diseases or FHx), specialist may do HLA testing 
+
+Management = lifelong GFD once Dx Bx confirmed (all should be referred to gastro therefore)
+• All with dietician support , wheat barley rye all avoided (breads, cereals, pastas etc)
+• https://www.ruh.nhs.uk/patients/services/clinical_depts/paediatrics/documents/patient_info/PAE027_Gluten_free_diets.pdf
+• Oats - don’t have gluten but high risk of contamination, can get gluten free oats 
+• Only GF breads & flours available on prescription 
+• Check DEXA (osteoporosis risk) 1y after starting GFD esp if >55 or other RFs, assess FRAX, calculate calcium intake & supplement Vit D 
+• Vaccination - 5yrly pneumococcal due to hyposplenism & encapsulated bacteria risk (as well as Men B, Men ACWY, HiB/Men C) - Green Book!
+
+Monitoring
+• Annual review (dietician, Sx, height/weight, TTG)
+• Consider DEXA & bloods (FBC, LFT/bone, vit D, haematinics), screening for other AI (TFT, glucose)
+• Specialist may repeat Bx 1y to ensure histological recovery - refer if TTG still high after 1y of GFD or persistent Sx /concerns for increased risk of Non-Hodgkin lymphoma /colorectal/ SB Ca
+
+Non-Coeliac gluten sensitivity 
+• Symptoms with gluten but negative duodenal Bx
+• Poorly understood 
+• Consider wheat allergy (IgE mediated “bakers rhinitis” specifically related to wheat products)
+
+Dermatitis herpetiformis  
+• Itchy raised blistering rash on extensors, rare but pathognomonic of Coeliac (DDx papular ezcema, psoriasis, scabies, pemphigus)
+• Test IgA TTG & refer for skin Bx 
+• If confirmed = GFD & derm may use dapsone for symptomatic relief .
+
+Tags:
+  dermatology, gastroenterology

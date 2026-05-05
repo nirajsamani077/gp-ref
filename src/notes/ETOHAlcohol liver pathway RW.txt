@@ -1,0 +1,19 @@
+ETOH/Alcohol liver pathway RW
+
+If history of ETOH XS quantify 
+• 1 unit = 1 shot spirit, half a pint beer, half a small glass of wine 
+• Excess defined as 
+   - Male >50 units / week or female >35 units/ wk
+   - ETOH related liver disease (normal LFT no ro)
+
+If history of XS as defined above 
+• Offer Fibroscan and refer, if negative repeat 2y
+
+If not reaching threshold check AUDIT-C if raised (significant if >=5 procede to full AUDIT)
+• Check GGT (if >100 treat as high risk as above)
+• ELF or Fibroscan if full AUDIT >19
+• Refer ETOH services or brief intervention .
+
+
+Tags:
+  alcohol, liver

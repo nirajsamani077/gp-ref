@@ -1,0 +1,22 @@
+Significance tests 
+
+Paired date - same set of patients -  ie same group of patients, eg before & after. If patients specifically matched for age, gender etc then maybe paired 
+Unpaired - 2 different groups of patients, eg placebo vs drug 
+
+
+Parametric (normally distributed) data test 
+• Students T test - 
+- one sample t test - eg measuring group against national average) 
+- paired t test - eg measuring group before & after intervention 
+- unpaired t test -  (2 groups eg - comparing placbeo vs drug group)
+- Anova test - (more than 2 groups, eg ethinic minorities_ 
+• Pearsons correlation -does one variable affect another? 
+
+Non-parametric data 
+• Mann-Whitney U test - compares ordinal/interval (scale)/ratios of unpaired data 
+• Wilcoxon signed rank test - compares 2 observations on single sample (one group) or two groups (paired) - like before & after test 
+• Chi-squared test - compared unpaired proportions/% (other - paired McNemars, unpaired Fishers Exact)
+• Kruksall Wallis if >2 groups 
+• Spearman rank -correlation 
+
+ANOVA (analysis of variance) used for independent/unpaired data sets to analyse the effect of multiple factors on a variable, distinguishes within group variance (the variance of the sample mean) and between group variance (the variance between the separate sample means), must be normally distributed data. Demonstrates SS difference between mean of several groups 

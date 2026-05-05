@@ -1,0 +1,13 @@
+Proteinuria & UACR
+
+First pass morning sample 
+
+ACR > 3 = clinically important proteinuria, only refer if persistent haematuria + declining renal function/CVS disease (=A2)
+ACR > 30 = nephrotic range - refer to renal if persistent haematuria but no UTI (=A3)
+ACR > 70 refer to renal unless known diabetes and already being treated 
+
+ACE or ARB are essential if ACR >3 with diabetes or >30 with HTN/CKD. If >70 then all need.
+
+For HTN in proteinuric CKD
+- ACR >70 aim for 130/80
+- ACR <70 aim for 140/90

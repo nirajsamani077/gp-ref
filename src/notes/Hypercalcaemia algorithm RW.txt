@@ -1,0 +1,16 @@
+Hypercalcaemia algorithm RW
+
+Symptoms = bones stones moans groans, nephrogenic DI symptoms (thirst polyuria GI upset) 
+
+90% primary HPT or bony mets /myeloma 
+
+If corrected Ca >3 usually admission for IVI 
+If corrected Ca 2.6 - 2.9 with sx admission if not 
+• Repeat with PTH (consider TFT, myeloma screen)
+ 
+Primary HPT if PTH raised or in normal range (can even be PTH below mid ref range with raised Ca) = Refer 
+
+If PTH low suggests bony mets /myeloma or other rarer causes (hyperthyroid, sarcoid, vit D tox, TZD) = Investigate and 2WW 
+
+Tags:
+  endocrine

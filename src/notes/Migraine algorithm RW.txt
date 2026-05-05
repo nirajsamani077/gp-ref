@@ -1,0 +1,65 @@
+Migraine algorithm RW
+
+>5 attacks with
+• 4-72hrs
+• 2 of unilateral/throbbing/severe/effect on activity
+• NV or photo/phonophabia
+• not attributed to another disorder 
+Can have a premonitory /aura and postdrome
+Can be with aura or not, an episodic or chronic (>half the days in a month for 3mo)
+
+Child - bilateral, shorter, GI upset (abdo migraine)
+
+Auras (25%) 
+• Max time is 1hr (5-60mins)
+• May be positive (eg flashing lights) or negative (numbness), can be visual/sensory/motor/speech/vestibular which fully resolves
+• If atypical aura (hemiplegic, double vision, vestibular, LOC ) - refer headache clinic 
+• If sudden onset think vascular/stroke 
+
+Acute Rx - take start of headache rather than aura 
+1. Simple - ibuprofen 400-600mg/aspirin 900mg
+2. Triptan - Sumatriptan 50-100mg (IN 10mg in kids), alternative type or route eg nasal sumitriptan or zolmitriptan (usually work 2/3 headaches), common s/e chest tightness and C/I in CVD or uncontrolled HTN (check BP)
+3. Antiemetic -  metoclopramide or stemitil 10mg if vomiting or vestibular
+• Can try combination of 2 
+• Keep headache diary and avoid triggers (esp meds eg hormones SSRI PPI), sleep,ETOH/caffeine 
+• Risk MOH if using acute >2x/week
+
+Prophylaxis Rx (if fx >1/w, severe, affecting QOL)
+1. Propranolol 80-160mg /d up - asthma 
+2. Topimarate 50-100mg /d - WCBA, depression
+3. Amitriptyline 30-50mg /n - warn sedative 
+4. Candesartan 16mg /d - off licence, WCBA
+5. Riboflavin (B2) 400mg /d - NICE approved 
+5. Non pharm - mindfulness, CBT, acupuncture all shown to have benefit comparable with drugs 
+• Review every 4-8 weeks, earlier if titrating meds (start lowest dose), may take this time to see improvement (aim is halve number not total control)
+• Consider MOH medication-overuse headache (overuse of acute Rx can reduce efficacy of prophylaxis)
+• Withdraw if stable after 6-12mo
+
+Refer headache clinic if failed Rx highest tolerated dose prophylactic after 3 months failed x3 (or any red flags,atypical features) 
+• New CGRP MAbs or flunarizine
+• Sodium valproate (not if <55 male or female)
+• Botox 
+
+Menstrual migraine (keep diary)
+• If >2/3 cycles with oestrogen drop before period causing migraine (if only then = menstrual migraine, if also other times = menstrually-related migraine)
+• Use normal as above but if not responding can use triptan prophylaxis around time of period (2d before period starts till 3d after started = 5d)
+  - Frovatriptan (or naratriptan) 2.5mg BD 
+  - Zolmitriptan 2.5mg TDS 
+  - Don’t use other times as risk of MOH
+
+Migraine in pregnancy 
+• Often improves so withdraw before pregnant but migraine with aura can worsen - specialist advice 
+• Paracetamol only safe option, can use NSAID till 28w or sumitriptan but only if benefits outweighs risks (may risk preterm labour etc)
+• Don’t forget PET and CSVT as causes, check BP urine and refer 
+
+Migraine with contraception /COCP
+• With aura = UKMEC 4 (3 if last episode >5y ago) with much higher risk of ischaemic stroke
+• Without aura = 2 so can use 
+• HRT not C/I with any kind of migraine (transdermal best)
+
+Vestibular migraine 
+• Hx of migraines, episodic vertigo, no red flags 
+• Vestibular rehab and ST depressants (stemitil), zolmitriptan best evidence, usual prophylaxis 
+
+Tags:
+  headache, neurology

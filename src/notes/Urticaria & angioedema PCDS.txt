@@ -1,0 +1,29 @@
+Urticaria & angioedema PCDS
+
+Wheal with erythematous flare, typically resolves after 4h. If lasts >6w and no obvious trigger = chronic spontaneous urticaria but triggers can be 
+• scratching = dermographic urticaria 
+• Pressure = delayed pressure urticaria 
+• Sweating = chlolinergic urticaria 
+• Cold = cold urticaria 
+• Sunlight = solar urticaria 
+• Water = aquagenic urticaria 
+• latex = contact urticaria 
+
+Can be associated with angioedema, but angioedema without urticaria consider 
+• Ace inhibitor /bradykinin related
+• C1 esterase inhibitor deficiency (check C4 first, if low check C1 esterase = hereditary angioedema or acquired (lymphoma) 
+• Spontaneous angioedema (neither of above) 
+
+In chronic spontaneous urticaria 
+• Carefully unpick and avoid allergen 
+• Check TFT and autoimmune screen 
+• Use non sedating antihistamines initial OD 4 week trial, if failed up to BD and max 4 tablets a day but unlicensed - 1st line ceterizine, loratidine 
+• Fexofenadine (Telfast) and ceterizine = renally excreted, loratidine and desloratidine (clarityn) liver excreted), consider anticholingeric burden, no evidence for combining, try at least 2 normal options OD or BD before escalating 
+• In children - from 1 month chlorphenamine, from 1 year desloratidine, from 2 years loratidine, from 12 years fexofenadine. 
+• Wouldn’t recommend first generation sedating antihistamines (chlorphenamine, promethazine) due to only having 4-6h of antipruritic but 12h of sedation 
+• If specific trigger or not improving refer to derm esp cold urticaria (can be life threatening) - options = oral steroids, LTRA, omilizumab (anti IgE MAB)
+
+Vasculitic urticaria - mimics urticaria non blanching long lasting purpura with post inflammatory hyperpigmentation, often quite angulated. Check C3/4 (differentiates causes) and autoimmune screen & refer to derm 
+
+Tags:
+  dermatology

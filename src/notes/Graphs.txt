@@ -1,0 +1,15 @@
+Graphs 
+
+Box & whisker - sample minimum, lower quartile, median, upper quartile and sample maximum
+
+Scatter plot - coordinates to display values for two variables for a set of data
+
+Histogram - continuous data where the values have been categorised into a number of categories(continuous bar chart) 
+
+Forest plot - meta-analyses and provide a graphical representation of the strength of evidence of the constituent trials
+
+Funnel plot - publication bias in meta-analyses
+
+Kaplan-Meier curve - survival function showing decreasing survival with time
+
+Cates diagram - 4 face categories, NNT = total number over number who benefitted, NNH = total number over number harmed 

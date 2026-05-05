@@ -1,0 +1,6 @@
+Drug trial phases 
+
+1 - determines PK/PD/side effects of drug on healthy volunteers 
+2 - assess doses (2a) & efficacy (2b) on small number with disease 
+3 - assess effectiveness in large RCT
+4 - post-marketing surveillance of LT effectiveness and side effects 

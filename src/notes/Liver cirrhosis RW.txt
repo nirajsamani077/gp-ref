@@ -1,0 +1,46 @@
+Liver cirrhosis RW 
+
+End stage liver disease with chronic inflammation & fibrosis which is initially compensated then decompensated (jaundice, HSM, ascites, varicies/bleeding, encephalopathy)
+• PPx = liver damage causes increased portal pressure with shunting to systemic (splanchic) circulation causing bleeding, ammonia toxin BBB, low protein levels in blood and pressures cause fluid loss into bowel cavity & clotting factors)
+• Soft signs = spider naevi, caput medusae, gynaecomastia, palmar erythema 
+
+LFT & US abdo can be normal - only sensitive if severe, need specific Fibroscan or ELF test based on RFs for common causes eg ETOH (screening)
+• FIB4 score - Age, AST, ALT, platelets to decide whether to refer for ELF/Fibroscan (NAFLD score also has BMI & HbA1C)
+• ELF (Enhanced liver fibrosis) blood test measures 3 markers to give score, if >10.51 high risk for advanced fibrosis 
+• Fibroscan - Transient elastography, “stiffness” of liver using USS, 8-16+ KPA suggests advanced fibrosis or cirrhosis
+• When thinking about who to test use SCAN 
+   - Suspect liver disease even if normal bloods 
+   - C - Hepatitis C history 
+   - Alcohol XS >50 units men >35 units women/w
+   - NAFLD with FIB4 >1.3-2.67 or ELF >10.51
+
+Common causes - ETOH, NAFLD, viral hepatitis BC
+Rarer - AI (PBC, PSC, AIH), HH/Wilson’s/A1AT, CA
+Drugs - MTX, amiodarone, statins, valproate etc 
+
+Liver screen tests - FBC (plts low in fibrosis), AST, GGT, Hep B SAG, Hep C antibody, AMA/ANA/SMA/Igs, ferritin/TSAT, caeruloplasmin, A1AT. Split BR (direct/conjugated) if raised BR. Synthetic function (alb, BR, INR) + US abdo 
+• AST:ALT >1 suggests advanced fibrosis ((>2 suggests etoh, <1 suggests viral)
+• BR unconjugated: Gilbert’s, haemolysis. Conjugated: CBD obstruction, parenchyma disease 
+
+Management of cirhosis 
+• Refer liver team as soon as suspected 
+• Management of UC (obesity, ETOH)
+• Immunisation - annual flu, one off pneumococcal, Hep B/A, COVID 
+• HCC (US, AFP 6 monthly & varicies (OGD at least 3 yearly) surveillance (Bb propranolol for primary prevention of portal HTN, if OGD not required) 
+• Treatment of specific comps 
+   - Ascites - Paracentesis, R/O/ Rx SBP 
+   - Varicies - Banding
+   - Encephalopathy - Grade, lactulose, rifaxamin, and identify trigger (SBP infection etc), never stop lactulose in hx of encephalopathy, clears ammonia 
+   - Other: Portal vein thrombosis, HRS, infection
+• Statins and para safe in compensated cirhosis, but avoid NSAID & ACE if ascites (risk of AKI) 
+
+Autoimmune liver 
+• PBC = F>>M usually post menopause, often ++ ALT & GGT (cholestatic), positive AMA & IgM. Treat with UDOCA (ursodeoxycholic acid) & life expectancy normal if blood markers improve 
+• AIH = F>M any age, transaminitis, positive ANA SMA & IgG. Treat with pred, good prognosis 
+• PSC = M>F middle age, associated with UC, cholestatic picture no specific test, often cholangitis/pruritic jaundice, premalignant (1%/y cholangiocarcinoma & colorectal Ca risk) & worse prognosis. Treatment with UDOCA & steroids/DMARDs but may need liver Tx 
+• Pruritis (itch) common feature, treatment = 
+   - Cholestyramine 4mg before & after breakfast bile acid seqrestant
+   - 2nd line = rifampicin, sertraline, naltrexone 
+
+Tags:
+  gastroenterology, liver

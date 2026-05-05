@@ -1,0 +1,32 @@
+Chronic cough algorithm RW
+
+Persistent cough >8w, impacts QOL sleep PU 
+
+Red flags = Haemoptysis, weight loss, SOB, chest pain, dysphagia, hoarseness, smoking /asbestos 
+
+2WW/urgent CXR within 2w criteria 
+• >40 with haemoptysis or CXR suggestive = 2WW 
+• >40 & 1 symptom if smoker/asbestos or 2 symptoms if not for Urgent CXR (within 2w) 
+ - Resp/gen sx = Cough, SOB, CP, weight loss etc 
+ - Resp/gen ex = Recurrent LRTI/signs, LN,clubbing 
+ - Abnormal FBC (ie raised plts /thrombocytosis)
+
+Most common causes = Asthma, Reflux, PND, ACE 
+• Triggers, variation, FHx, heartburn, nasal Sx 
+
+Major causes = Lung Ca, IPF, COPD, chronic infection (usually cough with LRTI better by 6w, max 3mo), bronchiectasis, TB or pertussis (whooping cough ?paroxysms unimmunised)
+
+Idiopathic = cough hypersensitivity (neuropathic?)
+ 
+Should all really have CXR, spirometry & bloods (raised plts suspicious for lung CA, eosinophils?)
+
+Treat most likely underlying Dx in turn (nasal steroids, antihistamines, PPI, trial SABA or LABA/ICS trial)
+
+In children chronic cough >4w, main Q is ?asthma 
+• If isolated with no wheeze, sob or FHx = unlikely 
+• Otherwise low dose ICS/SABA prn trial as per pre school wheeze + PEFR diary 
+• If wet cough, clubbing, FTT or recurrent LRTI = refer paeds to consider protracted bacterial bronchitis vs bronchiectasis/CF (work up = CXR, sputum, sweat test, Igs etc) 
+• If no asthma & no wet concerns = observe 8w .
+
+Tags:
+  paediatrics, respiratory

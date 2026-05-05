@@ -1,0 +1,24 @@
+Hep B & serology RW
+
+HBSAG = current infection (HBEAG = infectivity)
+Anti-HBS = immunity (precious infection/vaccine)
+Anti-HBC = previous exposure (IgM = recent) 
+
+Scenarios 
+• Acute Hep B = HBSAG & anti-HBC IgM 
+• Chronic Hep B = HBSAG & anti-HBC (not IgM)
+• Resolved & immune = anti-HBS & anti-HBC 
+• Vaccinated successfully = anti-HBS >10
+• Susceptible, need to vaccinate = anti-HBS <10
+
+Major pubic health issue - 95% will clear but 5% chronic & 25% will get HCC so check if 
+• High risk exposure - Country, MSM, IVDU, STI, prisoners, homeless, care home etc 
+• At high risk - Pregnant, immunosuppressed
+• Active infection - abnormal LFTs, signs of CLD
+
+If test negative & anti-HBS <10 = susceptible so offer vaccination 
+If positive refer all to liver team to treat antivirals 
+In past cleared infection some meds eg high dose pred can reactivate  .
+
+Tags:
+  gastroenterology, liver

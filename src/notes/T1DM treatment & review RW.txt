@@ -1,0 +1,51 @@
+T1DM treatment & review RW
+
+Testing & monitoring 
+• Check C-peptide (endogenous insulin)+anti-GAD
+• Refer to diabetes specialist & education/support 
+• HbA1C target = 48, measure every 6mo at least 
+• CGM gold standard for self monitoring
+   - Fasting morning BM 5-7
+   - Premeal BM 4-7
+   - Measures glucose in interstitial fluid so may lag behind plasma, check finger prick BM if uncertain & otherwise check BM at least QDS premeal or higher if unwell 
+   - “Flash” isCGM is intermittent rather than real time rtCGM 
+• Annual review with specialist 
+
+Insulin regimen 
+• Basal-bolus with insulin analogues gold standard 
+   - Long acting insulin detemir OD (Levemir)
+   - Rapid acting insulin pre-meal (Novorapid)
+• BD regimen with ordinary premixed insulin only if can’t use basal-bolus not possible 
+• Insulin pump if HbA1C >69 despite optimum regimens or recurrent hypos 
+• Counsel about hypo risks
+   - Discuss symptoms & checking BM finger prick 
+   - Fast acting glucose (gel) + long acting (toast)
+   - IM glucagon & train family - if not working 999 
+   - Hypo awareness -if impaired high risk of severe
+   - If frequent refer BG awareness training prog 
+• Sick day rules 
+   - Dose increase 10-20% in event of illness 
+   - Monitor BM ketones closely, risk of DKA 
+   - If vomiting/no intake = no bolus, cont basal 
+• Vary injection sites to avoid lipodystrophy
+• If BMI >25 (or 23 BAME) offer metformin 
+
+NB Insulins in T2DM 
+• If starting rather than using insulin analogue preferred use intermediate acting NPH ordinary insulin (Insulatard, Humulin I) first line or premixed ordinary insulins (Humulin M3 Bd) - less risks of hypos and weight gain, alongside metformin etc
+• Second line = long acting (Lantus/Toujeo/Levemir) insulin analogue OD (ultra long acting Tresiba only specialist), or premixed insulin analogues (Novomix/HumalogMix)
+
+Cardiovascular risk & complications 
+• Atorva 20mg primary prev if 
+   - >40, had T1DM >10y, nephropathy or other RFs 
+   - 80mg if had an event /confirmed CVD 
+   - Aim >40% reduction non HDL 
+• BP- 140/90, ACR >70 130/80, age >80  = 150/90 
+   - ACE first line 
+   - Dont avoid Bb or TZD - be aware of risks risks 
+• Eyes - diabetic retinopathy screening annually 
+• Renal - ACR >3 offer ACE, tighter BP if >70, not SGLT2 as risks of DKA 
+• Neuropathy - foot checks, neuropathic meds, gastroparesis common = use small particle mashed diet, prokinetics (metoclopramide) & erythromycin only short term risks EPES 
+• Consider ED, MH, eating disorders & other AI .
+
+Tags:
+  diabetes, endocrine

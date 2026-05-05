@@ -1,0 +1,53 @@
+Addisons/adrenal insufficiency RW
+
+Rare, potentially fatal, steroid/cortisol deficiency 
+
+Either 
+• primary “Addisons disease” (adrenal autoimmune most common, adrenalectomy, TB ,haemorrhage)
+• secondary (pituitary tumour with hypopituitarism)
+• tertiary (exogenous steroids, reducing endogenous production)
+
+Addisons/adrenal crisis 
+• Ppt acute stress/infection/MI
+• Systemically unwell, postural hypotension, hypoglycaemia, acute abdomen, coma 
+• Call 999, if strong suspicion give hydrocortisone 100mg IM (succinate or phosphate)
+
+Stable Addisons  
+• Tired, Tripping, Tearful, Tanned, Thin 
+• Abdo pain, vomiting, postural drop >20 SBP, weight loss, salt craving
+• Pigmentation (friction/sun exposed) in primary due to XS MSH 
+• Bloods - low glucose, low Na, high K, high Ca
+• 9am (morning) cortisol = best screening test 
+   - <100 = likely & high risk of crisis, admit 
+   - <400 = refer short synacthen
+   - >400 = highly unlikely (but not if on oestrogen)
+
+Management 
+• Hydrocortisone (15-25mg 2-3 DD) to replace cortisol & Fludrocortisone (50-200mcg 1-2 DD) to replace mineralocorticoid aldosterone & reduce postural hypotension - started by specialist, 6 monthly repeat, free prescription exemption 
+• Sick day rules & steroid card/medic alert bracelet 
+  - Double dose in moderate illness (requiring Abx, surgical procedure), don’t need to double fludro
+  - If severe illness/oral route lost = Hydrocortisone IM 100mg then discuss/admit, 50mg QDS M 
+  - If not on pred or hydrocortisone but oral route present = Hydrocortisone 20mg then 10mg QDS 
+  - Specific rules https://www.endocrinology.org/media/4142/ai-and-exogenous-steroids_pis_final.pdf
+• Home emergency kit = Hydrocortisone IM 100mg phosphate or succinate (not acetate as slow release used for joint injections), 3-5 vials, 2ml syringe and blue needle if any primary, secondary on steroid replacement. If on oral pred don’t need double dose seek help. 
+• Other factors 
+   - Written management plan & training (& staff!)
+   - Annual flu and one off pneumococcal jab 
+   - Flag notes major alert & ambulance register as steroid dependent condition 
+   - Inducers (rifampicin, SJW, AEDs) can lower HC levels and increase risk of adrenal crisis 
+   - Consider AI (thyroid, T1DM, vitiligo, Coeliac) 
+   - Less risks than pred for osteoporosis (but higher if POF or hypogonadism which is more common) - lesser glucocorticoid effect 
+
+Signpost Bart’s Endocrinology - living with Addisons disease 
+
+Anabolic steroids 
+• Common, estimates >5% makes, doses often 1000x recommended amount, to help training 
+• Effects 
+   - Reversible = acne, oedema, HTN, aggression 
+   - Irreversible = voice, baldness, CM, tendon rupture, hepatic Ca, BBV with needle sharing, testicular atrophy/gynaecomastia 
+• Also used fat burners (clenbuterol, thyroxine, ephedrine), muscle gainers (insulin, GH), fluid down (diuretics), hormones 
+• Examine, check baseline bloods/ECG & encourage stopping (don’t need to taper), advise that it’s banned in sports, signpost local needle exchange, consider need for annual bloods 
+• Consider body dysmorphic disorder & refer MH 
+
+Tags:
+  endocrine

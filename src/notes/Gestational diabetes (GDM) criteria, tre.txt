@@ -1,0 +1,22 @@
+Gestational diabetes (GDM) criteria, treatment, post-partum RW
+
+OGTT 24-28wks if RFs (16-18wks if previous) 
+• Fasting glucose >5.6
+• 2h glucose >7.8 
+= 5678 rule 
+RFs = BMI >30, precious macrosomic baby >4.5kg, FHx diabetes or BAME 
+
+If confirmed refer ANC (should already be)
+• If fasting <7 = trial diet change, monitor CGM, if target not met after 1-2wks start metformin then insulin (short acting) if still not met 
+• If fasting >=7 or >6 with any complication (macrosomia) = start insulin straight away 
+• CGM targets - Fasting = 5.3, 1h post meal = 7.8, 
+2h post meal = 6.4
+
+Intrapartum = consider elective delivery (IOL/CS) under consultant led care with BM monitoring (4-7) & checking of neonatal sugar 2-4h post delivery due to risk of neonatal hypoglycaemia (esp if not establishing feeds)
+
+Post-partum & long term T2DM risk 
+• Stop treatment and check BMs prior to leaving 
+• Fasting plasma glucose should be done 6-13w due to increased risk of T2DM (if >13w = HbA1C) - if >7 = DM & if 6.1-6.9 = prediabetes. If normal <6 then annual HBA1C for all (HbA1C threshold >13w is 39 for prediabetes) .
+
+Tags:
+  diabetes, obstetrics

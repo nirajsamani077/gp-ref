@@ -1,0 +1,39 @@
+Diabetic foot RW
+
+2 tier service 
+• Foot protection service (Tier 1) - Podiatry led with orthotics, wound care etc, for low risk 
+• Interdisciplinary foot care service (Tier 2) - MDT sometimes hospital podiatry, orthotics, micro, diabetes specialists, DSNs, vasc/ortho for high risk 
+
+Assessement on diabetic nurse annual RV 
+• Inspect = ulcers, callus, infection, gangrene
+• Check pulses and CRT, ABPI, ask about IC
+• 10g monofilament test for neuropathy 
+• Check for Charcots arthropathy 
+ 
+If any abnormalities more than callus = referral to above foot protection tier 1 & if active diabetic foot problem (ulcer, critical ischaemia, gangrene, Charcots red hot swollen foot) = immediate admission if life or limb threatening & tier 2 service discussion/urgent referral otherwise (usually triaged immediately) 
+
+Diabetic foot infection (DFI)
+• Suspect if red warm tender raised BMs (may have normal inflamm markers) or ulcer discharging pus or tracking deep (any gas crepitus systemic or deep seated ?osteomyelitis = admit) 
+• Abx choice 
+   - Mild = Fluclox 500mg-1g QDS 7d (Alt clary erythro doxy), only swab & longer if persistent but skin changes may take longer to resolve 
+   - Mod+ = IV if severe otherwise co-amox/cotriamox +/- metro (clinda or cipro if pseudomonas suspected, linezolid if MRSA) however at this stage usually admission warranted 
+ • Always check NVI & safety net, monitor BMs 
+ • X-rays poor at detecting osteomyelitis, takes >2w to see any changes (too late!), MRI better 
+
+Diabetic neuropathy 
+• Sensory = don’t notice injuries, neuropathic pain 
+• Motor = loss of normal shape/abnormal WB
+• Autonomic = vasomotor microcirculation issues 
+• Neuropathic analgesia for diabetic neuropathy = choice of 4 agents, if one not working try another, tramadol only for acute rescue (not LT)
+ - Duloxetine 60mg OD (max 120mg DD), Rv 3mo
+ - Amitryptilline 10-30mg evening, increase in 10mg steps every week, usual maintenance 30-70mg
+ - Gabapentin 300mg OD titrate slow max 3.6g in 3DD (eg 1200mg TDS)
+ - Pregabalin 150mg 2-3DD (eg 75mg BD) titrate slowly to max 600mg 2-3DD (eg 200mg TDS)
+- NB capsaicin (chilli peppers) as cream or patch only licensed under specialist if can’t use oral 
+
+Charcots foot  
+• Rare red hot swollen foot with intact skin (may or may not have deformity or pain) - due to neuropathy & arthropathy = think in any diabetic foot (DDx = sprain, gout, cellulitis, DVT)!
+• Refer SDEC for urgent weight bearing XR or MRI as without prompt treatment (non WB) can cause osteolysis & chronic deformity - under Tier 2 MDT 
+
+Tags:
+  diabetes, vascular

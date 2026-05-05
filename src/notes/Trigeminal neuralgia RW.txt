@@ -1,0 +1,29 @@
+Trigeminal neuralgia RW
+
+UL episodic sharp/electric shock facial pain 
+• Trigeminal nerve distribution only 
+• Paroxysms 
+• Triggered by innocuous stimuli (touch)
+
+Most are classical (ppx ?vascular compression of CN5/idiopathic), small proportion secondary to 
+• MS (20x more likely) or CPA tumour (2WW)
+• Usually 50-60yo 
+
+DDx red flags = SOL in young <50, GCA in old >50
+• BL, ophthalmic only, sensory loss or hearing loss also red flags needing urgent referral 
+
+Treatment 
+• CBZ
+   - 100mg OD/BD initially (max 200mg QDS) 
+   - 90% get improved pain control 
+   - C/I if cardiac arrhythmia 
+   - S/E Neuro dizziness diplopia, skin rashes, leucopenia, low Na, LFTs (check FBC UE LFT 1st)
+   - Headache diary & continue, taper if 1mo free
+   - Asians may not respond, refer genetics first 
+• Refer if red flags, not responding CBZ or MS 
+
+Refer if fails to respond to CBZ or atypical (<50)
+
+
+Tags:
+  neurology

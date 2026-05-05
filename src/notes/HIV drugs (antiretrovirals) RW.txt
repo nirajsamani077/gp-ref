@@ -1,0 +1,24 @@
+HIV drugs (antiretrovirals) RW
+
+At time of diagnosis (used to be CD4 <200)
+3 drugs = 2NRTI + NNRTI/PI
+
+NRTI (nucleoside reverse transcriptase inhibitor)
+• most cause peripheral neuropathy 
+• zidovudine (AZT) - anaemia, myopathy, black nail
+• tenofovir - osteoporosis, renal impairment 
+• didanosine - pancreatitis 
+• abacavir, emtricitabine, lamivudin
+
+NNRTI (non nucleoside)
+• nevirapine, efavirenz
+• CYP450 inducers (reduce levels)
+
+PI (protease inhibitor)
+• “avirs” - indinavir (renal, biliary stones) ritonavir
+• metabolic syndrome 
+
+Common for interactions, any issues check with pharmacy or GUM! HIV drug interactions app 
+
+Tags:
+  gum

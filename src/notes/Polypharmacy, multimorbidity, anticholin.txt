@@ -1,0 +1,30 @@
+Polypharmacy, multimorbidity, anticholinergic burden & STOP/START tool RW
+
+Adverse drug reactions cause many preventable hospital admissions & polypharmacy contributes to falls /delirium (costly itself) as well of cost of unused medicines!
+
+Formal annual structured medication review (SMR) is PCN DES requirement (usually pharmacist) if 
+• >10 repeat medications (some say >5)
+• Severe frailty or residential home patient 
+• On high risk meds (opiates, Z-drugs, gabapentinoids, BDZ, ACE, NSAIDs, diuretics, DOAC/warfarin/Antiplatelet), steroids 
+• Recent admission with new meds or approaching EOL (reactive RV)
+
+Steps 
+1) Listen to patient - what matters to them 
+2) Essential drugs - only stop on expert advice, still working to achieve goals? adherence? cost effectiveness (formulation, licensing)?
+3) Non-essential drugs - indicated? risks benefits? can we safely deprescribe with a plan? interestingly benefits of “prevention” drugs like statins, sulfonyureas, bisphosphonates, BP meds wane as more frail with higher risks and are good ones to review & deprescribe (relaxed targets!)
+4) Monitoring requirements  - FBC, UE, LFT & if elderly or extremes of muscle mass calculate Cockcroft Gault CrCl which is more accurate than eGFR, consider liver function - ensure doses are suitable 
+5) Sick day rules SADMAN drugs, steroids etc 
+
+Can use STOP/START tool to assist, lengthy tool but system specific - important to STOP long-use 
+
+Anticholinergic burden a specific issue as high risk of falls, delirium, cognitive impairment - cumulative effect if Px multiple, strong AC drugs are 
+• TCAs - Amitryptilline, clomipramine etc 
+• Antimuscarinics - Oxybutinin, tolteridone etc 
+• Antihistamines - Promethazine, hydroxyzine, chlorpromazine, diphenhydramine (in Nytol OTC)
+• MH drugs - Paroxetine, Clozapine, Procyclidine 
+• Many drugs have mild AC effect - look this up 
+
+Multimorbidity (>2 long term health conditions including MH) has big crossover with polypharmacy & frailty - think about frailty phenotype & acute geriatric giants, SMRs and personalised management plan, continuity & admission avoidance.
+
+Tags:
+  Drugs, geris

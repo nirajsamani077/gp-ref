@@ -1,0 +1,37 @@
+DVT algorithm RA
+
+Wells score for DVT (1 for each)
+• Previous VTE
+• Malignancy Hx 
+• Immobility Hx 
+• Bedbound 3d or major surgery 3mo 
+• Alt Dx more likely = -2 
+
+• Local venous tenderness 
+• Collateral swollen veins 
+• Pitting oedema of that leg 
+• Whole leg swollen
+• Calf >3cm circumference than other side 
+
+<= 1 = unlikely (D dimer). >=2 = likely (USS)
+
+Refer local DVT pathway & if can’t offer above test within 4h offer interim anticoagulation if not already on (checking bloods for clotting, FBC UE LFT prior to starting) - usually apixaban/rivaroxiban (don’t need LMWH loading)
+
+Upon Dx and treatment will need anticoag clinic and min 3mo treatment unless unprovoked /malignancy / provoking factor not dealt with 
+• If unprovoked examine and do bloods as above but don’t need to Ix for CA (FIT, CTTAP) unless sx 
+• If unprovoked only check for thrombophilia (usually from clotting test done prior to starting anticoag) if 1st deg relative with VTE - don’t need to test if having lifelong anticoag (won’t change management) 
+
+Post thrombotic syndrome post DVT (40%) due to venous HTN persistenting causes painful heavy swelling skin changes/ulcers, compression stockings no longer recommended 
+
+In pregnancy suspect DVT - most L sided and pelvic vessel DVT = mimicking SPD!! 
+
+In travel often higher risk >8h, can be attributed to flight 8w post journey, if at risk wear compression stockings & may need prophylactic anticoag (A&G urgent to haem to advise if very high risk) 
+
+Superficial venous thrombophlebitis 
+• Thrombosis of superficial, usually varicose, veins with pain tenderness hardness over vessel (other types infective, traumatic or migratory related to malignancy) 
+• Refer all for duplex venous USS to R/O DVT as 5x higher risk of getting/already having (not D-dimer)
+• Most settle by itself but for pain using topical NSAID & graduated compression stockings best 
+• If extensive, long saphenous vein involvement or other VTE RFs refer to vascular to consider whether needs LMWH/fondaparinux to prevent extension or actual DVT .
+
+Tags:
+  vascular

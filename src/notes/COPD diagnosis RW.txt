@@ -1,0 +1,42 @@
+COPD diagnosis RW 
+
+Suspect if >40 smoker/ex smoker with chronic cough with sputum, exertional SOBOE/wheeze, not much variability but frequent “winter” bronchitis 
+
+Damage to lower airways, usually from smoking, tree model damage to the branches and leaves, airflow is obstructed causing sob wheeze and gas exchange oxygen and co2 is affected. Risk of infections, sputum due to inflammation, low oxygen levels and circulation to the heart chronic progressive 
+
+Consider 
+• Asthma overlap 
+• 2WW - persistent cough smoker haemoptysis weight loss night sweats fatigue >40 ? lung Ca 
+• HF - orthopnea, PND, leg swelling 
+• Occupation/exposures (eg asbestos) or bronchiectasis
+
+Check MRC score and CAT score 
+• MRC scale for SOB 
+1 = strenuous exercise 
+2 = on inclines /slopes 
+3 = on level ground 
+4 = has to stop ~100m
+5 = at home/getting dressed 
+• CAT score (COPD assessment tool) for symptom burden - very happy very sad for symptoms , max score = 40 which is the worse, low score (<10) = good (https://www.catestonline.org/patient-site-test-page-english.html) 
+
+Investigate for all 
+• Post BD Spirometry - obstructive FEV1 /FVC <0.7 confirms, don’t always need reversibility (ie pre and post) but should be <12% or 400ml FEV1 improvement otherwise asthma overlap (also PEFR variability 20% FENO challenge tests episodic etc)
+• FBC - secondary polycythaemia, ACD, eosinophilia ?asthma overlap 
+• CXR - hyperinflated, bullae, R/O malignancy/HF
+
+Optional if ?other cause 
+• Sputum MC&S, ECG/BNP/echo, HRCT thorax, A1AT if FHx young non smoker 
+
+Severity objective score with %FEV1 predicted
+• <50% severe, <30% very severe 
+• >80% mild, <80% moderate 
+
+Specific COPD related syndromes/situations 
+• Pre-COPD - symptoms or scan findings but normal spirometry (>0.7, rest of spiro normal) - at risk of progressing, smoking cessation etc 
+• Preserved ratio impaired spirometry measures (PRISM) - as above with ratio >0.7 and other spirometry eg FEV1 abnormal - as above 
+• Asthma-COPD overlap - consider if younger (<40), variability, BD reversibility on spiro (FEV1 >12% or 400ml improvement), eosinophilia/atopy/FENO positive - use ICS in treatment along with LABA/LAMA and never use LABA or LAMA in isolation without ICS (risk of life threatening exac)
+• COPD - ILD overlap - paradoxical normal spirometry/ratio, desaturation OOP for severity of symptoms, recurrent exacerbations or CXR changes - consider direct access HRCT chest 
+• On imaging changes (emphysema, hyperinflation) - often smoker (if not consider A1AT), check spirometry 
+
+Tags:
+  respiratory

@@ -1,0 +1,57 @@
+Parkinson’s (PD) RW
+
+Neurodegenerative, loss of dopaminergic neurons causing movement disorder, autonomic dysfunction & dementia (cognitive, mood)
+
+Classically triad 
+• Resting tremor - UL, progresses to BL
+• Bradykinesia - shuffling gait, mask face, speech 
+• Rigidity - cog-wheeling 
+Other associated affects = 
+• ANS dysfunction - Postural drop/instability, falls, hypersalivation, bladder/bowel 
+• Sleep dysfunction - REM disorder, akinesia, daytime somnolence 
+• Cog dysfunction -Dementia, mood, psychosis 
+
+Any suspected PD refer urgently to neuro for Dx
+• Clinical Dx (UK PD society Brain Bank criteria)
+• May use SPECT to distinguish PD & BET tremor 
+
+DDx Tremor (Resting = PD) 
+• Intention = Cerebellar 
+• Postural/action = Benign essential tremor (BET), endocrine (thyroid, phaeo), SABA, physiological 
+
+DDx Parkinsonism (ie PD signs but not PD)
+• Parkinson’s plus - MSA, CBD, PSP
+• Other dementias - Lewy Body, AD, Vascular
+• Drug-induced - Antipsychotics, phenothiazines
+
+Management = MDT, PT OT SALT dietician & PD specialist nurse, advanced planning & motor drugs (all specialist initiated & managed) 
+
+If motor sx not affecting QOL (Early PD) = Dopamine agonist
+• Non ergot derived e.g ropinorole/apomorphine causes less lung/cardiac/RP fibrosis than ergot derived (cabergoline, bromocripine)
+• ECR, CXR, bloods (UE ESR) prior to starting ergot 
+• S/E = impulse control disorder, hallucinations ++, day somnolence, nasal congestion, hypotension
+• Consider need for L-dopa as best Rx for motor sx but highest risk of motor comps & wears off in time 
+
+If motor sx affecting QOL = Levodopa + dopa decarboxylase inhibitor (carbidopa, benserazide) which stops peripheral destruction of L-dopa - has best improvement of motor but most comps 
+• Dose wearing off - sx worse just before next dose, can be severe acute dystonia, “On-off” variations, Dyskinesia (Xs movement) @ peak dose 
+• If oral route lost don’t stop suddenly - risk of acute severe dystonia, use a ropinorole patch 
+• ANS S/E - dry mouth, palpitations, postural hypotension, psychosis 
+
+If develops worsening sx/dyskinesia whilst on optimal levodopa = Add adjuncts ABCD
+• Amantidine (unclear mechanism)
+• MAO-B inhibitor (selegiline, stops breakdown)
+• COMT inhibitor (capones, stops breakdown) 
+• Dopamine agonist 
+
+Other treatments 
+- Antimuscarinics (procyclidine) for dyskinesias  
+- Glycopyronium for drooling 
+- Modafanil for daytime somnolence 
+- Midodrine for postural hypotension 
+- Rivastigmine for PD dementia
+- Screen for depression & impulse control disorder on dopamine agonists 
+
+Signpost Parkinson’s UK website 
+
+Tags:
+  dementia, neurology

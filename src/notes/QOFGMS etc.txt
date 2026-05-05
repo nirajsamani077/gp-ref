@@ -1,0 +1,27 @@
+QOF/GMS etc 
+
+Annual reward & incentive programs for GP practices as part of GMS to help manage chronic disease and improve organisation
+
+3 areas
+1) Clinical indicators (largest) - standards linked to chronic disease care, value of point determined by prevalance of condition in practice 
+2) Public health - smoking cessation, cervical screening, child health surveillance etc 
+3) Additional services - cervical screening, contraceptive services 
+
+Exception report from QOF (don’t include) if 
+• 3x recorded refusals to attend
+• Terminally ill/frail so not appropriate to review chronic disease parameters
+• New registration or diagnosis should have measurements within 3mo and delivery of clinical standards by 9mo
+• On maximal tolerated doses of meds whose treatment remains suboptimal
+• Not clinically app to prescribe certain med (eg allergy)
+• Med not tolerated or treatment not agreed with 
+• Supervening condition where treatment is inappropriate (statin if has chronic liver disease) 
+• Where service is unavailable 
+
+GP practice contracts: 
+GMS (most)- General Medical Services, nationally negotiated, open ended, payment by global sum with MPIG (minimum practice income guarantee), QOF, enhanced services, premises, IT etc.
+
+PMS - Personal Medical Services, locally negotiated, 5 years, payment baseline set nationally + QOF, GP tend to have higher incomes 
+
+APMS - Alternative Provider, no restriction of providers, individual 3yr contract, 
+
+Local medical committees - interests of GPs on a local level, General Practitioners Committee (GPC) has authority to negotiate with government on matters such as pay and contracts, funded by a statutory levy on GPs

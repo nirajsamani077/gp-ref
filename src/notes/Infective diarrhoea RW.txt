@@ -1,0 +1,30 @@
+Infective diarrhoea RW 
+
+Common, usually viral (rotavirus/norovirus) with self limiting self managed recovery within 5d (incubation period from contact eg food poisoning/travel/occupation up to 3d) - other 
+
+• Bacterial causes (campy, salmonella, shigella, E Coli, crypto, C diff) - send stool MC&S off if persistent >2w, systemically unwell, blood/mucus, recent Abx/hospital (C diff risk), travel, IC or public health indication (occupation food handler, outbreaks of serious causes eg EHEC 0157)
+• May test for ova, cysts, parasites (Giardiasis, Amoebiasis) if Hx of prolonged diarrhoea & travel +/- cholera (most travellers diarrhoea resolves within 1-2w, if prolonged Giarda most common with bloating, belching, greasy stools due to malabsorption)
+• If toxin mediated D&V food poisoning outbreak may test for S aureus, Bacilus cereus, C perfringens/botulinum 
+• Crypto rare prolonged Protozoa IC or children swimming or nappy change (FO route, notify PHE if suspect), longer lasting, off swimming 2w asymptomatic carriage, if IC d/w specialist but if not then self limiting no Abx with hygeine ++
+
+Management = hydration hydration hydration 
+• Diarolyte & fluids, pause SADMAN drugs, keep off school/work until 48h clear 
+• If culture positive Abx or admission 
+  - C diff see specific - Vanc 1st line or fidaxomiciin
+  - EHEC 0157 - Admit IVI AKI risk (not Abx) 
+  - Salm/Shig/Campy - Only Abx if IC or systemic, usually clary for campy 
+  - Giarda/Amoeba - Metro +/- Diloxanide 
+• Antidiarrhoeals 
+   - Loperamide or codeine slow bowel transit but do not reduce total duration & can worsen if bacterial/C diff/IBD cause 
+   - Newer licensed drug racecadotril (reduces hypersection of fluids from inflamed bowel wall) may be approved for use soon 
+• Post infectious IBS/lactose intolerance common, GBS & reactive arthritis rare 
+
+Notify PHE if 
+• Food poisoning 
+• Dysentery (infective bloody diarrhoea) 
+• Confirmed HUS (EHEC 0157), typhoid/paratyphoid (enteric fever) or cholera 
+
+If high risk patient & travelling abroad should always seek medical assistance if unwell but PHE suggests standby Abx 3d (Asia = Azithro, America/Africa = Cipro) along with loperamide & hydration whilst abroad (seek advice from National Travel Health Network or UK Gov website & review when back) 
+
+Tags:
+  gastroenterology

@@ -1,0 +1,12 @@
+Fragility fracture & bisphosphonate
+
+If >=75 - don’t need, just start bisphosphonate
+If 50-75- arrange DEXA and then calculate FRAX (RF like parental hip fracture, CKD, RA, ETOH) 
+   
+All calcium/vit D supplementation 
+
+1st line aledronate, 25% cannot tolerate so try others (risedronate/etidronate), if can’t tolerate refer for zoledronate/denusomab/strontium/raloxifene/teriparatide 
+- Denusomab - MAb inhibits osteoclasts, 6 monthly SC injection 
+- Strontium - inhibits osteoclasts & promotes osteoblasts, bud unsafe with CVS/VTE ++
+- Raloxifene - SERM, mainly for vertebral #, like Tamoxifen worsens menopausal sx/VTE risk but reduced risk of ER+ breast CA 
+- Teriparatide - recombinant PTH

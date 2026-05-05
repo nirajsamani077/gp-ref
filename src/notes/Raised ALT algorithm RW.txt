@@ -1,0 +1,30 @@
+Raised ALT algorithm RW
+
+Consider investigating even if mildly raised (as degree of rise may not correlate to damage)
+Remember raised ALP, GGT main differentiator 
+
+Check 
+• ETOH
+• BMI /metabolic history 
+• Hepatotoxic drugs (MTX, amiodarone, statins, terbinafine, valproate, tetracyclines etc)
+• Viral hepatitis RFs 
+• FHx HH Wilson’s A1AT
+
+Repeat 
+• Liver + AST, GGT (AST>ALT suggests significant fibrosis)
+• FBC, ferritin, iron studies (calculate TSAT)
+• HbA1C & Hep B/C serology 
+• AI screen (AMA, ASMA, ANA, Igs)
++ US abdomen 
+
+AST plts useful for Fib-4 and AST:ALT ratio >1 suggests advanced fibrosis (>2 suggests etoh, <1 suggests viral)
+
+Based on results will be 
+• ETOH liver disease or NAFLD - follow pathway 
+• Hepatitis / AI / unclear cause = refer 
+
+
+
+
+Tags:
+  gastroenterology, liver

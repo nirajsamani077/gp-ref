@@ -1,0 +1,6 @@
+Statin tolerated = max dose, add ezetimibe, refer 
+Statin not tol = ezetimibe, add bempedoic acid, refer 
+
+Aim for >40% reduction non HDL-C
+
+High intensity for primary prevention = 

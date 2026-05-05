@@ -1,0 +1,32 @@
+Vitamin D algorithm RW
+
+Vit D mainly from sunlight and partly from diet (usually fortified foods, mushrooms, Margarine!)
+• gets absorbed from skin/gut and converted in liver and then kidney to active vit D which helps to regulate calcium levels in blood and important for bone and muscle strength (if low risk of osteoporosis) amongst lots of other things 
+
+3 situations 
+1) Supplementing generally (low sunlight, preg, Bf)
+2) Checking if high risk medical condition 
+3) Dealing with vit D result and checking calcium 
+
+Supplement OTC 400IU (10mcg) all year if risk 
+• Known low sun exposure (institutionalised, skin always covered, dark skinned), pregnant/BF 
+• If not <5 or >65 can just give over winter months 
+• If <1 esp breastfed then 10mcg daily 
+
+Check vitamin D if high risk med condition 
+• Symptoms 
+   - Childhood ricketts bone pain deformity myopathy tetanus & refer!
+   - Adult osteomalacia TATT myalgia fragility # & DEXA if concerned 
+• Known osteoporosis - As part of work up or before starting non-oral Rx (zol, denusomab) due to risk of hypocalcaemia if vit D not corrected (not needed if already on replacement), would need LD
+• Coeliac/malabsorption, CKD, HPT, isolated raised ALP, meds (AED, orlistat) which affect absorption 
+
+Vitamin D level result 
+• <25 = Deficiency - LD colecalciferol 50,000 IU OW for 6w (total 300,000 IU) then check calcium 1mo after as vit D correction can unmask PHPT, can start MD OTC 800IU colecalciferol (same LD for if about to start non-oral osteoporosis Rx)
+• 25-50 = Insufficiency - MD OTC 800IU colecalciferol, should check calcium intake using calculator, still check calcium 1mo after 
+
+When to not give colecalciferol
+• Known hypercalcaemia 
+• CKD4+ - can’t renal hydroxylate to active Vit D, need to bypass this step with alfacalcidol (renal started) 
+
+Tags:
+  endocrine, metabolic

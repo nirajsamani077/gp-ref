@@ -1,0 +1,36 @@
+Oral steroids RW
+
+Often used long term for PMR/GCA & rheum and also courses for asthma/COPD 
+
+Significant steroid doses that suppress adrenals 
+• Pred >5mg, hydrocort >15mg, dex >0.5mg >4w 
+• Pred 40mg, hydrocort 120mg, dex 4mg recurrent courses >1w or multiple (>3) in a year 
+• Also consider high dose ICS, nasal steroids potent topical (esp in combo) 
+
+Monitoring 
+• Before starting - BMI, UE HBA1C lipids (TGs) & eye check to ensure no glaucoma/cataracts 
+• Recheck UE fasting glucose TGs after 1mo 
+• Then monitor HbA1C every 3 months & rest of other stuff less frequently & at least annually 
+• Also FRAX assessment & DEXA 
+
+Make sure 
+• Steroid emergency card if significant doses 
+• Sick day rules advice (fever requiring ABx)
+  - Double dose unless on >15mg pred already 
+  - Otherwise 20mg hydrocort then 10mg QDS
+  - If vomiting/severe - admit 100mg IM hydrocort
+  - Specific rules for specific procedures https://www.endocrinology.org/media/4142/ai-and-exogenous-steroids_pis_final.pdf
+• Home supply of IM hydrocortisone if known Addisons or completely steroid dependent (shut down HPA axis) = 100mg succinate & spare
+
+Withdrawing steroids 
+• Gradually tapering if unlikely to relapse, >40mg over >1w, >3w treatment any dose, short course within 1y of stopping long term (you can drop rapidly down to physiological dose of equivalent 7.5mg pred/day but then slow taper)
+• Stop abruptly if doesn’t meet above criteria & unlikely to relapse off it
+• Adrenal suppression can last 1y after stopping!
+
+Steroid-induced diabetes 
+• Multiple reasons - activates inflammatory pancreatic cells, reduces carb metabolism, reduces glucose uptake into tissues (eg muscle) 
+• Check HbA1C prior if increased risk or already known prediabetic - then check 3 monthly 
+• Rx = Gliclazide +/- insulin and reduce doses in tandem with reduced steroid doses (dependent).
+
+Tags:
+  Drugs, rheumatology

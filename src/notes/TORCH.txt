@@ -1,0 +1,5 @@
+TORCH
+
+Toxo - cerebral calcification, chorioretinitis, hydrocephalus, CP
+Rubella - SNHL, congenital cataract, CHD, chorio
+CMV (most common)- low weight, purpura, SNHL, microcephaly

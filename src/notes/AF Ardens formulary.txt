@@ -1,0 +1,25 @@
+Rate control - Bb, CCB, digoxin
+
+Beta blockers 
+AF alone - Atenolol 50mg om, can inc to 100mg
+AF + IHD - Atenolol (metoprolol, propranolol also)
+AF + HF - Bisoprolol 1.25mg od, up to 10mg (carvedilol, nebivolol also)
+AF + DM - Atenolol, Bisoprolol (metoprolol, nebivolol also)
+
+CCB 
+Verapamil 40mg tds, up to 120mg tds 
+Diltiazem (off label) - all start at 120mg od
+• Viazem XL 120mg Od (up to 360mg Od )
+• Angitil SR 120mg Od (max 180mg od)
+• Slozem 120mg od (max 300mg od) 
+
+Digoxin (2nd line, after Bb + DHP CCB)
+• Loading 7d 250mcg Od (max 750mcg Od)
+• Maintenance 62.5mcg Od (max 250mcg Od)
+
+Anticoag (NOACs)
+• Apixaban 5mg bd (2.5mg bd if CrCl 15-29 or 2 of the following 3; creatinine >133; =80yr, =60kg)
+• Dabigatran 150mg bd (110mg bd if CrCl 30-49 or increased risk of bleeding or ›80vr or on verapamil)
+• Edoxaban 60mg Od (30mg Od if CrCI 15-50 or 60kg or ciclosporin / dronedarone / erythromycin / ketoconazole)
+• Rivaroxiban 20mg Od (10mg Od if CrCI 15-49)
+• Warfarin as directed (0.5mg white, 1mg, 3mg, 5mg pink)

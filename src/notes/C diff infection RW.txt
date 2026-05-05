@@ -1,0 +1,33 @@
+C diff infection RW 
+
+Suspect if diarrhoea +
+• Recent course of Abx (last 8w, usually within 2w), especially cefs, cipro, clinda 
+• >65 /IC without obvious cause 
+
+C diff normal flora but overgrowth due to above causes pathogenic infection easily transmissible (hand hygeine!) of intestines which risks bleeding, sepsis, and bowel perforation (toxic megacolon)
+
+Send stool MC&S + bloods (FBC, U&E, LFT, CRP) 
+
+If positive for C diff = SHIT, all get Abx 
+• Severity grade?
+   - Moderate = >3 diarrhoea/d, raised WCC <15
+   - Severe = WCC >15, fever, acute abdo, AKI
+• Hospital or home? 
+   - If severe, comorbid, unable to self care ?admit 
+• Interfering Abx/drugs?
+   - Stop causative Abx (cef, cipro, clinda)
+   - Stop SADMAN drugs, stop PPIs & laxatives 
+   - Do not use loperamide 
+• Treat with Abx /self care (for all)
+   - Abx should be offered to all with C diff 
+      • 1st ep = Vanc 125mg QDS PO 10d, 1-2w imp 
+      • No imp = Fidaxomicin 200mg BD 10d
+      • No imp = Micro advice, may quad up oral vanc dose (500mg QDS 10d) + IV metro 
+      • Recur <3mo = Fidaxomicin as above 
+      • Recur >3mo = Vanc or Fidaxomicin as above 
+      • >2 recurrence = Faecal microbiota tx (FMT) where healthy stool Tx into colon (PR/NGT)
+      • If repeat stool consider some remain positive for up to 1mo anyway (post CD IBS common) 
+   - Self care = Fluid intake/diarolyte, hand hygeine 
+
+Tags:
+  gastroenterology

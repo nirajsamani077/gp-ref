@@ -1,0 +1,29 @@
+Long QT (LQTS) RW 
+
+QTc = M >0.45, F>0.46ms, significant >0.5ms
+
+FHx SCD <40, preventable cause of death in young, risk of polymorphic VT & VF arrest 
+
+Drugs (often dose dependent)
+• Citalopram/escitalopram 
+• Erythromycin/clary/cipro, fluconazole
+• Amiodarone/ sotalol, TCA, chlorquinine
+• Hydroxyzine, haloperidol, ondansetron 
+• Absolute C/I in anyone with congenital LQTS - if not avoid Px 2 together or if Hx of electrolyte issue 
+
+Electrolytes - low K/Mg/Ca/temp 
+Cardiac - MI, myocarditis, SAH
+Specific genetic conditions
+• Jervell-Lange-Nielsen (deafness)
+• Romano-Ward (no deafness) 
+
+Congenital LQTS (AD)
+• LQT1 - exertional or swimming syncope 
+• LQT2 - exertional, emotional or auditory syncope 
+• LQT3 - rest/night syncope 
+
+Refer all to cardio & avoid ppt (2 x long QT drugs) 
+Beta blockers lifelong & ICD if high risk 
+
+Tags:
+  cardiology

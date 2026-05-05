@@ -1,0 +1,24 @@
+Tuberculosis (TB) RW
+
+Consider if high risk group & active features 
+• High risk = Previous, contact, born in high prevalence country (EE Asia Africa), IC, deprived
+• Active pulmonary TB = Cough/purulent/blood, B symptoms (fever night sweats weight loss)
+• Extrapulmonary TB = LN, bone pain, skin (erythema nodosum, lupus vulgaris on face), pericardial (SOB, chest pain), cerebral (confusion headache)- most common in HIV or ethnic 
+
+If considering active TB - discuss, isolate, admit 
+• 3x morning sputum samples for AFB + CXR 
+• Rx = RIPE 2mo, RI further 4mo under specialist 
+   - May need directly observed (DOT) 3x/week 
+   - Contact tracing via PHE - all household at least
+   - Drug resistant TB/MDRTB has specific Rx 
+
+If considering latent TB (eg household contacts or new entrants from high risk countries) - refer for Mantoux skin test or IFN gamma blood test (using Green book criteria) - if BCG vaccinated Mantoux unreliable so IFN gamma preferred  
+• Rx = R/O active TB (sputum + CXR) then usually 6mo of single /dual RIPE agent depending 
+
+Prevention = BCG vaccination
+• Neonates if parents or grandparents born in high risk country(>40/100000 incidence in Green Book)
+• If new child entrant not vaccinated as neonate/child or unclear - offer BCG if Mantoux negative <35 (not effective after this) 
+• If healthworker or other eg prison homelessness same process Mantoux to check previous if Hx of neonatal vaccine unclear & give BCG if negative <35 (refer to Green Book).
+
+Tags:
+  infection, respiratory

@@ -1,0 +1,44 @@
+Hypertension doses 
+
+ACE - start low dose, check U&E within 2 weeks, then annual or 2 weeks within any change, eve as 1st dose hypo, BP 1mo after each change 
+• Ramipril 1.25mg, up to 10mg
+• Lisinopril/Enalapril 2.5mg, up to 20mg
+• Perindopril 2.5mg, up to 10mg
+(Most start 2.5 and end at 10) 
+
+ARB - same advice as ACE
+• Losartan 25mg, up to 100mg 
+• Irbesartan 75mg, up to 300mg
+• Candesartan 4mg, up to 32mg 
+(Losartan convert 25 end at 100, irb is x3, cand 4) 
+
+Thresholds for eGFR drop 25%, or Cr rise 30% 
+
+CCB DHP (non rate limiting) 
+• Amlodipine 5-10mg, Alts felodipine same but up to 20mg, lercanidipine 10 to 20, lacidipine 2 to 6
+Start low dose, titrate monthly with repeat BP
+
+CCB non-DHP (rate limiting)
+• Diltazem MR OD - differ based on preparation 
+• Verapamil MR OD - 120-240mg (max 480mg)
+Start low dose, titrate monthly with repeat HR
+
+TZD
+• Indapamide 2.5mg (or 1.5mg MR) preferred 
+• Metolazone 5mg or chlortalidone 25-50mg
+If already bendroflumethiazide (2.5-10mg) cont
+Monitor U&E, LFT/bone prior and regular intervals, esp in elderly and cirrhosis (low Na/K common) 
+
+Spironolactone - 4th line (already on 3) if K <4.5
+• Start low dose 25mg, only titrate up in HF
+• Check U&E prior, 1mo and regular after, stop K>5
+
+Beta blockers (Bb) - increase/withdraw dose 2 wky
+• HTN + HF - Bisoprolol 5mg up to 20mg 
+• HTN + angina - Atenolol 25-50mg up to 100mg
+• HTN + prev MI - Metoprolol IR 100mg up to 400mg and MR 200mg OD, Propanolol 80mg BD up to 160mg BD 
+C/I severe PVD, asthma/COPD, bradycardia/block 
+Caut DM, psoriasis, MG, 1st deg AVB
+
+Alpha blockers - 1st dose hypotension 
+• Doxazosin - 1-4mg (max 16mg), MR 4-8mg (usual maintenance dose for both is 4mg)

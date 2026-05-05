@@ -1,0 +1,34 @@
+Myeloma RW
+
+Rare, easily missed, cancer affecting bone marrow cells (plasma cells) which produce Igs that fight infection . Overproliferate (clonal) producing an abnormal Ig (paraprotein), affecting production of other blood cells & Igs lower 
+
+Any >60 persistent bone/back pain or unexplained # = urgent FBC, ESR & calcium (bone) 
+• If abnormal (anaemia, leucopenia, raised ESR/Ca) check serum protein electrophoresis & serum free light chains SFLC (urine BJP which is testing for light chain so done less now) urgently within 48h & refer via 2WW 
+
+Symptoms (bone/back pain, fatigue, SOB, weight loss) even in combo have very low PPV but combining with abnormal FBC/ESR/calcium massively increases pick up rate & PPV (>10%) & allows the right people to get tested 
+• A normal FBC & ESR can be used as a simple rule out for myeloma
+• Don’t check CRP as usually nornal in myeloma
+• UE useful to check as part of CRAB although renal failure & hypercalcaemia later signs than anaemia & raised ESR 
+• CRAB for end organ damage = Calcium, Renal, Anaemia, Bone lytic lesions (better on CT than XR skeletal survey - only shows if 1/2 cortex eroded)
+
+Spectrum 
+• Myeloma - symptomatic with end organ damage 
+• Smouldering - paraprotein but no end organ damage (10% progress to myeloma each year), active monitoring 3-monthly bloods all of above 
+• MGUS - asymptomatic paraprotein (usually <30) with BM biopsy showing plasma cells <10%, surveillance determined by secondary care (1% progress to myeloma each year)
+
+Light chain myeloma - 15% of myeloma. Plasma cells produce Igs with 2 heavy chains & 2 light chains. When something go wrong they either produce clones of the whole Ig/paraprotein (eg IgA/G/M traditional myeloma) or just the light chain (kappa /lambda light chain myeloma - causing abnormal kappa:lamda ratio) 
+
+Interpreting myeloma screens 
+• Any paraprotein (IgA/M >10 or IgG >15) or abnormal kappa:lambda ratio (<0.1 or >7) = refer 2WW haematology (same day admission if AKI, hypercalcaemia >3, ?MSCC) 
+• Under this threshold is common in elderly/infection/inflammation as Igs do rise polyclonally so repeat in 3mo with FBC, ESR, calcium - if rising >25% or new symptoms refer 2WW
+
+Haem will do a BM biopsy to determine plasma cell % (>10% significant) 
+
+Treatment - under secondary care 
+• Autologous stem cell transplant & chemo either before SCT or to achieve remission if no end organ
+  - S/E = neuropathy, anaemia, infection, VTE 
+• IV zol to reduce pathological # risk 
+• Annual flu & one off pneumococcal jabs 
+
+Tags:
+  Cancer, haematology

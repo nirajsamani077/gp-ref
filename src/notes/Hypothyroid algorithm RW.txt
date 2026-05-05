@@ -1,0 +1,23 @@
+Hypothyroid algorithm RW
+
+Thyroxine is a hormone which helps to regulate metabolism. Low levels slow down processes in the body. TSH is the messenger the brain sends to make thyroxine in the thyroid gland, so we know if this messenger is high but the thyroxine level is low then the thyroid gland isn’t working properly to make thyroxine = hypothyroidism 
+
+Check TSH if symptoms, new AF, AI conditions, mood problems, weight change or on specific drugs (lithium, amiodarone) annually 
+
+If TSH raised and T4 (added by lab) low = Dx
+• Check anti-TPO antibodies - if + suggests AI (Hashimotos which is most common cause)
+• Start thyroxine 100mcg/d (usual dose for 60kg) but lower 25-50mcg/d if known CVD or elderly 
+• Recheck TSH 3 monthly till stable, may take 6 months to stabilise if was very high, then once stable TFT annual (if changing dose by 25mcg)
+• Keep TSH normal range, do not over suppress due to risk to AF and osteoporosis 
+
+NB
+• Low T4 low/normal TSH can suggest pituitary disease hypopit) - examine and refer to endocrine 
+• T3 (liothyronine) cannot be started in primary care, can be used by specialists to help with symptoms if T4 not helping 
+• DDx if TSH normal = other AI, haematinics, vit D, lifestyle, mood, ETOH, metabolic, meds (Bb CDs) 
+• High TSH with a normal T4 might suggest lack of compliance (or absorption issues , ensure taking on completely empty stomach 1h before taking any food milk or other tabs esp PPI iron calcium)
+• If persistently bad control consider Coeliac screen and refer to endocrine 
+• Whilst lithium and amiodarone can cause hypothyroidism, higher risk of statin induced myopathy and Propanolol /dig /steroids reduce renal clearance 
+
+
+Tags:
+  endocrine

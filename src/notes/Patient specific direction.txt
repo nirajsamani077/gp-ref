@@ -1,0 +1,4 @@
+Patient specific direction 
+
+Instruction to supply or administer medication to a named patient - can be done by HCA but original prescription must be signed by Dr
+E.g b12 injection 

@@ -1,0 +1,28 @@
+Pregnant /IC and viral rash exposure (chickenpox/shingles) RW
+
+Exposure classed close contact or same room 15m
+
+Same rules in pregnancy as for IC (eg steroids, DMARDs, HIV, chemo/malignancy, neonates or high risk infants <1) 
+• Seek advice from ID in all of these groups 
+
+Varicella (chickenpox and shingles)
+• Infectious period from 4d before rash to crusted over (although highest risk is within 24h of rash)
+• Risks serious material illness (pneumonitis, encephalitis) and if <20w congenital varicella syndrome if >20w neonatal varicella 
+• If clear previous hx of chickenpox /shingles and received 2 doses of shingles vaccine don’t worry (although unlikely given age if pregnancy) = no need to check antibodies or give PEP unless IC
+• Otherwise
+   - Check urgent antibodies (VZ IgG) to check immunity & d/w obstetric unit or specialist 
+   - If antibody negative (no immunity = IgG < 150 in pregnant, <100 in IC) = Give PEP with oral aciclovir 800mg QDS after window of 7-14 days from exposure (so you have time…more effective than immediate dosing so don’t give outside window) - refer for VZIG if can’t have aciclovir (usually only neonates)
+• If actually acutely infected & has rash = admit due to risk of severe illness (pneumonitis etc) & should have immediate systemic aciclovir (PO/IV) 
+
+MMR 
+• Notifiable condition but highly infective, check MMR status as need to check IgG (immunity) and IgM (current maternal infection) 
+• Risk = congenital rubella if early exposure <16w, SNHL, neonatal measles (panencephalitis), maternal pneumonitis
+• If no immunity or positive IgM (IgG for life may suggest prev infection refer to FM unit for to consider HNIG (human normal Ig) or even TOP in rubella (but is not screened for in pregnancy now as doesn’t meet criteria for screening)
+• Ensure post natal MMR 
+
+Slapped cheek (Parvo B19)
+• Same check IgG IgM and refer, risk of hydrops 
+
+
+Tags:
+  infection, obstetrics

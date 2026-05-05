@@ -1,0 +1,32 @@
+FIT testing & colorectal CA 2WW RW
+
+Colorectal 2WW criteria 
+• Abdo/anorectal mass or positive screening FIT = straight 2WW (still do FIT for abdo mass to determine source though) 
+• Unexplained symptoms = symptomatic FIT then 2WW if positive (changed 2023 though) 
+• >40 weight loss AND abdo pain (or >50 with 1)
+• >50 PR bleeding (or <50 with another Sx)
+• >60 CIBH OR IDA 
+    - Any age CIBH should have FIT, if younger calprotectin, if older CT abdo, if female CA125/USS
+    - Any age IDA should have FIT, and if >60 even any anaemia (regardless of ID) should have FIT 
+
+Screening FIT 
+• 60-74yo 2 yearly 
+• Cut off >80-100 (Vs >10 for symptomatic FIT so screening FIT can miss cases) 
+
+Symptomatic FIT
+• Symptomatic FIT tests are great as a rule out compared with screening fit (as cut off >10 rather than >100) - don’t be reassured if negative screening FIT in context of symptoms 
+• Symptomatic FIT not needed if anorectal mass  (straight 2WW) but useful in abdo mass (decides colorectal or other although still straight 2WW) 
+• Symptomatic FIT with all adults with CIBH, IDA, weight loss, unexplained abdo pain or PR bleeding (not affected by rectal bleeding unlike old FOBT) with above age cut offs a guide as colorectal CA can present younger (cases in 20s, 30s)
+• If >75yo can request screening FIT (not done after this due to lack of projected life expectancy benefit >10y) directly via national screening programme - but do consider life expectancy & if there are symptoms then it is symptomatic FIT 
+• If FIT not done or inadequate don’t delay referral if clinical suspicion but ask patient to redo FIT!
+• Don’t forget unexplained thrombocytosis >400 in age >40 = LEGO-C cancers which includes colorectal so would be sensible to do FIT 
+
+If symptomatic/screening FIT positive explain that will go onto have 2WW colonoscopy/Bx or CT colonography to r/o cancer & that usually 1 in 10 of those referred are diagnosed with cancer - otherwise can be things likes benign polyps, IBD, diverticular disease or just normal (half of time) 
+
+FIT negative pathway 
+• Still can 2WW if ongoing clinical concern or persistent symptoms (need further work up full bloods urine examination etc) or consider repeat FIT after certain time period (1mo) - although the symptomatic FIT test is great it isn’t perfect (still misses ~10% of cancers)
+
+CRUK tips for collecting your poo for guidance 
+
+Tags:
+  Cancer, colorectal, screening

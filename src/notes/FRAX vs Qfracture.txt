@@ -1,0 +1,20 @@
+FRAX vs Qfracture
+
+Assess all women >65 or all men >75, younger if obvious RF (fragility #, steroids, parental hip #, falls, smoking/ETOH, underweight)
+
+Both assess 10 year fracture risk 
+FRAX is international data, Q is UK based
+FRAX has less RFs but can incorporate BMD
+
+Go straight to DEXA if 
+- <40 with major RF (multiple fragility #, prednisone >7.5mg for >3 months) 
+- before anti-oestrogen Tx like anastrozole
+
+Go straight to bisphosphonate if >=75 with fragility fracture 
+
+FRAX will highlight
+- low risk (reassure, lifestyle)
+- intermediate risk (DEXA)
+- high risk (bisphosphonate)
+
+Repeat FRAX after 2 years or when RF changes if original score was in intervention threshold 

@@ -1,0 +1,9 @@
+Syringe driver 
+
+Oral morphine —> SC morphine = divide by 2
+Diamorphine is preferred but can interact with cyclizine to precipitate out, cyclizine interacts with a lot. 
+Most drugs mixed with water for injection but some need 0.9% NaCl (ondansetron, octreotide, ketamine) 
+
+Graseby syringe drivers have 2 kinds: 
+Blue - delivery in ml/hr
+Green - delivery in ml/24hr

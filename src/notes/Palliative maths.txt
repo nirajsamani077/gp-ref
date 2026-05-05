@@ -1,0 +1,15 @@
+Palliative maths
+
+Breakthrough vs TDD morphine = 1/6
+
+Oral codeine or tramadol to morphine = /10
+Oral morphine to oxycodone = /2
+
+Oral morphine to SC morphine = /2
+Oral morphine to SC diamorphine = /3
+Oral oxycodone to SC diamorphine = /1.5
+
+12mcg fent patch = 30mg oral morphine 
+10mcg buprenorphine patch = 24mg oral morphine 
+
+In CKD - buprenorphine, fent, alfent & oxycodone 

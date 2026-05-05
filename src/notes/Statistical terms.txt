@@ -1,0 +1,10 @@
+Statistical terms 
+
+Reliability - is something repeatable or consistent?
+
+Validity - is something accurate for what it’s measuring?
+• Internal validity (precision) - confidence we can place on cause-effect relationship in study (ie other confounders/variables not interfering), threats including reliability of instruments, sampling, loss of participants, history, maturation, sensitisation/instrument learning 
+• External validity (generalisation)- are conclusions generalisable both in place & time, threats including representativeness, artificial research setting, multiple treatments 
+• Other types - face value, content value, concurrent/predictive validity, construct validity 
+
+Bayesian probability - constant adjustment of initial beliefs/hypothesis 

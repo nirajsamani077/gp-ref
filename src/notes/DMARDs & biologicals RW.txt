@@ -1,0 +1,30 @@
+DMARDs & biologicals RW
+
+Conventional, biologicals and targeted newer ones (the citinibs - Janus kinase (JAK) inhibitors!) eg baricitinib which are oral
+
+Always started secondary care and then shared care agreement for continuing and monitoring 
+
+Usually effect and adverse effects within first 3mo (GI upset mouth ulcers tend to settle with time)
+
+Only stop in severe infection needing hospital (don’t stop routinely for surgery) 
+
+All can cause BM suppression, hepatitis, pneumonitis 
+
+• MTX - weekly SC or PO, folic acid 5mg on other 6 days (never same day as interferes with MTX absorption), can cause cirhosis, don’t prescribe TMP (interferes folate metabolism)
+• Leflunomide - HTN, peripheral neuropathy, very long half life (so stop really really long time before getting pregnant!)
+• Sulfasalazine - Neuropsych, oligospermoozia
+• HCQ - Neuropsych, retinopathy (annual ophthalmology screening after 5yrs) worsens psoriasis 
+
+Monitoring (apart from HCQ) initially FBC U&E LFT monthly for first 3mo then 3 monthly (MTX, SFS) or 2 monthly (LFN)
+
+If ALT  >2x ULN - d/w rheum if unwell admit, consider stopping & other causes
+If eGFR <30 typically stop and discuss 
+
+Biologics if failed to respond to 2 DMARDs 
+• Anti-TNFs (infliximab IV, adalimumab, etanercept SCs) - reactivate TB, monitor FBC U&E LFT, CXR rule out TB and risk of ca with all 
+• Anti-IL6 (tocilizumab IV/SC) - monitor lipids, false CRP in infection 
+• Rituximab - IV, rare cause progressive encephalopathy (PML)
+• Decisions by specialist to withhold with infections etc, no live vaccines 
+
+Tags:
+  rheumatology

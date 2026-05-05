@@ -1,0 +1,17 @@
+Normocytic anaemia algorithm RW
+
+Acute bleeding - may be obvious 
+Iron deficiency or mixed picture 
+Anaemia of chronic disease (ACD) - tired BM, CKD
+Haemolysis 
+Haematological malignancy /myeloma (esp if pan)
+
+Check RETICS (+ other haematinics, LFT, TFT, +/- myeloma screen if >60) and FIT test if >60 with unexplained anaemia 
+• Retics high >80 - if also BR high, check LDH hapto and refer haem, if BR normal then Ix bleeding 
+• Retics normal <80 - all other causes inc myeloma 
+
+
+
+
+Tags:
+  haematology

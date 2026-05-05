@@ -1,0 +1,30 @@
+Hypertension 
+
+St 1 - >140/90 or >135/85 home 
+= only treat if <80y + end organ/QRISK >10%/cardiac, renal, diabetes 
+= if <60 and qrisk <10 and persistent then consider starting & lifestyle 
+ 
+St 2 - >160/100 or >155/95 home 
+= treat 
+
+Sev - >180/120 clinic or home either value 
+Malignant - as per severe (usually >220) + fundoscopgy papilledema or retinal haemorrhage (admit for IV labetalol & further Ix)
+
+<55 or Diabetic - A
+>55 or black - C (not A as less efficacy, ARB ok) 
++ D 
++ spiro (if K <4.5) + alpha/beta blocker 
+If not controlled on 4 drugs - refer 
+
+Central agent (methyldopa) or direct renin inhibitor (aliskiren) under specialist care 
+
+Diabetes BP target home
+<135/85 if no end organ damage (140/90 clinic)
+<130/80 if end organ damage/microalbuminuria/>1 feature of metabolic syndrome (135/85 clinic) 
+ACE renoprotective so 1st line regardless, ARB if black. Avoid Bb & TZD as cause insulin resistance and contribute to silent hypos 
+
+Elderly BP target >80 clinic 
+< 150/90 (145/85 home) Dr
+
+Tags:
+  cardiology

@@ -1,0 +1,7 @@
+Variables in studies 
+
+Independent - something experimenter purposefully changes 
+
+Dependent - changes observed in this as a result of changes to independent variables 
+
+Controlled variables - all other variables in the study should stay same 

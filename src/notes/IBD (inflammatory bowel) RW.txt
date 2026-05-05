@@ -1,0 +1,77 @@
+IBD (inflammatory bowel) RW 
+
+1% of population (300k in UK) usually younger adults (2nd smaller peak 50/60s) lifelong remitting relapsing inflammation of bowel segments & extraintestinal effects, genetic & environmental fx
+• UC - partial thickness rectum up continuous, bleeding predominant 
+• Crohns - full thickness anywhere skip lesions with pain/WL predominant, fistulae, strictures, abscesses, smoking associated (UC = ?protective)
+• (Microscopic colitis) - normal colonoscopy but Bx shows inflammatory change, watery diarrhoea, associated with meds (NSAID, aspirin, PPI, SSRI), Rx usually PO budesonide 9mg 8w then taper (if failed other options below)
+
+Features (significant overlap with IBS but red flags)
+• PR bleeding, diarrhoea, tenesmus (rectal)
+• Weight loss/faltering growth, systemic upset
+• Exam - abdo mass, fistulae/PR abnormal, acute 
+• Bloods - raised CRP, anaemia 
+
+For all bloods (FBC, UE, LFT/bone, CRP, Coeliac, TFT, CA125 if woman >50 with GI Sx) & stool tests 
+• Stool MC&S (r/o infection) 
+• FIT test if meets criteria (>40 pain/WL, >50 bleeding, >60 IDA CIBH), if >10 refer 2WW 
+• Faecal calprotectin (protein released from inflamed bowel, very sensitive (good R/O if negative) but not specific (even above meds can raise as well as Ca/infection etc) 
+ - <100 = Unlikely IBD, make positive Dx IBS if everything else Ok, unless age >50 & calprotectin >50 where confused routine gastro referral 
+ - 100-250 = Repeat in 4-6w & refer routine, but if rising >250 then urgent gastro referral 
+ - >250 = Urgent gastro referral, if unwell admit 
+
+Secondary care will do 
+• Colonoscopy & Bx (confirms Dx & extent) 
+• Capsule endoscopy (extent) 
+• CT/MRI abdo (extent) 
+
+Management of new IBD under specialist depends on UC or Crohns (CD)
+
+• Inducing remission
+- UC = rectal mesalazine 4w unless pancolitis/L sided/refractory 4w add or together with oral mesalazine then steroids (topical usually for proctitis only)
+- CD = oral pred 40mg 8w tapering by 5mg/w (budesonide or mesalazine less effective less S/E), if not improving add AZA/mercaptopurine (check TMPT activity first as if low won’t work), if can’t use or not improving add MTX or inflixmab, enteral nutrition alone in kids 
+- Given need for steroids (never for maintanence) check FRAX and DEXA, vit D/Ca supps, bisphosphonates & muscle strengthening exercise 
+
+• Maintaining remission 
+- UC = Oral (or rectal) mesalazine, if >2 exacs add AZA/mercaptopurine (check TPMT activity 1st)
+- CD = May not need (pt choice), stop smoking, options of AZA/mercaptopurine, MTX if failed, surgery for comps (fistulae, strictures, abscess) in >50%
+
+• Managing IBD flare in primary care 
+- Admit if systemically unwell, check bloods & faecal calprotectin, Truelove & Witts criteria in UC
+ • >6 stool/d, bleeding in every stool, fever, tachycardia (>90), acute abdomen 
+ • Anaemia, raised ESR (>30)
+- If not admitting d/w IBD nurses and Px oral steroids (pred or budesonide usually 6-8w 30-40mg then wean 5mg/week) depends on advice 
+
+Extraintestinal manifestations (30% of UC)
+• Liver = PSC, AIH, gallstones (CD, malabsorption)
+• Rheum = Seronegative arthritis/AS, sacroiliitis
+• Eye = Anterior uveitis, episcleritis/scleritis 
+• Skin = Erythema nodosum, pyoderma gangrenosum
+
+Other factors
+• No live vaccines if on DMARD/biologics (should be 4w before starting, check Green Book), annual flu, 5yrly pneumococcal 
+• Dietician, 85% malnourished, 1/3 have IDA
+• Effective contraception (ideally LARC although IBD is UKMEC1 for most) needed 
+• Fertility - most have intact but active fistulating or surgical CD reduces, mesalazine/sulfasalazine MTX can reduce sperm count, may need 5mg folic acid preconception if malabsorption or sulfasalazine, stop MTX/MM/biological preconception & refer specialist immediately if becomes pregnant 
+• Avoid long term NSAIDs & opiates  
+
+IBD in children 
+• 1/3 present under 20 - have a low threshold to test faecal calprotectin & inflamm markers if GI symptoms, weight loss/faltering growth
+• Elemental diet as well as other meds can help induce remission, low threshold to admit & involve specialist 
+• Significant impact on growth, puberty and nutritional deficiencies /malabsorption 
+
+Signpost Crohns & Colitis UK & CICRA for kids 
+
+UHB specific - 01214249687 for IBD nurses or email ibdnurses.GHH@uhb.nhs.Uk 
+
+Additional nurse nuggets 
+• Loperamide is fine as long as no strictures, r/o infection first 
+• Bowel prep moviprep or picolax, low residue diet
+• Video capsule endoscopy for surveillance 
+• Orofacial granulomatosis (OFG) in crohns - use pred mouthwash 
+• Avoid NSAIDs all IBD - risk of ulceration 
+• Use septrin with steroids oral if IC ++/biologics 
+• Can inc oral mesalazine 2.4g to 4.8g max dose for 2 weeks initially sometimes 
+
+
+Tags:
+  gastroenterology

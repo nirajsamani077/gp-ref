@@ -1,0 +1,17 @@
+Isolated raised BR algorithm (Gilbert’s) RW
+
+Unconjugated or conjugated ?
+
+UBR (direct or conjugated BR <20% of total) = Gilbert’s (most likely) or haemolysis (check retics, LDH/hapto, film, FBC)
+
+CBR (>20%) = formal liver/biliary disease (ETOH, NAFLD, hepatitis or other) 
+
+Gilbert’s syndrome 
+• Common (up to 10%) benign mild intermittent rise in UBR (without other deranged LFT or haemolysis), triggers stress /infection /ETOH 
+• Genetic component (usually AR), defect in enzyme which conjugates BR in liver to form bile 
+• Non-pruritic jaundice (ULN = 20, usually not much higher and very rarely >80) 
+• No BR on urine dipstick & ensure no signs of cholestasis (pale stool, dark urine, pruritis) or HSM/CLD on examination
+• Not a disease, entirely benign (some studies show antioxidant effect), reassure, may cause jaundice during intercurrent illness, ensure inform people you have it & if persistent or signs above look for obstructive /other cause
+
+Tags:
+  gastroenterology, liver

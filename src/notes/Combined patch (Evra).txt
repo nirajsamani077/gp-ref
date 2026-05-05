@@ -1,0 +1,10 @@
+Combined patch (Evra)
+
+Change patch weekly for 3 weeks then off for 4th week for withdrawal bleed 
+
+Delayed patch change
+- if end of 1st/2nd week = <48h delay no precautions, >48h delay = 7d precautions & if UPSI in last 5d then needs EC
+- if end of 3rd week = same next start date, no precautions
+- if 1st patch delayed = 7d precautions 
+
+Less effective if obese 

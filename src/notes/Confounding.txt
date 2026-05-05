@@ -1,0 +1,5 @@
+Confounding 
+
+Variable which affects other variables to skew results eg age, smoking 
+Groups need to be matched & randomised to allow even amount of RFs in each group 
+At analysis stage - can control confounding by stratification 

@@ -1,0 +1,11 @@
+Incidence/prevalence 
+
+Incidence = number of new cases per population in certain time-frame 
+• 40 new cases in a 1200 population in last year = 3.33% annual incidence 
+
+Prevalence = total number of cases per population at certain time (point prevalence) or in certain time-frame (period prevalence)
+• 500 obese people in 10000 population = 5% prevalence of obesity 
+
+Prevalence = incidence x duration of condition 
+If chronic disease prevalence > incidence 
+If acute incidence usually = prevalance

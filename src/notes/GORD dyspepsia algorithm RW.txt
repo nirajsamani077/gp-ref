@@ -1,0 +1,57 @@
+GORD /dyspepsia algorithm RW 
+
+Consider admission (?UGIB), cardiac and biliary causes as well as immediate 2WW UGI criteria 
+• Any upper abdo mass or dysphagia 
+• >55 with WL + upper abdo sx (pain, gord) 
+• >40 with FHx or ethnicity (SE Asia)
+
+Other GI malignancy 2WW
+• >60 weight loss /abdo pain/ new DM- direct access CT abdo
+• Colorectal >40 >50 >60 criteria - FIT, unless rectal or abdo mass 
+
+Non urgent OGD criteria (all need FBC) 
+• >55 with dyspepsia/gord without WL, anaemia, raised plts & symptoms, NV & symptoms 
+
+Lifestyle initially 
+• Weight loss, reduce smoking/ETOH/NSAIDs (consider COX-2 inhibitor)
+• Small meals not late not spicy, sleep upright 
+
+OTC 
+• Alginates/antacid (sodium alginate with calcium carbonate and sodium bicarbonate) 10-20ml after meals and bed E.g. Gaviscon/Peptac 
+
+Failing this 1st line = 2 interchangeable either “Treat and test” or “Test and treat” 
+1.  Full dose PPI 1mo (omeprazole 20, lanso 30), if improved stop & if relapse then low dose (omeprazole 10 prn), if not improved test as below 
+2. Test H Pylori stool (or breath test) & treat - stop PPI 2w prior (can use famotidine short term whilst waiting) and ABX 4w prior (like OGD) - if positive H Pylori eradication therapy, if neg full dose PPI as above 
+• Omeprazole 20mg BD 
+• Amox 1g BD (if allergy = Clary/Metro, or add Bismuth/Levoflox/Tetracycline esp if resistant) 
+• Clary 500mg BD or Metro 400mg BD 
+
+2nd line - try the other option, try double dose PPI (40 omeprazole, 30bd lansoprazole). 
+
+3rd line - multiple options, often refer 
+• Switch to H2RA 1mo trial (famotidine, not ranitidine as concerns on supply & NMDA contamination causing Ca risk) - just as cost effective but evidence not as good as PPI
+• H Pylori retesting if initially tested positive and unclear if eradicated/or risks of gastric malignancy eg FHx or known ulcer (test >4w after last erad as TOC). 1st line re-erad often with levofloxacin
+
+• Consider alt Dx (abdo US, Coeliac serology), if both neg with pure epigastric pain (not retrosternal burning/reflux) + sx >8w = “functional dyspepsia” gut-brain axis issue, can trial amitryptilline 10mg ON slowly titrating up to 50mg weekly & CBT, if not helping refer 
+• 2WW criteria for OGD or Routine OGD if above - generally a good idea to refer if doubt or ongoing (can do lap fundoplication surgery)
+• H Pylori retesting if initially tested positive and unclear if eradicated/other indications (>4w after), 2nd line erad with Amox + levofloxacin
+• LT PPI with annual review, try to deprescribe 
+• Switch to H2RA 1mo trial (famotidine, not ranitidine as concerns on supply & NMDA contamination causing Ca risk) - just as cost effective but evidence not as good as PPI
+
+Deprescribing long term PPI (>8w)
+• Usually continue if endoscopy proven severe oesophagitis, ulcer, structure, GU/DU, Barrett’s, ZE syndrome or chronic NSAID/aspirin (and if not amenable to stopping)
+• Risks = return of sx, Benefits = reduced risks as associated with osteoporosis, GI ca including masking signs, deficiencies (Na, Mg, B12) + reducing pill burden/interactions (clopidogrel, phenytoin, warfarin)
+• Can taper or use PRN which has best results (1/10 get symptoms), rather than stopping suddenly (1/2 get symptoms)
+• Use OTC antacids and lifestyle measures , can always restart if needed 
+
+Other tips 
+• Take PPI on empty stomach 30min before food 
+• Can split the dose 20/20 if on 40, 10/10 if on 20
+• Consider in chronic cough (silent reflux), globus
+
+
+
+
+
+Tags:
+  gastroenterology

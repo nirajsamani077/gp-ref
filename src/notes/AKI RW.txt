@@ -1,0 +1,26 @@
+AKI RW
+
+Cr 1.5x increase from baseline in 7d
+Stage 1/2/3
+Prerenal, intrarenal, post renal 
+
+Think about AKI when 
+• Comorbidities - elderly, CKD, HF, DM with acute illness 
+• On SADMAN drugs - SGLT2, ACE, Diuretics, Metformin, ARB, NSAIDS - remember sick day rules 
+
+Generally if AKI found depends on stage & whether acutely unwell - if acutely unwell generally admit, if stage 3 generally admit, otherwise if stage 2 repeat next day and stage 1 repeat within 3d and consider cause 
+• If confirmed on repeat consider sepsis, dehydration, HF (diuretics, ACE), intrinsic kidney disease (urine ?haematuria/proteinuria/infection), obstruction (stone, BPH, blocked catheter), drugs 
+• Consisder USS KUB but generally if needing this needs admission   
+
+SADMAN drug monitoring U&E
+• ACE/ARB /entresto- baseline, 2w after change 
+    - if Cr 15-30% rise gen continue unless dehydration /hypotension, recheck 2w
+    - if Cr >30% rise recheck 1w if not returned to normal then stop
+    - if K >6.5 or unwell any time admit 
+    - if K >6 and stable rv other meds and pt, generally stop ACE and repeat U&E 1w
+    - if K>5.5 and stable instead halve and repeat 3d
+
+Use Think Kidneys 
+
+Tags:
+  renal

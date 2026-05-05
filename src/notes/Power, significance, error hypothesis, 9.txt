@@ -1,0 +1,17 @@
+ Power, significance, error hypothesis, 95% CI’s 
+
+Null hypothesis = 2 treatments are equally effective… significance tests use data to assess how likely this is to be true & they use p values which is probability that result achieved by chance
+
+When testing null hypothesis can be 2 types of error 
+• type 1 error (alpha)- null hypothesis rejected when it’s actually true (false positive, showing a difference exists between 2 groups when it actually doesn’t), increased by increasing number of endpoints meaning more likely to get a false positive result on one of them 
+• type 2 error (beta) - null hypothesis accepted when it’s actually false (false negative, showing no difference exists when there actually is), determined by alpha and by sample size 
+
+Power is probability of correctly rejecting the null hypothesis when it is false (ie probability of seeing a statistically significant difference) 
+= 1 - probability of type 2 error  (1-beta) so can be increased by increasing sample size 
+
+Variance is measure of spread of scores Away from mean = SD squared, therefore SD = square root of variance 
+SD Is measure of dispersion of scores from mean 
+In SD of normal distribution 
+68% lie within 1 SD
+95% lie within 2 SD
+99.7% lie within 3 SD

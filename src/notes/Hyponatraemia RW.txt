@@ -1,0 +1,33 @@
+Hyponatraemia RW
+
+Admit any with Na low with symptoms (neuro, vomiting) as cerebral oedema, or Na <125 (risk of seizures) - usually any Na <130 should be d/w medics same day unless chronic (although RF for falls fragility #) - should still Ix even though can be acceptable 
+
+Primary care Ix for mild Hyponatraemia >130
+• Repeat with serum osmolality & urine osmolality/sodium (paired) - if Na dropping d/w medics 
+• Serum osm >275 = d/w medics ?HHS, check BM
+• Serum osm <275 = true Hyponatraemia, urine 
+   - Urine osm <100 = not peeing out Na so must be rarer cause (polydipsia, water intox, poor sodium intake in anorexia/elderly) 
+   - Urine osm >100 suggests peeing out Na so 
+       • Urine Na >30 (renal loss) with 
+            - Hypovolaemia = dehydration, diuretics, Ad
+            - Euvolaemia = SIADH, hypothyroid , Ad
+      • Urine Na <30 (non renal loss) with 
+            - Hypovolaemia = D&V, third spacing 
+            - Hypervolaemia = HF, RF, LF 
+
+Ix for euvolaemic (SIADH, Addisons) or hyper
+• Bloods - usual, TFT, morning cortisol, BNP
+• CXR, CT TAP (Ca), CT head (although as IP)
+• Primary care if not admitting for these = stop diuretics or contributing meds, fluid restrict (up to 500ml/d), close monitoring 
+
+SIADH - ADH (vasopressin) from pituitary causes XS water reabsoroption which dilutes blood, lowers Na and concentrates urine with Na - once Addisons, liver, thyroid R/O as causes
+• Malignancy /infection - lung especially 
+• Neuro insult - stroke, SAH, bleed, infection 
+• Drugs - SSRI, AEDs, PPI - many drugs 
+
+Dont forget you cannot correct Na too quickly, causes central pontine myelinolysis/ osmotic demyelination & cerebral oedema - irreversible pseudobulbar palsy, paralysis, locked in, death 
+
+ 
+
+Tags:
+  endocrine

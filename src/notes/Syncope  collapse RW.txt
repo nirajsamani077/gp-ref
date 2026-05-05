@@ -1,0 +1,49 @@
+Syncope / collapse RW
+
+4 main causes - first 2 are clear red flags 
+• Cardiogenic - Arrhythmia, HOCM, valve  
+   - Sudden, exertion related, chest pain/SOB
+• Neurogenic - Epilepsy, SOL, bleed 
+   - Aura, tongue biting/incontinence, fit, post-ictal 
+• Postural hypotension 
+   - Meds or dehydration, postural change Hx 
+• Vasovagal /reflex (vagal response =Brady/low Bp)
+   - 3Ps= Prolonged standing, provoking, prodrome 
+   - Situational = cough, laughter, strain, micturition
+   - Rare when sitting (seated syncope = red flag)
+
+Full Hx (BDA) & exam - cardiac, neuro, postural BP
+• Should be lying for 10mins then check BP/HR
+• Stand and check at 1min & 3mins 
+• Drop in SBP >20 or DBP >10 = significant 
+• HR rise >30 or overall >120 = POTS if no BP change (although normal to be slightly more tachycardic when standing, if same HR ?ANS)
+
+ECG for all unless very typical vasovagal/simple faint & especially if FHx SCD /cardiac Sx etc 
+• Heart block, long QT, Brugada/WPW, AF, LVH etc = urgent or same day cardiology review (if not already admitting)
+• Rest of management targeted to cause or in secondary care eg ?epilepsy to be seen by neuro urgently within 2w first fit clinic 
+
+Driving - syncope scale 
+• Single faint = none
+• Single syncope explained & treated = 1 month 
+• Single unexplained syncope = 6 months & inform 
+• >1 unexplained syncope = 12 months & inform .
+
+TLOC algorithm 
+• Red flag cardiac cause = immediate cardiology assessment (within 24h) due to risk of SCD 
+   - Exertional, SOB, chest pain, palpitations
+   - HF/fluid overload, murmur, signs of PE 
+   - FHx SCD <40 or known inherited 
+   - Any syncope without prodrome >65 
+• If no red flags consider other causes = Epilepsy/seizure, Vasovagal/Situational, Postural hypotension or Diagnosis unclear 
+• Lateral/tip tongue biting suggestive of neuro, any tonic clonic incontinence abnormal posture prodrome or post-ictal confusion refer first fit clinic
+• Examine all as above, full cardiac neuro and postural BP after 1min standing after lying down if possible, even if no significant drop (20 systolic, 10 diastolic) but sx refer cardiology 
+
+Specific DVLA guidance for syncope for Group 1 (usually group 2 is stop and inform for all even for typical vasovagal - check DVLA at a glance guidance)
+• Typical vasovagal syncope (single or repeated with consistent prodrome) = can drive, don’t need to inform as long as avoidable trigger and never episodes at wheel (even if sitting)
+• Reversible cause syncope (avoidable trigger or reversible cause) = can drive if standing but if sitting stop driving 4w and inform 
+• Cough syncope = any posture cannot drive 6mo after 1 episode or 12mo after >1 episode & inform
+• Cardiac syncope = any posture stop and inform, if cause found and treated then can resume after 4w but otherwise licence will be revoked 6mo if 1 episode or 12mo if >1 episode 
+• Seizure suspected = as for cardiac, cannot drive for 6mo and if deemed risk of recurrence = 12mo (equivalent for group 2 = up to 5 years)
+
+Tags:
+  cardiology

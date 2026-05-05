@@ -1,0 +1,6 @@
+New drug - study design
+
+Can do placebo controlled trial but may be unethical if established treatment already available so statistician can decide whether trial designed to show 
+• superiority - need largest sample size 
+• equivalence - defined equivalence margin for CI
+• non-inferiority - lower CI needs to lie within equivalence margin, small sample size —> can then progress to larger studies showing superiority 

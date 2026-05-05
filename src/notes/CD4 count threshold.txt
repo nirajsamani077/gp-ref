@@ -1,0 +1,5 @@
+CD4 count threshold 
+
+Antiretrovirals at any 
+<200 = PCP prophylaxis (cotrimoxazole)
+<50 = MAI prophylaxis (azithromycin)

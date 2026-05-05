@@ -1,0 +1,39 @@
+Angina /IHD RW 
+
+Any recent onset /new or rest pain = R/O ACS 
+• >15mins, diaphoresis, NV, SOB, jaw/arm radiation
+• Current pain - Call 999/urgent admission, 300mg aspirin & GTN spray 1 puff 5mins then 1 puff. 
+• Pain free now - Try to get ECG but if not urgent admission, don’t delay, steps as above 
+
+If typical stable angina story (typical pain, triggered by exertion and relieved by rest or GTN after 5mins) with CV RFs 
+• Arrange ECG & bloods (HbA1C, lipids) +/- CXR
+• Start aspirin 75mg and give GTN spray 
+• Refer to rapid access chest pain (RACP) clinic for dynamic/confirmatory tests
+ - Exercise ECG, stress echo, myocardial perfusion scan (SPECT), cardiac MRI depending on likelihood 
+ - If suspected rather than definite angina (history not typical) would have CTCA (NPV = 99.5%) 
+   • No CAD = not angina, no further cardiac Ix
+   • Non obstructive CAD = start Rx/secondary prev
+   • Obstructive CAD = above, if LMS/TVD refer for formal angio & consider PCI/CABG 
+
+Lifestyle (secondary prev) - smoking, weight, ETOH, diet exercise, BP, diabetes 
+
+Drug treatment for angina 
+• Secondary prev - aspirin (clopidogrel only if other vascular disease eg CVA PVD), atorva 80mg, ACE
+• Symptomatic = GTN for all (1 spray under tongue, wait 5 mins, 1 spray again, if not relieving call 999)
+  - Bb or rate limiting CCB (prefer Bb, never both)
+     • Atenolol 25-50mg up to 100mg
+     • Diltazem or Verapamil MR
+  - Add DHP CCB (amlodipine) to Bb 
+  - Specialist decide next steps (refer cardiology) 
+     • Long acting nitrates (ISMN) 
+     • Nicorandil - risk oesophageal/skin/eye ulcers 
+     • Ivabradine 
+     • Ranolazine
+     • Elective PCI/CABG 
+
+Nitrates - tolerance occurs with SR regimens, use asymmetric dose regimen (>10hr washout period)
+
+NB: Takotsubo CM “broken heart” apical ballooning of heart with coronary spasm due to acute emotion/stress mimicking MI/AHF with ECG changes trop/BNP rise but normal coronaries on angio - supportive Rx & 95% return to normal LV function within 3w (ACE Bb MRA can reduce cardiac load short term & can usually be stopped), may have serial echo’s 
+
+Tags:
+  cardiology

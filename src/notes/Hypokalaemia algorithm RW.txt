@@ -1,0 +1,23 @@
+Hypokalaemia algorithm RW
+
+If <2.5 or <3 with ECG changes (TWI, ST depression, long QT, U) = admit for IV replacement 
+• Symptoms (myalgias, cardiac, neuro) or high risk group (diabetic check BM as sign of DKA, HF, IHD, on digoxin) = low threshold to admit 
+
+98% of causes = Diuretics or GI loss (D&V) !!!
+• Hypomagnesaemia, dig toxicity 
+• Endocrine + HTN - Conns, Cushings, CAH, Liddle
+• Other drugs - SABA, insulin, laxatives, ETOH
+• Rare - RTA, eating disorder (anorexia), burns 
+
+Oral replacement (>3 or >2.5 no ECG, A/S, no risk)
+• Sando K 2 tabs TDS for up to 5d and repeat 
+• Stop diuretics ST and manage /Ix GI losses 
+• Don’t give Sando K if on spiro (risks HyperK ++)
+
+If choosing to Ix underlying cause
+• BP & BM 
+• Mg, FBC (leukaemia rare cause), dig level 
+• Refer endocrine if ?Conns or Cushings (can check Urine K:Cr ratio if raised = renal loss) 
+
+Tags:
+  endocrine

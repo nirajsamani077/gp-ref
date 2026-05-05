@@ -1,0 +1,12 @@
+Fatty liver, ELF testing, FIB4
+
+USS confirms fatty liver, rest of liver screen NAD (use EMIS fatty liver template) 
+
+If no XS ETOH - calc FIB4 (advanced fibrosis risk) 
+• <1.3 = low risk, manage NAFLD in GP with annual LFT/UE/HBA1C/lipids/BP and treat with statin/diabetes/weight loss 10%
+• 1.3-3.25 = check ELF and as below 
+• >3.25 = high risk so refer 
+
+If XS ETOH (>14 units) - check ELF test first (separate gold top) as FIB4 inaccurate
+• >9.8 high risk so refer to Gastro 
+• <9.8 manage in GP, ETOH reduction 

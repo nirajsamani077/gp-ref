@@ -1,0 +1,35 @@
+Notifiable diseases 
+
+Acute encephalitis
+Acute infectious hepatitis
+Acute meningitis
+Acute poliomyelitis
+Anthrax
+Botulism
+Brucellosis
+Cholera
+COVID-19
+Diphtheria
+Enteric fever (typhoid or paratyphoid fever)
+Food poisoning
+Haemolytic uraemic syndrome (HUS)
+Infectious bloody diarrhoea
+Invasive group A streptococcal disease
+Legionnaires Disease
+Leprosy
+Malaria
+Measles
+Meningococcal septicaemia
+Mumps
+Plague
+Rabies
+Rubella
+Severe Acute Respiratory Syndrome (SARS)
+Scarlet fever
+Smallpox
+Tetanus
+Tuberculosis
+Typhus
+Viral haemorrhagic fever (VHF)
+Whooping cough
+Yellow fever

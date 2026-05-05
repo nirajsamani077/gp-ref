@@ -1,0 +1,80 @@
+Dementia RW
+
+Common & rising - ~1m people in UK, cost ~£30bn /year mostly social care 
+
+Degeneration of nerve cells in the brain with age /other medical problems eg heart disease/DM causing progressively worse memory, ability to problem solve/functioning and behaviour which can affect independence, mood and risks things like falls & infections 
+
+Causes/types 
+• Common - Alzheimer’s, vascular
+• Less - Lewy body (10-20%), PD, Frontotemporal 
+• Rare - CJD, HIV (50% of AIDs), Huntingtons 
+
+Reversible causes 
+• Thyroid (hypothyroidism), B12/folate deficiency, hypercalcaemia, hyperglycaemia 
+• Intracranial (SDH, SOL, NPH, neurosyphilis) 
+• Chronic drug/ETOH 
+
+RFs - CVD (BP DM especially), smoking, sedentary, lack of mental/social stimulation - consider in annual health review 
+
+DDx 
+• Delirium - Acute new onset fluctuating trigger (infection, constipation, pain, environment)
+• Depression - Significant overlap 
+• Sensory impairment - vision/hearing 
+• Mild cognitive impairment - memory loss without any functional impairment, common outcome of referral, consider managing above RFs annual review & general points to slow progression to formal dementia 
+• Functional memory disorder - concerns about memory but actually good memory, psych overlap 
+
+Hx /Ex pointers 
+• Collateral history 
+• Memory loss & problem solving/independence with examples & on ADLs & functioning (driving)
+• Behaviour & mood, sleep
+• Meds/polypharmacy - anticholinergic burden 
+• Obvious reversible cause ? Eg thyroid, etoh 
+• “Face-saving” and “head-turning” signs 
+
+Validated assessment tool - 6-CIT the best (GPCOG better for screening, MMSE too long & lacks sensitivity in early cognitive impairment), if correct = 0pts, if incorrrect = (4) as per below 
+• Time - Year (4), month (3) current time (3)
+• Give name/address - John Smith 42 West Street
+• Reverse tasks - count back 20-1 (4), months (4)
+• Repeat name/address - 5 parts, (2) for each 
+Any score >8 /28 = significant cog impairment 
+If collateral can use IQCODE questionnaire 
+
+If dementia suspected 
+• Memory bloods (baseline, TSH, haematinics, bone, HbA1C) 
+• Urine MSU to R/O UTI causing delirium 
+• Refer memory clinic if no reversible cause found  (geriatrician will assess, MRI brain (or CT if can’t stay still for long), may do PET/SPECT if specific Dx unclear & give specific Dx and management plan)
+• If young, rapidly progressive or atypical refer urgent or neuro for work-up 
+
+Management general factors to consider 
+• GP duty - arrange F2F following Dx for support, answering Qs, care arrangements, capacity assessment, signpost services & annual review with specific plan, should have named GP, medication review (anticholinergic burden scale) 
+• Self care - Nutrition, hydration, falls, infection risk (refer PT OT SLT dietician) as needed. Consider social prescriber & group reminiscence /cognitive rehab therapf as staying mentally & social active can help in mild/moderate dementia (quizzes, word number games etc)
+• Social care - Social care input via referral & signposting to council/gov websites, consider carer stress & respite care/breaks (Carers UK website), can be coded as carers & signposted to carer training & support programmes 
+• Advanced care planning - LPOA (health, finances), advanced directives, RESPECT forms & preferred place of care/death (Age UK website)
+• Driving/DVLA & other safety/SG aspects- Patient has legal duty to inform DVLA & insurer of Dx & stop driving unless early dementia with good function however DVLA will arrange formal medical (signpost to local driving mobility centre), annual RV (any group 2 licence =revoked). If pt can’t inform or you have reason to believe they won’t tell them or are still driving will need to breach confidentiality & inform DVLA ourselves. Consider home fire, gas, wandering, falls risks (wrist alert bracelet) & consider gun licenses! 
+
+Specific medications for specific dementias
+• Alzheimer’s - acetylcholinesterase inhibitors (donepezil, rivastigmine) or memantine based upon MMSE severity 
+ - >15-30 = mild/moderate - donepezil 
+ - <10-15 = severe - memantine 
+ - Consider memantine if moderate/severe or add on if already on donepezil & progression (but best to seek specialist advice, can make 1st Px though)
+ - Continue as long as benefitting in some way 
+ - S/E = donepezil (bradycardia so monitor HR, vivid dreams, common NV headaches), memantine (less but HTN, constipation, sleepiness ) 
+ • Lewy body - similar to above
+ • Neither meds for vascular, FTD or other types 
+ • Doses - donepezil 5mg initially 1mo then 10mg, memantine 5mg initially then increase 5mg/w to max 20mg @ bedtime 
+
+Common symptoms in dementia & management 
+• Agitation - R/O delirium & sensory environment, social & psychological interventions vary, only use antipsychotics (risperidone or haloperidol) lowest dose short time <6w with review if severe distress or risk to self/others 
+• Depression/anxiety - consider CBT if able, avoid antidepressants unless pre-existing MH problem 
+• Sleep - Focus on hygeine, exposure to daylight/exercises/activities in day, no Z-drugs or melatonin 
+• Falls - PT mobility, eye/hearing test every 2y 
+• Refusing meds - no covert giving of meds if they have capacity & refuse if lacking capacity do best interests meeting with NOK, IMCA & may need DOLs 
+
+Signs of end stage/advancing dementia & ensure palliative/advanced care planning 
+• Unable to recognise family, have conversations
+• Complete dependence on carers for all ADLs
+• Incontinence & aspiration 
+• Recurrent delirium 
+
+Tags:
+  geris

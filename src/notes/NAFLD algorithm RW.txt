@@ -1,0 +1,15 @@
+NAFLD algorithm RW
+
+Investigate if
+• Persistent raised ALT (also need AST and FBC to calculate Fib-4) with other causes considered/RO (eg ETOH hepatitis AI drugs) OR
+• US shows fatty liver 
+
+BSOG guildelines 
+Lifestyle lifestyle lifestyle 
+Calculate Fib-4 score 
+• >2.67 = high risk advanced fibrosis REFER
+• 1.3-2.67 = do ELF score or Fibroscan, if + REFER
+• <1.3 or neg ELF/Fibroscan lifestyle surveillance 2y
+
+Tags:
+  gastroenterology, liver

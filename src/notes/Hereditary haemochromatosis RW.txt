@@ -1,0 +1,33 @@
+Hereditary haemochromatosis RW
+
+Autosomal recessive mutation (chromosome 6) affecting HFE gene which regulates GI iron absorption leading to iron overload 
+
+Homozygous = 1:300, carrier = 1:10
+M affected earlier as F have menstrual loss 
+
+Presentation 
+• Incidental raised ferritin or FHx
+• Chronic liver disease 
+• Arthritis (pseudogout)
+• Bronze diabetes (pancreas) and endocrinopathy (pituitary invasion causing hypogonadism)
+• CCF from cardiac 
+
+Exam 
+• Slate grey appearance
+• CLD Signs - jaundice, hepatomegaly, ascites 
+• Scars - liver transplant (rooftop/J shaped), biopsy scars or venesection scars in ACF
+• Softer signs - joint replacement, SC insulin injection sites 
+
+Ix: 
+Screening - ferritin/transferrin sat unless family Hx = HFE gene (C282Y and H63D mutations)
+Ferritin >500, TSAT M >50% F >55%, low TIBC
+Other- HBA1C, AFP, USS liver, CXR, ECG, echo 
+Liver Bx for diagnosis, staging 
+
+Rx: 
+Venesection - 1 unit/week til iron deficient (aim TSAT & ferritin <50) then 3-4x/year - desferroxamine = 2nd line
+
+If cirhosis 200x increase risk of HCC (normal life expectancy if not and treated) - so HCC surveillance with AFPs/USS and ETOH avoidance 
+
+Tags:
+  gastroenterology, haematology

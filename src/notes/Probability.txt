@@ -1,0 +1,4 @@
+Probability 
+
+Bayesian probably - probability can be altered as results come in, eg does a new drug treat a condition rather than looking at traditional probablity which is yes/no 
+

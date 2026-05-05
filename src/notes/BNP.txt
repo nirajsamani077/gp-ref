@@ -1,0 +1,7 @@
+BNP 
+
+<100 = rule out HF
+
+Falsely high - CKD (reduced excretion) 
+Falsely low - HF treatment (ACE, Bb, diuretics)
+

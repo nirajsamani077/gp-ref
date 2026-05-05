@@ -1,0 +1,6 @@
+Delphi method 
+
+Accepted method to get convergence of expert opinion with rounds
+1 - open ended questionnaire 
+2 - second questionnaire to review info 
+3 - third questionnaire more refined 

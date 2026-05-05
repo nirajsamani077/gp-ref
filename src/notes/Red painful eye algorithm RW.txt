@@ -1,0 +1,36 @@
+Red painful eye algorithm RW
+
+Hx - UL/BL, onset, visual loss, pain/headache, d/c, gritty/watery, photophobia, trauma, contact lenses 
+Ex - VA snellen, pupils, EOM, fields, fundi, lids and fluorescein yellow stain with blue light if able 
+
+Immediate red flag for same day eye casualty
+• Any trauma or contact lens wearer (corneal)
+• Any visual loss 
+• Any significant pain 
+• Abnormal pupils (AACG, anterior uveitis)
+
+Red flag DDx 
+• AACG - headache, vomiting/abdo pain, often ppt being in dark room (larger pupil obstructs flow), fixed semi dilated pupil, hazy cornea with circumcorneal injection, hard globe, tonometer IOP
+• Anterior uveitis - associated rheum (RA, AS, Sjogrens, IBD), dilated abnormal shaped pupil, watery photophobic eye, circumcorneal injection, hypopion pus fluid level in anterior chamber 
+• Scleritis - associated rheum (RA, SLE, Wegeners), worse with eye movements, watery eye & headache, scleral injection and visual loss (Episcleritis - less pain/watering, no visual loss, limited scleral injection, usually self limiting 3w lubricating drops & refer if not improving)
+• Corneal (FB, abrasion, ulcer) - contact lens, often trigger, visual loss photophobia watery gritty eye, stain as above (not if traumatic), refer almost all (metallic as ring rust, organic FB, traumatic globe), chemical injury needs ++ irrigation saline
+• Orbital cellulitis / Acute bacterial conjunctivitis (usually gonococcal) - sudden severe lid eye swelling visual loss, discharge, risk of endoophthalmitis and corneal perforation (neonatal conjunctivitis = refer all, can be chlamydial/gonococcal high risk of comps, if only discharge no red eye consider blocked tear duct = more common)
+
+More benign red eye conditions 
+• Simple conjunctivitis - viral allergic bacterial, conjunctival redness discharge sticky eye, mostly viral supportive avoid sharing cloths, allergic cold compress consider topical antihistamine/sodium chromoglicate (mast cell stabiliser), bacterial topical chloramphenicol drops 1 drop every 4-8h depending on severity till better 48h 
+• Blepharitis - irritated gritty dry eye (meibomian gland dysfunction), crusted itchy lids, warm compress, lid hygeine soft cotton bud, can rub chloramphenicol on lids & if posterior/persistent may need tetracycline ABx 
+• Dry eyes - Above worse FB sensation, can be systemic (Sjogrens, meds), lubricating drops /artificial tears (hypromellose/ carmellose usually) 
+
+THIN 
+Hypromellose 0.3% (/Teardew). PF - Evolve, TN 
+Carmellose 0.5% (VIZcellose). PF - Lumecare, XFr
+Carbomer 0.2-1% (Clinitas). PF - Viscotears, XFr 
+Sodium hyaluronate 0.2% (EyeAze) - EyeAze, blink
+Paraffin night ointment - XNi (Xallin night), HyloNi
+THICK
+
+• Entropion/ ectropion - often incidental, can predispose exposure keratitis/abrasion & dry eyes, usually lubricating drops & refer if troublesome 
+• SC haemorrhage - painless scary looking well demarcated scleral injection (sparing cornea), normal vision pupils, check trigger (straining), BP and clotting disorder but most no UC + resolve 3w
+
+Tags:
+  opthalmology

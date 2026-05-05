@@ -1,0 +1,12 @@
+Mean, median, mode 
+
+Measures of central tendency 
+
+Mean - average, sensitive to skewed data and outliers (ie not normally distributed)
+Median - order numbers, middle number 
+Mode - most common number 
+Range - top number minus bottom number 
+
+Interval/ratio (ND) - mean 
+Categorical/nominal - mode 
+Ordinal/ratio (nonND) - median 

@@ -1,0 +1,10 @@
+Sections 
+
+2 - admission for assessment 28d, not renewable
+3 - admission for treatment 6mo, can renew 
+4 - emergency 72h assessment order (can be GP)
+5(2) - legally detain voluntary hospital patient 72h
+5(4) - same as 5(2) but nurse & 6h instead 
+17a - community treatment order if don’t comply 
+135 - break into property to move to safe place
+136 - remove from public to safe place if M unwell

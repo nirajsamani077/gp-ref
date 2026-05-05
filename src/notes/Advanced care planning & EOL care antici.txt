@@ -1,0 +1,66 @@
+Advanced care planning & EOL care /anticipatories /syringe drivers RW
+
+Start the conversation if signs of health deterioration (admissions, increase care, physical decline as below) 
+• Progressive cancer - too frail for curative Rx 
+• Severe HF/COPD/IPF/CKD/cirhosis
+• Neurodegenerative disease progression- loss of swallow, speech, motor, recurrent aspiration 
+• Advanced dementia /frailty signs (recurrent acute geriatric giants - falls/off legs, delirium, incontinence, polypharmacy 
+
+Trajectories - rapid decline (cancer), intermittent decline (organ failure) or gradual decline (frailty dementia) 
+
+RESPECT conversation - SPIKES 
+• Setting (with NOK, capacity, if no NOK ?IMCA)
+• Perception/Invitation (how do you think your health is at the moment, how much would you want to know about plans for the future)
+• Knowledge - use their concerns, explain you are worried about significant deterioration, explain when critically unwell the heart can stop beating & can stop breathing, this would be a natural death however medics can try to restart the heart by doing chest compressions or shocking the heart which only works in a minority of cases where there is a treatable cause - of which most of the time there isn’t especially in this case. How do you feel about this? Some would prefer to prioritise comfort dignity etc. Similar chat about ITU life support machines etc 
+• Empathy 
+• Summary/next Steps
+
+Also consider
+• Adding to GSF (see below)
+• Anticipatory meds (see below)
+• Notifying OOH/ambulance services
+• LPOA health/finances
+• Advanced directives to refuse treatment (ADRT “living will” - legally binding refusal for treatment even if life sustaining if capacity, cant demand) - MacMillan ADRT form can be used & doesn’t need a solicitor (but does need to be written formally)
+• Discuss place of death & post death plans (cremation, burial etc)
+
+Identifying those approaching EOL & last days of life is tricky but ask honest questions putting patients dignity, values, comfort and control at front - some general & disease specific indicators as above & GSF also gives idea of prognosis time
+• GSF blue = stable diagnosis, years + 
+• GSF green = unstable disease, months, DS1500
+• GSF yellow = deteriorating, weeks prognosis 
+• GSF red = final days of life, days prognosis 
+“One chance to get it right” report & approach important document for EOL care 
+
+Anticipatories SC for symptom control at EOL  (use MASCC form & DNs to administer so refer) 
+• Morphine 2.5-5mg SC 2 hourly PRN (max 30mg)
+   - Oral morphine to SC = /2 (consider this if on)
+   - Eg on MST 20mg BD, requirement = 20mg SC
+   - If renal failure (eGFR) oxycodone SC best 
+      • Oral morphine to oral oxycodone = /2
+      • Oral oxycodone to SC oxycodone = /2 again  
+• Midazolam 2.5-5mg SC 2 hourly PRN(max 30mg)
+• Nausea vomiting
+   - Levomepromazine 2.5-5mg 4 hourly PRN (broad spec, reduce in renal failure, sedative)
+   - Cyclizine 25-50mg 6 hourly (obstruction, ICP) 
+   - Haloperidol/metoclopramide 1mg/10mg respectively if gastric stasis (drugs, ANS, ascites)
+   - Dexamethasone 8-16mg /d if mets (discuss)
+   - In PD avoid most due to EPES risk - ?cyclizine
+• Resp secretions /colic 
+   - Hyoscine butylb 20mg SC hourly (max 120mg)
+• Breathlessness = morph midaz (if non EOL use breathing techniques, circulating air in room (fan), discuss either SR morphine or PRN 0.5mg oral lorazepam/diazepam esp if anxiety) 
+• Other Sx 
+   - Itching - Emollients, menthoderm soothing, sedating antihistamine/ondansetron 8mg BD/gabapentin if uraemia although limited evidence 
+   - Hiccups - Often uraemia, ICP or gastric stasis drug related, sipping iced water helps, discuss with palliative but can try Prokinetic (metoclop, domperidone, haloperidol) or dexamethasone 
+   - Seizures - often if mets ICP, uraemia/metabolic or unable to take AEDs, can be put on oral keppra or SC midazolam or keppra (unlicensed) syringe driver @ EOL - discuss with specialist 
+   -  Nutrition/hydration - give what they like & can tolerate, little & often, eat together, steroids can improve appetite but not @ EOL, mouth care - remember as body shutting down has reduced needs 
+   - Bleeding - involve specialist, gauze soaked in TXA/adrenaline or haemostatic dressing (Kaltostat), buccal midazolam 1ml (10mg)/IM last resort, often terminal event distressing +++
+
+Typical syringe driver doses (CSCI) over 24h
+• Morphine 10-20mg (low end if opiate naive), oxycodone/fentanyl/alfent if eGFR <30 seek advice 
+• Midazolam 10-20mg (May need up to 50mg)
+• Levomepromazine 6.25-25mg (also sedative)
+• Hyoscine butylb 60-120mg (hydrobro sedating)
+
+Refer Scottish & West Midlands palliative guides .
+
+Tags:
+  eol, geris

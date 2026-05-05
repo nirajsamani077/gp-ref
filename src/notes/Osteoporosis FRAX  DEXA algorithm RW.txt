@@ -1,0 +1,43 @@
+Osteoporosis /FRAX / DEXA algorithm RW
+
+Most people (with any kind of RF >50 and all F>65 and M>75) = FRAX to assess risk and decide to DEXA or treat based on T-score 
+
+Few young people high risk = straight to DEXA (< 40 with fragility #, steroids pred >7.5mg for >3mo or POF) - scoring tools not great for this age 
+
+Few old high risk = straight to bisphosphonate (>75 with fragility #), IV zol preferable if NOF
+
+If starting - oral bisphosphonate (checking renal fx bone and dental check first), if not tolerating for IV zol or SC denusomab 
+
+On FRAX use NOGG guidance to assist 
+
+Looking for secondary osteoporosis
+• Bloods - FBC UE bone LFT TFT CRP vit D
+• Vertebral lateral LS XR can show asymptomatic insufficiency # (check if any RF >50yo + T score osteoporotic, long term steroids, back pain, loss of height or kyphosis) as high risk of future # (if found refer OTS urgent, no good Rx itself)
+
+Non-bisphosphonate Rx
+• Lifestyle - reduce ETOH (<14u), stop smoking, keep BMI healthy 20-25
+• Weight bearing exercises , flexibility/stretching 
+• Manage falls risks 
+• Calcium /vit D supp - at least 800mg/d calcium and 800IU/d vit D, supplement only if diet inadequate (check using CGEM calcium calculator) and should be taken separate to bisphosphonates 
+
+Bisphosphonate Rx 
+• Aledronate/risedronate OD Or OW PO, Zol IV 
+• Inhibits osteoclasts (reduces bone breakdown)
+• S/E - Oesophageal ulcers, Osteonecrosis of jaw (dental check before), Atypical femoral fractures, Hypocalcaemia (replete calcium vit D), before starting, if low eGFR consult BNF for doses 
+• Take tab whilst sat up with plenty of water on empty stomach (>30min before food), stay upright for 30mins 
+• Duration usually 10y oral or 6y IV zol if high risk (>70, prev hip/spinal #, >2 spinal #, pred) otherwise half of that (5y 3y). Often repeat DEXA and FRAX every 2-3y and if changing can consider bisphosphonate holiday
+• SC denusomab 6monthly as next line (don’t stop unless specialist review)
+• If ++ high risk (T score <-4, vertebral fragility #) then refer for teriperatide daily SC injection or romosozumab monthly SC injection (SIGN)
+
+Steroids (>7.5mg/d over mo or intermittent courses >30mg for 4w in 3mo)
+• If high risk (previous fragility #, post menopausal) do DEXA but start Rx without waiting result 
+• if low risk otherwise DEXA first 
+
+Osteopenia Rx (only mentioned on SIGN guidance and not on NOGG or NICE)
+• T-score -1 to -2.5 - if >65 may benefit from 18mo IV zol for 6y then review as majority of fragility # occur in osteopenia rather than osteoporosis 
+• Non-bisphosphonate Rx & repeat DEXA 2-3y
+
+
+
+Tags:
+  geris, metabolic

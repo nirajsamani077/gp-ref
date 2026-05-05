@@ -1,0 +1,12 @@
+Drug monitoring 
+
+Statin - LFT baseline, 3 & 12mo
+ACE - UE baseline, change, annual 
+Amiodarone - TFT, LFT, UE, CXR baseline then TFT/LFT 6monthly
+
+MTX - FBC, UE, LFT baseline then weekly til stable then 2-3monthly
+AZA - FBC, LFT baseline, FBC weekly first month then FBC/LFT 3monthly
+
+Lithium - TFT, UE baseline. Lithium levels weekly till stable then 3monthly (12h post dose), TFT/UE 6monthly
+Valproate - LFT, FBC baseline then LFT 6monthly
+Pioglitazone - LFT baseline & regularly 

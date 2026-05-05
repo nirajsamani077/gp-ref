@@ -1,0 +1,23 @@
+Delirium RW
+
+Common underdiagnosed, esp hypoactive compared with hyperactive = “Acute confusional state” New onset disturbance alertness/attention with disorientation which fluctuates & trigger 
+• ICU BED HEAD - Infection, Constipation, Urinary retention, Bleed, Electrolye/sugar, Dehydration, Hypoxia/hypercapnia, Environment, Acute pain, Drug/ETOH (esp opiates BDZ Z-drug gabapentinoids anticholinergics psychotropics)
+
+Validated assessment tool = 4AT
+• Alertness (ask name & age)
+   - Normal = 0, Mild sleepiness = 1, Abnormal = 4
+• Attention (count months or 20-1 backward) 
+   - >Half correct = 0, <Half = 1, Untestable = 2
+• Acute/fluctuating - No = 0, Yes = 4
+• AMT4 
+  - No mistake = 0, 1 mistake = 1, >1 mistake = 2
+Any score >0 suggests cognitive impairment & score >=4 suggests delirium 
+
+Most delirium is admission unless refuses with capacity, clear cause to be treated & can be safely managed at home with close F/U
+
+Managing distress/agitation - optimise environment (safe space, avoid overstimulation, familiar faces) & really no place for BDZ or antipsychotics unless at significant risk to self or others (usually admitted) - would be lowest possible dose (0.5mg) haloperidol IM or PO under specialist (can worsen PD/Lewy Body dementia so is more challenging, quietiapine or adjusting PD meds is best approach in this group) 
+
+Follow up as delirium can be sign of undiagnosed cog impairment or dementia - debrief time and assessment a few weeks after episode should be arranged.
+
+Tags:
+  geris

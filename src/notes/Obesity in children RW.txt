@@ -1,0 +1,21 @@
+Obesity in children RW
+
+BMI centile on RCPCH/WHO chart 
+• >85th centile = overweight 
+• >95th centile = obese 
+• >99th centile = severely obese 
+Can use weight to height ratio if >5yo (>0.5) “keep your weight less than half of your height” 
+
+Causes 
+• Almost all due to lifestyle/deprivation 
+• Secondary - Hypothyroidism, DM, Cushings, GH deficiency, Downs, Prader-Willi (check HbA1C, lipids, TFT at least) 
+
+Risks - SUFE, tibial bowing (Blounts), OSA, IIH, CVD, bullying and psychological 
+
+Management - multicomponent intervention 
+• Get family involved, exercise mainstay 1h a day with cutting out junk in diet, engage school 
+• Orlistat only in secondary care if >12yo
+• Bariatric surgery only exceptional circumstances .
+
+Tags:
+  lifestyle, paediatrics

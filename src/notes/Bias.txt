@@ -1,0 +1,28 @@
+Bias 
+
+Selection bias - error in assigning individuals to groups leading to differences
+• Sampling bias - subjects not representative of population, which may be due to volunteer bias where volunteers are not representative or non-responder bias where people who don’t respond are not included but likely to have poorer outcome 
+• Berkson bias - subjects chosen from subgroup (eg hospital) & not from gen pop 
+• Other includes loss to follow-up bias, prevalance/incidence bias (study characterised by silent cases/early death so often missed cases), admission bias (looking at admitted patients who are more likely to get it), healthy worker effect
+
+Recall bias - ?accuracy of recollections (especially in case-control studies)
+
+Publication bias - only wanting to publish positive results, not negative ones 
+
+Expectation bias - may subconsciously report data swinging towards desired outcome (if non blinded)
+
+Work-up (verification) bias - for studies comparing gold standard vs new test, may be reluctant to order gold standard test (like Bx which is invasive & not normally done) unless new test is positive, skewing results 
+
+Hawthorne effect - does a group change its behaviour if it knows it’s being studied?
+
+Procedure bias - subjects in different groups receive different treatment
+
+Late-look bias - gathering info too late when many subjects already died 
+
+Lead-time bias - when two tests for a disease are compared, the new test diagnoses the disease earlier, but there is no effect on the outcome of the disease (ie better but not better for outcome/survival)
+
+Attrition bias - difference between groups in withdrawals from study 
+
+
+Tags:
+  statistics

@@ -1,0 +1,13 @@
+Immunisation schedule 
+
+Birth - BCG if RFs
+2mo - 6 (DTP, polio, Hib, HepB), rotavirus, MenB
+3mo - 6, PCV
+4mo - 6, MenB
+12-13mo - MenB, Hib/MenC, PCV, MMR
+2yo + - intranasal flu (annual)
+3-4y - 4 (DTP, polio), MMR
+12-13y - HPV
+13-18y - 3 booster (DTP), men ACWY
+
+Oral rotavirus first dose cannot be given after 15wks due to theoretical risk of intussuception

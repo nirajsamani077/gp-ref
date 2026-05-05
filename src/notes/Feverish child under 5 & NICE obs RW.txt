@@ -1,0 +1,44 @@
+Feverish child under 5 & NICE obs RW
+
+Measuring fever - neonate = axillary, rest tympanic 
+
+Red 
+• Any RR >60 or moderate/severe iWOB
+• Any HR > 180 or reduced skin turgor/mottled
+• Fever >38 <3mo, NBR, meningism, neuro, drowsy, weak cry or appears ill 
+
+Amber 
+• RR >50 under 1, >40 under 2, >30 otherwise
+• HR >160 under 1, >150 under 2, >140 otherwise 
+• Sats <95%, simple nasal flaring or recessions 
+• Dry signs - CRT >2s, dry MM, reduced nappies 
+• Fever > 39 <6mo, fever >5d, NWB limb, less interactive or pallor 
+
+Red flag conditions (always think sepsis but most often viral illness - tonsillitis, OM, gastro, HFMD, croup, bronchiolitis, common cold/URTI)
+• Meningococcal sepsis - NBR, ill child, meningism, bulging fontanelle, seizure/GCS = 999, STAT IM benpen (>10y =1.2g, 1-10y = 600mg, <1y =300mg) 
+• HSV encephalitis - GCS, neuro, seizures 
+• Pneumonia - IWOB, crackles, tachy, hypoxia 
+• Scarlet fever - Sandpaper rash, flushing, tonsils 
+• Urosepsis - Dehydration, vomiting/abdo, dip
+• Septic arthritis - NWB, joint swelling / not using 
+• KAWASAKI - Prolonged fever >5d, injected MM conjunctiva lips tongue, hand feet swelling /desquamination, cervical LN, coronary aneurysms 
+
+Other causes or prolonged fever >5d bar Kawasaki 
+• EBV/CMV - glandular fever type Px 
+• Lyme (erythema migrans) or Cat scratch disease 
+• Malignancy (ALL especially) - refer urgent FBC
+• Stills disease (systemic JIA) - refer paeds urgent 
+
+Always check Urine in any feverish child <3mo with low threshold for admission (red flag fever >38 <3mo, or fever >39 <6mo). 
+
+Antipyretics don’t prevent febrile convulsions 
+Tepid sponging risks causing peripheral shutdown which makes temp higher 
+Initial para or ibuprofen - alternative if distressed 
+Safety net clearly , specific if fever >5d, reduced wet nappies, lethargy, iWOB or NBR 
+
+Pneumonia in children - can be viral (picked up on hospital NPA), cough may be absent in early illness, only don’t admit if systemically well no comorbidities & no features or complicated pneumonia/empyema - 5d Amox TDS 1st line, clary/erythro BD 2nd line, doxy if >12yo, coamox severe, should respond within 48h, empyema most common comp associated with recent chickenpox
+
+
+
+Tags:
+  paediatrics

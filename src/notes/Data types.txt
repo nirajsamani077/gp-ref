@@ -1,0 +1,15 @@
+Data types 
+
+Qualitative:
+Nominal - set categories by name, can’t be order eg colour 
+Binomial - one of 2 choices (yes/no)
+Ordinal - set categories, can be put in order eg agree, strongly agree Likert scale
+
+Quantitative: 
+Discrete - finite number values eg no. of children
+Continuous - any value 
+Interval - scale measures eg temperature 
+Ratio - height 
+
+Paired = same group of patients
+Unpaired = independent set of patients 

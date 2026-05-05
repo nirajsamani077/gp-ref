@@ -1,0 +1,60 @@
+IBS (irritable bowel)RW
+
+6mo of ABC - abdo pain/bloating/CIBH =consider  
+Consider, R/O red flags then make a positive Dx 
+
+Red flags pointing away from IBS
+- >50, WL, PR bleeding, FHx bowel/ovarian CA
+
+Check in all (to R/O red flag or other causes)
+• Bloods - FBC, TFT, Coeliac, CA125 in women
+• Stool - FIT (if criteria), faecal calprotectin (if <45 diarrhoea to R/O IBD), H Pylori stool if dyspepsia 
+
+Other non-red flag DDx in IBS-D to consider 
+• Bile acid malabsorption (prev cholecystectomy)
+• Microscopic colitis 
+
+Positive criteria (ROME criteria for functional GI disorders) = pain relieved by defecation or altered stool frequency/consistency + 2 of 
+• Tenesmus like straining, urgency, incomp evac
+• Bloating, worse by eating, better by pooing
+• PR mucus, TATT, backache, bladder sx, alternate
+
+Diet advice 
+• Regular meals, don’t eat too fast
+• Plenty of water, avoid excess caffeine/ETOH/fizzy (8 cups water & <3 cups coffee or tea)
+• Limit high fibre foods/fruit/processed foods (insoluble fibre eg bran corn hard to digest, soluble fibre eg oats nuts seeds slightly easier)
+• Linseeds 1tbsp with oats for trapped wind
+• Low FODMAP diet
+   - Limiting short-chain fermentable carbs (in small bowel) which reduces gut hypersensitivity, limited evidence but trials have shown some benefit 
+
+Meds
+• Pain (IBS-P)
+   - Antispasmodics (mebeverine, buscopan)
+• Constipation (IBS-C) - 
+   - Laxatves (avoid lactulose, use bulk forming eg isphagula husk/fybogel 1st line, 2nd line = osmotic movicol or stimulant senna/bisacodyl
+   - Refer to consider linaclotide 290mg OD if >12mo or resistant to >2 laxatives, works by softening stool & increasing transit time 
+• Diarrhoea (IBS-D) 
+   - Loperamide (Imodium) 2mg after each loose stool (usually 8mg max, 5d max) 
+
+If above fails
+• TCA (5-10mg amitryptilline) low dose, titrate up 
+• SSRI 2nd line 
+• CBT/hypnotherapy (IBS-specific) if >12mo (refractory IBS)
+
+https://www.bda.uk.com/resourceDetail/printPdf/?resource=irritable-bowel-syndrome-diet
+
+https://www.hopkinsmedicine.org/health/wellness-and-prevention/fodmap-diet-what-you-need-to-know
+
+Only probiotic endorsed by BSG = Symprove but expensive costs £50+ a month via boots etc
+
+Other functional GI disorder points 
+• Dysregulation of “gut-brain” connections which is very complex & not well understood 
+• Ensure R/O organic pathology but common ones 
+   - Functional heartburn/dyspepsia, globus 
+   - IBS,functional constipation/diarrhoea/abdo pain
+   - Opiate induced constipation or GI hyperalgesia 
+   - Abdominal migraine in children 
+• Diagnosis by specialist - biopsychosocial approach, looking after brain helps to look after gut (eg sleep stress emotions), may use SSRI/ amitryptilline & CBT (use framework between thoughts emotions and impacts on behaviours/physical symptoms) .
+
+Tags:
+  gastroenterology

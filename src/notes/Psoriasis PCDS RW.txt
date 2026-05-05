@@ -1,0 +1,46 @@
+Psoriasis PCDS RW
+
+If new Dx consider severity to decide refer & treat or just treat (& refer if treatment failed) 
+• Body surface area (BSA) >10% = severe 
+• Difficult area (scalp, genitals, flexures) or nail changes (pitting, onycholosis, subungal hyperkeratosis)/psoriatic arthritis = severe 
+• QOL using Dermatology life quality index (DLQI) = severe 
+• Also refer any children or generalised pustular/erythrodermic psoriasis 
+
+acute eera Management 
+1) Plaque psoriasis 
+• Silvery scaly red well dermarcated itchy plaques 
+• Need good emollients to reduce scale 
+• Enstilar foam (calcipotriene + betnovate) or Wynzora cream (same combo, alt Dovobet) apply thinly OD initially, review at 4w and usually max of continuous potent steroid 8w then break (using just calcipotriol eg Dovonex) but up to 12w trial then maintenance twice weekly 
+• For thin skin or smaller plaques use Exorex lotion BD/TDS (coal tar prep) as no steroid, good as steroid sparers too, messy & can stain skin/clothes 
+• Other less used options = Dithranol, Tazarotene gel (Zorac) 
+
+2) Scalp psoriasis -itch,scale,nonscarring alopecia 
+• Thin scale = Diprosalic (betnovate + salicylic acid) scalp application OD leave on 15mins on dry scalp then wash off and then use other end of day to shampoo 4w then reduce to maintenance twice a week (Diprosalic can be used for hyperkeratotic hand/foot psoriasis, if palmoplantar pustulosis needs dermovate), can also use betnovate 0.1% scalp application alone
+• Thick scale = Sebco (coal tar + coconut oil) scalp ointment overnight (messy) and wash out with tar based shampoo (T-gel) 4w, can cause hair loss which will recover then step down to above when thinner, softer anti-scale with coconut oil, olive oil or arachis again wash out with tar based shampoo
+• Itch - Betnovate/dermovate scalp shampoo/foam (eg dermovate scalp application OD 2w max)
+
+3) Facial, flexural or genital 
+• Emollients + eumovate or betnovate RD OD-BD 2w max per month (in ears can use betnovate 0.1% drops), protopic 0.1% OD/BD is best alt treatment  
+
+4) Guttate psoriasis 
+• Usually abrupt post URTI, small tear drop scaly lesions over most of body - most tend to resolve 
+• Emollients + Exorex (coal tar) like smaller plaques, natural sunlight (refer PTX if not better)
+
+Systemic treatments under secondary care 
+• MTX usually first line (SE risk pancytopenia, infections, liver/lung damage/fibrosis)
+• Other options - systemic retinoid Acitretin, ciclosporin, biologicals 
+• Avoid live vaccines at least 4w before and ensure annual flu & 5 yearly pneumococcal 
+• Pre conception- wait 3mo for MTX, 3y for acitretin, cyclophosphamide could be okay 
+• Newer drugs topical rofulimast & tapinarof
+
+Annual review “deeper than skin” 
+• Consider CVD risk
+• Any meds triggering eg Bb lithium 
+• Psoriatic arthritis risk (10-30%, can have 3-10y lag between skin and joints) which causes irreversible destructive arthropathy - screen using PEST questionnaire (score >3 = early rheum ref)
+• If severe consider HIV test/IC 
+
+Signpost to Psoriasis association & decision aid 
+
+
+Tags:
+  dermatology

@@ -1,0 +1,26 @@
+Screening test stats/terms 
+
+                           Disease present          No disease 
+Positive test           True Pos                  False Pos 
+Negative test         False Neg                True Neg
+
+Sensitivity - % with disease present who have a positive test (TP/disease present)  ie liklehood of true positive 
+
+Specificity - % with no disease who have a negative test (TN/no disease) ie likelihood of false negative 
+
+PPV - if positive test, % chance of disease present 
+(TP/positive test)   
+
+NPV - if negative test, % chance of no disease (TN/negative test)
+
+Likelihood ratio - the likelihood of a test result in someone with the condiiton, vs the likelihood of the same test result in somone without the condition  
+
+Likelihood ratio of positive test - how do odds increase of disease present if positive test (sensitivity/1-specificity)
+
+Likelihood ratio of negative test - how do odds increase of no disease if negative test (1-sensitivity/specificity)
+
+Likelihood ratios are not prevalence dependent 
+Precision - how repeatable are results?
+
+Tags:
+  statistics

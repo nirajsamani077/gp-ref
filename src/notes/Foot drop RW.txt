@@ -1,0 +1,39 @@
+Foot drop RW
+
+Weakened DF causing high steppage gait & recurrent falls most often due to common fibular (peroneal) nerve palsy most often due to external compression at knee (trauma, POP, kneeling, leg crossing, sudden WL) but can be myopathy, neuropathy, spinal or central 
+• Mononeuritis multiplex (peripheral neuropathy) - DM, ETOH, B12 usually with sensory changes too, Charcot Marie Tooth (CMT)
+• Sciatic nerve injury/L5 radiculopathy (disc herniation, spinal stenosis, post THR)
+• Central - Stroke, MS 
+• Myopathy (rare) - DMD
+
+Exam 
+• Gait high steppage, struggles to walk on heels 
+• LMN signs - fasciculations Vs UMN hyperreflexia 
+• Power 
+   - Common peroneal nerve - weak DF & inversion
+   - Sciatic nerve - weak DF/PF & knee flexion 
+   - L5 radiculopathy - above + weak hip abduction 
+• Sensation 
+   - Common peroneal nerve - AL/dorsum leg 
+   - Sciatic nerve - Lat leg, sole/dorsum foot 
+   - L5 radiculopathy - AL thigh leg/dorsum foot 
+• Reflex - Sciatic nerve reduced ankle, CPN nil 
+
+Ix - Peripheral neuropathy bloods (FBC UE LFT + HbA1C, TFT, ferritin/B12 & bone, if indicated myeloma screen & HIV serology) & NCS/EMG 
+
+Management 
+• If likely cause external compression CPN usually resolves within 3mo with advice, physio, orthosis 
+  - Avoid leg crossing, kneeling, squatting 
+  - Wear flat shoes and orthotic support 
+  - Physio exercises if severe weakness 
+  - Refer if not improving for NCS/EMG
+• If any other specific concerns (other neuro, BL) = urgent neurology referral & same day if ?CES (BL foot drop) or compartment syndrome 
+
+Peripheral sensory neuropathy DDx 
+• Common = DM, B12, ETOH (CKD thyroid also)
+• Red flags = HIV, myeloma (paraprotein)
+• Drugs = TB drugs, HIV drugs, chemo drugs, phenytoin, pyroxidine, nitro/metro, amiodarone 
+= symmetrical glove & stockings loss of sensation/burning pains (DDx myelopathy!) 
+
+Tags:
+  neurology

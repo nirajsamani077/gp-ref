@@ -1,0 +1,45 @@
+Prostate CA diagnosis & management RW 
+
+RF - age, FHx, black, smoking, BRCA2 (rare)
+Would be referred with raised PSA/abnormal DRE
+
+Traditionally TRUS biopsy with risks being infection, bleeding & pain but multi-parametric MRI now first-line if suspected localised prostate CA & measure Likert/PIRADS score on mpMRI decide whether to TRUS biopsy or not 
+• PIRADS/Likert 1 /2 = unlikely, may not Bx & have PSA surveillance 3-6mo under specialist, if velocity not rising or had Bx which was neg then will be d/c back to GP for PSA surveillance 1-2yrly
+• PIRADS/Likert 3 /4 /5 = borderline to v likely, Bx 
+
+Gleason score from TRUS Bx 
+• Determines prognosis & guides treatment 
+• Looks at 1st & 2nd most predominant cell type for atypia assigning each a score (eg 3+4). Score of 1/2 = non cancerous
+  - Lowest possible score with cancer = 3+3 (6)
+  - Score 4+3 worse than score 3+4 
+
+Risks of TRUS Bx 
+• Pain bleeding infection relatively common 
+• Bleeding (haematuria, haematospermia) common
+
+Treatment of prostate Ca 
+• Most men survive from prostate ca, treatment individualised based on pt preference, risk & intent (surveillance, radical/curative, palliative)
+• Categories of prostate Ca = localised (low intermediate high risk), locally advanced, metastatic, relapsed 
+• Options include 
+   - Watchful waiting - PSA surveillance in primary care & refer if significant rise (usually if A/S opting not to treat/have curative Rx & for any category)
+   - Active surveillance - More invasive DRE PSA MRI surveillance in secondary care (usually if A/S and opting for curative but want to wait for time)
+  
+   - Radical prostatectomy /DXT (EBRT or brachytherapy/internal - major op laparoscopic or robotic if localised (preferred option for curative), DXT if localised or locally advanced as alternative 
+    • S/E- Infertility, ED (common), incontinence 
+    • PSA should become undetectable by 8w
+  - Chemo (docetaxel) used less usually metastatic 
+
+ - Hormonal (LHRH agonists goserelin/Zoladex or BL orchidectomy to suppress androgens on which prostate Ca dependent) - used as adjuvant / neoadjuvant for radical Rx (usually 3y) or metastatic (lifelong) with PSA monitoring 
+    • Initial tumour flare when starting due to transient rise in testosterone - pain, urinary obstruction, even cord compression - co-treat with androgen receptor blocker (biclatumide or cyproterone acetate) 1w before & after only although can be used as 2nd line long-term too 
+    • S/E - Male menopause/castration 
+         • Infertility & ED - sperm storage prior 
+         • Hot flushes - cooling, intermittent regime but if severe enough may need short course of MPA or cyproterone acetate (both with VTE risk)
+         • Gynaecomastia - DXT/tamoxifen 
+         • Osteoporosis - FRAX/DEXA 
+
+Use Predict Prostate to communicate options 
+Signpost Prostate Cancer UK & MacMillan support 
+
+
+Tags:
+  Cancer, urology

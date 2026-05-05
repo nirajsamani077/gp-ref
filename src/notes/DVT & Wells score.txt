@@ -1,0 +1,7 @@
+DVT & Wells score 
+
+Two-level Wells score
+0-1 = unlikely, 2+ = likely 
+0-1 —> D dimer within 4h 
+2+ —> USS venous Doppler within 4h
+If unable to get within 4h give therapeutic LMWH

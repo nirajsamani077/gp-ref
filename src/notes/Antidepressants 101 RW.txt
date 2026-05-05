@@ -1,0 +1,58 @@
+Antidepressants 101 RW
+
+Psychological treatments just as effective, and usually first-line for most conditions 
+
+Options
+• SSRIs usually first line 
+• SNRI (duloxetine, venlafaxine)
+• Mirtazapine 
+
+Consider risks of SSRI esp in elderly 
+• GI bleeding risk (NSAID, aspirin, DOAC) - ?PPI, offer mirtazipine instead 
+• Hyponatraemia (SIADH)
+• Falls and fractures 
+• Weight gain 
+• Sexual dysfunction /ED
+• Prolonging QTc (citalopram/escitalopram), think other drugs eg TCA, venlafaxine, lithium, erythromycin, cipro, fluconazole, amiodarone, quinine 
+• Interaction with triptans (serotonin syn) - offer mirtazipine instead 
+
+Choices 
+• Sertraline & citalopram fewest interactions 
+• Fluoxetine & paroxetine most interactions
+• Paroxetine & venlafaxine shortest half life (so highest risk of discontinuation symptoms)
+• Fluoxetine longest half life (so can’t cross taper)
+• SNRI and mirtazipine may be most effective but have highest risks and OD risk 
+• Mirtazipine causes most weight gain, most sedation (esp at lower dose 7.5mg) & less sexual dysfunction than SSRI, also most serotoninergic
+• Secondary care - vortioxetine, TCA, MAOI, 2x primary care agents 
+
+Specific conditions if needs drugs 
+• Depression - SSRI, if more severe can jump to SNRI or mirtazipine, after 4w treatment increase dose or switch (can take 6-8w see full effect, consider increase if no effect)
+• GAD - SSRI (usually sertraline), if failed switch to alternate SSRI/SNRI, only if failed then pregabalin 
+• Panic - SSRI (any), if failed other SSRI or TCA (imipramine or clomipramine) off license 
+• Social anxiety - SSRI (usually sertraline or escitalopram)
+• OCD - SSRI (any) often higher doses longer duration, may need switch TCA or antipsychotic (secondary care) 
+• Body dysmorphic - SSRI (fluoxetine) often higher doses, as for OCD
+• PTSD - SSRI (sertraline or paroxetine) or venlafaxine, antipsychotics in secondary care 
+
+Typical review after starting 
+• 2-4 weeks but 1 week if <30 or suicide concerns
+• Then monthly first 3 months 
+• 3-6 monthly thereafter 
+• When first starting may have nausea (usually worst when hungry, eat a snack), dry mouth, heightened anxiety, rarely agitation (try to avoid BDZ for this) & suicidality 
+• Normally look to stop when well & stable for 6mo (12mo for GAD, OCD, BDD as higher risk)
+
+Withdrawal effects (paroxetine, venlafaxine)
+• Usually start after few days of changing/stopping
+• Anxiety, agitation, GI upset, sweating 
+• Different from relapse usually months after stop 
+• Usually lasts 2w but can be longer 
+• Reduce risk by slower tapering of dose (months, slower if taking for longer), only fluoxetine every other day due to longer half life 
+
+Switch = 
+• SSRI /venlafaxine (not fluoxetine) to SSRI / venlafaxine (not fluoxetine) = after taper stop and then start new one next day 
+• Fluoxetine usually stop leave gap 4-7d before starting new one (can’t cross taper ) 
+• Mirtazipine starting or switching to SSRI /venlafaxine can usually cross taper (apart from fluoxetine)
+• Too rapid switching can cause serotonin syndrome (delirium, profuse swearing, ANS, myoclonus) 
+
+Tags:
+  mental

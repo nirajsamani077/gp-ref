@@ -1,0 +1,23 @@
+PE algorithm RW
+
+Think PE any unexplained SOB, dizziness, haemoptysis, chest pain = emergency 
+
+If low risk <50 do PERC - if neg <2% chance so consider other Dx, if positive check Wells (always Wells if >50 as PERC will be positive) & refer 
+• Wells PE score <=4 = D dimer 
+• Wells PE score >4 = CTPA
+
+PERC (apart from age >50) - Tachycardia, sats <95%, sign of DVT, haemoptysis, recent immob 1mo, hormones, previous VTE 
+
+Wells PE score 
+• Signs of DVT or Alt diagnosis less likely = 3
+• Tachycardia or immob >3d /surg 1mo = 1.5
+• Malignancy or haemoptysis = 1
+
+Upon Dx and treatment will need anticoag clinic and min 3mo treatment unless unprovoked /malignancy / provoking factor not dealt with 
+• If unprovoked examine and do bloods as above but don’t need examine and do bloods as abode but don’t need to Ix for CA (FIT, CTTAP) unless sx 
+• If unprovoked only check for thrombophilia (usually from clotting test done prior to starting anticoag) if 1st deg relative with VTE - don’t need to test if having lifelong anticoag (won’t change management) 
+
+
+
+Tags:
+  respiratory

@@ -1,0 +1,15 @@
+Macrocytic anaemia algorithm RW
+
+B12/folate def 
+LFT TFT issue, ETOH, drugs (cytotoxics)
+Haemolysis + Haem malignancy (pancytopenia)
+Pregnancy! 
+
+Check haematinics, retics, LFT, TFT and FIT/myeloma any >60, if raised retics >80 + BR raised then refer ?haemolytic anaemia with LDH/hapto. 
+
+If normal retics and B12/folate normal (folate low give 5mg folic acid 4mo advise diet and recheck) 
+• Lots of common causes - ETOH, drugs (MTX, AZA, TMP, AEDs), pregnancy, liver/thyroid issues 
+• If ruled out refer ?haem malignancy (MDS, myeloma) 
+
+Tags:
+  haematology

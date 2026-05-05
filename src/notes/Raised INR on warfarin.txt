@@ -1,0 +1,8 @@
+Raised INR on warfarin 
+
+INR>8 + major bleeding - admit, stop, IV vit K, PCC
+INR>8 + minor bleeding - stop, IV vit K, restart when <5
+INR>8 + no bleeding - stop, vit K PO, restart when INR restart when <5
+
+INR 5-8 + minor bleeding - stop, IV vit K, restart when <5
+INR 5-8 + no bleeding - withhold 1-2 doses & reduce Maintenance dose 

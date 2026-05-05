@@ -1,0 +1,10 @@
+ORBIT score for AF bleeding risk 
+
+Has replaced HASBLED 
+Score of 3 or more is higher risk 
+
+Anaemia/low HCT = 2
+Age >74 = 1
+Antiplatelet = 1
+Bleeding history = 2
+Renal impairment <60 = 1

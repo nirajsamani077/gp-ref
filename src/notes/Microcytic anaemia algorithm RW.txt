@@ -1,0 +1,42 @@
+Microcytic anaemia algorithm RW
+
+Repeat FBC with ferritin
+Consider iron studies , Hbopathy screen, Coeliac 
+
+If ferritin low = IDA
+• GI blood loss esp malignancy LGI or UGI. Examine. Arrange FIT test any adult (even any >60 with any anaemia). Top and tail scopes 
+• Gynae blood loss /other GU dip Urine etc 
+• Malabsorption (Coeliac, gastric surgery, PPI)
+• Poor diet (veg vegans) 
+
+If ferritin normal or high - check iron studies 
+• Anaemia of chronic disease (ACD) - often low serum Fe, low TIBC, low transferrin, low TSAT (with high or normal ferritin) 
+• Thalassemia - Hbopathy screen 
+• rare = sideroblastic anaemia 
+
+Consider dual pathology - IDA with ACD, usually IV iron needed for ACD as oral iron not well absorbed, Hb only partially corrected 
+
+Replacement 
+• Ferrous sulphate 200mg Od/ fumarate 210mg Od / gluconate 600mg Od taken on a completely empty stomach (otherwise absorption affected, esp with food /tea /PPI. Don’t need to give BD-TDS 
+• Recheck FBC after 1mo and ensure cause Ix 
+   - If Hb normalised - continue ferrous 3mo then stop 
+   - If Hb improved - continue ferrous 3mo further then recheck, if normalised then continue 3mo then stop
+   - If Hb not improved - check adherence and refer for ferrinject (also if unable to tolerate oral/absorption issues, or on haemodialysis) 
+
+If not improving with oral ferrous may have malabsorption or funtional iron deficiency , or ACD
+
+Upon improvement and stopping ferrous - check FBC /ferritin 3 monthly for 1y for recurrence 
+
+Iron deficiency & iron studies specifics  
+• Ferritin is best correlation for total iron intracellular body stores but problematic as increased in inflammation, malignancy, liver/renal disease so may be Fe deficient but raised/normal ferritin (ACD can have normal/high also)
+  - Usually 20-300 normal range, 15 in periods 
+  - CKD <100 lower cut off, <200 if dialysis as inflammation and renal failure raises levels 
+• Iron deficiency or microcytosis without anaemia common, risk of “hidden” cancer, do FIT & urine dip/CXR if focal symptoms & check iron studies, consider alt day ferrous if deciding to treat 
+• Specific signs - koilonychia, glossitis, alopecia, restless legs (check ferritin) & Plummer Vinson structure (dysphagia, IDA, oesophageal web)
+• Other iron studies tests (all in bloodstream)
+   - Serum iron - iron bound to transferrin in blood, varies a lot with diet infection inflamm so poor 
+   - Transferrin /TIBC - iron transporting protein, high/normal in iron deficiency (to maximise utilisation) & low in ACD - alternative test to TIBC which is the availability of iron binding sites on transferrin and same tests results. Oral iron can increase transferrin/TIBC
+   - TSAT - ratio of serum iron to TIBC/transferrin, Fe/TIBC x100 (check using iron studies) or Fe/TF x 70.9 - better test for iron overload than deficiency. Normal = <45% (0.45)
+
+Tags:
+  haematology

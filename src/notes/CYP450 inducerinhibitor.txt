@@ -1,0 +1,15 @@
+CYP450 inducer/inhibitor 
+
+Inducers —> reduce levels of drug (CRASS)
+- Chronic alcohol 
+- Rifampicin
+- AEDs most (phenytoin, CBZ, phenobarb)
+- St Johns Wort 
+- Smoking 
+
+Inhibitor —> increased levels of drug (VISA)
+
+- Valproate
+- Isoniazid
+- SSRI
+- ABX (cipro, erythro)/Acute alcohol/allopurinol/amiodarone/antiacids/antifungals

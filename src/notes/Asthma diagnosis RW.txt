@@ -1,0 +1,35 @@
+Asthma diagnosis RW
+
+Diagnosis = clinical, tests and trial of treatment 
+
+• Clinical = cough/wheeze/sob that is episodic, variable (diurnal, day on day) with triggers (viral, cold, exercise) & Hx of atopy (FHx asthma) with examination often normal but wheeze when symptomatic, check PEFR
+
+• Tests - ACT, PEFR diary, Spiro, FeNO/challenge
+   - High probability = Spirometry + BD reversibility with a trial of treatment & assess response, if moderate probability test and only trial if positive, if low probability look for other Dx. If can’t test due to age trial or watchful waiting
+   - Spiro shows FEV1/FVC <70% (obstructive) with reversibility after BD (improvement of FEV1 >12% after SABA/ICS), can be done age >5 but if not go on symptoms 
+   - If spiro inconclusive - consider FENO (test allergy) or exercise/metacholine challenge (test variability) 
+   - FENO = Fractional exhaled nitric oxide which looks for allergic/eosinophilic airways disease, inflammatory cells in airways produce NO which exhaled out, if >35 (child)- 40(adult) parts/billion = positive but can be raised in other allergic conditions and lower in smokers so not diagnostic 
+   - PEFR diary better for monitoring than Dx (20% diurnal variability), in response to below trial along with Asthma control test (ACT), best of 3 blows 3x a day 3w (diagnostic in occupational asthma). Use highest PEFR - lowest PEFR/mean PEFR x 100%
+  
+• Trial of treatment - Low dose ICS = Clenil 200mcg BD (2 puffs BD) or 50-100mcg in kids (1 puff BD) 6w trial - of improvement, when starting if asymptomatic today then consider starting only when symptomatic.
+  - Good response (PEFRD, ACT, FEV1) = asthma. 
+  - Poor response = Check inh tech/adherence & DDx /Alt diagnosis 
+ 
+DDx if not asthma 
+• Adult with obstructive spiro - COPD, bronchiectasis, lung CA
+• Adult without obstructive - IPF, HF, GORD, PND, vocal cord dysfunction, chronic cough, dysfunctional breathing 
+• Child - CLD, CHD, CF, bronchiectasis, ciliary dyskinesia, pertussis, reflux, dysfunctional 
+
+For testing (NICE guideline) 
+• <5 = diagnosis clinical, trial of treatment, watchful waiting, test when old enough
+• 5-16 = all need spiro and only need FENO if spiro doesn’t show obstruction with reversibility (Dx)
+• >16 = all need spiro and FENO (>40ppb cut off) along with PEFR diary or challenge test for variability 
+
+Use asthma control test website click through for adult and children 
+
+Specific points 
+• Occupational asthma = always ask if worse at work, better when on holiday. High risk work (lab, industrial, food). Full PEFR diary whilst at work - dipping suggestive & refer early to resp and occupational health 
+• Exercise induced bronchoconstriction - can be without asthma but if features of asthma is a sign of very poor control! Usually after high intensity, important to warm up first & can use SABA (if >3x a week consider ICS preventer + further LTRA), refer these to resp for specialist challenges 
+
+Tags:
+  respiratory

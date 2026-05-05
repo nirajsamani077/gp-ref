@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "GP Ref — Dev",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["/Users/nirajsamani/Desktop/gp-ref/node_modules/.bin/vite"],
       "port": 5173
     },
     {

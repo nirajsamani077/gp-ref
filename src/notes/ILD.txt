@@ -1,0 +1,83 @@
+ILD 
+
+Symptoms: SOBOE, dry cough, fatigue, WL
+
+Exam - 3 C’s - clubbing, cyanosis and crackles (fine late end-inspiratory crepitations non cough clearing or positional) 
+
+Signs of treatment 
+Steroids Cushingoid, thin skin, bruising, proximal myopathy
+Oxygen/LTOT 
+Ciclosporin: gum hypertrophy, HTN 
+Scars from lung transplant
+
+If suspect ILD comment on whether: 
+Upper or lower zone fibrosis 
+Possible underlying cause eg slate grey amiodarone
+Evidence of resp failure (O2, flap)
+Evidence of cor pulmonale (RV heave, loud P2, raised JVP, peripheral oedema)
+
+DDx for clubbing & creps 
+Bronchiectasis/CF - usually early coarse change with cough and sputum ++ (pot)
+Lung CA 
+Supparative lung disease (eg pneumonia, abscess) 
+Heart failure 
+
+Idiopathic with no underlying cause
+Idiopathic pulmonary fibrosis/IPF (Usual interstitial pneumonia on histology) = most common cause 
+Others: 
+NSIP (non-specific interstitial pneumonia)
+COP (cryptogenic organising pneumonia)
+LIP (lymphocytic interstitial pneumonia)
+AIP (acute interstitial pneumonia)
+RBILD (respiratory bronchiolitis-associated interstitial lung disease)
+ 
+Underlying cause = 5 main areas 
+Rheum - RA, SLE, dermato/polymyositis, systemic sclerosis, ankylosing spondylitis, Sjogrens syndrome, MCTD
+
+Occupational/environmental: pneumoconiosis (asbestosis, silicosis, berylliosis, byssinosis, coal) EAA (farmers lung, bird fanciers lung), heavy metal/chemical inhalation (mercury, lead)
+
+Drug-related & DXT (BANS Me) - bleomycin, amiodarone, nitro, sulfasalazine, MTX
+Post-infective - Old TB, fungal, viral, ABPA
+
+Other systemic disorders: sarcoidosis, vasculitis, IBD, malignancy 
+ 
+Upper Zone Fibrosis
+Sarcoidosis 
+Old TB and ABPA (histiocytosis rare) 
+Ank spond 
+Most pneumoconioses (apart from asbestosis)
+DXT 
+
+Lower zone fibrosis 
+IPF 
+Most rheum conditions (RA, scleroderma, SLE)
+Asbestosis 
+Drugs (BANS Me)
+
+Asymmetrical causes: TB or malignancy
+
+Bloods: ABG, FBC (eosinophilia, anaemia, polycythaemia), CRP/ ESR, Igs , complement, autoimmune screen (ANA, ANCA, RF, anti-CCP, CK, anti-GBM.), serum precipitins (hypersensitivity, aspergillus), serum ACE (sarcoidosis)
+
+Imaging: CXR initially, Bilateral reticulonodular interstitial infiltrates (parenchymal shadowing), volume loss, distribution, UC e.g. bihilar lymphadenopathy may suggest sarcoidosis, pleural plaques may be seen if asbestosis? HRCT gold standard = Ground-glass/honeycombing, more sensitive. 
+ 
+Special tests:
+Lung function tests: Restrictive pattern with reduced transfer factor
+Bronch & BAL (eosinophils/neutrophils/lymphocytes, malignant cells) 
+Video assisted, open, transbronchial biopsy if no clear diagnosis to look at histology
+Echo: to assess for pulmonary hypertension
+
+Management:
+Conservative - MDT, Stop smoking, remove causative allergen/medication, vaccines (influenza, pneumococcal), claim compensation (asbestos), pulmonary rehab
+
+Medical:
+Treat the underlying cause
+Manage complications e.g. infective exacerbations, pulmonary hypertension and cor pulmonale, lung cancer, respiratory failure
+Steroids/ Immunosuppressants e.g. azathioprine, cyclophosphamide
+Antioxidants e.g. N acetylcysteine
+Pirfenidone (antifibrotic  and anti-inflammatory agent)
+LTOT
+
+Surgical: Single/double lung transplant
+
+Tags:
+  paces

@@ -1,0 +1,45 @@
+Hyperthyroidism/thyrotoxicosis algorithm RW
+
+Hyperthyroidism & thyrotoxicosis different causes 
+• Hyperthyroidism (symptoms) = Graves (80%), toxic MN goitre (TMNG), soltary toxic nodule 
+• Thyrotoxicosis (biochemical) = Transient thyroiditis (post partum, viral De Quervains) or drugs (amiodarone, lithium) causing excess circulating hormone from otherwise normal thyroid 
+• Rare causes = TSH secreting pituitary tumour, malignancy (follicular thyroid CA, ovarian teratoma, choriocarcinoma), high iodine foods 
+
+Graves = most common AI condition when TSH antibodies bind and stimulate ++ T4/3 production, often younger FHx smoker F>M with association with thyroid eye disease 
+
+Check TSH (lab will add T4/T3) if abnormal if
+• Symptoms - weight loss, palpitations, tremor, anxiety, hair loss, heat intolerance, diarrhoea
+• Exam - neck goitre, eye Graves signs (gritty watery eye, lid lag/retraction, periorbital oedema)
+• New AF (or HF) or osteoporosis 
+• Autoimmune Hx - T1DM, Addisons, Vitilligo 
+• Child - abnormal growth, developmental issues 
+
+Interpreting low TSH (<0.01)
+• Normal T3/4 = SUBCLINICAL hyperthyroidism
+   - Repeat after 3mo with thyroid antibodies TSH receptor Ab (TRAB) & refer if persistent or suggestive sx/goitre (probably earlier if clear signs of Graves eg eye)
+   - If not treating/referring monitor TSH 6monthly
+• Raised T3/4 = THYROTOXICOSIS
+   - CV exam - HR (ECG), BP, CCF signs, systemic upset consider emergency thyroid storm (rare)
+   - Goitre & neck - 2WW if rapid fixed mass hoarseness or concerns for malignancy, if diffuse swelling suggests goitre (usually Graves), single nodule?, tenderness ?thyroiditis - USS neck 
+   - Graves eye signs & pretibial myxoedema
+
+Refer endocrine all suspected Graves /confirmed hyperthyroid (unless clear thyrotoxicosis without hyperthyroidism post viral - although gonna refer!)
+• Bb whilst waiting - if tachycardic or sx like tremor palpitations anxiety consider Propanolol 10–40 mg TDS for symptoms whilst waiting for specialist 
+
+Carbimazole usually first line anti-thyroid 
+• Check FBC (agranulocytosis risk 5/1000) & LFT (hepatotoxicity risk 4/1000) first & must check urgent FBC if develops sore throat/fever & stop whilst waiting specialist (needs written plan), other risks up to 5% rash arthralgia 
+• Dose = 15-40mg/d until euthyroid (usually 4-8w) then maintenance 5-15mg/d, aim to reduce gradually & stop (usually 1-2y)
+• Monitor TSH every 6w till normal, then every 3mo whilst on carbamizole, then within 8w after stopping (and 3monthly for 1y after), and if off >1y then annually = remission (30% of pts)
+• Propylthiouracil used instead if planning pregnancy next 6mo/ WCBA or can’t tolerate carbimazole /hx of pancreatitis 
+
+Other specialist options than antithyroid drugs 
+• Radioactive iodine - often successful but strict radiation protection (can’t be pregnant or expecting within 6mo, BF or be in contact with children or pregnant women!), can worsen Graves eye disease, needs TSH 6w initially then 6mo lifelong 
+• Total or hemi thyroidectomy - causes permanent hypothyroidism if total needs LT levothyroxine, comps = RLN palsy, hypoparathyroidism, monitoring varies 
+
+
+
+
+
+
+Tags:
+  endocrine

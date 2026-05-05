@@ -1,0 +1,5 @@
+Sutures 
+
+Face - 4d
+Scalp/limb/chest - 8d
+Hand/foot/back - 12d

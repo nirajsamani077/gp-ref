@@ -1,0 +1,60 @@
+Obesity & weight management RW
+
+BMI >25 (or lower in BAME) = Overweight 
+BMI >30 (or lower in BAME) = Obese 
+BMI >35 (or lower in BAME) = Obese Class 2
+BMI >40 (or lower in BAME) = Morbidly obese 
+
+Waist-to-height ratio is a better measure for central adiposity which is a better RF = “keep your weight circumference under half of height (cm)”
+• >0.5 = increased, >0.6 = high 
+
+Think about lifestyle lifestyle lifestyle & brief intervention using FRAMES (Feedback on bad habit/affect on health, Responsibility to change, Advice to lose 5% of weight /few kg through adjusting diet & exercise, Menu - change the menu practically, increase step count, Empathy - it won’t be easy but Self optimism - it will be worth it & improve your symptoms, put diabetes into remission, better & more fulfilling than any medicine I could prescribe!)
+
+Have realistic goal - 5% will improve markers or weight loading, small achievable goals 
+
+Another approach = 6 As
+• Ask if we can discuss your weight, which I think might be contributing to your condition 
+• Assess risk - BP, HbA1C, lipids, LFT, HbA1C, Hx of cancers/CVD, other CVD RFs 
+• Analyse root cause - normal eating for you, exercise, sedentary/screen time/work, stress, sleep, ETOH, conditions eg hypothyroidism, meds that may be contributing (insulin, gliclazide, steroids, TCA, mirtazipine, atypical antipsychotics, AEDs), FHx endocrine 
+• Advise using the FRAMES model 
+• Agree on realistic goals (write them down!)
+• Assist by referral to community WM programme (tier 2) or multi professional specialist WM team for specific diet/drugs (tier 3) bariatric surgery (tier 4) if meets BMI /comorbidity criteria 
+  - Tier 1 = Universal information GP public website
+  - Tier 2 = Community WM program (overweight)
+  - Tier 3 = Diet/exercise/drugs (obese or comorbs)
+  - Tier 4 = Bariatric (morbid or obese + comorbs)
+
+Diet - lots of different ones & evidence but best one is one you’ll stick to & natural avoiding of ultra processed foods /takeaways & refined sugars. Focus on things grown from the ground, rather than made in a lab. Mediterranean diet a good example - fresh fish, olive oil, nuts seeds, grilled veg, avocados olives, feta cheese. Low carb has good evidence too - but avoid replacing with excess Sat fat or processed. TRE principles 16:8 can really help. Calorie restriction important - probably the way in which weight is lost - but be mindful on it being sustainable although short term weight loss may be beneficial!
+
+Exercise 
+• Small & often, acheivable, enjoyable 
+• Focus on resistance & HIIT training - better calorie burn and muscles mop up sugar 
+• Aim for either 45mins moderate exercise/day or 2.5h moderate or intense exercise a week which works your body (makes sweat/SOB, raises pulse)
+• You can’t outrun a bad diet, don’t compensate by eating more! Walking for 45mins burns 150cal which can easily be replenished by 2x biscuits!
+
+Orlistat - only weight loss drug in primary care 
+• GI lipase inhibitor (reduces diet fat absorption)
+• 120mg TDS 
+• Lower dose available OTC (Alli 60mg)
+• Don’t eat fat as will make ++ gassy/incontinent as that fat stays in bowel rather then being absorbed , and a very low fat diet can cause fat-soluble vitamin deficient ADEK & thyroxine (take sep)
+• Offer if obese BMI >30 (>28 + comorbs, BAME?)
+• Recheck weight 3mo, only continue if >5% loss, most stop before 1 year, causes significant GI S/E 
+
+Semaglutide (Wegovy) - not available anymore 
+• GLP-1 mimetic - reduces appetite & increases satiety (fullness), which is what normal GLP-1 hormones do that are normally deficient in obesity/insulin resistance
+• 2.4mg weekly SC injection (different to Ozempic which is licenced for T2DM), liraglutide alternative
+• If obese class 2 (BMI >35) or obese BMI >30 + comorbs (?BAME)
+• Recheck weight 6mo, only continue if >5% loss, max for 2 years 
+• Not available under NHS currently, supply shortage, could be available privately 
+• Tirzepatide (GLP-1 & GIP receptor activator) is new kid once weekly SC injection - not licensed 
+
+Bariatric surgery (via tier 3-4)
+• Morbid obese BMI >40 + comorbs = offer referral for bariatric surgery (consider if BMI >37.5 or lower in BAME with health condition that might benefit specifically from weight loss)
+• Types = gastric band (doesn’t impact absorption) or sleeve gastrectomy/roux en Y bypass (impacts absorption - haematinic/calcium/Vit D deficiency)
+• Post op acute comps (dysphagia, bleeding, infection), reflux or prolonged vomiting should urgent review in bariatric unit 
+• All should have annual monitoring bloods FBC UE LFT/bone HBA1C lipids & haematinics/vit D/copper & zinc micronutrient if impacted absorption 
+• Supplements post-op Forceval multi-vitamin OD (Alt = Sanatogen A-Z OTC x2 if impacted absorption) + ferrous 200mg OD, hydroxocobalamin 1mg IM every 3mo, vit D 800 IU & folic acid (esp if planning pregnancy)
+• LARCs best as oral contraception may not be absorbed properly, consider meds than are large/irritate stomach eg NSAIDs/bisphosphonates & risk of dumping syndrome if taken with large amount of sugar 
+• Resource = BOMSS British Obesity & Metabolic Surgery Society 
+
+If BMI >50 then bariatric surgery 1st line .
