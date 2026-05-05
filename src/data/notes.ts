@@ -104,6 +104,26 @@ import { barrettsOesophagus }  from '../notes/barrettsOesophagus'
 import { benignBreast }          from '../notes/benignBreast'
 import { breastCancer }          from '../notes/breastCancer'
 import { breastHormonalTherapy } from '../notes/breastHormonalTherapy'
+import { ckd }                   from '../notes/ckd'
+import { copd }                  from '../notes/copd'
+import { heartFailure }          from '../notes/heartFailure'
+import { migraine }              from '../notes/migraine'
+import { strokeTia }             from '../notes/strokeTia'
+import { gout }                  from '../notes/gout'
+import { cellulitis }            from '../notes/cellulitis'
+import { cocp }                  from '../notes/cocp'
+import { autism }                from '../notes/autism'
+import { psoriasis }             from '../notes/psoriasis'
+import { allergicRhinitis }      from '../notes/allergicRhinitis'
+import { anaphylaxis }           from '../notes/anaphylaxis'
+import { bellsPalsy }            from '../notes/bellsPalsy'
+import { bronchiectasis }        from '../notes/bronchiectasis'
+import { bronchiolitis }         from '../notes/bronchiolitis'
+import { burns }                 from '../notes/burns'
+import { essentialTremor }       from '../notes/essentialTremor'
+import { bleedingOnHrt }         from '../notes/bleedingOnHrt'
+import { brainTumour }           from '../notes/brainTumour'
+import { bcc }                   from '../notes/bcc'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -211,4 +231,24 @@ export const NOTES: Note[] = [
   balanitis,
   phimosisCircumcision,
   barrettsOesophagus,
+  ckd,
+  copd,
+  heartFailure,
+  migraine,
+  strokeTia,
+  gout,
+  cellulitis,
+  cocp,
+  autism,
+  psoriasis,
+  allergicRhinitis,
+  anaphylaxis,
+  bellsPalsy,
+  bronchiectasis,
+  bronchiolitis,
+  burns,
+  essentialTremor,
+  bleedingOnHrt,
+  brainTumour,
+  bcc,
 ].map(enrichBody)
