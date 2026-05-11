@@ -124,6 +124,36 @@ import { essentialTremor }       from '../notes/essentialTremor'
 import { bleedingOnHrt }         from '../notes/bleedingOnHrt'
 import { brainTumour }           from '../notes/brainTumour'
 import { bcc }                   from '../notes/bcc'
+import { bleedingOnContraception } from '../notes/bleedingOnContraception'
+import { cdiff }                 from '../notes/cdiff'
+import { carpalTunnel }          from '../notes/carpalTunnel'
+import { croup }                 from '../notes/croup'
+import { delirium }              from '../notes/delirium'
+import { conjunctivitis }        from '../notes/conjunctivitis'
+import { contactDermatitis }     from '../notes/contactDermatitis'
+import { cfs }                   from '../notes/cfs'
+import { dmards }                from '../notes/dmards'
+import { cmpa }                  from '../notes/cmpa'
+import { cancerPain }            from '../notes/cancerPain'
+import { capacityMca }           from '../notes/capacityMca'
+import { cataracts }             from '../notes/cataracts'
+import { cervicalCancer }        from '../notes/cervicalCancer'
+import { childDevelopment }      from '../notes/childDevelopment'
+import { childSafeguarding }     from '../notes/childSafeguarding'
+import { chronicPain }           from '../notes/chronicPain'
+import { chronicPelvicPain }     from '../notes/chronicPelvicPain'
+import { doacs }                 from '../notes/doacs'
+import { deQuervains }           from '../notes/deQuervains'
+import { delayedPuberty }        from '../notes/delayedPuberty'
+import { diverticularDisease }   from '../notes/diverticularDisease'
+import { domesticViolence }      from '../notes/domesticViolence'
+import { dysphagia }             from '../notes/dysphagia'
+import { eatingDisorders }       from '../notes/eatingDisorders'
+import { elderlyFalls }          from '../notes/elderlyFalls'
+import { emergencyContraception } from '../notes/emergencyContraception'
+import { endometriosis }         from '../notes/endometriosis'
+import { colorectalCancer }      from '../notes/colorectalCancer'
+import { cushingsSyndrome }      from '../notes/cushingsSyndrome'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -251,4 +281,34 @@ export const NOTES: Note[] = [
   bleedingOnHrt,
   brainTumour,
   bcc,
+  bleedingOnContraception,
+  cdiff,
+  carpalTunnel,
+  croup,
+  delirium,
+  conjunctivitis,
+  contactDermatitis,
+  cfs,
+  dmards,
+  cmpa,
+  cancerPain,
+  capacityMca,
+  cataracts,
+  cervicalCancer,
+  childDevelopment,
+  childSafeguarding,
+  chronicPain,
+  chronicPelvicPain,
+  doacs,
+  deQuervains,
+  delayedPuberty,
+  diverticularDisease,
+  domesticViolence,
+  dysphagia,
+  eatingDisorders,
+  elderlyFalls,
+  emergencyContraception,
+  endometriosis,
+  colorectalCancer,
+  cushingsSyndrome,
 ].map(enrichBody)
