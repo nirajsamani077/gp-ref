@@ -154,6 +154,19 @@ import { emergencyContraception } from '../notes/emergencyContraception'
 import { endometriosis }         from '../notes/endometriosis'
 import { colorectalCancer }      from '../notes/colorectalCancer'
 import { cushingsSyndrome }      from '../notes/cushingsSyndrome'
+import { atopicEczema }              from '../notes/atopicEczema'
+import { gordDyspepsia }             from '../notes/gordDyspepsia'
+import { diabeticFoot }              from '../notes/diabeticFoot'
+import { erectileDysfunction }       from '../notes/erectileDysfunction'
+import { feverishChild }             from '../notes/feverishChild'
+import { fibromyalgia }              from '../notes/fibromyalgia'
+import { gallstonesPancreatitis }    from '../notes/gallstonesPancreatitis'
+import { gca }                       from '../notes/gca'
+import { frailty }                   from '../notes/frailty'
+import { endometrialCancer }         from '../notes/endometrialCancer'
+import { falteringGrowth }           from '../notes/falteringGrowth'
+import { familialHypercholesterolaemia } from '../notes/familialHypercholesterolaemia'
+import { glaucoma }                  from '../notes/glaucoma'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -311,4 +324,17 @@ export const NOTES: Note[] = [
   endometriosis,
   colorectalCancer,
   cushingsSyndrome,
+  atopicEczema,
+  gordDyspepsia,
+  diabeticFoot,
+  erectileDysfunction,
+  feverishChild,
+  fibromyalgia,
+  gallstonesPancreatitis,
+  gca,
+  frailty,
+  endometrialCancer,
+  falteringGrowth,
+  familialHypercholesterolaemia,
+  glaucoma,
 ].map(enrichBody)
