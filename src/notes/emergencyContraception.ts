@@ -3,73 +3,115 @@ import type { Note } from '../data/notes'
 export const emergencyContraception: Note = {
   id: 'emergency-contraception',
   title: 'Emergency Contraception',
-  subtitle: 'Levonelle, EllaOne, copper IUD — timing, efficacy, high BMI and quick starting',
+  subtitle: 'Levonelle, EllaOne, copper IUD — timing, efficacy, high BMI, quick-starting and missed pill rules',
   tags: ['contraception', 'gynaecology'],
 
-  body: 'emergency contraception EC levonorgestrel Levonelle LNG EllaOne ulipristal acetate UPA copper IUD intrauterine device UPSI unprotected sexual intercourse 72 hours 120 hours 5 days high BMI weight enzyme inducer enzyme induction pregnancy test quick start restart hormonal contraception breastfeeding',
+  body: 'emergency contraception EC levonorgestrel Levonelle LNG EllaOne ulipristal acetate UPA copper IUD intrauterine device UPSI unprotected sexual intercourse 72 hours 120 hours 5 days high BMI weight enzyme inducer enzyme induction pregnancy test quick start restart hormonal contraception breastfeeding missed pill rules pill window sexual assault SARC ovulation estimate calendar method STI screen chlamydia',
 
   content: [
     {
       type: 'callout',
       variant: 'info',
-      title: 'Emergency Contraception — Overview',
+      title: 'Emergency Contraception — Core Principles',
       items: [
-        'Offer all three options to ALL patients — discuss and let patient choose; always offer the most effective option (copper IUD)',
-        'Copper IUD is most effective (>99%) and provides ongoing contraception',
-        'EllaOne (UPA) is more effective than Levonelle, especially in the 48–72 hour window and in higher weight individuals',
-        'Always advise to take a pregnancy test 3 weeks after UPSI',
-        'Not for ongoing contraception (except copper IUD) — discuss future contraception needs at same visit',
+        'Offer ALL three options to every patient — discuss and let them choose; always mention the copper IUD as the most effective option even if you think they will decline',
+        'Copper IUD: most effective (>99%), works up to 5 days after UPSI or estimated ovulation; also provides ongoing contraception',
+        'EllaOne (UPA 30 mg): more effective than Levonelle, especially beyond 48 hours; use if 48–120 hours since UPSI or if BMI >26 and Levonelle not available/declined',
+        'Levonelle (LNG 1.5 mg): effective within 72 hours; available OTC; double the dose if weight >70 kg or BMI >26',
+        'Every consultation is an opportunity: discuss future ongoing contraception and quick-start before the patient leaves',
       ],
     },
 
-    { type: 'heading', level: 2, text: 'Comparison of Options' },
+    { type: 'heading', level: 2, text: 'Comparison of Methods' },
 
     {
       type: 'table',
-      headers: ['Method', 'Time Window', 'Efficacy', 'Dose', 'Key Points'],
+      headers: ['Method', 'Time Window', 'Efficacy', 'Key Clinical Points'],
       rows: [
-        ['Levonelle (levonorgestrel 1.5 mg)', 'Within 72 hours (3 days) of UPSI', '~85% (reduces with time)', '1.5 mg single dose. Double dose (3 mg) if weight >70 kg or BMI >26 or on enzyme inducers', 'OTC available. Can use >1× per cycle. Repeat dose if vomiting within 3 hours. Can start other hormonal contraception immediately after.'],
-        ['EllaOne (ulipristal acetate 30 mg)', 'Within 120 hours (5 days) of UPSI — PREFERRED if >72 hours', 'More effective than Levonelle, especially at 48–72 hours and in higher BMI patients', '30 mg single dose', 'Prescription only. Can now be used >1× per cycle. Caution in severe asthma (theoretical risk of worsening). DO NOT start hormonal contraception for 5 days (reduces efficacy). Delay breastfeeding for 1 week after UPA. Do NOT co-prescribe with Levonelle (antagonism).'],
-        ['Copper IUD', 'Within 120 hours (5 days) of UPSI, OR within 5 days of estimated ovulation date', '>99% (most effective)', 'Intrauterine device — requires fitting by trained clinician', 'Can be left in situ for ongoing long-term contraception. Must wait until next period to remove if not being used long-term. Suitable for all BMI categories. NOT suitable in current STI — screen first.'],
+        ['Levonelle (levonorgestrel 1.5 mg)', 'Within 72 hours (3 days) of UPSI — efficacy reduces with time', '~85% if taken <24h; ~58% if taken 49–72h', 'OTC available (pharmacy without prescription). Standard dose if weight ≤70 kg/BMI ≤26; DOUBLE DOSE (3 mg = 2 tablets) if >70 kg or BMI >26. Repeat if vomiting within 3 hours. Can use >1× per cycle. Start hormonal contraception immediately after.'],
+        ['EllaOne (ulipristal acetate 30 mg)', 'Within 120 hours (5 days) of UPSI — PREFERRED if >72 hours, high BMI, or multiple UPSI episodes', 'More effective than LNG across all time points; maintains efficacy at 72–120 hours', 'Prescription only. No dose adjustment for weight/BMI — efficacy maintained. Wait 5 days before starting hormonal contraception (UPA reduces efficacy of progestogens and vice versa). Breastfeeding: express and discard milk for 1 week. Do NOT co-prescribe with Levonelle.'],
+        ['Copper IUD (Cu-IUD)', 'Within 120 hours of UPSI, OR within 5 days of estimated ovulation (may be >5 days after UPSI if later ovulation)', '>99% — most effective; only method that prevents implantation regardless of when in cycle', 'Requires trained clinician to fit. Suitable for all BMI. Can be left in situ for ongoing long-term contraception (10–12 years). Check threads at 6 weeks. Screen for STI before/at fitting. Contraindicated if active STI or high infection risk — treat first if possible, or fit with antibiotic cover.'],
       ],
-      caption: 'FSRH recommends Levonelle at double dose if weight >70 kg or BMI >26, as standard dose may be less effective. EllaOne has better evidence in higher BMI patients without dose adjustment. Copper IUD is weight-independent and most effective.',
+      caption: 'If enzyme-inducing drugs (rifampicin, carbamazepine, phenytoin, St John\'s Wort, efavirenz): copper IUD is the ONLY reliable option. If copper IUD declined: double-dose Levonelle (3 mg). EllaOne is NOT recommended in enzyme-inducer users.',
     },
 
-    { type: 'heading', level: 2, text: 'Enzyme Inducers — Effect on EC' },
+    { type: 'heading', level: 2, text: 'Estimating UPSI Risk and Timing' },
 
     {
       type: 'list',
       items: [
-        'Enzyme inducers reduce the efficacy of both Levonelle and EllaOne: rifampicin, carbamazepine, phenytoin, phenobarbitone, St John\'s Wort, efavirenz, griseofulvin',
-        'If on an enzyme inducer: offer copper IUD (NOT affected) as preferred option',
-        'If copper IUD declined and on enzyme inducer: double dose Levonelle (3 mg) — NOTE: EllaOne is NOT recommended in enzyme inducer users',
-        'Levonelle at double dose can be used; cannot use EllaOne with enzyme inducers',
+        'Ask: date(s) of UPSI, cycle length, date of last menstrual period (LMP) — to estimate current cycle stage',
+        'If UPSI within 72 hours → Levonelle or EllaOne both appropriate; copper IUD most effective',
+        'If UPSI 72–120 hours → EllaOne or copper IUD; Levonelle is licensed up to 72h but less effective beyond 24–48h',
+        'If UPSI >120 hours ago: hormonal EC unlikely to be effective; copper IUD is still effective if within 5 days of estimated ovulation date',
+        'Estimating ovulation: ovulation typically occurs on day 14 of a 28-day cycle (range day 10–16); adjust for cycle length. Example: in a regular 28-day cycle with LMP day 1, ovulation estimated day 14 — copper IUD can be fitted up to day 19 (day 14 + 5)',
+        'Multiple UPSI episodes in same cycle: Levonelle covers only the most recent episode; EllaOne or copper IUD are preferred if multiple UPSI episodes have occurred',
+        'If already pregnant: EC will not terminate an established pregnancy; confirm with pregnancy test; offer counselling',
       ],
+    },
+
+    { type: 'heading', level: 2, text: 'Missed Pill Rules — When EC Is Needed' },
+
+    {
+      type: 'table',
+      headers: ['Method', 'Missed Pill Situation Requiring EC', 'EC Choice', 'Restart Guidance'],
+      rows: [
+        ['COCP (combined pill)', 'Missed ≥2 pills in WEEK 1 of pack AND UPSI occurred in pill-free interval or week 1', 'Copper IUD preferred; if declined: EllaOne (then wait 5 days before restarting COCP) or Levonelle (restart COCP immediately)', 'After Levonelle: restart COCP same day with 7-day extra precautions; after EllaOne: wait 5 days before restarting COCP'],
+        ['COCP', 'Missed ≥2 pills in WEEK 3 of pack AND UPSI: omit pill-free interval and start new pack — no EC needed if pills taken correctly for preceding week', 'No EC needed if pills taken correctly in week prior', 'Start new pack immediately; 7-day additional precautions'],
+        ['POP (desogestrel)', 'More than 12 hours late taking POP AND UPSI in preceding 7 days', 'EC if UPSI; copper IUD preferred; EllaOne or Levonelle', 'Restart POP immediately with 2-day additional precautions'],
+        ['POP (norethisterone)', 'More than 3 hours late AND UPSI in preceding 7 days', 'EC if UPSI', 'Restart POP with 2-day additional precautions'],
+      ],
+      caption: 'Always check FSRH guidance for exact rules — this table is a GP-level summary. The 3-hour window applies to traditional POP (norethisterone-based); the 12-hour window applies to desogestrel-based POP (Cerazette/Cerelle).',
     },
 
     { type: 'heading', level: 2, text: 'Quick-Starting Hormonal Contraception After EC' },
 
     {
-      type: 'table',
-      headers: ['After EC Method', 'When to Quick Start Hormonal Contraception', 'Additional Precautions'],
-      rows: [
-        ['After Levonelle', 'Hormonal contraception can be started immediately', '7-day additional contraception (condoms) unless copper IUD fitted; pregnancy test at 3 weeks'],
-        ['After EllaOne (UPA)', 'Wait 5 days before starting hormonal contraception — starting earlier reduces EllaOne efficacy', 'After 5 days: quick-start hormonal contraception with 7-day additional precautions; pregnancy test at 3 weeks'],
-        ['Special case: COCP with missed pills', 'If missed 2+ pills in week 1 of pack AND UPSI: EllaOne preferred EC option; then re-quick start COCP with 7-day precautions (UPA + restart COCP on day 5)', 'Complex interaction — follow FSRH guidance; COCP reduces UPA efficacy if co-timed'],
+      type: 'list',
+      items: [
+        'Quick-starting is RECOMMENDED — most women requesting EC are not using reliable ongoing contraception; taking advantage of the consultation to start is best practice',
+        'After Levonelle: start hormonal contraception SAME DAY; use additional 7-day barrier precautions; pregnancy test at 3 weeks',
+        'After EllaOne: WAIT 5 days before starting progestogen-containing contraception (hormonal progestogen reduces UPA efficacy); start day 5; 7-day additional precautions; pregnancy test at 3 weeks',
+        'After copper IUD: method is immediately effective; no additional precautions needed; can leave in situ for long-term contraception or remove after next period',
+        'Implant: can be inserted same day as or after EllaOne (insertion does not affect EC efficacy); 7-day precautions after insertion',
+        'LARC at same visit as EC: best practice — BPAS clinics and GUM services routinely offer this; copper IUD at same visit as EC is the most efficient option',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Special Situations' },
+
+    {
+      type: 'list',
+      items: [
+        'Sexual assault: offer EC regardless of elapsed time (as above); also offer STI screening (NAAT chlamydia/gonorrhoea + syphilis serology + HIV PEP assessment); refer to local SARC (Sexual Assault Referral Centre) for forensic examination and holistic support; SARC Staffordshire — 0800 082 0099',
+        'Breastfeeding: Levonelle — safe (small amount in breast milk; not harmful); EllaOne — advise to express and discard breast milk for 7 days; copper IUD — safe',
+        'Under-16: Fraser/Gillick competence assessment; offer EC without parental consent if competent and in best interests; safeguarding check if coercion or abuse suspected; under-13 → mandatory safeguarding referral',
+        'Known pregnancy: EC will NOT terminate an established pregnancy; if >3 weeks since UPSI → do pregnancy test first',
+        'STI risk: if high-risk UPSI (new/multiple partners, known STI exposure) → offer chlamydia and gonorrhoea screening at the same visit; results in 1–2 weeks',
+        'Nausea/vomiting: common side effect of Levonelle; if vomiting within 3 hours → repeat the dose; domperidone 10 mg can be given before the EC tablet; EllaOne has lower nausea profile',
       ],
     },
 
     {
       type: 'callout',
       variant: 'warning',
-      title: 'Key Clinical Considerations',
+      title: 'Follow-Up and Safety Netting',
       items: [
-        'Exclude pregnancy before prescribing hormonal EC — if >5 days since UPSI: pregnancy test first',
-        'STI risk: if UPSI at risk of STI — offer screening (NAAT swabs for chlamydia/gonorrhoea) alongside EC',
-        'Breastfeeding: Levonelle is safe during breastfeeding. EllaOne (UPA): advise to express and discard breast milk for 1 week after taking',
-        'Nausea: common side effect of Levonelle; if vomiting within 3 hours, repeat dose',
-        'Subsequent period: Levonelle and EllaOne may cause early or late period; advise pregnancy test if period is >7 days late or lighter than usual',
-        'Copper IUD for ongoing contraception: can be removed after next period if not wanted long-term',
+        'Pregnancy test at 3 weeks after UPSI: Levonelle and EllaOne may cause early or delayed next period — advise pregnancy test if period >7 days late or unusually light',
+        'If using copper IUD: arrange 6-week thread check with GP or practice nurse',
+        'Document: date and time of UPSI, method of EC given, quick-start plan, advice given, pregnancy test timing',
+        'Return sooner if: very heavy bleeding (haemodynamic instability), severe one-sided abdominal pain (ectopic risk), signs of STI (discharge, dysuria, pelvic pain)',
+        'Next regular GP appointment: offer STI results review and contraception assessment if not already done',
+      ],
+    },
+
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'FSRH — Emergency Contraception Guideline (2023)', url: 'https://www.fsrh.org/documents/cec-clinical-guidance-emergency-contraception-march-2017/' },
+        { label: 'NICE CKS — Emergency Contraception', url: 'https://cks.nice.org.uk/topics/emergency-contraception/' },
+        { label: 'NHS — Emergency Contraception', url: 'https://www.nhs.uk/contraception/emergency-contraception/' },
+        { label: 'STAFFORDSHIRE SARC', url: 'https://staffordshiresarc.nhs.uk/' },
       ],
     },
 
@@ -78,21 +120,12 @@ export const emergencyContraception: Note = {
       variant: 'tip',
       title: '📍 Local Access — Darwin Practice, Lichfield',
       items: [
-        'EC from Darwin Practice: available during practice hours; prescribe Levonelle or EllaOne or arrange copper IUD referral',
-        'Out of hours: local pharmacies (Levonelle/EllaOne OTC without prescription); NHS 111',
-        'Copper IUD fitting: UHDB Burton Sexual Health / GUM clinic or local LARC service — Darwin Practice can refer; some GPs with LNG-IUS experience may fit',
-        'Sexual health (GUM): UHDB Burton or MPFT sexual health service Lichfield — STI screening alongside EC',
-        'Brook or SH:24: online STI testing and EC advice for young people',
-      ],
-    },
-
-    {
-      type: 'linkrow',
-      links: [
-        { label: 'FSRH — Emergency Contraception Guideline', url: 'https://www.fsrh.org/documents/cec-clinical-guidance-emergency-contraception-march-2017/' },
-        { label: 'NICE CKS — Emergency Contraception', url: 'https://cks.nice.org.uk/topics/emergency-contraception/' },
-        { label: 'NHS — Emergency Contraception', url: 'https://www.nhs.uk/contraception/emergency-contraception/' },
-        { label: 'FPA — EC Patient Info', url: 'https://www.fpa.org.uk/contraception-help/emergency-contraception' },
+        'EC from Darwin Practice: prescribe Levonelle or EllaOne in-hours; copper IUD referral to GUM/LARC service',
+        'Out of hours EC: local pharmacies (Levonelle/EllaOne OTC); NHS 111 for OOH prescription; Boots and Superdrug pharmacies often open extended hours',
+        'Copper IUD fitting: Staffordshire Sexual Health Service Lichfield — MPFT GUM/sexual health; some GP practices with LARC-trained clinicians',
+        'STI screening: Staffordshire Sexual Health Service — 01543 444100; walk-in or online booking; umbrella.nhs.uk',
+        'SARC (sexual assault): Staffordshire SARC — 0800 082 0099 (24/7); can be accessed directly by patient or via police/healthcare professional',
+        'Brook/SH:24: online STI testing and EC advice for young people (under 25)',
       ],
     },
   ],
