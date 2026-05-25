@@ -5,7 +5,8 @@
       "name": "GP Ref — Dev",
       "runtimeExecutable": "/usr/local/bin/node",
       "runtimeArgs": ["/Users/nirajsamani/Desktop/gp-ref/node_modules/.bin/vite"],
-      "port": 5173
+      "port": 5173,
+      "autoPort": true
     },
     {
       "name": "GP Ref — Preview",

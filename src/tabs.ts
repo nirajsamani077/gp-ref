@@ -6,4 +6,5 @@ export const TABS: Tab[] = [
   { id: 'links',       label: 'Links',       icon: '🔗' },
   { id: 'calculators', label: 'Calculators', icon: '🧮' },
   { id: 'forms',       label: 'Forms',       icon: '📋' },
+  { id: 'ask',         label: 'Ask',         icon: '💬' },
 ]
