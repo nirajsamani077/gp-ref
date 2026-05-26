@@ -1,4 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk'
+import Fuse from 'fuse.js'
 import { NOTES } from '../data/notes'
 import type { Note } from '../data/notes'
 
@@ -12,32 +13,80 @@ const client = new Anthropic({
 
 // ---------------------------------------------------------------------------
 // Relevance scoring — pick the top N notes for a given query
+// Uses Fuse.js fuzzy search (handles typos/drug name variations) combined
+// with keyword scoring, with medical stopwords filtered out
 // ---------------------------------------------------------------------------
+
+// Generic medical words that appear in almost every note — useless for ranking
+const STOPWORDS = new Set([
+  'criteria', 'management', 'diagnosis', 'treatment', 'assessment',
+  'referral', 'investigation', 'symptoms', 'symptom', 'guideline',
+  'guidelines', 'local', 'threshold', 'score', 'scoring', 'adults',
+  'adult', 'children', 'child', 'patient', 'patients', 'primary',
+  'care', 'nice', 'first', 'line', 'second', 'when', 'what', 'how',
+  'does', 'this', 'that', 'from', 'with', 'for', 'and', 'the',
+  'use', 'used', 'using', 'give', 'can', 'should', 'would', 'could',
+  'risk', 'dose', 'doses', 'drug', 'drugs', 'prescribe', 'prescribing',
+])
+
+// Fuse instance — title/tags/subtitle for topic matching,
+// body included at lower weight to catch drug names and specific terms
+const fuse = new Fuse(NOTES, {
+  keys: [
+    { name: 'title',    weight: 4 },
+    { name: 'tags',     weight: 2 },
+    { name: 'subtitle', weight: 1.5 },
+    { name: 'body',     weight: 0.4 },  // catches drug names, specific terms
+  ],
+  threshold: 0.35,   // allows ~2 character typos on a 12-char word
+  includeScore: true,
+  ignoreLocation: true,
+  minMatchCharLength: 4,
+})
+
 export function getRelevantNotes(query: string, topN = 6): Note[] {
-  const words = query
-    .toLowerCase()
-    .split(/\s+/)
-    .filter(w => w.length > 2)
+  const scoreMap = new Map<string, number>()
 
-  if (words.length === 0) return NOTES.slice(0, topN)
-
-  const scored = NOTES.map(note => {
-    const haystack = (note.body + ' ' + note.title + ' ' + note.tags.join(' ')).toLowerCase()
-    const score = words.reduce((acc, w) => {
-      // count occurrences
-      let count = 0
-      let idx = 0
-      while ((idx = haystack.indexOf(w, idx)) !== -1) { count++; idx++ }
-      return acc + count
-    }, 0)
-    return { note, score }
+  // 1) Fuzzy match on title/tags — catches typos and drug name variations
+  const fuseResults = fuse.search(query)
+  fuseResults.forEach(r => {
+    const fuzzyScore = (1 - (r.score ?? 1)) * 15   // scale to ~0–15
+    scoreMap.set(r.item.id, (scoreMap.get(r.item.id) ?? 0) + fuzzyScore)
   })
 
-  return scored
-    .sort((a, b) => b.score - a.score)
+  // 2) Keyword match on full body — catches specific terms in note content
+  const words = query
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(w => w.length > 2 && !STOPWORDS.has(w))
+
+  if (words.length > 0) {
+    NOTES.forEach(note => {
+      const titleLower = note.title.toLowerCase()
+      const bodyHaystack = (note.body + ' ' + note.tags.join(' ')).toLowerCase()
+
+      let kwScore = 0
+      words.forEach(w => {
+        // Title match — highest weight (very specific signal)
+        if (titleLower.includes(w)) kwScore += 8
+        // Body occurrence count
+        let idx = 0
+        while ((idx = bodyHaystack.indexOf(w, idx)) !== -1) { kwScore += 1; idx++ }
+      })
+
+      if (kwScore > 0) {
+        scoreMap.set(note.id, (scoreMap.get(note.id) ?? 0) + kwScore)
+      }
+    })
+  }
+
+  if (scoreMap.size === 0) return NOTES.slice(0, topN)
+
+  return NOTES
+    .filter(n => scoreMap.has(n.id))
+    .sort((a, b) => (scoreMap.get(b.id) ?? 0) - (scoreMap.get(a.id) ?? 0))
     .slice(0, topN)
-    .filter(s => s.score > 0)
-    .map(s => s.note)
 }
 
 // ---------------------------------------------------------------------------
