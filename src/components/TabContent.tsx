@@ -4,9 +4,9 @@ import CalculatorsTab from './CalculatorsTab'
 import NotesTab from './NotesTab'
 import SymptomsTab from './SymptomsTab'
 import AskTab from './AskTab'
+import FormsTab from './FormsTab'
 
 const PLACEHOLDERS: Partial<Record<TabId, string>> = {
-  forms:  'Forms coming soon',
   images: 'Images coming soon',
 }
 
@@ -22,6 +22,14 @@ export default function TabContent({ active, highlightedLinkUrl, highlightedCalc
     return (
       <main style={{ flex: 1, overflow: 'hidden', backgroundColor: '#f7f9fb', display: 'flex', flexDirection: 'column' }}>
         <NotesTab highlightedNoteId={highlightedNoteId} />
+      </main>
+    )
+  }
+
+  if (active === 'forms') {
+    return (
+      <main style={{ flex: 1, overflow: 'hidden', backgroundColor: '#f7f9fb', display: 'flex', flexDirection: 'column' }}>
+        <FormsTab />
       </main>
     )
   }
