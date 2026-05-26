@@ -116,51 +116,156 @@ function TypingDots() {
   )
 }
 
-// Render assistant message text with basic markdown-ish formatting
+// ---------------------------------------------------------------------------
+// Markdown renderer — supports headings, bullets, bold, tables, separators
+// ---------------------------------------------------------------------------
+
+// Inline: **bold** and *italic*
+function formatInline(text: string): React.ReactNode {
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/)
+  if (parts.length === 1) return text
+  return (
+    <>
+      {parts.map((p, i) => {
+        if (p.startsWith('**') && p.endsWith('**')) return <strong key={i}>{p.slice(2, -2)}</strong>
+        if (p.startsWith('*')  && p.endsWith('*'))  return <em key={i}>{p.slice(1, -1)}</em>
+        return <span key={i}>{p}</span>
+      })}
+    </>
+  )
+}
+
+// Detect and group table lines
+function isTableRow(line: string) { return line.trim().startsWith('|') && line.trim().endsWith('|') }
+function parseTableCells(line: string): string[] {
+  return line.trim().slice(1, -1).split('|').map(c => c.trim())
+}
+
+function renderTable(rows: string[], key: number) {
+  if (rows.length < 2) return null
+  const headers = parseTableCells(rows[0])
+  // rows[1] is the separator --- skip it, data starts at rows[2]
+  const dataRows = rows.slice(2)
+  return (
+    <div key={key} style={{ overflowX: 'auto', margin: '8px 0' }}>
+      <table style={{
+        borderCollapse: 'collapse',
+        fontSize: 12.5,
+        width: '100%',
+        minWidth: 280,
+      }}>
+        <thead>
+          <tr>
+            {headers.map((h, i) => (
+              <th key={i} style={{
+                background: '#1a365d',
+                color: '#fff',
+                padding: '5px 8px',
+                textAlign: 'left',
+                fontWeight: 600,
+                whiteSpace: 'nowrap',
+                fontSize: 12,
+              }}>{formatInline(h)}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {dataRows.map((row, ri) => {
+            const cells = parseTableCells(row)
+            return (
+              <tr key={ri} style={{ background: ri % 2 === 0 ? '#f7f9fb' : '#fff' }}>
+                {cells.map((c, ci) => (
+                  <td key={ci} style={{
+                    padding: '5px 8px',
+                    borderBottom: '1px solid #e2ecf7',
+                    verticalAlign: 'top',
+                    lineHeight: 1.4,
+                  }}>{formatInline(c)}</td>
+                ))}
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+type Block =
+  | { type: 'line'; content: string; raw: string }
+  | { type: 'table'; rows: string[] }
+
+function parseBlocks(text: string): Block[] {
+  const lines = text.split('\n')
+  const blocks: Block[] = []
+  let tableRows: string[] = []
+
+  lines.forEach(line => {
+    if (isTableRow(line)) {
+      tableRows.push(line)
+    } else {
+      if (tableRows.length >= 2) {
+        blocks.push({ type: 'table', rows: tableRows })
+        tableRows = []
+      } else if (tableRows.length > 0) {
+        tableRows.forEach(tr => blocks.push({ type: 'line', content: tr, raw: tr }))
+        tableRows = []
+      }
+      blocks.push({ type: 'line', content: line, raw: line })
+    }
+  })
+  if (tableRows.length >= 2) blocks.push({ type: 'table', rows: tableRows })
+  return blocks
+}
+
 function MessageText({ text, streaming }: { text: string; streaming?: boolean }) {
   if (!text && streaming) return <TypingDots />
 
-  // Split on newlines to render line by line
-  const lines = text.split('\n')
+  const blocks = parseBlocks(text)
+
   return (
     <div style={{ lineHeight: 1.55, fontSize: 14 }}>
-      {lines.map((line, i) => {
+      {blocks.map((block, i) => {
+        if (block.type === 'table') return renderTable(block.rows, i)
+
+        const line = block.content
         const trimmed = line.trim()
-        if (!trimmed) return <div key={i} style={{ height: 6 }} />
-        // Bold if starts with ### or ** wrapping
+
+        if (!trimmed) return <div key={i} style={{ height: 5 }} />
+
+        if (trimmed === '---' || trimmed === '***') {
+          return <hr key={i} style={{ border: 'none', borderTop: '1px solid #e2ecf7', margin: '8px 0' }} />
+        }
         if (trimmed.startsWith('### ')) {
-          return <div key={i} style={{ fontWeight: 700, marginTop: 6 }}>{trimmed.slice(4)}</div>
+          return <div key={i} style={{ fontWeight: 700, fontSize: 13.5, color: NAVY, marginTop: 10, marginBottom: 2 }}>{formatInline(trimmed.slice(4))}</div>
         }
         if (trimmed.startsWith('## ')) {
-          return <div key={i} style={{ fontWeight: 700, fontSize: 15, marginTop: 8 }}>{trimmed.slice(3)}</div>
+          return <div key={i} style={{ fontWeight: 700, fontSize: 15, color: NAVY, marginTop: 10, marginBottom: 3 }}>{formatInline(trimmed.slice(3))}</div>
+        }
+        if (trimmed.startsWith('# ')) {
+          return <div key={i} style={{ fontWeight: 800, fontSize: 15, color: NAVY, marginTop: 8, marginBottom: 4 }}>{formatInline(trimmed.slice(2))}</div>
         }
         if (trimmed.startsWith('- ') || trimmed.startsWith('• ')) {
           return (
-            <div key={i} style={{ display: 'flex', gap: 6, marginTop: 2 }}>
-              <span style={{ color: '#64748b', flexShrink: 0, marginTop: 1 }}>•</span>
+            <div key={i} style={{ display: 'flex', gap: 6, marginTop: 3, alignItems: 'flex-start' }}>
+              <span style={{ color: '#64748b', flexShrink: 0, marginTop: 1, lineHeight: 1.55 }}>•</span>
               <span>{formatInline(trimmed.slice(2))}</span>
+            </div>
+          )
+        }
+        if (/^\d+\.\s/.test(trimmed)) {
+          const match = trimmed.match(/^(\d+)\.\s(.*)$/)
+          if (match) return (
+            <div key={i} style={{ display: 'flex', gap: 6, marginTop: 3 }}>
+              <span style={{ color: '#64748b', flexShrink: 0, minWidth: 18 }}>{match[1]}.</span>
+              <span>{formatInline(match[2])}</span>
             </div>
           )
         }
         return <div key={i} style={{ marginTop: i === 0 ? 0 : 4 }}>{formatInline(line)}</div>
       })}
-      {streaming && text && <span style={{ opacity: 0.4 }}>▋</span>}
+      {streaming && text && <span style={{ opacity: 0.35 }}>▋</span>}
     </div>
-  )
-}
-
-// Inline bold via **...**
-function formatInline(text: string): React.ReactNode {
-  const parts = text.split(/(\*\*[^*]+\*\*)/)
-  if (parts.length === 1) return text
-  return (
-    <>
-      {parts.map((p, i) =>
-        p.startsWith('**') && p.endsWith('**')
-          ? <strong key={i}>{p.slice(2, -2)}</strong>
-          : <span key={i}>{p}</span>
-      )}
-    </>
   )
 }
 
