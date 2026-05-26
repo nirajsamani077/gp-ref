@@ -6,6 +6,7 @@ const NAVY = '#1a365d'
 
 // Canonical category order + display labels
 const CATEGORY_LABELS: Record<string, string> = {
+  Darwin:       '📍 Darwin Referrals',
   Cardiology:   'Cardiology',
   Respiratory:  'Respiratory',
   Derm:         'Dermatology',
@@ -191,6 +192,7 @@ function FormCard({ form, onOpen }: { form: GPForm; onOpen: (f: GPForm) => void 
   const [hovered, setHovered] = useState(false)
   const label = CATEGORY_LABELS[form.category] ?? form.category
   const catColor = CAT_COLORS[form.category] ?? '#64748b'
+  const isDarwin = form.category === 'Darwin'
 
   return (
     <div
@@ -198,8 +200,12 @@ function FormCard({ form, onOpen }: { form: GPForm; onOpen: (f: GPForm) => void 
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        background: hovered ? '#f0f5ff' : '#fff',
-        border: `1px solid ${hovered ? '#b3c8f0' : '#e2ecf7'}`,
+        background: isDarwin
+          ? (hovered ? '#e8eef8' : '#f0f4fa')
+          : (hovered ? '#f0f5ff' : '#fff'),
+        border: isDarwin
+          ? `1.5px solid ${hovered ? '#1a365d' : '#b3c8e8'}`
+          : `1px solid ${hovered ? '#b3c8f0' : '#e2ecf7'}`,
         borderRadius: 10,
         padding: '10px 12px',
         cursor: 'pointer',
@@ -209,13 +215,13 @@ function FormCard({ form, onOpen }: { form: GPForm; onOpen: (f: GPForm) => void 
         gap: 10,
       }}
     >
-      {/* PDF icon */}
+      {/* Icon */}
       <div style={{
         flexShrink: 0, width: 36, height: 36, borderRadius: 8,
-        background: catColor + '18',
+        background: catColor + (isDarwin ? '28' : '18'),
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         fontSize: 18,
-      }}>📄</div>
+      }}>{isDarwin ? '🏥' : '📄'}</div>
 
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ fontSize: 13, fontWeight: 600, color: '#1e293b', lineHeight: 1.3, marginBottom: 4 }}>
@@ -224,10 +230,11 @@ function FormCard({ form, onOpen }: { form: GPForm; onOpen: (f: GPForm) => void 
         <span style={{
           display: 'inline-block',
           fontSize: 10, fontWeight: 700, textTransform: 'uppercase',
-          letterSpacing: '0.05em', color: catColor,
-          background: catColor + '18', borderRadius: 4, padding: '1px 6px',
+          letterSpacing: '0.05em', color: isDarwin ? '#fff' : catColor,
+          background: isDarwin ? catColor : catColor + '18',
+          borderRadius: 4, padding: '1px 6px',
         }}>
-          {label}
+          {isDarwin ? '📍 Darwin' : label}
         </span>
       </div>
 
@@ -253,6 +260,7 @@ function pillStyle(active: boolean) {
 }
 
 const CAT_COLORS: Record<string, string> = {
+  Darwin:       '#1a365d',
   Cardiology:   '#e53e3e',
   Respiratory:  '#3182ce',
   Derm:         '#d69e2e',

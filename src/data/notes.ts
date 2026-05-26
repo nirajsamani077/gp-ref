@@ -168,6 +168,7 @@ import { falteringGrowth }           from '../notes/falteringGrowth'
 import { familialHypercholesterolaemia } from '../notes/familialHypercholesterolaemia'
 import { glaucoma }                  from '../notes/glaucoma'
 import { hypertension }             from '../notes/hypertension'
+import { darwinReferrals }          from '../notes/darwinReferrals'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -339,4 +340,5 @@ export const NOTES: Note[] = [
   familialHypercholesterolaemia,
   glaucoma,
   hypertension,
+  darwinReferrals,
 ].map(enrichBody)
