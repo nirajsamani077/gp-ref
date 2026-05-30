@@ -169,6 +169,12 @@ import { familialHypercholesterolaemia } from '../notes/familialHypercholesterol
 import { glaucoma }                  from '../notes/glaucoma'
 import { hypertension }             from '../notes/hypertension'
 import { darwinReferrals }          from '../notes/darwinReferrals'
+import { sorethroatTonsillitis }    from '../notes/sorethroatTonsillitis'
+import { utiWomen }                 from '../notes/utiWomen'
+import { utiMen }                   from '../notes/utiMen'
+import { vertigo }                  from '../notes/vertigo'
+import { vitaminD }                 from '../notes/vitaminD'
+import { vaginalDischarge }         from '../notes/vaginalDischarge'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -341,4 +347,10 @@ export const NOTES: Note[] = [
   glaucoma,
   hypertension,
   darwinReferrals,
+  sorethroatTonsillitis,
+  utiWomen,
+  utiMen,
+  vertigo,
+  vitaminD,
+  vaginalDischarge,
 ].map(enrichBody)
