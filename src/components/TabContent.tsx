@@ -15,9 +15,11 @@ interface Props {
   highlightedLinkUrl?: string | null
   highlightedCalcId?: string | null
   highlightedNoteId?: string | null
+  pendingAskQuery?: string
+  onClearPendingAskQuery?: () => void
 }
 
-export default function TabContent({ active, highlightedLinkUrl, highlightedCalcId, highlightedNoteId }: Props) {
+export default function TabContent({ active, highlightedLinkUrl, highlightedCalcId, highlightedNoteId, pendingAskQuery, onClearPendingAskQuery }: Props) {
   if (active === 'notes') {
     return (
       <main style={{ flex: 1, overflow: 'hidden', backgroundColor: '#f7f9fb', display: 'flex', flexDirection: 'column' }}>
@@ -37,7 +39,7 @@ export default function TabContent({ active, highlightedLinkUrl, highlightedCalc
   if (active === 'ask') {
     return (
       <main style={{ flex: 1, overflow: 'hidden', backgroundColor: '#f7f9fb', display: 'flex', flexDirection: 'column', position: 'relative' }}>
-        <AskTab />
+        <AskTab pendingQuery={pendingAskQuery} onClearPendingQuery={onClearPendingAskQuery} />
       </main>
     )
   }

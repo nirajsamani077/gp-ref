@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import BottomTabBar from './components/BottomTabBar'
 import TabContent from './components/TabContent'
+import CommandPalette from './components/CommandPalette'
 import { UpdateBanner } from './components/UpdateBanner'
 
 function useIsDesktop() {
@@ -23,28 +24,41 @@ export default function App() {
   const [highlightedLinkUrl, setHighlightedLinkUrl] = useState<string | null>(null)
   const [highlightedCalcId, setHighlightedCalcId]   = useState<string | null>(null)
   const [highlightedNoteId, setHighlightedNoteId]   = useState<string | null>(null)
+  const [paletteOpen, setPaletteOpen]       = useState(false)
+  const [pendingAskQuery, setPendingAskQuery] = useState<string | undefined>(undefined)
   const isDesktop = useIsDesktop()
 
   const handleTabSelect = useCallback((tabId: TabId) => {
     if (tabId === 'notes' && activeTab === 'notes') {
-      // Re-tapping the active Notes tab resets to the home list view
       window.dispatchEvent(new CustomEvent('gpr-home'))
     } else {
       setActiveTab(tabId)
     }
   }, [activeTab])
 
-  // Tapping the logo from any state: switch to Notes + reset its internal state
   const handleGoHome = useCallback(() => {
     setActiveTab('notes')
     window.dispatchEvent(new CustomEvent('gpr-home'))
   }, [])
 
-  // Called by the header search when user picks a link or calculator
   const handleNavigate = useCallback((tab: TabId, id: string) => {
     setActiveTab(tab)
     if (tab === 'links')       setHighlightedLinkUrl(id)
     if (tab === 'calculators') setHighlightedCalcId(id)
+  }, [])
+
+  // Command palette — open via button or ⌘K event from CommandPalette
+  const handleOpenPalette = useCallback(() => setPaletteOpen(true), [])
+  useEffect(() => {
+    const handler = () => setPaletteOpen(true)
+    window.addEventListener('gpr-open-palette', handler)
+    return () => window.removeEventListener('gpr-open-palette', handler)
+  }, [])
+
+  // Ask tab — called from command palette "Ask AI" row
+  const handleAsk = useCallback((query: string) => {
+    setActiveTab('ask')
+    setPendingAskQuery(query)
   }, [])
 
   // Listen for in-note calculator link clicks (dispatched by NoteRenderer calclink blocks)
@@ -75,7 +89,11 @@ export default function App() {
       height: '100dvh', backgroundColor: '#fff',
       fontFamily: "system-ui, 'Segoe UI', Roboto, sans-serif",
     }}>
-      <Header onNavigate={handleNavigate} onHome={handleGoHome} />
+      <Header
+        onNavigate={handleNavigate}
+        onHome={handleGoHome}
+        onOpenPalette={handleOpenPalette}
+      />
 
       <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
         {isDesktop && (
@@ -86,12 +104,21 @@ export default function App() {
           highlightedLinkUrl={highlightedLinkUrl}
           highlightedCalcId={highlightedCalcId}
           highlightedNoteId={highlightedNoteId}
+          pendingAskQuery={pendingAskQuery}
+          onClearPendingAskQuery={() => setPendingAskQuery(undefined)}
         />
       </div>
 
       {!isDesktop && (
         <BottomTabBar tabs={TABS} active={activeTab} onSelect={handleTabSelect} />
       )}
+
+      <CommandPalette
+        isOpen={paletteOpen}
+        onClose={() => setPaletteOpen(false)}
+        onNavigate={handleNavigate}
+        onAsk={handleAsk}
+      />
 
       <UpdateBanner />
     </div>

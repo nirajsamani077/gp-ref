@@ -1,96 +1,12 @@
-import { useState, useRef, useEffect } from 'react'
-import { LINK_CATEGORIES } from '../data/links'
 import type { TabId } from '../types'
 
-// ── Search index: links + calculators ────────────────────────────────────────
-interface SearchResult {
-  label: string
-  sublabel: string
-  tab: TabId
-  id: string          // URL for links, calc id for calculators
-}
-
-const CALC_ENTRIES: SearchResult[] = [
-  { label: 'QRISK3 — Cardiovascular Risk',  sublabel: 'Calculator · 10-year CVD risk · statin atorvastatin heart attack stroke TIA cholesterol HDL BP diabetes AF', tab: 'calculators', id: 'qrisk3' },
-  { label: 'FeNO Calculator',               sublabel: 'Calculator · Fractional Exhaled Nitric Oxide', tab: 'calculators', id: 'feno' },
-  { label: '6-CIT Cognitive Test',          sublabel: 'Calculator · Six Item Cognitive Impairment Test', tab: 'calculators', id: '6cit' },
-  { label: 'FIB-4 Index',                   sublabel: 'Calculator · Liver Fibrosis — NAFLD MASLD ALT AST Platelets', tab: 'calculators', id: 'fib4' },
-  { label: 'CHA₂DS₂-VASc — AF Stroke Risk', sublabel: 'Calculator · Stroke risk atrial fibrillation · DOAC anticoagulation apixaban edoxaban rivaroxaban warfarin', tab: 'calculators', id: 'cha2ds2vasc' },
-  { label: 'ORBIT-AF — Bleeding Risk',       sublabel: 'Calculator · Bleeding risk before anticoagulation in AF · haemoglobin renal eGFR antiplatelet', tab: 'calculators', id: 'orbit' },
-  { label: 'AUDIT-C — Alcohol Screening',    sublabel: 'Calculator · 3-question alcohol screen · hazardous drinking units FRAMES', tab: 'calculators', id: 'audit-c' },
-  { label: 'AUDIT — Alcohol Use Disorders',  sublabel: 'Calculator · Full 10-question AUDIT · harmful dependence withdrawal detox brief intervention', tab: 'calculators', id: 'audit' },
-]
-
-const LINK_ENTRIES: SearchResult[] = LINK_CATEGORIES.flatMap(cat =>
-  cat.links.map(l => ({ label: l.name, sublabel: `Link · ${cat.title}`, tab: 'links' as TabId, id: l.url }))
-)
-
-const ALL_ENTRIES = [...CALC_ENTRIES, ...LINK_ENTRIES]
-
-function searchEntries(q: string): SearchResult[] {
-  const lower = q.toLowerCase()
-  return ALL_ENTRIES.filter(e =>
-    e.label.toLowerCase().includes(lower) || e.sublabel.toLowerCase().includes(lower)
-  ).slice(0, 8)
-}
-
-// ── Props ─────────────────────────────────────────────────────────────────────
 interface Props {
   onNavigate: (tab: TabId, id: string) => void
   onHome: () => void
+  onOpenPalette: () => void
 }
 
-export default function Header({ onNavigate, onHome }: Props) {
-  const [query, setQuery]       = useState('')
-  const [results, setResults]   = useState<SearchResult[]>([])
-  const [open, setOpen]         = useState(false)
-  const [activeIdx, setActiveIdx] = useState(-1)
-  const inputRef = useRef<HTMLInputElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const q = query.trim()
-    if (q.length < 2) { setResults([]); setOpen(false); return }
-    const hits = searchEntries(q)
-    setResults(hits)
-    setOpen(hits.length > 0)
-    setActiveIdx(-1)
-  }, [query])
-
-  // Close on outside click
-  useEffect(() => {
-    function handler(e: MouseEvent) {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
-        setOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', handler)
-    return () => document.removeEventListener('mousedown', handler)
-  }, [])
-
-  function pick(result: SearchResult) {
-    onNavigate(result.tab, result.id)
-    setQuery('')
-    setOpen(false)
-    inputRef.current?.blur()
-  }
-
-  function handleKey(e: React.KeyboardEvent) {
-    if (e.key === 'ArrowDown') {
-      e.preventDefault()
-      setActiveIdx(i => Math.min(i + 1, results.length - 1))
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault()
-      setActiveIdx(i => Math.max(i - 1, 0))
-    } else if (e.key === 'Enter') {
-      const idx = activeIdx >= 0 ? activeIdx : 0
-      if (results[idx]) pick(results[idx])
-    } else if (e.key === 'Escape') {
-      setOpen(false)
-      inputRef.current?.blur()
-    }
-  }
-
+export default function Header({ onHome, onOpenPalette }: Props) {
   return (
     <header style={{
       position: 'sticky', top: 0, zIndex: 100,
@@ -100,8 +16,9 @@ export default function Header({ onNavigate, onHome }: Props) {
       boxShadow: '0 2px 14px rgba(0,0,0,0.32)',
       gap: 12,
     }}>
+      {/* Logo / home button */}
       <button
-        onClick={() => { setQuery(''); setOpen(false); onHome() }}
+        onClick={onHome}
         title="Return to home"
         aria-label="GP Os — return to home"
         style={{
@@ -118,12 +35,10 @@ export default function Header({ onNavigate, onHome }: Props) {
         onTouchStart={e => { e.currentTarget.style.opacity = '0.8'; e.currentTarget.style.transform = 'scale(0.94)' }}
         onTouchEnd={e   => { e.currentTarget.style.opacity = '1';   e.currentTarget.style.transform = 'scale(1)' }}
       >
-        {/* Power-button icon mark */}
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
           <line x1="12" y1="3" x2="12" y2="12" stroke="white" strokeWidth="2.4" strokeLinecap="round"/>
           <path d="M17.9 6 A8.5 8.5 0 1 1 6.1 6" fill="none" stroke="white" strokeWidth="2.4" strokeLinecap="round"/>
         </svg>
-        {/* Wordmark */}
         <span style={{ display: 'flex', alignItems: 'baseline', gap: 0, lineHeight: 1 }}>
           <span style={{ color: '#fff', fontWeight: 800, fontSize: 18, letterSpacing: '-0.3px' }}>GP</span>
           <span style={{
@@ -136,66 +51,45 @@ export default function Header({ onNavigate, onHome }: Props) {
         </span>
       </button>
 
-      {/* Global search — links & calculators */}
-      <div ref={containerRef} style={{ marginLeft: 'auto', position: 'relative', width: '100%', maxWidth: 280 }}>
-        <div style={{
-          display: 'flex', alignItems: 'center', gap: 7,
-          backgroundColor: 'rgba(255,255,255,0.15)',
-          border: '1px solid rgba(255,255,255,0.28)',
-          borderRadius: 10, padding: '6px 11px',
-        }}>
-          <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: 14, flexShrink: 0 }}>🔍</span>
-          <input
-            ref={inputRef}
-            type="text"
-            placeholder="Links & calculators…"
-            value={query}
-            onChange={e => setQuery(e.target.value)}
-            onKeyDown={handleKey}
-            onFocus={() => { if (results.length) setOpen(true) }}
-            style={{
-              flex: 1, border: 'none', background: 'transparent', outline: 'none',
-              fontSize: 13, color: '#fff', minWidth: 0,
-            }}
-          />
-          {query && (
-            <button
-              onMouseDown={e => { e.preventDefault(); setQuery(''); setOpen(false) }}
-              style={{ border: 'none', background: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.6)', fontSize: 16, lineHeight: 1, padding: 0, flexShrink: 0 }}
-            >×</button>
-          )}
-        </div>
-
-        {/* Dropdown */}
-        {open && results.length > 0 && (
-          <div style={{
-            position: 'absolute', top: 'calc(100% + 6px)', right: 0,
-            width: '100%', minWidth: 260,
-            backgroundColor: '#fff', border: '1px solid #dce6f0',
-            borderRadius: 10, boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-            zIndex: 200, overflow: 'hidden',
-          }}>
-            {results.map((r, i) => (
-              <button
-                key={r.id}
-                onMouseDown={e => { e.preventDefault(); pick(r) }}
-                style={{
-                  width: '100%', padding: '10px 14px',
-                  display: 'flex', flexDirection: 'column', gap: 2,
-                  textAlign: 'left', border: 'none', cursor: 'pointer',
-                  backgroundColor: i === activeIdx ? '#eef4fb' : '#fff',
-                  borderBottom: i < results.length - 1 ? '1px solid #f0f4f8' : 'none',
-                  transition: 'background 0.1s',
-                }}
-                onMouseEnter={() => setActiveIdx(i)}
-              >
-                <span style={{ fontSize: 13, fontWeight: 600, color: '#1a365d' }}>{r.label}</span>
-                <span style={{ fontSize: 11, color: '#8a9bb0' }}>{r.sublabel}</span>
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
+      {/* Universal search trigger */}
+      <button
+        onClick={onOpenPalette}
+        aria-label="Search everything (⌘K)"
+        style={{
+          marginLeft: 'auto',
+          display: 'flex', alignItems: 'center', gap: 8,
+          backgroundColor: 'rgba(255,255,255,0.13)',
+          border: '1px solid rgba(255,255,255,0.26)',
+          borderRadius: 10, padding: '7px 12px',
+          cursor: 'pointer', color: 'rgba(255,255,255,0.75)',
+          fontSize: 13, fontFamily: 'inherit',
+          transition: 'background 0.15s, border-color 0.15s',
+          width: '100%', maxWidth: 300,
+          WebkitTapHighlightColor: 'transparent',
+        }}
+        onMouseEnter={e => {
+          e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.22)'
+          e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)'
+        }}
+        onMouseLeave={e => {
+          e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.13)'
+          e.currentTarget.style.borderColor = 'rgba(255,255,255,0.26)'
+        }}
+      >
+        <span style={{ fontSize: 14, flexShrink: 0 }}>🔍</span>
+        <span style={{ flex: 1, textAlign: 'left', minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          Search everything…
+        </span>
+        <kbd style={{
+          flexShrink: 0,
+          padding: '1px 6px', borderRadius: 5,
+          border: '1px solid rgba(255,255,255,0.3)',
+          fontSize: 11, color: 'rgba(255,255,255,0.6)',
+          background: 'rgba(255,255,255,0.08)',
+          fontFamily: 'inherit',
+          display: 'flex', alignItems: 'center', gap: 2,
+        }}>⌘K</kbd>
+      </button>
     </header>
   )
 }

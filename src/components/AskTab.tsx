@@ -1,10 +1,13 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { streamAskQuery, generateFollowUps } from '../lib/askService'
 import type { SourceNote } from '../lib/askService'
+import { findRelatedForms } from '../lib/searchIndex'
 
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
+interface RelatedForm { id: string; title: string; url: string }
+
 interface Message {
   id: string
   role: 'user' | 'assistant'
@@ -12,6 +15,7 @@ interface Message {
   streaming?: boolean
   sources?: SourceNote[]
   followUps?: string[]
+  relatedForms?: RelatedForm[]
   error?: boolean
 }
 
@@ -270,9 +274,78 @@ function MessageText({ text, streaming }: { text: string; streaming?: boolean })
 }
 
 // ---------------------------------------------------------------------------
+// Related Darwin form card
+// ---------------------------------------------------------------------------
+function FormCard({ form }: { form: RelatedForm }) {
+  const [pdfOpen, setPdfOpen] = useState(false)
+
+  if (pdfOpen) {
+    return (
+      <div style={{
+        position: 'fixed', inset: 0, zIndex: 500,
+        display: 'flex', flexDirection: 'column', backgroundColor: '#fff',
+      }}>
+        <div style={{
+          display: 'flex', alignItems: 'center', gap: 10,
+          padding: '8px 14px', backgroundColor: '#1a365d', color: '#fff', flexShrink: 0,
+        }}>
+          <button onClick={() => setPdfOpen(false)} style={{
+            background: 'rgba(255,255,255,0.15)', border: 'none',
+            color: '#fff', borderRadius: 8, padding: '5px 12px',
+            cursor: 'pointer', fontSize: 13, fontWeight: 600,
+          }}>← Back</button>
+          <div style={{ flex: 1, fontSize: 13, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            {form.title}
+          </div>
+          <a href={form.url} target="_blank" rel="noopener noreferrer" style={{
+            background: 'rgba(255,255,255,0.15)', borderRadius: 8,
+            padding: '5px 12px', color: '#fff', fontSize: 12,
+            textDecoration: 'none', fontWeight: 600, whiteSpace: 'nowrap',
+          }}>↗ Open</a>
+        </div>
+        <iframe src={form.url} style={{ flex: 1, border: 'none', width: '100%' }} title={form.title} />
+      </div>
+    )
+  }
+
+  return (
+    <button
+      onClick={() => setPdfOpen(true)}
+      style={{
+        display: 'inline-flex', alignItems: 'center', gap: 6,
+        background: '#f0f4fa',
+        border: '1.5px solid #b3c8e8',
+        borderRadius: 10, padding: '6px 12px',
+        fontSize: 12, color: '#1a365d', fontWeight: 600,
+        cursor: 'pointer', whiteSpace: 'nowrap',
+        transition: 'background 0.12s, border-color 0.12s',
+        fontFamily: 'inherit',
+      }}
+      onMouseOver={e => {
+        e.currentTarget.style.background = '#e0ecff'
+        e.currentTarget.style.borderColor = '#1a365d'
+      }}
+      onMouseOut={e => {
+        e.currentTarget.style.background = '#f0f4fa'
+        e.currentTarget.style.borderColor = '#b3c8e8'
+      }}
+    >
+      <span>🏥</span>
+      {form.title}
+      <span style={{ color: '#64748b', fontSize: 11, fontWeight: 400 }}>View →</span>
+    </button>
+  )
+}
+
+// ---------------------------------------------------------------------------
 // Main AskTab component
 // ---------------------------------------------------------------------------
-export default function AskTab() {
+interface AskTabProps {
+  pendingQuery?: string
+  onClearPendingQuery?: () => void
+}
+
+export default function AskTab({ pendingQuery, onClearPendingQuery }: AskTabProps) {
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [isStreaming, setIsStreaming] = useState(false)
@@ -288,6 +361,15 @@ export default function AskTab() {
     mq.addEventListener('change', h)
     return () => mq.removeEventListener('change', h)
   }, [])
+
+  // Auto-submit when a query arrives from the command palette
+  useEffect(() => {
+    if (pendingQuery) {
+      submit(pendingQuery)
+      onClearPendingQuery?.()
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pendingQuery])
 
   // Auto-scroll to bottom as tokens arrive
   useEffect(() => {
@@ -319,10 +401,13 @@ export default function AskTab() {
         )
       },
       onDone: async (sources) => {
+        // Find matching Darwin referral forms for this query
+        const relatedForms = findRelatedForms(q, 3)
+
         setMessages(prev =>
           prev.map(m =>
             m.id === assistantId
-              ? { ...m, text: fullText, streaming: false, sources }
+              ? { ...m, text: fullText, streaming: false, sources, relatedForms }
               : m
           )
         )
@@ -524,6 +609,20 @@ export default function AskTab() {
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 5, alignItems: 'flex-start' }}>
                         {msg.followUps.map(f => (
                           <FollowUpChip key={f} text={f} onSelect={submit} />
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Related Darwin referral forms */}
+                  {msg.relatedForms && msg.relatedForms.length > 0 && (
+                    <div style={{ marginTop: 10, maxWidth: '92%' }}>
+                      <div style={{ fontSize: 10, color: '#64748b', marginBottom: 6, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                        📋 Darwin Forms
+                      </div>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                        {msg.relatedForms.map(form => (
+                          <FormCard key={form.id} form={form} />
                         ))}
                       </div>
                     </div>
