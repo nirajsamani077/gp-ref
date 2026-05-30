@@ -126,7 +126,7 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
     const r = item as UnifiedResult
     switch (r.kind) {
       case 'note':
-        window.dispatchEvent(new CustomEvent('navigate-note', { detail: r.id }))
+        window.dispatchEvent(new CustomEvent('navigate-note', { detail: { id: r.id, query: query.trim() } }))
         onClose()
         break
       case 'form':
@@ -356,15 +356,26 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
                         {isDarwin ? '🏥' : meta.icon}
                       </div>
 
-                      {/* Label + sublabel */}
+                      {/* Label + sublabel + snippet */}
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div style={{
                           fontSize: 13, fontWeight: 600, color: '#1e293b',
                           overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                         }}>{item.label}</div>
-                        <div style={{ fontSize: 11, color: '#8a9bb0', marginTop: 1 }}>
-                          {item.sublabel}
-                        </div>
+                        {item.snippet ? (
+                          <div style={{
+                            fontSize: 11, color: '#6b7280', marginTop: 2,
+                            overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                            backgroundColor: '#fef9c3', borderRadius: 4,
+                            padding: '1px 6px',
+                          }}>
+                            {item.snippet}
+                          </div>
+                        ) : (
+                          <div style={{ fontSize: 11, color: '#8a9bb0', marginTop: 1 }}>
+                            {item.sublabel}
+                          </div>
+                        )}
                       </div>
 
                       {/* Action hint */}

@@ -1,40 +1,23 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import Fuse from 'fuse.js'
 import type { Note } from '../data/notes'
 import { NOTES } from '../data/notes'
+import { searchNotesForTab } from '../lib/searchIndex'
 import { getSpecialtyStyle, SPECIALTY_STYLES } from '../data/specialties'
 import NoteRenderer from './NoteRenderer'
 
-// ── Fuse instance for live note filtering ────────────────────────────────────
-const fuse = new Fuse(NOTES, {
-  keys: [
-    { name: 'title',    weight: 6 },
-    { name: 'subtitle', weight: 2 },
-    { name: 'body',     weight: 1 },
-  ],
-  threshold: 0.45,
-  ignoreLocation: true,
-  minMatchCharLength: 2,
-  includeScore: true,
-})
+// ── Note search via shared searchIndex ───────────────────────────────────────
+interface FilterResult {
+  note: Note
+  snippet: string | null
+}
 
-function filterNotes(query: string): Note[] {
-  if (!query.trim()) return NOTES
-  const q = query.trim().toLowerCase()
-  const raw = fuse.search(query.trim())
-  return raw
-    .map(r => {
-      const titleLower = r.item.title.toLowerCase()
-      let priority = 0
-      if (titleLower === q)               priority = 10000
-      else if (titleLower.startsWith(q))  priority = 8000
-      else if (titleLower.includes(q))    priority = 6000
-      return { item: r.item, score: r.score ?? 1, priority }
-    })
-    .sort((a, b) =>
-      b.priority !== a.priority ? b.priority - a.priority : a.score - b.score
-    )
-    .map(r => r.item)
+function filterNotes(query: string): FilterResult[] {
+  if (!query.trim()) return NOTES.map(n => ({ note: n, snippet: null }))
+  const hits = searchNotesForTab(query.trim(), 100)
+  return hits.map(h => ({
+    note: NOTES.find(n => n.id === h.id)!,
+    snippet: h.snippet,
+  })).filter(r => r.note)
 }
 
 // ── Specialty list ────────────────────────────────────────────────────────────
@@ -86,25 +69,28 @@ function useFavourites() {
 // ── Component ────────────────────────────────────────────────────────────────
 interface NotesTabProps {
   highlightedNoteId?: string | null
+  externalHighlightQuery?: string
 }
 
-export default function NotesTab({ highlightedNoteId }: NotesTabProps) {
-  const [filterQuery, setFilterQuery] = useState('')
-  const [openId, setOpenId]           = useState<string | null>(null)
-  const [specialty, setSpecialty]     = useState<string>('all')
-  const [resetKey, setResetKey]       = useState(0)
-  // Which card's star is mid-animation (for the spring pop effect)
-  const [animatingId, setAnimatingId] = useState<string | null>(null)
+export default function NotesTab({ highlightedNoteId, externalHighlightQuery }: NotesTabProps) {
+  const [filterQuery, setFilterQuery]   = useState('')
+  const [highlightQuery, setHighlightQuery] = useState<string | undefined>(undefined)
+  const [openId, setOpenId]             = useState<string | null>(null)
+  const [autoJump, setAutoJump]         = useState(false)
+  const [specialty, setSpecialty]       = useState<string>('all')
+  const [resetKey, setResetKey]         = useState(0)
+  const [animatingId, setAnimatingId]   = useState<string | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
   const { favouriteIds, toggleFavourite } = useFavourites()
 
   const resetHome = useCallback(() => {
     setFilterQuery('')
+    setHighlightQuery(undefined)
     setOpenId(null)
+    setAutoJump(false)
     setSpecialty('all')
     setResetKey(k => k + 1)
-    // Favourites intentionally NOT reset — they persist across home navigation
   }, [])
 
   useEffect(() => {
@@ -112,30 +98,47 @@ export default function NotesTab({ highlightedNoteId }: NotesTabProps) {
     return () => window.removeEventListener('gpr-home', resetHome)
   }, [resetHome])
 
-  // Open and scroll to a note when navigated from a notelink block
+  // Sync external highlight query from navigate-note events (from command palette)
+  useEffect(() => {
+    if (externalHighlightQuery !== undefined) {
+      setHighlightQuery(externalHighlightQuery || undefined)
+    }
+  }, [externalHighlightQuery])
+
+  // Open and scroll to a note when navigated externally
   useEffect(() => {
     if (!highlightedNoteId) return
     setFilterQuery('')
     setSpecialty('all')
     setOpenId(highlightedNoteId)
+    setAutoJump(true)      // auto-jump when coming from palette/notelink
     setTimeout(() => {
       const el = document.querySelector(`[data-note-id="${highlightedNoteId}"]`)
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }, 120)
   }, [highlightedNoteId])
 
-  const filtered = filterQuery ? filterNotes(filterQuery) : NOTES
+  const filteredResults = filterQuery ? filterNotes(filterQuery) : NOTES.map(n => ({ note: n, snippet: null as string | null }))
+  const filtered = filteredResults
   const visible  = specialty === 'all'
     ? filtered
-    : filtered.filter(n => n.tags.map(t => t.toLowerCase()).includes(specialty))
+    : filtered.filter(r => r.note.tags.map(t => t.toLowerCase()).includes(specialty))
 
   useEffect(() => {
-    if (visible.length === 1) setOpenId(visible[0].id)
-  }, [visible.length, visible[0]?.id])
+    if (visible.length === 1) {
+      setOpenId(visible[0].note.id)
+      setAutoJump(!!filterQuery)
+    }
+  }, [visible.length, visible[0]?.note.id])   // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleSpecialty(tag: string) { setSpecialty(tag) }
 
-  function clearFilter() { setFilterQuery(''); inputRef.current?.focus() }
+  function clearFilter() {
+    setFilterQuery('')
+    setHighlightQuery(undefined)
+    setAutoJump(false)
+    inputRef.current?.focus()
+  }
 
   function handleToggleFav(noteId: string) {
     toggleFavourite(noteId)
@@ -144,19 +147,17 @@ export default function NotesTab({ highlightedNoteId }: NotesTabProps) {
   }
 
   const showingAll = !filterQuery && specialty === 'all'
+  const searching  = Boolean(filterQuery)
 
-  // When not searching, split into: favourites → all notes.
-  // When searching, show a flat list (starred cards still show their star).
-  const searching          = Boolean(filterQuery)
-  const favouritedVisible  = searching ? [] : visible.filter(n => favouriteIds.has(n.id))
-
-  // Main list: everything that isn't a favourite
-  const unfavouritedVisible = searching ? visible : visible.filter(n => !favouriteIds.has(n.id))
-
+  const favouritedVisible   = searching ? [] : visible.filter(r => favouriteIds.has(r.note.id))
+  const unfavouritedVisible = searching ? visible : visible.filter(r => !favouriteIds.has(r.note.id))
   const hasFavSection = favouritedVisible.length > 0
 
+  // The effective search query for highlighting (filter takes precedence)
+  const activeHighlight = filterQuery.trim() || highlightQuery || undefined
+
   // ── Shared card renderer ─────────────────────────────────────────────────
-  function renderCard(note: Note) {
+  function renderCard({ note, snippet }: { note: Note; snippet: string | null }) {
     const isOpen    = openId === note.id
     const isFav     = favouriteIds.has(note.id)
     const isPopping = animatingId === note.id
@@ -179,14 +180,14 @@ export default function NotesTab({ highlightedNoteId }: NotesTabProps) {
           transition: 'box-shadow 0.2s, background 0.2s, border 0.2s',
         }}
       >
-        {/* ── Card header row: [toggle area] [star] ── */}
+        {/* ── Card header row ── */}
         <div style={{ display: 'flex', alignItems: 'stretch' }}>
 
-          {/* Toggle button — opens/closes body */}
           <button
             onClick={() => {
               const next = isOpen ? null : note.id
               setOpenId(next)
+              setAutoJump(false)
             }}
             style={{
               flex: 1, minWidth: 0,
@@ -214,8 +215,20 @@ export default function NotesTab({ highlightedNoteId }: NotesTabProps) {
               <div style={{ fontSize: 12, color: '#64748b', marginTop: 3 }}>
                 {note.subtitle}
               </div>
+              {/* Match snippet — shown when searching and note is closed */}
+              {!isOpen && snippet && filterQuery && (
+                <div style={{
+                  marginTop: 5, fontSize: 11, color: '#6b7280',
+                  backgroundColor: '#fef9c3', border: '1px solid #fde68a',
+                  borderRadius: 5, padding: '3px 8px',
+                  overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                  maxWidth: '100%',
+                }}>
+                  <span style={{ fontWeight: 700, color: '#92400e', marginRight: 4 }}>↳</span>
+                  {snippet}
+                </div>
+              )}
             </div>
-            {/* Expand chevron */}
             <span style={{
               color: isOpen ? sp.border : '#94a3b8', fontSize: 18, flexShrink: 0,
               transform: isOpen ? 'rotate(180deg)' : 'none',
@@ -223,7 +236,6 @@ export default function NotesTab({ highlightedNoteId }: NotesTabProps) {
             }}>▾</span>
           </button>
 
-          {/* Star / favourite button */}
           <button
             onClick={e => { e.stopPropagation(); handleToggleFav(note.id) }}
             aria-label={isFav ? 'Remove from favourites' : 'Add to favourites'}
@@ -234,7 +246,6 @@ export default function NotesTab({ highlightedNoteId }: NotesTabProps) {
               background: 'transparent', border: 'none', cursor: 'pointer',
               fontSize: 20, lineHeight: 1, flexShrink: 0,
               color: isFav ? '#f59e0b' : '#d1dce8',
-              // Spring-bounce cubic-bezier for the pop effect
               transform: isPopping ? 'scale(1.45)' : 'scale(1)',
               transition: 'color 0.15s, transform 0.25s cubic-bezier(0.34,1.56,0.64,1)',
               WebkitTapHighlightColor: 'transparent',
@@ -262,7 +273,11 @@ export default function NotesTab({ highlightedNoteId }: NotesTabProps) {
         {/* Note body */}
         {isOpen && (
           <div style={{ padding: '10px 14px 18px', borderTop: `1px solid ${sp.border}22` }}>
-            <NoteRenderer blocks={note.content} searchQuery={filterQuery.trim() || undefined} />
+            <NoteRenderer
+              blocks={note.content}
+              searchQuery={activeHighlight}
+              autoJump={autoJump && openId === note.id}
+            />
           </div>
         )}
       </article>
@@ -343,8 +358,8 @@ export default function NotesTab({ highlightedNoteId }: NotesTabProps) {
                   No notes found for "{filterQuery}"
                 </p>
                 <p style={{ fontSize: 13, color: '#a0aec0', lineHeight: 1.5 }}>
-                  Try a broader term (e.g. <em>asthma</em> instead of <em>salbutamol</em>),
-                  check your spelling, or search by condition rather than drug name.
+                  Try a broader term or drug class — fuzzy matching is active,
+                  so check for typos or try the ⌘K palette and <em>Ask AI</em>.
                 </p>
               </>
             ) : (

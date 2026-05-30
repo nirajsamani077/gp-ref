@@ -21,9 +21,10 @@ function useIsDesktop() {
 
 export default function App() {
   const [activeTab, setActiveTab]           = useState<TabId>('notes')
-  const [highlightedLinkUrl, setHighlightedLinkUrl] = useState<string | null>(null)
-  const [highlightedCalcId, setHighlightedCalcId]   = useState<string | null>(null)
-  const [highlightedNoteId, setHighlightedNoteId]   = useState<string | null>(null)
+  const [highlightedLinkUrl, setHighlightedLinkUrl]     = useState<string | null>(null)
+  const [highlightedCalcId, setHighlightedCalcId]       = useState<string | null>(null)
+  const [highlightedNoteId, setHighlightedNoteId]       = useState<string | null>(null)
+  const [highlightedNoteQuery, setHighlightedNoteQuery] = useState<string | undefined>(undefined)
   const [paletteOpen, setPaletteOpen]       = useState(false)
   const [pendingAskQuery, setPendingAskQuery] = useState<string | undefined>(undefined)
   const isDesktop = useIsDesktop()
@@ -72,12 +73,16 @@ export default function App() {
     return () => window.removeEventListener('navigate-calc', handler)
   }, [])
 
-  // Listen for in-note cross-note link clicks (dispatched by NoteRenderer notelink blocks)
+  // Listen for in-note cross-note link clicks and command palette navigation
+  // detail can be: string (legacy notelink) | { id: string; query?: string }
   useEffect(() => {
     function handler(e: Event) {
-      const noteId = (e as CustomEvent<string>).detail
+      const detail = (e as CustomEvent).detail
+      const noteId = typeof detail === 'string' ? detail : (detail?.id ?? '')
+      const query  = typeof detail === 'object' ? (detail?.query ?? undefined) : undefined
       setActiveTab('notes')
       setHighlightedNoteId(noteId)
+      setHighlightedNoteQuery(query)
     }
     window.addEventListener('navigate-note', handler)
     return () => window.removeEventListener('navigate-note', handler)
@@ -104,6 +109,7 @@ export default function App() {
           highlightedLinkUrl={highlightedLinkUrl}
           highlightedCalcId={highlightedCalcId}
           highlightedNoteId={highlightedNoteId}
+          highlightedNoteQuery={highlightedNoteQuery}
           pendingAskQuery={pendingAskQuery}
           onClearPendingAskQuery={() => setPendingAskQuery(undefined)}
         />

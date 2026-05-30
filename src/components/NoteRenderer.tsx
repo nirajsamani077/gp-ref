@@ -20,46 +20,115 @@ interface LightboxImage {
 interface Props {
   blocks: ContentBlock[]
   searchQuery?: string
+  /** When true, scrolls to the first match automatically on open */
+  autoJump?: boolean
 }
 
-function highlightText(text: string, query: string | undefined): React.ReactNode {
-  if (!query) return text
-  const q     = query.toLowerCase()
-  const lower = text.toLowerCase()
-  const parts: React.ReactNode[] = []
-  let last = 0
-  let idx  = lower.indexOf(q)
+// ── Levenshtein distance (capped at maxDist for performance) ───────────────
+function lev(a: string, b: string, maxDist: number): number {
+  if (Math.abs(a.length - b.length) > maxDist) return maxDist + 1
+  const prev = Array.from({ length: b.length + 1 }, (_, j) => j)
+  const curr = Array.from({ length: b.length + 1 }, () => 0)
+  for (let i = 1; i <= a.length; i++) {
+    curr[0] = i
+    let rowMin = i
+    for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1
+      curr[j] = Math.min(curr[j - 1] + 1, prev[j] + 1, prev[j - 1] + cost)
+      if (curr[j] < rowMin) rowMin = curr[j]
+    }
+    if (rowMin > maxDist) return maxDist + 1
+    for (let j = 0; j <= b.length; j++) prev[j] = curr[j]
+  }
+  return prev[b.length]
+}
 
-  while (idx !== -1) {
-    if (idx > last) parts.push(text.slice(last, idx))
-    parts.push(
-      <mark
-        key={idx}
-        data-match=""
-        style={{
-          backgroundColor: '#fde68a',
-          color: 'inherit',
-          fontWeight: 700,
-          borderRadius: 2,
-          padding: '0 1px',
-          outline: 'none',
-        }}
-      >
-        {text.slice(idx, idx + query.length)}
-      </mark>
-    )
-    last = idx + query.length
-    idx  = lower.indexOf(q, last)
+// ── Escape string for use in RegExp ───────────────────────────────────────
+function escRe(s: string) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') }
+
+const exactMarkStyle: React.CSSProperties = {
+  backgroundColor: '#fde68a', color: 'inherit',
+  fontWeight: 700, borderRadius: 2, padding: '0 1px', outline: 'none',
+}
+const fuzzyMarkStyle: React.CSSProperties = {
+  backgroundColor: '#fed7aa', color: 'inherit',
+  fontWeight: 700, borderRadius: 2, padding: '0 1px', outline: 'none',
+}
+
+// ── Multi-term highlight with fuzzy fallback ───────────────────────────────
+// 1. Split query into tokens
+// 2. Highlight any exact token match (yellow)
+// 3. If a token is ≥5 chars and found no exact hits anywhere yet, run
+//    word-level levenshtein and highlight near-matches (orange)
+function highlightText(
+  text: string,
+  query: string | undefined,
+  fuzzyTokens: Set<string>,          // tokens that had NO exact hit in whole note
+): React.ReactNode {
+  if (!query) return text
+
+  const tokens = query.trim().split(/\s+/).filter(t => t.length >= 2)
+  if (!tokens.length) return text
+
+  // Build a combined regex for all tokens
+  const exactPattern = new RegExp(`(${tokens.map(escRe).join('|')})`, 'gi')
+
+  // Collect exact hit spans
+  const spans: Array<{ start: number; end: number; fuzzy: boolean }> = []
+  let m: RegExpExecArray | null
+  while ((m = exactPattern.exec(text)) !== null) {
+    spans.push({ start: m.index, end: m.index + m[0].length, fuzzy: false })
   }
 
+  // For tokens that had zero exact hits in the whole note, try fuzzy word match
+  if (fuzzyTokens.size > 0) {
+    const wordPattern = /\b\w+\b/g
+    while ((m = wordPattern.exec(text)) !== null) {
+      const word = m[0].toLowerCase()
+      for (const ft of fuzzyTokens) {
+        if (ft.length < 5 || word.length < 4) continue
+        const maxD = Math.min(2, Math.floor(ft.length * 0.3))
+        if (lev(word, ft, maxD) <= maxD) {
+          // Don't double-highlight an already spanned region
+          const overlaps = spans.some(s => m!.index < s.end && m!.index + m![0].length > s.start)
+          if (!overlaps) {
+            spans.push({ start: m.index, end: m.index + m[0].length, fuzzy: true })
+          }
+        }
+      }
+    }
+  }
+
+  if (!spans.length) return text
+
+  spans.sort((a, b) => a.start - b.start)
+
+  const parts: React.ReactNode[] = []
+  let last = 0
+  for (const span of spans) {
+    if (span.start < last) continue // overlapping — skip
+    if (span.start > last) parts.push(text.slice(last, span.start))
+    parts.push(
+      <mark
+        key={span.start}
+        data-match=""
+        style={span.fuzzy ? fuzzyMarkStyle : exactMarkStyle}
+      >
+        {text.slice(span.start, span.end)}
+      </mark>
+    )
+    last = span.end
+  }
   if (last < text.length) parts.push(text.slice(last))
-  return parts.length ? <>{parts}</> : text
+  return <>{parts}</>
 }
 
-export default function NoteRenderer({ blocks, searchQuery }: Props) {
+export default function NoteRenderer({ blocks, searchQuery, autoJump }: Props) {
   const [lightbox, setLightbox]         = useState<LightboxImage | null>(null)
-  const [matchIndex, setMatchIndex]     = useState(-1)   // -1 = none jumped to yet
+  const [matchIndex, setMatchIndex]     = useState(-1)
   const [totalMatches, setTotalMatches] = useState(0)
+  // Tokens with zero exact hits → trigger fuzzy highlighting
+  const [fuzzyTokens, setFuzzyTokens]  = useState<Set<string>>(new Set())
   const containerRef = useRef<HTMLDivElement>(null)
   const marksRef     = useRef<HTMLElement[]>([])
   const prevMark     = useRef<HTMLElement | null>(null)
@@ -71,11 +140,13 @@ export default function NoteRenderer({ blocks, searchQuery }: Props) {
     return () => window.removeEventListener('keydown', handler)
   }, [lightbox])
 
-  // Collect marks after render — no auto-scroll; note opens at top
+  // After each render: collect marks, detect which tokens need fuzzy fallback,
+  // and optionally auto-jump to the first match.
   useEffect(() => {
     if (!searchQuery || !containerRef.current) {
       setTotalMatches(0)
       setMatchIndex(-1)
+      setFuzzyTokens(new Set())
       marksRef.current = []
       if (prevMark.current) {
         prevMark.current.style.backgroundColor = '#fde68a'
@@ -85,6 +156,27 @@ export default function NoteRenderer({ blocks, searchQuery }: Props) {
       }
       return
     }
+
+    // First pass: check which tokens produced zero exact DOM hits
+    const tokens = searchQuery.trim().split(/\s+/).filter(t => t.length >= 2)
+    const container = containerRef.current
+    const noHitTokens = new Set<string>()
+    for (const tok of tokens) {
+      // Count marks bearing this exact text (case-insensitive)
+      const re = new RegExp(escRe(tok), 'i')
+      const existingMarks = Array.from(container.querySelectorAll<HTMLElement>('[data-match]'))
+      const hasExact = existingMarks.some(el => re.test(el.textContent ?? ''))
+      if (!hasExact) noHitTokens.add(tok.toLowerCase())
+    }
+
+    // Update fuzzy set — triggers a re-render with fuzzy marks if needed
+    setFuzzyTokens(prev => {
+      // Only update if set contents changed to avoid infinite loop
+      const same = prev.size === noHitTokens.size && [...prev].every(t => noHitTokens.has(t))
+      return same ? prev : noHitTokens
+    })
+
+    // Second pass (after 150ms — re-render with fuzzy marks may have happened)
     const timer = setTimeout(() => {
       if (!containerRef.current) return
       const marks = Array.from(
@@ -92,18 +184,30 @@ export default function NoteRenderer({ blocks, searchQuery }: Props) {
       )
       marksRef.current = marks
       setTotalMatches(marks.length)
-      setMatchIndex(-1)
-      prevMark.current = null
-    }, 200)
-    return () => clearTimeout(timer)
-  }, [searchQuery, blocks])
 
-  function activateMark(marks: HTMLElement[], idx: number) {
-    if (prevMark.current) {
-      prevMark.current.style.backgroundColor = '#fde68a'
-      prevMark.current.style.outline = 'none'
-      prevMark.current.style.boxShadow = 'none'
-    }
+      if (marks.length > 0 && autoJump) {
+        // Auto-jump to first match (e.g. when opened from command palette)
+        activateMarkDirect(marks, 0)
+        setMatchIndex(0)
+      } else {
+        setMatchIndex(-1)
+        prevMark.current = null
+      }
+    }, 150)
+    return () => clearTimeout(timer)
+  }, [searchQuery, blocks, autoJump])   // eslint-disable-line react-hooks/exhaustive-deps
+
+  function restoreMark(mark: HTMLElement) {
+    // Restore to its original colour (exact=yellow, fuzzy=orange)
+    const isFuzzy = mark.style.backgroundColor === 'rgb(254, 215, 170)' ||
+                    mark.getAttribute('data-fuzzy') === '1'
+    mark.style.backgroundColor = isFuzzy ? '#fed7aa' : '#fde68a'
+    mark.style.outline = 'none'
+    mark.style.boxShadow = 'none'
+  }
+
+  function activateMarkDirect(marks: HTMLElement[], idx: number) {
+    if (prevMark.current) restoreMark(prevMark.current)
     const mark = marks[idx]
     if (!mark) return
     mark.style.backgroundColor = '#f59e0b'
@@ -116,39 +220,36 @@ export default function NoteRenderer({ blocks, searchQuery }: Props) {
   function goTo(delta: number) {
     const marks = marksRef.current
     if (!marks.length) return
-    // If nothing jumped to yet: ▼ starts at 0, ▲ starts at last
     const base = matchIndex >= 0 ? matchIndex : (delta > 0 ? -1 : marks.length)
     const next = ((base + delta) % marks.length + marks.length) % marks.length
     setMatchIndex(next)
-    activateMark(marks, next)
+    activateMarkDirect(marks, next)
   }
 
-  const showNav = !!searchQuery && totalMatches > 0
+  const showNav   = !!searchQuery && totalMatches > 0
+  const hasFuzzy  = fuzzyTokens.size > 0 && totalMatches > 0
 
   return (
     <>
       {showNav && (
         <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 8,
-          marginBottom: 12,
-          padding: '7px 12px',
-          backgroundColor: '#fef9c3',
-          border: '1px solid #fde68a',
-          borderRadius: 7,
-          fontSize: 12,
-          color: '#92400e',
-          userSelect: 'none',
-          flexWrap: 'wrap',
-          position: 'sticky',
-          top: 0,
-          zIndex: 10,
+          display: 'flex', alignItems: 'center', gap: 8,
+          marginBottom: 12, padding: '7px 12px',
+          backgroundColor: '#fef9c3', border: '1px solid #fde68a',
+          borderRadius: 7, fontSize: 12, color: '#92400e',
+          userSelect: 'none', flexWrap: 'wrap',
+          position: 'sticky', top: 0, zIndex: 10,
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
         }}>
           <span style={{ fontWeight: 600 }}>
             {totalMatches} match{totalMatches !== 1 ? 'es' : ''} for{' '}
             <span style={{ fontStyle: 'italic' }}>"{searchQuery}"</span>
+            {hasFuzzy && (
+              <span style={{ marginLeft: 6, fontWeight: 400, fontSize: 10, color: '#b45309',
+                backgroundColor: '#fed7aa', padding: '1px 6px', borderRadius: 10 }}>
+                includes fuzzy
+              </span>
+            )}
           </span>
           <span style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 5 }}>
             {matchIndex >= 0 ? (
@@ -168,7 +269,7 @@ export default function NoteRenderer({ blocks, searchQuery }: Props) {
 
       <div ref={containerRef} style={{ fontSize: 14, lineHeight: 1.65, color: '#1a202c' }}>
         {blocks.map((block, i) => (
-          <Block key={i} block={block} onImageClick={setLightbox} searchQuery={searchQuery} />
+          <Block key={i} block={block} onImageClick={setLightbox} searchQuery={searchQuery} fuzzyTokens={fuzzyTokens} />
         ))}
       </div>
 
@@ -217,10 +318,12 @@ interface BlockProps {
   block: ContentBlock
   onImageClick: (img: LightboxImage) => void
   searchQuery?: string
+  fuzzyTokens?: Set<string>
 }
 
-function Block({ block, onImageClick, searchQuery }: BlockProps) {
-  const hl = (text: string) => highlightText(text, searchQuery)
+function Block({ block, onImageClick, searchQuery, fuzzyTokens }: BlockProps) {
+  const ft = fuzzyTokens ?? new Set<string>()
+  const hl = (text: string) => highlightText(text, searchQuery, ft)
 
   switch (block.type) {
 

@@ -12,29 +12,123 @@ export interface UnifiedResult {
   id: string        // noteId | formId | url | calcId
   formUrl?: string  // only for forms
   category?: string // only for forms
+  snippet?: string  // body match preview
 }
 
-// ── Notes ──────────────────────────────────────────────────────────────────
+// ── Notes corpus — full body, no truncation ────────────────────────────────
 const noteCorpus = NOTES.map(n => ({
   id:       n.id,
   label:    n.title,
   sublabel: n.subtitle,
   tags:     n.tags.join(' '),
-  body:     n.body.substring(0, 400),
+  body:     n.body,   // ← full body; enrichBody already appended all content text
 }))
 
+// More permissive Fuse; higher title weight so drug-in-body matches don't
+// outrank title/tag matches in other notes.
 const notesFuse = new Fuse(noteCorpus, {
   keys: [
-    { name: 'label',    weight: 5 },
-    { name: 'tags',     weight: 3 },
-    { name: 'sublabel', weight: 2 },
-    { name: 'body',     weight: 1 },
+    { name: 'label',    weight: 10 },
+    { name: 'tags',     weight: 5  },
+    { name: 'sublabel', weight: 2  },
+    { name: 'body',     weight: 1  },
   ],
-  threshold: 0.4,
+  threshold: 0.48,
   includeScore: true,
   ignoreLocation: true,
+  distance: 2000,          // large: searches anywhere in long body
   minMatchCharLength: 2,
 })
+
+// ── Snippet helper — returns a ~80-char body excerpt around the first hit ──
+export function getSnippet(text: string, tokens: string[]): string | null {
+  const lower = text.toLowerCase()
+  for (const t of tokens) {
+    if (t.length < 2) continue
+    const idx = lower.indexOf(t.toLowerCase())
+    if (idx !== -1) {
+      const start = Math.max(0, idx - 25)
+      const end   = Math.min(text.length, idx + t.length + 60)
+      return (start > 0 ? '…' : '') + text.slice(start, end).replace(/\n/g, ' ') + (end < text.length ? '…' : '')
+    }
+  }
+  return null
+}
+
+// ── Multi-term note search ─────────────────────────────────────────────────
+// Tokenises the query, runs per-token and whole-query passes, merges with
+// boosted scores, then re-ranks with exact-title-match priority.
+function runNoteSearch(q: string, maxN: number): UnifiedResult[] {
+  if (q.length < 2) return []
+
+  const tokens   = q.split(/\s+/).filter(t => t.length >= 2)
+  const scoreMap = new Map<string, number>()
+
+  // Pass 1: full query
+  for (const r of notesFuse.search(q)) {
+    scoreMap.set(r.item.id, r.score ?? 0.99)
+  }
+
+  // Pass 2: per-token (helps typos + multi-word queries)
+  // If ALL tokens match a note, we boost its score; partial matches are kept
+  // but at their natural score.
+  if (tokens.length > 1) {
+    const tokenHits: Map<string, number>[] = tokens.map(tok => {
+      const m = new Map<string, number>()
+      for (const r of notesFuse.search(tok)) m.set(r.item.id, r.score ?? 0.99)
+      return m
+    })
+
+    const allIds = new Set(noteCorpus.map(n => n.id))
+    for (const id of allIds) {
+      const perToken = tokenHits.map(m => m.get(id) ?? 0.99)
+      const allMatch = perToken.every(s => s < 0.5)
+      if (!allMatch) continue // only boost when every token matched
+      const combined = perToken.reduce((a, b) => a + b, 0) / perToken.length * 0.75
+      const existing = scoreMap.get(id) ?? 0.99
+      if (combined < existing) scoreMap.set(id, combined)
+    }
+  } else if (tokens.length === 1 && scoreMap.size === 0) {
+    // Single token found nothing at full-query level — try standalone token
+    for (const r of notesFuse.search(tokens[0])) {
+      scoreMap.set(r.item.id, r.score ?? 0.99)
+    }
+  }
+
+  const qLow = q.toLowerCase()
+  const results: UnifiedResult[] = []
+
+  for (const [id, score] of scoreMap.entries()) {
+    if (score > 0.52) continue            // discard weak fuzzy hits
+    const note = NOTES.find(n => n.id === id)
+    if (!note) continue
+    results.push({
+      kind:    'note',
+      label:   note.title,
+      sublabel: note.subtitle,
+      id,
+      snippet: getSnippet(note.body, tokens),
+    })
+  }
+
+  // Sort: exact title > starts-with > contains > score
+  return results.sort((a, b) => {
+    const aT = a.label.toLowerCase()
+    const bT = b.label.toLowerCase()
+    const aE = aT === qLow, bE = bT === qLow
+    const aS = aT.startsWith(qLow), bS = bT.startsWith(qLow)
+    const aC = aT.includes(qLow), bC = bT.includes(qLow)
+    if (aE && !bE) return -1
+    if (bE && !aE) return 1
+    if (aS && !bS) return -1
+    if (bS && !aS) return 1
+    if (aC && !bC) return -1
+    if (bC && !aC) return 1
+    const aScore = scoreMap.get(a.id) ?? 0.99
+    const bScore = scoreMap.get(b.id) ?? 0.99
+    return aScore - bScore
+  }).slice(0, maxN)
+}
 
 // ── Forms ──────────────────────────────────────────────────────────────────
 const formsCorpus = FORMS.map(f => ({
@@ -121,41 +215,58 @@ export function searchAll(query: string, maxPerKind = 4): {
   const q = query.trim()
   if (q.length < 2) return { notes: [], forms: [], links: [], calculators: [] }
 
-  const notes: UnifiedResult[] = notesFuse.search(q).slice(0, maxPerKind).map(r => ({
-    kind: 'note',
-    label: r.item.label,
-    sublabel: r.item.sublabel,
-    id: r.item.id,
-  }))
+  const notes = runNoteSearch(q, maxPerKind)
 
   // Darwin forms first, then others
-  const formHits = formsFuse.search(q)
-  const darwinForms = formHits.filter(r => r.item.category === 'Darwin')
-  const otherForms  = formHits.filter(r => r.item.category !== 'Darwin')
-  const forms: UnifiedResult[] = [...darwinForms, ...otherForms].slice(0, maxPerKind).map(r => ({
-    kind: 'form',
-    label: r.item.label,
+  const formHits  = formsFuse.search(q)
+  const darwin    = formHits.filter(r => r.item.category === 'Darwin')
+  const otherF    = formHits.filter(r => r.item.category !== 'Darwin')
+  const forms: UnifiedResult[] = [...darwin, ...otherF].slice(0, maxPerKind).map(r => ({
+    kind:     'form',
+    label:    r.item.label,
     sublabel: CAT_LABELS[r.item.category] ?? r.item.category,
-    id: r.item.id,
-    formUrl: r.item.url,
+    id:       r.item.id,
+    formUrl:  r.item.url,
     category: r.item.category,
   }))
 
   const links: UnifiedResult[] = linksFuse.search(q).slice(0, maxPerKind).map(r => ({
-    kind: 'link',
-    label: r.item.label,
+    kind:     'link',
+    label:    r.item.label,
     sublabel: r.item.category,
-    id: r.item.id,
+    id:       r.item.id,
   }))
 
   const calculators: UnifiedResult[] = calcsFuse.search(q).slice(0, maxPerKind).map(r => ({
-    kind: 'calculator',
-    label: r.item.label,
+    kind:     'calculator',
+    label:    r.item.label,
     sublabel: 'Calculator',
-    id: r.item.id,
+    id:       r.item.id,
   }))
 
   return { notes, forms, links, calculators }
+}
+
+// ── Notes-tab search — returns more results with richer ranking ────────────
+export interface NoteTabResult {
+  id: string
+  score: number
+  snippet: string | null
+}
+
+export function searchNotesForTab(query: string, maxN = 60): NoteTabResult[] {
+  const q = query.trim()
+  if (q.length < 1) return []
+
+  const tokens = q.split(/\s+/).filter(t => t.length >= 2)
+  if (!tokens.length) return []
+
+  const unified = runNoteSearch(q, maxN)
+  return unified.map(r => ({
+    id:      r.id,
+    score:   0, // not exposed externally
+    snippet: r.snippet ?? null,
+  }))
 }
 
 // ── Related Darwin forms — used by AskTab after answer completes ───────────

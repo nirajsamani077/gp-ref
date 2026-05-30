@@ -15,15 +15,16 @@ interface Props {
   highlightedLinkUrl?: string | null
   highlightedCalcId?: string | null
   highlightedNoteId?: string | null
+  highlightedNoteQuery?: string
   pendingAskQuery?: string
   onClearPendingAskQuery?: () => void
 }
 
-export default function TabContent({ active, highlightedLinkUrl, highlightedCalcId, highlightedNoteId, pendingAskQuery, onClearPendingAskQuery }: Props) {
+export default function TabContent({ active, highlightedLinkUrl, highlightedCalcId, highlightedNoteId, highlightedNoteQuery, pendingAskQuery, onClearPendingAskQuery }: Props) {
   if (active === 'notes') {
     return (
       <main style={{ flex: 1, overflow: 'hidden', backgroundColor: '#f7f9fb', display: 'flex', flexDirection: 'column' }}>
-        <NotesTab highlightedNoteId={highlightedNoteId} />
+        <NotesTab highlightedNoteId={highlightedNoteId} externalHighlightQuery={highlightedNoteQuery} />
       </main>
     )
   }
