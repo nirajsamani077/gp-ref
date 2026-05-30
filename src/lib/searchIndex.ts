@@ -21,26 +21,37 @@ const noteCorpus = NOTES.map(n => ({
   label:    n.title,
   sublabel: n.subtitle,
   tags:     n.tags.join(' '),
-  body:     n.body,   // ← full body; enrichBody already appended all content text
+  body:     n.body,   // enrichBody already appended all content text
 }))
 
-// More permissive Fuse; higher title weight so drug-in-body matches don't
-// outrank title/tag matches in other notes.
-const notesFuse = new Fuse(noteCorpus, {
+// ── Fuse 1: Title / tag / subtitle only ───────────────────────────────────
+// No body field here — eliminates the weighted-average penalty that drags
+// body-only matches (e.g. "fentanyl patch") below the threshold.
+const titleTagFuse = new Fuse(noteCorpus, {
   keys: [
     { name: 'label',    weight: 10 },
     { name: 'tags',     weight: 5  },
     { name: 'sublabel', weight: 2  },
-    { name: 'body',     weight: 1  },
   ],
-  threshold: 0.48,
+  threshold: 0.45,
   includeScore: true,
   ignoreLocation: true,
-  distance: 2000,          // large: searches anywhere in long body
   minMatchCharLength: 2,
 })
 
-// ── Snippet helper — returns a ~80-char body excerpt around the first hit ──
+// ── Fuse 2: Body only — per-token fuzzy, tight threshold ──────────────────
+// Used as a typo-tolerance layer ON TOP of the exact body scan.
+// Deliberately tight so it doesn't produce noise.
+const bodyFuse = new Fuse(noteCorpus, {
+  keys: [{ name: 'body', weight: 1 }],
+  threshold: 0.25,
+  includeScore: true,
+  ignoreLocation: true,
+  distance: 6000,
+  minMatchCharLength: 3,
+})
+
+// ── Snippet helper — returns a ~90-char body excerpt around the first hit ──
 export function getSnippet(text: string, tokens: string[]): string | null {
   const lower = text.toLowerCase()
   for (const t of tokens) {
@@ -48,85 +59,171 @@ export function getSnippet(text: string, tokens: string[]): string | null {
     const idx = lower.indexOf(t.toLowerCase())
     if (idx !== -1) {
       const start = Math.max(0, idx - 25)
-      const end   = Math.min(text.length, idx + t.length + 60)
+      const end   = Math.min(text.length, idx + t.length + 65)
       return (start > 0 ? '…' : '') + text.slice(start, end).replace(/\n/g, ' ') + (end < text.length ? '…' : '')
     }
   }
   return null
 }
 
-// ── Multi-term note search ─────────────────────────────────────────────────
-// Tokenises the query, runs per-token and whole-query passes, merges with
-// boosted scores, then re-ranks with exact-title-match priority.
+// ── Multi-pass note search ─────────────────────────────────────────────────
+//
+// Scoring is HIGHER = BETTER (inverted from Fuse's 0=best convention).
+// scoreMap: id → cumulative points
+//
+// Pass 1: titleTagFuse — full query   (0–60 pts per hit)
+// Pass 2: titleTagFuse — per token    (0–20 pts per token per hit)
+// Pass 3: plain body indexOf scan     (0–40+ pts; requires ≥2 tokens for
+//          multi-word queries to avoid common-word noise)
+// Pass 4: bodyFuse — per token        (0–6 pts; typo tolerance in body)
+// ──────────────────────────────────────────────────────────────────────────
 function runNoteSearch(q: string, maxN: number): UnifiedResult[] {
   if (q.length < 2) return []
 
-  const tokens   = q.split(/\s+/).filter(t => t.length >= 2)
-  const scoreMap = new Map<string, number>()
+  const tokens = q
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(t => t.length >= 2)
 
-  // Pass 1: full query
-  for (const r of notesFuse.search(q)) {
-    scoreMap.set(r.item.id, r.score ?? 0.99)
+  if (tokens.length === 0) return []
+
+  const scoreMap = new Map<string, number>()   // id → pts (higher = better)
+
+  // ── Pass 1: title/tag Fuse — full query ───────────────────────────────
+  for (const r of titleTagFuse.search(q)) {
+    const pts = (1 - (r.score ?? 0.99)) * 60
+    scoreMap.set(r.item.id, (scoreMap.get(r.item.id) ?? 0) + pts)
   }
 
-  // Pass 2: per-token (helps typos + multi-word queries)
-  // If ALL tokens match a note, we boost its score; partial matches are kept
-  // but at their natural score.
-  if (tokens.length > 1) {
-    const tokenHits: Map<string, number>[] = tokens.map(tok => {
-      const m = new Map<string, number>()
-      for (const r of notesFuse.search(tok)) m.set(r.item.id, r.score ?? 0.99)
-      return m
-    })
-
-    const allIds = new Set(noteCorpus.map(n => n.id))
-    for (const id of allIds) {
-      const perToken = tokenHits.map(m => m.get(id) ?? 0.99)
-      const allMatch = perToken.every(s => s < 0.5)
-      if (!allMatch) continue // only boost when every token matched
-      const combined = perToken.reduce((a, b) => a + b, 0) / perToken.length * 0.75
-      const existing = scoreMap.get(id) ?? 0.99
-      if (combined < existing) scoreMap.set(id, combined)
-    }
-  } else if (tokens.length === 1 && scoreMap.size === 0) {
-    // Single token found nothing at full-query level — try standalone token
-    for (const r of notesFuse.search(tokens[0])) {
-      scoreMap.set(r.item.id, r.score ?? 0.99)
+  // ── Pass 2: title/tag Fuse — per token ────────────────────────────────
+  // Short tokens (< 7 chars) like "sore", "patch" can fuzzy-match as
+  // substrings of unrelated words via Fuse's ignoreLocation scanning
+  // (e.g. "sore" matching "col-ore-ctal").  For these, verify the hit is
+  // a real substring before awarding points.
+  for (const tok of tokens) {
+    const requireExact = tok.length < 7
+    for (const r of titleTagFuse.search(tok)) {
+      if (requireExact) {
+        const meta = (r.item.label + ' ' + r.item.sublabel + ' ' + r.item.tags).toLowerCase()
+        if (!meta.includes(tok)) continue
+      }
+      const pts = (1 - (r.score ?? 0.99)) * 20
+      scoreMap.set(r.item.id, (scoreMap.get(r.item.id) ?? 0) + pts)
     }
   }
 
+  // ── Pass 3: exact plain-text body scan ────────────────────────────────
+  // indexOf is O(n) and unaffected by Fuse's weighted multi-key averaging.
+  //
+  // Rules to prevent common clinical words ("doses", "patch", "mg") from
+  // matching dozens of unrelated notes:
+  //   • Long tokens (≥7 chars) = "specific" — must appear ≥1 time
+  //   • Short tokens (<7 chars) = "generic"  — must appear ≥2 times
+  //   • If the query has specific tokens, at least one MUST be present in the
+  //     body for a body-scan score to be awarded (guards against notes that
+  //     only match on "patch" + "doses" but not "fentanyl").
+  //   • Multi-word queries require at least 2 tokens to match.
+  const specificTokens  = tokens.filter(t => t.length >= 7)
+  const hasSpecificToks = specificTokens.length > 0
+  const minMatchTokens  = tokens.length > 1 ? 2 : 1
+
+  for (const entry of noteCorpus) {
+    const bodyLow = entry.body.toLowerCase()
+    const matchedSet    = new Set<string>()
+    let   totalOcc      = 0
+
+    for (const tok of tokens) {
+      if (tok.length < 3) continue
+      const minOccToMatch = tok.length >= 7 ? 1 : 2
+
+      let pos = bodyLow.indexOf(tok)
+      if (pos !== -1) {
+        let occ = 0
+        while (pos !== -1 && occ < 5) {
+          occ++
+          pos = bodyLow.indexOf(tok, pos + tok.length)
+        }
+        if (occ >= minOccToMatch) {
+          matchedSet.add(tok)
+          totalOcc += occ
+        }
+      }
+    }
+
+    // Gate: if query has specific tokens, at least one must be in the match
+    if (hasSpecificToks && !specificTokens.some(t => matchedSet.has(t))) continue
+    if (matchedSet.size < minMatchTokens) continue
+
+    const coverage = matchedSet.size / tokens.length
+    const allBonus = matchedSet.size === tokens.length ? 2.0 : 1.0
+    const pts      = coverage * allBonus * Math.min(totalOcc, 5) * 4
+    scoreMap.set(entry.id, (scoreMap.get(entry.id) ?? 0) + pts)
+  }
+
+  // ── Pass 4: bodyFuse per-token — typo tolerance in body ───────────────
+  // Only run for long/specific tokens (≥7 chars) to avoid common clinical
+  // words like "dose", "patch", "oral" inflating scores across the corpus.
+  for (const tok of tokens) {
+    if (tok.length < 7) continue
+    for (const r of bodyFuse.search(tok)) {
+      const pts = (1 - (r.score ?? 0.99)) * 6
+      scoreMap.set(r.item.id, (scoreMap.get(r.item.id) ?? 0) + pts)
+    }
+  }
+
+  // ── Post-filter: specific-token gate ─────────────────────────────────
+  // When the query contains any long/specific token (≥7 chars) AND it's a
+  // multi-word query, every candidate note must contain at least one of those
+  // specific tokens somewhere (title, tags, subtitle, or body) — regardless
+  // of how many pts it accumulated from generic tokens like "patch" or "doses".
+  if (hasSpecificToks && tokens.length > 1) {
+    for (const id of [...scoreMap.keys()]) {
+      const entry = noteCorpus.find(n => n.id === id)
+      if (!entry) { scoreMap.delete(id); continue }
+      const metaLow = (entry.label + ' ' + entry.sublabel + ' ' + entry.tags).toLowerCase()
+      const bodyLow  = entry.body.toLowerCase()
+      const found    = specificTokens.some(t => metaLow.includes(t) || bodyLow.includes(t))
+      if (!found) scoreMap.delete(id)
+    }
+  }
+
+  // ── Filter: minimum meaningful relevance ──────────────────────────────
+  // Scale threshold with query length so generic single-word hits are still
+  // caught (MIN=5) while multi-word queries demand stronger evidence.
+  const MIN_SCORE = tokens.length === 1 ? 5
+                  : tokens.length === 2 ? 15
+                  :                       20
   const qLow = q.toLowerCase()
   const results: UnifiedResult[] = []
 
   for (const [id, score] of scoreMap.entries()) {
-    if (score > 0.52) continue            // discard weak fuzzy hits
+    if (score < MIN_SCORE) continue
     const note = NOTES.find(n => n.id === id)
     if (!note) continue
     results.push({
-      kind:    'note',
-      label:   note.title,
+      kind:     'note',
+      label:    note.title,
       sublabel: note.subtitle,
       id,
-      snippet: getSnippet(note.body, tokens),
+      snippet:  getSnippet(note.body, tokens) ?? undefined,
     })
   }
 
-  // Sort: exact title > starts-with > contains > score
+  // ── Sort: exact-title > starts-with > contains > combined score ────────
   return results.sort((a, b) => {
     const aT = a.label.toLowerCase()
     const bT = b.label.toLowerCase()
-    const aE = aT === qLow, bE = bT === qLow
+    const aE = aT === qLow,         bE = bT === qLow
     const aS = aT.startsWith(qLow), bS = bT.startsWith(qLow)
-    const aC = aT.includes(qLow), bC = bT.includes(qLow)
+    const aC = aT.includes(qLow),   bC = bT.includes(qLow)
     if (aE && !bE) return -1
-    if (bE && !aE) return 1
+    if (bE && !aE) return  1
     if (aS && !bS) return -1
-    if (bS && !aS) return 1
+    if (bS && !aS) return  1
     if (aC && !bC) return -1
-    if (bC && !aC) return 1
-    const aScore = scoreMap.get(a.id) ?? 0.99
-    const bScore = scoreMap.get(b.id) ?? 0.99
-    return aScore - bScore
+    if (bC && !aC) return  1
+    return (scoreMap.get(b.id) ?? 0) - (scoreMap.get(a.id) ?? 0)
   }).slice(0, maxN)
 }
 
@@ -218,9 +315,9 @@ export function searchAll(query: string, maxPerKind = 4): {
   const notes = runNoteSearch(q, maxPerKind)
 
   // Darwin forms first, then others
-  const formHits  = formsFuse.search(q)
-  const darwin    = formHits.filter(r => r.item.category === 'Darwin')
-  const otherF    = formHits.filter(r => r.item.category !== 'Darwin')
+  const formHits = formsFuse.search(q)
+  const darwin   = formHits.filter(r => r.item.category === 'Darwin')
+  const otherF   = formHits.filter(r => r.item.category !== 'Darwin')
   const forms: UnifiedResult[] = [...darwin, ...otherF].slice(0, maxPerKind).map(r => ({
     kind:     'form',
     label:    r.item.label,
@@ -258,13 +355,18 @@ export function searchNotesForTab(query: string, maxN = 60): NoteTabResult[] {
   const q = query.trim()
   if (q.length < 1) return []
 
-  const tokens = q.split(/\s+/).filter(t => t.length >= 2)
+  const tokens = q
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(t => t.length >= 2)
+
   if (!tokens.length) return []
 
   const unified = runNoteSearch(q, maxN)
   return unified.map(r => ({
     id:      r.id,
-    score:   0, // not exposed externally
+    score:   0,       // internal only; ranking already applied
     snippet: r.snippet ?? null,
   }))
 }
