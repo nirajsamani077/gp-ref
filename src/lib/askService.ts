@@ -1,7 +1,7 @@
 import Anthropic from '@anthropic-ai/sdk'
-import Fuse from 'fuse.js'
 import { NOTES } from '../data/notes'
 import type { Note } from '../data/notes'
+import { searchNotesForTab } from './searchIndex'
 
 // ---------------------------------------------------------------------------
 // Anthropic client — browser-side (personal/internal tool only)
@@ -12,29 +12,17 @@ const client = new Anthropic({
 })
 
 // ---------------------------------------------------------------------------
-// Compact search corpus — built once at startup
-//
-// The enriched body can be thousands of chars (Fuse.js performs poorly on it).
-// We use the first 600 chars = the manually-written keyword block, plus
-// title + tags + subtitle for topic matching.
+// Lightweight title/tag corpus — for exact-match boosting on top of the
+// shared fuzzy search engine (which handles full-body / multi-term ranking)
 // ---------------------------------------------------------------------------
-interface SearchEntry {
-  id: string
-  title: string
-  subtitle: string
-  tags: string
-  keywords: string   // compact manually-written keyword string
-}
-
-const searchCorpus: SearchEntry[] = NOTES.map(n => ({
+const titleTagCorpus = NOTES.map(n => ({
   id:       n.id,
-  title:    n.title,
-  subtitle: n.subtitle,
-  tags:     n.tags.join(' '),
-  keywords: n.body.substring(0, 600),   // original keywords before enrichBody
+  title:    n.title.toLowerCase(),
+  tags:     n.tags.join(' ').toLowerCase(),
+  subtitle: n.subtitle.toLowerCase(),
 }))
 
-// Generic clinical words that appear in every note — useless for ranking
+// Generic clinical words — useless for ranking, drop before boosting
 const STOPWORDS = new Set([
   'criteria', 'management', 'diagnosis', 'treatment', 'assessment',
   'referral', 'investigation', 'symptoms', 'symptom', 'guideline',
@@ -45,67 +33,43 @@ const STOPWORDS = new Set([
   'can', 'should', 'would', 'could', 'drug', 'drugs',
 ])
 
-// Fuse.js on compact corpus only — fast and accurate
-const fuse = new Fuse(searchCorpus, {
-  keys: [
-    { name: 'title',    weight: 5 },
-    { name: 'tags',     weight: 2 },
-    { name: 'subtitle', weight: 2 },
-    { name: 'keywords', weight: 1 },   // drug names, clinical terms
-  ],
-  threshold: 0.4,         // tolerant enough for 1-2 char typos
-  includeScore: true,
-  ignoreLocation: true,
-  minMatchCharLength: 3,
-  useExtendedSearch: false,
-})
-
-export function getRelevantNotes(query: string, topN = 6): Note[] {
+// ---------------------------------------------------------------------------
+// getRelevantNotes
+//
+// Two-pass approach:
+//   Pass 1 – shared searchIndex (full body, multi-term tokenisation,
+//             calibrated weights) — provides ranked note IDs
+//   Pass 2 – exact title/tag/subtitle keyword boost so that notes with the
+//             clinical term explicitly in their title or specialty tag always
+//             rise above body-only matches
+// ---------------------------------------------------------------------------
+export function getRelevantNotes(query: string, topN = 8): Note[] {
   const noteById = new Map(NOTES.map(n => [n.id, n]))
   const scoreMap = new Map<string, number>()
 
-  // Extract meaningful search terms (drop stopwords and short words)
+  // ── Pass 1: shared multi-term search engine (full body, no truncation) ───
+  const indexHits = searchNotesForTab(query, topN * 3)   // cast a wide net
+  indexHits.forEach((hit, rank) => {
+    // Convert rank to a descending score so top results dominate
+    scoreMap.set(hit.id, ((topN * 3) - rank) * 4)
+  })
+
+  // ── Pass 2: exact title / tag / subtitle match boost ─────────────────────
   const terms = query
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, ' ')
     .split(/\s+/)
     .filter(w => w.length > 2 && !STOPWORDS.has(w))
+  const searchTerms = terms.length > 0 ? terms : [query.toLowerCase()]
 
-  // Use full query as a fallback term if all words were stopworded
-  const searchTerms = terms.length > 0 ? terms : [query]
-
-  // 1) Per-term fuzzy search — handles typos and drug name variants
-  //    Searching individual terms (not full phrase) is critical for accuracy
-  searchTerms.forEach(term => {
-    fuse.search(term).forEach(r => {
-      const s = (1 - (r.score ?? 1)) * 20
-      scoreMap.set(r.item.id, (scoreMap.get(r.item.id) ?? 0) + s)
-    })
-  })
-
-  // 2) Exact + prefix keyword scan on compact corpus
   searchTerms.forEach(w => {
-    searchCorpus.forEach(entry => {
-      const tl  = entry.title.toLowerCase()
-      const kl  = entry.keywords.toLowerCase()
-      const tgl = entry.tags.toLowerCase()
-      let kwScore = 0
-
-      // Title / tag match = strong signal
-      if (tl.includes(w))  kwScore += 10
-      if (tgl.includes(w)) kwScore += 4
-
-      // Exact occurrence in keyword string
-      let idx = 0
-      while ((idx = kl.indexOf(w, idx)) !== -1) { kwScore += 1; idx++ }
-
-      // Prefix/stem match (e.g. "dose" matches "doses", "dosing")
-      kl.split(/\s+/).forEach(kw => {
-        if (kw !== w && kw.startsWith(w) && w.length >= 4) kwScore += 0.5
-      })
-
-      if (kwScore > 0) {
-        scoreMap.set(entry.id, (scoreMap.get(entry.id) ?? 0) + kwScore)
+    titleTagCorpus.forEach(entry => {
+      let boost = 0
+      if (entry.title.includes(w))    boost += 25  // title match = very strong
+      if (entry.tags.includes(w))     boost += 10  // tag match = strong
+      if (entry.subtitle.includes(w)) boost += 5   // subtitle = moderate
+      if (boost > 0) {
+        scoreMap.set(entry.id, (scoreMap.get(entry.id) ?? 0) + boost)
       }
     })
   })
@@ -153,7 +117,7 @@ function noteToText(note: Note): string {
 function buildSystemPrompt(relevantNotes: Note[]): string {
   const noteContext = relevantNotes.map(noteToText).join('\n\n---\n\n')
 
-  return `You are GP OS — a clinical reference AI for UK GPs at Darwin Practice, Burton (UHDB). You answer fast, clinical, mid-consultation questions using ONLY the notes below.
+  return `You are GP OS — a clinical reference AI for UK GPs at Darwin Practice, Burton (UHDB). You answer fast, clinical, mid-consultation questions using the reference notes below.
 
 RESPONSE FORMAT (follow strictly):
 - Be extremely concise — this is used mid-consultation
@@ -164,11 +128,15 @@ RESPONSE FORMAT (follow strictly):
 - Flag 🔴 RED FLAGS in capitals where present in the notes
 - Local referral defaults: Primary → UHDB Burton (QHB) | MH → MPFT 0300 555 5001 | CAMHS → CaFSPA | Referrals via Lexacom to secretaries unless Accumail form
 - Darwin referral forms are in the Forms tab — mention relevant ones when answering referral questions (e.g. "Use the MSK referral form in the Darwin Referrals section")
-- If NOT in the notes: say so briefly, direct to NICE CKS: cks.nice.org.uk or BNF
 - Never add a disclaimer — one is already shown in the UI
 - Never pad with preamble ("Great question", "Based on the notes...") — answer immediately
 
-IMPORTANT: Only use the reference notes below. Do not use general training knowledge for clinical facts.
+INFORMATION HIERARCHY — follow in order:
+1. If the answer is explicitly stated in the notes below → answer directly from the notes
+2. If the topic is covered but the specific detail (e.g. exact starting dose, specific brand) is not explicitly stated → say what the notes do cover, then add "→ verify exact dosing in BNF" on a new line
+3. If the topic is NOT covered in the notes at all → say "Not in my notes — check NICE CKS: cks.nice.org.uk" and nothing more
+
+IMPORTANT: For specific drug doses and clinical thresholds, always prefer the notes. Only use your training knowledge as a last resort for widely-accepted facts not covered at all, and clearly label it: "(standard UK practice — not in my notes)".
 
 ---
 
@@ -198,7 +166,7 @@ export async function streamAskQuery(
   query: string,
   callbacks: StreamCallbacks,
 ): Promise<void> {
-  const relevantNotes = getRelevantNotes(query, 6)
+  const relevantNotes = getRelevantNotes(query, 8)
 
   if (relevantNotes.length === 0) {
     callbacks.onError('No relevant notes found. Try rephrasing your question.')
