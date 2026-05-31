@@ -187,6 +187,16 @@ import { obesity }                   from '../notes/obesity'
 import { neckPain }                  from '../notes/neckPain'
 import { syncope }                   from '../notes/syncope'
 import { hypothyroidism }            from '../notes/hypothyroidism'
+import { clusterHeadache }          from '../notes/clusterHeadache'
+import { haematuria }               from '../notes/haematuria'
+import { chronicLiverDisease }      from '../notes/chronicLiverDisease'
+import { hiv }                      from '../notes/hiv'
+import { hrtManagement }            from '../notes/hrtManagement'
+import { hearingLoss }              from '../notes/hearingLoss'
+import { epistaxis }                from '../notes/epistaxis'
+import { glandularFever }           from '../notes/glandularFever'
+import { genitalWarts }             from '../notes/genitalWarts'
+import { febrileConvulsions }       from '../notes/febrileConvulsions'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -377,4 +387,14 @@ export const NOTES: Note[] = [
   neckPain,
   syncope,
   hypothyroidism,
+  clusterHeadache,
+  haematuria,
+  chronicLiverDisease,
+  hiv,
+  hrtManagement,
+  hearingLoss,
+  epistaxis,
+  glandularFever,
+  genitalWarts,
+  febrileConvulsions,
 ].map(enrichBody)
