@@ -197,6 +197,17 @@ import { epistaxis }                from '../notes/epistaxis'
 import { glandularFever }           from '../notes/glandularFever'
 import { genitalWarts }             from '../notes/genitalWarts'
 import { febrileConvulsions }       from '../notes/febrileConvulsions'
+import { hyperthyroidism }          from '../notes/hyperthyroidism'
+import { ibd }                      from '../notes/ibd'
+import { pcos }                     from '../notes/pcos'
+import { osa }                      from '../notes/osa'
+import { multipleSclerosis }        from '../notes/multipleSclerosis'
+import { inflammatoryArthritis }    from '../notes/inflammatoryArthritis'
+import { lipidsStatins }            from '../notes/lipidsStatins'
+import { hepatitis }                from '../notes/hepatitis'
+import { lungCancer }               from '../notes/lungCancer'
+import { stis }                     from '../notes/stis'
+import { menopause }                from '../notes/menopause'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -397,4 +408,15 @@ export const NOTES: Note[] = [
   glandularFever,
   genitalWarts,
   febrileConvulsions,
+  hyperthyroidism,
+  ibd,
+  pcos,
+  osa,
+  multipleSclerosis,
+  inflammatoryArthritis,
+  lipidsStatins,
+  hepatitis,
+  lungCancer,
+  stis,
+  menopause,
 ].map(enrichBody)
