@@ -175,6 +175,18 @@ import { utiMen }                   from '../notes/utiMen'
 import { vertigo }                  from '../notes/vertigo'
 import { vitaminD }                 from '../notes/vitaminD'
 import { vaginalDischarge }         from '../notes/vaginalDischarge'
+import { dvt }                       from '../notes/dvt'
+import { lowerBackPain }             from '../notes/lowerBackPain'
+import { palpitations }              from '../notes/palpitations'
+import { osteoporosis }              from '../notes/osteoporosis'
+import { parkinsonsPd }              from '../notes/parkinsonsPd'
+import { melanoma }                  from '../notes/melanoma'
+import { pvd }                       from '../notes/pvd'
+import { smokingCessation }          from '../notes/smokingCessation'
+import { obesity }                   from '../notes/obesity'
+import { neckPain }                  from '../notes/neckPain'
+import { syncope }                   from '../notes/syncope'
+import { hypothyroidism }            from '../notes/hypothyroidism'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -353,4 +365,16 @@ export const NOTES: Note[] = [
   vertigo,
   vitaminD,
   vaginalDischarge,
+  dvt,
+  lowerBackPain,
+  palpitations,
+  osteoporosis,
+  parkinsonsPd,
+  melanoma,
+  pvd,
+  smokingCessation,
+  obesity,
+  neckPain,
+  syncope,
+  hypothyroidism,
 ].map(enrichBody)
