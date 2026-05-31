@@ -36,25 +36,12 @@ export const breastHormonalTherapy: Note = {
         'GP role: ongoing prescribing, monitoring, managing side effects, and recognising interactions',
       ],
     },
-    {
-      type: 'image',
-      src: '/images/breast-ca-types.jpg',
-      alt: 'Breast cancer subtypes: HR+/HER2- most common 73%, Triple negative 13%, Triple positive 10%, HR-/HER2+ 5%',
-      caption: 'Breast cancer subtypes — hormone receptor positive (HR+) disease is most common and most amenable to hormonal therapy',
-          sensitive: true,
-},
 
     // ── MECHANISM ────────────────────────────────────────────────────────────
     {
       type: 'heading',
       level: 2,
       text: 'Mechanism of Action',
-    },
-    {
-      type: 'image',
-      src: '/images/anastrozole-tamoxifen-gp.png',
-      alt: 'Mechanism diagram: Androstenedione and Testosterone converted via Aromatase (in subcutaneous fat, liver, muscle, normal breast, breast cancer) to Estrone and Estradiol; Aromatase inhibitor (anastrozole) blocks this conversion; Tamoxifen blocks oestradiol acting on ER+ breast tumour cells',
-      caption: 'Tamoxifen blocks oestrogen at the receptor; anastrozole prevents peripheral conversion of androgens to oestrogens',
     },
     {
       type: 'table',

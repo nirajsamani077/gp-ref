@@ -43,15 +43,6 @@ export const anxiety: Note = {
     },
 
     {
-      type: 'image',
-      src: '/images/anxiety-cycles.png',
-      alt: 'CBT anxiety vicious cycle diagram showing interactions between thoughts, emotions, physical symptoms and behaviour',
-      caption: 'The anxiety vicious cycle — thoughts, physical symptoms, emotions and behaviour reinforce each other. CBT targets each component.',
-      float: 'right',
-      maxWidth: '340px',
-    },
-
-    {
       type: 'list',
       items: [
         'Thoughts: identify catastrophising ("what if" thinking), challenge with realistic alternatives, use "two-track" approach (physical and mental well-being)',
@@ -61,22 +52,6 @@ export const anxiety: Note = {
         'Allocated "worry time" — contain worry to a fixed 15 min/day period; practise postponing worry outside this time',
         'Mindfulness and meditation reduce rumination; Headspace app is evidence-based; group exercise has good evidence',
       ],
-    },
-
-    {
-      type: 'image',
-      src: '/images/anxiety-self-help.png',
-      alt: 'Things that help my anxiety — infographic showing self-help strategies',
-      caption: 'Self-help strategies for anxiety — share with patients as a take-away resource.',
-      maxWidth: '500px',
-    },
-
-    {
-      type: 'image',
-      src: '/images/7-underlying-factors-that-create-anxiety-and-stress.jpg.webp',
-      alt: 'Seven underlying factors that create anxiety and stress infographic',
-      caption: 'Seven underlying factors that create anxiety and stress — useful for psychoeducation.',
-      maxWidth: '500px',
     },
 
     { type: 'heading', level: 2, text: 'Stepped Care' },

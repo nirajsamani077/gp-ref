@@ -25,12 +25,6 @@ export const achillesTendinopathy: Note = {
         ['Combined',     'Both locations', '~15%', 'Features of both; may indicate widespread tendon pathology'],
       ],
     },
-    {
-      type: 'image',
-      src: '/images/559d2c_628a22661db446e29916a88e44bd97e3~mv2.png',
-      alt: 'Achilles tendon anatomy showing mid-portion and insertional subtypes',
-      caption: 'Mid-portion tendinopathy (69%) occurs 2–6 cm above insertion; insertional (16%) at the calcaneus. Tap to enlarge.',
-    },
 
     // ── Presentation ────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Presentation — Tendinopathy' },
@@ -100,12 +94,6 @@ export const achillesTendinopathy: Note = {
         ['Stress fracture (calcaneus)',         'Diffuse heel pain, tenderness on medial-lateral calcaneal squeeze, history of sudden increase in training load'],
       ],
     },
-    {
-      type: 'image',
-      src: '/images/bjsports-2025-July-59-13-891-F2.large.jpg',
-      alt: 'Four-step diagnostic algorithm for Achilles tendinopathy',
-      caption: 'Structured 4-step diagnostic approach — always exclude rupture and medical causes first. Tap to enlarge.',
-    },
 
     // ── Management: Tendinopathy ─────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Management — Tendinopathy' },
@@ -134,12 +122,6 @@ export const achillesTendinopathy: Note = {
         'Insertional tendinopathy: avoid full range dorsiflexion in exercises — perform heel drops only to neutral (not below step level) to avoid compressive load at insertion.',
         'Refer to physiotherapy if not improving after 6–8 weeks of self-managed loading.',
       ],
-    },
-    {
-      type: 'image',
-      src: '/images/Achilles-Tendonitis-Infographic-ultime-guide-page-2.png',
-      alt: 'Achilles tendinopathy exercise programme — isometric hold, isotonic calf raise, plantar flexion with resistance band',
-      caption: 'Key exercises: isometric hold → isotonic calf raise → resistance band plantarflexion. Tap to enlarge.',
     },
     {
       type: 'linkrow',

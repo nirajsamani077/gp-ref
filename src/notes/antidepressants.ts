@@ -144,13 +144,6 @@ export const antidepressants: Note = {
     },
 
     {
-      type: 'image',
-      src: '/images/Cross-Taper-Switch.png',
-      alt: 'Cross-taper switch diagram: Step 1 — the first antidepressant is gradually reduced and stopped over several weeks. Step 2 — the second antidepressant is introduced at a low dose partway through the reduction of the first, so both are taken simultaneously. Step 3 — the dose of the second antidepressant is increased to the therapeutic dose once the first has been stopped. Note: considered in patients with high risk of relapse; risk of medication interactions and adverse reactions due to combinations; clinicians should base cross-tapering on the half-life of the first antidepressant.',
-      caption: 'Cross-taper switch method. The overlap period allows the new drug to reach a therapeutic level before the old one is stopped, minimising discontinuation symptoms and treatment gaps. Duration of overlap is guided by the half-life of each agent.',
-    },
-
-    {
       type: 'table',
       headers: ['Switching FROM', 'Switching TO', 'Method', 'Key notes'],
       rows: [
@@ -175,20 +168,6 @@ export const antidepressants: Note = {
         ['Any SSRI/SNRI', 'Moclobemide', 'Taper/stop → wait 1 week', 'From fluoxetine: 5–6 weeks'],
       ],
       caption: 'Key switching combinations. Fluoxetine (long half-life) and MAOIs (potentially fatal interactions) require the most caution. When in doubt, seek specialist advice or check the full AWP/Nottinghamshire switching guidance.',
-    },
-
-    {
-      type: 'image',
-      src: '/images/Switching-guide-for-antidepressants.png',
-      alt: 'Example of stopping citalopram 40 mg: 35-year-old male on 40 mg citalopram for 18 months. GP agrees tapering plan of 50% dose reductions every 4 weeks: 40 mg → 20 mg → 10 mg → 5 mg (half a 10 mg tablet or liquid) → arranged review 8 weeks into taper → 2.5 mg (liquid) → 1.25 mg (liquid) → 0.6 mg (liquid) → stop medication.',
-      caption: 'Example hyperbolic tapering plan for stopping citalopram 40 mg after 18 months. Each step reduces by ~50% of previous dose every 4 weeks. Liquid preparations are essential for very low doses. Arrange a review mid-taper. Speed is patient-led — pause if withdrawal symptoms appear.',
-    },
-
-    {
-      type: 'image',
-      src: '/images/switching.avif',
-      alt: 'Australian Prescriber full switching table: guidelines for switching between specific antidepressants. Rows = FROM drug (SSRIs, fluoxetine, fluvoxamine, vortioxetine, agomelatine, SNRIs, mianserin/mirtazapine, reboxetine, TCAs, clomipramine, moclobemide, MAOIs). Columns = TO drug. Each cell describes the specific switching method with dose guidance.',
-      caption: 'Australian Prescriber full antidepressant switching reference table (Keks et al 2016). Key rule: taper means gradual dose reduction in increments every few days over ~4 weeks. Fluoxetine requires washout before starting most agents. MAOIs require strict washout periods in both directions.',
     },
 
     { type: 'heading', level: 2, text: 'Stopping & Withdrawal' },

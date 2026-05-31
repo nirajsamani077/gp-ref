@@ -25,13 +25,6 @@ export const enuresis: Note = {
     },
 
     {
-      type: 'image',
-      src: '/images/enuresis.webp',
-      alt: 'Infographic: Primary enuresis — child has never been consistently dry at night; possible causes include deep sleeper, small bladder, hereditary, physically not fully developed, low vasopressin. Secondary enuresis — child was dry for ≥6 months but starts wetting again; possible causes include stress, anxiety, diabetes, kidney infection, psychological trauma, neurological or anatomical problems.',
-      caption: 'Primary vs secondary enuresis. Secondary enuresis always warrants investigation to exclude an underlying cause — consider T1DM (urinalysis + BM), UTI, constipation, and psychosocial stressors.',
-    },
-
-    {
       type: 'callout',
       variant: 'danger',
       title: 'Red flags — act immediately',
@@ -97,13 +90,6 @@ export const enuresis: Note = {
     },
 
     {
-      type: 'image',
-      src: '/images/enuresis-alarm.webp',
-      alt: 'Diagram showing 3 ways to place the moisture sensor for DRI Sleeper alarms: DRI Sleeper Excel with cord (clip-on alarm, moisture sensor in pants), DRI Sleeper Eclipse wireless (alarm range up to 35 feet/11 metres), DRI Sleeper Eclipse with parental monitor (alarm 1 in parents room, alarm 2 near child)',
-      caption: 'Enuresis alarm sensor placement options. Alarms can be loaned from community continence services (e.g. Malem alarms). Wireless and parental-monitor variants are available for older children or where practical issues exist. Demonstrate use at the appointment and provide written instructions.',
-    },
-
-    {
       type: 'list',
       items: [
         'Alarms can be loaned from the community continence service — refer to your local paediatric continence nurse',
@@ -152,13 +138,6 @@ export const enuresis: Note = {
         ],
       ],
       caption: 'Desmopressin prescribing for nocturnal enuresis. Desmomelt (120–240 mcg) is preferred. Nasal spray is blacklisted due to hyponatraemia risk.',
-    },
-
-    {
-      type: 'image',
-      src: '/images/desmopressin.avif',
-      alt: 'Desmopressin prescribing information and safety guidance for nocturnal enuresis',
-      caption: 'Desmopressin — key safety points and prescribing information.',
     },
 
     {

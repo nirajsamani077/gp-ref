@@ -13,14 +13,6 @@ export const perinatalMH: Note = {
     { type: 'heading', level: 2, text: 'Overview — Three Conditions' },
 
     {
-      type: 'image',
-      src: '/images/postpartum-mh-types.gif',
-      alt: 'Table comparing postpartum blues, perinatal depression and postpartum psychosis by incidence, onset and DSM-5 symptoms',
-      caption: 'Three perinatal mental health conditions — very different incidence, onset and severity. Postpartum psychosis is a psychiatric emergency.',
-      maxWidth: '600px',
-    },
-
-    {
       type: 'table',
       headers: ['Condition', 'Incidence', 'Onset', 'Key features'],
       rows: [
@@ -107,14 +99,6 @@ export const perinatalMH: Note = {
         'Venlafaxine: avoid in pregnancy if possible — neonatal withdrawal; if already established, do not abruptly stop',
         'Always involve perinatal mental health team for medication decisions in pregnancy where possible',
       ],
-    },
-
-    {
-      type: 'image',
-      src: '/images/antidepressants-breastfeeding.jpeg',
-      alt: 'Table of antidepressant exposure via breastmilk — sertraline and paroxetine have low exposure and are preferred; fluoxetine may be detectable in infant blood due to long half-life',
-      caption: 'Antidepressant exposure via breastmilk. Sertraline is the preferred choice — low milk:plasma ratio, good safety data. Avoid fluoxetine in breastfeeding if possible.',
-      maxWidth: '580px',
     },
 
     {

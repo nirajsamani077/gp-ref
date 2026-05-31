@@ -19,13 +19,6 @@ export const adenomyosis: Note = {
       text: 'Adenomyosis is defined as the presence of endometrial glands and stroma within the myometrium (uterine muscle), resulting in a diffusely enlarged, "boggy" uterus. It is a distinct condition from endometriosis in terms of pathogenic mechanisms, though the two frequently co-exist.',
     },
     {
-      type: 'image',
-      src: '/images/adenomyosis.jpg.webp',
-      alt: 'Anatomical diagram of adenomyosis showing endometrium invading uterus wall',
-      caption: 'Adenomyosis: endometrial tissue invading through the myometrium. Often co-exists with fibroids and endometriosis.',
-          sensitive: true,
-},
-    {
       type: 'callout',
       variant: 'info',
       title: 'Pathophysiology — Theories',
@@ -96,13 +89,6 @@ export const adenomyosis: Note = {
         ['Bloods', 'Screen for anaemia', 'FBC, ferritin if significant HMB; TFTs if clinically indicated'],
       ],
     },
-    {
-      type: 'image',
-      src: '/images/MRI-Adenomyosis-1.jpg',
-      alt: 'Sagittal MRI pelvis showing enlarged uterus with adenomyosis',
-      caption: 'Sagittal T2 MRI pelvis: grossly enlarged uterus with heterogeneous myometrial signal and loss of the junctional zone — typical of adenomyosis.',
-          sensitive: true,
-},
     {
       type: 'callout',
       variant: 'warning',

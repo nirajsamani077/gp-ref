@@ -24,13 +24,6 @@ export const barrettsOesophagus: Note = {
       ],
     },
 
-    {
-      type: 'image',
-      src: '/images/barretts-oesophagus.jpg',
-      alt: "Barrett's oesophagus diagrams and endoscopy: A normal oesophagus and stomach, B hiatus hernia, C short segment Barrett's, D long segment Barrett's — with corresponding endoscopic images showing squamocolumnar junction and Barrett's mucosa",
-      caption: "Top row: anatomical diagrams — A normal, B hiatus hernia, C short-segment Barrett's (<3 cm), D long-segment Barrett's (≥3 cm). Bottom row: corresponding endoscopic appearances — A normal squamocolumnar junction, B–D progressive Barrett's change showing salmon-pink columnar mucosa proximal to the gastro-oesophageal junction.",
-    },
-
     // ── SURVEILLANCE ──────────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: "Surveillance — What Secondary Care Does" },
 

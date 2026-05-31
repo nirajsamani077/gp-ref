@@ -56,12 +56,6 @@ export const diabetesT1DM: Note = {
       ],
     },
     {
-      type: 'image',
-      src: '/images/insulin-types-table.png',
-      alt: 'Insulin types — rapid-acting, short-acting, intermediate, long-acting, premixed with onset peak and duration',
-      caption: 'Insulin action profiles: rapid-acting analogues peak at 15–30 min, last 4h. Long-acting analogues (Lantus/Levemir) last 18–24h with no pronounced peak. Super-long (Toujeo/Tresiba) last 36h+. See insulin guidelines PDF.',
-    },
-    {
       type: 'linkrow',
       links: [
         { label: 'Insulin Guidelines PDF', url: '/pdfs/insulin-guidelines.pdf' },

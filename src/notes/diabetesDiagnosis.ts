@@ -53,12 +53,6 @@ export const diabetesDiagnosis: Note = {
       text: 'Types of Diabetes',
     },
     {
-      type: 'image',
-      src: '/images/diabetes-types.jpg',
-      alt: 'Types of diabetes — T1DM, T2DM, MODY, LADA, GDM, secondary diabetes',
-      caption: 'Overview of diabetes types. T2DM accounts for ~90% of all diabetes. T1DM ~8%. MODY, LADA, GDM and secondary diabetes make up the remainder.',
-    },
-    {
       type: 'table',
       headers: ['Type', 'Key Features', 'Diagnosis Pointer', 'Treatment Clue'],
       rows: [

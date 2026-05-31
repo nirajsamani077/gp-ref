@@ -38,12 +38,6 @@ export const abdominalMigraine: Note = {
       level: 2,
       text: 'Abdominal Pain in a Child — Diagnostic Pathway',
     },
-    {
-      type: 'image',
-      src: '/images/F1.large.jpg',
-      alt: 'Flowchart: abdominal pain in a child. Red flags → acute (emergency referral) or chronic (investigate). No red flags → consider abdominal migraine or other functional abdominal pain.',
-      caption: 'Key decision: red flags present? If yes, emergency referral or investigate. If no, consider functional diagnoses including abdominal migraine, functional dyspepsia, IBS.',
-    },
 
     // ── RED FLAGS ─────────────────────────────────────────────────────────────
     {

@@ -119,12 +119,6 @@ export const epilepsyAdults: Note = {
     },
 
     // ── IMAGE ─────────────────────────────────────────────────────────────────
-    {
-      type: 'image',
-      src: '/images/table-1-epilepsy-2.png.webp',
-      alt: 'Antiseizure medicines comparison: sodium valproate, lamotrigine, levetiracetam, carbamazepine \u2014 indications, contraindications, metabolism and side effects',
-      caption: 'Common ASMs \u2014 indications, contraindications and side effects',
-    },
 
     // ── DRUG INTERACTIONS ─────────────────────────────────────────────────────
     {
@@ -215,24 +209,12 @@ export const epilepsyAdults: Note = {
         'Ensure effective contraception is in place \u2014 LARC (IUD, IUS, implant) preferred',
       ],
     },
-    {
-      type: 'image',
-      src: '/images/valproate.webp',
-      alt: 'Valproate pregnancy prevention programme patient guide \u2014 what women and girls need to know',
-      caption: 'Valproate Pregnancy Prevention Programme (PPP)',
-    },
 
     // ── EPILEPSY AND PREGNANCY ────────────────────────────────────────────────
     {
       type: 'heading',
       level: 2,
       text: 'Epilepsy and Pregnancy',
-    },
-    {
-      type: 'image',
-      src: '/images/epilepsy-pregnancy.jpeg',
-      alt: 'Management algorithm for women with epilepsy in childbearing years \u2014 pre-pregnancy planning, early pregnancy, and postpartum',
-      caption: 'Epilepsy in pregnancy \u2014 management pathway',
     },
     {
       type: 'list',

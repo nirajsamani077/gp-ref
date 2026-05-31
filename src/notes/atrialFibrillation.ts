@@ -13,10 +13,6 @@ export const atrialFibrillation: Note = {
 
     { type: 'para', text: 'AF is the most common sustained cardiac arrhythmia. Suspect in patients with palpitations, breathlessness, chest pain, dizziness, fatigue or a new stroke/TIA. An irregular pulse on examination is highly suggestive.' },
 
-    { type: 'image', src: '/images/af-ecg-12lead.jpg', alt: '12-lead ECG showing atrial fibrillation with irregularly irregular rhythm and absent P waves', caption: '12-lead ECG showing AF: no P waves, irregularly irregular QRS complexes, fibrillatory baseline' },
-
-    { type: 'image', src: '/images/af-rhythms.jpg', alt: 'Rhythm strip comparison: atrial fibrillation, atrial flutter and multifocal atrial tachycardia', caption: 'Rhythm strip comparison \u2014 AF (irregularly irregular, no P waves), atrial flutter (sawtooth flutter waves at ~300bpm), multifocal atrial tachycardia (3+ P-wave morphologies)' },
-
     { type: 'table',
       caption: 'ECG features of AF',
       headers: ['Feature', 'Description'],
@@ -105,8 +101,6 @@ export const atrialFibrillation: Note = {
 
     { type: 'para', text: 'The AC-DC framework covers the two core decisions in AF management: Anticoagulation (AC) to prevent stroke, and Decide rate vs rhythm Control (DC).' },
 
-    { type: 'image', src: '/images/af-management-flowchart.png', alt: 'AF management flowchart: confirmed AF vs suspected AF, haemodynamic compromise pathway, CHA2DS2-VASc scoring, rate control options', caption: 'AF management pathway \u2014 confirmed AF (left): haemodynamic compromise \u2192 A&E; stable \u2192 CHA\u2082DS\u2082-VASc + rate control. Suspected AF (right): GP assessment, refer if no reversible cause' },
-
     // ── Stroke Risk ────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Stroke Risk \u2014 CHA\u2082DS\u2082-VASc Score' },
 
@@ -132,8 +126,6 @@ export const atrialFibrillation: Note = {
       ]
     },
 
-    { type: 'image', src: '/images/af-chadsvasc-table.png', alt: 'CHA2DS2-VASc risk factor scoring table showing each letter, factor and points', caption: 'CHA\u2082DS\u2082-VASc scoring reference' },
-
     { type: 'table',
       caption: 'Anticoagulation decision by CHA\u2082DS\u2082-VASc score',
       headers: ['Score', 'Stroke rate (%/yr)', 'Decision'],
@@ -144,7 +136,6 @@ export const atrialFibrillation: Note = {
         ['\u22652 (or \u22651 in men with another risk factor)', '2.2\u201315%', 'Offer anticoagulation'],
       ]
     },
-
 
     { type: 'callout', variant: 'info', title: 'Anticoagulation Decision \u2014 Key Points', items: [
       'Applies to all AF types including PAF and post-cardioversion',
@@ -176,8 +167,6 @@ export const atrialFibrillation: Note = {
       ]
     },
 
-    { type: 'image', src: '/images/af-orbit-scoring.jpg', alt: 'ORBIT-AF scoring system table showing variables and points for bleeding risk prediction', caption: 'ORBIT-AF scoring reference' },
-
     { type: 'table',
       headers: ['ORBIT Score', 'Bleeding Risk', 'Major bleeds per 100 pt-years'],
       rows: [
@@ -187,7 +176,6 @@ export const atrialFibrillation: Note = {
       ]
     },
 
-
     { type: 'callout', variant: 'warning', title: 'High ORBIT/HAS-BLED Score', items: [
       'High bleeding score is NOT a reason to withhold anticoagulation alone',
       'Instead: identify and address modifiable risk factors (BP control, avoid NSAIDs, address heavy alcohol use, anaemia management)',
@@ -196,8 +184,6 @@ export const atrialFibrillation: Note = {
 
     // ── DOACs ──────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'DOAC Prescribing \u2014 Doses & Dose Reduction' },
-
-    { type: 'image', src: '/images/af-doac-treatment-table.jpg', alt: 'DOAC treatment regimens in Non-Valvular AF: dabigatran, rivaroxaban, apixaban, edoxaban with starting and reduced doses', caption: 'DOAC treatment regimens for non-valvular AF \u2014 standard vs reduced doses with dose reduction criteria' },
 
     { type: 'table',
       caption: 'DOAC dosing in non-valvular AF (all require CrCl \u226515ml/min)',
@@ -211,8 +197,6 @@ export const atrialFibrillation: Note = {
       ]
     },
 
-    { type: 'image', src: '/images/af-doac-visual-guide.jpg', alt: 'NOAC dosage guidance visual chart showing dose adjustments by renal function (CrCl) thresholds for apixaban, dabigatran, edoxaban and rivaroxaban', caption: 'NOAC dosage by CrCl: 80ml/min (normal), 50ml/min (mild impairment), 30ml/min (moderate), 15ml/min (severe), dialysis' },
-
     { type: 'callout', variant: 'info', title: 'Which DOAC to Choose?', items: [
       'Edoxaban is NHS England first-line choice for new initiations (procurement guidance)',
       'Apixaban: historically first-line; BD dosing; most safety evidence; preferred if GI intolerance issues',
@@ -225,8 +209,6 @@ export const atrialFibrillation: Note = {
 
     // ── DOAC Monitoring ────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'DOAC Monitoring' },
-
-    { type: 'image', src: '/images/af-doac-monitoring-table.jpg', alt: 'DOAC monitoring requirements table showing CrCl-based renal monitoring frequency, FBC and LFTs annually', caption: 'DOAC monitoring requirements: check renal function at frequency determined by CrCl; FBC and LFTs annually' },
 
     { type: 'table',
       caption: 'DOAC monitoring frequency by renal function',
@@ -321,10 +303,6 @@ export const atrialFibrillation: Note = {
     { type: 'heading', level: 2, text: 'Atrial Flutter' },
 
     { type: 'para', text: 'Atrial flutter is a macro-re-entrant atrial arrhythmia with a characteristic sawtooth pattern on ECG. It is closely related to AF and the two often coexist or convert between each other. Management differs significantly \u2014 catheter ablation is first-line for flutter (unlike AF where it is second-line).' },
-
-    { type: 'image', src: '/images/af-flutter-vs-af-diagram.jpg', alt: 'Diagram comparing atrial flutter (single circular re-entrant circuit in right atrium around AV node) versus atrial fibrillation (multiple chaotic wavelets throughout both atria)', caption: 'Flutter vs AF: flutter has one organised circular re-entrant circuit (right atrium, around AV node) producing a regular fast signal. AF has multiple chaotic simultaneous wavelets firing throughout both atria \u2014 explaining why flutter is regular and treatable with ablation, while AF is irregular and harder to cure.' },
-
-    { type: 'image', src: '/images/af-flutter-ecg.webp', alt: 'ECG strip showing atrial flutter with 2:1, 3:1 and 4:1 AV block conduction ratios at 25mm/sec', caption: 'Atrial flutter with variable AV block: 2:1 block gives ventricular rate ~150bpm; 3:1 gives ~100bpm; 4:1 gives ~75bpm. Sawtooth flutter waves best seen in inferior leads and V1.' },
 
     { type: 'heading', level: 3, text: 'ECG Features of Atrial Flutter' },
     { type: 'table',

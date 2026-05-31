@@ -31,18 +31,6 @@ export const acneRosacea: Note = {
     // ── Subtypes ─────────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Subtypes' },
     {
-      type: 'image',
-      src: '/images/Z-KZGndAxsiBv3i8_ARTICLE-4ROSACEASUBTYPESDIAGRAM-HarleyAcademyMedicalAestheticsTrainingCourses.png.avif',
-      alt: 'Four subtypes of rosacea — erythematotelangiectatic, papulopustular, phymatous, ocular',
-      caption: 'The four rosacea subtypes. Patients commonly present with features of more than one. Tap to enlarge.',
-    },
-    {
-      type: 'image',
-      src: '/images/MI22.2022Sept26_Clinical-1.jpg',
-      alt: 'Clinical photos of rosacea subtypes — telangiectasia, papules/pustules, rhinophyma, ocular rosacea',
-      caption: 'Clinical appearances: (1) Telangiectasia, (2) Papules/pustules, (3) Rhinophyma, (4) Ocular rosacea. Tap to enlarge.',
-    },
-    {
       type: 'table',
       headers: ['Subtype', 'Key features'],
       rows: [

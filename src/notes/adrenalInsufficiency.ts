@@ -92,12 +92,6 @@ export const adrenalInsufficiency: Note = {
       text: 'Long-Term Steroid Replacement',
     },
     {
-      type: 'image',
-      src: '/images/adrenal-hormone-replacement.jpg',
-      alt: 'Adrenal hormone replacement doses for primary adrenal insufficiency — glucocorticoid and mineralocorticoid',
-      caption: 'Replacement therapy for primary adrenal insufficiency. Glucocorticoid: hydrocortisone 15–25mg daily in 2–3 divided doses (largest in morning). Mineralocorticoid: fludrocortisone 100–200 mcg daily. Initiated by specialist; GP manages ongoing prescribing and monitoring.',
-    },
-    {
       type: 'table',
       headers: ['Drug', 'Role', 'Dose', 'Timing', 'Notes'],
       rows: [

@@ -43,19 +43,6 @@ export const neonatalHeadLumps: Note = {
     },
 
     // ── IMAGES ───────────────────────────────────────────────────────────────────
-    {
-      type: 'image',
-      src: '/images/cephalhaematoma-newborn.webp',
-      alt: 'Newborn baby with cephalohaematoma — well-defined unilateral swelling over parietal bone that does not cross suture lines',
-      caption: 'Cephalohaematoma: blood collects between the skull (periosteum) and the parietal bone. The swelling is well-defined and does NOT cross suture lines — it is contained by the periosteal attachment at the suture margins.',
-    },
-
-    {
-      type: 'image',
-      src: '/images/infant-with-caput-succedaneum.jpg',
-      alt: 'Infant with caput succedaneum — diffuse boggy scalp swelling crossing suture lines, present at birth',
-      caption: 'Caput succedaneum: oedema in the scalp soft tissue above the periosteum, caused by pressure during delivery. The swelling is diffuse, soft, pitting and crosses suture lines. Resolves spontaneously within 2–3 days.',
-    },
 
     // ── INDIVIDUAL CONDITIONS ─────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Condition Detail' },

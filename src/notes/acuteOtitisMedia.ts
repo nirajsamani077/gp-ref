@@ -59,30 +59,6 @@ export const acuteOtitisMedia: Note = {
       ],
       caption: 'Otoscopic findings',
     },
-    {
-      type: 'image',
-      src: '/images/Untitled_26.png.webp',
-      alt: 'Three otoscopy panels comparing normal tympanic membrane, resolving AOM and active AOM',
-      caption: 'Left to right: normal TM (translucent, clear light reflex) → resolving AOM (dull, congested) → active AOM (erythematous, bulging, loss of landmarks).',
-    },
-    {
-      type: 'image',
-      src: '/images/AOM-day0_annotated.jpg.webp',
-      alt: 'Annotated otoscopy image showing erythema, dimple from umbo, and bulging doughnut sign in AOM',
-      caption: 'Classic AOM otoscopy: erythema, loss of umbo reflex, and peripheral bulging ("doughnut sign").',
-    },
-    {
-      type: 'image',
-      src: '/images/Typical-otoscopic-findings-of-AOM-54.ppm.png',
-      alt: 'Four otoscopy panels showing bullous formation, TM thickening, middle ear effusion and perforation in AOM',
-      caption: 'Range of AOM otoscopic appearances: bullous myringitis, TM thickening, middle ear effusion, and frank perforation.',
-    },
-    {
-      type: 'image',
-      src: '/images/big_637c96a11e82b3.82653657.jpg',
-      alt: 'Diagram comparing normal ear anatomy and otoscopy with acute otitis media findings',
-      caption: 'Top row — anatomy: normal ear (mastoid bone, middle ear, TM, Eustachian tube) vs AOM (pus in middle ear, obstructed Eustachian tube, risk of mastoiditis). Bottom row — otoscopy: normal TM (translucent, malleolar prominence, light reflex) vs AOM TM (bulging, opacified, erythematous, loss of light reflex).',
-    },
 
     {
       type: 'heading',
@@ -118,12 +94,6 @@ export const acuteOtitisMedia: Note = {
         ['Moderate/severe symptoms, no perforation, no high risk', 'Otigo ear drops (phenazone + lidocaine) up to 7 days + self-care; or delayed antibiotic prescription'],
         ['Meets criteria: severe based on clinical judgement OR symptoms >3 days', 'Offer antibiotic (see doses below)'],
       ],
-    },
-    {
-      type: 'image',
-      src: '/images/aom-pharmacy-first-pathway.jpeg',
-      alt: 'Pharmacy First Acute Otitis Media clinical pathway flowchart',
-      caption: 'Pharmacy First AOM pathway (NHS England). Tap to enlarge.',
     },
     {
       type: 'linkrow',

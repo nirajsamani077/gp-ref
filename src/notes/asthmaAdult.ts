@@ -126,12 +126,6 @@ export const asthmaAdult: Note = {
       text: 'Preferred Inhaler Formulary (Staffordshire)',
     },
     {
-      type: 'image',
-      src: '/images/inhaler-identifier-chart.jpg',
-      alt: 'NHS Inhaler Identifier Chart — SABA, SAMA, LABA, LAMA, ICS, ICS/LABA, triple therapy inhalers with images',
-      caption: 'NHS Inhaler Identifier Chart (Bristol, North Somerset & South Gloucestershire CCG): visual guide to all inhaler types — relievers (SABA), preventers (ICS, LAMA, LABA), combination (ICS/LABA), triple therapy (ICS/LABA/LAMA). Key: MDI = metered dose inhaler, BA MDI = breath-actuated, DPI = dry powder inhaler.',
-    },
-    {
       type: 'table',
       headers: ['Category', 'Preferred choice (DPI)', 'Puffs & dose', 'Alternative (MDI)', 'Notes'],
       rows: [

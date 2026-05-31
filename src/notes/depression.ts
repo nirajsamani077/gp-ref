@@ -45,28 +45,11 @@ export const depression: Note = {
 
     { type: 'heading', level: 2, text: 'Understanding Depression' },
 
-    {
-      type: 'image',
-      src: '/images/understanding-depression-and-how-our-body-responds.png.webp',
-      alt: 'Understanding depression — how our body responds, showing triggers, core beliefs, thoughts, brain changes, body reactions and behaviour',
-      caption: 'Understanding depression — triggers, core beliefs, thoughts, brain changes, body reactions and behaviour all interact. Use this to explain the condition to patients.',
-      maxWidth: '480px',
-    },
-
     { type: 'heading', level: 2, text: 'CBT Framework' },
 
     {
       type: 'para',
       text: 'Use the CBT framework to explain depression to patients: negative thoughts and emotions interact with behaviours and physical symptoms in a vicious cycle. Breaking any part of the cycle — especially the behavioural and physical components — can reverse the spiral.',
-    },
-
-    {
-      type: 'image',
-      src: '/images/Cognitive_behavioral_therapy_-_basic_tenets.svg.png',
-      alt: 'CBT cycle diagram showing bidirectional links between behaviour, feelings and thoughts, with core beliefs at the centre',
-      caption: 'The CBT model — thoughts, feelings and behaviour are interconnected. Core beliefs (about self, others and the future) drive the cycle. CBT targets each component.',
-      float: 'right',
-      maxWidth: '320px',
     },
 
     {
@@ -78,14 +61,6 @@ export const depression: Note = {
         'Challenge negative automatic thoughts: identify cognitive distortions (catastrophising, black-and-white thinking, mind-reading); test evidence for and against',
         'Improving sleep, reducing alcohol, and re-engaging social support all feed back positively into mood',
       ],
-    },
-
-    {
-      type: 'image',
-      src: '/images/Core-Principles-of-Cognitive-Behavioural-Therapy.png.webp',
-      alt: 'Core principles of CBT — behavioural activation, skill development, cognitive restructuring and goal-oriented therapy',
-      caption: 'Core principles of CBT — behavioural activation, skill development, cognitive restructuring and goal-oriented therapy.',
-      maxWidth: '460px',
     },
 
     { type: 'heading', level: 2, text: 'Stepped Care' },

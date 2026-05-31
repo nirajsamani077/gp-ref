@@ -15,12 +15,6 @@ export const diabetesT2DM: Note = {
       text: 'Diet, Lifestyle & Remission',
     },
     {
-      type: 'image',
-      src: '/images/unwin-sugar-chart.jpg',
-      alt: 'Unwin glycaemic index sugar chart — how foods affect blood glucose compared to teaspoons of sugar',
-      caption: 'Unwin sugar equivalence charts: shows how common foods (cereals, bread, rice, pasta, fruit) affect blood glucose relative to teaspoons of table sugar. Useful patient education tool for low-carb dietary counselling.',
-    },
-    {
       type: 'list',
       items: [
         'Low-carbohydrate and Mediterranean diets have best evidence for glucose reduction and sustainability',
@@ -78,12 +72,6 @@ export const diabetesT2DM: Note = {
       type: 'heading',
       level: 2,
       text: 'NICE 2026 — Seven Treatment Pathways (NG28 Updated Feb 2026)',
-    },
-    {
-      type: 'image',
-      src: '/images/diabetes-nice-2026.png',
-      alt: 'NICE 2026 T2DM seven treatment pathways — initial therapy, escalation by comorbidity',
-      caption: 'NICE NG28 (Feb 2026): For ALL T2DM, assess CV status, renal status and frailty. Initial treatment: metformin M/R + SGLT2i for all. Then stratify by comorbidity: CKD, ASCVD, obesity, early-onset T2DM, frailty. Escalate with DPP4i → sulfonylurea/pioglitazone/insulin as needed.',
     },
     {
       type: 'callout',
@@ -297,12 +285,6 @@ export const diabetesT2DM: Note = {
         ],
       ],
       caption: 'Always continue metformin unless contraindicated — reduces total insulin dose requirement. Counsel: injection technique (90° angle, SC not IM), site rotation (abdomen/thigh/upper arm), lipodystrophy avoidance, hypo recognition and glucagon kit. Driving rules apply (see T1DM note). Review insulin regularly — many T2DM patients on high doses (>80 units) may benefit from GLP-1 RA addition to reduce insulin requirement.',
-    },
-    {
-      type: 'image',
-      src: '/images/insulin-types-table.png',
-      alt: 'Insulin types table — rapid, short, intermediate, long-acting, premixed with onset peak and duration profiles',
-      caption: 'Common insulins: rapid-acting analogues (NovoRapid, Humalog — onset 15–30 min, 4h duration); long-acting analogues (Lantus, Levemir — 18–24h, no peak); super-long (Toujeo, Tresiba — 36h+). See insulin guidelines PDF for full titration guidance.',
     },
     {
       type: 'linkrow',

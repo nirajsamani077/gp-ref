@@ -28,14 +28,6 @@ export const suicideSelfHarm: Note = {
     { type: 'heading', level: 2, text: 'Risk Factors' },
 
     {
-      type: 'image',
-      src: '/images/Risk-Factors-for-Suicide-During-a-Major-Depressive-Epi-sode-Level-3-Evidence.png',
-      alt: 'Table of non-modifiable and modifiable risk factors for suicide — including older men, past attempts, family history, active suicidal ideation, hopelessness, anxiety, substance use, PTSD, personality disorder and cancer',
-      caption: 'Suicide risk factors — non-modifiable (fixed) and modifiable (targetable in treatment). Comorbid conditions and active symptoms are the highest-yield targets for intervention.',
-      maxWidth: '560px',
-    },
-
-    {
       type: 'table',
       headers: ['Risk factors', 'Protective factors'],
       rows: [

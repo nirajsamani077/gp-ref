@@ -9,18 +9,6 @@ export const rhinosinusitis: Note = {
   content: [
 
     { type: 'heading', level: 2, text: 'Anatomy' },
-    {
-      type: 'image',
-      src: '/images/nasal-sinus-anatomy.webp',
-      alt: 'Parasagittal section showing frontal, ethmoid and sphenoid sinuses, nasal cavity and eustachian tube',
-      caption: 'Sinus anatomy — note narrow frontal drainage pathway and partitioned air cells that harbour biofilms.',
-    },
-    {
-      type: 'image',
-      src: '/images/turbinates.jpg',
-      alt: 'Sagittal section showing superior, middle and inferior turbinates',
-      caption: 'Turbinates — the inferior turbinate is the most commonly visible on anterior rhinoscopy and swells in rhinitis.',
-    },
 
     { type: 'heading', level: 2, text: 'Red Flags — Urgent ENT Referral' },
     {
@@ -306,12 +294,6 @@ export const rhinosinusitis: Note = {
         ['Xylometazoline / Oxymetazoline', 'Otrivine, generic', 'As directed', 'Acute nasal congestion (decongestant)', 'OTC; MAX 7 days — risk of rhinitis medicamentosa (rebound) with prolonged use'],
       ],
     },
-    {
-      type: 'image',
-      src: '/images/nasal-spray-full-guide.webp',
-      alt: 'Reference chart of nasal spray products including anticholinergic, antihistamine and corticosteroid classes',
-      caption: 'Nasal spray reference guide — product classes, doses and instructions.',
-    },
 
     { type: 'heading', level: 2, text: 'Nasal Spray Technique' },
     {
@@ -329,12 +311,6 @@ export const rhinosinusitis: Note = {
         'Tip: Do not tilt head back — this causes the spray to run down the throat',
         'Tip: Spray needs daily use for full effect — takes 3–7 days for onset; optimal effect at 2 weeks',
       ],
-    },
-    {
-      type: 'image',
-      src: '/images/nasal-spray-steps.png',
-      alt: 'Diagram showing correct nasal spray technique with look-down posture',
-      caption: 'Nasal spray technique — look down, outside wall, do not sniff hard.',
     },
 
     { type: 'heading', level: 2, text: 'Nasal Saline Douching / Irrigation' },

@@ -11,13 +11,6 @@ export const phimosisCircumcision: Note = {
   content: [
 
     // ── OVERVIEW ─────────────────────────────────────────────────────────────────
-    {
-      type: 'image',
-      src: '/images/phimosis-image.png.webp',
-      alt: 'Diagram comparing phimosis (non-retractile foreskin) with normal foreskin anatomy showing foreskin and glans',
-      caption: 'Phimosis: the foreskin cannot be fully retracted over the glans. This is normal in young children (physiological) and only requires treatment when causing symptoms (pathological).',
-      sensitive: true,
-    },
 
     {
       type: 'callout',
@@ -33,14 +26,6 @@ export const phimosisCircumcision: Note = {
 
     // ── GRADING ──────────────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Phimosis Grading (Kikiros Scale)' },
-
-    {
-      type: 'image',
-      src: '/images/phimosis-grades.png',
-      alt: 'Kikiros grading scale for phimosis: Grade 0 (full retraction) to Grade 5 (no retraction at all, pinhole)',
-      caption: 'Phimosis grading 0–5. Grade 0 = full retraction; Grade 5 = complete non-retraction (pinhole). Grades 3–5 with symptoms warrant treatment. Useful for documenting severity and monitoring response to steroid treatment.',
-      sensitive: true,
-    },
 
     {
       type: 'table',
@@ -105,14 +90,6 @@ export const phimosisCircumcision: Note = {
 
     // ── CIRCUMCISION ─────────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Circumcision' },
-
-    {
-      type: 'image',
-      src: '/images/Circumcision_illustration.jpg',
-      alt: 'Circumcision surgery illustration showing dorsal slit technique with foreskin and frenulum',
-      caption: 'Circumcision surgical technique. The NHS performs circumcision for medical indications only — not for cultural or religious reasons (available privately). Dorsal slit or full circumcision are the surgical options.',
-      sensitive: true,
-    },
 
     {
       type: 'callout',

@@ -38,13 +38,6 @@ export const limpingChild: Note = {
       ],
     },
 
-    {
-      type: 'image',
-      src: '/images/atraumatic-limp-flowchart-sep19.png',
-      alt: 'Atraumatic limping child pathway flowchart',
-      caption: 'Atraumatic limping child — clinical pathway by age and ability to weight-bear',
-    },
-
     // ── SEPTIC ARTHRITIS ──────────────────────────────────────────────────────
     {
       type: 'heading',
@@ -69,12 +62,6 @@ export const limpingChild: Note = {
       text: 'Developmental Dysplasia of the Hip (DDH)',
     },
     {
-      type: 'image',
-      src: '/images/hip-e26e01b.jpg',
-      alt: 'DDH severity spectrum and incidence infographic',
-      caption: 'DDH spectrum: 1 in 10 infants have hip instability; 1 in 500 are born with complete dislocation. Ranges from subluxation to high dislocation.',
-    },
-    {
       type: 'list',
       items: [
         'Spectrum from mild instability through subluxation to complete dislocation of femoral head from acetabulum',
@@ -84,18 +71,6 @@ export const limpingChild: Note = {
         'Treatment: Pavlik harness (0–6 months) — holds hips in flexion/abduction to encourage acetabular development; surgical reduction if late diagnosis or failed harness',
         'Late presentation (walking age): short-leg gait, Trendelenburg gait, increased lumbar lordosis',
       ],
-    },
-    {
-      type: 'image',
-      src: '/images/barlow-ortolani.png',
-      alt: 'Barlow and Ortolani examination technique',
-      caption: 'Barlow test: adduct and push posteriorly — positive if hip dislocates. Ortolani test: abduct and lift anteriorly — positive if dislocated hip reduces with a "clunk".',
-    },
-    {
-      type: 'image',
-      src: '/images/pavlik-harness.jpg',
-      alt: 'Pavlik harness for DDH treatment',
-      caption: 'Pavlik harness — maintains hips in safe zone of flexion and abduction. Worn continuously for 6–12 weeks. Success rate >90% when started before 3 months.',
     },
 
     // ── PERTHES ───────────────────────────────────────────────────────────────
@@ -117,12 +92,6 @@ export const limpingChild: Note = {
         'Prognosis better in younger children (<6 years) and when <50% of head is involved',
       ],
     },
-    {
-      type: 'image',
-      src: '/images/perthes.png',
-      alt: 'X-ray showing bilateral Perthes disease',
-      caption: 'Perthes disease — AP pelvis X-ray showing bilateral femoral head changes: increased density, fragmentation and flattening of the femoral heads.',
-    },
 
     // ── SUFE ─────────────────────────────────────────────────────────────────
     {
@@ -142,18 +111,6 @@ export const limpingChild: Note = {
         'Management: non-weight-bearing immediately + urgent orthopaedic referral → in-situ fixation with cannulated screw. Urgent same-day referral — do not delay',
         'Complications: AVN (especially unstable SUFE), chondrolysis, premature osteoarthritis',
       ],
-    },
-    {
-      type: 'image',
-      src: '/images/SUFE_1.jpeg',
-      alt: 'X-ray showing SUFE — slipped upper femoral epiphysis',
-      caption: 'SUFE — AP pelvis X-ray. Arrow indicates the right hip where the femoral epiphysis has slipped posteriorly and inferiorly. Klein\'s line (along superior femoral neck) fails to intersect the femoral head on the affected side.',
-    },
-    {
-      type: 'image',
-      src: '/images/sufeperthes.jpg',
-      alt: 'SUFE vs Perthes comparison diagram',
-      caption: 'SUFE vs Perthes — key differentiating features. Both cause hip pain and limp but differ in age of onset, associations, X-ray findings and management.',
     },
 
     // ── TRANSIENT SYNOVITIS ───────────────────────────────────────────────────

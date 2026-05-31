@@ -10,13 +10,6 @@ export const antiemeticsVertigo: Note = {
 
   content: [
 
-    {
-      type: 'image',
-      src: '/images/antiemetics.jpg',
-      alt: 'Antiemetics and nausea medicines infographic showing drug choices by mechanism',
-      caption: 'Antiemetic drug choices — select by mechanism and indication. Most antiemetics act on dopamine (D2), histamine (H1) or muscarinic receptors.',
-    },
-
     // ── DRUG CHOICE ─────────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Drug Choice by Indication' },
 

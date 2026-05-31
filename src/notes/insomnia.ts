@@ -28,13 +28,6 @@ export const insomnia: Note = {
     { type: 'heading', level: 2, text: 'Understanding Insomnia — The Cognitive Model' },
 
     {
-      type: 'image',
-      src: '/images/insomnia-path-diagram.png',
-      alt: 'The Path of Insomnia: a 5-step diagram from predisposition through life event, change in relationship with sleep, hyperarousal and learned neural pathways',
-      caption: 'The path of insomnia. Once sleep becomes a "goal" rather than a biological function, hyperarousal kicks in — the more we try to sleep, the harder it becomes. The brain learns to signal danger at bedtime. This is the target of CBT-I.',
-    },
-
-    {
       type: 'para',
       text: 'Explaining this model to patients is often transformative — understanding why they cannot sleep reduces catastrophising, and helps them engage with behavioural approaches (CBT-I) rather than seeking medication. Key message: "The more you try, the worse it gets."',
     },
@@ -106,13 +99,6 @@ export const insomnia: Note = {
 
     // ── MANAGEMENT PATHWAY ────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Primary Care Management Pathway' },
-
-    {
-      type: 'image',
-      src: '/images/insomnia-pathway.png',
-      alt: 'Primary Care Insomnia Management Pathway for Adults — Coventry and Warwickshire APC flowchart showing assessment, short vs long-term insomnia, z-drugs, digital CBT-I, melatonin and daridorexant',
-      caption: 'Primary care insomnia pathway. Short-term insomnia: reassure ± short z-drug course (3–7 days) if severely distressed. Chronic insomnia: CBT-I first; if failed/unavailable — melatonin MR 2mg (≥55 years) or daridorexant (any age, if CBT-I tried). Review within 2–4 weeks; stop medication at 12–13 weeks if no improvement.',
-    },
 
     // ── MEDICATION TABLE ──────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Prescribing Options' },

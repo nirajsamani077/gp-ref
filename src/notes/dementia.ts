@@ -24,22 +24,8 @@ export const dementia: Note = {
       ],
     },
 
-    {
-      type: 'image',
-      src: '/images/dementia-types.png',
-      alt: 'Dementia umbrella diagram showing proportions: Alzheimer\'s disease 60-70%, vascular dementia 10-20%, frontotemporal dementia 10%, Lewy body dementia 5%, other dementias 5%',
-      caption: 'Dementia is an umbrella term. Alzheimer\'s disease accounts for 60–70% of cases; vascular dementia 10–20%; frontotemporal and Lewy body 5–10% each. Mixed dementia (Alzheimer\'s + vascular) is the most common presentation in older adults.',
-    },
-
     // ── TYPES ────────────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Types of Dementia' },
-
-    {
-      type: 'image',
-      src: '/images/dementia-types-symptoms_0.png',
-      alt: 'NIH infographic comparing four types of dementia: Alzheimer\'s disease (amyloid plaques, tau tangles), frontotemporal dementia (tau and TDP-43 accumulation), Lewy body dementia (alpha-synuclein deposits), and vascular dementia (blood clots disrupting flow)',
-      caption: 'Brain pathology in the four main dementia subtypes. Alzheimer\'s: amyloid plaques and tau tangles. FTD: tau/TDP-43 in frontal and temporal lobes. Lewy body: alpha-synuclein disrupts chemical messengers. Vascular: ischaemia from blood clots or small vessel disease.',
-    },
 
     {
       type: 'table',
@@ -56,13 +42,6 @@ export const dementia: Note = {
 
     // ── EARLY FEATURES ────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Early Features vs Normal Ageing' },
-
-    {
-      type: 'image',
-      src: '/images/Table-3.-Early-features-of-dementia.jpg',
-      alt: 'Table comparing normal cognition vs early dementia across six domains: memory (occasional lapses vs loss of recent events), orientation (full vs variable disorientation), judgement (solves problems vs difficulty with complex problems), outside home (independent vs not fully independent), at home (activities maintained vs difficult tasks abandoned), personal care (fully capable vs needs prompting)',
-      caption: 'Early dementia versus normal cognitive ageing. Occasional forgetfulness is normal; loss of memory for recent events, disorientation and functional decline are not. The key question: does it affect daily functioning?',
-    },
 
     // ── DIFFERENTIAL DIAGNOSIS ────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Differential Diagnosis' },
@@ -189,13 +168,6 @@ export const dementia: Note = {
         'Continue as long as there is benefit; do NOT stop solely because of disease severity',
         'Treatment requires caregiver available to monitor compliance and effects',
       ],
-    },
-
-    {
-      type: 'image',
-      src: '/images/dementia-drugs.avif',
-      alt: 'Summary chart of dementia drug treatments including donepezil, rivastigmine, galantamine and memantine with their indications, dosing and monitoring requirements',
-      caption: 'Overview of dementia pharmacotherapy. Donepezil is the preferred first-line AChEI in primary care. Pulse monitoring is required for all AChEIs (not memantine). eGFR check required before memantine.',
     },
 
     { type: 'heading', level: 3, text: 'AChEI Dosing & Monitoring' },

@@ -22,13 +22,6 @@ export const alopecia: Note = {
       ],
     },
 
-    {
-      type: 'image',
-      src: '/images/alopecia.webp',
-      alt: 'Hair loss diagnosis and treatment overview showing androgenetic alopecia, alopecia areata and telogen effluvium with corresponding treatments',
-      caption: 'The three commonest causes of hair loss in primary care: androgenetic alopecia (patterned), alopecia areata (patchy), and telogen effluvium (diffuse shedding). Each has a distinct clinical picture and management pathway.',
-    },
-
     // ── INITIAL ASSESSMENT ────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Initial Assessment' },
 
@@ -64,13 +57,6 @@ export const alopecia: Note = {
     { type: 'heading', level: 2, text: 'Non-Scarring Alopecia' },
 
     {
-      type: 'image',
-      src: '/images/alopecia-types.jpg',
-      alt: 'Types of alopecia illustrated: alopecia areata, androgenetic, traction areata, central centrifugal cicatricial, chemotherapy-induced, lichen planopilaris, trichotillomania',
-      caption: 'Common types of alopecia. Alopecia areata (round patches), androgenetic (patterned thinning), and traction (hairline/temple loss from tight styling) are the most common in GP practice.',
-    },
-
-    {
       type: 'table',
       headers: ['Type', 'Pattern', 'Key Features', 'First-line management'],
       rows: [
@@ -86,20 +72,6 @@ export const alopecia: Note = {
 
     // ── ALOPECIA AREATA ───────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Alopecia Areata' },
-
-    {
-      type: 'image',
-      src: '/images/person-with-alopecia-areata-653778784.webp',
-      alt: 'Close-up of a man\'s scalp showing multiple well-circumscribed smooth bald patches of alopecia areata on the crown and occipital area',
-      caption: 'Alopecia areata: multiple well-demarcated, smooth, totally bald patches. The surrounding scalp appears entirely normal — no scarring, scale or inflammation. Exclamation mark hairs (short broken hairs tapering at the root) may be visible at the active patch margins.',
-    },
-
-    {
-      type: 'image',
-      src: '/images/types-of-alopecia---picture-data.jpg',
-      alt: 'Clinical photographs showing alopecia areata, telogen effluvium, triangular alopecia, traction alopecia and scarring alopecia',
-      caption: 'Clinical appearances of alopecia areata (discrete round bald patches), telogen effluvium (diffuse thinning along central parting), traction alopecia (hairline recession), and scarring alopecia (shiny scalp with follicle loss).',
-    },
 
     {
       type: 'callout',
@@ -166,27 +138,6 @@ export const alopecia: Note = {
     { type: 'heading', level: 3, text: 'Female Pattern Hair Loss' },
 
     {
-      type: 'image',
-      src: '/images/female-pattern-hair-loss-vs-telogen-effluvium-main-1024x683.png.webp',
-      alt: 'Side-by-side illustration comparing female pattern hair loss (thinning on crown, hairline preserved) with telogen effluvium (diffuse thinning across whole scalp)',
-      caption: 'Key distinction: female pattern hair loss shows centroparietal thinning with the frontal hairline preserved. Telogen effluvium causes diffuse thinning across the entire scalp. Both can coexist — treat the underlying cause first.',
-    },
-
-    {
-      type: 'image',
-      src: '/images/types-of-hair-loss-women-uk-guide.jpg.webp',
-      alt: 'Female hair loss patterns: alopecia areata (circular bald patches), telogen effluvium (diffuse thinning), traction alopecia (hairline), nutritional deficiency (brittle thinning)',
-      caption: 'Female hair loss patterns. Androgenetic alopecia causes diffuse centroparietal thinning with preserved frontal hairline (unlike male pattern). Traction shows fronto-temporal loss along the hairline.',
-    },
-
-    {
-      type: 'image',
-      src: '/images/ludwig-scale-female-hair-loss-grades.jpg.webp',
-      alt: 'Ludwig scale grades I, II and III showing progressively severe female pattern hair loss with widening central parting',
-      caption: 'Ludwig Scale for female androgenetic alopecia: Grade I — mild widening of central parting; Grade II — wider parting, visible scalp; Grade III — extensive crown thinning. Minoxidil is appropriate for all grades; refer Grade III or if androgen excess features.',
-    },
-
-    {
       type: 'list',
       items: [
         'Diffuse centroparietal thinning with preserved frontal hairline (distinguish from telogen effluvium by gradual onset and pattern)',
@@ -201,13 +152,6 @@ export const alopecia: Note = {
 
     // ── TELOGEN EFFLUVIUM ─────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Telogen Effluvium' },
-
-    {
-      type: 'image',
-      src: '/images/1-hair-growth-cycle.jpg',
-      alt: 'Hair growth cycle diagram showing anagen (growing), catagen (transition), telogen (resting) and telogen effluvium (shedding) phases with cross-sectional follicle illustrations',
-      caption: 'The hair growth cycle. In telogen effluvium, a systemic stressor triggers a mass shift of follicles from anagen into the telogen (resting) phase. When these hairs are shed 2–6 months later, diffuse thinning results. Follicles remain intact — regrowth occurs once the trigger resolves.',
-    },
 
     {
       type: 'list',
@@ -276,13 +220,6 @@ export const alopecia: Note = {
     },
 
     {
-      type: 'image',
-      src: '/images/329-tinea-capitis-with-associated-alopecia-1-1024x1024.jpg',
-      alt: 'Clinical photograph of tinea capitis showing a scaly, erythematous, inflamed patch of hair loss on the scalp being examined with gloved hands',
-      caption: 'Tinea capitis: inflamed, scaly, erythematous patch with associated hair loss. Note the scaling and erythema distinguishing this from the smooth, non-inflamed patches of alopecia areata. Send skin scrapings and plucked hairs for mycology before starting treatment.',
-    },
-
-    {
       type: 'callout',
       variant: 'danger',
       title: 'Kerion — refer urgently to dermatology',
@@ -292,13 +229,6 @@ export const alopecia: Note = {
         'Hairs fall out leaving boggy bald area; if untreated → permanent scarring alopecia',
         'Refer urgently — may require systemic steroids alongside antifungals to reduce scarring',
       ],
-    },
-
-    {
-      type: 'image',
-      src: '/images/kerion.jpg',
-      alt: 'Clinical photograph of a kerion on the scalp — a boggy, pustular, inflammatory mass with yellow crusting and hair loss',
-      caption: 'Kerion: a boggy, painful, pustular mass representing an intense inflammatory reaction to tinea capitis. Associated lymphadenopathy is common. Without urgent treatment (oral antifungals ± systemic steroids), permanent scarring alopecia results. Refer urgently to dermatology.',
     },
 
     {

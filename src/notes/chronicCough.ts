@@ -40,13 +40,6 @@ export const chronicCough: Note = {
     },
 
     {
-      type: 'image',
-      src: '/images/chronic-cough.jpg',
-      alt: 'Chronic cough causes and differential diagnosis wheel',
-      caption: 'Common causes of chronic cough — the "big three" (UACS, asthma/eosinophilic, GORD) account for the majority in non-smokers. Always consider ACE inhibitor cough and smoking-related disease.',
-    },
-
-    {
       type: 'heading',
       level: 2,
       text: 'Common Causes — Structured Approach',
@@ -70,12 +63,6 @@ export const chronicCough: Note = {
       type: 'heading',
       level: 2,
       text: 'Chronic Cough — Investigation Flowchart',
-    },
-    {
-      type: 'image',
-      src: '/images/chronic-cough-flowchart.jpg',
-      alt: 'Chronic cough investigation and management flowchart',
-      caption: 'Systematic approach to chronic cough — sequential investigation and empirical treatment trials. If step-wise approach fails, refer to respiratory / specialist cough clinic.',
     },
 
     {

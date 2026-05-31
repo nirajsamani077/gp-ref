@@ -46,13 +46,6 @@ export const microcyticAnaemia: Note = {
       ],
     },
 
-    {
-      type: 'image',
-      src: '/images/Iron-panel-1-800x253.jpg.webp',
-      alt: 'Iron studies patterns by condition',
-      caption: 'Source: LearnHaem — iron studies patterns across common conditions',
-    },
-
     // ── FERRITIN NOTES ───────────────────────────────────────────
     {
       type: 'callout',
@@ -135,12 +128,6 @@ export const microcyticAnaemia: Note = {
 
     // ── ALGORITHM IMAGE ─────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Anaemia Investigation Algorithm' },
-    {
-      type: 'image',
-      src: '/images/0e6ccc4db2655fc445149035c30d616fa57eeaab-1223x862.png',
-      alt: 'Anaemia investigation algorithm — MCV-based flowchart',
-      caption: 'Anaemia investigation algorithm. Hb <130 g/L men, <115 g/L non-pregnant women.',
-    },
 
     // ── REPLACEMENT ─────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Iron Replacement' },

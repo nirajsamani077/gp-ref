@@ -31,12 +31,6 @@ export const otitisExterna: Note = {
       ],
       caption: 'Clinical features of otitis externa',
     },
-    {
-      type: 'image',
-      src: '/images/Otitis-externa1.jpg',
-      alt: 'Video otoscopy images showing swollen ear canal, whitish discharge and fungal ear infection in otitis externa',
-      caption: 'OE video otoscopy: swollen, erythematous canal (top left), whitish discharge in canal (top right), fungal OE with spores/hyphae (bottom left). Note: TM often not visible in OE.',
-    },
 
     {
       type: 'heading',
@@ -74,18 +68,6 @@ export const otitisExterna: Note = {
         'Analgesia — paracetamol and/or ibuprofen for pain; a cold flannel held over the ear may help',
         'If mild: acetic acid spray (EarCalm/Otex) is available OTC as first-line',
       ],
-    },
-    {
-      type: 'image',
-      src: '/images/1600px-Otitis_externa.jpg',
-      alt: 'External ear showing eczematous otitis externa with peeling erythematous skin around the pinna',
-      caption: 'Eczematous OE: erythema, skin breakdown and scaling around the pinna — treat with steroid drops (Betnesol) rather than antibiotic drops.',
-    },
-    {
-      type: 'image',
-      src: '/images/otitis-externa.jpg',
-      alt: 'External ear showing acute otitis externa with inflammation and discharge',
-      caption: 'Acute OE with visible erythema, periauricular inflammation and discharge at the meatus.',
     },
 
     {
@@ -164,12 +146,6 @@ export const otitisExterna: Note = {
         'CONTRAINDICATED if tympanic membrane is perforated — aminoglycoside (neomycin) is ototoxic',
         'Evidence suggests ototoxicity risk is mainly with prolonged use (>2 weeks) or repeated courses — single 7-day course considered low risk in practice if TM intact',
       ],
-    },
-    {
-      type: 'image',
-      src: '/images/e7932c4cf78bd2ca262c767bc6977a98607bcade-800x800.jpg',
-      alt: 'Box of Ennogen Dexamethasone/Neomycin sulfate/Acetic acid ear spray — generic equivalent of Otomize',
-      caption: 'Generic Otomize: Dexamethasone 0.1% / Neomycin sulfate 0.5% / Acetic acid 2% ear spray (Ennogen, 5ml). Prescribe generically for cost saving.',
     },
     {
       type: 'callout',

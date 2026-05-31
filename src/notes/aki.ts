@@ -81,12 +81,6 @@ export const aki: Note = {
 
     { type: 'heading', level: 2, text: 'Primary Care AKI e-Alert Response — STOP-AKI' },
     {
-      type: 'image',
-      src: '/images/aki.png',
-      alt: 'Barnsley Hospital NHS primary care AKI management flowchart showing staging, admission criteria and STOP-AKI mnemonic',
-      caption: 'Primary Care AKI Management Flowchart — Barnsley NHS. Use the STOP-AKI approach for all community AKI e-Alerts.',
-    },
-    {
       type: 'table',
       caption: 'STOP-AKI Mnemonic',
       headers: ['Letter', 'Action'],

@@ -86,9 +86,6 @@ export const palliativeEOL: Note = {
       '6. Notify OOH and update patient summary for ambulance crews',
     ]},
 
-    { type: 'image', src: '/images/eol-darwin-anticipatories-1.png', alt: 'Darwin anticipatory medications formulary list', caption: 'Darwin anticipatory medications \u2014 standard formulary items for EPS prescribing' },
-    { type: 'image', src: '/images/eol-darwin-anticipatories-2.png', alt: 'Darwin anticipatory prescribing doses for morphine, haloperidol, midazolam, hyoscine', caption: 'Darwin anticipatory prescribing \u2014 individual drug directive doses' },
-
     // ── Anticipatory PRN Prescribing ───────────────────────────────
     { type: 'heading', level: 2, text: 'Anticipatory Prescribing \u2014 PRN Doses' },
 
@@ -120,8 +117,6 @@ export const palliativeEOL: Note = {
 
     { type: 'para', text: 'A continuous subcutaneous infusion (CSCI) via syringe driver is used when the oral route is no longer possible. Diluent is water for injections (WFI). Drugs are combined in a single syringe if compatible.' },
 
-    { type: 'image', src: '/images/eol-darwin-syringe-driver.png', alt: 'Darwin syringe driver authorisation form template', caption: 'Darwin syringe driver authorisation form \u2014 initial and review doses for morphine, haloperidol, midazolam, hyoscine butylbromide' },
-
     { type: 'table',
       caption: 'Typical syringe driver doses over 24 hours (CSCI)',
       headers: ['Drug', '24h Starting Dose', 'Range', 'Notes'],
@@ -149,10 +144,6 @@ export const palliativeEOL: Note = {
 
     // ── Drug Compatibility ─────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Drug Compatibility in Syringe Driver' },
-
-    { type: 'image', src: '/images/eol-compatibility-chart.png', alt: 'Compatibility chart for two drugs in water for injections \u2014 colour coded matrix', caption: 'Compatibility chart: green = compatible, amber = caution/limited data, red = incompatible. Always check current UKMI guidance.' },
-
-    { type: 'image', src: '/images/eol-prescribing-table.png', alt: 'EOL palliative prescribing table with doses, compatibility and notes for all anticipatory and syringe driver drugs', caption: 'Full EOL prescribing reference table \u2014 doses, compatible medicines and administration notes' },
 
     // ── Palliative Maths ───────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Palliative Opioid Conversion Maths' },

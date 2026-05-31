@@ -74,12 +74,6 @@ export const acuteCough: Note = {
       text: 'NICE Antimicrobial Guidance (NG120)',
     },
     {
-      type: 'image',
-      src: '/images/acute-cough-nice.png',
-      alt: 'NICE NG120 acute cough antimicrobial guidance summary',
-      caption: 'NICE NG120 — summary of antibiotic prescribing decisions for acute cough / LRTI in primary care. CRP is the key guide when clinical severity is intermediate.',
-    },
-    {
       type: 'table',
       headers: ['CRP result', 'Action'],
       rows: [
@@ -94,12 +88,6 @@ export const acuteCough: Note = {
       type: 'heading',
       level: 2,
       text: 'Antibiotic Choices',
-    },
-    {
-      type: 'image',
-      src: '/images/acute-cough-abx.png',
-      alt: 'Antibiotic choices for acute cough LRTI',
-      caption: 'Antibiotic options for LRTI / acute cough — first-line and alternatives. Doxycycline preferred over amoxicillin in many local formularies due to broader atypical cover.',
     },
     {
       type: 'table',
@@ -117,12 +105,6 @@ export const acuteCough: Note = {
       type: 'heading',
       level: 2,
       text: 'Back-up (Delayed) Antibiotic Prescribing',
-    },
-    {
-      type: 'image',
-      src: '/images/back-up-antibiotics.jpg',
-      alt: 'Back-up antibiotic prescription explanation for patients',
-      caption: 'Back-up antibiotic prescription — explain to patients: fill only if symptoms worsen or do not start to improve after 48–72 hours. Reduces antibiotic use without increasing complications.',
     },
     {
       type: 'list',

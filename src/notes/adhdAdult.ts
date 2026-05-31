@@ -15,12 +15,6 @@ export const adhdAdult: Note = {
       text: 'Diagnosis & NICE Criteria (NG87)',
     },
     {
-      type: 'image',
-      src: '/images/adhd-symptoms-cards.jpeg',
-      alt: 'ADHD core symptom domains — impulsivity, inattention, and hyperactivity with key features listed',
-      caption: 'The three core ADHD symptom domains. In adults ≥5 symptoms per domain (not 6) are required. Symptoms must be persistent, pervasive (≥2 settings), onset before age 12, and cause moderate-severe functional impairment.',
-    },
-    {
       type: 'para',
       text: 'ADHD affects ~5% of adults. It is a valid neurodevelopmental condition with genetic and environmental contributions. Most patients will self-present requesting assessment — consider ADHD when there is significant impact on work, relationships, self-esteem, or mental health.',
     },
@@ -99,12 +93,6 @@ export const adhdAdult: Note = {
       text: 'RTC Pathway — Staffordshire ICB Process (via Blueteq)',
     },
     {
-      type: 'image',
-      src: '/images/adhd-rtc-pathway-flowchart.png',
-      alt: 'ADHD RTC referral pathway flowchart showing patient, associate and GP roles in the Blueteq referral management process',
-      caption: 'Staffordshire & Stoke-on-Trent ICB RTC referral process. Hosted by Midlands and Lancashire CSU via Blueteq. All adult ADHD RTC requests go through this management service.',
-    },
-    {
       type: 'table',
       headers: ['Step', 'Who', 'Action'],
       rows: [
@@ -115,24 +103,6 @@ export const adhdAdult: Note = {
         ['Decision', 'ICB/RMS', 'RMS assesses against threshold: moderate-severe impairment, not explained by other conditions. If approved: referred to chosen RTC provider (or suitable alternative). If declined: patient directed to complaints via PALS'],
       ],
       caption: 'All adult ADHD RTC referrals in Staffordshire now go through ICB referral management service — GPs do NOT directly refer to RTC providers. Contact for provider queries: MentalHealthPortfolioinbox@staffsstoke.icb.nhs.uk. Patient complaints/declines: patientservices@staffsstoke.icb.nhs.uk (PALS). Blueteq IT issues: trust@blueteq.co.uk',
-    },
-    {
-      type: 'image',
-      src: '/images/adhd-darwin-pathway-1.png',
-      alt: 'Darwin practice ADHD referral new process — EMIS steps for PRF020 and PRF021 forms',
-      caption: 'Darwin practice ADHD referral process: patient completes form A/B, GP completes form C (PRF021 in EMIS), secretaries upload to portal.',
-    },
-    {
-      type: 'image',
-      src: '/images/adhd-darwin-pathway-2.png',
-      alt: 'Darwin ADHD note: all adult RTC referrals now through ICB referral management service',
-      caption: 'All adult ADHD RTC referrals now via ICB referral management service. For MPFT adult referrals: complete form and risk section.',
-    },
-    {
-      type: 'image',
-      src: '/images/adhd-darwin-pathway-3.png',
-      alt: 'Darwin ADHD clarification note: different processes for ADHD/ASD adult/child MPFT/RTC',
-      caption: 'Key distinctions: adults → new forms via RTC management. NHS child → neurodevelopmental form with school. RTC child → referral information + Lexacom/task still needed. All RTC requests need documented clinical reasons.',
     },
 
     {
@@ -177,12 +147,6 @@ export const adhdAdult: Note = {
       type: 'heading',
       level: 2,
       text: 'Medication Monitoring — GP Role Under Shared Care',
-    },
-    {
-      type: 'image',
-      src: '/images/adhd-medications-table.jpeg',
-      alt: 'ADHD medications guide for healthcare professionals — methylphenidate, lisdexamfetamine, guanfacine and atomoxetine with doses and titration',
-      caption: 'Full ADHD medication reference including IR:MR ratios, titration schedules, equivalent doses and maximum daily doses. MPH = methylphenidate; IR = immediate release; MR = modified release.',
     },
     {
       type: 'table',

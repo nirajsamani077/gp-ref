@@ -42,14 +42,6 @@ export const malaria: Note = {
       ],
     },
 
-    {
-      type: 'image',
-      src: '/images/Use-of-anti-malarial-drugs-for-P-falciparum-prophylaxis.png',
-      alt: 'Table of antimalarial drugs for P. falciparum prophylaxis showing drug, adult dose, regimen, start before exposure and continue after exposure',
-      caption: 'Antimalarial prophylaxis drugs — adult doses, timing of start (before exposure) and duration after return. See drug notes below for key cautions.',
-      maxWidth: '620px',
-    },
-
     { type: 'heading', level: 2, text: 'Drug Choice & Key Cautions' },
 
     {

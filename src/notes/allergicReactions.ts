@@ -64,13 +64,6 @@ export const allergicReactions: Note = {
     { type: 'heading', level: 2, text: 'Oral Allergy Syndrome (Pollen-Food Syndrome)' },
 
     {
-      type: 'image',
-      src: '/images/oral-allergy-syndrome-chart-thumbnail.jpg',
-      alt: 'Oral allergy syndrome infographic showing foods cross-reactive with birch, ragweed and grass pollens',
-      caption: 'OAS is caused by cross-reactive IgE antibodies recognising similar proteins in pollens and raw plant foods. The proteins are heat-labile — cooking destroys them.',
-    },
-
-    {
       type: 'callout',
       variant: 'info',
       title: 'Diagnosis — all three required:',
@@ -142,20 +135,6 @@ export const allergicReactions: Note = {
     { type: 'heading', level: 2, text: 'Urticaria & Angioedema' },
 
     {
-      type: 'image',
-      src: '/images/Urticaria-w-and-f.jpg',
-      alt: 'Urticaria wheals — erythematous, raised, itchy plaques on skin',
-      caption: 'Urticaria: transient, itchy wheals that blanch on pressure and resolve within 24 hours without bruising. Angioedema is deeper swelling of the dermis/subcutis — often face, lips, tongue and throat.',
-    },
-
-    {
-      type: 'image',
-      src: '/images/Allergy-png4-scaled.png',
-      alt: 'NHS angioedema and urticaria management algorithm',
-      caption: 'Angioedema algorithm: determine if allergen-induced (IgE-mediated) vs ACE inhibitor–induced (bradykinin-mediated) vs spontaneous. Urticaria without angioedema: identify trigger and treat with antihistamines.',
-    },
-
-    {
       type: 'table',
       headers: ['Type', 'Key Features', 'Management'],
       rows: [
@@ -180,13 +159,6 @@ export const allergicReactions: Note = {
     },
 
     { type: 'heading', level: 3, text: 'Antihistamine Doses' },
-
-    {
-      type: 'image',
-      src: '/images/antihistamines.jpg',
-      alt: 'Antihistamines dosage table by age and drug — sedating (chlorphenamine) and non-sedating (loratadine, cetirizine)',
-      caption: 'Antihistamine prescribing by age. Non-sedating agents (loratadine, cetirizine) are first-line for ongoing management; chlorphenamine is useful acutely but sedating.',
-    },
 
     {
       type: 'table',
@@ -269,13 +241,6 @@ export const allergicReactions: Note = {
     },
 
     { type: 'heading', level: 3, text: 'Adrenaline Auto-Injectors (AAI)' },
-
-    {
-      type: 'image',
-      src: '/images/epipen-technique.jpeg',
-      alt: 'Three-step EpiPen technique: pull blue cap, press orange end to outer thigh, hold 3 seconds',
-      caption: 'EpiPen technique: (1) Form fist and pull off blue safety cap. (2) Press orange tip firmly against outer mid-thigh — can be used through clothing. (3) Push down hard until click is heard or felt; hold 3 seconds, then remove.',
-    },
 
     {
       type: 'callout',

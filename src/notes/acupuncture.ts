@@ -9,12 +9,6 @@ export const acupuncture: Note = {
   body: 'acupuncture dry needling trigger point traditional Chinese medicine chronic pain MSK headache migraine tension physiotherapy NICE evidence needles sessions referral',
 
   content: [
-    {
-      type: 'image',
-      src: '/images/acupuncture.jpg',
-      alt: 'Acupuncture needles in skin',
-      caption: 'Traditional acupuncture — fine needles inserted at specific points, left in situ for up to 30 minutes',
-    },
 
     {
       type: 'heading',

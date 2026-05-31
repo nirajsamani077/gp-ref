@@ -25,13 +25,6 @@ export const ankleInjury: Note = {
     { type: 'heading', level: 2, text: 'Ottawa Ankle Rules' },
 
     {
-      type: 'image',
-      src: '/images/ottowa-ankle-rule-orig_orig.jpg',
-      alt: 'Ottawa Ankle Rules diagram showing lateral and medial views of the foot. Malleolar zone: X-ray needed if pain in malleolar zone AND bone tenderness at point A (posterior edge/tip of lateral malleolus — 6 cm) or point B (posterior edge/tip of medial malleolus — 6 cm), or inability to bear weight immediately and in ED. Mid-foot zone: X-ray needed if pain in mid-foot zone AND bone tenderness at point C (base of 5th metatarsal) or point D (navicular), or inability to bear weight immediately and in ED.',
-      caption: 'Ottawa Ankle Rules — validated clinical decision tool to determine need for X-ray. Apply only in adults and children >5 years; not applicable if intoxicated, multiple painful injuries, pregnancy, or diminished sensation.',
-    },
-
-    {
       type: 'table',
       headers: ['Zone', 'X-ray indicated if pain in zone AND…'],
       rows: [
@@ -58,13 +51,6 @@ export const ankleInjury: Note = {
         'If in doubt, refer to ED or arrange X-ray — Ottawa rules are a guide, not a substitute for clinical judgement',
         'High-risk fractures to consider: base of 5th metatarsal (avulsion, Jones fracture), posterior malleolus, Lisfranc injury (mid-foot), growth plate injury in children',
       ],
-    },
-
-    {
-      type: 'image',
-      src: '/images/ankle-anatomy.gif',
-      alt: 'Lateral view of ankle anatomy with numbered structures: 1. 5th metatarsal, 2. Base of 5th metatarsal (tender site for Ottawa Rule), 3. Peroneus Brevis Tendon, 4. Fibula, 5. Anterior Talofibular Ligament (ATFL), 6. Calcaneofibular Ligament, 7. Posterior Talofibular Ligament, 8. Posterior aspect of lateral malleolus (tender site for Ottawa Rule)',
-      caption: 'Lateral ankle anatomy. The ATFL (5) is the most commonly injured ligament in ankle sprains. Ottawa palpation points are the base of the 5th metatarsal (2) and the posterior aspect of the lateral malleolus (8).',
     },
 
     { type: 'heading', level: 2, text: 'Management — Ankle Sprain (No Fracture)' },

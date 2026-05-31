@@ -23,20 +23,6 @@ export const angina: Note = {
       ],
     },
 
-    {
-      type: 'image',
-      src: '/images/ihd-pathophysiology.jpg',
-      alt: 'Diagram showing progressive stages of atherosclerosis in a coronary artery from initial lesion with foam cells through fatty streak, intermediate lesion, atheroma, fibroatheroma to complicated lesion with thrombosis',
-      caption: 'Atherosclerosis progression. Plaques begin silently from the 1st decade; fibroatheroma from the 4th decade can rupture → thrombosis → ACS. Risk factor modification can stabilise plaques at any stage.',
-    },
-
-    {
-      type: 'image',
-      src: '/images/Atherosclerosis-coronary-artery-affected.webp',
-      alt: 'Anatomical illustration of heart showing coronary arteries with inset comparing a normal artery to a diseased artery narrowed by atherosclerotic fatty plaque',
-      caption: 'Coronary artery narrowed by atherosclerosis. A >70% luminal stenosis typically causes exertional ischaemia; plaque rupture at any stenosis degree can cause ACS.',
-    },
-
     { type: 'heading', level: 2, text: 'Acute Presentation — Rule Out ACS First' },
 
     {
@@ -50,13 +36,6 @@ export const angina: Note = {
         'Pain 12–72 hours ago, now resolved, normal ECG: same-day emergency care',
         'Also consider: aortic dissection (tearing pain radiating to back, unequal BPs), PE, pericarditis (sharp, pleuritic, relieved sitting forward)',
       ],
-    },
-
-    {
-      type: 'image',
-      src: '/images/chest-pain.webp',
-      alt: 'Flowchart for suspected cardiac chest pain: exertion-only with no red flags → RACPC; at rest with no red flags → same-day emergency care; red flags present → 999',
-      caption: 'Cardiac chest pain triage pathway. Stable exertional symptoms without red flags → RACPC referral. Any red flag or rest pain → same-day emergency or 999.',
     },
 
     { type: 'heading', level: 2, text: 'Rapid Access Chest Pain Clinic (RACPC)' },
@@ -129,13 +108,6 @@ export const angina: Note = {
     { type: 'heading', level: 3, text: 'Sequential Drug Treatment for Symptoms' },
 
     {
-      type: 'image',
-      src: '/images/Guideline-for-pharmacological-management-of-stable-angina.png',
-      alt: 'NHS Lothian guideline flowchart for pharmacological management of stable angina showing anti-ischaemic drugs (beta-blocker first, CCB if contra-indicated, then add-on agents), antiplatelet, lipid lowering, ACE inhibition and miscellaneous measures',
-      caption: 'NHS Lothian pharmacological management of stable angina. Anti-ischaemic ladder: beta-blocker (or rate-limiting CCB) → add DHP-CCB if HR controlled → add nitrate/nicorandil → specialist drugs. Secondary prevention runs in parallel for all patients.',
-    },
-
-    {
       type: 'table',
       headers: ['Step', 'Treatment', 'Key points'],
       rows: [
@@ -166,13 +138,6 @@ export const angina: Note = {
         ],
       ],
       caption: 'Sequential anti-anginal drug treatment (adapted from SIGN 96 / NICE CG126 / Tayside formulary). Do not add a 3rd anti-anginal unless symptoms uncontrolled on 2 drugs and patient awaiting or unsuitable for revascularisation. Review 2–4 weeks after each change.',
-    },
-
-    {
-      type: 'image',
-      src: '/images/Angina_prescribed_medication_580x377px.jpg',
-      alt: 'Table of commonly prescribed medications for stable angina listing beta-blockers, DHP and non-DHP calcium channel blockers, nitrates, nicorandil, ranolazine and ivabradine with their mechanisms, adverse effects and dosing regimes',
-      caption: 'Commonly prescribed medications for stable angina — mechanisms, adverse effects and dosing. Note: non-DHP CCBs (verapamil, diltiazem) must not be combined with beta-blockers.',
     },
 
     { type: 'heading', level: 3, text: 'Refer to Cardiology If' },

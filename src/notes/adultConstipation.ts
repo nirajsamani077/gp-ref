@@ -69,12 +69,6 @@ export const adultConstipation: Note = {
       level: 2,
       text: 'Laxative Guidelines — Quick Reference',
     },
-    {
-      type: 'image',
-      src: '/images/constipation-gp-notebook.jpg',
-      alt: 'Laxative guidelines for adults — grid showing which laxative to use by aetiology: drug-induced, chronic, chronic with IBS, chronic frailty, pregnancy',
-      caption: 'Laxative choice by clinical context. Key messages: always increase fluid/fibre; macrogol is the backbone for most chronic constipation; bulk forming is first-line for episodic/dietary constipation; avoid bulk laxatives in drug-induced (opioid) constipation.',
-    },
 
     {
       type: 'heading',
@@ -96,12 +90,6 @@ export const adultConstipation: Note = {
       type: 'heading',
       level: 2,
       text: 'Laxatives — Full Prescribing Guide',
-    },
-    {
-      type: 'image',
-      src: '/images/constipation-algorithm.jpg',
-      alt: 'Constipation laxative comparison — background information, advantages and disadvantages of each class including bulk forming, stimulant, osmotic, linaclotide, lubiprostone, prucalopride and peripheral opioid antagonists',
-      caption: 'Detailed advantage/disadvantage comparison of all laxative classes. Key: macrogol is the most evidence-based osmotic agent; lactulose is NOT recommended in IBS; stimulants work faster but cause cramps; newer agents reserved for treatment failure.',
     },
     {
       type: 'table',
@@ -150,12 +138,6 @@ export const adultConstipation: Note = {
       type: 'heading',
       level: 2,
       text: 'Symptom-Directed Laxative Choice',
-    },
-    {
-      type: 'image',
-      src: '/images/constipation-laxative-guide.jpeg',
-      alt: 'Bristol stool chart types 1–7, OIC guidance box with naloxegol and naldemedine, and drug mechanism/side effects table',
-      caption: 'Bristol stool chart: types 1–2 = constipation; 3–4 = ideal; 5–7 = diarrhoea. OIC guidance: lifestyle + laxatives first; naloxegol/naldemedine if ≥1 laxative class failed for ≥4 days over 2 weeks.',
     },
     {
       type: 'table',

@@ -15,12 +15,6 @@ export const acneVulgaris: Note = {
       text: 'Classification & Assessment',
     },
     {
-      type: 'image',
-      src: '/images/acne-severity.png',
-      alt: 'Acne severity classification grading mild moderate severe',
-      caption: 'Acne severity grading: mild (comedonal), moderate (papulopustular), severe (nodulocystic/scarring)',
-    },
-    {
       type: 'table',
       headers: ['Grade', 'Lesions', 'Treatment target'],
       rows: [
@@ -256,12 +250,6 @@ export const acneVulgaris: Note = {
       text: 'Pathophysiology & Triggers',
     },
     {
-      type: 'image',
-      src: '/images/Acne-vulgaris-comedones-papules-pustules-nodules-cysts-Whiteheads-Blackheads.jpg',
-      alt: 'Acne vulgaris lesion types comedones papules pustules nodules cysts whiteheads blackheads',
-      caption: 'Acne lesion morphology: open comedones (blackheads), closed comedones (whiteheads), papules, pustules, nodules, and cysts',
-    },
-    {
       type: 'list',
       items: [
         'Blockage of pilosebaceous units with sebum/keratin → anaerobic growth of Cutibacterium acnes → inflammation',
@@ -277,23 +265,11 @@ export const acneVulgaris: Note = {
       level: 2,
       text: 'Treatment Pathway',
     },
-    {
-      type: 'image',
-      src: '/images/Acne-Pathway-2024-final-proof-1.jpg',
-      alt: 'PCDS 2024 acne primary care treatment algorithm full pathway',
-      caption: 'PCDS 2024 — full primary care acne prescribing pathway',
-    },
 
     {
       type: 'heading',
       level: 2,
       text: 'Acne Scarring',
-    },
-    {
-      type: 'image',
-      src: '/images/acne-scar.webp',
-      alt: 'Types of acne scarring ice-pick boxcar rolling atrophic hypertrophic keloid',
-      caption: 'Acne scar types: ice-pick (deep, narrow), boxcar (broad depression), rolling (wave-like); hypertrophic and keloid variants',
     },
     {
       type: 'list',

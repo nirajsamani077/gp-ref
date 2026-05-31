@@ -9,12 +9,6 @@ export const asthmaDiagnosis: Note = {
   body: 'asthma diagnosis symptoms wheeze breathlessness cough chest tightness spirometry reversibility FeNO fractional exhaled nitric oxide peak flow variability PEFR differential COPD vocal cord dysfunction hyperventilation eosinophilic',
 
   content: [
-    {
-      type: 'image',
-      src: '/images/asthma-diagnostic-algorithm.png',
-      alt: 'BTS/SIGN asthma diagnostic algorithm — high, intermediate, and low probability pathways',
-      caption: 'BTS/SIGN 2019 Diagnostic Algorithm: high probability → initiate treatment and assess response objectively; intermediate probability → spirometry + bronchodilator reversibility ± FeNO, blood eosinophils; low probability → investigate alternative diagnosis. Red flags listed on right.',
-    },
 
     {
       type: 'callout',

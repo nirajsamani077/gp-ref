@@ -19,12 +19,6 @@ export const scoliosis: Note = {
       text: 'Scoliosis is a lateral curvature of the spine >10° (Cobb angle on X-ray). It is the most common spinal deformity in teenagers, affecting ~3%. Family history is important — first-degree relatives have ~10× increased risk. More common in females (though severity and progression are higher in girls).',
     },
     {
-      type: 'image',
-      src: '/images/scoliosis-1.jpeg',
-      alt: 'Types of scoliosis — thoracic, lumbar, thoracolumbar and combined scoliosis illustrated on posterior view of spine',
-      caption: 'Scoliosis types by location: thoracic (most visible — right-sided convexity common), lumbar (may cause pelvic tilt), thoracolumbar, and combined (S-shaped double curve). Idiopathic is by far the most common type.',
-    },
-    {
       type: 'table',
       headers: ['Type', 'Cause / associations', 'Key features'],
       rows: [
@@ -55,12 +49,6 @@ export const scoliosis: Note = {
       type: 'heading',
       level: 2,
       text: 'Examination',
-    },
-    {
-      type: 'image',
-      src: '/images/scoliosis-2.jpeg',
-      alt: 'Clinical examination of scoliosis — A: posterior view showing shoulder asymmetry, B: Adams forward bend test showing rib hump, C: standing full-length X-ray showing spinal curve',
-      caption: 'A: Posterior view — shoulder asymmetry, waist asymmetry. B: Adams forward bend test — rib or lumbar hump indicates vertebral rotation (positive test). C: Full-length standing PA X-ray — Cobb angle measurement used to guide management.',
     },
     {
       type: 'table',
@@ -118,12 +106,6 @@ export const scoliosis: Note = {
         ['Bracing (TLSO)', 'Cobb 25–45° AND still growing (Risser 0–2, pre-menarchal or early post-menarche)', 'Goal: prevent progression, NOT correction. Worn 23 hours/day — compliance is a major challenge. Evidence strongest for night-time bracing for lumbar curves. Custom-moulded thoracolumbosacral orthosis (TLSO). Stops at skeletal maturity'],
         ['Surgery — spinal fusion', 'Cobb >45–50° (especially if still growing), or >40° with documented progression, or respiratory compromise', 'Major spinal procedure — instrumentation (rods and screws) and bone grafting. Performed in ~10% of AIS cases. Corrects and stabilises curve. Neurological complications are the most serious risk (~1 in 1000). Patient and family counselling essential. Done in specialist paediatric spine centres'],
       ],
-    },
-    {
-      type: 'image',
-      src: '/images/scoliosis-3.jpeg',
-      alt: 'TLSO brace (thoracolumbosacral orthosis) front and back view used for scoliosis bracing',
-      caption: 'TLSO brace — custom-moulded hard plastic orthosis worn 23hrs/day. Designed to apply corrective forces to prevent curve progression during growth. Requires expert fitting and regular review.',
     },
     {
       type: 'callout',

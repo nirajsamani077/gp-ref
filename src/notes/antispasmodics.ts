@@ -10,13 +10,6 @@ export const antispasmodics: Note = {
 
   content: [
 
-    {
-      type: 'image',
-      src: '/images/antispasmodics.jpg',
-      alt: 'IBS medicines infographic showing antispasmodic options and how they work',
-      caption: 'Antispasmodic medicines for IBS — all relax colonic smooth muscle but act via different mechanisms. Peppermint oil is a calcium channel blocker; mebeverine is a musculotropic antispasmodic; alverine acts directly on smooth muscle.',
-    },
-
     // ── PRESCRIBING ──────────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Antispasmodic Options' },
 

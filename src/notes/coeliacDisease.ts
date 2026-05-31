@@ -103,12 +103,6 @@ export const coeliacDisease: Note = {
       type: 'para',
       text: 'Selected adults with IgA tTG ≥10× ULN may be diagnosed without biopsy, in line with updated NICE and ESPGHAN guidance — provided specific criteria are met. This pathway is led by the gastroenterologist, not initiated in primary care.',
     },
-    {
-      type: 'image',
-      src: '/images/Non-biospy-protocol.png',
-      alt: 'Non-biopsy diagnostic protocol for coeliac disease',
-      caption: 'NICE 2020 non-biopsy pathway — applies when IgA tTG ≥10× ULN is confirmed. Gastroenterology-led.',
-    },
 
     // ── Dietary Management ──────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Dietary Management — Gluten-Free Diet (GFD)' },
@@ -130,18 +124,6 @@ export const coeliacDisease: Note = {
     },
 
     { type: 'heading', level: 3, text: 'Foods at a glance' },
-    {
-      type: 'image',
-      src: '/images/Coeliac-Cheat-Sheet.gif',
-      alt: 'Coeliac disease food cheat sheet — GO, CAUTION, STOP',
-      caption: 'Quick reference: green = safe, amber = check labels carefully, red = avoid.',
-    },
-    {
-      type: 'image',
-      src: '/images/Flowchar_580.png.jpeg',
-      alt: 'Detailed coeliac foods allowed, to check, and to avoid table',
-      caption: 'Detailed food category guide — Foods Allowed / Foods to Check / Foods to Avoid.',
-    },
 
     // ── Beyond Diet ─────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Management Beyond Diet' },
@@ -228,12 +210,6 @@ export const coeliacDisease: Note = {
         ['Investigation',    'IgA tTG (often positive) + refer for skin biopsy with direct immunofluorescence (perilesional skin — not active blister)'],
         ['Treatment',        'Lifelong GFD (as for coeliac disease) + dapsone initiated by dermatology for symptom control; dapsone dose can usually be reduced as GFD takes effect over months'],
       ],
-    },
-    {
-      type: 'image',
-      src: '/images/dermatitis-herpetiformis-0001.jpg',
-      alt: 'Dermatitis herpetiformis — grouped vesicles on extensor surface',
-      caption: 'Dermatitis herpetiformis — intensely pruritic grouped vesicles on an extensor surface. Tap to enlarge.',
     },
 
     // ── Non-Coeliac Gluten Sensitivity ──────────────────────────────────────

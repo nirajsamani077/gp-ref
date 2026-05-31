@@ -23,13 +23,6 @@ export const anosmia: Note = {
       ],
     },
 
-    {
-      type: 'image',
-      src: '/images/anosmia-anatomy.webp',
-      alt: 'Anatomy of olfaction: frontal view showing olfactory mucosa on superior nasal septum and olfactory bulbs; lateral view showing distribution of olfactory mucosa on lateral wall, with superior, middle, and inferior turbinates, and the olfactory bulb above',
-      caption: 'Olfactory anatomy. Olfactory receptor neurons in the superior nasal mucosa (superior septum and superior turbinate) transmit signals to the olfactory bulb. Post-viral damage occurs at this epithelial level. Nasal obstruction from lower turbinate swelling or polyps can cause conductive anosmia.',
-    },
-
     { type: 'heading', level: 2, text: 'Causes' },
 
     {
@@ -117,13 +110,6 @@ export const anosmia: Note = {
         'ENT referral recommended for suspected nasal polyps, chronic rhinosinusitis not responding to treatment',
         'Topical steroid drops or rinses are OPTIONAL in addition to sprays for more severe or refractory cases',
       ],
-    },
-
-    {
-      type: 'image',
-      src: '/images/anosmia-covid-pathway.jpg',
-      alt: 'COVID-19 anosmia management pathway: For all patients — establish COVID status, offer advice sheet, direct to AbScent and Fifth Sense, olfactory training recommended if >2 weeks. Check for additional neurological symptoms — if positive, MRI brain recommended. Check for nasal symptoms (blockage/congestion) — if positive: check duration >4–6 weeks; if short-duration recommend INCS; if >4–6 weeks recommend ENT referral. If no nasal symptoms: check for other COVID symptoms; if no COVID symptoms OCS and omega-3 are optional; check duration of anosmia >4–6 weeks; if >4–6 weeks refer for ENT assessment with possible MRI.',
-      caption: 'ENT UK / British Rhinological Society pathway for managing anosmia (including post-COVID). Key decision points: neurological symptoms → MRI; nasal obstruction → INCS ± ENT; duration >4–6 weeks without nasal symptoms → ENT referral.',
     },
 
     { type: 'heading', level: 2, text: 'Referral Summary' },

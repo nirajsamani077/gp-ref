@@ -58,20 +58,6 @@ export const vitaminB12: Note = {
     // ── ALGORITHMS ────────────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Investigation Algorithms' },
 
-    {
-      type: 'image',
-      src: '/images/b12-no-neuro-algorithm.png',
-      alt: 'Algorithm 2: Investigation of low B12 without neurological symptoms — flowchart showing pathways for B12 <150, 150-211 and actions for IFAb positive/negative',
-      caption: 'Algorithm for low B12 without neurological symptoms. B12 <150: check GPA/IFAb and treat. B12 150–211: repeat in 1–2 months; if persistently low, check IFAb. Key actions depend on antibody results and whether deficiency is dietary.',
-    },
-
-    {
-      type: 'image',
-      src: '/images/b12-algorithm-v2.png',
-      alt: 'Algorithm for management of serum vitamin B12 with strong clinical suspicion — including neurological features, pancytopenia and megaloblastic anaemia pathways',
-      caption: 'Algorithm for strong clinical suspicion of B12 deficiency (neurological features, macrocytic anaemia, pancytopenia). If neurological symptoms present — start treatment before awaiting all results. Use MMA or homocysteine as second-line tests if result is borderline.',
-    },
-
     // ── 3 SCENARIOS ───────────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Three Clinical Scenarios' },
 
@@ -162,13 +148,6 @@ export const vitaminB12: Note = {
 
     // ── RAISED B12 ────────────────────────────────────────────────────────────────
     { type: 'heading', level: 2, text: 'Raised Vitamin B12' },
-
-    {
-      type: 'image',
-      src: '/images/raised-b12.png',
-      alt: 'High vitamin B12 levels guidance — often non-pathological; most common cause is liver disease; exclude haematological malignancy with FBC',
-      caption: 'Raised B12 is most commonly a non-pathological finding. Liver disease is the most common pathological cause. A normal FBC makes haematological malignancy unlikely.',
-    },
 
     {
       type: 'table',

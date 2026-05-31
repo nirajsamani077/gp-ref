@@ -28,15 +28,6 @@ export const antiphospholipidSyndrome: Note = {
     { type: 'heading', level: 2, text: 'Clinical Manifestations' },
 
     {
-      type: 'image',
-      src: '/images/antiphospholipid-syndrome.jpg',
-      alt: 'Diagram of clinical manifestations of antiphospholipid syndrome including stroke, TIA, migraine, PE, cardiac valve pathology, renal thrombosis, obstetric complications, Raynaud\'s phenomenon, livedo reticularis and DVT',
-      caption: 'Clinical manifestations of APS — thrombosis can affect any vascular bed. Obstetric complications and livedo reticularis are important non-thrombotic features.',
-      float: 'right',
-      maxWidth: '300px',
-    },
-
-    {
       type: 'table',
       headers: ['Category', 'Manifestations'],
       rows: [

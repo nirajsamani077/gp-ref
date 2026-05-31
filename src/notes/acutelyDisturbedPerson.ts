@@ -60,12 +60,6 @@ export const acutelyDisturbedPerson: Note = {
       ],
       caption: '4AT total ≥4: delirium likely → investigate cause, consider safe environment, avoid antipsychotics unless essential, do not sedate with benzodiazepines (worsens delirium).',
     },
-    {
-      type: 'image',
-      src: '/images/4-at.png',
-      alt: '4AT delirium assessment tool scoring card',
-      caption: '4AT delirium screening tool: alertness, AMT4, attention (months backwards), acute change. Score ≥4 = possible delirium. Score 1–3 = possible cognitive impairment.',
-    },
 
     {
       type: 'heading',
@@ -117,29 +111,11 @@ export const acutelyDisturbedPerson: Note = {
         'DOLS (Deprivation of Liberty Safeguards) apply when a person without capacity needs to be deprived of liberty in a care home or hospital for their own safety',
       ],
     },
-    {
-      type: 'image',
-      src: '/images/PRN01699-mental-capacity-assessment-flowchart.png',
-      alt: 'Mental Capacity Act assessment flowchart — the 4 capacity tests: understand, retain, weigh up, communicate',
-      caption: 'MCA capacity assessment flowchart: if patient cannot understand, retain, weigh up, or communicate — due to a mind or brain impairment — they lack capacity for that specific decision.',
-    },
 
     {
       type: 'heading',
       level: 2,
       text: 'Mental Health Act (MHA) 1983 — Key Sections for GPs',
-    },
-    {
-      type: 'image',
-      src: '/images/mha.png',
-      alt: 'Mental Health Act 2007 sections summary table — sections 2, 3, 4, 5(2), 5(4)',
-      caption: 'MHA sections at a glance. Orange = no treatment without consent (can sedate under common law only). AMHP = Approved Mental Health Practitioner. RMP = Registered Medical Practitioner.',
-    },
-    {
-      type: 'image',
-      src: '/images/Sections.png',
-      alt: 'Detailed MHA sections table — purpose, recommendation, applicant and duration for sections 2, 3, 4, 135, 136, 5(2), 5(4)',
-      caption: 'Mental Health Act sections: purpose, who recommends, who applies, and duration. Section 2 (assessment) and Section 3 (treatment) both require AMHP application and 2 doctors (one S12-approved).',
     },
     {
       type: 'table',

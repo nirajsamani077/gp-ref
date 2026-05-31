@@ -11,12 +11,6 @@ export const haemMalignancies: Note = {
   content: [
 
     // ── OVERVIEW ─────────────────────────────────────────────────────────────
-    {
-      type: 'image',
-      src: '/images/blood-cell-production.webp',
-      alt: 'Blood cell production diagram showing pluripotent stem cell differentiating into myeloid and lymphoid lineages',
-      caption: 'All blood cancers arise from malignant transformation of a stem cell or progenitor at various points in haematopoiesis. Myeloid cancers (AML, CML, PV, ET) arise from the myeloid lineage; lymphoid cancers (ALL, CLL, lymphoma, myeloma) from the lymphoid lineage.',
-    },
 
     {
       type: 'callout',
@@ -90,12 +84,6 @@ export const haemMalignancies: Note = {
       type: 'heading',
       level: 2,
       text: 'Leukaemias',
-    },
-    {
-      type: 'image',
-      src: '/images/blood-film-lymphocytosis.jpeg',
-      alt: 'Blood film showing marked lymphocytosis — typical of chronic lymphocytic leukaemia (CLL)',
-      caption: 'CLL blood film: marked lymphocytosis with small mature lymphocytes and characteristic smear (Gumprecht) cells. The degree of lymphocytosis does not equate to severity — refer all confirmed CLL for haematology assessment.',
     },
     {
       type: 'table',

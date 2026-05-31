@@ -149,12 +149,6 @@ export const sixEightWeekCheck: Note = {
       level: 2,
       text: '👶 Baby Check',
     },
-    {
-      type: 'image',
-      src: '/images/6-8-week-check.webp',
-      alt: 'General overview of the 6-8 week baby examination',
-      caption: 'General overview of the newborn examination — systematic head-to-toe approach.',
-    },
 
     // ── DEVELOPMENT ──────────────────────────────────────────────
     {
@@ -232,12 +226,6 @@ export const sixEightWeekCheck: Note = {
         ['Buphthalmos (large eye)', 'Corneal diameter >12mm = raised IOP; congenital glaucoma', 'Urgent ophthalmology'],
         ['Corneal clouding', 'Congenital glaucoma, metabolic disease', 'Urgent ophthalmology'],
       ],
-    },
-    {
-      type: 'image',
-      src: '/images/Abnormal-red-reflex-information-poster.png.webp',
-      alt: 'Red reflex checking poster showing normal, absent and abnormal red reflex with referral outcomes',
-      caption: 'Normal = no referral. Absent/asymmetric = urgent referral. Abnormal = urgent referral.',
     },
 
     // ── HEART ────────────────────────────────────────────────────
@@ -351,12 +339,6 @@ export const sixEightWeekCheck: Note = {
         'Do NOT strap or bind',
       ],
     },
-    {
-      type: 'image',
-      src: '/images/VID_2252_F0095312-Baby_with_umbilical_hernia.max-600x600.jpg',
-      alt: 'Umbilical hernia in a newborn — soft rounded protrusion at umbilicus',
-      caption: 'Umbilical hernia: soft, reducible protrusion at the umbilicus. Usually resolves by age 3–4. Refer if persists, large >2cm, or complicated.',
-    },
 
     {
       type: 'heading',
@@ -388,12 +370,6 @@ export const sixEightWeekCheck: Note = {
         'Refer to paediatrics or paediatric surgery if persistent, large, or not responding to treatment',
       ],
     },
-    {
-      type: 'image',
-      src: '/images/umbilical-granuloma.png',
-      alt: 'Umbilical granuloma — pink fleshy nodule at umbilicus after cord separation',
-      caption: 'Umbilical granuloma: moist pink nodule after cord separation. Treat with silver nitrate cauterisation (protect surrounding skin). Salt treatment is a safe alternative.',
-    },
 
     {
       type: 'heading',
@@ -410,12 +386,6 @@ export const sixEightWeekCheck: Note = {
         'Bifid scrotum or penile chordae with bilateral impalpable testes → urgent referral, consider disorder of sexual differentiation (e.g. congenital adrenal hyperplasia)',
         'Anal patency confirmed',
       ],
-    },
-    {
-      type: 'image',
-      src: '/images/undescended-testicles-pathway.jpg',
-      alt: 'Undescended testicle clinical pathway — unilateral vs bilateral, palpable vs impalpable',
-      caption: 'Undescended testis pathway: unilateral palpable → routine paediatric surgical referral; bilateral impalpable → urgent referral (exclude CAH).',
     },
 
     // ── HIPS ─────────────────────────────────────────────────────
@@ -467,12 +437,6 @@ export const sixEightWeekCheck: Note = {
       caption: 'Pavlik harness: maintains hips in flexion/abduction to encourage acetabular development; used from birth to ~6 months.',
     },
     {
-      type: 'image',
-      src: '/images/Ortolani-and-Barlow.jpeg',
-      alt: 'Barlow and Ortolani manoeuvre diagrams for DDH screening',
-      caption: 'Barlow: adduct + posterior pressure → dislocates unstable hip. Ortolani: abduct + anterior lift → relocates with clunk.',
-    },
-    {
       type: 'linkrow',
       links: [
         { label: '▶ YouTube — Ortolani & Barlow Hip Test', url: 'https://www.youtube.com/watch?v=imhI6PLtGLc' },
@@ -493,12 +457,6 @@ export const sixEightWeekCheck: Note = {
         'Talipes (clubfoot) — plantarflexed, inverted foot that cannot be passively corrected → refer physiotherapy + orthopaedics (Ponseti casting)',
       ],
     },
-    {
-      type: 'image',
-      src: '/images/clubfoot.jpg',
-      alt: 'Newborn talipes (clubfoot) showing plantarflexed and inverted foot',
-      caption: 'Talipes equinovarus (clubfoot): plantarflexed, supinated foot that cannot be corrected to neutral. Refer for Ponseti casting.',
-    },
 
     // ── NEURO / SPINE ────────────────────────────────────────────
     {
@@ -516,12 +474,6 @@ export const sixEightWeekCheck: Note = {
         'Normal dimple: small, shallow, visible base, within 25mm of anus → reassure',
       ],
     },
-    {
-      type: 'image',
-      src: '/images/sacreddimples.webp',
-      alt: 'Sacral dimple — clinical photo and diagram showing measurement criteria',
-      caption: 'Refer if >5mm, >25mm from anus, or with associated skin changes. Normal pit with visible base within 25mm = reassure.',
-    },
 
     // ── BIRTHMARKS ───────────────────────────────────────────────
     {
@@ -530,42 +482,6 @@ export const sixEightWeekCheck: Note = {
       text: 'Skin & Birthmarks',
     },
 
-    {
-      type: 'image',
-      src: '/images/salmon-patch-stork-mark.jpg',
-      alt: 'Salmon patch / stork mark on newborn face — flat pink-red patches',
-      caption: 'Salmon patch / Stork mark — flat pink-red patch; face, nape of neck, eyelids. Very common. Fades by 1–2 years. No treatment needed.',
-    },
-    {
-      type: 'image',
-      src: '/images/strawberry-naevus-haemangioma.jpg',
-      alt: 'Infantile haemangioma — raised bright red strawberry naevus',
-      caption: 'Infantile haemangioma (strawberry naevus) — raised, bright red; appears weeks 1–4, peaks 3–6 months, involutes over years. Refer if near eye (amblyopia risk), airway involvement, or ulcerated → propranolol effective.',
-    },
-    {
-      type: 'image',
-      src: '/images/port-wine-stain.jpg',
-      alt: 'Port wine stain — flat purple-red birthmark on face',
-      caption: 'Port wine stain — flat, pink-red to purple; does NOT fade. Extensive facial: ? Sturge-Weber syndrome (glaucoma, epilepsy) → refer ophthalmology. Laser treatment available.',
-    },
-    {
-      type: 'image',
-      src: '/images/cafe-au-lait-spot.jpg',
-      alt: 'Café-au-lait spot — flat coffee-coloured oval patch',
-      caption: 'Café-au-lait spot — flat, coffee-coloured, oval. Single spots common and benign. >6 spots >5mm (pre-pubertal) → consider neurofibromatosis type 1.',
-    },
-    {
-      type: 'image',
-      src: '/images/mongolian-blue-spot.jpg',
-      alt: 'Mongolian blue spot / congenital dermal melanocytosis — blue-grey sacral patch',
-      caption: 'Mongolian blue spot (blue-grey spot / congenital dermal melanocytosis) — flat, blue-grey; lumbosacral; commoner in darker-skinned infants. Fades by school age. Document clearly to avoid confusion with bruising.',
-    },
-    {
-      type: 'image',
-      src: '/images/congenital-melanocytic-naevus.jpg',
-      alt: 'Congenital melanocytic naevus — brown pigmented lesion present from birth',
-      caption: 'Congenital melanocytic naevus — brown/black, may have hair. Risk of melanoma increases with size (giant >20cm). Refer dermatology for large lesions.',
-    },
     {
       type: 'linkrow',
       links: [

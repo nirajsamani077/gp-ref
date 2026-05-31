@@ -57,15 +57,6 @@ export const ptsd: Note = {
     { type: 'heading', level: 2, text: 'Trauma-Focused CBT & EMDR' },
 
     {
-      type: 'image',
-      src: '/images/EMDR.webp',
-      alt: 'EMDR therapy infographic — Eye Movement Desensitisation and Reprocessing uses bilateral stimulation to help individuals heal from traumatic experiences',
-      caption: 'EMDR — Eye Movement Desensitisation and Reprocessing. Uses bilateral stimulation (eye movements, taps or tones) to help the brain reprocess traumatic memories.',
-      float: 'right',
-      maxWidth: '320px',
-    },
-
-    {
       type: 'callout',
       variant: 'info',
       title: 'Trauma-focused CBT (TF-CBT)',

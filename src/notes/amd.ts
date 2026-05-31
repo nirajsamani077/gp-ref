@@ -14,13 +14,6 @@ export const amd: Note = {
       text: 'AMD is the leading cause of irreversible vision loss in the developed world. It affects the macula — the central area of the retina responsible for fine detail, reading, and colour vision. Peripheral vision is preserved. It is strongly age-related and typically presents after 55 years, often found incidentally at a routine optician appointment.',
     },
 
-    {
-      type: 'image',
-      src: '/images/amd-fundus-anatomy.webp',
-      alt: 'Fundus photographs showing normal macula/fovea anatomy and drusen deposits in AMD',
-      caption: 'Left: Normal fundus — macula (outer dashed circle) and fovea (inner circle). Right: Drusen deposits — hallmark of dry AMD.',
-    },
-
     { type: 'heading', level: 2, text: 'Risk Factors' },
     {
       type: 'list',
@@ -75,20 +68,6 @@ export const amd: Note = {
         ['Treatment', 'No proven medical treatment; lifestyle + supplements', 'Anti-VEGF injections — urgent referral needed'],
         ['Prognosis', 'Variable; may progress to wet', 'Sight-threatening if untreated; treatment can preserve vision'],
       ],
-    },
-
-    {
-      type: 'image',
-      src: '/images/amd-types-diagram.webp',
-      alt: 'Diagram comparing normal eye, wet AMD and dry AMD fundus appearances with eye anatomy',
-      caption: 'Eye anatomy and fundus comparison — normal (left), wet AMD exudative (centre), dry AMD atrophic (right).',
-    },
-
-    {
-      type: 'image',
-      src: '/images/amd-wet-haemorrhage.jpg',
-      alt: 'Fundus photograph of wet AMD showing central subretinal haemorrhage',
-      caption: 'Wet AMD — large central subretinal haemorrhage with neovascular membrane. Requires same-day emergency ophthalmology referral.',
     },
 
     { type: 'heading', level: 2, text: 'Red Flags — Urgent Referral' },

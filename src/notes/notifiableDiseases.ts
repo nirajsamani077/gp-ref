@@ -56,14 +56,6 @@ export const notifiableDiseases: Note = {
     { type: 'heading', level: 2, text: 'Notifiable Diseases List' },
 
     {
-      type: 'image',
-      src: '/images/PHE_Notifiable_diseases_poster_HPT.jpg.webp',
-      alt: 'Public Health England statutory notification poster showing all notifiable diseases, whether urgent or routine, and how to notify',
-      caption: 'PHE notifiable diseases poster — full list with urgency classification. Display in practice or use as a quick reference.',
-      maxWidth: '700px',
-    },
-
-    {
       type: 'table',
       headers: ['Disease', 'Notify as'],
       rows: [

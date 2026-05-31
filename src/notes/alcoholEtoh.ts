@@ -10,12 +10,6 @@ export const alcoholEtoh: Note = {
 
     { type: 'heading', level: 2, text: 'UK Alcohol Units & Safe Limits' },
     {
-      type: 'image',
-      src: '/images/figure-12.1-alcohol-unit-reference.svg',
-      alt: 'Alcohol unit reference chart showing drinks and their unit equivalents',
-      caption: 'One unit = 25 ml spirit (40%) = 76 ml wine (12%) = 250 ml beer (4%).',
-    },
-    {
       type: 'table',
       caption: 'Common drinks and their unit content',
       headers: ['Drink', 'Approximate Units'],
@@ -102,12 +96,6 @@ export const alcoholEtoh: Note = {
       calculators: [
         { id: 'audit', label: 'Full AUDIT Calculator', subtitle: '10 questions · Hazardous / harmful / dependence + action guidance' },
       ],
-    },
-    {
-      type: 'image',
-      src: '/images/How-is-the-AUDIT-Scored-1024x768.jpg',
-      alt: 'AUDIT score decision flowchart showing bands from low risk to probable dependence',
-      caption: 'AUDIT scoring bands — 0–7 low risk, 8–15 hazardous, 16–19 harmful, 20+ probable dependence.',
     },
     {
       type: 'table',

@@ -36,13 +36,6 @@ export const benignBreast: Note = {
         'Triple assessment (clinical examination + imaging + biopsy if needed) is the gold standard for any breast lump.',
       ],
     },
-    {
-      type: 'image',
-      src: '/images/breast-quadrants.png',
-      alt: 'Diagram of breast anatomy showing quadrants: upper outer, upper inner, lower outer, lower inner, central, axillary tail, nipple and areola',
-      caption: 'Breast anatomy quadrants — upper outer is the most common site for both benign and malignant lesions',
-          sensitive: true,
-},
 
     // ── BREAST LUMP — REFERRAL ────────────────────────────────────────────────
     {
@@ -76,20 +69,6 @@ export const benignBreast: Note = {
       level: 2,
       text: 'Common Benign Conditions',
     },
-    {
-      type: 'image',
-      src: '/images/fibroadenoma-breast.jpg',
-      alt: 'Cross-section diagram comparing breast cysts (fluid-filled) versus fibroadenoma (solid mass)',
-      caption: 'Breast cysts (fluid-filled, may fluctuate with cycle) vs fibroadenoma (solid, mobile, rubbery)',
-          sensitive: true,
-},
-    {
-      type: 'image',
-      src: '/images/fibroadenoma-1.jpg',
-      alt: 'Diagram showing types of breast lesions — abscess, fibroadenoma, cyst, fibroadenomatosis, tumour; and types of cyst — atypical, fibrous, multilocular, fat, solitary',
-      caption: 'Types of breast lesions and breast cyst subtypes',
-          sensitive: true,
-},
 
     // Fibroadenoma
     {
@@ -170,12 +149,6 @@ export const benignBreast: Note = {
         'Breast pain is NOT associated with breast cancer.',
         'Reassurance is often the most effective treatment.',
       ],
-    },
-    {
-      type: 'image',
-      src: '/images/breast-pain-flowchart.png',
-      alt: 'Northern Cancer Alliance breast pain flowchart: take history, examine; if no lump and near-population family history reassure, no association between breast pain and cancer; cyclical pain — supportive bra, paracetamol 1g QDS, topical NSAID, evening primrose oil; non-cyclical — consider costochondritis, axillary, idiopathic, periductal mastitis, same analgesia; refer if not improving after 3 months',
-      caption: 'Northern Cancer Alliance breast pain management pathway',
     },
 
     // Cyclical Mastalgia

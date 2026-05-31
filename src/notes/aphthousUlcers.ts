@@ -23,20 +23,6 @@ export const aphthousUlcers: Note = {
       ],
     },
 
-    {
-      type: 'image',
-      src: '/images/aphtous-ulcer.jpg',
-      alt: 'Clinical photograph of a classic aphthous ulcer on the inner lower lip — round white-yellow ulcer with surrounding erythema, indicated by a black arrow',
-      caption: 'Classic minor aphthous ulcer on the inner lower lip: white-yellow sloughy centre with a red halo. Most resolve within 7–10 days without treatment.',
-    },
-
-    {
-      type: 'image',
-      src: '/images/aphthous-ulcer-1_fee391183f15cb4d62773032fe0be92d.jpg',
-      alt: 'Clinical photograph showing a large pale ulcer with surrounding erythema and white change on the inner lower lip mucosa, consistent with a major aphthous ulcer',
-      caption: 'Major aphthous ulcer — larger, more indurated, may take weeks to heal and can leave scarring. If persistent >3 weeks or unusual features, refer urgently to exclude malignancy.',
-    },
-
     { type: 'heading', level: 2, text: 'Triggers and Causes' },
 
     {
@@ -170,13 +156,6 @@ export const aphthousUlcers: Note = {
         'Oral cancer risk especially elevated in: smokers, heavy alcohol users, males >40, those with HPV exposure',
         'When in doubt, refer — do not repeat courses of treatment for an ulcer that is not healing',
       ],
-    },
-
-    {
-      type: 'image',
-      src: '/images/oral-ulcer-pathway.jpg',
-      alt: 'Flowchart: Oral ulcer >3 weeks — if features suggest malignancy (solitary, proliferative): refer via 2WW. If no malignant features: isolated ulcer (trauma) or recurrent aphthous → manage in primary care if confident. Widespread mucosal ulceration (e.g. lichen planus) → refer.',
-      caption: 'NICE/NICE CKS referral pathway for oral ulcers lasting >3 weeks. Solitary or proliferative-looking ulcers → 2WW. Recurrent aphthous → manage in primary care if confident. Widespread mucosal disease (oral lichen planus, pemphigoid) → refer to oral medicine.',
     },
 
     {

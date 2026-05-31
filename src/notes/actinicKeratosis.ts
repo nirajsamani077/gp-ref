@@ -15,12 +15,6 @@ export const actinicKeratosis: Note = {
       text: 'Pathophysiology & Epidemiology',
     },
     {
-      type: 'image',
-      src: '/images/ak-pathophysiology.png',
-      alt: 'Pathophysiology of actinic keratosis development and progression to SCC',
-      caption: 'UV radiation generates reactive oxygen species (ROS) → p53 mutation in basal keratinocytes → dysplastic proliferation, Langerhans cell depletion, local immunosuppression → AK → SCC',
-    },
-    {
       type: 'list',
       items: [
         'Cumulative UV exposure damages basal keratinocyte DNA → p53 tumour suppressor mutation → loss of apoptosis control → clonal expansion of atypical keratinocytes',
@@ -45,24 +39,6 @@ export const actinicKeratosis: Note = {
         'Advise SPF 50+ sunscreen and sun avoidance for all; supplement vitamin D if using high-factor SPF regularly',
       ],
     },
-    {
-      type: 'image',
-      src: '/images/ak-single-lesion.jpg',
-      alt: 'Actinic keratosis single lesion on nose',
-      caption: 'Grade I AK: subtle scaly macule on the nose — better felt than seen',
-    },
-    {
-      type: 'image',
-      src: '/images/ak-pigmented-clinical.jpg',
-      alt: 'Pigmented actinic keratosis close-up',
-      caption: 'Grade II AK with moderate scale — easily felt and visible; erythematous base',
-    },
-    {
-      type: 'image',
-      src: '/images/ak-field-change-scalp.jpg',
-      alt: 'Actinic field change on scalp with multiple lesions',
-      caption: 'Field change: multiple AKs on sun-damaged scalp — treat the whole field, not just individual lesions',
-    },
 
     {
       type: 'heading',
@@ -78,12 +54,6 @@ export const actinicKeratosis: Note = {
         ['Grade III', 'Very thick hyperkeratotic scale; may be tender', 'Consider 2WW to exclude SCC; cryotherapy, curettage, or cautery; refer if uncertain'],
         ['Field change', 'Multiple AKs across a sun-damaged area (e.g. entire forehead/scalp); background photodamage', 'Field treatment essential: Efudix, Aldara (imiquimod), or Solaraze for thin field; PDT via dermatology for large fields'],
       ],
-    },
-    {
-      type: 'image',
-      src: '/images/ak-grading-treatment.png',
-      alt: 'AK grading and treatment recommendation table by grade and field change',
-      caption: 'Treatment recommendations by AK grade — tick = suitable, double tick = strongly recommended, cross = not recommended in primary care',
     },
 
     {
@@ -240,13 +210,6 @@ export const actinicKeratosis: Note = {
         'Failed two courses of topical treatment in a large field (refer for PDT or specialist review)',
         'Any lesion where you are clinically uncertain',
       ],
-    },
-
-    {
-      type: 'image',
-      src: '/images/ak-grading-table.jpg',
-      alt: 'Actinic keratosis grading reference table',
-      caption: 'AK grading reference — grade I to III and field change classification',
     },
 
     {
