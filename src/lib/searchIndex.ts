@@ -1,5 +1,6 @@
 import Fuse from 'fuse.js'
 import { NOTES } from '../data/notes'
+import type { Note } from '../data/notes'
 import { FORMS } from '../data/forms'
 import { LINK_CATEGORIES } from '../data/links'
 
@@ -369,6 +370,63 @@ export function searchNotesForTab(query: string, maxN = 60): NoteTabResult[] {
     score:   0,       // internal only; ranking already applied
     snippet: r.snippet ?? null,
   }))
+}
+
+// ── Block-level excerpts — used by excerpt-card search mode ───────────────
+export interface BlockExcerpt {
+  blockIndex:     number
+  sectionHeading: string | null  // nearest level-2 heading above this block
+  snippet:        string         // matched excerpt with ~90-char window
+}
+
+// Extract plain text from a single content block for matching / snippet use
+function blockPlainText(block: Note['content'][number]): string {
+  if (block.type === 'para')    return block.text
+  if (block.type === 'list')    return block.items.join(' ')
+  if (block.type === 'callout') return block.title + ': ' + block.items.join('. ')
+  if (block.type === 'table')   return [...block.headers, ...block.rows.flat()].join(' ')
+  return ''
+}
+
+// Return up to maxN blocks whose text contains at least one search token.
+// Skips heading blocks themselves (they become sectionHeading context).
+export function getBlockExcerpts(
+  note: Note,
+  tokens: string[],
+  maxN = 3,
+): BlockExcerpt[] {
+  const cleanToks = tokens
+    .map(t => t.toLowerCase().replace(/[^a-z0-9]/g, ''))
+    .filter(t => t.length >= 2)
+  if (!cleanToks.length) return []
+
+  const results: BlockExcerpt[] = []
+  let heading: string | null = null
+
+  for (let i = 0; i < note.content.length; i++) {
+    if (results.length >= maxN) break
+    const block = note.content[i]
+
+    // Track the nearest level-2 heading as section context
+    if (block.type === 'heading') {
+      if (block.level === 2) heading = block.text
+      continue
+    }
+
+    const text = blockPlainText(block)
+    if (!text) continue
+
+    const lower = text.toLowerCase()
+    if (!cleanToks.some(t => lower.includes(t))) continue
+
+    results.push({
+      blockIndex:     i,
+      sectionHeading: heading,
+      snippet:        getSnippet(text, cleanToks) ?? text.slice(0, 100) + '…',
+    })
+  }
+
+  return results
 }
 
 // ── Related Darwin forms — used by AskTab after answer completes ───────────

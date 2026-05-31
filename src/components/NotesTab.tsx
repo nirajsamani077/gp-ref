@@ -1,23 +1,60 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import type { Note } from '../data/notes'
 import { NOTES } from '../data/notes'
-import { searchNotesForTab } from '../lib/searchIndex'
+import { searchNotesForTab, getBlockExcerpts } from '../lib/searchIndex'
+import type { BlockExcerpt } from '../lib/searchIndex'
 import { getSpecialtyStyle, SPECIALTY_STYLES } from '../data/specialties'
 import NoteRenderer from './NoteRenderer'
 
 // ── Note search via shared searchIndex ───────────────────────────────────────
 interface FilterResult {
-  note: Note
-  snippet: string | null
+  note:     Note
+  snippet:  string | null
+  excerpts: BlockExcerpt[]   // block-level matches for excerpt cards
+}
+
+function parseTokens(query: string): string[] {
+  return query
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(t => t.length >= 2)
 }
 
 function filterNotes(query: string): FilterResult[] {
-  if (!query.trim()) return NOTES.map(n => ({ note: n, snippet: null }))
-  const hits = searchNotesForTab(query.trim(), 100)
-  return hits.map(h => ({
-    note: NOTES.find(n => n.id === h.id)!,
-    snippet: h.snippet,
-  })).filter(r => r.note)
+  if (!query.trim()) return NOTES.map(n => ({ note: n, snippet: null, excerpts: [] }))
+  const hits   = searchNotesForTab(query.trim(), 60)
+  const tokens = parseTokens(query)
+  return hits.map(h => {
+    const note = NOTES.find(n => n.id === h.id)!
+    if (!note) return null
+    return {
+      note,
+      snippet:  h.snippet,
+      excerpts: getBlockExcerpts(note, tokens, 3),
+    }
+  }).filter((r): r is FilterResult => r !== null)
+}
+
+// ── Inline snippet highlighter for excerpt cards ──────────────────────────────
+function HighlightedSnippet({ text, tokens }: { text: string; tokens: string[] }) {
+  if (!tokens.length) return <>{text}</>
+  const esc     = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const pattern = new RegExp(`(${tokens.map(esc).join('|')})`, 'gi')
+  const parts: React.ReactNode[] = []
+  let last = 0, m: RegExpExecArray | null
+  while ((m = pattern.exec(text)) !== null) {
+    if (m.index > last) parts.push(text.slice(last, m.index))
+    parts.push(
+      <mark key={m.index} style={{ backgroundColor: '#fde68a', fontWeight: 700, borderRadius: 2, padding: '0 2px', color: 'inherit' }}>
+        {m[0]}
+      </mark>,
+    )
+    last = m.index + m[0].length
+  }
+  if (last < text.length) parts.push(text.slice(last))
+  return <>{parts}</>
 }
 
 // ── Specialty list ────────────────────────────────────────────────────────────
@@ -73,13 +110,14 @@ interface NotesTabProps {
 }
 
 export default function NotesTab({ highlightedNoteId, externalHighlightQuery }: NotesTabProps) {
-  const [filterQuery, setFilterQuery]   = useState('')
+  const [filterQuery, setFilterQuery]       = useState('')
   const [highlightQuery, setHighlightQuery] = useState<string | undefined>(undefined)
-  const [openId, setOpenId]             = useState<string | null>(null)
-  const [autoJump, setAutoJump]         = useState(false)
-  const [specialty, setSpecialty]       = useState<string>('all')
-  const [resetKey, setResetKey]         = useState(0)
-  const [animatingId, setAnimatingId]   = useState<string | null>(null)
+  const [openId, setOpenId]                 = useState<string | null>(null)
+  const [autoJump, setAutoJump]             = useState(false)
+  const [jumpToBlock, setJumpToBlock]       = useState<number | null>(null)
+  const [specialty, setSpecialty]           = useState<string>('all')
+  const [resetKey, setResetKey]             = useState(0)
+  const [animatingId, setAnimatingId]       = useState<string | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
   const { favouriteIds, toggleFavourite } = useFavourites()
@@ -89,6 +127,7 @@ export default function NotesTab({ highlightedNoteId, externalHighlightQuery }: 
     setHighlightQuery(undefined)
     setOpenId(null)
     setAutoJump(false)
+    setJumpToBlock(null)
     setSpecialty('all')
     setResetKey(k => k + 1)
   }, [])
@@ -118,7 +157,9 @@ export default function NotesTab({ highlightedNoteId, externalHighlightQuery }: 
     }, 120)
   }, [highlightedNoteId])
 
-  const filteredResults = filterQuery ? filterNotes(filterQuery) : NOTES.map(n => ({ note: n, snippet: null as string | null }))
+  const filteredResults: FilterResult[] = filterQuery
+    ? filterNotes(filterQuery)
+    : NOTES.map(n => ({ note: n, snippet: null, excerpts: [] }))
   const filtered = filteredResults
   const visible  = specialty === 'all'
     ? filtered
@@ -137,6 +178,7 @@ export default function NotesTab({ highlightedNoteId, externalHighlightQuery }: 
     setFilterQuery('')
     setHighlightQuery(undefined)
     setAutoJump(false)
+    setJumpToBlock(null)
     inputRef.current?.focus()
   }
 
@@ -148,6 +190,18 @@ export default function NotesTab({ highlightedNoteId, externalHighlightQuery }: 
 
   const showingAll = !filterQuery && specialty === 'all'
   const searching  = Boolean(filterQuery)
+
+  const searchTokens = filterQuery ? parseTokens(filterQuery) : []
+
+  function openNoteAtBlock(noteId: string, blockIdx: number) {
+    setOpenId(noteId)
+    setJumpToBlock(blockIdx)
+    setAutoJump(false)
+    setTimeout(() => {
+      const el = document.querySelector(`[data-note-id="${noteId}"]`)
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 80)
+  }
 
   const favouritedVisible   = searching ? [] : visible.filter(r => favouriteIds.has(r.note.id))
   const unfavouritedVisible = searching ? visible : visible.filter(r => !favouriteIds.has(r.note.id))
@@ -188,6 +242,7 @@ export default function NotesTab({ highlightedNoteId, externalHighlightQuery }: 
               const next = isOpen ? null : note.id
               setOpenId(next)
               setAutoJump(false)
+              if (isOpen) setJumpToBlock(null)
             }}
             style={{
               flex: 1, minWidth: 0,
@@ -277,10 +332,107 @@ export default function NotesTab({ highlightedNoteId, externalHighlightQuery }: 
               blocks={note.content}
               searchQuery={activeHighlight}
               autoJump={autoJump && openId === note.id}
+              jumpToBlock={openId === note.id ? jumpToBlock : null}
             />
           </div>
         )}
       </article>
+    )
+  }
+
+  // ── Excerpt-card renderer (used when searching) ────────────────────────────
+  function renderExcerptGroup({ note, snippet, excerpts }: FilterResult) {
+    const isOpen = openId === note.id
+    const sp     = getSpecialtyStyle(note.tags[0])
+
+    // When the note is already open, fall through to the full card
+    if (isOpen) return renderCard({ note, snippet })
+
+    return (
+      <div key={note.id} data-note-id={note.id} style={{ marginBottom: 12 }}>
+        {/* Compact note header — opens the full note */}
+        <button
+          onClick={() => { setOpenId(note.id); setJumpToBlock(null); setAutoJump(true) }}
+          style={{
+            width: '100%', display: 'flex', alignItems: 'center', gap: 10,
+            padding: '9px 14px',
+            backgroundColor: '#fff',
+            border: `1px solid ${sp.border}55`,
+            borderLeft: `4px solid ${sp.border}`,
+            borderRadius: excerpts.length ? '10px 10px 0 0' : 10,
+            cursor: 'pointer', textAlign: 'left',
+            boxShadow: '0 1px 4px rgba(26,54,93,0.06)',
+          }}
+        >
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+              <span style={{ fontSize: 14, fontWeight: 700, color: '#0f2a4a' }}>{note.title}</span>
+              <span style={{
+                fontSize: 10, fontWeight: 700, color: sp.text,
+                backgroundColor: sp.pill, padding: '2px 8px',
+                borderRadius: 20, textTransform: 'uppercase', letterSpacing: '0.06em',
+                border: `1px solid ${sp.border}44`, whiteSpace: 'nowrap',
+              }}>
+                {sp.label}
+              </span>
+            </div>
+            {note.subtitle && (
+              <div style={{ fontSize: 12, color: '#64748b', marginTop: 2 }}>{note.subtitle}</div>
+            )}
+          </div>
+          <span style={{ color: '#94a3b8', fontSize: 12, fontWeight: 600, flexShrink: 0, whiteSpace: 'nowrap' }}>
+            Open full note →
+          </span>
+        </button>
+
+        {/* Excerpt cards */}
+        {excerpts.map((ex, ei) => {
+          const isLast = ei === excerpts.length - 1
+          return (
+            <div
+              key={ei}
+              style={{
+                backgroundColor: '#fffbeb',
+                border: `1px solid ${sp.border}33`,
+                borderTop: 'none',
+                borderRadius: isLast ? '0 0 10px 10px' : 0,
+                padding: '8px 14px',
+                display: 'flex', alignItems: 'flex-start', gap: 10,
+              }}
+            >
+              <div style={{ flex: 1, minWidth: 0 }}>
+                {ex.sectionHeading && (
+                  <div style={{
+                    fontSize: 10, fontWeight: 700, color: sp.text,
+                    textTransform: 'uppercase', letterSpacing: '0.05em',
+                    marginBottom: 3, opacity: 0.85,
+                  }}>
+                    § {ex.sectionHeading}
+                  </div>
+                )}
+                <div style={{ fontSize: 12.5, color: '#374151', lineHeight: 1.55 }}>
+                  <HighlightedSnippet text={ex.snippet} tokens={searchTokens} />
+                </div>
+              </div>
+              <button
+                onClick={() => openNoteAtBlock(note.id, ex.blockIndex)}
+                style={{
+                  flexShrink: 0, padding: '5px 12px',
+                  backgroundColor: sp.border, color: '#fff',
+                  border: 'none', borderRadius: 7, cursor: 'pointer',
+                  fontSize: 11, fontWeight: 700, whiteSpace: 'nowrap',
+                  boxShadow: `0 1px 5px ${sp.border}55`,
+                  transition: 'opacity 0.15s',
+                }}
+                onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
+                onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
+              >
+                → Go here
+              </button>
+            </div>
+          )
+        })}
+      </div>
     )
   }
 
@@ -368,18 +520,18 @@ export default function NotesTab({ highlightedNoteId, externalHighlightQuery }: 
           </div>
         ) : (
           <>
-            {/* ── Favourites section ── */}
+            {/* ── Favourites section (never shown while searching) ── */}
             {hasFavSection && (
               <>
                 <SectionHeading icon="★" iconColour="#f59e0b" label="Favourites" colour="#92400e" />
-                {favouritedVisible.map(renderCard)}
+                {favouritedVisible.map(r => renderCard(r))}
                 {unfavouritedVisible.length > 0 && <SectionDivider />}
               </>
             )}
 
             {/* ── Main / remaining notes ── */}
             {!hasFavSection && unfavouritedVisible.length > 0 && <div style={{ marginBottom: 2 }} />}
-            {unfavouritedVisible.map(renderCard)}
+            {unfavouritedVisible.map(r => searching ? renderExcerptGroup(r) : renderCard(r))}
           </>
         )}
       </div>
