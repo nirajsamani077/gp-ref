@@ -100,5 +100,15 @@ export const glandularFever: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'sorethroat-tonsillitis', label: 'Sore Throat & Tonsillitis', subtitle: 'FeverPAIN/Centor, antibiotics, quinsy — important differential' },
+        { id: 'cfs-me', label: 'Chronic Fatigue Syndrome / ME', subtitle: 'Post-viral fatigue and CFS/ME following EBV infection' },
+        { id: 'haem-malignancies', label: 'Haematological Malignancies', subtitle: 'EBV linked to Hodgkin\'s lymphoma; lymphadenopathy DDx' },
+        { id: 'hiv', label: 'HIV', subtitle: 'HIV seroconversion mimics glandular fever — always consider' },
+      ],
+    },
+
   ],
 }

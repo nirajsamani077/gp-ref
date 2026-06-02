@@ -136,5 +136,15 @@ export const febrileConvulsions: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'epilepsyAdults', label: 'Epilepsy (Adults)', subtitle: 'Risk of later epilepsy, AEDs, driving and shared care' },
+        { id: 'epilepsyChildhood', label: 'Epilepsy (Childhood)', subtitle: 'Childhood epilepsy syndromes including Dravet syndrome' },
+        { id: 'seizureEmergency', label: 'Seizure Emergency', subtitle: 'Status epilepticus management — buccal midazolam, IV lorazepam' },
+        { id: 'feverish-child', label: 'Feverish Child', subtitle: 'Traffic light system, sepsis recognition, when to admit' },
+      ],
+    },
+
   ],
 }

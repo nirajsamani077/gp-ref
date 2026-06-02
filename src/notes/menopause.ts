@@ -143,5 +143,17 @@ export const menopause: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'hrt-management', label: 'HRT — Management, Risks & Alternatives', subtitle: 'Regimens, routes, contraindications, breast cancer risk, non-hormonal options' },
+        { id: 'bleeding-on-hrt', label: 'Bleeding on HRT', subtitle: 'Unexpected bleeding, investigation and endometrial safety' },
+        { id: 'pcos', label: 'PCOS', subtitle: 'Anovulation, hyperandrogenism, endometrial protection, subfertility' },
+        { id: 'osteoporosis', label: 'Osteoporosis', subtitle: 'FRAX, DEXA, bisphosphonates, steroid-induced osteoporosis' },
+        { id: 'amenorrhoea', label: 'Amenorrhoea', subtitle: 'Primary and secondary causes, investigation and management' },
+        { id: 'breast-hormonal-therapy', label: 'Breast Hormonal Therapy', subtitle: 'Tamoxifen, aromatase inhibitors, side effect management' },
+      ],
+    },
+
   ],
 }

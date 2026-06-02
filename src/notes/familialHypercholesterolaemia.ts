@@ -138,5 +138,14 @@ export const familialHypercholesterolaemia: Note = {
         'Heart UK FH Specialist Nurse: national service available for complex cases — heartuk.org.uk',
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'lipids-statins', label: 'Lipids, Statins & CVD Prevention', subtitle: 'QRISK3, statin choice, intolerance, ezetimibe, PCSK9 inhibitors' },
+        { id: 'stroke-tia', label: 'Stroke & TIA', subtitle: 'Secondary prevention and aggressive lipid lowering' },
+        { id: 'angina-ihd', label: 'Angina & IHD', subtitle: 'Premature IHD — hallmark of untreated FH' },
+      ],
+    },
   ],
 }

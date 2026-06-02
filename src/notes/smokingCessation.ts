@@ -151,5 +151,14 @@ export const smokingCessation: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'lung-cancer', label: 'Lung Cancer', subtitle: '90% of lung cancers are smoking-related — cessation reduces recurrence' },
+        { id: 'copd', label: 'COPD', subtitle: 'Smoking cessation is the single most effective COPD intervention' },
+        { id: 'pvd', label: 'Peripheral Vascular Disease', subtitle: 'Smoking is the dominant risk factor for PVD — cessation critical' },
+      ],
+    },
+
   ],
 }

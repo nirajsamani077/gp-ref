@@ -197,5 +197,15 @@ export const copd: Note = {
         { label: 'NHS — COPD', url: 'https://www.nhs.uk/conditions/chronic-obstructive-pulmonary-disease-copd/' },
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'lung-cancer', label: 'Lung Cancer', subtitle: '2WW criteria, staging — COPD can mask early lung cancer symptoms' },
+        { id: 'osa', label: 'OSA', subtitle: 'COPD-OSA overlap syndrome — worsens hypoxia; earlier CPAP referral' },
+        { id: 'smoking-cessation', label: 'Smoking Cessation', subtitle: 'Most effective COPD intervention — NRT, varenicline, ABC approach' },
+        { id: 'chronicCough', label: 'Chronic Cough', subtitle: 'Chronic cough differential — ACE inhibitor, asthma, GORD, COPD' },
+      ],
+    },
   ],
 }

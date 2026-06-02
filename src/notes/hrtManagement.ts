@@ -114,5 +114,16 @@ export const hrtManagement: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'menopause', label: 'Menopause & Perimenopause', subtitle: 'Diagnosis, symptoms, contraception around menopause, POI' },
+        { id: 'bleeding-on-hrt', label: 'Bleeding on HRT', subtitle: 'Unexpected bleeding patterns, investigation pathway' },
+        { id: 'osteoporosis', label: 'Osteoporosis', subtitle: 'FRAX, DEXA, bisphosphonates — HRT is bone-protective' },
+        { id: 'breast-cancer', label: 'Breast Cancer', subtitle: '2WW referral, risk assessment, breast screening' },
+        { id: 'breast-hormonal-therapy', label: 'Breast Hormonal Therapy', subtitle: 'Tamoxifen, aromatase inhibitors — HRT interaction' },
+      ],
+    },
+
   ],
 }

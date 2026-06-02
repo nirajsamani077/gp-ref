@@ -111,5 +111,14 @@ export const bleedingOnHrt: Note = {
         { label: 'NHS — HRT Bleeding', url: 'https://www.nhs.uk/medicines/hormone-replacement-therapy-hrt/' },
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'menopause', label: 'Menopause & Perimenopause', subtitle: 'Diagnosis, HRT regimen choice, POI and contraception' },
+        { id: 'hrt-management', label: 'HRT — Management, Risks & Alternatives', subtitle: 'Regimens, routes, contraindications, non-hormonal options' },
+        { id: 'endometrial-cancer', label: 'Endometrial Cancer', subtitle: 'Endometrial cancer — key concern for persistent or unexpected bleeding' },
+      ],
+    },
   ],
 }

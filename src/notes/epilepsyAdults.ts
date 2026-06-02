@@ -275,5 +275,15 @@ export const epilepsyAdults: Note = {
         { label: '\uD83D\uDD17 SUDEP Action', url: 'https://sudep.org' },
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'febrile-convulsions', label: 'Febrile Convulsions', subtitle: 'Risk of epilepsy after febrile seizures, Dravet syndrome' },
+        { id: 'epilepsyChildhood', label: 'Epilepsy (Childhood)', subtitle: 'Childhood epilepsy syndromes \u2014 some continue into adulthood' },
+        { id: 'seizureEmergency', label: 'Seizure Emergency', subtitle: 'Status epilepticus \u2014 IV lorazepam, phenytoin, RSI protocol' },
+        { id: 'multiple-sclerosis', label: 'Multiple Sclerosis', subtitle: 'Seizures occur in ~5% of MS; AED-DMT drug interactions' },
+      ],
+    },
   ],
 }

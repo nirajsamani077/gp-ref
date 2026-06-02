@@ -167,5 +167,13 @@ export const psoriasis: Note = {
         { label: 'NHS — Psoriasis', url: 'https://www.nhs.uk/conditions/psoriasis/' },
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'inflammatory-arthritis', label: 'Inflammatory Arthritis', subtitle: 'Psoriatic arthritis in 30% of psoriasis — PEST screen annually' },
+        { id: 'dmards', label: 'DMARDs', subtitle: 'Methotrexate, biologicals — used in moderate–severe psoriasis' },
+      ],
+    },
   ],
 }

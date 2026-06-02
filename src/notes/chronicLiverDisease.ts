@@ -132,5 +132,16 @@ export const chronicLiverDisease: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'hepatitis', label: 'Viral Hepatitis (A, B & C)', subtitle: 'Hep B/C serology, treatment, SVR, GP monitoring' },
+        { id: 'alcohol-etoh', label: 'Alcohol & Liver Disease', subtitle: 'Alcohol — most common cause of CLD in UK; AUDIT, harm reduction' },
+        { id: 'abnormal-lft', label: 'Abnormal LFTs', subtitle: 'LFT interpretation and investigation algorithm' },
+        { id: 'two-week-wait', label: '2WW Referral Guide', subtitle: 'HCC in cirrhosis — USS surveillance every 6 months' },
+        { id: 'ibd', label: 'IBD', subtitle: 'PSC is a key complication of UC — LFT surveillance in IBD' },
+      ],
+    },
+
   ],
 }

@@ -125,5 +125,17 @@ export const pcos: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'menopause', label: 'Menopause & Perimenopause', subtitle: 'Contraception around menopause, HRT — shared hormonal context' },
+        { id: 'amenorrhoea', label: 'Amenorrhoea', subtitle: 'PCOS is the most common cause of secondary amenorrhoea' },
+        { id: 'endometrial-cancer', label: 'Endometrial Cancer', subtitle: 'Unopposed oestrogen in anovulatory PCOS increases risk' },
+        { id: 'obesity', label: 'Obesity & Weight Management', subtitle: 'Insulin resistance and weight loss central to PCOS management' },
+        { id: 'diabetes-t2dm', label: 'Type 2 Diabetes', subtitle: 'PCOS significantly increases T2DM risk — monitor HbA1c' },
+        { id: 'hrt-management', label: 'HRT — Management', subtitle: 'Endometrial protection principles apply in PCOS too' },
+      ],
+    },
+
   ],
 }

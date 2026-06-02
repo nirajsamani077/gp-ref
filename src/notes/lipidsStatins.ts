@@ -111,5 +111,18 @@ export const lipidsStatins: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'hypertension', label: 'Hypertension', subtitle: 'Combined CV risk management — treat both to target' },
+        { id: 'familial-hypercholesterolaemia', label: 'Familial Hypercholesterolaemia', subtitle: 'Simon Broome/Dutch criteria, cascade testing, PCSK9 inhibitors' },
+        { id: 'atrialFibrillation', label: 'Atrial Fibrillation', subtitle: 'Secondary prevention — atorvastatin 80 mg post-AF-related stroke' },
+        { id: 'stroke-tia', label: 'Stroke & TIA', subtitle: 'Secondary prevention after stroke — antiplatelet, statin, BP control' },
+        { id: 'heart-failure', label: 'Heart Failure', subtitle: 'Post-MI cocktail, LVEF management and secondary prevention' },
+        { id: 'angina-ihd', label: 'Angina & IHD', subtitle: 'Secondary prevention framework for established ischaemic disease' },
+        { id: 'diabetes-t2dm', label: 'Type 2 Diabetes', subtitle: 'Statins in T2DM, QRISK3, metabolic syndrome management' },
+      ],
+    },
+
   ],
 }

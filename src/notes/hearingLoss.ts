@@ -123,5 +123,15 @@ export const hearingLoss: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'vertigo', label: 'Vertigo', subtitle: 'BPPV, Ménière\'s, vestibular neuronitis — overlap with hearing loss' },
+        { id: 'rhinosinusitis', label: 'Rhinosinusitis', subtitle: 'Eustachian tube dysfunction, OME and conductive hearing loss' },
+        { id: 'acute-otitis-media', label: 'Acute Otitis Media', subtitle: 'OM with effusion (glue ear) — common cause of CHL in children' },
+        { id: 'otitis-externa', label: 'Otitis Externa', subtitle: 'External ear canal disease — otoscopy and management' },
+      ],
+    },
+
   ],
 }

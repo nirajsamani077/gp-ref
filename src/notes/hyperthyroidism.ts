@@ -120,5 +120,15 @@ export const hyperthyroidism: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'hypothyroidism', label: 'Hypothyroidism', subtitle: 'Levothyroxine dosing, TFT interpretation, subclinical disease' },
+        { id: 'atrialFibrillation', label: 'Atrial Fibrillation', subtitle: 'Rate control, anticoagulation — AF caused by thyrotoxicosis' },
+        { id: 'osteoporosis', label: 'Osteoporosis', subtitle: 'FRAX, bisphosphonates — hyperthyroidism accelerates bone loss' },
+        { id: 'palpitations', label: 'Palpitations', subtitle: 'Differential diagnosis including thyroid disease' },
+      ],
+    },
+
   ],
 }

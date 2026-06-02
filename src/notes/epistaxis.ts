@@ -125,5 +125,14 @@ export const epistaxis: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'hypertension', label: 'Hypertension', subtitle: 'Hypertension commonly associated with epistaxis — check and treat BP' },
+        { id: 'doacs', label: 'DOACs', subtitle: 'DOAC reversal agents, dose adjustment and bleeding management' },
+        { id: 'rhinosinusitis', label: 'Rhinosinusitis', subtitle: 'Nasal pathology causing mucosal fragility and recurrent bleeds' },
+      ],
+    },
+
   ],
 }

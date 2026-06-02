@@ -115,5 +115,16 @@ export const multipleSclerosis: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'vertigo', label: 'Vertigo', subtitle: 'MS can cause central vertigo and ataxia — key differential' },
+        { id: 'vitamin-b12', label: 'Vitamin B12 Deficiency', subtitle: 'SACD mimics MS spinal cord presentation — always exclude' },
+        { id: 'epilepsyAdults', label: 'Epilepsy (Adults)', subtitle: 'Seizures occur in ~5% of MS patients; DMT interactions with AEDs' },
+        { id: 'chronic-pain', label: 'Chronic Pain', subtitle: 'Central sensitisation and neuropathic pain management in MS' },
+        { id: 'dmards', label: 'DMARDs', subtitle: 'Monitoring and vaccination principles for immunosuppressive DMTs' },
+      ],
+    },
+
   ],
 }

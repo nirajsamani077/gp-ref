@@ -216,5 +216,16 @@ export const hypertension: Note = {
         'ABPM service: available via UHDB Queen\'s Burton outpatients or community cardiology; alternatively consider practice ABPM machine for in-house monitoring if available',
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'lipids-statins', label: 'Lipids & Cardiovascular Prevention', subtitle: 'QRISK3, statin choice, secondary prevention — combined CV risk' },
+        { id: 'stroke-tia', label: 'Stroke & TIA', subtitle: 'BP control is the most important secondary prevention target' },
+        { id: 'ckd', label: 'CKD', subtitle: 'CKD is both a cause and consequence of hypertension — ACEi/ARB' },
+        { id: 'osa', label: 'OSA', subtitle: 'OSA causes secondary hypertension — treat OSA to improve BP' },
+        { id: 'diabetes-t2dm', label: 'Type 2 Diabetes', subtitle: 'Diabetic hypertension — ACEi/ARB first-line for renoprotection' },
+      ],
+    },
   ],
 }

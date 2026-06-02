@@ -110,5 +110,16 @@ export const osa: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'obesity', label: 'Obesity & Weight Management', subtitle: 'Obesity is the dominant modifiable risk factor for OSA' },
+        { id: 'copd', label: 'COPD', subtitle: 'COPD-OSA overlap syndrome — worsens hypoxia and hypercapnia' },
+        { id: 'heart-failure', label: 'Heart Failure', subtitle: 'OSA associated with hypertension and cardiovascular disease' },
+        { id: 'hypertension', label: 'Hypertension', subtitle: 'OSA is a cause of resistant/secondary hypertension' },
+        { id: 'hypothyroidism', label: 'Hypothyroidism', subtitle: 'Hypothyroidism causes OSA — always check TFTs' },
+      ],
+    },
+
   ],
 }

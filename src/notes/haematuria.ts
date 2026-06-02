@@ -124,5 +124,16 @@ export const haematuria: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'ckd', label: 'Chronic Kidney Disease', subtitle: 'Haematuria + proteinuria — CKD staging and monitoring' },
+        { id: 'two-week-wait', label: '2WW Referral Guide', subtitle: 'Haematuria triggers across urological and nephrological pathways' },
+        { id: 'doacs', label: 'DOACs', subtitle: 'Anticoagulation-associated haematuria — management and reversal' },
+        { id: 'aki', label: 'Acute Kidney Injury', subtitle: 'Haematuria with rapidly declining renal function — urgent' },
+        { id: 'uti-women', label: 'UTI (Women)', subtitle: 'UTI — most common cause of haematuria, exclude first' },
+      ],
+    },
+
   ],
 }

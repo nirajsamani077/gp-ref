@@ -108,5 +108,14 @@ export const genitalWarts: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'stis', label: 'STIs', subtitle: 'Syphilis, herpes, PID, chlamydia, gonorrhoea — full STI screen' },
+        { id: 'vaginal-discharge', label: 'Vaginal Discharge', subtitle: 'BV, thrush, trichomoniasis — concurrent STI assessment' },
+        { id: 'cervical-cancer', label: 'Cervical Cancer', subtitle: 'HPV 16/18 cause cervical cancer; HPV 6/11 cause warts — different strains' },
+      ],
+    },
+
   ],
 }

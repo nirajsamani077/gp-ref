@@ -173,5 +173,16 @@ export const obesity: Note = {
       caption: 'Standard post-op supplements: Forceval multivitamin OD (or Sanatogen A–Z x2 if malabsorptive) + ferrous sulfate 200 mg OD + hydroxocobalamin IM 3-monthly + vitamin D 800 IU OD + folic acid (especially if planning pregnancy). Review ALL medications post-surgery — absorption of many drugs changes.',
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'osa', label: 'OSA', subtitle: 'Obesity is the dominant risk factor — STOP-BANG, CPAP, DVLA' },
+        { id: 'pcos', label: 'PCOS', subtitle: 'Insulin resistance and obesity amplify PCOS — weight loss restores ovulation' },
+        { id: 'lipids-statins', label: 'Lipids & Cardiovascular Prevention', subtitle: 'Metabolic syndrome, dyslipidaemia, QRISK3 management' },
+        { id: 'diabetes-t2dm', label: 'Type 2 Diabetes', subtitle: 'Obesity is the primary driver of T2DM — GLP-1 agonists treat both' },
+        { id: 'hypertension', label: 'Hypertension', subtitle: 'Weight loss reduces BP — manage all cardiovascular risk factors' },
+      ],
+    },
+
   ],
 }

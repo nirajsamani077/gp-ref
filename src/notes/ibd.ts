@@ -127,5 +127,16 @@ export const ibd: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'chronic-liver-disease', label: 'Chronic Liver Disease', subtitle: 'PSC is a key IBD complication; Child-Pugh, ascites management' },
+        { id: 'dmards', label: 'DMARDs', subtitle: 'Azathioprine, MTX, biologicals — monitoring and side effects' },
+        { id: 'colorectal-cancer', label: 'Colorectal Cancer', subtitle: 'CRC surveillance — increased risk in longstanding colitis' },
+        { id: 'coeliac-disease', label: 'Coeliac Disease', subtitle: 'Important differential for GI symptoms; may coexist' },
+        { id: 'abnormal-lft', label: 'Abnormal LFTs', subtitle: 'IBD-associated hepatobiliary complications including PSC' },
+      ],
+    },
+
   ],
 }

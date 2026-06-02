@@ -99,5 +99,16 @@ export const inflammatoryArthritis: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'dmards', label: 'DMARDs', subtitle: 'Full monitoring schedules, drug interactions and shared care' },
+        { id: 'psoriasis', label: 'Psoriasis', subtitle: 'Screen annually for psoriatic arthritis using PEST questionnaire' },
+        { id: 'gout', label: 'Gout', subtitle: 'Key differential for acute monoarthritis; often co-exists' },
+        { id: 'osteoporosis', label: 'Osteoporosis', subtitle: 'RA and long-term steroids significantly increase fracture risk' },
+        { id: 'lipids-statins', label: 'Lipids & Cardiovascular Prevention', subtitle: 'RA = equivalent CV risk to T2DM; treat aggressively' },
+      ],
+    },
+
   ],
 }

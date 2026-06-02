@@ -108,5 +108,15 @@ export const hepatitis: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'chronic-liver-disease', label: 'Chronic Liver Disease', subtitle: 'Cirrhosis, ascites, HCC surveillance, Child-Pugh scoring' },
+        { id: 'alcohol-etoh', label: 'Alcohol & Liver Disease', subtitle: 'Alcohol accelerates viral hepatitis — AUDIT, CAGE, harm reduction' },
+        { id: 'hiv', label: 'HIV', subtitle: 'HIV-Hep B/C co-infection — shared risk factors, drug interactions' },
+        { id: 'abnormal-lft', label: 'Abnormal LFTs', subtitle: 'LFT interpretation including hepatitic patterns from viral hepatitis' },
+      ],
+    },
+
   ],
 }

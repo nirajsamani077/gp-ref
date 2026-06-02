@@ -206,5 +206,15 @@ export const amenorrhoea: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'pcos', label: 'PCOS', subtitle: 'Most common cause of secondary amenorrhoea — Rotterdam criteria, FAI' },
+        { id: 'menopause', label: 'Menopause & Perimenopause', subtitle: 'POI and premature menopause as a cause of amenorrhoea' },
+        { id: 'hypothyroidism', label: 'Hypothyroidism', subtitle: 'Thyroid disease causes menstrual irregularity — check TFTs' },
+        { id: 'eating-disorders', label: 'Eating Disorders', subtitle: 'Hypothalamic amenorrhoea in anorexia nervosa' },
+      ],
+    },
+
   ],
 }

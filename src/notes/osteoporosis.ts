@@ -128,5 +128,16 @@ export const osteoporosis: Note = {
       text: 'The majority of fragility fractures actually occur in people with osteopenia (T-score −1 to −2.5) because osteopenia is far more prevalent than osteoporosis. SIGN guidance (not NICE) suggests that patients >65 with osteopenia may benefit from 18 months of IV zoledronate — discuss with specialist or use NOGG tool to guide individual decisions. Otherwise: non-pharmacological measures and DEXA monitoring every 2–3 years.',
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'menopause', label: 'Menopause & Perimenopause', subtitle: 'HRT is bone-protective — osteoporosis risk rises sharply at menopause' },
+        { id: 'hrt-management', label: 'HRT — Management', subtitle: 'HRT for bone protection — duration, risk-benefit, POI' },
+        { id: 'inflammatory-arthritis', label: 'Inflammatory Arthritis', subtitle: 'RA + long-term steroids — highest fracture risk; bisphosphonate protocol' },
+        { id: 'vitamin-d', label: 'Vitamin D', subtitle: 'Vitamin D and calcium — essential co-supplementation with bisphosphonates' },
+        { id: 'hyperthyroidism', label: 'Hyperthyroidism', subtitle: 'Hyperthyroidism and over-treated hypothyroidism accelerate bone loss' },
+      ],
+    },
+
   ],
 }

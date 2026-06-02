@@ -149,5 +149,15 @@ export const vertigo: Note = {
         { label: 'Epley UK — patient leaflet', url: 'https://patient.info/ears-nose-throat-mouth/benign-paroxysmal-positional-vertigo-bppv/epley-manoeuvre' },
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'hearing-loss', label: 'Hearing Loss', subtitle: 'Ménière\'s disease spans both — SNHL, tinnitus, vertigo together' },
+        { id: 'migraine', label: 'Migraine', subtitle: 'Vestibular migraine — episodic vertigo; migraine link important' },
+        { id: 'stroke-tia', label: 'Stroke & TIA', subtitle: 'Central vertigo — exclude posterior circulation stroke urgently' },
+        { id: 'antiemeticsVertigo', label: 'Antiemetics & Vertigo Drugs', subtitle: 'Prochlorperazine, cinnarizine, betahistine dosing and indications' },
+      ],
+    },
   ],
 }

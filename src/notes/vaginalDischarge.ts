@@ -134,5 +134,14 @@ export const vaginalDischarge: Note = {
         { label: 'NICE CKS – BV', url: 'https://cks.nice.org.uk/topics/bacterial-vaginosis/' },
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'stis', label: 'STIs', subtitle: 'Syphilis, herpes, PID, gonorrhoea, chlamydia — full STI screen' },
+        { id: 'genital-warts', label: 'Genital Warts', subtitle: 'HPV 6/11 — concurrent infection to consider alongside discharge' },
+        { id: 'chronic-pelvic-pain', label: 'Chronic Pelvic Pain', subtitle: 'Untreated STI/PID is a major cause of chronic pelvic pain' },
+      ],
+    },
   ],
 }

@@ -112,5 +112,15 @@ export const dmards: Note = {
         { label: 'NHS — DMARDs', url: 'https://www.nhs.uk/conditions/rheumatoid-arthritis/treatment/' },
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'inflammatory-arthritis', label: 'Inflammatory Arthritis', subtitle: 'RA, PsA, axSpA — diagnosis, referral and monitoring' },
+        { id: 'psoriasis', label: 'Psoriasis', subtitle: 'DMARDs used in moderate–severe psoriasis and psoriatic arthritis' },
+        { id: 'ibd', label: 'IBD', subtitle: 'Azathioprine, MTX and biologicals in Crohn\'s and UC' },
+        { id: 'multiple-sclerosis', label: 'Multiple Sclerosis', subtitle: 'DMTs (immunomodulators) in MS — monitoring principles similar' },
+      ],
+    },
   ],
 }

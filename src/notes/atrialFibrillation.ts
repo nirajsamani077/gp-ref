@@ -434,5 +434,16 @@ export const atrialFibrillation: Note = {
       { label: 'AF Association UK', url: 'https://www.atrialfibrillation.org.uk' },
     ]},
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'lipids-statins', label: 'Lipids & Cardiovascular Prevention', subtitle: 'Secondary prevention \u2014 atorvastatin 80 mg, post-MI cocktail' },
+        { id: 'stroke-tia', label: 'Stroke & TIA', subtitle: 'AF is the biggest preventable cause of stroke \u2014 anticoagulation' },
+        { id: 'doacs', label: 'DOACs', subtitle: 'DOAC dosing, renal function, reversal agents, switching' },
+        { id: 'hyperthyroidism', label: 'Hyperthyroidism', subtitle: 'New AF \u2014 always check TFTs; thyrotoxicosis causes AF' },
+        { id: 'heart-failure', label: 'Heart Failure', subtitle: 'AF and heart failure commonly coexist \u2014 rate vs rhythm control' },
+      ],
+    },
+
   ]
 }

@@ -143,5 +143,15 @@ export const hiv: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'stis', label: 'STIs', subtitle: 'Syphilis, herpes, gonorrhoea, chlamydia, PID — shared transmission routes' },
+        { id: 'hepatitis', label: 'Viral Hepatitis (A, B & C)', subtitle: 'HIV-Hep B/C co-infection — shared risk factors, drug interactions' },
+        { id: 'two-week-wait', label: '2WW Referral Guide', subtitle: 'HIV-related malignancies — anal cancer, lymphoma, Kaposi sarcoma' },
+        { id: 'notifiable-diseases', label: 'Notifiable Diseases', subtitle: 'HIV notification requirements and public health responsibilities' },
+      ],
+    },
+
   ],
 }

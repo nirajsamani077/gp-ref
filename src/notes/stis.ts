@@ -129,5 +129,15 @@ export const stis: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'hiv', label: 'HIV', subtitle: 'Testing, seroconversion, ART, PEP/PrEP and GP monitoring' },
+        { id: 'genital-warts', label: 'Genital Warts', subtitle: 'HPV 6/11 — treatment options, pregnancy, counselling' },
+        { id: 'vaginal-discharge', label: 'Vaginal Discharge', subtitle: 'BV, thrush, trichomoniasis — differential and treatment' },
+        { id: 'chronic-pelvic-pain', label: 'Chronic Pelvic Pain', subtitle: 'Long-term sequelae of PID — endometriosis DDx, management' },
+      ],
+    },
+
   ],
 }

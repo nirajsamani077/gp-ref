@@ -157,5 +157,14 @@ export const gout: Note = {
         { label: 'NHS — Gout', url: 'https://www.nhs.uk/conditions/gout/' },
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'inflammatory-arthritis', label: 'Inflammatory Arthritis', subtitle: 'RA, PsA, axSpA — differential for acute swollen joint' },
+        { id: 'ckd', label: 'CKD', subtitle: 'Renal function critically affects allopurinol dosing; gout worsens in CKD' },
+        { id: 'hypertension', label: 'Hypertension', subtitle: 'Thiazide diuretics precipitate gout — review antihypertensives' },
+      ],
+    },
   ],
 }
