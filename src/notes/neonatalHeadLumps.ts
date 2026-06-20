@@ -137,7 +137,7 @@ export const neonatalHeadLumps: Note = {
     {
       type: 'notelink',
       notes: [
-        { id: 'six-eight-week-check', label: '6–8 Week Check', subtitle: 'Full newborn and maternal postnatal review' },
+        { id: '6-8-week-check', label: '6–8 Week Check', subtitle: 'Full newborn and maternal postnatal review' },
       ],
     },
 

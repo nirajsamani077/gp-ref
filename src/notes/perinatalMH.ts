@@ -171,7 +171,7 @@ export const perinatalMH: Note = {
     {
       type: 'notelink',
       notes: [
-        { id: 'six-eight-week-check', label: '6–8 Week Postnatal Check', subtitle: 'EPDS screening, maternal review' },
+        { id: '6-8-week-check', label: '6–8 Week Postnatal Check', subtitle: 'EPDS screening, maternal review' },
         { id: 'depression', label: 'Depression', subtitle: 'PHQ-9, CBT framework, safety planning' },
         { id: 'antidepressants', label: 'Antidepressants', subtitle: 'Sertraline dosing, switching guidance' },
         { id: 'anxiety-gad', label: 'Anxiety Disorders', subtitle: 'Intrusive thoughts, panic, GAD' },
