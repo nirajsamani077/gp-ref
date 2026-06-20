@@ -11,6 +11,15 @@ export const syncope: Note = {
   content: [
 
     {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CG109 — Transient Loss of Consciousness', url: 'https://www.nice.org.uk/guidance/cg109' },
+        { label: 'NICE CKS — Blackouts & Syncope', url: 'https://cks.nice.org.uk/topics/blackouts-syncope/' },
+        { label: 'DVLA — Assessing Fitness to Drive', url: 'https://www.gov.uk/government/publications/assessing-fitness-to-drive-a-guide-for-medical-professionals' },
+      ],
+    },
+
+    {
       type: 'callout',
       variant: 'danger',
       title: 'Red Flags — Consider Cardiac Cause / Same-Day Review',
@@ -134,6 +143,16 @@ export const syncope: Note = {
         ['Seizure suspected', 'Stop 6 months; if ongoing risk: 12 months', 'Stop; up to 5 years if deemed risk of recurrence'],
       ],
       caption: 'Always refer to DVLA "At a Glance Guide to the Current Medical Standards of Fitness to Drive" for the most up-to-date guidance. Group 2 restrictions are significantly stricter. Document driving advice given in clinical notes.',
+    },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'palpitations', label: 'Palpitations', subtitle: 'Palpitations + syncope is a cardiac red-flag combination' },
+        { id: 'atrialFibrillation', label: 'Atrial Fibrillation', subtitle: 'Arrhythmic cause of syncope; rate/rhythm control' },
+        { id: 'epilepsyAdults', label: 'Epilepsy (Adults)', subtitle: 'Seizure vs syncope — distinguishing TLOC and driving rules' },
+        { id: 'elderly-falls', label: 'Elderly Falls', subtitle: 'Syncope as a cause of falls; postural hypotension and medication review' },
+      ],
     },
 
   ],

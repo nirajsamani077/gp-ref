@@ -11,6 +11,15 @@ export const dvt: Note = {
   content: [
 
     {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG158 — VTE Diagnosis & Management', url: 'https://www.nice.org.uk/guidance/ng158' },
+        { label: 'NICE CKS — DVT', url: 'https://cks.nice.org.uk/topics/deep-vein-thrombosis/' },
+        { label: 'Two-Level Wells Score (MDCalc)', url: 'https://www.mdcalc.com/calc/362/wells-criteria-dvt' },
+      ],
+    },
+
+    {
       type: 'callout',
       variant: 'danger',
       title: 'When to Refer Same Day / Call 999',
@@ -141,6 +150,16 @@ export const dvt: Note = {
         'DVT can be attributed to a flight up to 8 weeks after the journey if no other cause',
         'For most: mobilise frequently during flight, stay hydrated, avoid alcohol and sedatives',
         'Higher risk (previous DVT, thrombophilia, recent surgery, pregnancy, obesity): graduated compression stockings (below-knee, 15–30 mmHg) and consider a single prophylactic dose of LMWH before departure — advice to haematology via A&G if very high risk',
+      ],
+    },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'doacs', label: 'DOACs', subtitle: 'Apixaban/rivaroxaban dosing, renal adjustment, reversal, switching' },
+        { id: 'antiphospholipid-syndrome', label: 'Antiphospholipid Syndrome', subtitle: 'Use warfarin not DOACs; recurrent/unprovoked VTE in young patients' },
+        { id: 'atrialFibrillation', label: 'Atrial Fibrillation', subtitle: 'Other major anticoagulation indication — CHA₂DS₂-VASc, ORBIT' },
+        { id: 'pvd', label: 'Peripheral Vascular Disease', subtitle: 'Differential for the painful/swollen leg; vascular assessment' },
       ],
     },
 

@@ -11,6 +11,15 @@ export const palpitations: Note = {
   content: [
 
     {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — Palpitations', url: 'https://cks.nice.org.uk/topics/palpitations/' },
+        { label: 'DVLA — Cardiovascular Fitness to Drive', url: 'https://www.gov.uk/guidance/cardiovascular-disorders-assessing-fitness-to-drive' },
+        { label: 'Arrhythmia Alliance', url: 'https://www.heartrhythmalliance.org/aa/uk' },
+      ],
+    },
+
+    {
       type: 'callout',
       variant: 'danger',
       title: 'Red Flags — Refer Same Day / Admit',
@@ -136,6 +145,16 @@ export const palpitations: Note = {
         'Salbutamol, pseudoephedrine, decongestants, and some herbal supplements (ginseng, ginkgo) can trigger palpitations',
         'Screen for anxiety and treat if contributing — panic attacks can cause severe awareness of normal or mildly elevated heart rate',
         'Regular aerobic exercise reduces ectopic burden in many patients',
+      ],
+    },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'atrialFibrillation', label: 'Atrial Fibrillation', subtitle: 'Most important arrhythmia — detection, rate/rhythm, anticoagulation' },
+        { id: 'syncope', label: 'Syncope', subtitle: 'Palpitations + syncope is a red-flag combination — cardiac workup' },
+        { id: 'hyperthyroidism', label: 'Hyperthyroidism', subtitle: 'Thyrotoxicosis as a reversible cause — check TFTs' },
+        { id: 'anxiety-gad', label: 'Anxiety Disorders', subtitle: 'Common non-cardiac driver — panic attacks and somatic awareness' },
       ],
     },
 

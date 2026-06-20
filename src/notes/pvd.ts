@@ -11,6 +11,15 @@ export const pvd: Note = {
   content: [
 
     {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CG147 — Peripheral Arterial Disease', url: 'https://www.nice.org.uk/guidance/cg147' },
+        { label: 'NICE CKS — Peripheral Arterial Disease', url: 'https://cks.nice.org.uk/topics/peripheral-arterial-disease/' },
+        { label: 'Circulation Foundation', url: 'https://www.circulationfoundation.org.uk/' },
+      ],
+    },
+
+    {
       type: 'callout',
       variant: 'danger',
       title: 'Acute Limb Ischaemia — 999, Time Critical',
@@ -128,6 +137,16 @@ export const pvd: Note = {
     {
       type: 'para',
       text: 'Diabetes combines neuropathy (reduces sensation of ischaemia — painless ulcers) with macrovascular disease — both markedly increase amputation risk. ABPI may be falsely elevated due to arterial calcification. All diabetic patients with foot ulcers or symptoms of PVD should be seen by the diabetic foot MDT within 24 hours (infected ulcer) or urgently (non-infected). See Diabetic Foot note for full management.',
+    },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'smoking-cessation', label: 'Smoking Cessation', subtitle: 'The single most effective intervention in PVD' },
+        { id: 'lipids-statins', label: 'Lipids & Cardiovascular Prevention', subtitle: 'Atorvastatin 80 mg, antiplatelet, global CV risk' },
+        { id: 'diabetic-foot', label: 'Diabetic Foot', subtitle: 'Neuro-ischaemic ulcers and MDT pathway' },
+        { id: 'dvt', label: 'DVT', subtitle: 'Differential for the painful/swollen leg; the other vascular leg emergency' },
+      ],
     },
 
   ],

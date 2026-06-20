@@ -11,6 +11,15 @@ export const lowerBackPain: Note = {
   content: [
 
     {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG59 — Low Back Pain & Sciatica', url: 'https://www.nice.org.uk/guidance/ng59' },
+        { label: 'NICE CKS — Back Pain (Low, Without Radiculopathy)', url: 'https://cks.nice.org.uk/topics/back-pain-low-without-radiculopathy/' },
+        { label: 'Keele STarT Back Tool', url: 'https://startback.hfac.keele.ac.uk/' },
+      ],
+    },
+
+    {
       type: 'callout',
       variant: 'danger',
       title: 'Cauda Equina Syndrome (CES) — Same Day Emergency MRI',
@@ -129,6 +138,16 @@ export const lowerBackPain: Note = {
       items: [
         'Return immediately if: unable to pass urine, bowel incontinence, loss of feeling around genitals/bottom, weakness rapidly progressing in both legs',
         'Written CES safety netting information recommended at every consultation for new radicular LBP',
+      ],
+    },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'inflammatory-arthritis', label: 'Inflammatory Arthritis', subtitle: 'Axial spondyloarthritis — inflammatory back pain pathway' },
+        { id: 'chronic-pain', label: 'Chronic Pain', subtitle: 'Persistent LBP — yellow flags, CBT, pain management' },
+        { id: 'neck-pain', label: 'Neck Pain', subtitle: 'Cervical radiculopathy and red flags — sister presentation' },
+        { id: 'acupuncture', label: 'Acupuncture', subtitle: 'Role and evidence in musculoskeletal back pain' },
       ],
     },
 

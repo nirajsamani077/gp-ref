@@ -11,6 +11,15 @@ export const neckPain: Note = {
   content: [
 
     {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — Neck Pain (Cervical Radiculopathy)', url: 'https://cks.nice.org.uk/topics/neck-pain-cervical-radiculopathy/' },
+        { label: 'NICE CKS — Neck Pain (Non-Specific)', url: 'https://cks.nice.org.uk/topics/neck-pain-non-specific/' },
+        { label: 'myelopathy.org — DCM Resources', url: 'https://myelopathy.org/' },
+      ],
+    },
+
+    {
       type: 'callout',
       variant: 'danger',
       title: 'Red Flags — Same-Day Assessment / Emergency Referral',
@@ -124,6 +133,16 @@ export const neckPain: Note = {
         ['Thyroid disease', 'Goitre causing neck pressure; thyroiditis causing anterior neck pain + fever'],
         ['Carotid/vertebral artery dissection', 'Sudden neck pain post-manipulation/trauma + focal neurology; urgent CT angiography'],
         ['Pancoast tumour', 'Ipsilateral shoulder/neck/arm pain + Horner\'s syndrome in smoker; urgent CXR + CT'],
+      ],
+    },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'lower-back-pain', label: 'Lower Back Pain', subtitle: 'Sister presentation — red flags, radiculopathy, STarT Back' },
+        { id: 'multiple-sclerosis', label: 'Multiple Sclerosis', subtitle: 'Lhermitte\'s sign — also seen in cervical cord demyelination' },
+        { id: 'chronic-pain', label: 'Chronic Pain', subtitle: 'Persistent neck pain — yellow flags and management' },
+        { id: 'lung-cancer', label: 'Lung Cancer', subtitle: 'Pancoast tumour — shoulder/arm pain with Horner\'s syndrome' },
       ],
     },
 

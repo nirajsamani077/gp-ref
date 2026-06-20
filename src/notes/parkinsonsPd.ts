@@ -11,6 +11,15 @@ export const parkinsonsPd: Note = {
   content: [
 
     {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG71 — Parkinson\'s Disease in Adults', url: 'https://www.nice.org.uk/guidance/ng71' },
+        { label: 'NICE CKS — Parkinson\'s Disease', url: 'https://cks.nice.org.uk/topics/parkinsons-disease/' },
+        { label: 'Parkinson\'s UK', url: 'https://www.parkinsons.org.uk/' },
+      ],
+    },
+
+    {
       type: 'callout',
       variant: 'info',
       title: 'Refer All Suspected PD Urgently to Neurology',
@@ -131,6 +140,16 @@ export const parkinsonsPd: Note = {
         'Advance care planning: RESPECT form, DNACPR, preferred place of care — introduce early before capacity lost',
         'Emergency prescribing advice: if patient is admitted and unable to take oral PD medications, hospital teams must administer equivalent on time — use Parkinson\'s UK "Red Flag" hospitalisation guide',
         'Do NOT use metoclopramide or prochlorperazine as antiemetics in PD — use domperidone instead',
+      ],
+    },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'essential-tremor', label: 'Essential Tremor', subtitle: 'Key tremor differential — postural/action tremor, propranolol' },
+        { id: 'dementia', label: 'Dementia', subtitle: 'PD dementia and Lewy body dementia — rivastigmine, avoid antipsychotics' },
+        { id: 'antipsychotics-smi', label: 'Antipsychotics & SMI', subtitle: 'Neuroleptic sensitivity in PD/DLB; drug-induced parkinsonism' },
+        { id: 'antiemetics-vertigo', label: 'Antiemetics & Vertigo Drugs', subtitle: 'Use domperidone — avoid metoclopramide/prochlorperazine in PD' },
       ],
     },
 

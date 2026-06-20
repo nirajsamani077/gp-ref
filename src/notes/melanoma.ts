@@ -11,6 +11,15 @@ export const melanoma: Note = {
   content: [
 
     {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG12 — Suspected Cancer (Skin)', url: 'https://www.nice.org.uk/guidance/ng12' },
+        { label: 'PCDS — Melanoma', url: 'https://www.pcds.org.uk/clinical-guidance/malignant-melanoma' },
+        { label: 'CRUK — Melanoma', url: 'https://www.cancerresearchuk.org/about-cancer/melanoma' },
+      ],
+    },
+
+    {
       type: 'callout',
       variant: 'danger',
       title: '2WW Referral to Dermatology — Suspect Melanoma',
@@ -138,6 +147,15 @@ export const melanoma: Note = {
         'Sunbeds: carcinogenic — advise against use; ban for under-18s in UK',
         'Self-examination: monthly total body skin self-check; use ABCD/7-point criteria; couples/carers can help examine difficult areas',
         'Atypical mole syndrome: annual dermatology surveillance, total body photography for monitoring',
+      ],
+    },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'bcc', label: 'Basal Cell Carcinoma', subtitle: 'Commonest skin cancer — slow-growing, pearly nodule, referral routes' },
+        { id: 'actinic-keratosis', label: 'Actinic Keratosis', subtitle: 'Pre-malignant sun damage and field change management' },
+        { id: 'two-week-wait', label: '2WW Referral Guide', subtitle: 'Suspected skin cancer referral criteria' },
       ],
     },
 
