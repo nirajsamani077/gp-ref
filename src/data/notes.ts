@@ -208,6 +208,16 @@ import { hepatitis }                from '../notes/hepatitis'
 import { lungCancer }               from '../notes/lungCancer'
 import { stis }                     from '../notes/stis'
 import { menopause }                from '../notes/menopause'
+import { pmr }                      from '../notes/pmr'
+import { bphLuts }                  from '../notes/bphLuts'
+import { prostateCancer }           from '../notes/prostateCancer'
+import { hmbFibroids }              from '../notes/hmbFibroids'
+import { hyperkalaemia }            from '../notes/hyperkalaemia'
+import { hyponatraemia }            from '../notes/hyponatraemia'
+import { hypercalcaemia }           from '../notes/hypercalcaemia'
+import { macrocyticAnaemia }        from '../notes/macrocyticAnaemia'
+import { ovarianCancer }            from '../notes/ovarianCancer'
+import { tuberculosis }             from '../notes/tuberculosis'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -419,4 +429,14 @@ export const NOTES: Note[] = [
   lungCancer,
   stis,
   menopause,
+  pmr,
+  bphLuts,
+  prostateCancer,
+  hmbFibroids,
+  hyperkalaemia,
+  hyponatraemia,
+  hypercalcaemia,
+  macrocyticAnaemia,
+  ovarianCancer,
+  tuberculosis,
 ].map(enrichBody)
