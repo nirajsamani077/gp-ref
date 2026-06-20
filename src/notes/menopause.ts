@@ -10,6 +10,15 @@ export const menopause: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG23 — Menopause', url: 'https://www.nice.org.uk/guidance/ng23' },
+        { label: 'NICE CKS — Menopause', url: 'https://cks.nice.org.uk/topics/menopause/' },
+        { label: 'British Menopause Society', url: 'https://thebms.org.uk/' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Definition and Diagnosis' },
 
     {

@@ -10,6 +10,15 @@ export const hyperthyroidism: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG145 — Thyroid Disease', url: 'https://www.nice.org.uk/guidance/ng145' },
+        { label: 'NICE CKS — Hyperthyroidism', url: 'https://cks.nice.org.uk/topics/hyperthyroidism/' },
+        { label: 'British Thyroid Foundation', url: 'https://www.btf-thyroid.org/' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Classification — Hyperthyroidism vs Thyrotoxicosis' },
 
     {

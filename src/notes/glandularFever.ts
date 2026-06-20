@@ -10,6 +10,14 @@ export const glandularFever: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — Glandular Fever', url: 'https://cks.nice.org.uk/topics/glandular-fever-infectious-mononucleosis/' },
+        { label: 'Patient.info — Glandular Fever', url: 'https://patient.info/doctor/infectious-mononucleosis-glandular-fever-pro' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Clinical Features' },
 
     {

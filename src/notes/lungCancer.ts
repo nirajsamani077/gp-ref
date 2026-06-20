@@ -10,6 +10,15 @@ export const lungCancer: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG122 — Lung Cancer', url: 'https://www.nice.org.uk/guidance/ng122' },
+        { label: 'NICE NG12 — Suspected Cancer', url: 'https://www.nice.org.uk/guidance/ng12' },
+        { label: 'Roy Castle Lung Cancer Foundation', url: 'https://roycastle.org/' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: '2WW and Urgent CXR Referral Criteria' },
 
     {

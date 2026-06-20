@@ -10,6 +10,22 @@ export const lipidsStatins: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG238 — CVD Risk & Lipid Modification', url: 'https://www.nice.org.uk/guidance/ng238' },
+        { label: 'NICE CKS — CVD Prevention', url: 'https://cks.nice.org.uk/topics/cvd-risk-assessment-management/' },
+        { label: 'NICE CKS — Statin Intolerance', url: 'https://cks.nice.org.uk/topics/lipid-modification-cvd-prevention/' },
+      ],
+    },
+
+    {
+      type: 'calclink',
+      calculators: [
+        { id: 'qrisk3', label: 'QRISK3 — 10-Year CVD Risk', subtitle: 'Primary prevention threshold for statins (≥10%)' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Who to Treat — QRISK3 and Risk Assessment' },
 
     {

@@ -10,6 +10,14 @@ export const febrileConvulsions: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — Febrile Seizure', url: 'https://cks.nice.org.uk/topics/febrile-seizure/' },
+        { label: 'RCPCH — Feverish Illness Resources', url: 'https://www.rcpch.ac.uk/' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Background and Epidemiology' },
 
     {

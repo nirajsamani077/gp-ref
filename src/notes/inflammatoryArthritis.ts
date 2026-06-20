@@ -10,6 +10,15 @@ export const inflammatoryArthritis: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG100 — Rheumatoid Arthritis', url: 'https://www.nice.org.uk/guidance/ng100' },
+        { label: 'NICE NG65 — Spondyloarthritis', url: 'https://www.nice.org.uk/guidance/ng65' },
+        { label: 'BSR — Guidelines', url: 'https://www.rheumatology.org.uk/practice-quality/guidelines' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Overview — Inflammatory vs Mechanical Joint Disease' },
 
     {

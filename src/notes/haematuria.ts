@@ -11,6 +11,15 @@ export const haematuria: Note = {
   content: [
 
     {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG12 — Suspected Cancer', url: 'https://www.nice.org.uk/guidance/ng12' },
+        { label: 'NICE CKS — Haematuria', url: 'https://cks.nice.org.uk/topics/haematuria/' },
+        { label: 'BAUS — Haematuria', url: 'https://www.baus.org.uk/patients/conditions/' },
+      ],
+    },
+
+    {
       type: 'callout',
       variant: 'danger',
       title: '2WW Urology Referral Criteria',

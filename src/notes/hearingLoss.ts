@@ -10,6 +10,15 @@ export const hearingLoss: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG98 — Hearing Loss in Adults', url: 'https://www.nice.org.uk/guidance/ng98' },
+        { label: 'NICE CKS — Hearing Loss', url: 'https://cks.nice.org.uk/topics/hearing-loss-in-adults/' },
+        { label: 'RNID', url: 'https://rnid.org.uk/' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Classification' },
 
     {

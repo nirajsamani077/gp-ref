@@ -10,6 +10,15 @@ export const ibd: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG129 — Crohn\'s Disease', url: 'https://www.nice.org.uk/guidance/ng129' },
+        { label: 'NICE NG130 — Ulcerative Colitis', url: 'https://www.nice.org.uk/guidance/ng130' },
+        { label: 'Crohn\'s & Colitis UK', url: 'https://crohnsandcolitis.org.uk/' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Background and Classification' },
 
     {

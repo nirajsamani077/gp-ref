@@ -10,6 +10,15 @@ export const multipleSclerosis: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG220 — Multiple Sclerosis', url: 'https://www.nice.org.uk/guidance/ng220' },
+        { label: 'NICE CKS — Multiple Sclerosis', url: 'https://cks.nice.org.uk/topics/multiple-sclerosis/' },
+        { label: 'MS Society', url: 'https://www.mssociety.org.uk/' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Types and Epidemiology' },
 
     {

@@ -10,6 +10,15 @@ export const stis: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'BASHH — Guidelines', url: 'https://www.bashh.org/guidelines' },
+        { label: 'NICE CKS — Sexually Transmitted Infections', url: 'https://cks.nice.org.uk/specialities/sexual-health/' },
+        { label: 'BASHH — PrEP Guidance', url: 'https://www.bashh.org/guidelines' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'STI Screen — When and What to Test' },
 
     {

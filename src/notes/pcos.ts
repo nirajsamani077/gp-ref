@@ -10,6 +10,15 @@ export const pcos: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — PCOS', url: 'https://cks.nice.org.uk/topics/polycystic-ovary-syndrome/' },
+        { label: 'RCOG — PCOS', url: 'https://www.rcog.org.uk/for-the-public/browse-our-patient-information/polycystic-ovary-syndrome-pcos/' },
+        { label: 'Verity — PCOS Support', url: 'https://www.verity-pcos.org.uk/' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Diagnosis — Rotterdam Criteria' },
 
     {

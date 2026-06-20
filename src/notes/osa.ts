@@ -10,6 +10,15 @@ export const osa: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG202 — OSA/OHS & COPD-OSA Overlap', url: 'https://www.nice.org.uk/guidance/ng202' },
+        { label: 'NICE CKS — Obstructive Sleep Apnoea', url: 'https://cks.nice.org.uk/topics/obstructive-sleep-apnoea-syndrome/' },
+        { label: 'STOP-BANG Questionnaire', url: 'http://www.stopbang.ca/osa/screening.php' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Background and Pathophysiology' },
 
     {

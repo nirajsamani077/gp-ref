@@ -10,6 +10,15 @@ export const hrtManagement: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG23 — Menopause', url: 'https://www.nice.org.uk/guidance/ng23' },
+        { label: 'NICE CKS — Menopause (HRT)', url: 'https://cks.nice.org.uk/topics/menopause/' },
+        { label: 'British Menopause Society — Prescribing', url: 'https://thebms.org.uk/publications/tools-for-clinicians/' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Contraindications to HRT' },
 
     {

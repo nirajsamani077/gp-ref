@@ -10,6 +10,22 @@ export const hepatitis: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — Hepatitis B', url: 'https://cks.nice.org.uk/topics/hepatitis-b/' },
+        { label: 'NICE CKS — Hepatitis C', url: 'https://cks.nice.org.uk/topics/hepatitis-c/' },
+        { label: 'British Liver Trust', url: 'https://britishlivertrust.org.uk/' },
+      ],
+    },
+
+    {
+      type: 'calclink',
+      calculators: [
+        { id: 'fib4', label: 'FIB-4 Index — Liver Fibrosis', subtitle: 'Stage fibrosis in chronic viral hepatitis; >2.67 = refer hepatology' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Hepatitis A' },
 
     {

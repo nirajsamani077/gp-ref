@@ -10,6 +10,14 @@ export const genitalWarts: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'BASHH — Anogenital Warts Guideline', url: 'https://www.bashh.org/guidelines' },
+        { label: 'NICE CKS — Warts (Anogenital)', url: 'https://cks.nice.org.uk/topics/warts-verrucae/' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Background and Transmission' },
 
     {

@@ -10,6 +10,15 @@ export const hiv: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'BHIVA Guidelines', url: 'https://www.bhiva.org/guidelines' },
+        { label: 'NICE CKS — HIV Infection', url: 'https://cks.nice.org.uk/topics/hiv-infection-aids/' },
+        { label: 'Terrence Higgins Trust', url: 'https://www.tht.org.uk/' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Who to Test' },
 
     {

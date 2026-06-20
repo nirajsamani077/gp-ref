@@ -10,6 +10,22 @@ export const chronicLiverDisease: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG50 — Cirrhosis in Over 16s', url: 'https://www.nice.org.uk/guidance/ng50' },
+        { label: 'NICE CKS — Cirrhosis', url: 'https://cks.nice.org.uk/topics/cirrhosis/' },
+        { label: 'British Liver Trust', url: 'https://britishlivertrust.org.uk/' },
+      ],
+    },
+
+    {
+      type: 'calclink',
+      calculators: [
+        { id: 'fib4', label: 'FIB-4 Index — Liver Fibrosis', subtitle: 'Non-invasive fibrosis staging; guides hepatology referral' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'Clinical Signs of Chronic Liver Disease' },
 
     {

@@ -10,6 +10,14 @@ export const epistaxis: Note = {
 
   content: [
 
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — Epistaxis', url: 'https://cks.nice.org.uk/topics/epistaxis-nosebleeds/' },
+        { label: 'ENT UK — Nosebleeds', url: 'https://www.entuk.org/patients/conditions/' },
+      ],
+    },
+
     { type: 'heading', level: 2, text: 'First Aid — Acute Nosebleed' },
 
     {
