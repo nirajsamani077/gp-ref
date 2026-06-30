@@ -108,5 +108,14 @@ export const conjunctivitis: Note = {
         { label: 'RNIB — Eye Conditions', url: 'https://www.rnib.org.uk/eye-health/eye-conditions/' },
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'red-eye', label: 'Red Painful Eye', subtitle: 'Distinguish benign conjunctivitis from sight-threatening red eye' },
+        { id: 'allergic-rhinitis', label: 'Allergic Rhinitis & Hayfever', subtitle: 'Allergic conjunctivitis often coexists' },
+        { id: 'visual-loss', label: 'Sudden Visual Loss', subtitle: 'Red flags requiring same-day ophthalmology' },
+      ],
+    },
   ],
 }

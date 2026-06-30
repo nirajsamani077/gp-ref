@@ -221,6 +221,7 @@ export const migraine: Note = {
     {
       type: 'notelink',
       notes: [
+        { id: 'headache-assessment', label: 'Headache Assessment', subtitle: 'Red flags, tension-type and medication-overuse headache' },
         { id: 'cluster-headache', label: 'Cluster Headache', subtitle: 'TACs — cluster headache, SUNCT, paroxysmal hemicrania vs migraine' },
         { id: 'stroke-tia', label: 'Stroke & TIA', subtitle: 'Migraine with aura increases stroke risk — COCP caution, transdermal HRT' },
         { id: 'vertigo', label: 'Vertigo', subtitle: 'Vestibular migraine — episodic vertigo without typical headache' },

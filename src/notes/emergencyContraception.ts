@@ -128,5 +128,15 @@ export const emergencyContraception: Note = {
         'Brook/SH:24: online STI testing and EC advice for young people (under 25)',
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'contraception', label: 'Contraception — Overview & Method Choice', subtitle: 'Quick-starting after EC; method choice and UKMEC' },
+        { id: 'larcs', label: 'Progestogen-Only Contraception & LARCs', subtitle: 'Copper IUD is the most effective EC; ongoing LARC options' },
+        { id: 'cocp', label: 'Combined Oral Contraceptive Pill', subtitle: 'Missed-pill rules that trigger EC' },
+        { id: 'miscarriage-ectopic', label: 'Miscarriage & Ectopic Pregnancy', subtitle: 'Assess if pregnancy may already be established' },
+      ],
+    },
   ],
 }

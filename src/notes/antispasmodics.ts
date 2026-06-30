@@ -148,5 +148,14 @@ export const antispasmodics: Note = {
       ],
     },
 
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'ibs', label: 'Irritable Bowel Syndrome', subtitle: 'The condition these medicines treat — full diagnosis & management' },
+        { id: 'adult-constipation', label: 'Adult Constipation', subtitle: 'Laxative choice for IBS-C' },
+        { id: 'gord-dyspepsia', label: 'GORD & Dyspepsia', subtitle: 'Overlapping functional gut symptoms' },
+      ],
+    },
+
   ],
 }

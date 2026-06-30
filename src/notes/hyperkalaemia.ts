@@ -103,6 +103,7 @@ export const hyperkalaemia: Note = {
         { id: 'ckd', label: 'Chronic Kidney Disease', subtitle: 'CKD as a cause; ACEi/ARB balance, potassium binders' },
         { id: 'heart-failure', label: 'Heart Failure', subtitle: 'ACEi/ARB/MRA prognostic benefit vs hyperkalaemia trade-off' },
         { id: 'adrenal-insufficiency', label: 'Adrenal Insufficiency', subtitle: 'Addison\'s — hyperkalaemia + hyponatraemia; 9am cortisol' },
+        { id: 'hypokalaemia', label: 'Hypokalaemia', subtitle: 'The other end — admission thresholds, ECG, Conn\'s screen' },
       ],
     },
 

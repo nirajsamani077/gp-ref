@@ -133,6 +133,8 @@ export const bphLuts: Note = {
       type: 'notelink',
       notes: [
         { id: 'uti-men', label: 'UTI in Men', subtitle: 'Always complicated — investigate; differential and treatment of male LUTS+dysuria' },
+        { id: 'urinary-incontinence', label: 'Urinary Incontinence & Prolapse', subtitle: 'Storage symptoms and OAB management overlap' },
+        { id: 'prostatitis', label: 'Prostatitis', subtitle: 'Painful LUTS with fever — the acute differential' },
         { id: 'erectile-dysfunction', label: 'Erectile Dysfunction', subtitle: 'PDE5 inhibitors, shared management; LUTS and ED frequently coexist' },
         { id: 'two-week-wait', label: '2WW Referral Guide', subtitle: 'Prostate cancer referral criteria — PSA and DRE' },
         { id: 'aki', label: 'Acute Kidney Injury', subtitle: 'Obstructive (post-renal) AKI from chronic retention' },

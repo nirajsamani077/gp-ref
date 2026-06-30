@@ -269,5 +269,15 @@ export const microcyticAnaemia: Note = {
         { label: 'Patient.info — Iron Deficiency', url: 'https://patient.info/blood-conditions/iron-deficiency-anaemia-leaflet' },
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'normocytic-anaemia', label: 'Normocytic Anaemia', subtitle: 'Reticulocyte-led approach to the normal-MCV anaemias' },
+        { id: 'macrocytic-anaemia', label: 'Macrocytic Anaemia', subtitle: 'B12/folate and the high-MCV causes' },
+        { id: 'coeliac-disease', label: 'Coeliac Disease', subtitle: 'Malabsorption — a common cause of iron deficiency' },
+        { id: 'colorectal-cancer', label: 'Colorectal Cancer', subtitle: 'Occult GI blood loss — FIT and 2WW in unexplained IDA' },
+      ],
+    },
   ],
 }

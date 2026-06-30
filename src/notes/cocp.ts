@@ -187,6 +187,16 @@ export const cocp: Note = {
         { label: 'NHS — Combined Pill', url: 'https://www.nhs.uk/conditions/contraception/combined-contraceptive-pill/' },
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'contraception', label: 'Contraception — Overview & Method Choice', subtitle: 'UKMEC, efficacy, quick-starting, when methods become effective' },
+        { id: 'larcs', label: 'Progestogen-Only Contraception & LARCs', subtitle: 'POP, implant, injection, IUS/IUD alternatives' },
+        { id: 'emergency-contraception', label: 'Emergency Contraception', subtitle: 'After missed pills/UPSI; quick-starting afterwards' },
+        { id: 'menopause', label: 'Menopause', subtitle: 'Contraception around the menopause and stopping rules' },
+      ],
+    },
   ],
 
   body: 'COCP combined oral contraceptive pill oestrogen progestogen ethinylestradiol levonorgestrel desogestrel gestodene drospirenone UKMEC VTE thrombosis migraine aura contraindication missed pill emergency contraception Microgynon Marvelon Yasmin Femodene Mercilon Loestrin Qlaira Zoely Evra NuvaRing enzyme inducer lamotrigine LARC tricycling continuous use regime annual review BP BMI smoking',

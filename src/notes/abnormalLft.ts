@@ -200,5 +200,16 @@ export const abnormalLft: Note = {
         'Alcohol services: AUDIT >15, dependent drinking, ARLD with high fibrosis risk',
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'nafld', label: 'NAFLD / MASLD', subtitle: 'Fatty liver — FIB-4/ELF fibrosis pathway and management' },
+        { id: 'chronic-liver-disease', label: 'Chronic Liver Disease', subtitle: 'Cirrhosis, decompensation and HCC surveillance' },
+        { id: 'hepatitis', label: 'Viral Hepatitis (A, B & C)', subtitle: 'Serology interpretation and treatment' },
+        { id: 'haemochromatosis', label: 'Haemochromatosis & Raised Ferritin', subtitle: 'Iron studies as part of the liver screen' },
+        { id: 'alcohol-etoh', label: 'Alcohol & Liver Disease', subtitle: 'ARLD, AUDIT and harm reduction' },
+      ],
+    },
   ],
 }

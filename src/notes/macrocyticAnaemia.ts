@@ -108,6 +108,7 @@ export const macrocyticAnaemia: Note = {
         { id: 'haem-malignancies', label: 'Haematological Malignancies', subtitle: 'MDS, myeloma — when macrocytosis is unexplained' },
         { id: 'coeliac-disease', label: 'Coeliac Disease', subtitle: 'Malabsorption causing combined B12/folate/iron deficiency' },
         { id: 'alcohol-etoh', label: 'Alcohol & Liver Disease', subtitle: 'Common reversible cause of macrocytosis' },
+        { id: 'normocytic-anaemia', label: 'Normocytic Anaemia', subtitle: 'Completes the anaemia trio — reticulocyte-led approach' },
       ],
     },
 
