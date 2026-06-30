@@ -116,6 +116,7 @@ export const hypercalcaemia: Note = {
         { id: 'two-week-wait', label: '2WW Referral Guide', subtitle: 'Suspected malignancy pathways when PTH is suppressed' },
         { id: 'osteoporosis', label: 'Osteoporosis', subtitle: 'Bone disease in hyperparathyroidism; bisphosphonates' },
         { id: 'vitamin-d', label: 'Vitamin D', subtitle: 'Vitamin D toxicity as a cause; cautious supplementation in PHPT' },
+        { id: 'hyperparathyroidism', label: 'Hyperparathyroidism', subtitle: 'Primary/secondary/tertiary — parathyroidectomy and monitoring' },
       ],
     },
 

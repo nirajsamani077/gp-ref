@@ -116,6 +116,8 @@ export const inflammatoryArthritis: Note = {
         { id: 'gout', label: 'Gout', subtitle: 'Key differential for acute monoarthritis; often co-exists' },
         { id: 'osteoporosis', label: 'Osteoporosis', subtitle: 'RA and long-term steroids significantly increase fracture risk' },
         { id: 'lipids-statins', label: 'Lipids & Cardiovascular Prevention', subtitle: 'RA = equivalent CV risk to T2DM; treat aggressively' },
+        { id: 'sle-sjogrens', label: 'SLE & Sjögren\'s', subtitle: 'Connective tissue disease in the differential/overlap' },
+        { id: 'nsaids', label: 'NSAIDs', subtitle: 'Symptom control and safe prescribing' },
       ],
     },
 

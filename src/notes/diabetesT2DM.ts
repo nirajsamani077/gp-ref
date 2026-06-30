@@ -355,5 +355,16 @@ export const diabetesT2DM: Note = {
       ],
       caption: 'SADMAN = Sulfonylureas, ACE/ARBs, Diuretics, Metformin, NSAIDs, SGLT2i — all hold if vomiting/dehydrated. Increase BM monitoring to every 4 hours. Increase fluid intake. Monitor ketones.',
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'prediabetes', label: 'Prediabetes', subtitle: 'HbA1c 42–47 — the reversible pre-diabetic window' },
+        { id: 'hypoglycaemia', label: 'Hypoglycaemia', subtitle: 'Sulfonylurea/insulin hypos — recognition and treatment' },
+        { id: 'diabetic-neuropathy', label: 'Diabetic Neuropathy', subtitle: 'Painful and autonomic neuropathy management' },
+        { id: 'diabetic-complications', label: 'Diabetic Complications', subtitle: 'Retinopathy, nephropathy, foot and CV risk' },
+        { id: 'diabetic-foot', label: 'Diabetic Foot', subtitle: 'Foot risk assessment and the MDT pathway' },
+      ],
+    },
   ],
 }

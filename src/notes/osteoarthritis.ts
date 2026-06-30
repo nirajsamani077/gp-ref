@@ -92,6 +92,9 @@ export const osteoarthritis: Note = {
         { id: 'chronic-pain', label: 'Chronic Pain', subtitle: 'Persistent joint pain — exercise, pacing, avoiding opioids' },
         { id: 'dvt', label: 'DVT', subtitle: 'Ruptured Baker\'s cyst mimics DVT — exclude it' },
         { id: 'obesity', label: 'Obesity & Weight Management', subtitle: 'Weight loss reduces load and improves outcomes' },
+        { id: 'knee-problems', label: 'Knee Problems', subtitle: 'Knee OA vs traumatic/overuse knee conditions' },
+        { id: 'hand-wrist-conditions', label: 'Hand & Wrist Conditions', subtitle: 'Thumb-base OA overlaps with hand conditions' },
+        { id: 'nsaids', label: 'NSAIDs', subtitle: 'Topical-first analgesia and safe prescribing' },
       ],
     },
 

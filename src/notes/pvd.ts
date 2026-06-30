@@ -146,6 +146,7 @@ export const pvd: Note = {
         { id: 'lipids-statins', label: 'Lipids & Cardiovascular Prevention', subtitle: 'Atorvastatin 80 mg, antiplatelet, global CV risk' },
         { id: 'diabetic-foot', label: 'Diabetic Foot', subtitle: 'Neuro-ischaemic ulcers and MDT pathway' },
         { id: 'dvt', label: 'DVT', subtitle: 'Differential for the painful/swollen leg; the other vascular leg emergency' },
+        { id: 'leg-ulcers', label: 'Leg Ulcers & Wounds', subtitle: 'Arterial ulcers — ABPI before compression' },
       ],
     },
 

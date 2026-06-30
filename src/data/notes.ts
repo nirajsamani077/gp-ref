@@ -248,6 +248,32 @@ import { contraception }            from '../notes/contraception'
 import { larcs }                    from '../notes/larcs'
 import { miscarriageEctopic }       from '../notes/miscarriageEctopic'
 import { childhoodViralRashes }     from '../notes/childhoodViralRashes'
+import { handWristConditions }      from '../notes/handWristConditions'
+import { kneeProblems }             from '../notes/kneeProblems'
+import { footHeelPain }             from '../notes/footHeelPain'
+import { sleSjogrens }              from '../notes/sleSjogrens'
+import { hypocalcaemia }            from '../notes/hypocalcaemia'
+import { hyperparathyroidism }      from '../notes/hyperparathyroidism'
+import { hypoglycaemia }            from '../notes/hypoglycaemia'
+import { prediabetes }              from '../notes/prediabetes'
+import { diabeticNeuropathy }       from '../notes/diabeticNeuropathy'
+import { hiatusHernia }             from '../notes/hiatusHernia'
+import { upperGiBleed }             from '../notes/upperGiBleed'
+import { oesophagogastricCancer }   from '../notes/oesophagogastricCancer'
+import { wartsMolluscum }           from '../notes/wartsMolluscum'
+import { impetigo }                 from '../notes/impetigo'
+import { hidradenitisSuppurativa }  from '../notes/hidradenitisSuppurativa'
+import { scabiesLice }              from '../notes/scabiesLice'
+import { legUlcers }                from '../notes/legUlcers'
+import { seborrhoeicDermatitis }    from '../notes/seborrhoeicDermatitis'
+import { anaemiaPregnancy }         from '../notes/anaemiaPregnancy'
+import { sickleCell }               from '../notes/sickleCell'
+import { plateletsBruising }        from '../notes/plateletsBruising'
+import { nsaids }                   from '../notes/nsaids'
+import { oralSteroids }             from '../notes/oralSteroids'
+import { neuropathicPain }          from '../notes/neuropathicPain'
+import { topicalSteroidLadder }     from '../notes/topicalSteroidLadder'
+import { valvularHeartDisease }     from '../notes/valvularHeartDisease'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -499,4 +525,30 @@ export const NOTES: Note[] = [
   larcs,
   miscarriageEctopic,
   childhoodViralRashes,
+  handWristConditions,
+  kneeProblems,
+  footHeelPain,
+  sleSjogrens,
+  hypocalcaemia,
+  hyperparathyroidism,
+  hypoglycaemia,
+  prediabetes,
+  diabeticNeuropathy,
+  hiatusHernia,
+  upperGiBleed,
+  oesophagogastricCancer,
+  wartsMolluscum,
+  impetigo,
+  hidradenitisSuppurativa,
+  scabiesLice,
+  legUlcers,
+  seborrhoeicDermatitis,
+  anaemiaPregnancy,
+  sickleCell,
+  plateletsBruising,
+  nsaids,
+  oralSteroids,
+  neuropathicPain,
+  topicalSteroidLadder,
+  valvularHeartDisease,
 ].map(enrichBody)

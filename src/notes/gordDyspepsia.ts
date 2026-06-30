@@ -129,5 +129,16 @@ export const gordDyspepsia: Note = {
         { label: 'BSG — H. pylori Eradication', url: 'https://www.bsg.org.uk/clinical-resource/helicobacter-pylori-eradication/' },
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'hiatus-hernia', label: 'Hiatus Hernia', subtitle: 'Common reflux contributor; rolling hernia risks' },
+        { id: 'barretts-oesophagus', label: "Barrett's Oesophagus", subtitle: 'Metaplasia from chronic reflux — surveillance' },
+        { id: 'oesophagogastric-cancer', label: 'Oesophageal & Gastric Cancer', subtitle: 'Upper-GI 2WW alarm features' },
+        { id: 'upper-gi-bleed', label: 'Upper GI Bleed', subtitle: 'Peptic ulcer bleeding and post-bleed H. pylori care' },
+        { id: 'nsaids', label: 'NSAIDs', subtitle: 'NSAID-related dyspepsia and gastroprotection' },
+      ],
+    },
   ],
 }

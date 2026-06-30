@@ -173,6 +173,7 @@ export const psoriasis: Note = {
       notes: [
         { id: 'inflammatory-arthritis', label: 'Inflammatory Arthritis', subtitle: 'Psoriatic arthritis in 30% of psoriasis — PEST screen annually' },
         { id: 'dmards', label: 'DMARDs', subtitle: 'Methotrexate, biologicals — used in moderate–severe psoriasis' },
+        { id: 'topical-steroid-ladder', label: 'Topical Steroid Ladder', subtitle: 'Potency, body-site rules and safe topical use' },
       ],
     },
   ],

@@ -116,5 +116,15 @@ export const atopicEczema: Note = {
         { label: 'BAD — Eczema Guidelines', url: 'https://www.bad.org.uk/healthcare-professionals/clinical-standards/clinical-guidelines/atopic-eczema' },
       ],
     },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'topical-steroid-ladder', label: 'Topical Steroid Ladder', subtitle: 'Potency, fingertip units, body-site rules, calcineurin inhibitors' },
+        { id: 'seborrhoeic-dermatitis', label: 'Seborrhoeic Dermatitis & Pompholyx', subtitle: 'Related eczematous conditions' },
+        { id: 'contact-dermatitis', label: 'Contact Dermatitis', subtitle: 'Irritant/allergic eczema and patch testing' },
+        { id: 'fungal-skin-infections', label: 'Fungal Skin Infections', subtitle: 'Steroid-modified tinea mimics eczema' },
+      ],
+    },
   ],
 }
