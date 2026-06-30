@@ -228,6 +228,26 @@ import { haemochromatosis }         from '../notes/haemochromatosis'
 import { restlessLegs }             from '../notes/restlessLegs'
 import { lichenSclerosus }          from '../notes/lichenSclerosus'
 import { interstitialLungDisease }  from '../notes/interstitialLungDisease'
+import { osteoarthritis }           from '../notes/osteoarthritis'
+import { shoulderProblems }         from '../notes/shoulderProblems'
+import { ibs }                      from '../notes/ibs'
+import { nafld }                    from '../notes/nafld'
+import { renalStones }              from '../notes/renalStones'
+import { urinaryIncontinence }      from '../notes/urinaryIncontinence'
+import { prostatitis }              from '../notes/prostatitis'
+import { meningitis }               from '../notes/meningitis'
+import { redEye }                   from '../notes/redEye'
+import { visualLoss }               from '../notes/visualLoss'
+import { tinnitus }                 from '../notes/tinnitus'
+import { fungalSkinInfections }     from '../notes/fungalSkinInfections'
+import { urticariaAngioedema }      from '../notes/urticariaAngioedema'
+import { normocyticAnaemia }        from '../notes/normocyticAnaemia'
+import { hypokalaemia }             from '../notes/hypokalaemia'
+import { headacheAssessment }       from '../notes/headacheAssessment'
+import { contraception }            from '../notes/contraception'
+import { larcs }                    from '../notes/larcs'
+import { miscarriageEctopic }       from '../notes/miscarriageEctopic'
+import { childhoodViralRashes }     from '../notes/childhoodViralRashes'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -459,4 +479,24 @@ export const NOTES: Note[] = [
   restlessLegs,
   lichenSclerosus,
   interstitialLungDisease,
+  osteoarthritis,
+  shoulderProblems,
+  ibs,
+  nafld,
+  renalStones,
+  urinaryIncontinence,
+  prostatitis,
+  meningitis,
+  redEye,
+  visualLoss,
+  tinnitus,
+  fungalSkinInfections,
+  urticariaAngioedema,
+  normocyticAnaemia,
+  hypokalaemia,
+  headacheAssessment,
+  contraception,
+  larcs,
+  miscarriageEctopic,
+  childhoodViralRashes,
 ].map(enrichBody)
