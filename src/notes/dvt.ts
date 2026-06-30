@@ -156,6 +156,7 @@ export const dvt: Note = {
     {
       type: 'notelink',
       notes: [
+        { id: 'pulmonary-embolism', label: 'Pulmonary Embolism', subtitle: 'The other half of VTE — PERC, Wells PE, CTPA, anticoagulation' },
         { id: 'doacs', label: 'DOACs', subtitle: 'Apixaban/rivaroxaban dosing, renal adjustment, reversal, switching' },
         { id: 'antiphospholipid-syndrome', label: 'Antiphospholipid Syndrome', subtitle: 'Use warfarin not DOACs; recurrent/unprovoked VTE in young patients' },
         { id: 'atrialFibrillation', label: 'Atrial Fibrillation', subtitle: 'Other major anticoagulation indication — CHA₂DS₂-VASc, ORBIT' },

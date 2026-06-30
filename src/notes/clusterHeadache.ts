@@ -118,6 +118,7 @@ export const clusterHeadache: Note = {
       type: 'notelink',
       notes: [
         { id: 'migraine', label: 'Migraine', subtitle: 'Migraine vs cluster headache — key differential; both use triptans' },
+        { id: 'trigeminal-neuralgia', label: 'Trigeminal Neuralgia', subtitle: 'Brief electric-shock facial pain — key facial-pain differential' },
         { id: 'chronic-pain', label: 'Chronic Pain', subtitle: 'Chronic cluster headache management and central sensitisation' },
       ],
     },
