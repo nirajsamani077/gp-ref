@@ -12,15 +12,6 @@ interface FilterResult {
   snippet: string | null
 }
 
-function parseTokens(query: string): string[] {
-  return query
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, ' ')
-    .split(/\s+/)
-    .filter(t => t.length >= 2)
-}
-
 function filterNotes(query: string): FilterResult[] {
   if (!query.trim()) return NOTES.map(n => ({ note: n, snippet: null }))
   const hits = searchNotesForTab(query.trim(), 200)
@@ -30,26 +21,6 @@ function filterNotes(query: string): FilterResult[] {
     if (note) out.push({ note, snippet: h.snippet })
   }
   return out
-}
-
-/* Inline snippet highlighter (yellow marks) */
-function HighlightedSnippet({ text, tokens }: { text: string; tokens: string[] }) {
-  if (!tokens.length) return <>{text}</>
-  const esc     = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  const pattern = new RegExp(`(${tokens.map(esc).join('|')})`, 'gi')
-  const parts: React.ReactNode[] = []
-  let last = 0, m: RegExpExecArray | null
-  while ((m = pattern.exec(text)) !== null) {
-    if (m.index > last) parts.push(text.slice(last, m.index))
-    parts.push(
-      <mark key={m.index} style={{ backgroundColor: '#fde68a', fontWeight: 700, borderRadius: 2, padding: '0 1px', color: 'inherit' }}>
-        {m[0]}
-      </mark>,
-    )
-    last = m.index + m[0].length
-  }
-  if (last < text.length) parts.push(text.slice(last))
-  return <>{parts}</>
 }
 
 /* ───────────────────────── specialty list ───────────────────────── */
@@ -170,9 +141,8 @@ export default function NotesTab({ highlightedNoteId, externalHighlightQuery }: 
     return v
   }, [filtered, specialty, favOnly, favouriteIds])
 
-  const searching     = Boolean(filterQuery.trim())
-  const searchTokens  = useMemo(() => (searching ? parseTokens(filterQuery) : []), [filterQuery, searching])
-  const visibleKey    = visible.map(r => r.note.id).join('|')
+  const searching  = Boolean(filterQuery.trim())
+  const visibleKey = visible.map(r => r.note.id).join('|')
 
   /* keep a valid selection within the visible list while searching/filtering */
   useEffect(() => {
@@ -323,8 +293,6 @@ export default function NotesTab({ highlightedNoteId, externalHighlightQuery }: 
               <ResultRow
                 key={r.note.id}
                 note={r.note}
-                snippet={r.snippet}
-                tokens={searchTokens}
                 selected={r.note.id === selectedId}
                 isFav={favouriteIds.has(r.note.id)}
                 onOpen={() => selectNote(r.note.id, searching)}
@@ -359,8 +327,8 @@ export default function NotesTab({ highlightedNoteId, externalHighlightQuery }: 
 
 /* ───────────────────────── result row ───────────────────────── */
 
-function ResultRow({ note, snippet, tokens, selected, isFav, onOpen, onToggleFav }: {
-  note: Note; snippet: string | null; tokens: string[]
+function ResultRow({ note, selected, isFav, onOpen, onToggleFav }: {
+  note: Note
   selected: boolean; isFav: boolean; onOpen: () => void; onToggleFav: () => void
 }) {
   const sp = getSpecialtyStyle(note.tags[0])
@@ -401,16 +369,6 @@ function ResultRow({ note, snippet, tokens, selected, isFav, onOpen, onToggleFav
           }}>
             {note.subtitle}
           </div>
-          {snippet && tokens.length > 0 && (
-            <div style={{
-              marginTop: 5, fontSize: 11, color: '#5b4a1f', lineHeight: 1.4,
-              background: '#fef9c3', border: '1px solid #fde68a', borderRadius: 5,
-              padding: '3px 7px',
-              display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden',
-            }}>
-              <HighlightedSnippet text={snippet} tokens={tokens} />
-            </div>
-          )}
         </div>
         <button
           onClick={e => { e.stopPropagation(); onToggleFav() }}

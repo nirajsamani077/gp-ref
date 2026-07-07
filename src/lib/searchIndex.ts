@@ -52,6 +52,22 @@ const bodyFuse = new Fuse(noteCorpus, {
   minMatchCharLength: 3,
 })
 
+// ── Fuse 3: Strict title/subtitle/tag — typo-tolerance escape hatch ────────
+// Very tight threshold: only genuine near-misses (e.g. "coeliak" → "Coeliac")
+// pass. Used by the precision gate to keep typo tolerance without letting
+// loose fuzzy matches ("masld" → "Malaria") through.
+const strictTitleFuse = new Fuse(noteCorpus, {
+  keys: [
+    { name: 'label',    weight: 3 },
+    { name: 'sublabel', weight: 1 },
+    { name: 'tags',     weight: 1 },
+  ],
+  threshold: 0.2,
+  includeScore: true,
+  ignoreLocation: true,
+  minMatchCharLength: 3,
+})
+
 // ── Snippet helper — returns a ~90-char body excerpt around the first hit ──
 export function getSnippet(text: string, tokens: string[]): string | null {
   const lower = text.toLowerCase()
@@ -186,6 +202,28 @@ function runNoteSearch(q: string, maxN: number): UnifiedResult[] {
       const bodyLow  = entry.body.toLowerCase()
       const found    = specificTokens.some(t => metaLow.includes(t) || bodyLow.includes(t))
       if (!found) scoreMap.delete(id)
+    }
+  }
+
+  // ── Precision gate: kill loose fuzzy noise ────────────────────────────
+  // Every surviving candidate must GENUINELY contain a query token (exact
+  // substring in its title/subtitle/tags or body) OR be a tight typo match on
+  // the title. Without this a short fuzzy query like "masld" drags in unrelated
+  // titles ("Malaria", "Autism", "DMARDs"). This keeps the results list clean
+  // and relevant while still tolerating genuine near-miss typos.
+  {
+    const strictIds = new Set(strictTitleFuse.search(q).map(r => r.item.id))
+    for (const id of [...scoreMap.keys()]) {
+      if (strictIds.has(id)) continue
+      const entry = noteCorpus.find(n => n.id === id)
+      if (!entry) { scoreMap.delete(id); continue }
+      const metaLow = (entry.label + ' ' + entry.sublabel + ' ' + entry.tags).toLowerCase()
+      const bodyLow = entry.body.toLowerCase()
+      const hit = tokens.some(t =>
+        (t.length >= 2 && metaLow.includes(t)) ||
+        (t.length >= 3 && bodyLow.includes(t)),
+      )
+      if (!hit) scoreMap.delete(id)
     }
   }
 
