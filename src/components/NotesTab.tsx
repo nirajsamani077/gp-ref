@@ -1,16 +1,15 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import type { Note } from '../data/notes'
 import { NOTES } from '../data/notes'
-import { searchNotesForTab, getBlockExcerpts } from '../lib/searchIndex'
-import type { BlockExcerpt } from '../lib/searchIndex'
+import { searchNotesForTab } from '../lib/searchIndex'
 import { getSpecialtyStyle, SPECIALTY_STYLES } from '../data/specialties'
 import NoteRenderer from './NoteRenderer'
 
-// ── Note search via shared searchIndex ───────────────────────────────────────
+/* ───────────────────────── search helpers ───────────────────────── */
+
 interface FilterResult {
-  note:     Note
-  snippet:  string | null
-  excerpts: BlockExcerpt[]   // block-level matches for excerpt cards
+  note:    Note
+  snippet: string | null
 }
 
 function parseTokens(query: string): string[] {
@@ -23,21 +22,17 @@ function parseTokens(query: string): string[] {
 }
 
 function filterNotes(query: string): FilterResult[] {
-  if (!query.trim()) return NOTES.map(n => ({ note: n, snippet: null, excerpts: [] }))
-  const hits   = searchNotesForTab(query.trim(), 60)
-  const tokens = parseTokens(query)
-  return hits.map(h => {
-    const note = NOTES.find(n => n.id === h.id)!
-    if (!note) return null
-    return {
-      note,
-      snippet:  h.snippet,
-      excerpts: getBlockExcerpts(note, tokens, 3),
-    }
-  }).filter((r): r is FilterResult => r !== null)
+  if (!query.trim()) return NOTES.map(n => ({ note: n, snippet: null }))
+  const hits = searchNotesForTab(query.trim(), 200)
+  const out: FilterResult[] = []
+  for (const h of hits) {
+    const note = NOTES.find(n => n.id === h.id)
+    if (note) out.push({ note, snippet: h.snippet })
+  }
+  return out
 }
 
-// ── Inline snippet highlighter for excerpt cards ──────────────────────────────
+/* Inline snippet highlighter (yellow marks) */
 function HighlightedSnippet({ text, tokens }: { text: string; tokens: string[] }) {
   if (!tokens.length) return <>{text}</>
   const esc     = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
@@ -47,7 +42,7 @@ function HighlightedSnippet({ text, tokens }: { text: string; tokens: string[] }
   while ((m = pattern.exec(text)) !== null) {
     if (m.index > last) parts.push(text.slice(last, m.index))
     parts.push(
-      <mark key={m.index} style={{ backgroundColor: '#fde68a', fontWeight: 700, borderRadius: 2, padding: '0 2px', color: 'inherit' }}>
+      <mark key={m.index} style={{ backgroundColor: '#fde68a', fontWeight: 700, borderRadius: 2, padding: '0 1px', color: 'inherit' }}>
         {m[0]}
       </mark>,
     )
@@ -57,7 +52,8 @@ function HighlightedSnippet({ text, tokens }: { text: string; tokens: string[] }
   return <>{parts}</>
 }
 
-// ── Specialty list ────────────────────────────────────────────────────────────
+/* ───────────────────────── specialty list ───────────────────────── */
+
 function getSpecialties() {
   const seen = new Set<string>()
   const list: { tag: string; label: string }[] = []
@@ -70,11 +66,12 @@ function getSpecialties() {
       }
     }
   }
-  return list
+  return list.sort((a, b) => a.label.localeCompare(b.label))
 }
 const SPECIALTIES = getSpecialties()
 
-// ── Favourites — localStorage persistence ────────────────────────────────────
+/* ───────────────────────── favourites ───────────────────────── */
+
 const FAV_KEY = 'gpr-favourites'
 
 function useFavourites() {
@@ -82,514 +79,443 @@ function useFavourites() {
     try {
       const raw = localStorage.getItem(FAV_KEY)
       return raw ? new Set(JSON.parse(raw) as string[]) : new Set()
-    } catch {
-      return new Set()
-    }
+    } catch { return new Set() }
   })
-
-  // Sync to localStorage whenever the set changes
   useEffect(() => {
     try { localStorage.setItem(FAV_KEY, JSON.stringify([...ids])) } catch { /* quota */ }
   }, [ids])
-
   const toggle = useCallback((id: string) => {
     setIds(prev => {
       const next = new Set(prev)
-      if (next.has(id)) { next.delete(id) } else { next.add(id) }
+      if (next.has(id)) next.delete(id); else next.add(id)
       return next
     })
   }, [])
-
   return { favouriteIds: ids, toggleFavourite: toggle }
 }
 
-// ── Component ────────────────────────────────────────────────────────────────
+/* ───────────────────────── responsive ───────────────────────── */
+
+function useIsDesktop() {
+  const [d, setD] = useState(() => typeof window !== 'undefined' && window.innerWidth >= 900)
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 900px)')
+    const h = (e: MediaQueryListEvent) => setD(e.matches)
+    mq.addEventListener('change', h)
+    return () => mq.removeEventListener('change', h)
+  }, [])
+  return d
+}
+
+/* ───────────────────────── component ───────────────────────── */
+
 interface NotesTabProps {
-  highlightedNoteId?: string | null
+  highlightedNoteId?:      string | null
   externalHighlightQuery?: string
 }
 
 export default function NotesTab({ highlightedNoteId, externalHighlightQuery }: NotesTabProps) {
-  const [filterQuery, setFilterQuery]       = useState('')
+  const [filterQuery,   setFilterQuery]   = useState('')
   const [highlightQuery, setHighlightQuery] = useState<string | undefined>(undefined)
-  const [openId, setOpenId]                 = useState<string | null>(null)
-  const [autoJump, setAutoJump]             = useState(false)
-  const [jumpToBlock, setJumpToBlock]       = useState<number | null>(null)
-  const [specialty, setSpecialty]           = useState<string>('all')
-  const [resetKey, setResetKey]             = useState(0)
-  const [animatingId, setAnimatingId]       = useState<string | null>(null)
-  const inputRef = useRef<HTMLInputElement>(null)
+  const [selectedId,    setSelectedId]    = useState<string | null>(null)
+  const [autoJump,      setAutoJump]      = useState(false)
+  const [specialty,     setSpecialty]     = useState<string>('all')
+  const [favOnly,       setFavOnly]       = useState(false)
+  const [mobileShowNote, setMobileShowNote] = useState(false)
+
+  const inputRef  = useRef<HTMLInputElement>(null)
+  const noteScrollRef = useRef<HTMLDivElement>(null)
+  const isDesktop = useIsDesktop()
 
   const { favouriteIds, toggleFavourite } = useFavourites()
 
+  /* home / reset */
   const resetHome = useCallback(() => {
     setFilterQuery('')
     setHighlightQuery(undefined)
-    setOpenId(null)
+    setSelectedId(null)
     setAutoJump(false)
-    setJumpToBlock(null)
     setSpecialty('all')
-    setResetKey(k => k + 1)
+    setFavOnly(false)
+    setMobileShowNote(false)
   }, [])
-
   useEffect(() => {
     window.addEventListener('gpr-home', resetHome)
     return () => window.removeEventListener('gpr-home', resetHome)
   }, [resetHome])
 
-  // Sync external highlight query from navigate-note events (from command palette)
+  /* external highlight query (command palette) */
   useEffect(() => {
-    if (externalHighlightQuery !== undefined) {
-      setHighlightQuery(externalHighlightQuery || undefined)
-    }
+    if (externalHighlightQuery !== undefined) setHighlightQuery(externalHighlightQuery || undefined)
   }, [externalHighlightQuery])
 
-  // Open and scroll to a note when navigated externally
+  /* external navigate-to-note (notelink / palette) */
   useEffect(() => {
     if (!highlightedNoteId) return
     setFilterQuery('')
     setSpecialty('all')
-    setOpenId(highlightedNoteId)
-    setAutoJump(true)      // auto-jump when coming from palette/notelink
-    setTimeout(() => {
-      const el = document.querySelector(`[data-note-id="${highlightedNoteId}"]`)
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }, 120)
+    setFavOnly(false)
+    setSelectedId(highlightedNoteId)
+    setAutoJump(true)
+    setMobileShowNote(true)
+    noteScrollRef.current?.scrollTo({ top: 0 })
   }, [highlightedNoteId])
 
-  const filteredResults: FilterResult[] = filterQuery
-    ? filterNotes(filterQuery)
-    : NOTES.map(n => ({ note: n, snippet: null, excerpts: [] }))
-  const filtered = filteredResults
-  const visible  = specialty === 'all'
-    ? filtered
-    : filtered.filter(r => r.note.tags.map(t => t.toLowerCase()).includes(specialty))
+  /* filtered + specialty/fav narrowed results */
+  const filtered = useMemo(() => filterNotes(filterQuery), [filterQuery])
+  const visible = useMemo(() => {
+    let v = filtered
+    if (specialty !== 'all') v = v.filter(r => r.note.tags.map(t => t.toLowerCase()).includes(specialty))
+    if (favOnly) v = v.filter(r => favouriteIds.has(r.note.id))
+    return v
+  }, [filtered, specialty, favOnly, favouriteIds])
 
+  const searching     = Boolean(filterQuery.trim())
+  const searchTokens  = useMemo(() => (searching ? parseTokens(filterQuery) : []), [filterQuery, searching])
+  const visibleKey    = visible.map(r => r.note.id).join('|')
+
+  /* keep a valid selection within the visible list while searching/filtering */
   useEffect(() => {
-    if (visible.length === 1) {
-      setOpenId(visible[0].note.id)
-      setAutoJump(!!filterQuery)
+    if (!searching && specialty === 'all' && !favOnly) return   // free browsing — don't auto-pick
+    if (visible.length === 0) return
+    const stillVisible = selectedId && visible.some(r => r.note.id === selectedId)
+    if (!stillVisible) {
+      setSelectedId(visible[0].note.id)
+      setAutoJump(searching)
     }
-  }, [visible.length, visible[0]?.note.id])   // eslint-disable-line react-hooks/exhaustive-deps
+  }, [visibleKey]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  function handleSpecialty(tag: string) { setSpecialty(tag) }
+  const selectedNote = selectedId ? NOTES.find(n => n.id === selectedId) ?? null : null
+  const activeHighlight = filterQuery.trim() || highlightQuery || undefined
+
+  function selectNote(id: string, jump: boolean) {
+    setSelectedId(id)
+    setAutoJump(jump)
+    setMobileShowNote(true)
+    noteScrollRef.current?.scrollTo({ top: 0 })
+  }
+
+  function onSearchChange(v: string) {
+    setFilterQuery(v)
+    setAutoJump(false)      // don't yank scroll on each keystroke of an open note
+  }
 
   function clearFilter() {
     setFilterQuery('')
-    setHighlightQuery(undefined)
     setAutoJump(false)
-    setJumpToBlock(null)
     inputRef.current?.focus()
   }
 
-  function handleToggleFav(noteId: string) {
-    toggleFavourite(noteId)
-    setAnimatingId(noteId)
-    setTimeout(() => setAnimatingId(null), 300)
+  /* keyboard navigation within the results list */
+  function onSearchKeyDown(e: React.KeyboardEvent) {
+    if (!visible.length) return
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault()
+      const idx  = Math.max(0, visible.findIndex(r => r.note.id === selectedId))
+      const next = e.key === 'ArrowDown'
+        ? Math.min(visible.length - 1, idx + 1)
+        : Math.max(0, idx - 1)
+      selectNote(visible[next].note.id, searching)
+    } else if (e.key === 'Enter' && !isDesktop && selectedId) {
+      setMobileShowNote(true)
+    }
   }
 
-  const showingAll = !filterQuery && specialty === 'all'
-  const searching  = Boolean(filterQuery)
+  const showList = isDesktop || !mobileShowNote
+  const showNote = isDesktop || mobileShowNote
 
-  const searchTokens = filterQuery ? parseTokens(filterQuery) : []
+  /* ───────────────────── render ───────────────────── */
+  return (
+    <div style={{ display: 'flex', height: '100%', overflow: 'hidden', background: '#eef3f9' }}>
 
-  function openNoteAtBlock(noteId: string, blockIdx: number) {
-    setOpenId(noteId)
-    setJumpToBlock(blockIdx)
-    setAutoJump(false)
-    setTimeout(() => {
-      const el = document.querySelector(`[data-note-id="${noteId}"]`)
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }, 80)
-  }
-
-  const favouritedVisible   = searching ? [] : visible.filter(r => favouriteIds.has(r.note.id))
-  const unfavouritedVisible = searching ? visible : visible.filter(r => !favouriteIds.has(r.note.id))
-  const hasFavSection = favouritedVisible.length > 0
-
-  // The effective search query for highlighting (filter takes precedence)
-  const activeHighlight = filterQuery.trim() || highlightQuery || undefined
-
-  // ── Shared card renderer ─────────────────────────────────────────────────
-  function renderCard({ note, snippet }: { note: Note; snippet: string | null }) {
-    const isOpen    = openId === note.id
-    const isFav     = favouriteIds.has(note.id)
-    const isPopping = animatingId === note.id
-    const sp        = getSpecialtyStyle(note.tags[0])
-
-    return (
-      <article
-        key={note.id}
-        data-note-id={note.id}
-        style={{
-          marginBottom: 10,
-          backgroundColor: isOpen ? sp.bg : '#fff',
-          border: `1px solid ${isOpen ? sp.border + '55' : '#dde6f0'}`,
-          borderLeft: `5px solid ${sp.border}`,
-          borderRadius: 12,
-          boxShadow: isOpen
-            ? `0 4px 16px rgba(0,0,0,0.1), 0 0 0 1px ${sp.border}22`
-            : '0 2px 6px rgba(26,54,93,0.08)',
-          overflow: 'visible',
-          transition: 'box-shadow 0.2s, background 0.2s, border 0.2s',
-        }}
-      >
-        {/* ── Card header row ── */}
-        <div style={{ display: 'flex', alignItems: 'stretch' }}>
-
-          <button
-            onClick={() => {
-              const next = isOpen ? null : note.id
-              setOpenId(next)
-              setAutoJump(false)
-              if (isOpen) setJumpToBlock(null)
+      {/* ══ LEFT: search + results list ══ */}
+      {showList && (
+        <div style={{
+          width: isDesktop ? 372 : '100%',
+          flexShrink: 0,
+          display: 'flex', flexDirection: 'column',
+          borderRight: isDesktop ? '1px solid #d6e0ec' : 'none',
+          background: '#fbfdff',
+          minWidth: 0,
+        }}>
+          {/* search box */}
+          <div style={{ padding: '12px 14px 8px', flexShrink: 0 }}>
+            <div style={{
+              display: 'flex', alignItems: 'center', gap: 8,
+              background: '#fff', border: '1.5px solid #d6e0ec',
+              borderRadius: 10, padding: '8px 12px',
+              transition: 'border-color .15s, box-shadow .15s',
             }}
-            style={{
-              flex: 1, minWidth: 0,
-              padding: '13px 6px 13px 14px',
-              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-              background: 'transparent', border: 'none', cursor: 'pointer',
-              textAlign: 'left', gap: 10,
-            }}
-          >
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-                <span style={{ fontSize: 15, fontWeight: 700, color: '#0f2a4a' }}>
-                  {note.title}
-                </span>
-                <span style={{
-                  fontSize: 10, fontWeight: 700, color: sp.text,
-                  backgroundColor: sp.pill, padding: '2px 8px',
-                  borderRadius: 20, textTransform: 'uppercase',
-                  letterSpacing: '0.06em', whiteSpace: 'nowrap',
-                  border: `1px solid ${sp.border}44`,
-                }}>
-                  {sp.label}
-                </span>
-              </div>
-              <div style={{ fontSize: 12, color: '#64748b', marginTop: 3 }}>
-                {note.subtitle}
-              </div>
-              {/* Match snippet — shown when searching and note is closed */}
-              {!isOpen && snippet && filterQuery && (
-                <div style={{
-                  marginTop: 5, fontSize: 11, color: '#6b7280',
-                  backgroundColor: '#fef9c3', border: '1px solid #fde68a',
-                  borderRadius: 5, padding: '3px 8px',
-                  overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-                  maxWidth: '100%',
-                }}>
-                  <span style={{ fontWeight: 700, color: '#92400e', marginRight: 4 }}>↳</span>
-                  {snippet}
-                </div>
+              onFocusCapture={e => { e.currentTarget.style.borderColor = '#3b82f6'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(59,130,246,.12)' }}
+              onBlurCapture={e => { e.currentTarget.style.borderColor = '#d6e0ec'; e.currentTarget.style.boxShadow = 'none' }}
+            >
+              <span style={{ fontSize: 15, color: '#94a3b8', flexShrink: 0 }}>🔍</span>
+              <input
+                ref={inputRef}
+                type="text"
+                placeholder="Search notes…"
+                value={filterQuery}
+                onChange={e => onSearchChange(e.target.value)}
+                onKeyDown={onSearchKeyDown}
+                style={{ flex: 1, minWidth: 0, border: 'none', background: 'transparent', outline: 'none', fontSize: 15, color: '#1a202c' }}
+              />
+              {filterQuery && (
+                <button onClick={clearFilter} title="Clear" style={{ border: 'none', background: 'none', cursor: 'pointer', color: '#94a3b8', fontSize: 18, lineHeight: 1, flexShrink: 0 }}>×</button>
               )}
             </div>
-            <span style={{
-              color: isOpen ? sp.border : '#94a3b8', fontSize: 18, flexShrink: 0,
-              transform: isOpen ? 'rotate(180deg)' : 'none',
-              transition: 'transform 0.2s, color 0.2s',
-            }}>▾</span>
-          </button>
-
-          <button
-            onClick={e => { e.stopPropagation(); handleToggleFav(note.id) }}
-            aria-label={isFav ? 'Remove from favourites' : 'Add to favourites'}
-            title={isFav ? 'Remove from favourites' : 'Add to favourites'}
-            style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              padding: '0 14px',
-              background: 'transparent', border: 'none', cursor: 'pointer',
-              fontSize: 20, lineHeight: 1, flexShrink: 0,
-              color: isFav ? '#f59e0b' : '#d1dce8',
-              transform: isPopping ? 'scale(1.45)' : 'scale(1)',
-              transition: 'color 0.15s, transform 0.25s cubic-bezier(0.34,1.56,0.64,1)',
-              WebkitTapHighlightColor: 'transparent',
-            }}
-          >
-            {isFav ? '★' : '☆'}
-          </button>
-        </div>
-
-        {/* Secondary specialty tags */}
-        {isOpen && note.tags.length > 1 && (
-          <div style={{ paddingLeft: 14, paddingBottom: 6, display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-            {note.tags.slice(1).map(tag => (
-              <span key={tag} style={{
-                fontSize: 11, fontWeight: 600, color: '#2b6cb0',
-                backgroundColor: '#eef4fb', padding: '2px 8px',
-                borderRadius: 20, textTransform: 'uppercase', letterSpacing: '0.04em',
-              }}>
-                {tag}
-              </span>
-            ))}
           </div>
-        )}
 
-        {/* Note body */}
-        {isOpen && (
-          <div style={{ padding: '10px 14px 18px', borderTop: `1px solid ${sp.border}22` }}>
-            <NoteRenderer
-              blocks={note.content}
-              searchQuery={activeHighlight}
-              autoJump={autoJump && openId === note.id}
-              jumpToBlock={openId === note.id ? jumpToBlock : null}
-            />
-          </div>
-        )}
-      </article>
-    )
-  }
-
-  // ── Excerpt-card renderer (used when searching) ────────────────────────────
-  function renderExcerptGroup({ note, snippet, excerpts }: FilterResult) {
-    const isOpen = openId === note.id
-    const sp     = getSpecialtyStyle(note.tags[0])
-
-    // When the note is already open, fall through to the full card
-    if (isOpen) return renderCard({ note, snippet })
-
-    return (
-      <div key={note.id} data-note-id={note.id} style={{ marginBottom: 12 }}>
-        {/* Compact note header — opens the full note */}
-        <button
-          onClick={() => { setOpenId(note.id); setJumpToBlock(null); setAutoJump(true) }}
-          style={{
-            width: '100%', display: 'flex', alignItems: 'center', gap: 10,
-            padding: '9px 14px',
-            backgroundColor: '#fff',
-            border: `1px solid ${sp.border}55`,
-            borderLeft: `4px solid ${sp.border}`,
-            borderRadius: excerpts.length ? '10px 10px 0 0' : 10,
-            cursor: 'pointer', textAlign: 'left',
-            boxShadow: '0 1px 4px rgba(26,54,93,0.06)',
-          }}
-        >
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-              <span style={{ fontSize: 14, fontWeight: 700, color: '#0f2a4a' }}>{note.title}</span>
-              <span style={{
-                fontSize: 10, fontWeight: 700, color: sp.text,
-                backgroundColor: sp.pill, padding: '2px 8px',
-                borderRadius: 20, textTransform: 'uppercase', letterSpacing: '0.06em',
-                border: `1px solid ${sp.border}44`, whiteSpace: 'nowrap',
-              }}>
-                {sp.label}
-              </span>
+          {/* filter row: specialty + favourites */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '0 14px 10px', flexShrink: 0 }}>
+            <div style={{ position: 'relative', flex: 1, minWidth: 0 }}>
+              <select
+                value={specialty}
+                onChange={e => setSpecialty(e.target.value)}
+                style={{
+                  width: '100%', appearance: 'none', WebkitAppearance: 'none',
+                  padding: '7px 30px 7px 12px', borderRadius: 8,
+                  border: '1.5px solid #d6e0ec', background: specialty === 'all' ? '#fff' : getSpecialtyStyle(specialty).bg,
+                  fontSize: 13, fontWeight: 600, color: '#334155', cursor: 'pointer', outline: 'none',
+                }}
+              >
+                <option value="all">All specialties</option>
+                {SPECIALTIES.map(s => <option key={s.tag} value={s.tag}>{s.label}</option>)}
+              </select>
+              <span style={{ position: 'absolute', right: 11, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', color: '#94a3b8', fontSize: 10 }}>▼</span>
             </div>
-            {note.subtitle && (
-              <div style={{ fontSize: 12, color: '#64748b', marginTop: 2 }}>{note.subtitle}</div>
-            )}
-          </div>
-          <span style={{ color: '#94a3b8', fontSize: 12, fontWeight: 600, flexShrink: 0, whiteSpace: 'nowrap' }}>
-            Open full note →
-          </span>
-        </button>
-
-        {/* Excerpt cards */}
-        {excerpts.map((ex, ei) => {
-          const isLast = ei === excerpts.length - 1
-          return (
-            <div
-              key={ei}
+            <button
+              onClick={() => setFavOnly(f => !f)}
+              title="Show favourites only"
               style={{
-                backgroundColor: '#fffbeb',
-                border: `1px solid ${sp.border}33`,
-                borderTop: 'none',
-                borderRadius: isLast ? '0 0 10px 10px' : 0,
-                padding: '8px 14px',
-                display: 'flex', alignItems: 'flex-start', gap: 10,
+                flexShrink: 0, display: 'flex', alignItems: 'center', gap: 5,
+                padding: '7px 12px', borderRadius: 8, cursor: 'pointer',
+                border: `1.5px solid ${favOnly ? '#f59e0b' : '#d6e0ec'}`,
+                background: favOnly ? '#fffbeb' : '#fff',
+                color: favOnly ? '#b45309' : '#64748b', fontSize: 13, fontWeight: 700,
+                transition: 'all .15s',
               }}
             >
-              <div style={{ flex: 1, minWidth: 0 }}>
-                {ex.sectionHeading && (
-                  <div style={{
-                    fontSize: 10, fontWeight: 700, color: sp.text,
-                    textTransform: 'uppercase', letterSpacing: '0.05em',
-                    marginBottom: 3, opacity: 0.85,
-                  }}>
-                    § {ex.sectionHeading}
-                  </div>
-                )}
-                <div style={{ fontSize: 12.5, color: '#374151', lineHeight: 1.55 }}>
-                  <HighlightedSnippet text={ex.snippet} tokens={searchTokens} />
-                </div>
+              <span style={{ color: '#f59e0b', fontSize: 14 }}>★</span>
+              {isDesktop && 'Favourites'}
+            </button>
+          </div>
+
+          {/* count line */}
+          <div style={{ padding: '0 16px 6px', flexShrink: 0, fontSize: 11.5, color: '#8a9bb0', fontWeight: 600 }}>
+            {searching
+              ? <>{visible.length} result{visible.length !== 1 ? 's' : ''} for <span style={{ color: '#475569' }}>“{filterQuery}”</span></>
+              : favOnly
+                ? <>{visible.length} favourite{visible.length !== 1 ? 's' : ''}</>
+                : <>{visible.length} note{visible.length !== 1 ? 's' : ''}{specialty !== 'all' ? ` · ${getSpecialtyStyle(specialty).label}` : ''}</>}
+          </div>
+
+          {/* results */}
+          <div style={{ flex: 1, overflowY: 'auto', padding: '2px 8px 24px' }}>
+            {visible.length === 0 ? (
+              <div style={{ padding: '40px 20px', textAlign: 'center', color: '#94a3b8' }}>
+                <div style={{ fontSize: 30, marginBottom: 10 }}>🔍</div>
+                <p style={{ fontSize: 14, fontWeight: 600, color: '#64748b', margin: '0 0 6px' }}>
+                  {searching ? `No notes for “${filterQuery}”` : 'Nothing here yet'}
+                </p>
+                {searching && <p style={{ fontSize: 12, lineHeight: 1.5, margin: 0 }}>Try a broader term or drug class, or use ⌘K → Ask AI.</p>}
               </div>
-              <button
-                onClick={() => openNoteAtBlock(note.id, ex.blockIndex)}
-                style={{
-                  flexShrink: 0, padding: '5px 12px',
-                  backgroundColor: sp.border, color: '#fff',
-                  border: 'none', borderRadius: 7, cursor: 'pointer',
-                  fontSize: 11, fontWeight: 700, whiteSpace: 'nowrap',
-                  boxShadow: `0 1px 5px ${sp.border}55`,
-                  transition: 'opacity 0.15s',
-                }}
-                onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
-                onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
-              >
-                → Go here
-              </button>
-            </div>
-          )
-        })}
-      </div>
-    )
-  }
+            ) : visible.map(r => (
+              <ResultRow
+                key={r.note.id}
+                note={r.note}
+                snippet={r.snippet}
+                tokens={searchTokens}
+                selected={r.note.id === selectedId}
+                isFav={favouriteIds.has(r.note.id)}
+                onOpen={() => selectNote(r.note.id, searching)}
+                onToggleFav={() => toggleFavourite(r.note.id)}
+              />
+            ))}
+          </div>
+        </div>
+      )}
 
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-
-      {/* ── Search filter bar ── */}
-      <div style={{
-        padding: '10px 16px 8px',
-        backgroundColor: '#fff',
-        borderBottom: '1px solid #dde6f0',
-        flexShrink: 0,
-      }}>
-        <div style={{
-          display: 'flex', alignItems: 'center', gap: 8,
-          backgroundColor: '#f4f8fc', border: '1.5px solid #dde6f0',
-          borderRadius: 10, padding: '7px 12px',
-          transition: 'border-color 0.15s, box-shadow 0.15s',
-        }}
-          onFocusCapture={e => { e.currentTarget.style.borderColor = '#3b82f6'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(59,130,246,0.12)' }}
-          onBlurCapture={e => { e.currentTarget.style.borderColor = '#dde6f0'; e.currentTarget.style.boxShadow = 'none' }}
-        >
-          <span style={{ fontSize: 15, color: '#a0aec0', flexShrink: 0 }}>🔍</span>
-          <input
-            ref={inputRef}
-            type="text"
-            placeholder="Search notes…"
-            value={filterQuery}
-            onChange={e => setFilterQuery(e.target.value)}
-            style={{ flex: 1, border: 'none', background: 'transparent', outline: 'none', fontSize: 15, color: '#1a202c' }}
-          />
-          {filterQuery && (
-            <button onClick={clearFilter} style={{ border: 'none', background: 'none', cursor: 'pointer', color: '#a0aec0', fontSize: 18, lineHeight: 1, padding: '0 2px', flexShrink: 0 }} title="Clear search">×</button>
+      {/* ══ RIGHT: note reader ══ */}
+      {showNote && (
+        <div ref={noteScrollRef} style={{ flex: 1, minWidth: 0, overflowY: 'auto', background: '#fff', position: 'relative' }}>
+          {selectedNote ? (
+            <NotePane
+              note={selectedNote}
+              highlight={activeHighlight}
+              autoJump={autoJump}
+              isFav={favouriteIds.has(selectedNote.id)}
+              onToggleFav={() => toggleFavourite(selectedNote.id)}
+              showBack={!isDesktop}
+              onBack={() => setMobileShowNote(false)}
+            />
+          ) : (
+            <EmptyReader total={NOTES.length} onFocusSearch={() => inputRef.current?.focus()} />
           )}
         </div>
-      </div>
-
-      {/* ── Specialty filter pills ── */}
-      <div style={{
-        display: 'flex', gap: 8, padding: '8px 16px',
-        overflowX: 'auto', backgroundColor: '#fff',
-        borderBottom: '1px solid #dde6f0', flexShrink: 0, scrollbarWidth: 'none',
-      }}>
-        <FilterPill label="All" active={specialty === 'all'} activeColour="#1a365d" onClick={() => handleSpecialty('all')} />
-        {SPECIALTIES.map(({ tag, label }) => {
-          const s = getSpecialtyStyle(tag)
-          return <FilterPill key={tag} label={label} active={specialty === tag} activeColour={s.border} onClick={() => handleSpecialty(tag)} />
-        })}
-      </div>
-
-      {/* ── Notes list ── */}
-      <style>{`@keyframes gpr-notes-in{from{opacity:.5;transform:translateY(6px)}to{opacity:1;transform:none}}`}</style>
-      <div
-        key={resetKey}
-        style={{
-          flex: 1, overflowY: 'auto', padding: '12px 16px 40px',
-          backgroundColor: '#f0f5fb',
-          animation: resetKey > 0 ? 'gpr-notes-in 0.22s ease-out' : 'none',
-        }}
-      >
-        {/* Result count when filtering */}
-        {!showingAll && (
-          <p style={{ fontSize: 12, color: '#8a9bb0', margin: '0 0 10px', fontStyle: 'italic' }}>
-            {visible.length === 0 ? 'No notes match' : `${visible.length} note${visible.length !== 1 ? 's' : ''} found`}
-            {filterQuery && <> for <strong style={{ color: '#4a5568' }}>"{filterQuery}"</strong></>}
-          </p>
-        )}
-
-        {visible.length === 0 ? (
-          <div style={{ padding: '40px 20px', textAlign: 'center' }}>
-            {filterQuery ? (
-              <>
-                <div style={{ fontSize: 32, marginBottom: 12 }}>🔍</div>
-                <p style={{ fontSize: 15, fontWeight: 600, color: '#4a5568', marginBottom: 6 }}>
-                  No notes found for "{filterQuery}"
-                </p>
-                <p style={{ fontSize: 13, color: '#a0aec0', lineHeight: 1.5 }}>
-                  Try a broader term or drug class — fuzzy matching is active,
-                  so check for typos or try the ⌘K palette and <em>Ask AI</em>.
-                </p>
-              </>
-            ) : (
-              <p style={{ fontSize: 15, color: '#a0aec0' }}>No notes in this specialty yet</p>
-            )}
-          </div>
-        ) : (
-          <>
-            {/* ── Favourites section (never shown while searching) ── */}
-            {hasFavSection && (
-              <>
-                <SectionHeading icon="★" iconColour="#f59e0b" label="Favourites" colour="#92400e" />
-                {favouritedVisible.map(r => renderCard(r))}
-                {unfavouritedVisible.length > 0 && <SectionDivider />}
-              </>
-            )}
-
-            {/* ── Main / remaining notes ── */}
-            {!hasFavSection && unfavouritedVisible.length > 0 && <div style={{ marginBottom: 2 }} />}
-            {unfavouritedVisible.map(r => searching ? renderExcerptGroup(r) : renderCard(r))}
-          </>
-        )}
-      </div>
-    </div>
-  )
-}
-
-// ── Section heading ──────────────────────────────────────────────────────────
-function SectionHeading({ icon, iconColour, label, colour }: {
-  icon: string; iconColour: string; label: string; colour: string
-}) {
-  return (
-    <div style={{
-      display: 'flex', alignItems: 'center', gap: 5,
-      marginBottom: 8,
-      fontSize: 11, fontWeight: 800, color: colour,
-      textTransform: 'uppercase', letterSpacing: '0.08em',
-    }}>
-      <span style={{ fontSize: 13, color: iconColour }}>{icon}</span>
-      {label}
-    </div>
-  )
-}
-
-// ── Section divider ───────────────────────────────────────────────────────────
-function SectionDivider({ label }: { label?: string }) {
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 10, margin: '4px 0 14px' }}>
-      <div style={{ flex: 1, height: 1, backgroundColor: '#dde6f0' }} />
-      {label && (
-        <span style={{
-          fontSize: 10, fontWeight: 700, color: '#a0aec0',
-          textTransform: 'uppercase', letterSpacing: '0.07em', whiteSpace: 'nowrap',
-        }}>{label}</span>
       )}
-      {label && <div style={{ flex: 1, height: 1, backgroundColor: '#dde6f0' }} />}
     </div>
   )
 }
 
-// ── Filter pill ──────────────────────────────────────────────────────────────
-function FilterPill({ label, active, activeColour, onClick }: {
-  label: string; active: boolean; activeColour: string; onClick: () => void
+/* ───────────────────────── result row ───────────────────────── */
+
+function ResultRow({ note, snippet, tokens, selected, isFav, onOpen, onToggleFav }: {
+  note: Note; snippet: string | null; tokens: string[]
+  selected: boolean; isFav: boolean; onOpen: () => void; onToggleFav: () => void
 }) {
+  const sp = getSpecialtyStyle(note.tags[0])
   return (
-    <button
-      onClick={onClick}
+    <div
+      onClick={onOpen}
       style={{
-        flexShrink: 0, padding: '5px 15px', borderRadius: 20,
-        fontSize: 13, fontWeight: 600, cursor: 'pointer',
-        border: `1.5px solid ${active ? activeColour : '#c8d8ea'}`,
-        backgroundColor: active ? activeColour : '#f8fafc',
-        color: active ? '#fff' : '#374151',
-        transition: 'all 0.15s', whiteSpace: 'nowrap',
-        boxShadow: active ? `0 2px 8px ${activeColour}44` : 'none',
+        position: 'relative', cursor: 'pointer', marginBottom: 4,
+        borderRadius: 9, padding: '9px 10px 9px 13px',
+        background: selected ? sp.bg : 'transparent',
+        boxShadow: selected ? `inset 3px 0 0 ${sp.border}` : 'inset 3px 0 0 transparent',
+        transition: 'background .12s',
       }}
+      onMouseEnter={e => { if (!selected) e.currentTarget.style.background = '#f1f6fc' }}
+      onMouseLeave={e => { if (!selected) e.currentTarget.style.background = 'transparent' }}
     >
-      {label}
-    </button>
+      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
+            <span style={{
+              flex: 1, minWidth: 0, fontSize: 14, fontWeight: 700,
+              color: selected ? '#0f2a4a' : '#1f3a5f',
+              overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+            }}>
+              {note.title}
+            </span>
+            <span style={{
+              flexShrink: 0, fontSize: 9, fontWeight: 800, color: sp.text,
+              background: sp.pill, padding: '2px 7px', borderRadius: 20,
+              textTransform: 'uppercase', letterSpacing: '.05em',
+            }}>
+              {sp.label}
+            </span>
+          </div>
+          <div style={{
+            fontSize: 11.5, color: '#64748b', marginTop: 2,
+            overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+          }}>
+            {note.subtitle}
+          </div>
+          {snippet && tokens.length > 0 && (
+            <div style={{
+              marginTop: 5, fontSize: 11, color: '#5b4a1f', lineHeight: 1.4,
+              background: '#fef9c3', border: '1px solid #fde68a', borderRadius: 5,
+              padding: '3px 7px',
+              display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden',
+            }}>
+              <HighlightedSnippet text={snippet} tokens={tokens} />
+            </div>
+          )}
+        </div>
+        <button
+          onClick={e => { e.stopPropagation(); onToggleFav() }}
+          title={isFav ? 'Remove favourite' : 'Add favourite'}
+          style={{
+            flexShrink: 0, border: 'none', background: 'none', cursor: 'pointer',
+            fontSize: 16, lineHeight: 1, padding: '1px 2px',
+            color: isFav ? '#f59e0b' : '#cbd5e1',
+          }}
+        >
+          {isFav ? '★' : '☆'}
+        </button>
+      </div>
+    </div>
+  )
+}
+
+/* ───────────────────────── note pane ───────────────────────── */
+
+function NotePane({ note, highlight, autoJump, isFav, onToggleFav, showBack, onBack }: {
+  note: Note; highlight?: string; autoJump: boolean
+  isFav: boolean; onToggleFav: () => void; showBack: boolean; onBack: () => void
+}) {
+  const sp = getSpecialtyStyle(note.tags[0])
+  return (
+    <div>
+      {/* mobile back bar */}
+      {showBack && (
+        <div style={{
+          position: 'sticky', top: 0, zIndex: 30,
+          display: 'flex', alignItems: 'center', gap: 6,
+          padding: '9px 14px', background: '#fff', borderBottom: '1px solid #e2e8f0',
+        }}>
+          <button onClick={onBack} style={{ border: 'none', background: 'none', cursor: 'pointer', color: '#2b6cb0', fontSize: 14, fontWeight: 700, padding: 0 }}>
+            ‹ Back to list
+          </button>
+        </div>
+      )}
+
+      <div style={{ maxWidth: 860, margin: '0 auto', padding: '20px 26px 60px' }}>
+        {/* title block */}
+        <div style={{ borderBottom: `2px solid ${sp.border}44`, paddingBottom: 12, marginBottom: 16 }}>
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+            <h1 style={{ flex: 1, minWidth: 0, margin: 0, fontSize: 23, fontWeight: 800, color: '#0f2a4a', lineHeight: 1.2 }}>
+              {note.title}
+            </h1>
+            <button
+              onClick={onToggleFav}
+              title={isFav ? 'Remove favourite' : 'Add favourite'}
+              style={{ flexShrink: 0, border: 'none', background: 'none', cursor: 'pointer', fontSize: 24, lineHeight: 1, color: isFav ? '#f59e0b' : '#cbd5e1', marginTop: 2 }}
+            >
+              {isFav ? '★' : '☆'}
+            </button>
+          </div>
+          {note.subtitle && (
+            <p style={{ margin: '6px 0 0', fontSize: 14, color: '#5a6b80', lineHeight: 1.45 }}>{note.subtitle}</p>
+          )}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginTop: 10 }}>
+            {note.tags.map((tag, i) => {
+              const s = getSpecialtyStyle(tag)
+              const known = tag.toLowerCase() in SPECIALTY_STYLES
+              return (
+                <span key={tag} style={{
+                  fontSize: 10, fontWeight: 700,
+                  color: i === 0 ? s.text : '#4a5568',
+                  background: i === 0 ? s.pill : '#eef2f7',
+                  padding: '2px 9px', borderRadius: 20,
+                  textTransform: 'uppercase', letterSpacing: '.05em',
+                }}>
+                  {known ? s.label : tag}
+                </span>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* body — NoteRenderer handles live highlighting + match navigator */}
+        <NoteRenderer
+          key={note.id}
+          blocks={note.content}
+          searchQuery={highlight}
+          autoJump={autoJump}
+          jumpToBlock={null}
+        />
+      </div>
+    </div>
+  )
+}
+
+/* ───────────────────────── empty reader ───────────────────────── */
+
+function EmptyReader({ total, onFocusSearch }: { total: number; onFocusSearch: () => void }) {
+  return (
+    <div style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: 32, color: '#94a3b8' }}>
+      <div style={{ fontSize: 46, marginBottom: 14, opacity: .5 }}>📖</div>
+      <p style={{ fontSize: 17, fontWeight: 700, color: '#475569', margin: '0 0 6px' }}>Select a note to read</p>
+      <p style={{ fontSize: 13, margin: '0 0 18px', lineHeight: 1.5, maxWidth: 340 }}>
+        {total} clinical notes. Search on the left, or browse by specialty — the matched text is highlighted inside each note as you type.
+      </p>
+      <button
+        onClick={onFocusSearch}
+        style={{ padding: '9px 18px', borderRadius: 8, border: '1.5px solid #c3d9f0', background: '#eef4fb', color: '#2b6cb0', fontSize: 13, fontWeight: 700, cursor: 'pointer' }}
+      >
+        🔍 Start searching
+      </button>
+    </div>
   )
 }
