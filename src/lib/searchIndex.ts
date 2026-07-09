@@ -23,7 +23,11 @@ const noteCorpus = NOTES.map(n => ({
   sublabel: n.subtitle,
   tags:     n.tags.join(' '),
   body:     n.body,   // enrichBody already appended all content text
+  // Section headings joined — a match here means the note has a dedicated
+  // section on the topic (strong relevance signal used for ranking).
+  headings: n.content.map(b => (b.type === 'heading' ? b.text : '')).filter(Boolean).join(' • ').toLowerCase(),
 }))
+const corpusById = new Map(noteCorpus.map(e => [e.id, e]))
 
 // ── Fuse 1: Title / tag / subtitle only ───────────────────────────────────
 // No body field here — eliminates the weighted-average penalty that drags
@@ -81,6 +85,55 @@ export function getSnippet(text: string, tokens: string[]): string | null {
     }
   }
   return null
+}
+
+// ── Relevance scoring for result ORDERING ──────────────────────────────────
+// Transparent, field-weighted score (higher = more relevant). Candidate
+// selection is still done by the multi-pass engine below; this only decides
+// the ORDER. Key idea: a term appearing in a section HEADING or many times in
+// the body means the note is genuinely *about* that term — so those outrank a
+// note that merely mentions it once in its subtitle tagline.
+function countOcc(hay: string, needle: string): number {
+  if (needle.length < 2) return 0
+  let n = 0, i = hay.indexOf(needle)
+  while (i !== -1 && n < 60) { n++; i = hay.indexOf(needle, i + needle.length) }
+  return n
+}
+function hasWord(hay: string, w: string): boolean {
+  return new RegExp(`\\b${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`).test(hay)
+}
+function relevanceScore(e: typeof noteCorpus[number], tokens: string[], qLow: string): number {
+  const title = e.label.toLowerCase()
+  const sub   = e.sublabel.toLowerCase()
+  const tags  = e.tags.toLowerCase()
+  const head  = e.headings
+  const body  = e.body.toLowerCase()
+
+  let s = 0
+  // Whole-query title tiers — an exact/leading/word title match always wins.
+  if      (title === qLow)          s += 12000
+  else if (title.startsWith(qLow))  s += 6000
+  else if (hasWord(title, qLow))    s += 3500
+  else if (title.includes(qLow))    s += 1800
+  if (hasWord(sub, qLow) || tags.includes(qLow)) s += 150
+
+  // Per-token, field-weighted.
+  let covered = 0
+  for (const t of tokens) {
+    if (t.length < 2) continue
+    let hit = false
+    if (title.includes(t)) { s += 500; hit = true }               // topic in title
+    if (tags.includes(t))  { s += 350; hit = true }               // curated tag
+    const hc = countOcc(head, t)                                  // dedicated section(s)
+    if (hc) { s += Math.min(hc, 6) * 200; hit = true }
+    if (sub.includes(t))   { s += 80;  hit = true }               // subtitle mention
+    const bc = countOcc(body, t)                                  // depth of coverage
+    if (bc) { s += Math.min(bc, 15) * 15; hit = true }
+    if (hit) covered++
+  }
+  // Multi-word queries: reward covering every token (real intent match).
+  if (tokens.length > 1 && covered === tokens.length) s += 300 * tokens.length
+  return s
 }
 
 // ── Multi-pass note search ─────────────────────────────────────────────────
@@ -249,20 +302,24 @@ function runNoteSearch(q: string, maxN: number): UnifiedResult[] {
     })
   }
 
-  // ── Sort: exact-title > starts-with > contains > combined score ────────
+  // ── Sort: field-weighted relevance (title tiers → tag/heading/frequency) ──
+  // Falls back to the multi-pass score, then shorter (more specific) title.
+  const relCache = new Map<string, number>()
+  const rel = (id: string) => {
+    let v = relCache.get(id)
+    if (v === undefined) {
+      const e = corpusById.get(id)
+      v = e ? relevanceScore(e, tokens, qLow) : 0
+      relCache.set(id, v)
+    }
+    return v
+  }
   return results.sort((a, b) => {
-    const aT = a.label.toLowerCase()
-    const bT = b.label.toLowerCase()
-    const aE = aT === qLow,         bE = bT === qLow
-    const aS = aT.startsWith(qLow), bS = bT.startsWith(qLow)
-    const aC = aT.includes(qLow),   bC = bT.includes(qLow)
-    if (aE && !bE) return -1
-    if (bE && !aE) return  1
-    if (aS && !bS) return -1
-    if (bS && !aS) return  1
-    if (aC && !bC) return -1
-    if (bC && !aC) return  1
-    return (scoreMap.get(b.id) ?? 0) - (scoreMap.get(a.id) ?? 0)
+    const rd = rel(b.id) - rel(a.id)
+    if (rd !== 0) return rd
+    const sd = (scoreMap.get(b.id) ?? 0) - (scoreMap.get(a.id) ?? 0)
+    if (sd !== 0) return sd
+    return a.label.length - b.label.length
   }).slice(0, maxN)
 }
 
