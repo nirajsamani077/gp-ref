@@ -104,6 +104,7 @@ export const ovarianCancer: Note = {
         { id: 'endometrial-cancer', label: 'Endometrial Cancer', subtitle: 'Other gynaecological malignancy — PMB pathway' },
         { id: 'colorectal-cancer', label: 'Colorectal Cancer', subtitle: 'FIT testing — consider alongside ovarian cancer in vague abdominal symptoms' },
         { id: 'menopause', label: 'Menopause', subtitle: 'Symptoms wrongly attributed to menopause — keep ovarian cancer in mind' },
+        { id: 'ovarian-cyst', label: 'Ovarian Cyst', subtitle: 'Benign cysts — when to scan/CA125 and follow-up thresholds' },
       ],
     },
 

@@ -140,6 +140,7 @@ export const hearingLoss: Note = {
         { id: 'acute-otitis-media', label: 'Acute Otitis Media', subtitle: 'OM with effusion (glue ear) — common cause of CHL in children' },
         { id: 'otitis-externa', label: 'Otitis Externa', subtitle: 'External ear canal disease — otoscopy and management' },
         { id: 'tinnitus', label: 'Tinnitus', subtitle: 'Frequently coexists; unilateral tinnitus + HL needs MRI IAM' },
+        { id: 'ome-glue-ear', label: 'OME / Glue Ear', subtitle: 'Commonest cause of conductive hearing loss in children' },
       ],
     },
 

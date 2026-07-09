@@ -274,6 +274,26 @@ import { oralSteroids }             from '../notes/oralSteroids'
 import { neuropathicPain }          from '../notes/neuropathicPain'
 import { topicalSteroidLadder }     from '../notes/topicalSteroidLadder'
 import { valvularHeartDisease }     from '../notes/valvularHeartDisease'
+import { infectiveEndocarditis }    from '../notes/infectiveEndocarditis'
+import { omeGlueEar }               from '../notes/omeGlueEar'
+import { neckLumps }                from '../notes/neckLumps'
+import { proteinuriaNephrotic }     from '../notes/proteinuriaNephrotic'
+import { scrotalGroinLumps }        from '../notes/scrotalGroinLumps'
+import { motorNeuronDisease }       from '../notes/motorNeuronDisease'
+import { lymeDisease }              from '../notes/lymeDisease'
+import { feverReturningTraveller }  from '../notes/feverReturningTraveller'
+import { immunisationSchedule }     from '../notes/immunisationSchedule'
+import { mus }                      from '../notes/mus'
+import { pmsDysmenorrhoea }         from '../notes/pmsDysmenorrhoea'
+import { ovarianCyst }              from '../notes/ovarianCyst'
+import { hyperemesis }              from '../notes/hyperemesis'
+import { mastitisBreastPain }       from '../notes/mastitisBreastPain'
+import { subfertility }             from '../notes/subfertility'
+import { gastroenteritisChildren }  from '../notes/gastroenteritisChildren'
+import { infantColicReflux }        from '../notes/infantColicReflux'
+import { paediatricConstipation }   from '../notes/paediatricConstipation'
+import { neonatalJaundice }         from '../notes/neonatalJaundice'
+import { paediatricLowerLimb }      from '../notes/paediatricLowerLimb'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -551,4 +571,24 @@ export const NOTES: Note[] = [
   neuropathicPain,
   topicalSteroidLadder,
   valvularHeartDisease,
+  infectiveEndocarditis,
+  omeGlueEar,
+  neckLumps,
+  proteinuriaNephrotic,
+  scrotalGroinLumps,
+  motorNeuronDisease,
+  lymeDisease,
+  feverReturningTraveller,
+  immunisationSchedule,
+  mus,
+  pmsDysmenorrhoea,
+  ovarianCyst,
+  hyperemesis,
+  mastitisBreastPain,
+  subfertility,
+  gastroenteritisChildren,
+  infantColicReflux,
+  paediatricConstipation,
+  neonatalJaundice,
+  paediatricLowerLimb,
 ].map(enrichBody)

@@ -143,6 +143,7 @@ export const pcos: Note = {
         { id: 'obesity', label: 'Obesity & Weight Management', subtitle: 'Insulin resistance and weight loss central to PCOS management' },
         { id: 'diabetes-t2dm', label: 'Type 2 Diabetes', subtitle: 'PCOS significantly increases T2DM risk — monitor HbA1c' },
         { id: 'hrt-management', label: 'HRT — Management', subtitle: 'Endometrial protection principles apply in PCOS too' },
+        { id: 'subfertility', label: 'Subfertility & Infertility', subtitle: 'PCOS is the commonest cause of anovulatory subfertility' },
       ],
     },
 

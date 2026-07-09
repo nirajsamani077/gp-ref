@@ -72,6 +72,7 @@ export const valvularHeartDisease: Note = {
         { id: 'atrialFibrillation', label: 'Atrial Fibrillation', subtitle: 'Common with mitral valve disease; anticoagulation' },
         { id: 'syncope', label: 'Syncope & Collapse', subtitle: 'Exertional syncope — a red flag for severe aortic stenosis' },
         { id: 'angina-ihd', label: 'Angina & IHD', subtitle: 'Angina as an aortic stenosis symptom; coexisting IHD' },
+        { id: 'infective-endocarditis', label: 'Infective Endocarditis', subtitle: 'Valve disease predisposes; prophylaxis and Duke criteria' },
       ],
     },
 
