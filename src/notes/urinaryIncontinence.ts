@@ -94,6 +94,7 @@ export const urinaryIncontinence: Note = {
         { id: 'menopause', label: 'Menopause', subtitle: 'Vaginal atrophy contributes; topical oestrogen helps' },
         { id: 'uti-women', label: 'UTI in Women', subtitle: 'Exclude infection; recurrent UTI overlaps with OAB' },
         { id: 'parkinsons-pd', label: "Parkinson's Disease", subtitle: 'Neurogenic bladder — avoid anticholinergic burden' },
+        { id: 'uterovaginal-prolapse', label: 'Uterovaginal Prolapse', subtitle: 'Coexisting prolapse — shared pelvic-floor management' },
       ],
     },
 

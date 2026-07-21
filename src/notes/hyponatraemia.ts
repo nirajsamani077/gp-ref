@@ -105,6 +105,7 @@ export const hyponatraemia: Note = {
         { id: 'heart-failure', label: 'Heart Failure', subtitle: 'Hypervolaemic dilutional hyponatraemia' },
         { id: 'lung-cancer', label: 'Lung Cancer', subtitle: 'Small cell lung cancer — classic SIADH cause' },
         { id: 'elderly-falls', label: 'Elderly Falls', subtitle: 'Hyponatraemia as a reversible contributor to falls' },
+        { id: 'diabetes-insipidus', label: 'Diabetes Insipidus', subtitle: 'Polyuria/polydipsia and the primary-polydipsia differential' },
       ],
     },
 

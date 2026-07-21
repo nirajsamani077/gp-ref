@@ -151,6 +151,7 @@ export const hypothyroidism: Note = {
         { id: 'hyperthyroidism', label: 'Hyperthyroidism & Thyrotoxicosis', subtitle: 'Graves\' disease, carbimazole, radioactive iodine, thyroid eye disease' },
         { id: 'atrialFibrillation', label: 'Atrial Fibrillation', subtitle: 'New AF — always check TFTs; thyroid disease is a common cause' },
         { id: 'osteoporosis', label: 'Osteoporosis', subtitle: 'Untreated hyperthyroidism and overreplaced hypothyroidism cause bone loss' },
+        { id: 'vitiligo', label: 'Vitiligo', subtitle: 'Associated autoimmune condition — check TFTs' },
       ],
     },
 

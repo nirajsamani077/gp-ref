@@ -116,6 +116,7 @@ export const dementia: Note = {
     {
       type: 'calclink',
       calculators: [
+        { id: 'nph', label: 'Normal Pressure Hydrocephalus', subtitle: 'A potentially reversible cause — gait, incontinence, cognition' },
         { id: '6cit', label: '6-CIT Calculator', subtitle: 'Six Item Cognitive Impairment Test — score ≥8 suggests significant impairment' },
       ],
     },

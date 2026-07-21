@@ -95,6 +95,7 @@ export const osteoarthritis: Note = {
         { id: 'knee-problems', label: 'Knee Problems', subtitle: 'Knee OA vs traumatic/overuse knee conditions' },
         { id: 'hand-wrist-conditions', label: 'Hand & Wrist Conditions', subtitle: 'Thumb-base OA overlaps with hand conditions' },
         { id: 'nsaids', label: 'NSAIDs', subtitle: 'Topical-first analgesia and safe prescribing' },
+        { id: 'trochanteric-bursitis', label: 'Greater Trochanteric Pain Syndrome', subtitle: 'Lateral hip pain — distinguish from hip OA' },
       ],
     },
 

@@ -72,6 +72,7 @@ export const scabiesLice: Note = {
         { id: 'atopic-eczema', label: 'Atopic Eczema', subtitle: 'Itchy rash differential; scabies can mimic/flare eczema' },
         { id: 'fungal-skin-infections', label: 'Fungal Skin Infections', subtitle: 'Other itchy/scaly rash differentials' },
         { id: 'stis', label: 'STIs', subtitle: 'Pubic lice — screen for co-existing STIs' },
+        { id: 'pruritus', label: 'Generalised Pruritus', subtitle: 'Scabies is the classic mimic of unexplained itch' },
       ],
     },
 

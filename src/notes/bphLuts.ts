@@ -138,6 +138,7 @@ export const bphLuts: Note = {
         { id: 'erectile-dysfunction', label: 'Erectile Dysfunction', subtitle: 'PDE5 inhibitors, shared management; LUTS and ED frequently coexist' },
         { id: 'two-week-wait', label: '2WW Referral Guide', subtitle: 'Prostate cancer referral criteria — PSA and DRE' },
         { id: 'aki', label: 'Acute Kidney Injury', subtitle: 'Obstructive (post-renal) AKI from chronic retention' },
+        { id: 'nocturia', label: 'Nocturia', subtitle: 'Classify the mechanism with a bladder diary before treating' },
       ],
     },
 

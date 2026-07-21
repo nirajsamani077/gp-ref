@@ -138,6 +138,7 @@ export const gordDyspepsia: Note = {
         { id: 'oesophagogastric-cancer', label: 'Oesophageal & Gastric Cancer', subtitle: 'Upper-GI 2WW alarm features' },
         { id: 'upper-gi-bleed', label: 'Upper GI Bleed', subtitle: 'Peptic ulcer bleeding and post-bleed H. pylori care' },
         { id: 'nsaids', label: 'NSAIDs', subtitle: 'NSAID-related dyspepsia and gastroprotection' },
+        { id: 'ppi-deprescribing', label: 'PPIs — Side Effects & Deprescribing', subtitle: 'Reviewing and stepping down long-term PPIs' },
       ],
     },
   ],

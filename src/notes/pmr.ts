@@ -157,6 +157,7 @@ export const pmr: Note = {
         { id: 'hypothyroidism', label: 'Hypothyroidism', subtitle: 'Proximal aches and raised CK — always exclude' },
         { id: 'haem-malignancies', label: 'Haematological Malignancies', subtitle: 'Myeloma screen in atypical or steroid-resistant cases' },
         { id: 'oral-steroids', label: 'Oral Corticosteroids', subtitle: 'Long-term steroid safety — sick-day rules, bone protection, taper' },
+        { id: 'inflammatory-markers', label: 'Inflammatory Markers (CRP/ESR)', subtitle: 'Interpreting raised markers in PMR/GCA' },
       ],
     },
 

@@ -225,6 +225,7 @@ export const hypertension: Note = {
         { id: 'ckd', label: 'CKD', subtitle: 'CKD is both a cause and consequence of hypertension — ACEi/ARB' },
         { id: 'osa', label: 'OSA', subtitle: 'OSA causes secondary hypertension — treat OSA to improve BP' },
         { id: 'diabetes-t2dm', label: 'Type 2 Diabetes', subtitle: 'Diabetic hypertension — ACEi/ARB first-line for renoprotection' },
+        { id: 'phaeochromocytoma', label: 'Phaeochromocytoma', subtitle: 'Secondary hypertension — paroxysms, resistant BP, metanephrines' },
       ],
     },
   ],

@@ -115,6 +115,7 @@ export const conjunctivitis: Note = {
         { id: 'red-eye', label: 'Red Painful Eye', subtitle: 'Distinguish benign conjunctivitis from sight-threatening red eye' },
         { id: 'allergic-rhinitis', label: 'Allergic Rhinitis & Hayfever', subtitle: 'Allergic conjunctivitis often coexists' },
         { id: 'visual-loss', label: 'Sudden Visual Loss', subtitle: 'Red flags requiring same-day ophthalmology' },
+        { id: 'dry-eyes-blepharitis', label: 'Dry Eyes & Blepharitis', subtitle: 'Chronic surface disease — a common red-eye mimic' },
       ],
     },
   ],

@@ -314,6 +314,26 @@ import { sccBowens }                from '../notes/sccBowens'
 import { bullousDisease }           from '../notes/bullousDisease'
 import { shinglesChickenpox }       from '../notes/shinglesChickenpox'
 import { serotoninNms }             from '../notes/serotoninNms'
+import { pulmonaryNodules }         from '../notes/pulmonaryNodules'
+import { diabetesInsipidus }        from '../notes/diabetesInsipidus'
+import { phaeochromocytoma }        from '../notes/phaeochromocytoma'
+import { mesentericIschaemia }      from '../notes/mesentericIschaemia'
+import { faecalIncontinence }       from '../notes/faecalIncontinence'
+import { nocturia }                 from '../notes/nocturia'
+import { polycythaemia }            from '../notes/polycythaemia'
+import { inflammatoryMarkers }      from '../notes/inflammatoryMarkers'
+import { raisedInrWarfarin }        from '../notes/raisedInrWarfarin'
+import { fnd }                      from '../notes/fnd'
+import { nph }                      from '../notes/nph'
+import { trochantericBursitis }     from '../notes/trochantericBursitis'
+import { jointHypermobility }       from '../notes/jointHypermobility'
+import { vitiligo }                 from '../notes/vitiligo'
+import { pruritus }                 from '../notes/pruritus'
+import { tmjDysfunction }           from '../notes/tmjDysfunction'
+import { dryEyesBlepharitis }       from '../notes/dryEyesBlepharitis'
+import { uterovaginalProlapse }     from '../notes/uterovaginalProlapse'
+import { cerebralPalsy }            from '../notes/cerebralPalsy'
+import { ppiDeprescribing }         from '../notes/ppiDeprescribing'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -631,4 +651,24 @@ export const NOTES: Note[] = [
   bullousDisease,
   shinglesChickenpox,
   serotoninNms,
+  pulmonaryNodules,
+  diabetesInsipidus,
+  phaeochromocytoma,
+  mesentericIschaemia,
+  faecalIncontinence,
+  nocturia,
+  polycythaemia,
+  inflammatoryMarkers,
+  raisedInrWarfarin,
+  fnd,
+  nph,
+  trochantericBursitis,
+  jointHypermobility,
+  vitiligo,
+  pruritus,
+  tmjDysfunction,
+  dryEyesBlepharitis,
+  uterovaginalProlapse,
+  cerebralPalsy,
+  ppiDeprescribing,
 ].map(enrichBody)

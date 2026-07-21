@@ -442,6 +442,8 @@ export const atrialFibrillation: Note = {
         { id: 'doacs', label: 'DOACs', subtitle: 'DOAC dosing, renal function, reversal agents, switching' },
         { id: 'hyperthyroidism', label: 'Hyperthyroidism', subtitle: 'New AF \u2014 always check TFTs; thyrotoxicosis causes AF' },
         { id: 'heart-failure', label: 'Heart Failure', subtitle: 'AF and heart failure commonly coexist \u2014 rate vs rhythm control' },
+        { id: 'raised-inr-warfarin', label: 'High INR on Warfarin', subtitle: 'Managing over-anticoagulation and bleeding' },
+        { id: 'mesenteric-ischaemia', label: 'Mesenteric & Ischaemic Colitis', subtitle: 'AF as an embolic source for acute mesenteric ischaemia' },
       ],
     },
 

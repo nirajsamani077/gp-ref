@@ -137,6 +137,7 @@ export const lungCancer: Note = {
         { id: 'copd', label: 'COPD', subtitle: 'Smoking is shared risk factor; COPD can mask early lung cancer' },
         { id: 'smoking-cessation', label: 'Smoking Cessation', subtitle: 'Most important modifiable risk — NRT, varenicline, bupropion' },
         { id: 'two-week-wait', label: '2WW Referral Guide', subtitle: 'Comprehensive 2WW criteria across all cancer pathways' },
+        { id: 'pulmonary-nodules', label: 'Incidental Pulmonary Nodules', subtitle: 'The surveillance pathway for nodules found on CT' },
         { id: 'chronicCough', label: 'Chronic Cough', subtitle: 'Persistent cough — always consider lung cancer in the differential' },
         { id: 'palliativeEOL', label: 'Palliative & End of Life Care', subtitle: 'Symptom management, anticipatory prescribing, RESPECT' },
       ],
