@@ -3,68 +3,64 @@ import type { Note } from '../data/notes'
 export const trochantericBursitis: Note = {
   id: 'trochanteric-bursitis',
   title: 'Greater Trochanteric Pain Syndrome (Trochanteric Bursitis)',
-  subtitle: 'Lateral hip pain from gluteal tendinopathy — diagnosis, load management and injection',
+  subtitle: 'Lateral hip pain from gluteal tendinopathy — diagnosis, load management, injection and what to exclude',
   tags: ['msk'],
 
-  body: `greater trochanteric pain syndrome GTPS trochanteric bursitis gluteal tendinopathy lateral hip pain point tenderness lying on side single leg stance load management physiotherapy corticosteroid injection abductor tendinopathy`,
+  body: `greater trochanteric pain syndrome GTPS trochanteric bursitis gluteus medius minimus tendinopathy lateral hip pain point tenderness single leg stance FADER load management physiotherapy corticosteroid injection shockwave hip osteoarthritis meralgia paraesthetica`,
 
   content: [
 
+    { type: 'heading', level: 2, text: 'Overview' },
     {
-      type: 'linkrow',
-      links: [
-        { label: 'NICE CKS — Greater Trochanteric Pain Syndrome', url: 'https://cks.nice.org.uk/topics/greater-trochanteric-pain-syndrome/' },
-        { label: 'Arthritis & MSK — Hip Pain', url: 'https://www.versusarthritis.org/' },
-        { label: 'BMJ — Lateral Hip Pain', url: 'https://www.bmj.com/' },
-      ],
-    },
-
-    {
-      type: 'callout',
-      variant: 'info',
-      title: 'It Is Usually a Tendinopathy',
-      items: [
-        'GTPS is the modern term — most cases are a gluteus medius/minimus tendinopathy rather than true bursal inflammation',
-        'Common in women 40–60, and with obesity, sudden increases in activity, or coexisting hip/knee OA and low back pain',
-        'Typically self-limiting but often protracted; the mainstay is education and load management, not passive treatment',
-      ],
+      type: 'para',
+      text: 'Greater trochanteric pain syndrome (GTPS) is the modern term for what used to be called trochanteric bursitis. Most cases are actually a gluteus medius/minimus TENDINOPATHY (± secondary bursal irritation) rather than a primary inflamed bursa — which is why the treatment mirrors other tendinopathies: education and progressive load management rather than rest and steroids. It is common in women aged 40–60 and with obesity, and often coexists with hip/knee osteoarthritis and low back pain.',
     },
 
     { type: 'heading', level: 2, text: 'Clinical Features' },
-
     {
       type: 'list',
       items: [
-        'Lateral hip pain over the greater trochanter, often radiating down the outer thigh',
-        'Worse lying on the affected side (disturbs sleep), on prolonged standing, climbing stairs, and rising from sitting',
-        'Point tenderness over the greater trochanter is the key sign; pain is reproduced on resisted hip abduction and single-leg stance (30-second test)',
-        'Hip range of movement is usually preserved (contrast with hip OA, which restricts internal rotation and causes groin pain)',
+        'Lateral hip pain over the greater trochanter, often radiating down the outer thigh (rarely below the knee).',
+        'Worse lying on the affected side (disturbs sleep), on prolonged standing, climbing stairs, and rising from sitting.',
+        'Point tenderness directly over the greater trochanter is the key sign; pain is reproduced by resisted hip abduction, single-leg stance (30-second test), and the FADER/FABER positions.',
+        'Hip range of movement is preserved (contrast hip OA, which restricts and pains internal rotation and causes groin pain).',
       ],
     },
 
     { type: 'heading', level: 2, text: 'Differential Diagnosis' },
-
     {
       type: 'table',
       headers: ['Condition', 'Discriminating feature'],
       rows: [
         ['Hip osteoarthritis', 'Groin pain, restricted/painful internal rotation'],
-        ['Lumbar radiculopathy', 'Back pain, dermatomal radiation, neuro signs'],
-        ['Meralgia paraesthetica', 'Burning anterolateral thigh, sensory only'],
-        ['Hip fracture (after fall)', 'Inability to weight-bear, shortened/externally rotated leg'],
+        ['Lumbar radiculopathy', 'Back pain, dermatomal radiation, neurological signs'],
+        ['Meralgia paraesthetica', 'Burning anterolateral thigh, purely sensory (lateral cutaneous nerve of thigh)'],
+        ['Hip fracture (after a fall)', 'Unable to weight-bear, shortened/externally rotated leg → urgent imaging'],
+        ['Gluteal tendon tear', 'Marked weakness/Trendelenburg gait, refractory pain — consider USS/MRI'],
       ],
     },
 
-    { type: 'heading', level: 2, text: 'Management' },
-
+    { type: 'heading', level: 2, text: 'Management — Load, Don\'t Rest' },
     {
-      type: 'list',
-      items: [
-        'Explain the good long-term prognosis; relative rest from aggravating activities but avoid complete inactivity',
-        'Load management and physiotherapy: progressive gluteal strengthening/isometrics is the most effective treatment; avoid hip-adducted positions (crossing legs, "hanging" on one hip)',
-        'Simple analgesia/topical NSAID; weight loss where relevant; a pillow between the knees when side-lying',
-        'Corticosteroid injection can give short-term relief for persistent pain but does not outperform exercise in the medium term — reserve for significant symptoms and combine with rehab',
-        'Refer if diagnostic doubt, or symptoms persist despite ~3–6 months of good rehab (consider imaging/gluteal tendon tear, shockwave therapy)',
+      type: 'table',
+      headers: ['Measure', 'Detail'],
+      rows: [
+        ['Education & activity modification', 'Explain the good long-term prognosis; relative rest from aggravating loads but avoid inactivity; avoid hip-ADDUCTED positions (crossing legs, standing "hanging" on one hip, side-lying on the sore side)'],
+        ['Load management / physiotherapy', 'Progressive gluteal strengthening and isometrics is the most effective treatment — the mainstay; a physiotherapy programme if not self-managing'],
+        ['Adjuncts', 'Simple analgesia / topical NSAID; weight loss where relevant; a pillow between the knees when side-lying'],
+        ['Corticosteroid injection', 'Gives useful SHORT-term relief for significant pain but does not outperform exercise in the medium term — reserve for severe symptoms and always combine with rehab'],
+        ['Refractory', 'Consider shockwave therapy or specialist referral (and imaging) after ~3–6 months of good rehab — exclude a gluteal tendon tear'],
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Patient Information Resources' },
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — Greater Trochanteric Pain Syndrome', url: 'https://cks.nice.org.uk/topics/greater-trochanteric-pain-syndrome/' },
+        { label: 'Versus Arthritis — Hip Pain & Exercises', url: 'https://versusarthritis.org/about-arthritis/conditions/hip-pain/' },
+        { label: 'CSP — Hip Pain Exercises', url: 'https://www.csp.org.uk/conditions/hip-pain' },
+        { label: 'NHS — Hip Pain in Adults', url: 'https://www.nhs.uk/conditions/hip-pain/' },
       ],
     },
 

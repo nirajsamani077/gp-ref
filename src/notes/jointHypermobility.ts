@@ -6,64 +6,68 @@ export const jointHypermobility: Note = {
   subtitle: 'From asymptomatic hypermobility to hypermobility spectrum disorder and hypermobile Ehlers-Danlos syndrome',
   tags: ['msk'],
 
-  body: `joint hypermobility Beighton score hypermobility spectrum disorder HSD hypermobile Ehlers-Danlos syndrome hEDS chronic pain subluxation dislocation autonomic dysautonomia POTS fatigue physiotherapy proprioception connective tissue`,
+  body: `joint hypermobility Beighton score hypermobility spectrum disorder HSD hypermobile Ehlers-Danlos syndrome hEDS chronic widespread pain subluxation dislocation autonomic dysautonomia POTS fatigue physiotherapy proprioception pacing connective tissue vascular EDS marfanoid`,
 
   content: [
 
+    { type: 'heading', level: 2, text: 'Overview' },
     {
-      type: 'linkrow',
-      links: [
-        { label: 'The Ehlers-Danlos Society — Diagnostic Criteria', url: 'https://www.ehlers-danlos.com/' },
-        { label: 'NICE CKS — Joint Hypermobility', url: 'https://cks.nice.org.uk/' },
-        { label: 'RCGP — hEDS Toolkit', url: 'https://www.rcgp.org.uk/' },
+      type: 'para',
+      text: 'Joint hypermobility exists on a spectrum. Generalised hypermobility is common and often asymptomatic (even an asset in dancers and athletes). At the other end, hypermobile Ehlers-Danlos syndrome (hEDS) is a clinical diagnosis with strict criteria and multisystem features. In between sits hypermobility spectrum disorder (HSD) — hypermobility with musculoskeletal symptoms that does not meet full hEDS criteria. Management is broadly the same across the symptomatic end: strengthen, protect joints, and treat the associated problems.',
+    },
+
+    { type: 'heading', level: 2, text: 'Assessment — the Beighton Score' },
+    {
+      type: 'list',
+      items: [
+        'Beighton score (out of 9), 1 point each side unless stated: passive little-finger dorsiflexion >90° (×2), thumb to volar forearm (×2), elbow hyperextension >10° (×2), knee hyperextension >10° (×2), and palms flat on the floor with straight knees (×1).',
+        'A raised score (age/sex-adjusted: ≥6 pre-pubertal, ≥5 adult, ≥4 over 50) confirms generalised hypermobility — but does NOT by itself diagnose hEDS.',
+        'Ask about the wider picture: chronic widespread pain, recurrent subluxations/dislocations, soft/stretchy or fragile skin, easy bruising, fatigue, and autonomic symptoms (light-headedness on standing).',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Associated Problems' },
+    {
+      type: 'table',
+      headers: ['System', 'Common associations'],
+      rows: [
+        ['Musculoskeletal', 'Chronic pain, joint instability/dislocations, soft-tissue injuries, earlier osteoarthritis'],
+        ['Autonomic', 'Postural tachycardia syndrome (POTS), orthostatic intolerance'],
+        ['GI', 'Functional gut symptoms, reflux, constipation, bloating'],
+        ['Other', 'Fatigue, anxiety, pelvic-floor dysfunction (incl. prolapse/incontinence), poor/slow wound healing, migraine'],
       ],
     },
 
     {
       type: 'callout',
-      variant: 'info',
-      title: 'A Spectrum, Not a Single Disease',
+      variant: 'warning',
+      title: 'Red Flags — Think of a Rarer, Serious EDS Type',
       items: [
-        'Generalised joint hypermobility is common and often asymptomatic (an asset in dancers/athletes)',
-        'Hypermobility Spectrum Disorder (HSD) = hypermobility plus musculoskeletal symptoms without meeting full hEDS criteria',
-        'Hypermobile Ehlers-Danlos syndrome (hEDS) is a clinical diagnosis using strict 2017 criteria; there is currently no confirmatory gene test',
-      ],
-    },
-
-    { type: 'heading', level: 2, text: 'Assessment — the Beighton Score' },
-
-    {
-      type: 'list',
-      items: [
-        'Beighton score (out of 9): passive little-finger dorsiflexion >90° (1 each side), thumb to forearm (1 each), elbow hyperextension >10° (1 each), knee hyperextension >10° (1 each), palms flat on floor with straight knees (1)',
-        'A raised score (age/sex adjusted) confirms generalised hypermobility but does not by itself diagnose hEDS',
-        'Ask about the wider picture: chronic widespread pain, recurrent subluxations/dislocations, soft/stretchy skin, easy bruising, fatigue, and autonomic symptoms (dizziness on standing — POTS)',
-      ],
-    },
-
-    { type: 'heading', level: 2, text: 'Associated Problems' },
-
-    {
-      type: 'table',
-      headers: ['System', 'Common associations'],
-      rows: [
-        ['MSK', 'Chronic pain, joint instability, early osteoarthritis, soft-tissue injuries'],
-        ['Autonomic', 'Postural tachycardia syndrome (POTS), orthostatic intolerance'],
-        ['GI', 'Functional gut symptoms, reflux, constipation'],
-        ['Other', 'Fatigue, anxiety, pelvic-floor dysfunction, poor wound healing'],
+        'Vascular EDS: family history of arterial/organ/uterine rupture, translucent skin with visible veins, easy severe bruising — needs URGENT genetics referral (life-threatening).',
+        'Marfanoid habitus, lens dislocation, aortic root dilatation → consider Marfan/Loeys-Dietz — refer for cardiac and genetic assessment.',
       ],
     },
 
     { type: 'heading', level: 2, text: 'Management' },
-
     {
       type: 'list',
       items: [
-        'Core treatment is physiotherapy focused on strengthening, proprioception and pacing — protecting joints rather than stretching them; avoid hyperextending joints',
-        'Multimodal chronic-pain management; be cautious with opioids; treat coexisting anxiety/depression',
-        'Address POTS with fluids, salt, compression and graded exercise; refer if severe',
-        'Refer to rheumatology/specialist if the diagnosis is uncertain, or features suggest a rarer/vascular EDS type (family history of arterial/organ rupture, marfanoid features) which needs urgent genetics referral',
-        'Signpost patient support (The Ehlers-Danlos Society); coordinate care as symptoms are often multisystem',
+        'Core treatment is graded physiotherapy focused on strengthening, proprioception and PACING — protecting and stabilising joints rather than stretching them; avoid end-range hyperextension.',
+        'Multimodal chronic-pain management; be cautious with opioids; treat coexisting anxiety/depression and sleep problems.',
+        'Manage POTS conservatively first: increased fluid and salt, compression garments, and graded exercise; refer if severe.',
+        'Refer to rheumatology/relevant specialist if the diagnosis is uncertain, symptoms are refractory, or hEDS criteria are met; urgent genetics if a vascular/rarer type is suspected.',
+        'Signpost patient support (The Ehlers-Danlos Society) and coordinate the often multisystem care.',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Patient Information Resources' },
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'The Ehlers-Danlos Society — Diagnostic Criteria', url: 'https://www.ehlers-danlos.com/heds-diagnostic-checklist/' },
+        { label: 'RCGP — hEDS Toolkit', url: 'https://www.rcgp.org.uk/clinical-and-research/resources/toolkits/ehlers-danlos-syndromes-toolkit.aspx' },
+        { label: 'NHS — Joint Hypermobility Syndrome', url: 'https://www.nhs.uk/conditions/joint-hypermobility-syndrome/' },
+        { label: 'STEPS / Hypermobility Syndromes Association', url: 'https://www.hypermobility.org/' },
       ],
     },
 

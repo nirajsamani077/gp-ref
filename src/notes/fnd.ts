@@ -3,67 +3,72 @@ import type { Note } from '../data/notes'
 export const fnd: Note = {
   id: 'fnd',
   title: 'Functional Neurological Disorder (FND)',
-  subtitle: 'A rule-in diagnosis based on positive signs — explaining it well and directing rehab',
+  subtitle: 'A rule-in diagnosis based on positive signs — explaining it well and directing rehabilitation',
   tags: ['neurology'],
 
-  body: `functional neurological disorder FND conversion disorder functional weakness dissociative non-epileptic seizures NEAD Hoover sign tremor entrainment positive signs rule-in diagnosis physiotherapy CBT explanation software hardware`,
+  body: `functional neurological disorder FND conversion disorder functional weakness dissociative non-epileptic attacks NEAD seizures functional tremor Hoover's sign tremor entrainment give-way weakness positive signs rule-in diagnosis physiotherapy CBT software hardware neurosymptoms`,
 
   content: [
 
+    { type: 'heading', level: 2, text: 'Overview' },
     {
-      type: 'linkrow',
-      links: [
-        { label: 'FND Guide (neurosymptoms.org)', url: 'https://www.neurosymptoms.org/' },
-        { label: 'NICE CKS — Functional Neurological Symptoms', url: 'https://cks.nice.org.uk/' },
-        { label: 'FND Society', url: 'https://www.fndsociety.org/' },
-      ],
+      type: 'para',
+      text: 'Functional neurological disorder is a common cause of neurological symptoms — weakness, movement disorders, sensory disturbance and dissociative ("non-epileptic") attacks — in which the symptoms are genuine and involuntary but arise from altered functioning of the nervous system rather than structural damage. Crucially it is a POSITIVE diagnosis based on characteristic clinical signs, not a diagnosis of exclusion made when tests come back normal. Getting the diagnosis and its explanation right is itself therapeutic.',
     },
 
     {
       type: 'callout',
       variant: 'info',
-      title: 'A Positive Diagnosis — Not One of Exclusion',
+      title: 'A Positive Diagnosis — Not "All in the Mind"',
       items: [
-        'FND is a common cause of neurological symptoms (weakness, movement disorders, sensory change, dissociative "non-epileptic" seizures) where symptoms are genuine but arise from altered nervous-system functioning, not structural damage',
-        'It is diagnosed by POSITIVE clinical signs of internal inconsistency, not merely because tests are normal — this matters for credibility and treatment',
-        'Symptoms are real and involuntary; framing it as "all in the mind" or malingering is inaccurate and harmful',
+        'Symptoms are real, distressing and not deliberately produced — framing FND as malingering or imagination is inaccurate and harmful.',
+        'It is diagnosed by positive signs of internal inconsistency (the symptom changes with attention/distraction), demonstrable at the bedside.',
+        'FND can coexist with other neurological disease — its presence does not mean nothing else is wrong.',
       ],
     },
 
     { type: 'heading', level: 2, text: 'Positive Signs (Rule-In)' },
-
     {
       type: 'table',
-      headers: ['Sign', 'What it shows'],
+      headers: ['Sign', 'What it demonstrates'],
       rows: [
-        ['Hoover\'s sign', 'Hip extension weakness that normalises with contralateral hip flexion — inconsistent functional weakness'],
-        ['Tremor entrainment', 'A functional tremor changes frequency or stops when the patient copies a rhythmic tapping task'],
-        ['Give-way weakness', 'Weakness that fluctuates or gives way, inconsistent with pyramidal patterns'],
-        ['Dissociative seizures', 'Prolonged episodes with eye closure, fluctuating course, no post-ictal confusion/acidosis'],
+        ['Hoover\'s sign', 'Hip extension weakness that NORMALISES when the opposite hip is flexed against resistance — inconsistent functional leg weakness'],
+        ['Tremor entrainment', 'A functional tremor changes frequency or stops when the patient copies a rhythmic tapping task with the other hand'],
+        ['Give-way / collapsing weakness', 'Weakness that fluctuates or gives way, inconsistent with a pyramidal pattern'],
+        ['Dissociative (non-epileptic) attacks', 'Prolonged episodes with eye closure, fluctuating course, side-to-side head movement, and NO post-ictal confusion or lactate/prolactin rise'],
       ],
     },
 
     { type: 'heading', level: 2, text: 'Explaining the Diagnosis' },
-
     {
       type: 'list',
       items: [
-        'Use a "software not hardware" analogy: the nervous system is not damaged (hardware intact) but is not running the program correctly (software problem) — and software problems can improve',
-        'Show the patient a positive sign (e.g. Hoover\'s) to demonstrate the potential for movement — this is both diagnostic and therapeutic',
-        'Acknowledge the symptoms are real and distressing; avoid implying they are imagined or deliberate',
-        'Signpost self-help resources (neurosymptoms.org) and explain the treatment route',
+        'Use a "software, not hardware" analogy: the nervous system is not damaged (hardware intact) but is not running the program correctly (a software problem) — and software problems can be retrained and improved.',
+        'DEMONSTRATE a positive sign (e.g. Hoover\'s) to show the patient that the movement is physically possible — this is both diagnostic and reassuring.',
+        'Acknowledge the symptoms are real and involuntary; avoid implying they are imagined or put on.',
+        'Signpost self-help resources (neurosymptoms.org) and explain the treatment route — belief in the diagnosis predicts better outcome.',
       ],
     },
 
     { type: 'heading', level: 2, text: 'Management' },
-
     {
       type: 'list',
       items: [
-        'Multidisciplinary rehabilitation is the mainstay: specialist FND-informed physiotherapy for motor symptoms, and psychological therapy (CBT) — particularly for dissociative seizures',
-        'Treat comorbid depression, anxiety, PTSD and chronic pain, which commonly coexist and worsen prognosis',
-        'Avoid unnecessary repeated investigations and referrals, which reinforce illness beliefs; provide continuity and a consistent explanation across the team',
-        'Early diagnosis and a clear, believed explanation improve outcomes',
+        'Multidisciplinary, FND-informed rehabilitation is the mainstay: specialist physiotherapy for motor symptoms (retraining automatic movement), and psychological therapy (CBT) — particularly for dissociative attacks.',
+        'Treat comorbid depression, anxiety, PTSD and chronic pain/fatigue, which commonly coexist and worsen prognosis.',
+        'Avoid unnecessary repeated investigations and referrals, which reinforce illness beliefs; provide continuity and a consistent explanation across the whole team.',
+        'For dissociative attacks, give the patient and family a clear management plan (safe space, avoid unnecessary emergency interventions/ambulance conveyance) and distinguish from epilepsy.',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Patient Information Resources' },
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'neurosymptoms.org — FND Self-Help Guide', url: 'https://www.neurosymptoms.org/' },
+        { label: 'FND Hope UK', url: 'https://fndhope.org/' },
+        { label: 'FND Society', url: 'https://www.fndsociety.org/' },
+        { label: 'NHS — Functional Neurological Disorder', url: 'https://www.nhs.uk/conditions/' },
       ],
     },
 

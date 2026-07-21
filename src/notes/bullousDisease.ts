@@ -3,59 +3,82 @@ import type { Note } from '../data/notes'
 export const bullousDisease: Note = {
   id: 'bullous-disease',
   title: 'Bullous Disease — Pemphigoid vs Pemphigus',
-  subtitle: 'Tense vs flaccid blisters, Nikolsky sign, immediate dermatology referral and causes of blistering',
+  subtitle: 'Tense vs flaccid blisters, the Nikolsky sign, immediate dermatology referral and the wider blister differential',
   tags: ['dermatology'],
 
-  body: `bullous pemphigoid pemphigus vulgaris tense blisters flaccid blisters mucosal Nikolsky sign direct immunofluorescence biopsy corticosteroids immunosuppression blistering rash drug-induced dermatitis herpetiformis`,
+  body: `bullous pemphigoid pemphigus vulgaris tense flaccid blisters mucosal erosions Nikolsky sign direct immunofluorescence skin biopsy corticosteroids doxycycline azathioprine rituximab blistering rash drug-induced gliptin dermatitis herpetiformis SJS TEN eczema herpeticum`,
 
   content: [
 
+    { type: 'heading', level: 2, text: 'Overview' },
     {
-      type: 'linkrow',
-      links: [
-        { label: 'NICE CKS — Blistering Skin Conditions', url: 'https://cks.nice.org.uk/specialities/skin/' },
-        { label: 'PCDS — Immunobullous Disease', url: 'https://www.pcds.org.uk/clinical-guidance/bullous-pemphigoid' },
-        { label: 'BAD — Pemphigoid / Pemphigus', url: 'https://www.bad.org.uk/pils/bullous-pemphigoid/' },
-      ],
+      type: 'para',
+      text: 'The autoimmune (immunobullous) blistering diseases — chiefly bullous pemphigoid and pemphigus vulgaris — are uncommon but important because they need urgent specialist diagnosis (biopsy with immunofluorescence) and immunosuppression. The GP\'s job is to recognise the pattern, distinguish the two clinically, screen the drug history, and refer without delay. A wide range of other conditions also blister, some of which are emergencies.',
     },
 
     {
       type: 'callout',
       variant: 'danger',
-      title: 'Suspected Pemphigoid or Pemphigus → Same-Day Dermatology',
+      title: 'Suspected Pemphigoid or Pemphigus → Urgent/Same-Day Dermatology',
       items: [
-        'Both are autoimmune blistering diseases needing urgent dermatology referral/discussion for biopsy and immunosuppression',
-        'Pemphigus VULGARIS is the more dangerous (mucosal involvement, extensive skin loss like a burn) — treat as urgent',
-        'Extensive blistering/skin loss with systemic upset → treat as a dermatological emergency (fluid loss, infection risk)',
+        'Both need urgent dermatology referral for biopsy (including direct immunofluorescence) and immunosuppression.',
+        'Pemphigus vulgaris is the more dangerous — mucosal erosions and extensive superficial skin loss (like a burn) with fluid loss and infection risk → treat as urgent.',
+        'Extensive blistering/skin loss with systemic upset is a dermatological emergency → admit.',
       ],
     },
 
     { type: 'heading', level: 2, text: 'Pemphigoid vs Pemphigus' },
-
     {
       type: 'table',
       headers: ['Feature', 'Bullous pemphigoid', 'Pemphigus vulgaris'],
       rows: [
-        ['Blister', 'TENSE, firm blisters (deeper, sub-epidermal)', 'FLACCID blisters that rupture easily (superficial, intra-epidermal)'],
+        ['Blister', 'TENSE, firm (deeper, sub-epidermal)', 'FLACCID, rupture easily (superficial, intra-epidermal)'],
         ['Mucosa', 'Usually spared', 'Commonly involved (mouth erosions often first)'],
-        ['Nikolsky sign', 'Negative', 'Positive (skin shears with lateral pressure — like TEN)'],
-        ['Typical age', 'Elderly (80s)', 'Middle-aged'],
-        ['Itch', 'Often itchy', 'Painful erosions'],
+        ['Nikolsky sign', 'Negative', 'Positive (skin shears with lateral pressure)'],
+        ['Typical age', 'Elderly (70s–80s)', 'Middle-aged'],
+        ['Symptom', 'Often itchy (may have an urticarial prodrome)', 'Painful erosions'],
         ['Severity', 'Less severe; may be drug-related', 'More severe, potentially life-threatening'],
       ],
-      caption: 'Diagnosis is by skin biopsy with direct immunofluorescence. Both are managed with corticosteroids (potent topical for localised pemphigoid; systemic for extensive disease/pemphigus) and steroid-sparing immunosuppression (e.g. azathioprine, rituximab for pemphigus) — specialist-led.',
+    },
+    {
+      type: 'callout',
+      variant: 'info',
+      title: 'Principles of Treatment (Specialist-Led)',
+      items: [
+        'Diagnosis: skin biopsy — one for histology (edge of a fresh blister) and one of perilesional skin for direct immunofluorescence.',
+        'Localised bullous pemphigoid: potent/very potent topical corticosteroid (e.g. clobetasol) is often effective and safer than systemic steroids.',
+        'Extensive pemphigoid: oral corticosteroids ± doxycycline (steroid-sparing, useful in the frail) and other immunosuppressants (azathioprine, methotrexate).',
+        'Pemphigus: systemic corticosteroids plus a steroid-sparing agent; rituximab is now first-line adjunct for moderate–severe disease.',
+      ],
     },
 
-    { type: 'heading', level: 2, text: 'Other Causes of a Blistering Rash' },
-
+    { type: 'heading', level: 2, text: 'The Wider Blister Differential' },
+    {
+      type: 'table',
+      headers: ['Category', 'Examples'],
+      rows: [
+        ['Infection', 'Herpes simplex/zoster (grouped/dermatomal vesicles), bullous impetigo, hand-foot-and-mouth, eczema herpeticum'],
+        ['Drug reactions', 'Fixed drug eruption; Stevens-Johnson syndrome / toxic epidermal necrolysis (mucosal involvement, skin detachment, systemic upset → admit)'],
+        ['Immunobullous', 'Bullous pemphigoid, pemphigus, dermatitis herpetiformis (intensely itchy blisters on extensors — associated with coeliac disease)'],
+        ['Other', 'Bullous insect bites, pompholyx (palms/soles), friction/burns, porphyria cutanea tarda (photosensitive blistering on the hands)'],
+      ],
+    },
     {
       type: 'list',
       items: [
-        'Infection: herpes simplex/zoster (grouped vesicles, dermatomal in shingles), bullous impetigo, hand-foot-and-mouth, eczema herpeticum',
-        'Drug reactions: fixed drug eruption, and the emergencies Stevens-Johnson syndrome / toxic epidermal necrolysis (mucosal involvement, skin detachment, systemic upset — admit)',
-        'Immunobullous: bullous pemphigoid, pemphigus, dermatitis herpetiformis (intensely itchy blisters on extensors — associated with coeliac disease)',
-        'Other: bullous insect bites, pompholyx (palms/soles), friction/burns, and porphyria cutanea tarda (photosensitive blistering)',
-        'Review any new drugs (pemphigoid can be drug-induced — e.g. some antibiotics, gliptins) and stop suspected culprits',
+        'Always review new drugs — bullous pemphigoid can be drug-induced (notably DPP-4 inhibitors/"gliptins", some antibiotics, and immune-checkpoint inhibitors); stop suspected culprits.',
+        'Dermatitis herpetiformis warrants coeliac serology and a gluten-free diet (plus dapsone) — see Coeliac Disease.',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Patient Information Resources' },
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'PCDS — Immunobullous Disease', url: 'https://www.pcds.org.uk/clinical-guidance/bullous-pemphigoid' },
+        { label: 'BAD — Bullous Pemphigoid Leaflet', url: 'https://www.bad.org.uk/pils/bullous-pemphigoid/' },
+        { label: 'BAD — Pemphigus Vulgaris Leaflet', url: 'https://www.bad.org.uk/pils/pemphigus-vulgaris/' },
+        { label: 'International Pemphigus & Pemphigoid Foundation', url: 'https://www.pemphigus.org/' },
       ],
     },
 
@@ -66,6 +89,7 @@ export const bullousDisease: Note = {
         { id: 'impetigo', label: 'Impetigo & Folliculitis/Boils', subtitle: 'Bullous impetigo — a common differential' },
         { id: 'coeliac-disease', label: 'Coeliac Disease', subtitle: 'Dermatitis herpetiformis association' },
         { id: 'topical-steroid-ladder', label: 'Topical Steroid Ladder', subtitle: 'Potent topical steroids for localised pemphigoid' },
+        { id: 'burns', label: 'Burns', subtitle: 'Extensive skin loss — analogous fluid/infection management' },
       ],
     },
 
