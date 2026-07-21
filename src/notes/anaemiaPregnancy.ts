@@ -3,23 +3,20 @@ import type { Note } from '../data/notes'
 export const anaemiaPregnancy: Note = {
   id: 'anaemia-pregnancy',
   title: 'Anaemia in Pregnancy',
-  subtitle: 'Trimester-specific Hb thresholds, iron replacement and haemoglobinopathy screening',
+  subtitle: 'Trimester-specific Hb thresholds, iron replacement, IV iron, haemoglobinopathy screening and delivery planning',
   tags: ['haematology', 'obstetrics'],
 
-  body: `anaemia pregnancy iron deficiency haemoglobin trimester ferritin oral iron ferrous fumarate sulfate IV iron haemoglobinopathy thalassaemia sickle folate B12 postpartum`,
+  body: `anaemia pregnancy iron deficiency haemoglobin trimester booking 28 weeks ferritin oral iron ferrous fumarate sulfate alternate day IV iron ferric carboxymaltose haemoglobinopathy thalassaemia sickle folate B12 postpartum transfusion PPH low MCV`,
 
   content: [
 
+    { type: 'heading', level: 2, text: 'Overview' },
     {
-      type: 'linkrow',
-      links: [
-        { label: 'NICE CKS — Anaemia in Pregnancy', url: 'https://cks.nice.org.uk/topics/anaemia-iron-deficiency/' },
-        { label: 'BSH — Anaemia in Pregnancy Guideline', url: 'https://b-s-h.org.uk/guidelines/' },
-      ],
+      type: 'para',
+      text: 'Anaemia is the commonest medical problem in pregnancy. Plasma volume expands more than red-cell mass, causing a physiological dilutional fall in haemoglobin — hence trimester-specific thresholds are used. Iron deficiency is by far the commonest cause. Untreated anaemia increases the risks of preterm birth, low birthweight, poor tolerance of peripartum blood loss and postnatal depression, so it should be actively screened for and corrected.',
     },
 
-    { type: 'heading', level: 2, text: 'Diagnostic Thresholds (Treat With Iron Below)' },
-
+    { type: 'heading', level: 2, text: 'Diagnostic Thresholds (Treat Below)' },
     {
       type: 'table',
       headers: ['Stage', 'Haemoglobin threshold'],
@@ -28,41 +25,82 @@ export const anaemiaPregnancy: Note = {
         ['Second & third trimester', '<105 g/L'],
         ['Postpartum', '<100 g/L'],
       ],
-      caption: 'Physiological haemodilution lowers Hb in pregnancy, hence the trimester-specific cut-offs. Screening FBC is done at booking and at ~28 weeks.',
+      caption: 'Screening FBC is offered at booking and at ~28 weeks (and additionally in multiple pregnancy). A low MCV supports iron deficiency but may indicate a haemoglobinopathy trait.',
     },
 
     { type: 'heading', level: 2, text: 'Assessment' },
-
     {
       type: 'list',
       items: [
-        'Iron deficiency is the commonest cause; a low MCV supports it. Ferritin is the most useful test but rises with inflammation — a normal ferritin does not exclude deficiency in pregnancy',
-        'Also consider folate and B12 deficiency (check if macrocytic or poor response to iron)',
-        'Ensure haemoglobinopathy screening has been done (antenatal screening for thalassaemia/sickle) — a low MCV with normal/replete iron may indicate thalassaemia trait',
-        'Take a dietary history and ask about symptoms (fatigue, breathlessness, palpitations)',
+        'Iron deficiency is the commonest cause; a low MCV/MCH supports it. Ferritin is the most useful test but is an acute-phase reactant — a NORMAL ferritin does not exclude deficiency in pregnancy (ferritin <30 µg/L confirms it).',
+        'Consider folate and B12 deficiency if macrocytic or a poor response to iron.',
+        'Ensure antenatal haemoglobinopathy screening (thalassaemia/sickle) has been done — a low MCV with replete iron suggests a thalassaemia trait; check partner status where relevant.',
+        'Take a dietary history and ask about symptoms (fatigue, breathlessness, palpitations, pica, restless legs) and any bleeding.',
       ],
     },
 
-    { type: 'heading', level: 2, text: 'Management' },
-
+    { type: 'heading', level: 2, text: 'Oral Iron — First Line' },
+    {
+      type: 'table',
+      headers: ['Preparation', 'Elemental iron', 'Notes'],
+      rows: [
+        ['Ferrous fumarate 210 mg', '~68 mg', 'Common first choice; one tablet daily/alternate day'],
+        ['Ferrous sulfate 200 mg', '~65 mg', 'Equivalent efficacy; choose by tolerability'],
+        ['Ferrous gluconate 300 mg', '~35 mg', 'Lower elemental dose — sometimes better tolerated'],
+      ],
+      caption: 'A trial of oral iron is reasonable in typical iron-deficiency anaemia even before ferritin returns.',
+    },
     {
       type: 'callout',
       variant: 'info',
-      title: 'Iron Replacement',
+      title: 'Getting the Best From Oral Iron',
       items: [
-        'Oral iron first-line (e.g. ferrous fumarate or sulfate); a trial of iron is reasonable if iron deficiency is likely even without checking ferritin in an otherwise typical case',
-        'Take with vitamin C (orange juice) to aid absorption; alternate-day dosing improves absorption and tolerability; counsel on GI side effects (constipation, black stools)',
-        'Expect a Hb rise of ~10–20 g/L over ~3–4 weeks; continue iron for ~3 months after the Hb normalises to replenish stores',
-        'IV iron if oral iron is not tolerated/ineffective, in the later stages of pregnancy when time is short, or for significant anaemia (per local pathway)',
-        'Significant anaemia near term carries risks (peripartum transfusion, fatigue, postpartum haemorrhage tolerance) — optimise before delivery',
+        'Take on an empty stomach with a source of vitamin C (e.g. orange juice); avoid tea/coffee/calcium around dosing (reduce absorption).',
+        'ALTERNATE-DAY dosing (or once daily) improves fractional absorption and reduces GI side effects versus multiple daily doses — as effective and better tolerated.',
+        'Counsel on side effects: constipation, nausea, black stools; switching preparation or to alternate-day dosing often helps adherence.',
+        'Expect a Hb rise of ~10–20 g/L over ~3–4 weeks; recheck at 2–4 weeks. Continue iron for ~3 months after Hb normalises to replenish stores.',
       ],
     },
 
+    { type: 'heading', level: 2, text: 'IV Iron & Transfusion' },
     {
       type: 'list',
       items: [
-        'Folate: all pregnant women should take folic acid (400 micrograms daily, or 5 mg if high-risk) — treat established folate deficiency with 5 mg daily',
-        'Do not ignore a poor response to iron — reassess for ongoing blood loss, malabsorption, haemoglobinopathy, or B12/folate deficiency, and refer if unexplained',
+        'IV iron (e.g. ferric carboxymaltose) if oral iron is not tolerated or ineffective, when there is insufficient time before delivery, or for significant anaemia (per local pathway). Generally avoided in the FIRST trimester.',
+        'Blood transfusion is reserved for severe/symptomatic anaemia, active bleeding, or imminent delivery where there is insufficient time to respond to iron — a specialist/obstetric decision.',
+        'Aim to optimise Hb BEFORE delivery to improve tolerance of blood loss and reduce transfusion need (women with placenta praevia/previous PPH especially).',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Folate, B12 & Poor Response' },
+    {
+      type: 'list',
+      items: [
+        'All pregnant women should take folic acid 400 micrograms daily until 12 weeks (5 mg daily if high-risk — e.g. previous NTD, diabetes, BMI ≥30, antiepileptics, sickle/thalassaemia). Treat established folate deficiency with 5 mg daily.',
+        'A poor response to iron should NOT be ignored — reassess adherence and for ongoing blood loss, malabsorption (e.g. coeliac), haemoglobinopathy, or B12/folate deficiency, and refer if unexplained.',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Referral / Escalation' },
+    {
+      type: 'table',
+      headers: ['Situation', 'Action', 'Urgency'],
+      rows: [
+        ['Iron-deficiency anaemia below threshold', 'Oral iron + recheck at 2–4 weeks', 'Routine'],
+        ['Intolerant/ineffective oral iron, or late in pregnancy', 'IV iron per pathway', 'Soon'],
+        ['Severe/symptomatic anaemia or near delivery', 'Obstetric/haematology assessment ± transfusion', 'Urgent'],
+        ['Non-iron-deficient or unresponsive anaemia', 'Haematology / obstetric medicine', 'Routine–urgent'],
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Patient Information Resources' },
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — Anaemia (Iron Deficiency)', url: 'https://cks.nice.org.uk/topics/anaemia-iron-deficiency/' },
+        { label: 'BSH — Anaemia in Pregnancy (Guideline PDF)', url: 'https://b-s-h.org.uk/guidelines/guidelines/uk-guidelines-on-the-management-of-iron-deficiency-in-pregnancy/' },
+        { label: 'RCOG — Blood Transfusion in Obstetrics', url: 'https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/' },
+        { label: 'NHS — Vitamins & Iron in Pregnancy', url: 'https://www.nhs.uk/pregnancy/keeping-well/vitamins-minerals-and-supplements/' },
       ],
     },
 
@@ -72,6 +110,7 @@ export const anaemiaPregnancy: Note = {
         { id: 'microcytic-anaemia', label: 'Microcytic Anaemia', subtitle: 'Iron deficiency work-up and replacement detail' },
         { id: 'macrocytic-anaemia', label: 'Macrocytic Anaemia', subtitle: 'B12/folate deficiency if macrocytic' },
         { id: 'sickle-cell', label: 'Sickle Cell Disease', subtitle: 'Haemoglobinopathy screening and pregnancy implications' },
+        { id: 'restless-legs', label: 'Restless Legs Syndrome', subtitle: 'Iron deficiency as a driver — common in pregnancy' },
         { id: 'gestational-diabetes', label: 'Gestational Diabetes', subtitle: 'Other key antenatal screening/monitoring' },
       ],
     },

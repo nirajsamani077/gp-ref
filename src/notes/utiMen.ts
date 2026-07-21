@@ -3,98 +3,111 @@ import type { Note } from '../data/notes'
 export const utiMen: Note = {
   id: 'uti-men',
   title: 'UTI in Men',
-  subtitle: 'MC&S required, 7-day course, prostatitis, haematuria follow-up, 2WW',
+  subtitle: 'Always send MC&S, 7-day courses, prostatitis, recurrent-UTI work-up and the haematuria 2WW',
   tags: ['urology', 'infection', 'antibiotics'],
 
-  body: 'UTI urinary tract infection men male MSU MC&S trimethoprim nitrofurantoin cefalexin ciprofloxacin prostatitis haematuria microhaematuria 2WW two week wait catheter urology referral rare',
+  body: 'UTI urinary tract infection men male MSU MC&S trimethoprim nitrofurantoin cefalexin co-amoxiclav ciprofloxacin prostatitis epididymo-orchitis haematuria microhaematuria 2WW bladder cancer catheter CAUTI recurrent UTI renal ultrasound flow rate residual asymptomatic bacteriuria',
 
   content: [
+
+    { type: 'heading', level: 2, text: 'Overview' },
+    {
+      type: 'para',
+      text: 'A UTI in a man should never be treated as a simple, self-contained event in the way a lower UTI in a healthy woman often is. Because the longer male urethra and prostatic secretions are protective, infection implies either an obstructive/functional abnormality, prostatic involvement, or instrumentation — so all men need a urine culture, a longer course, and consideration of the underlying cause.',
+    },
+
     {
       type: 'callout',
       variant: 'warning',
-      title: 'UTI is Rare in Men — Always Investigate Further',
+      title: 'Core Principles',
       items: [
-        'UTI in men is uncommon — **send all for MC&S**',
-        'If recurrent or multiple episodes → **renal USS + urology referral**',
-        '**Minimum 7-day antibiotic course** (compared to 3 days in women)',
+        'Send an MSU for MC&S in ALL men with a suspected UTI (before antibiotics where possible).',
+        'Treat for a MINIMUM of 7 days (not the 3-day course used for uncomplicated female UTI).',
+        'Assume prostatic involvement in any man with a febrile UTI, perineal/pelvic pain or a "relapse" — choose an antibiotic that penetrates the prostate.',
+        'Investigate recurrent or upper-tract infection (renal tract imaging + urology).',
       ],
     },
 
-    // ── ANTIBIOTICS ──────────────────────────────────────────────────────────
-    {
-      type: 'heading',
-      level: 2,
-      text: 'Antibiotic Choice — 7 Days',
-    },
+    { type: 'heading', level: 2, text: 'Antibiotic Choice — 7 Days (Lower UTI)' },
     {
       type: 'table',
       headers: ['Line', 'Antibiotic', 'Dose', 'Notes'],
       rows: [
-        ['1st', 'Trimethoprim', '200 mg BD × 7 days', 'Check local resistance patterns'],
-        ['1st', 'Nitrofurantoin MR', '100 mg BD × 7 days', 'Check renal function (avoid eGFR <45); **not for prostatitis** (doesn\'t reach therapeutic prostate levels)'],
-        ['2nd', 'Cefalexin', '500 mg BD–TDS × 7 days', 'If sensitivities confirm or 1st line fails'],
+        ['1st', 'Trimethoprim', '200 mg BD × 7 days', 'Check local resistance; avoid if recent use'],
+        ['1st', 'Nitrofurantoin MR', '100 mg BD × 7 days', 'Avoid if eGFR <45; does NOT treat prostatitis (no prostatic penetration)'],
+        ['2nd', 'Cefalexin', '500 mg BD–TDS × 7 days', 'If 1st line fails or per sensitivities'],
         ['2nd', 'Co-amoxiclav', '500/125 mg TDS × 7 days', 'If organism sensitive'],
-        ['2nd', 'Ciprofloxacin', '500 mg BD × 7 days', '**Counsel tendon rupture risk** (quinolone); use only if sensitivities support'],
+        ['Prostatic', 'Ciprofloxacin', '500 mg BD', 'Good prostatic penetration — for prostatitis; counsel MHRA tendon/aortic/neuro-psychiatric warnings'],
       ],
-      caption: 'Always guided by MC&S sensitivities where possible',
+      caption: 'Always refine to the narrowest effective agent once MC&S sensitivities are back.',
     },
 
-    // ── PROSTATITIS ──────────────────────────────────────────────────────────
-    {
-      type: 'heading',
-      level: 2,
-      text: 'Prostatitis',
-    },
+    { type: 'heading', level: 2, text: 'Prostatitis' },
     {
       type: 'callout',
       variant: 'info',
-      title: '90% of men with a febrile UTI have prostate involvement',
+      title: '~90% of Febrile Male UTIs Involve the Prostate',
       items: [
-        '**Do NOT use nitrofurantoin for prostatitis** — does not reach therapeutic levels in prostate tissue',
-        'Use **ciprofloxacin** (prostatic penetration) or TMP if sensitive — 4–6 weeks for chronic prostatitis',
-        'Consider urology referral for chronic/recurrent prostatitis',
+        'Acute bacterial prostatitis: fever, perineal/pelvic pain, LUTS and a tender, boggy prostate — treat with a fluoroquinolone (ciprofloxacin/ofloxacin) or trimethoprim if sensitive, for 14–28 days. Avoid vigorous prostate massage (bacteraemia risk).',
+        'Chronic bacterial prostatitis: 4–6 weeks of a prostate-penetrating antibiotic.',
+        'Do NOT use nitrofurantoin for prostatitis — it does not reach therapeutic prostate levels.',
+        'Admit if systemically unwell/urinary retention/immunocompromised; consider urology for recurrent or refractory disease.',
       ],
     },
 
-    // ── CATHETER UTI ─────────────────────────────────────────────────────────
-    {
-      type: 'heading',
-      level: 2,
-      text: 'Catheter-Associated UTI',
-    },
+    { type: 'heading', level: 2, text: 'Catheter-Associated UTI (CAUTI)' },
     {
       type: 'list',
       items: [
-        'Use **7-day broader spectrum antibiotic** (guided by MC&S)',
-        '**Ideally change catheter** before starting antibiotics if catheter not inserted within the last 7 days',
-        'Clean MSU after catheter change for reliable culture',
+        'Only treat SYMPTOMATIC CAUTI — do not treat asymptomatic bacteriuria or "cloudy/smelly urine" alone (drives resistance).',
+        'Take a fresh specimen and treat with a 7-day course guided by MC&S.',
+        'Change the catheter before/at the start of treatment if it has been in place >7 days (removes biofilm); take a clean specimen after any change.',
       ],
     },
 
-    // ── HAEMATURIA FOLLOW-UP ─────────────────────────────────────────────────
+    { type: 'heading', level: 2, text: 'Recurrent UTI — Investigate' },
     {
-      type: 'heading',
-      level: 2,
-      text: 'Haematuria Follow-Up',
+      type: 'list',
+      items: [
+        'Recurrent (≥2 in 6 months or ≥3 in a year) or upper-tract UTI in a man warrants renal-tract ultrasound (± post-void residual and flow rate) and urology referral to exclude obstruction (BPH, stricture), stones, incomplete emptying or, rarely, bladder cancer.',
+        'Address modifiable factors: bladder emptying, constipation, hydration, glycaemic control, and treat any BPH.',
+        'Distinguish epididymo-orchitis (scrotal pain/swelling) — needs organism-directed cover (consider STI causes in younger men → refer GUM).',
+      ],
     },
+
+    { type: 'heading', level: 2, text: 'Haematuria Follow-Up' },
     {
       type: 'callout',
       variant: 'danger',
-      title: '2WW Haematuria Referral',
+      title: '2WW for Persistent Haematuria',
       items: [
-        '**Ensure micro/macrohaematuria has resolved post-antibiotic treatment**',
-        '**Refer 2WW (suspected bladder cancer) if haematuria does not resolve after treatment in patients ≥60 years**',
-        'Non-visible haematuria on two separate occasions → urology referral regardless of age',
+        'Recheck urine after treatment to ensure any visible or non-visible haematuria has RESOLVED.',
+        'Refer 2WW (suspected bladder cancer) if: aged ≥45 with unexplained visible haematuria (without infection, or persisting/recurring after treatment); or aged ≥60 with unexplained non-visible haematuria plus dysuria or a raised WCC.',
+        'Persistent non-visible haematuria confirmed on repeat testing → urology assessment.',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Patient Information Resources' },
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — UTI (Lower) in Men', url: 'https://cks.nice.org.uk/topics/urinary-tract-infection-lower-men/' },
+        { label: 'NICE NG112 — Antimicrobial Prescribing (Prostatitis)', url: 'https://www.nice.org.uk/guidance/ng110' },
+        { label: 'NICE NG12 — Suspected Cancer (Bladder/Renal)', url: 'https://www.nice.org.uk/guidance/ng12' },
+        { label: 'NHS — UTI in Men', url: 'https://www.nhs.uk/conditions/urinary-tract-infections-utis/' },
       ],
     },
 
     {
-      type: 'linkrow',
-      links: [
-        { label: 'NICE CKS – UTI (lower) in men', url: 'https://cks.nice.org.uk/topics/urinary-tract-infection-lower-men/' },
-        { label: 'NICE CKS – Prostatitis', url: 'https://cks.nice.org.uk/topics/prostatitis/' },
-        { label: 'NICE NG12 – Suspected cancer referral (bladder/kidney)', url: 'https://www.nice.org.uk/guidance/ng12' },
+      type: 'notelink',
+      notes: [
+        { id: 'prostatitis', label: 'Prostatitis', subtitle: 'Acute and chronic prostatitis in detail' },
+        { id: 'bph-luts', label: 'BPH & LUTS', subtitle: 'Obstruction/incomplete emptying predisposing to UTI' },
+        { id: 'haematuria', label: 'Haematuria', subtitle: 'Visible/non-visible haematuria referral thresholds' },
+        { id: 'acute-testicular-pain', label: 'Acute Testicular Pain', subtitle: 'Epididymo-orchitis differential' },
+        { id: 'uti-women', label: 'UTI in Women', subtitle: 'Contrast with uncomplicated female UTI management' },
       ],
     },
+
   ],
 }
