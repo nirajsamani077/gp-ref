@@ -75,6 +75,8 @@ export const scrotalGroinLumps: Note = {
         { id: 'two-week-wait', label: '2WW Referral Guide', subtitle: 'Testicular and other cancer referral criteria' },
         { id: 'subfertility', label: 'Subfertility & Infertility', subtitle: 'Varicocele and undescended testes as male factors' },
         { id: 'stis', label: 'STIs', subtitle: 'Inguinal lymphadenopathy from genital infection' },
+        { id: 'testicular-penile-cancer', label: 'Testicular & Penile Cancer', subtitle: 'Suspicious intratesticular lump — 2WW/USS' },
+        { id: 'hernias', label: 'Abdominal Wall & Groin Hernias', subtitle: 'Inguinal/femoral hernia in the groin-lump differential' },
       ],
     },
 

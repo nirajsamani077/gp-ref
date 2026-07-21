@@ -136,6 +136,7 @@ export const hyperthyroidism: Note = {
         { id: 'atrialFibrillation', label: 'Atrial Fibrillation', subtitle: 'Rate control, anticoagulation — AF caused by thyrotoxicosis' },
         { id: 'osteoporosis', label: 'Osteoporosis', subtitle: 'FRAX, bisphosphonates — hyperthyroidism accelerates bone loss' },
         { id: 'palpitations', label: 'Palpitations', subtitle: 'Differential diagnosis including thyroid disease' },
+        { id: 'goitre-thyroid-cancer', label: 'Goitre, Thyroid Nodules & Cancer', subtitle: 'Thyroid enlargement, nodules and the 2WW red flags' },
       ],
     },
 

@@ -213,6 +213,7 @@ export const amenorrhoea: Note = {
         { id: 'menopause', label: 'Menopause & Perimenopause', subtitle: 'POI and premature menopause as a cause of amenorrhoea' },
         { id: 'hypothyroidism', label: 'Hypothyroidism', subtitle: 'Thyroid disease causes menstrual irregularity — check TFTs' },
         { id: 'eating-disorders', label: 'Eating Disorders', subtitle: 'Hypothalamic amenorrhoea in anorexia nervosa' },
+        { id: 'pituitary-prolactinoma', label: 'Pituitary Tumours & Prolactinoma', subtitle: 'Hyperprolactinaemia — galactorrhoea and amenorrhoea' },
       ],
     },
 

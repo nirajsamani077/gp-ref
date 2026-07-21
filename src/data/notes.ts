@@ -294,6 +294,26 @@ import { infantColicReflux }        from '../notes/infantColicReflux'
 import { paediatricConstipation }   from '../notes/paediatricConstipation'
 import { neonatalJaundice }         from '../notes/neonatalJaundice'
 import { paediatricLowerLimb }      from '../notes/paediatricLowerLimb'
+import { cardiomyopathies }         from '../notes/cardiomyopathies'
+import { diabetesPractical }        from '../notes/diabetesPractical'
+import { pituitaryProlactinoma }    from '../notes/pituitaryProlactinoma'
+import { maleHypogonadism }         from '../notes/maleHypogonadism'
+import { goitreThyroidCancer }      from '../notes/goitreThyroidCancer'
+import { pancreaticBiliaryCancer }  from '../notes/pancreaticBiliaryCancer'
+import { perianalAbscessFistula }   from '../notes/perianalAbscessFistula'
+import { hernias }                  from '../notes/hernias'
+import { testicularPenileCancer }   from '../notes/testicularPenileCancer'
+import { pckd }                     from '../notes/pckd'
+import { haemophiliaVwd }           from '../notes/haemophiliaVwd'
+import { splenomegaly }             from '../notes/splenomegaly'
+import { guillainBarre }            from '../notes/guillainBarre'
+import { iih }                      from '../notes/iih'
+import { systemicSclerosis }        from '../notes/systemicSclerosis'
+import { tennisElbowTendinopathy }  from '../notes/tennisElbowTendinopathy'
+import { sccBowens }                from '../notes/sccBowens'
+import { bullousDisease }           from '../notes/bullousDisease'
+import { shinglesChickenpox }       from '../notes/shinglesChickenpox'
+import { serotoninNms }             from '../notes/serotoninNms'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -591,4 +611,24 @@ export const NOTES: Note[] = [
   paediatricConstipation,
   neonatalJaundice,
   paediatricLowerLimb,
+  cardiomyopathies,
+  diabetesPractical,
+  pituitaryProlactinoma,
+  maleHypogonadism,
+  goitreThyroidCancer,
+  pancreaticBiliaryCancer,
+  perianalAbscessFistula,
+  hernias,
+  testicularPenileCancer,
+  pckd,
+  haemophiliaVwd,
+  splenomegaly,
+  guillainBarre,
+  iih,
+  systemicSclerosis,
+  tennisElbowTendinopathy,
+  sccBowens,
+  bullousDisease,
+  shinglesChickenpox,
+  serotoninNms,
 ].map(enrichBody)

@@ -88,6 +88,7 @@ export const sleSjogrens: Note = {
         { id: 'antiphospholipid-syndrome', label: 'Antiphospholipid Syndrome', subtitle: 'Frequent SLE overlap — thrombosis and pregnancy loss' },
         { id: 'dmards', label: 'DMARDs & Biologics', subtitle: 'Hydroxychloroquine and immunosuppressant monitoring' },
         { id: 'ckd', label: 'Chronic Kidney Disease', subtitle: 'Lupus nephritis — protect renal function' },
+        { id: 'systemic-sclerosis', label: 'Systemic Sclerosis (Scleroderma)', subtitle: 'Other connective tissue disease; overlap syndromes' },
       ],
     },
 

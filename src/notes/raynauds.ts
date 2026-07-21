@@ -95,6 +95,7 @@ export const raynauds: Note = {
         { id: 'pvd', label: 'Peripheral Vascular Disease', subtitle: 'Differential for digital ischaemia and cold peripheries' },
         { id: 'hypothyroidism', label: 'Hypothyroidism', subtitle: 'Treatable contributor to cold intolerance and Raynaud\'s' },
         { id: 'sle-sjogrens', label: 'SLE & Sjögren\'s', subtitle: 'Connective tissue disease — a key secondary cause' },
+        { id: 'systemic-sclerosis', label: 'Systemic Sclerosis (Scleroderma)', subtitle: 'Raynaud\'s + puffy hands/skin tightening → refer' },
       ],
     },
 

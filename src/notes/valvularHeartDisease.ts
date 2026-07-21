@@ -73,6 +73,7 @@ export const valvularHeartDisease: Note = {
         { id: 'syncope', label: 'Syncope & Collapse', subtitle: 'Exertional syncope — a red flag for severe aortic stenosis' },
         { id: 'angina-ihd', label: 'Angina & IHD', subtitle: 'Angina as an aortic stenosis symptom; coexisting IHD' },
         { id: 'infective-endocarditis', label: 'Infective Endocarditis', subtitle: 'Valve disease predisposes; prophylaxis and Duke criteria' },
+        { id: 'cardiomyopathies', label: 'Cardiomyopathies (incl. HOCM)', subtitle: 'HOCM murmur mimics aortic stenosis — Valsalva distinguishes' },
       ],
     },
 

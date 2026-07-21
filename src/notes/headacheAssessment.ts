@@ -84,6 +84,7 @@ export const headacheAssessment: Note = {
         { id: 'gca', label: 'Giant Cell Arteritis', subtitle: 'New headache over 50 — sight-threatening, immediate steroids' },
         { id: 'brain-tumour', label: 'Brain Tumour & SOL', subtitle: 'Raised ICP features and imaging thresholds' },
         { id: 'trigeminal-neuralgia', label: 'Trigeminal Neuralgia', subtitle: 'Paroxysmal facial pain differential' },
+        { id: 'iih', label: 'Idiopathic Intracranial Hypertension', subtitle: 'Raised-ICP headache with papilloedema' },
       ],
     },
 
