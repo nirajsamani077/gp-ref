@@ -19,6 +19,10 @@ export const neonatalJaundice: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Neonatal jaundice is extremely common and usually benign, but timing is everything: jaundice in the first 24 hours is always pathological and urgent, while jaundice persisting beyond 14 days must be split (conjugated vs unconjugated) to catch biliary atresia. The two catastrophes to prevent are kernicterus (from very high unconjugated bilirubin) and a missed biliary atresia (where the Kasai operation is time-critical).',
+    },
     { type: 'heading', level: 2, text: 'Timing Determines the Cause' },
 
     {

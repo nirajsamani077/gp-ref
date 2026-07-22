@@ -20,6 +20,10 @@ export const infectiveEndocarditis: Note = {
     },
 
     {
+      type: 'para',
+      text: 'Infective endocarditis is uncommon but easy to miss and carries a high mortality, so the primary-care skill is pattern recognition — fever plus a new/changed murmur, or unexplained persistent fever with a predisposing heart lesion or IV drug use — and urgent referral before starting antibiotics, which would compromise blood cultures. The UK prophylaxis position is also a common source of confusion: routine antibiotic cover for dental procedures is NOT recommended.',
+    },
+    {
       type: 'callout',
       variant: 'danger',
       title: 'Suspect and Refer — Do Not Miss',

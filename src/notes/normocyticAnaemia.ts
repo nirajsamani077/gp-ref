@@ -19,6 +19,10 @@ export const normocyticAnaemia: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Normocytic anaemia has a wide differential, so the most useful organising principle is the reticulocyte count: a high count points to a marrow responding to blood loss or haemolysis, while a low/normal count points to anaemia of chronic disease, mixed deficiency, or a marrow problem. Normocytic anaemia is a symptom to be worked up, not a diagnosis — and in the over-60s, unexplained anaemia should always prompt thoughts of GI malignancy and myeloma.',
+    },
     { type: 'heading', level: 2, text: 'Causes — Frame Around the Reticulocyte Count' },
 
     {

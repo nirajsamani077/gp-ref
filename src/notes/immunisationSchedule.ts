@@ -19,6 +19,10 @@ export const immunisationSchedule: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'This is a quick-reference summary of the UK routine childhood and adult immunisation programmes plus the key prescribing rules — but the schedule, brands and eligibility change regularly, so the Green Book is always the definitive source. The two things worth committing to memory are the live-vaccine cautions (immunosuppression and pregnancy) and the principle of using every contact to catch up missed doses, which can be done at any age.',
+    },
     { type: 'heading', level: 2, text: 'Routine Childhood Schedule' },
 
     {

@@ -19,6 +19,10 @@ export const mus: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Medically unexplained symptoms — increasingly called persistent physical symptoms — are among the commonest presentations in general practice: real, disabling physical symptoms not fully explained by disease after proportionate assessment. The evidence-based approach is not more tests but a validating, mechanistic explanation, continuity of care, and a negotiated shift from "find the cause" to improving function, supported by CBT/ACT and treatment of any coexisting mood disorder.',
+    },
     { type: 'heading', level: 2, text: 'Terminology' },
 
     {
@@ -77,6 +81,7 @@ export const mus: Note = {
         { id: 'depression', label: 'Depression', subtitle: 'Common comorbidity — screen and treat' },
         { id: 'cfs-me', label: 'Chronic Fatigue Syndrome (CFS/ME)', subtitle: 'Related persistent-symptom presentation; paced activity' },
         { id: 'chronic-pain', label: 'Chronic Pain', subtitle: 'Central sensitisation and the biopsychosocial model' },
+        { id: 'fnd', label: 'Functional Neurological Disorder', subtitle: 'The neurological end of the functional-symptom spectrum' },
       ],
     },
 

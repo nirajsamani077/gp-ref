@@ -19,6 +19,10 @@ export const infantColicReflux: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Infantile colic and infant reflux are two of the commonest reasons parents bring a distressed baby to the GP, and both are usually benign and self-limiting in a thriving infant. The core skill is confident reassurance and practical feeding support, while staying alert to the red flags (projectile or bilious vomiting, faltering growth, blood) that point to pyloric stenosis, obstruction, cow\'s milk protein allergy or serious illness — and to the toll on parental wellbeing.',
+    },
     { type: 'heading', level: 2, text: 'Infantile Colic' },
 
     {

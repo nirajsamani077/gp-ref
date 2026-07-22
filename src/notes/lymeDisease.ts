@@ -22,6 +22,10 @@ export const lymeDisease: Note = {
     { type: 'heading', level: 2, text: 'Overview' },
 
     {
+      type: 'para',
+      text: 'Lyme disease is a rising tick-borne infection whose management hinges on one clinical sign: erythema migrans. If you see the bulls-eye rash, diagnose and treat on sight — serology is often negative early and is not needed. When there is no rash but genuine suspicion, testing follows a specific ELISA-then-immunoblot sequence. The main pitfalls are under-treating a clear EM by waiting for a test, and over-diagnosing "chronic Lyme" for non-specific symptoms on the basis of unvalidated tests.',
+    },
+    {
       type: 'list',
       items: [
         'Caused by the spirochaete Borrelia burgdorferi, transmitted by infected tick bites; incidence in the UK is rising (endemic areas include woodland/heathland — e.g. Scottish Highlands, New Forest, Exmoor)',

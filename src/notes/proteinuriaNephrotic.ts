@@ -19,6 +19,10 @@ export const proteinuriaNephrotic: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Proteinuria is both a marker of kidney damage and an independent driver of progression and cardiovascular risk, so quantifying and acting on it matters. In adults the workflow is: confirm persistent proteinuria with an early-morning ACR, interpret it alongside eGFR, start an ACE inhibitor/ARB and hit the right BP target, and refer at defined thresholds. Separately, childhood nephrotic syndrome is a distinct entity needing immediate paediatric referral.',
+    },
     { type: 'heading', level: 2, text: 'Measuring & Interpreting Proteinuria (Adults)' },
 
     {

@@ -19,6 +19,10 @@ export const diabeticNeuropathy: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Diabetic neuropathy takes several forms, but the two that matter most in primary care are distal symmetrical (glove-and-stocking) sensory neuropathy — which can be painful or, more dangerously, painless and drive foot ulceration — and autonomic neuropathy. Management combines optimising glycaemic and cardiovascular risk, protecting the feet, and a defined treatment ladder for painful neuropathy where the key principle is to try each first-line agent in turn.',
+    },
     { type: 'heading', level: 2, text: 'Peripheral (Sensorimotor) Neuropathy' },
 
     {

@@ -19,6 +19,10 @@ export const prediabetes: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Prediabetes (non-diabetic hyperglycaemia) identifies a large, high-risk group in a genuinely reversible window. The key opportunity is to intervene with structured lifestyle change — more effective than any drug — to prevent progression to type 2 diabetes and its complications. Metformin and orlistat are adjuncts for specific higher-risk patients, not substitutes for lifestyle change, and cardiovascular risk should be assessed and managed at the same time.',
+    },
     { type: 'heading', level: 2, text: 'Diagnosis' },
 
     {

@@ -19,6 +19,19 @@ export const kneeProblems: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Knee pain divides usefully into traumatic and non-traumatic. In trauma, the Ottawa knee rule guides who needs an X-ray, and the mechanism of injury points to the structure damaged — while a rapid (same-day) haemarthrosis, true locking or giving-way flags a significant internal derangement needing orthopaedics. In non-traumatic knees, location-based reasoning gets you to the diagnosis, with osteoarthritis the commonest cause overall.',
+    },
+    {
+      type: 'callout',
+      variant: 'danger',
+      title: 'Hot Swollen Knee — Exclude Septic Arthritis',
+      items: [
+        'An acutely hot, swollen, very painful knee with fever or inability to weight-bear is septic arthritis until proven otherwise → urgent same-day assessment for joint aspiration BEFORE antibiotics.',
+        'Crystal arthritis (gout/pseudogout) is the main differential but cannot be distinguished clinically — aspiration for microscopy, culture and crystals is the key test.',
+      ],
+    },
     { type: 'heading', level: 2, text: 'Traumatic Knee — Exclude Fracture & Serious Injury' },
 
     {
