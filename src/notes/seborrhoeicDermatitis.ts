@@ -19,6 +19,11 @@ export const seborrhoeicDermatitis: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'This note groups three distinct facial/flexural rashes that are easily confused: seborrhoeic dermatitis (a Malassezia-driven scaly rash of sebum-rich skin), pompholyx (a vesicular hand/foot eczema), and perioral dermatitis (classically steroid-induced). The recurring practical points are that seborrhoeic dermatitis is controlled rather than cured, that widespread/refractory disease should prompt thoughts of HIV or Parkinson\'s, and that perioral dermatitis is treated by STOPPING the steroid.',
+    },
+
     { type: 'heading', level: 2, text: 'Seborrhoeic Dermatitis' },
 
     {

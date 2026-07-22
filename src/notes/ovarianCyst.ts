@@ -22,11 +22,15 @@ export const ovarianCyst: Note = {
     { type: 'heading', level: 2, text: 'Overview' },
 
     {
+      type: 'para',
+      text: 'Ovarian cysts are very common and the great majority are benign and asymptomatic, found incidentally on a scan. The GP\'s task is to distinguish functional cysts (which resolve) from pathological ones, decide who needs a scan and CA125 (and who does NOT), recognise the acute "cyst accident", and apply size/menopausal-status-based follow-up thresholds.',
+    },
+    {
       type: 'list',
       items: [
-        'Very common and usually benign and asymptomatic — often an incidental scan finding',
-        'Functional (cycle-related) cysts typically resolve within ~3 cycles; pathological cysts tend to persist and grow',
-        'Symptoms (when present): pelvic pain/pressure, bloating, urinary/bowel symptoms; a "cyst accident" (rupture, haemorrhage, or torsion) causes acute severe pain',
+        'Functional (cycle-related) cysts typically resolve within ~3 cycles; pathological cysts tend to persist and grow.',
+        'Symptoms (when present): pelvic pain/pressure, bloating, urinary/bowel symptoms; a "cyst accident" (rupture, haemorrhage, or torsion) causes acute severe pain.',
+        'Menopausal status changes everything: any cyst in a postmenopausal woman needs assessment (higher malignancy risk), whereas most simple premenopausal cysts can be safely observed.',
       ],
     },
 
@@ -74,6 +78,17 @@ export const ovarianCyst: Note = {
         ['Premenopausal', 'Simple >7 cm, or complex/haemorrhagic/endometrioma', 'Rescan ~6 weeks (± tumour markers); refer if persistent'],
         ['Postmenopausal', 'Simple <5 cm with normal CA125', 'Rescan at 6 months and 1 year; discharge if unchanged'],
         ['Postmenopausal', 'Cyst >5 cm, complex, raised CA125, or ascites', 'Refer gynaecology (2WW if suspicious features/ascites)'],
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Patient Information Resources' },
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — Ovarian Cyst', url: 'https://cks.nice.org.uk/topics/ovarian-cancer/' },
+        { label: 'RCOG — Ovarian Cysts Before the Menopause (Patient Info)', url: 'https://www.rcog.org.uk/for-the-public/browse-our-patient-information/ovarian-cysts-before-the-menopause/' },
+        { label: 'Target Ovarian Cancer', url: 'https://targetovariancancer.org.uk/' },
+        { label: 'NHS — Ovarian Cyst', url: 'https://www.nhs.uk/conditions/ovarian-cyst/' },
       ],
     },
 

@@ -22,6 +22,10 @@ export const hyperemesis: Note = {
     { type: 'heading', level: 2, text: 'Overview' },
 
     {
+      type: 'para',
+      text: 'Nausea and vomiting affect the majority of early pregnancies and are usually self-limiting, but hyperemesis gravidarum is the severe, dehydrating end of the spectrum that needs active treatment and sometimes admission. The practical approach is: grade severity (PUQE + ketones), exclude other causes of vomiting, step up the antiemetic ladder confidently (first-line agents are safe), and admit for IV rehydration when oral intake fails.',
+    },
+    {
       type: 'list',
       items: [
         'Nausea and vomiting affect ~80% of early pregnancies (an hCG effect, usually settling by ~16–20 weeks) — common and usually self-limiting',
@@ -66,6 +70,17 @@ export const hyperemesis: Note = {
         'Unable to keep down oral fluids/antiemetics, significant ketonuria/dehydration, weight loss, or electrolyte disturbance',
         'Inpatient care: IV rehydration (normal saline with potassium — avoid dextrose-only, and give thiamine to prevent Wernicke\'s encephalopathy), IV antiemetics, and VTE prophylaxis (pregnancy + dehydration raises thrombosis risk)',
         'HG can be associated with fetal growth restriction and has a recurrence risk (~15%) in future pregnancies — arrange follow-up and support',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Patient Information Resources' },
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'RCOG — Nausea/Vomiting & Hyperemesis (Green-top 69)', url: 'https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/the-management-of-nausea-and-vomiting-of-pregnancy-and-hyperemesis-gravidarum-green-top-guideline-no-69/' },
+        { label: 'Pregnancy Sickness Support', url: 'https://www.pregnancysicknesssupport.org.uk/' },
+        { label: 'bumps — Best Use of Medicines in Pregnancy', url: 'https://www.medicinesinpregnancy.org/' },
+        { label: 'NHS — Severe Vomiting in Pregnancy', url: 'https://www.nhs.uk/pregnancy/related-conditions/complications/severe-vomiting/' },
       ],
     },
 

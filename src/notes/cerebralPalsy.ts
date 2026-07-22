@@ -20,6 +20,10 @@ export const cerebralPalsy: Note = {
     },
 
     {
+      type: 'para',
+      text: 'Cerebral palsy is the commonest cause of physical disability in childhood — a permanent disorder of movement and posture from a non-progressive lesion of the developing brain. The lesion is static, but because the child grows, the clinical picture (tone, contractures, function) evolves and needs surveillance. CP almost never comes alone: proactively finding and managing the associated conditions is where the GP adds the most value.',
+    },
+    {
       type: 'callout',
       variant: 'info',
       title: 'Definition',
@@ -64,6 +68,17 @@ export const cerebralPalsy: Note = {
         'Spasticity options: physiotherapy and orthoses, oral baclofen/diazepam, botulinum toxin injections, intrathecal baclofen, and selective dorsal rhizotomy/orthopaedic surgery — specialist-led',
         'GP role: coordinate and advocate, immunisations, manage intercurrent illness and the comorbidities above, monitor nutrition/growth, provide carer support, and ensure smooth transition to adult services',
         'Anticipate and treat pain (often musculoskeletal or from constipation/reflux), which is common and under-recognised',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Patient Information Resources' },
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG62 — Cerebral Palsy in Under 25s', url: 'https://www.nice.org.uk/guidance/ng62' },
+        { label: 'SCOPE — Cerebral Palsy', url: 'https://www.scope.org.uk/' },
+        { label: 'CP Sport / Physical Activity', url: 'https://www.cpsport.org/' },
+        { label: 'Contact — For Families with Disabled Children', url: 'https://contact.org.uk/' },
       ],
     },
 

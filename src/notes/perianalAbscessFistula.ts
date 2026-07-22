@@ -19,6 +19,11 @@ export const perianalAbscessFistula: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'This note covers three linked anorectal problems: the perianal abscess (which almost always needs surgical drainage, not antibiotics), fistula-in-ano (which often follows an abscess and needs colorectal management), and pruritus ani (anal itch, whose causes fall into four groups). The unifying GP messages are: drain the abscess, think of Crohn\'s with recurrent/complex disease, and never attribute adult anorectal symptoms to "just piles" without examining and excluding cancer.',
+    },
+
     { type: 'heading', level: 2, text: 'Perianal Abscess' },
 
     {
@@ -64,6 +69,17 @@ export const perianalAbscessFistula: Note = {
         'General management: gentle cleansing (water, avoid soaps/wet wipes), soft cotton underwear, avoid scratching; a barrier/emollient; a short course of a mild-to-moderate topical steroid (± antifungal, e.g. Daktacort) for inflamed skin — avoid prolonged potent steroids on this thin skin',
         'Streptococcal perianal disease (children ~3–8 years): perianal erythema, painful defecation, fissuring and itching from group A strep — take a perianal swab; if confirmed, treat with co-amoxiclav or (if penicillin-allergic) a macrolide for 7–10 days',
         'Always consider threadworm and streptococcal infection in a child, and red-flag GI pathology in an adult',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Patient Information Resources' },
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE CKS — Pruritus Ani', url: 'https://cks.nice.org.uk/topics/itch-in-the-anogenital-area/' },
+        { label: 'ACPGBI — Patient Information (Anorectal Abscess/Fistula)', url: 'https://www.acpgbi.org.uk/patients/' },
+        { label: 'NHS — Anal Abscess', url: 'https://www.nhs.uk/conditions/abscess/' },
+        { label: 'Guts UK — Bowel Conditions', url: 'https://gutscharity.org.uk/' },
       ],
     },
 

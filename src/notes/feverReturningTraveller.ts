@@ -20,6 +20,10 @@ export const feverReturningTraveller: Note = {
     },
 
     {
+      type: 'para',
+      text: 'A fever in someone who has recently travelled is a "must not miss" presentation: the differential ranges from self-limiting viral illness to rapidly fatal falciparum malaria and, rarely, a high-consequence infectious disease requiring immediate isolation. A structured "where, when, what" exposure history plus the incubation period narrows the field quickly — but the two non-negotiables are always excluding malaria and thinking about viral haemorrhagic fever before you examine or take blood.',
+    },
+    {
       type: 'callout',
       variant: 'danger',
       title: 'Two Things You Must Not Miss',

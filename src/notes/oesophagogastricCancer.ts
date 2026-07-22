@@ -20,6 +20,10 @@ export const oesophagogastricCancer: Note = {
     },
 
     {
+      type: 'para',
+      text: 'Oesophageal and gastric cancers are aggressive and present late, so 5-year survival hinges on catching the alarm symptoms early and referring for urgent endoscopy. Progressive dysphagia is the classic red flag — any degree, at any age, warrants an urgent OGD. Rising rates of lower-oesophageal adenocarcinoma track the epidemic of reflux, obesity and Barrett\'s oesophagus, which is where prevention and surveillance come in.',
+    },
+    {
       type: 'callout',
       variant: 'danger',
       title: 'Upper GI 2WW Referral (Urgent OGD)',

@@ -33,7 +33,10 @@ export const pancreaticBiliaryCancer: Note = {
     },
 
     { type: 'heading', level: 2, text: 'Background' },
-
+    {
+      type: 'para',
+      text: 'Pancreatic cancer is one of the deadliest common cancers because it presents late with vague, non-specific symptoms. The two patterns worth burning into memory are PAINLESS obstructive jaundice, and new-onset diabetes with weight loss in an older adult — both should trigger urgent imaging. As with ovarian cancer, the rule is to look harder in the over-50s with persistent vague symptoms even when first-line tests are normal.',
+    },
     {
       type: 'list',
       items: [
@@ -68,6 +71,17 @@ export const pancreaticBiliaryCancer: Note = {
         'Exocrine insufficiency (malabsorption, steatorrhoea, weight loss) → pancreatic enzyme replacement (Creon): ~50,000 units with main meals and ~25,000 with snacks; swallow capsules whole with the first mouthfuls (do not crush — enzymes are acid-labile)',
         'Creon is porcine-derived — flag for Muslim/Jewish patients (religious authorities generally deem its use acceptable given medical necessity)',
         'Involve dietitian and palliative care early; signpost Pancreatic Cancer UK and Macmillan',
+      ],
+    },
+
+    { type: 'heading', level: 2, text: 'Patient Information Resources' },
+    {
+      type: 'linkrow',
+      links: [
+        { label: 'NICE NG85 — Pancreatic Cancer', url: 'https://www.nice.org.uk/guidance/ng85' },
+        { label: 'Pancreatic Cancer UK', url: 'https://www.pancreaticcancer.org.uk/' },
+        { label: 'AMMF — Cholangiocarcinoma Charity', url: 'https://ammf.org.uk/' },
+        { label: 'Macmillan — Pancreatic Cancer', url: 'https://www.macmillan.org.uk/cancer-information-and-support/pancreatic-cancer' },
       ],
     },
 

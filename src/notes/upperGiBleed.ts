@@ -20,6 +20,10 @@ export const upperGiBleed: Note = {
     },
 
     {
+      type: 'para',
+      text: 'Acute upper GI bleeding is a common emergency with a mortality of around 10%. The primary-care job is quick recognition and immediate referral — not risk-scoring at the bedside — while remembering that normal early observations do not exclude a significant bleed. Beyond the acute event, the GP has an important role afterwards: H. pylori eradication, rationalising the drugs that caused it, and follow-up of anaemia and (in variceal disease) liver disease.',
+    },
+    {
       type: 'callout',
       variant: 'danger',
       title: 'Refer Straight to ED',
