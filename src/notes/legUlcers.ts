@@ -19,6 +19,10 @@ export const legUlcers: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'The whole management of a leg ulcer flows from classifying it — venous (most common), arterial, neuropathic or mixed — because the treatments are almost opposite: compression heals venous ulcers but can cause harm in arterial disease. This is why an ABPI before applying any compression is non-negotiable. The other recurring judgement calls are distinguishing wound colonisation (common, no antibiotics) from true infection, and preventing pressure sores in immobile patients.',
+    },
     { type: 'heading', level: 2, text: 'Classify the Ulcer' },
 
     {

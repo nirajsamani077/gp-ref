@@ -19,6 +19,10 @@ export const maleHypogonadism: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Male hypogonadism is both over- and under-diagnosed, so the discipline is to test only symptomatic men and to do it properly — a 9am fasted testosterone, repeated with LH/FSH and prolactin, interpreting borderline results via SHBG/free testosterone. The LH pattern separates primary (testicular) from secondary (pituitary/hypothalamic) disease, and a low testosterone with low LH or raised prolactin should prompt urgent thoughts of a pituitary lesion. Testosterone replacement has clear benefits but needs specialist guidance and structured haematocrit/PSA monitoring.',
+    },
     { type: 'heading', level: 2, text: 'When to Test — and How' },
 
     {

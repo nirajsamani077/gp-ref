@@ -19,6 +19,10 @@ export const fungalSkinInfections: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Fungal skin and nail infections are common and mostly straightforward, but three points repay attention: tinea capitis and severe/nail disease need ORAL (not just topical) antifungals; nail infections should be CONFIRMED with mycology before oral treatment (many dystrophic nails aren\'t fungal — and subungual melanoma can mimic one); and the classic trap of steroid-modified tinea, where a topical steroid turns a treatable ringworm into a spreading, atypical rash.',
+    },
     { type: 'heading', level: 2, text: 'Tinea (Dermatophyte) Infections' },
 
     {

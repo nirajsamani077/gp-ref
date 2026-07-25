@@ -20,6 +20,10 @@ export const meningitis: Note = {
     },
 
     {
+      type: 'para',
+      text: 'Meningococcal disease is the archetypal time-critical emergency: the primary-care priorities are to suspect it in any acutely unwell/septic patient, give IM benzylpenicillin (at the right weight-based dose) if it will not delay transfer, and call 999 — never waiting for a rash to appear. Beyond the acute event, the GP has a defined role in public health notification and prophylaxis, and in ensuring survivors get audiology and specialist follow-up for sequelae.',
+    },
+    {
       type: 'callout',
       variant: 'danger',
       title: 'Emergency — Call 999 and Give IM Benzylpenicillin',

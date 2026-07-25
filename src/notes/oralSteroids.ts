@@ -19,6 +19,10 @@ export const oralSteroids: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Oral corticosteroids are highly effective but carry a wide range of dose- and duration-related harms, so safe prescribing is really about four things: knowing which regimens suppress the HPA axis, issuing a Steroid Emergency Card with sick-day rules to those patients, monitoring for and prophylaxing against the key adverse effects (bone loss, steroid-induced diabetes, GI ulceration), and withdrawing gradually rather than abruptly when the axis may be suppressed.',
+    },
     { type: 'heading', level: 2, text: 'Who Develops Adrenal Suppression?' },
 
     {

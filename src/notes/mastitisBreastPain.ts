@@ -19,6 +19,10 @@ export const mastitisBreastPain: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'This note covers the common benign breast and nipple problems: lactational mastitis (where the first move is keeping the milk moving, not reaching for antibiotics), nipple pain in breastfeeding (usually a fixable latch problem), cyclical mastalgia, and other nipple presentations. Running through it are two cancer safety-nets: a red breast not responding to antibiotics (inflammatory breast cancer) and eczematous change starting AT the nipple (Paget\'s disease) — both warrant 2WW referral.',
+    },
     { type: 'heading', level: 2, text: 'Mastitis & Breast Abscess' },
 
     {

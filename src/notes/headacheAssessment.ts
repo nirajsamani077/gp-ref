@@ -19,6 +19,10 @@ export const headacheAssessment: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'The vast majority of headaches presenting to a GP are benign primary headaches, so a structured approach works well: first exclude the red flags that signal a dangerous secondary cause, then use the pattern (and a headache diary) to classify the primary headache — tension-type, migraine, cluster or medication-overuse headache. The two easy wins are recognising medication-overuse headache as a treatable cause of chronic daily headache, and never missing giant cell arteritis or thunderclap headache.',
+    },
     { type: 'heading', level: 2, text: 'Step 1 — Exclude Red Flags ("SNNOOP"-style)' },
 
     {

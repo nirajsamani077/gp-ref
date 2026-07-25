@@ -19,8 +19,10 @@ export const shinglesChickenpox: Note = {
       ],
     },
 
-    { type: 'heading', level: 2, text: 'Overview' },
-
+    {
+      type: 'para',
+      text: 'Chickenpox (primary VZV) and shingles (its reactivation) are usually clinical diagnoses managed supportively, but each has a small set of high-stakes decisions: give shingles antivirals within 72 hours in the patients who benefit, recognise the sight-threatening herpes zoster ophthalmicus (Hutchinson\'s sign) and Ramsay Hunt syndrome, avoid NSAIDs in chickenpox, and take special care with the immunocompromised, neonates and non-immune pregnant women. Shingrix is a non-live vaccine now suitable even for the immunocompromised.',
+    },
     {
       type: 'list',
       items: [
