@@ -18,6 +18,10 @@ export const hypokalaemia: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Hypokalaemia is worked up in three steps: decide if it is an emergency (very low potassium, ECG changes, symptoms, or high-risk drugs like digoxin), identify the cause — almost always diuretics or GI losses — then replace and treat the cause. Two patterns are worth flagging: check magnesium (you cannot correct refractory hypokalaemia until it is replaced), and hypokalaemia WITH hypertension should prompt a screen for Conn\'s syndrome.',
+    },
     { type: 'heading', level: 2, text: 'Step 1 — Is This an Emergency?' },
 
     {

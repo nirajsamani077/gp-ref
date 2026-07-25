@@ -20,6 +20,10 @@ export const pituitaryProlactinoma: Note = {
     },
 
     {
+      type: 'para',
+      text: 'Pituitary tumours declare themselves in three ways — mass effect (headache, bitemporal hemianopia), hormone deficiency (hypopituitarism), and hormone excess (most commonly a prolactinoma) — and the primary-care approach is a single fasted 9am pituitary blood panel plus prompt referral. Two things to hold onto: pituitary apoplexy is a same-day emergency, and prolactinomas are one of the few tumours treated medically first, with dopamine agonists shrinking even large tumours.',
+    },
+    {
       type: 'callout',
       variant: 'danger',
       title: 'Pituitary Apoplexy — Emergency',

@@ -19,6 +19,10 @@ export const hyperparathyroidism: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Hyperparathyroidism is classified by reading the calcium/phosphate/PTH pattern together: primary (autonomous adenoma → high calcium with high or inappropriately-normal PTH), secondary (appropriate PTH rise to low calcium, e.g. vitamin D deficiency or CKD), and tertiary (autonomous secretion after long-standing secondary disease). Most primary cases are picked up incidentally on a raised calcium; the key steps are excluding the benign mimic FHH before surgery and assessing the end-organ effects (bones and stones) that drive the decision to operate.',
+    },
     { type: 'heading', level: 2, text: 'Parathyroid Physiology' },
 
     {

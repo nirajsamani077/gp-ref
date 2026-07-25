@@ -19,6 +19,10 @@ export const handWristConditions: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'This note covers four common non-traumatic hand and wrist problems that present regularly in general practice — trigger finger, Dupuytren\'s contracture, cubital tunnel syndrome and ganglion cysts. Several are managed effectively in primary care (trigger finger responds well to a steroid injection; most ganglia just need reassurance), while others (Dupuytren\'s with a positive tabletop test, cubital tunnel with motor involvement) need timely referral. Look out for the diabetes and inflammatory-arthritis associations that run through several of them.',
+    },
     { type: 'heading', level: 2, text: 'Trigger Finger (Stenosing Tenosynovitis)' },
 
     {

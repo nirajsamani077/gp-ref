@@ -19,6 +19,10 @@ export const lichenSclerosus: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Lichen sclerosus and lichen planus are chronic inflammatory conditions that commonly affect anogenital (and, for lichen planus, oral) skin. The two clinically vital points for lichen sclerosus are that it is frequently misdiagnosed as thrush (reconsider when "thrush" won\'t resolve), and that it carries a squamous-cell-carcinoma risk — so it needs an ultra-potent topical steroid regimen, ongoing surveillance, and a low threshold to biopsy suspicious change.',
+    },
     { type: 'heading', level: 2, text: 'Lichen Sclerosus' },
 
     {

@@ -20,6 +20,10 @@ export const diabetesInsipidus: Note = {
     },
 
     {
+      type: 'para',
+      text: 'Diabetes insipidus — now renamed arginine vasopressin deficiency (cranial) or resistance (nephrogenic) — is a disorder of water handling, not glucose, producing large volumes of dilute urine and compensatory thirst. In primary care the job is to exclude the common mimics (diabetes mellitus, hypercalcaemia, primary polydipsia) and refer for confirmatory testing. The one safety fact worth knowing cold is the desmopressin patient-safety alert: never let a patient with cranial DI miss their desmopressin or lose access to water in hospital.',
+    },
+    {
       type: 'callout',
       variant: 'info',
       title: 'New Terminology',

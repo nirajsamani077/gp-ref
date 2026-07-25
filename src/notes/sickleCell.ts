@@ -19,8 +19,10 @@ export const sickleCell: Note = {
       ],
     },
 
-    { type: 'heading', level: 2, text: 'Overview' },
-
+    {
+      type: 'para',
+      text: 'Sickle cell disease is a lifelong haemoglobinopathy in which sickled red cells cause both chronic haemolytic anaemia and acute vaso-occlusive crises. The GP\'s role centres on prevention (penicillin prophylaxis and the asplenia vaccination schedule), prompt recognition and escalation of the acute emergencies (painful crisis, acute chest syndrome, splenic sequestration, stroke, priapism, sepsis), and supporting the specialist plan. Two principles matter most: trust the patient\'s pain, and treat suspected infection urgently.',
+    },
     {
       type: 'list',
       items: [

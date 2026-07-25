@@ -26,6 +26,10 @@ export const nafld: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'NAFLD (increasingly termed MASLD) is extremely common — both a cause and a consequence of insulin resistance — and most cases are benign fatty liver. The single most important primary-care task is to identify the minority with advanced fibrosis (using the FIB-4 → ELF/Fibroscan pathway) who need hepatology, while managing everyone else with lifestyle and metabolic risk reduction. Remember that cardiovascular disease, not the liver, is the commonest cause of death — so statins are safe and beneficial here.',
+    },
     { type: 'heading', level: 2, text: 'Overview' },
 
     {

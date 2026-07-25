@@ -19,6 +19,10 @@ export const prostatitis: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Prostatitis spans two very different entities: acute bacterial prostatitis — a serious infection with a high complication rate needing a prostate-penetrating antibiotic (and a low threshold to admit) — and the far more common chronic prostatitis / chronic pelvic pain syndrome, which is usually non-bacterial and managed as a chronic-pain problem. A recurring pitfall is PSA: it is often raised in acute prostatitis and should not be used to diagnose it.',
+    },
     { type: 'heading', level: 2, text: 'Acute Bacterial Prostatitis' },
 
     {

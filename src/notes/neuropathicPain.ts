@@ -19,6 +19,10 @@ export const neuropathicPain: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Neuropathic pain needs a different drug strategy from nociceptive pain: NICE offers a choice of four first-line agents (amitriptyline, duloxetine, gabapentin, pregabalin), tried in sequence, with carbamazepine reserved as the exception for trigeminal neuralgia. The dominant prescribing message is caution with gabapentinoids — they help only genuine neuropathic pain, help fewer than half of even those patients, are addictive Schedule 3 controlled drugs, and are dangerous combined with opioids.',
+    },
     { type: 'heading', level: 2, text: 'Recognising Neuropathic Pain' },
 
     {

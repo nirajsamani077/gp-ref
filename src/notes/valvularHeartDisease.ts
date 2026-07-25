@@ -20,6 +20,10 @@ export const valvularHeartDisease: Note = {
     },
 
     {
+      type: 'para',
+      text: 'For the GP, valvular heart disease comes down to a few practical tasks: refer new murmurs for echocardiography, recognise the red flags of severe aortic stenosis (the commonest significant valve lesion), prescribe safely around it, and know the current UK position that routine endocarditis antibiotic prophylaxis is no longer recommended. Symptom onset in significant valve disease — especially aortic stenosis — is the key trigger for intervention.',
+    },
+    {
       type: 'callout',
       variant: 'info',
       title: 'Refer Murmurs for Echocardiography',
