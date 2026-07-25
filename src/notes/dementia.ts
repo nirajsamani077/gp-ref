@@ -116,7 +116,6 @@ export const dementia: Note = {
     {
       type: 'calclink',
       calculators: [
-        { id: 'nph', label: 'Normal Pressure Hydrocephalus', subtitle: 'A potentially reversible cause — gait, incontinence, cognition' },
         { id: '6cit', label: '6-CIT Calculator', subtitle: 'Six Item Cognitive Impairment Test — score ≥8 suggests significant impairment' },
       ],
     },
@@ -326,6 +325,18 @@ export const dementia: Note = {
         { label: 'DVLA — Dementia & Driving', url: 'https://www.gov.uk/dementia-and-driving' },
         { label: 'Carers UK', url: 'https://www.carersuk.org' },
         { label: 'Age UK — LPoA', url: 'https://www.ageuk.org.uk/information-advice/money-legal/legal-issues/power-of-attorney/' },
+      ],
+    },
+
+    {
+      type: 'notelink',
+      notes: [
+        { id: 'delirium', label: 'Delirium', subtitle: 'The key acute differential/co-existing diagnosis' },
+        { id: 'nph', label: 'Normal Pressure Hydrocephalus', subtitle: 'A potentially reversible cause — gait, incontinence, cognition' },
+        { id: 'parkinsons-pd', label: 'Parkinson\'s Disease', subtitle: 'Lewy body / Parkinson\'s dementia overlap' },
+        { id: 'depression', label: 'Depression', subtitle: 'Pseudodementia — a reversible mimic' },
+        { id: 'capacity-mca', label: 'Mental Capacity Act', subtitle: 'Capacity assessment and best-interests decisions' },
+        { id: 'elderly-falls', label: 'Falls in the Elderly', subtitle: 'Falls risk and antipsychotic/sedative cautions' },
       ],
     },
 
