@@ -19,6 +19,10 @@ export const paediatricLowerLimb: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'A large share of paediatric orthopaedic presentations are normal developmental variants — flat feet, in-toeing, bow legs and knock knees — that are symmetrical, painless and resolve with growth, needing only reassurance. The skill is knowing the expected age of resolution and the red flags (asymmetry, pain, regression, short stature) that separate a normal variant from pathology, and confidently distinguishing benign "growing pains" from the sinister causes of leg pain.',
+    },
     { type: 'heading', level: 2, text: 'Normal Developmental Variants' },
 
     {

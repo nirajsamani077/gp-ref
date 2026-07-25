@@ -19,8 +19,10 @@ export const subfertility: Note = {
       ],
     },
 
-    { type: 'heading', level: 2, text: 'Overview' },
-
+    {
+      type: 'para',
+      text: 'Subfertility affects around 1 in 7 couples and the primary-care role is to assess BOTH partners together, do the small number of high-yield first-line tests (mid-luteal progesterone and semen analysis), optimise lifestyle, and refer at the right time — earlier when the woman is ≥36 or there is a known cause. Beyond the biology, it carries a heavy emotional burden that deserves acknowledgement and support.',
+    },
     {
       type: 'list',
       items: [

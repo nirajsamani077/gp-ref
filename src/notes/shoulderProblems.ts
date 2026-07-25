@@ -19,6 +19,10 @@ export const shoulderProblems: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Most shoulder pain can be diagnosed clinically without imaging by working through a simple "4 S" framework — Site, Stiffness, Serious features and Stability. The single most useful discriminator is whether PASSIVE range of movement is lost (pointing to frozen shoulder or glenohumeral OA) or preserved (pointing to subacromial or ACJ problems). The main things not to miss are an acute traumatic cuff tear (needs early orthopaedic review) and referred pain from the neck, chest or a Pancoast tumour.',
+    },
     { type: 'heading', level: 2, text: 'The "4 S" Approach' },
 
     {

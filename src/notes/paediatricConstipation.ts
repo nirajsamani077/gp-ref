@@ -19,6 +19,10 @@ export const paediatricConstipation: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Childhood constipation is common, almost always idiopathic (functional), and gets stuck in a self-perpetuating cycle of a painful stool → withholding → a bigger, harder stool. The keys to getting it right are excluding the red flags that signal an organic cause, explaining the mechanism (and that overflow soiling is involuntary, not naughtiness), and treating it properly: disimpact FIRST, then maintain with titrated macrogol for months — diet alone will not fix it.',
+    },
     { type: 'heading', level: 2, text: 'Diagnosis' },
 
     {

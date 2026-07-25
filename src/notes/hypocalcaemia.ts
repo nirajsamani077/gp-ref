@@ -18,6 +18,10 @@ export const hypocalcaemia: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Hypocalcaemia is worked up in three steps: judge severity on the CORRECTED calcium (and symptoms/ECG) to decide who needs admission, then use PTH — with vitamin D and magnesium — to pin down the cause, then replace appropriately. The recurring practical pearl is magnesium: hypomagnesaemia is a common, easily missed cause, and you cannot correct calcium (or potassium) until the magnesium is replaced.',
+    },
     { type: 'heading', level: 2, text: 'Step 1 — Severity & Admission' },
 
     {

@@ -19,8 +19,10 @@ export const gastroenteritisChildren: Note = {
       ],
     },
 
-    { type: 'heading', level: 2, text: 'Overview & Course' },
-
+    {
+      type: 'para',
+      text: 'Childhood gastroenteritis is usually a self-limiting viral illness managed at home with oral rehydration. The clinical work is threefold: assess for dehydration/shock, actively exclude the presentations that are NOT gastroenteritis (bilious vomiting, blood in stool, a surgical abdomen, meningitis), and remember haemolytic uraemic syndrome after bloody diarrhoea — where antibiotics and antidiarrhoeals are contraindicated.',
+    },
     {
       type: 'list',
       items: [

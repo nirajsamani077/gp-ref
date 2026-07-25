@@ -19,6 +19,10 @@ export const footHeelPain: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Foot and heel pain is usually diagnosed on the location and character of the pain: under the heel (plantar fasciitis), forefoot "walking on a pebble" (Morton\'s neuroma or metatarsalgia), or the great toe (bunion, hallux rigidus, gout). Most causes are managed conservatively with footwear, orthotics and load modification. The main things not to miss are a stress fracture, gout in the big toe, and — in anyone with diabetes — a neuropathic foot at risk of ulceration.',
+    },
     { type: 'heading', level: 2, text: 'Plantar Fasciitis' },
 
     {

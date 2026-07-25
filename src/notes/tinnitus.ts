@@ -19,8 +19,10 @@ export const tinnitus: Note = {
       ],
     },
 
-    { type: 'heading', level: 2, text: 'Overview' },
-
+    {
+      type: 'para',
+      text: 'Tinnitus is very common and usually benign, so the central task is triage: picking out the few who need urgent assessment or imaging (sudden tinnitus with hearing loss, unilateral/asymmetric tinnitus, pulsatile tinnitus, or any neurology) from the many with harmless symmetrical tinnitus who need reassurance and support. Its close link with sleep, anxiety and low mood means the psychological impact should always be assessed and managed alongside the ear.',
+    },
     {
       type: 'list',
       items: [

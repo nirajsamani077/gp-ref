@@ -19,6 +19,10 @@ export const hypoglycaemia: Note = {
       ],
     },
 
+    {
+      type: 'para',
+      text: 'Hypoglycaemia in primary care is overwhelmingly a complication of diabetes treatment — insulin and sulfonylureas — and the essentials are recognition ("four is the floor"), a clear treatment ladder from fast-acting carbohydrate to IM glucagon, and prevention. Two practical traps to remember: sulfonylurea hypos can be prolonged and recurrent (low threshold to admit), and impaired awareness of hypoglycaemia has real consequences for safety and driving.',
+    },
     { type: 'heading', level: 2, text: 'Recognition' },
 
     {
