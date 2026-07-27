@@ -344,6 +344,26 @@ import { vulvalConditions }         from '../notes/vulvalConditions'
 import { gastroenteritisAdult }     from '../notes/gastroenteritisAdult'
 import { weightLoss }               from '../notes/weightLoss'
 import { polypharmacy }             from '../notes/polypharmacy'
+import { preconceptionCare }        from '../notes/preconceptionCare'
+import { tetanus }                  from '../notes/tetanus'
+import { benzodiazepineWithdrawal } from '../notes/benzodiazepineWithdrawal'
+import { personalityDisorders }     from '../notes/personalityDisorders'
+import { maniaHypomania }           from '../notes/maniaHypomania'
+import { hyperhidrosis }            from '../notes/hyperhidrosis'
+import { nightSweats }              from '../notes/nightSweats'
+import { erythemaNodosum }          from '../notes/erythemaNodosum'
+import { oralConditions }           from '../notes/oralConditions'
+import { skinLesionMorphology }     from '../notes/skinLesionMorphology'
+import { photosensitivity }         from '../notes/photosensitivity'
+import { scaphoidFracture }         from '../notes/scaphoidFracture'
+import { jointReplacementPostop }   from '../notes/jointReplacementPostop'
+import { interstitialCystitis }     from '../notes/interstitialCystitis'
+import { sterilisation }            from '../notes/sterilisation'
+import { growthPuberty }            from '../notes/growthPuberty'
+import { paediatricCancer }         from '../notes/paediatricCancer'
+import { vulvodyniaVaginismus }     from '../notes/vulvodyniaVaginismus'
+import { fgm }                      from '../notes/fgm'
+import { sexualAssault }            from '../notes/sexualAssault'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -691,4 +711,24 @@ export const NOTES: Note[] = [
   gastroenteritisAdult,
   weightLoss,
   polypharmacy,
+  preconceptionCare,
+  tetanus,
+  benzodiazepineWithdrawal,
+  personalityDisorders,
+  maniaHypomania,
+  hyperhidrosis,
+  nightSweats,
+  erythemaNodosum,
+  oralConditions,
+  skinLesionMorphology,
+  photosensitivity,
+  scaphoidFracture,
+  jointReplacementPostop,
+  interstitialCystitis,
+  sterilisation,
+  growthPuberty,
+  paediatricCancer,
+  vulvodyniaVaginismus,
+  fgm,
+  sexualAssault,
 ].map(enrichBody)

@@ -136,6 +136,7 @@ export const emergencyContraception: Note = {
         { id: 'larcs', label: 'Progestogen-Only Contraception & LARCs', subtitle: 'Copper IUD is the most effective EC; ongoing LARC options' },
         { id: 'cocp', label: 'Combined Oral Contraceptive Pill', subtitle: 'Missed-pill rules that trigger EC' },
         { id: 'miscarriage-ectopic', label: 'Miscarriage & Ectopic Pregnancy', subtitle: 'Assess if pregnancy may already be established' },
+        { id: 'sexual-assault', label: 'Sexual Assault & Post-Exposure Care', subtitle: 'EC as part of the SARC/post-exposure pathway' },
       ],
     },
   ],

@@ -93,6 +93,7 @@ export const sarcoidosis: Note = {
         { id: 'hypercalcaemia', label: 'Hypercalcaemia', subtitle: 'Granulomatous hypercalcaemia — a non-PTH-driven cause' },
         { id: 'tuberculosis', label: 'Tuberculosis', subtitle: 'Key mimic of BHL — always exclude before diagnosing sarcoid' },
         { id: 'abnormal-lft', label: 'Abnormal LFTs', subtitle: 'Hepatic involvement and granulomatous liver disease' },
+        { id: 'erythema-nodosum', label: 'Erythema Nodosum', subtitle: 'Löfgren\'s syndrome — EN + hilar lymphadenopathy' },
       ],
     },
 

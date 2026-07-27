@@ -96,6 +96,7 @@ export const contraception: Note = {
         { id: 'emergency-contraception', label: 'Emergency Contraception', subtitle: 'Copper IUD, ulipristal, levonorgestrel — and quick-starting after' },
         { id: 'menopause', label: 'Menopause', subtitle: 'Contraception around the menopause and stopping rules' },
         { id: 'bleeding-on-contraception', label: 'Bleeding on Contraception', subtitle: 'Managing unscheduled bleeding' },
+        { id: 'sterilisation', label: 'Vasectomy & Female Sterilisation', subtitle: 'Permanent options — and why LARC is worth considering first' },
       ],
     },
 

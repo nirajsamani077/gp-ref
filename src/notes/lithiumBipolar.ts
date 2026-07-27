@@ -210,6 +210,7 @@ export const lithiumBipolar: Note = {
       notes: [
         { id: 'antidepressants', label: 'Antidepressants', subtitle: 'SSRI caution in bipolar, switching guidance' },
         { id: 'depression', label: 'Depression', subtitle: 'Depression screening, stepped care' },
+        { id: 'mania-hypomania', label: 'Mania & Hypomania', subtitle: 'Recognising the "highs" and urgent referral' },
       ],
     },
 
