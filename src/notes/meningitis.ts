@@ -90,6 +90,7 @@ export const meningitis: Note = {
         { id: 'notifiable-diseases', label: 'Notifiable Diseases', subtitle: 'Notification duties and the UKHSA process' },
         { id: 'hearing-loss', label: 'Hearing Loss', subtitle: 'Post-meningitis SNHL — urgent audiology' },
         { id: 'febrile-convulsions', label: 'Febrile Convulsions', subtitle: 'Always exclude meningitis in the febrile child with a seizure' },
+        { id: 'hsp', label: 'Henoch-Schönlein Purpura', subtitle: 'Non-blanching rash in a WELL child — the benign mimic' },
       ],
     },
 

@@ -79,6 +79,7 @@ export const neonatalJaundice: Note = {
         { id: 'hypothyroidism', label: 'Hypothyroidism', subtitle: 'Congenital hypothyroidism as a cause of prolonged jaundice' },
         { id: 'sickle-cell', label: 'Sickle Cell Disease', subtitle: 'Haemoglobinopathy/haemolysis context' },
         { id: 'faltering-growth', label: 'Faltering Growth', subtitle: 'Feeding, weight and neonatal wellbeing' },
+        { id: 'rhesus-anti-d', label: 'Rhesus Disease & Anti-D', subtitle: 'Haemolytic disease of the newborn — early haemolytic jaundice' },
       ],
     },
 

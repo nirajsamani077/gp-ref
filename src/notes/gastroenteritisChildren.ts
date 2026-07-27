@@ -88,6 +88,7 @@ export const gastroenteritisChildren: Note = {
         { id: 'infant-colic-reflux', label: 'Infant Colic & Reflux', subtitle: 'Vomiting/regurgitation in babies — different entity' },
         { id: 'faltering-growth', label: 'Faltering Growth', subtitle: 'Prolonged/recurrent GI illness and weight' },
         { id: 'aki', label: 'Acute Kidney Injury', subtitle: 'HUS-related renal failure' },
+        { id: 'gastroenteritis-adult', label: 'Gastroenteritis (Adults)', subtitle: 'Adult D&V — stool testing and organism guide' },
       ],
     },
 

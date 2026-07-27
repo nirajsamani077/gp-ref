@@ -82,6 +82,7 @@ export const lichenSclerosus: Note = {
         { id: 'menopause', label: 'Menopause', subtitle: 'Vulvovaginal atrophy is the other key differential for vulval symptoms' },
         { id: 'hypothyroidism', label: 'Hypothyroidism', subtitle: 'Autoimmune thyroid association — check TSH' },
         { id: 'phimosis-circumcision', label: 'Phimosis & Circumcision', subtitle: 'Lichen sclerosus (BXO) is a cause of phimosis in males' },
+        { id: 'vulval-conditions', label: 'Vulval Dermatoses & Cancer', subtitle: 'The wider vulval-symptom differential and 2WW red flags' },
       ],
     },
 
