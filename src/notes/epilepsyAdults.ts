@@ -283,6 +283,7 @@ export const epilepsyAdults: Note = {
         { id: 'epilepsyChildhood', label: 'Epilepsy (Childhood)', subtitle: 'Childhood epilepsy syndromes \u2014 some continue into adulthood' },
         { id: 'seizureEmergency', label: 'Seizure Emergency', subtitle: 'Status epilepticus \u2014 IV lorazepam, phenytoin, RSI protocol' },
         { id: 'multiple-sclerosis', label: 'Multiple Sclerosis', subtitle: 'Seizures occur in ~5% of MS; AED-DMT drug interactions' },
+        { id: 'dvla-fitness-to-drive', label: 'DVLA Fitness to Drive', subtitle: 'Seizure driving rules and notification duties' },
       ],
     },
   ],

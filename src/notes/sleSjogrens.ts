@@ -89,6 +89,7 @@ export const sleSjogrens: Note = {
         { id: 'dmards', label: 'DMARDs & Biologics', subtitle: 'Hydroxychloroquine and immunosuppressant monitoring' },
         { id: 'ckd', label: 'Chronic Kidney Disease', subtitle: 'Lupus nephritis — protect renal function' },
         { id: 'systemic-sclerosis', label: 'Systemic Sclerosis (Scleroderma)', subtitle: 'Other connective tissue disease; overlap syndromes' },
+        { id: 'drug-induced-lupus', label: 'Drug-Induced Lupus', subtitle: 'A reversible SLE-like syndrome — the drug causes' },
       ],
     },
 

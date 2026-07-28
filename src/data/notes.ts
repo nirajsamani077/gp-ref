@@ -374,6 +374,16 @@ import { hypospadias }              from '../notes/hypospadias'
 import { lacrimalDuctObstruction }  from '../notes/lacrimalDuctObstruction'
 import { cyp450Interactions }       from '../notes/cyp450Interactions'
 import { drugMonitoring }           from '../notes/drugMonitoring'
+import { dvlaFitnessToDrive }       from '../notes/dvlaFitnessToDrive'
+import { priapism }                 from '../notes/priapism'
+import { g6pdSpherocytosis }        from '../notes/g6pdSpherocytosis'
+import { tourettesTics }            from '../notes/tourettesTics'
+import { sarcomaBoneCancer }        from '../notes/sarcomaBoneCancer'
+import { drugInducedLupus }         from '../notes/drugInducedLupus'
+import { keratosisPilaris }         from '../notes/keratosisPilaris'
+import { paronychia }               from '../notes/paronychia'
+import { chilblains }               from '../notes/chilblains'
+import { stomasNutrition }          from '../notes/stomasNutrition'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -751,4 +761,14 @@ export const NOTES: Note[] = [
   lacrimalDuctObstruction,
   cyp450Interactions,
   drugMonitoring,
+  dvlaFitnessToDrive,
+  priapism,
+  g6pdSpherocytosis,
+  tourettesTics,
+  sarcomaBoneCancer,
+  drugInducedLupus,
+  keratosisPilaris,
+  paronychia,
+  chilblains,
+  stomasNutrition,
 ].map(enrichBody)

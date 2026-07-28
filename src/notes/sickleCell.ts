@@ -82,6 +82,8 @@ export const sickleCell: Note = {
         { id: 'normocytic-anaemia', label: 'Normocytic Anaemia', subtitle: 'Haemolysis as a cause — reticulocytes, LDH, haptoglobin' },
         { id: 'anaemia-pregnancy', label: 'Anaemia in Pregnancy', subtitle: 'Haemoglobinopathy screening in pregnancy' },
         { id: 'notifiable-diseases', label: 'Notifiable Diseases', subtitle: 'Asplenia vaccination/prophylaxis principles overlap' },
+        { id: 'priapism', label: 'Priapism', subtitle: 'Recurrent/stuttering priapism is a sickle-cell complication' },
+        { id: 'g6pd-spherocytosis', label: 'G6PD & Hereditary Spherocytosis', subtitle: 'Other inherited red-cell disorders' },
       ],
     },
 
