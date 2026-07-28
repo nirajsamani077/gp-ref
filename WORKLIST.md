@@ -1,6 +1,6 @@
 # GP Ref — Notes Build Worklist
 
-_Reconciled against 355 built `.ts` notes — P1 & P2 tiers complete._
+_Reconciled against 375 built `.ts` notes — P1 & P2 complete; P3 20/33 done._
 _A "cluster" = several stubs that should become ONE consolidated note._
 _`[x]` = built; `[ ]` = still to build._
 
@@ -8,14 +8,14 @@ _`[x]` = built; `[ ]` = still to build._
 
 | Bucket | Count |
 |---|---|
-| Notes built & registered | **355** |
-| Clinical topics still to build (after consolidation) | **~33** |
+| Notes built & registered | **375** |
+| Clinical topics still to build (after consolidation) | **~13** |
 | — of which **P1** (common/high-yield) | **0** (cleared — flashes/floaters sits in `visual-loss`) |
 | — of which **P2** (moderate) | **0** (complete) |
-| — of which **P3** (niche) | **~33** |
+| — of which **P3** (niche) | **~13** (14 lines, one duplicated) |
 | Non-clinical stubs — won't become notes (see bottom) | ~80 |
 
-At 10 notes/batch ≈ **~3–4 more batches** to clear the remaining P3 tier.
+At 10 notes/batch ≈ **~1–2 more batches** to finish the entire P3 tier.
 Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 
 ---
@@ -44,7 +44,7 @@ Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 - [x] **P2** Goitre / thyroid nodule / thyroid cancer
 - [x] **P2** Diabetes insipidus
 - [x] **P2** Phaeochromocytoma
-- [ ] **P3** Hirsutism & hypertrichosis (or fold into `pcos`)
+- [x] **P3** Hirsutism & hypertrichosis (or fold into `pcos`)
 
 ### Gastroenterology
 - [x] **P1** IBS
@@ -58,7 +58,7 @@ Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 - [x] **P2** Ischaemic colitis / mesenteric ischaemia
 - [x] **P2** Faecal incontinence
 - [x] **P3** Stomas + PEG feeding + malnutrition/ONS (cluster)
-- [ ] **P3** Neuroendocrine tumours (NET)
+- [x] **P3** Neuroendocrine tumours (NET)
 
 ### Renal & Urology
 - [x] **P1** Renal stones
@@ -73,7 +73,7 @@ Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 - [x] **P2** Vasectomy & female sterilisation
 - [x] **P2** Hypospadias
 - [x] **P3** Priapism
-- [ ] **P3** Dysuria (symptom DDx)
+- [x] **P3** Dysuria (symptom DDx)
 
 ### Haematology
 - [x] **P1** Normocytic anaemia
@@ -86,7 +86,7 @@ Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 - [x] **P2** Raised INR on warfarin
 - [x] **P2** Inflammatory markers (CRP/ESR/PV interpretation)
 - [x] **P3** G6PD deficiency + hereditary spherocytosis (cluster)
-- [ ] **P3** Eosinophilia
+- [x] **P3** Eosinophilia
 
 ### Neurology
 - [x] **P1** Headache assessment (tension-type + red flags + MOH)
@@ -138,7 +138,7 @@ Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 - [x] **P3** Paronychia + digital myxoid cyst
 - [x] **P3** Chilblains
 - [ ] **P3** Self-induced skin conditions
-- [ ] **P3** Salivary gland disease
+- [x] **P3** Salivary gland disease
 
 ### ENT
 - [x] **P1** Tinnitus
@@ -146,8 +146,8 @@ Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 - [x] **P1** Neck lumps (incl. HNSCC 2WW)
 - [x] **P2** TMJ dysfunction
 - [x] **P2** Nasal septal haematoma + pharyngeal pouch + Ludwig's angina (ENT emergencies)
-- [ ] **P3** Tonsillectomy (indications)
-- [ ] **P3** Chondrodermatitis nodularis helicis
+- [x] **P3** Tonsillectomy (indications)
+- [x] **P3** Chondrodermatitis nodularis helicis
 
 ### Ophthalmology
 - [x] **P1** Red painful eye
@@ -178,8 +178,8 @@ Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 - [x] **P2** Preconception advice + folic acid
 - [x] **P2** FGM
 - [x] **P2** Sexual assault & post-exposure care
-- [ ] **P3** HPV vaccination
-- [ ] **P3** Genital ulcers DDx + STI contact tracing (mostly in `stis`)
+- [x] **P3** HPV vaccination
+- [x] **P3** Genital ulcers DDx + STI contact tracing (mostly in `stis`)
 
 ### Paediatrics
 - [x] **P1** Childhood rashes & viral infections
@@ -237,7 +237,7 @@ Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 - [x] **P2** CO poisoning; CT head criteria; choking/anaphylaxis emergencies
 - [x] **P2** Unintentional weight loss (symptom DDx)
 - [x] **P2** Night sweats + non-menopausal flushing
-- [ ] **P3** Fitness to fly
+- [x] **P3** Fitness to fly
 - [x] **P3** DVLA rules (consolidated reference)
 
 ---

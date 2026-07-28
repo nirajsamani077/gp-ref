@@ -384,6 +384,16 @@ import { keratosisPilaris }         from '../notes/keratosisPilaris'
 import { paronychia }               from '../notes/paronychia'
 import { chilblains }               from '../notes/chilblains'
 import { stomasNutrition }          from '../notes/stomasNutrition'
+import { hirsutism }                from '../notes/hirsutism'
+import { eosinophilia }             from '../notes/eosinophilia'
+import { dysuria }                  from '../notes/dysuria'
+import { neuroendocrineTumours }    from '../notes/neuroendocrineTumours'
+import { tonsillectomy }            from '../notes/tonsillectomy'
+import { cnh }                      from '../notes/cnh'
+import { salivaryGlandDisease }     from '../notes/salivaryGlandDisease'
+import { genitalUlcers }            from '../notes/genitalUlcers'
+import { hpvVaccination }           from '../notes/hpvVaccination'
+import { fitnessToFly }             from '../notes/fitnessToFly'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -771,4 +781,14 @@ export const NOTES: Note[] = [
   paronychia,
   chilblains,
   stomasNutrition,
+  hirsutism,
+  eosinophilia,
+  dysuria,
+  neuroendocrineTumours,
+  tonsillectomy,
+  cnh,
+  salivaryGlandDisease,
+  genitalUlcers,
+  hpvVaccination,
+  fitnessToFly,
 ].map(enrichBody)

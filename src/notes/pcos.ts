@@ -144,6 +144,7 @@ export const pcos: Note = {
         { id: 'diabetes-t2dm', label: 'Type 2 Diabetes', subtitle: 'PCOS significantly increases T2DM risk — monitor HbA1c' },
         { id: 'hrt-management', label: 'HRT — Management', subtitle: 'Endometrial protection principles apply in PCOS too' },
         { id: 'subfertility', label: 'Subfertility & Infertility', subtitle: 'PCOS is the commonest cause of anovulatory subfertility' },
+        { id: 'hirsutism', label: 'Hirsutism & Hypertrichosis', subtitle: 'Managing the androgenic hair of PCOS' },
       ],
     },
 

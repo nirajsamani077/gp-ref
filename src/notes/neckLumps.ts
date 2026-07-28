@@ -79,6 +79,7 @@ export const neckLumps: Note = {
         { id: 'glandular-fever', label: 'Glandular Fever', subtitle: 'Common benign cause of cervical lymphadenopathy' },
         { id: 'goitre-thyroid-cancer', label: 'Goitre, Thyroid Nodules & Cancer', subtitle: 'Thyroid swelling — moves on swallowing' },
         { id: 'ome-glue-ear', label: 'Otitis Media with Effusion', subtitle: 'Adult unilateral OME — a head & neck red flag' },
+        { id: 'salivary-gland-disease', label: 'Salivary Gland Disease', subtitle: 'Parotid/submandibular lumps and malignancy red flags' },
       ],
     },
 
