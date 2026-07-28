@@ -127,6 +127,7 @@ export const osa: Note = {
         { id: 'heart-failure', label: 'Heart Failure', subtitle: 'OSA associated with hypertension and cardiovascular disease' },
         { id: 'hypertension', label: 'Hypertension', subtitle: 'OSA is a cause of resistant/secondary hypertension' },
         { id: 'hypothyroidism', label: 'Hypothyroidism', subtitle: 'Hypothyroidism causes OSA — always check TFTs' },
+        { id: 'paediatric-sleep-osa', label: 'Sleep Problems & OSA in Children', subtitle: 'Paediatric OSA — usually adenotonsillar' },
       ],
     },
 

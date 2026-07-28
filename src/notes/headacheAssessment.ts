@@ -89,6 +89,8 @@ export const headacheAssessment: Note = {
         { id: 'brain-tumour', label: 'Brain Tumour & SOL', subtitle: 'Raised ICP features and imaging thresholds' },
         { id: 'trigeminal-neuralgia', label: 'Trigeminal Neuralgia', subtitle: 'Paroxysmal facial pain differential' },
         { id: 'iih', label: 'Idiopathic Intracranial Hypertension', subtitle: 'Raised-ICP headache with papilloedema' },
+        { id: 'co-poisoning', label: 'Carbon Monoxide Poisoning', subtitle: 'The flu-like headache that eases away from home' },
+        { id: 'head-injury', label: 'Head Injury & CT Head Criteria', subtitle: 'Post-traumatic headache and imaging thresholds' },
       ],
     },
 

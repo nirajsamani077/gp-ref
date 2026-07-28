@@ -88,6 +88,7 @@ export const shinglesChickenpox: Note = {
         { id: 'bells-palsy', label: "Bell's Palsy", subtitle: 'Ramsay Hunt syndrome — facial palsy with ear vesicles' },
         { id: 'red-eye', label: 'Red Painful Eye', subtitle: 'Herpes zoster ophthalmicus — sight-threatening' },
         { id: 'immunisation-schedule', label: 'Immunisation Schedule', subtitle: 'Shingles (Shingrix) programme' },
+        { id: 'pregnancy-rashes', label: 'Rashes & Viral Exposure in Pregnancy', subtitle: 'VZV exposure/infection in pregnancy — VZIG and risks' },
       ],
     },
 

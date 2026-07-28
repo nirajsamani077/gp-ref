@@ -120,6 +120,7 @@ export const dmards: Note = {
         { id: 'psoriasis', label: 'Psoriasis', subtitle: 'DMARDs used in moderate–severe psoriasis and psoriatic arthritis' },
         { id: 'ibd', label: 'IBD', subtitle: 'Azathioprine, MTX and biologicals in Crohn\'s and UC' },
         { id: 'multiple-sclerosis', label: 'Multiple Sclerosis', subtitle: 'DMTs (immunomodulators) in MS — monitoring principles similar' },
+        { id: 'drug-monitoring', label: 'Drug Monitoring Quick Reference', subtitle: 'Shared-care baseline/ongoing monitoring at a glance' },
       ],
     },
   ],

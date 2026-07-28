@@ -364,6 +364,16 @@ import { paediatricCancer }         from '../notes/paediatricCancer'
 import { vulvodyniaVaginismus }     from '../notes/vulvodyniaVaginismus'
 import { fgm }                      from '../notes/fgm'
 import { sexualAssault }            from '../notes/sexualAssault'
+import { headInjury }               from '../notes/headInjury'
+import { coPoisoning }              from '../notes/coPoisoning'
+import { entEmergencies }           from '../notes/entEmergencies'
+import { pregnancyRashes }          from '../notes/pregnancyRashes'
+import { paediatricSleepOsa }       from '../notes/paediatricSleepOsa'
+import { paediatricBls }            from '../notes/paediatricBls'
+import { hypospadias }              from '../notes/hypospadias'
+import { lacrimalDuctObstruction }  from '../notes/lacrimalDuctObstruction'
+import { cyp450Interactions }       from '../notes/cyp450Interactions'
+import { drugMonitoring }           from '../notes/drugMonitoring'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -731,4 +741,14 @@ export const NOTES: Note[] = [
   vulvodyniaVaginismus,
   fgm,
   sexualAssault,
+  headInjury,
+  coPoisoning,
+  entEmergencies,
+  pregnancyRashes,
+  paediatricSleepOsa,
+  paediatricBls,
+  hypospadias,
+  lacrimalDuctObstruction,
+  cyp450Interactions,
+  drugMonitoring,
 ].map(enrichBody)
