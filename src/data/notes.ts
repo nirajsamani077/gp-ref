@@ -407,6 +407,9 @@ import { torchInfections }          from '../notes/torchInfections'
 import { toxicShock }               from '../notes/toxicShock'
 import { individualDrugCautions }   from '../notes/individualDrugCautions'
 import { specialistPrescribing }    from '../notes/specialistPrescribing'
+import { nappyRash }                from '../notes/nappyRash'
+import { pityriasisRosea }          from '../notes/pityriasisRosea'
+import { intertrigo }               from '../notes/intertrigo'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -817,4 +820,7 @@ export const NOTES: Note[] = [
   toxicShock,
   individualDrugCautions,
   specialistPrescribing,
+  nappyRash,
+  pityriasisRosea,
+  intertrigo,
 ].map(enrichBody)
