@@ -1,6 +1,6 @@
 # GP Ref — Notes Build Worklist
 
-_Reconciled against 375 built `.ts` notes — P1 & P2 complete; P3 20/33 done._
+_Reconciled against 388 built `.ts` notes — ✅ ALL TIERS COMPLETE (P1, P2, P3)._
 _A "cluster" = several stubs that should become ONE consolidated note._
 _`[x]` = built; `[ ]` = still to build._
 
@@ -8,14 +8,16 @@ _`[x]` = built; `[ ]` = still to build._
 
 | Bucket | Count |
 |---|---|
-| Notes built & registered | **375** |
-| Clinical topics still to build (after consolidation) | **~13** |
-| — of which **P1** (common/high-yield) | **0** (cleared — flashes/floaters sits in `visual-loss`) |
+| Notes built & registered | **388** |
+| Clinical topics still to build (after consolidation) | **0 — complete** |
+| — of which **P1** (common/high-yield) | **0** (complete) |
 | — of which **P2** (moderate) | **0** (complete) |
-| — of which **P3** (niche) | **~13** (14 lines, one duplicated) |
+| — of which **P3** (niche) | **0** (complete) |
 | Non-clinical stubs — won't become notes (see bottom) | ~80 |
 
-At 10 notes/batch ≈ **~1–2 more batches** to finish the entire P3 tier.
+🎉 The clinical worklist is fully cleared. Every P1/P2/P3 topic is built,
+registered and cross-linked. Remaining items below are only the ~80
+non-clinical stubs (stats/admin/exam scripts), intentionally excluded.
 Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 
 ---
@@ -97,7 +99,7 @@ Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 - [x] **P2** Functional neurological disorder (FND)
 - [x] **P2** Normal pressure hydrocephalus (NPH)
 - [x] **P3** Tourette's syndrome & tics
-- [ ] **P3** Post-dural puncture headache
+- [x] **P3** Post-dural puncture headache
 
 ### Rheumatology & MSK
 - [x] **P1** Osteoarthritis
@@ -114,7 +116,7 @@ Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 - [x] **P2** Hip & knee replacement post-op care
 - [x] **P3** Sarcoma & bone cancer
 - [x] **P3** Drug-induced lupus
-- [ ] **P3** Myofascial referred pain / winged scapula / foot drop / Charcot foot
+- [x] **P3** Myofascial referred pain / winged scapula / foot drop / Charcot foot
 
 ### Dermatology (largest bucket)
 - [x] **P1** Fungal skin infections
@@ -137,7 +139,7 @@ Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 - [x] **P3** Keratosis pilaris
 - [x] **P3** Paronychia + digital myxoid cyst
 - [x] **P3** Chilblains
-- [ ] **P3** Self-induced skin conditions
+- [x] **P3** Self-induced skin conditions
 - [x] **P3** Salivary gland disease
 
 ### ENT
@@ -152,10 +154,10 @@ Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 ### Ophthalmology
 - [x] **P1** Red painful eye
 - [x] **P1** Sudden visual loss / blurred vision
-- [ ] **P1** Flashes & floaters (retinal detachment) — _verify: may already sit in `visual-loss`_
+- [x] **P1** Flashes & floaters (retinal detachment) — _covered in `visual-loss` ("Sudden Visual Loss, Flashes & Floaters")_
 - [x] **P2** Dry eyes & blepharitis (+ eyelid lumps)
 - [x] **P2** Congenital lacrimal duct obstruction (paeds eye)
-- [ ] **P3** Blindness / partial sight registration
+- [x] **P3** Blindness / partial sight registration
 
 ### Women's Health / Reproductive / Obstetrics
 - [x] **P1** Contraception overview & method choice (UKMEC)
@@ -196,11 +198,11 @@ Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 - [x] **P2** UTI in children + vesicoureteric reflux
 - [x] **P2** HSP (Henoch-Schönlein purpura)
 - [x] **P2** Sleep disorders in children + paeds OSA + obesity
-- [ ] **P3** Neurodiversity / IQ & LD
-- [ ] **P3** Challenging behaviour & feeding issues
-- [ ] **P3** Child hearing/vision/speech + skull problems
-- [ ] **P3** Minor neonatal: teething, drooling, Epstein's pearl, labial adhesions
-- [ ] **P3** Fetal alcohol syndrome; infantile spasms; rare syndromes
+- [x] **P3** Neurodiversity / IQ & LD
+- [x] **P3** Challenging behaviour & feeding issues
+- [x] **P3** Child hearing/vision/speech + skull problems
+- [x] **P3** Minor neonatal: teething, drooling, Epstein's pearl, labial adhesions
+- [x] **P3** Fetal alcohol syndrome; infantile spasms; rare syndromes
 
 ### Mental Health
 - [x] **P1** Medically unexplained symptoms (MUS) + somatisation
@@ -208,7 +210,7 @@ Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 - [x] **P2** Mania vs hypomania (or expand `lithium-bipolar`)
 - [x] **P2** Benzodiazepine withdrawal / dependence
 - [x] **P2** Personality disorders (+ "odd belief" syndromes)
-- [ ] **P3** IQ & learning disability / neurodiversity
+- [x] **P3** IQ & learning disability / neurodiversity
 
 ### Infectious Disease & Travel
 - [x] **P1** Meningitis & meningococcal sepsis
@@ -217,8 +219,8 @@ Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 - [x] **P2** Shingles & chickenpox (VZV)
 - [x] **P2** Gastroenteritis / infective diarrhoea (adult; Salmonella/typhoid)
 - [x] **P2** Tetanus (+ wound management)
-- [ ] **P3** TORCH infections
-- [ ] **P3** Toxic shock / scarlet fever toxins
+- [x] **P3** TORCH infections
+- [x] **P3** Toxic shock / scarlet fever toxins
 
 ### Therapeutics & Prescribing
 - [x] **P1** NSAIDs
@@ -229,8 +231,8 @@ Priority: **P1** = common/high-yield, **P2** = moderate, **P3** = niche.
 - [x] **P2** CYP450 inducers/inhibitors (interactions primer)
 - [x] **P2** Polypharmacy, multimorbidity & anticholinergic burden
 - [x] **P2** Drug monitoring (DMARDs/amiodarone/lithium) + seizure-threshold drugs
-- [ ] **P3** ACE inhibitors / amiodarone / bisphosphonates (individual drug notes)
-- [ ] **P3** Cannabis-based meds; nefopam; long-term azithromycin
+- [x] **P3** ACE inhibitors / amiodarone / bisphosphonates (individual drug notes)
+- [x] **P3** Cannabis-based meds; nefopam; long-term azithromycin
 
 ### Cross-cutting / Misc
 - [x] **P1** Immunisation schedule

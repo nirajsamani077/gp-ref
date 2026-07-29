@@ -100,6 +100,7 @@ export const visualLoss: Note = {
         { id: 'stroke-tia', label: 'Stroke & TIA', subtitle: 'Amaurosis fugax/CRAO are stroke-pathway events' },
         { id: 'multiple-sclerosis', label: 'Multiple Sclerosis', subtitle: 'Optic neuritis is a common presenting feature' },
         { id: 'amd', label: 'Age-Related Macular Degeneration', subtitle: 'Wet AMD — urgent; dry AMD — gradual' },
+        { id: 'sight-registration', label: 'Sight Impairment Registration', subtitle: 'CVI process and the support it unlocks' },
       ],
     },
 

@@ -394,6 +394,19 @@ import { salivaryGlandDisease }     from '../notes/salivaryGlandDisease'
 import { genitalUlcers }            from '../notes/genitalUlcers'
 import { hpvVaccination }           from '../notes/hpvVaccination'
 import { fitnessToFly }             from '../notes/fitnessToFly'
+import { postDuralPunctureHeadache } from '../notes/postDuralPunctureHeadache'
+import { myofascialPain }           from '../notes/myofascialPain'
+import { selfInducedSkin }          from '../notes/selfInducedSkin'
+import { sightRegistration }        from '../notes/sightRegistration'
+import { learningDisability }       from '../notes/learningDisability'
+import { challengingBehaviour }     from '../notes/challengingBehaviour'
+import { childSensoryScreening }    from '../notes/childSensoryScreening'
+import { minorNeonatal }            from '../notes/minorNeonatal'
+import { fetalAlcohol }             from '../notes/fetalAlcohol'
+import { torchInfections }          from '../notes/torchInfections'
+import { toxicShock }               from '../notes/toxicShock'
+import { individualDrugCautions }   from '../notes/individualDrugCautions'
+import { specialistPrescribing }    from '../notes/specialistPrescribing'
 
 // Enrich each note's body with text extracted from content blocks (captions, headings, list items, etc.)
 function enrichBody(note: Note): Note {
@@ -791,4 +804,17 @@ export const NOTES: Note[] = [
   genitalUlcers,
   hpvVaccination,
   fitnessToFly,
+  postDuralPunctureHeadache,
+  myofascialPain,
+  selfInducedSkin,
+  sightRegistration,
+  learningDisability,
+  challengingBehaviour,
+  childSensoryScreening,
+  minorNeonatal,
+  fetalAlcohol,
+  torchInfections,
+  toxicShock,
+  individualDrugCautions,
+  specialistPrescribing,
 ].map(enrichBody)

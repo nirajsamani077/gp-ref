@@ -84,6 +84,7 @@ export const childhoodViralRashes: Note = {
         { id: 'notifiable-diseases', label: 'Notifiable Diseases', subtitle: 'Measles, rubella, mumps, scarlet fever — notification duties' },
         { id: 'sorethroat-tonsillitis', label: 'Sore Throat & Tonsillitis', subtitle: 'Group A strep — scoring and antibiotic decisions' },
         { id: 'febrile-convulsions', label: 'Febrile Convulsions', subtitle: 'Common with roseola and other febrile viral illnesses' },
+        { id: 'toxic-shock', label: 'Toxic Shock & Scarlet Fever', subtitle: 'Toxin-mediated Strep A — the sandpaper rash and iGAS' },
       ],
     },
 
