@@ -18,8 +18,10 @@ function useIsDesktop() {
   return d
 }
 
-function openNote(id: string) {
-  window.dispatchEvent(new CustomEvent('navigate-note', { detail: { id } }))
+function openNote(id: string, from?: { id: string; name: string }) {
+  window.dispatchEvent(new CustomEvent('navigate-note', {
+    detail: { id, from: from ? { type: 'symptom', id: from.id, name: from.name } : undefined },
+  }))
 }
 
 function matches(s: Symptom, q: string): boolean {
@@ -38,11 +40,20 @@ const GROUP_STYLE: Record<string, { color: string; bg: string; border: string }>
   other:   { color: '#4a5568', bg: '#f7fafc', border: '#cbd5e0' },
 }
 
-export default function SymptomsTab() {
+export default function SymptomsTab({ highlightedSymptomId }: { highlightedSymptomId?: string | null }) {
   const isDesktop = useIsDesktop()
   const [query, setQuery] = useState('')
   const [activeId, setActiveId] = useState<string>(SYMPTOMS[0].id)
   const scrollerRef = useRef<HTMLDivElement>(null)
+
+  // Jump to a symptom requested from elsewhere (e.g. "back to differentials")
+  useEffect(() => {
+    if (highlightedSymptomId && SYMPTOMS.some(s => s.id === highlightedSymptomId)) {
+      setQuery('')
+      setActiveId(highlightedSymptomId)
+      scrollerRef.current?.scrollTo({ top: 0 })
+    }
+  }, [highlightedSymptomId])
 
   const filtered = useMemo(
     () => query.trim() ? SYMPTOMS.filter(s => matches(s, query.trim())) : SYMPTOMS,
@@ -197,7 +208,7 @@ export default function SymptomsTab() {
           Differential diagnosis
         </h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 24 }}>
-          {active.ddx.map((group, gi) => <DdxCard key={gi} group={group} />)}
+          {active.ddx.map((group, gi) => <DdxCard key={gi} group={group} origin={{ id: active.id, name: active.name }} />)}
         </div>
 
         {/* Investigations */}
@@ -224,7 +235,7 @@ export default function SymptomsTab() {
               Related notes
             </h2>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-              {active.related.map((r, i) => <NoteChip key={i} item={r} />)}
+              {active.related.map((r, i) => <NoteChip key={i} item={r} origin={{ id: active.id, name: active.name }} />)}
             </div>
           </div>
         )}
@@ -244,7 +255,7 @@ export default function SymptomsTab() {
 }
 
 // ── DDx group card ─────────────────────────────────────────────────────────
-function DdxCard({ group }: { group: DdxGroup }) {
+function DdxCard({ group, origin }: { group: DdxGroup; origin: { id: string; name: string } }) {
   const st = GROUP_STYLE[group.variant ?? 'other']
   return (
     <div style={{ border: `1px solid ${st.border}`, borderRadius: 10, overflow: 'hidden' }}>
@@ -255,18 +266,18 @@ function DdxCard({ group }: { group: DdxGroup }) {
         borderBottom: `1px solid ${st.border}`,
       }}>{group.heading}</div>
       <div style={{ backgroundColor: '#fff', padding: '6px 8px', display: 'flex', flexDirection: 'column' }}>
-        {group.items.map((item, i) => <DdxRow key={i} item={item} accent={st.color} />)}
+        {group.items.map((item, i) => <DdxRow key={i} item={item} accent={st.color} origin={origin} />)}
       </div>
     </div>
   )
 }
 
-function DdxRow({ item, accent }: { item: DdxItem; accent: string }) {
+function DdxRow({ item, accent, origin }: { item: DdxItem; accent: string; origin: { id: string; name: string } }) {
   const clickable = !!item.note
   return (
     <button
       disabled={!clickable}
-      onClick={() => item.note && openNote(item.note)}
+      onClick={() => item.note && openNote(item.note, origin)}
       style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8,
         width: '100%', textAlign: 'left', padding: '7px 8px',
@@ -288,12 +299,12 @@ function DdxRow({ item, accent }: { item: DdxItem; accent: string }) {
   )
 }
 
-function NoteChip({ item }: { item: DdxItem }) {
+function NoteChip({ item, origin }: { item: DdxItem; origin: { id: string; name: string } }) {
   const clickable = !!item.note
   return (
     <button
       disabled={!clickable}
-      onClick={() => item.note && openNote(item.note)}
+      onClick={() => item.note && openNote(item.note, origin)}
       style={{
         display: 'inline-flex', alignItems: 'center', gap: 6,
         padding: '6px 12px', borderRadius: 20,

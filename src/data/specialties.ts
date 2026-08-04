@@ -23,6 +23,8 @@ export const SPECIALTY_STYLES: Record<string, SpecialtyStyle> = {
   obstetrics:       { label: 'Obstetrics',        border: '#f9a8d4', bg: '#fdf2f8', text: '#831843', pill: '#fbcfe8' },
   vascular:         { label: 'Vascular',          border: '#667eea', bg: '#ebf4ff', text: '#3c366b', pill: '#c3dafe' },
   symptoms:         { label: 'Symptoms / DDx',    border: '#38a169', bg: '#f0fff4', text: '#1a4731', pill: '#9ae6b4' },
+  general:          { label: 'General',           border: '#718096', bg: '#f7fafc', text: '#2d3748', pill: '#e2e8f0' },
+  breast:           { label: 'Breast',            border: '#f687b3', bg: '#fff5f7', text: '#702459', pill: '#fed7e2' },
   urology:          { label: 'Urology',            border: '#667eea', bg: '#ebf4ff', text: '#3c366b', pill: '#c3dafe' },
   mental:           { label: 'Mental Health',      border: '#9f7aea', bg: '#faf5ff', text: '#44337a', pill: '#e9d8fd' },
   infection:        { label: 'Infection',          border: '#ed8936', bg: '#fffaf0', text: '#7b341e', pill: '#feebc8' },

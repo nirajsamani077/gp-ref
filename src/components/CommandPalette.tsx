@@ -14,6 +14,7 @@ interface Props {
 
 const KIND_META: Record<string, { icon: string; section: string }> = {
   note:       { icon: '📝', section: 'Notes' },
+  symptom:    { icon: '🩺', section: 'Symptoms & DDx' },
   form:       { icon: '📋', section: 'Forms' },
   link:       { icon: '🔗', section: 'Links' },
   calculator: { icon: '🧮', section: 'Calculators' },
@@ -64,7 +65,7 @@ function PdfViewer({
 export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: Props) {
   const [query, setQuery]   = useState('')
   const [results, setResults] = useState<ReturnType<typeof searchAll>>({
-    notes: [], forms: [], links: [], calculators: [],
+    notes: [], symptoms: [], forms: [], links: [], calculators: [],
   })
   const [activeIdx, setActiveIdx] = useState(0)
   const [pdf, setPdf] = useState<{ url: string; title: string } | null>(null)
@@ -75,9 +76,9 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
   const flatItems: Array<{ type: 'ask' } | (UnifiedResult & { _flatIdx: number })> = []
   if (hasQuery) flatItems.push({ type: 'ask' })
 
-  const SECTION_ORDER = ['note', 'form', 'link', 'calculator'] as const
+  const SECTION_ORDER = ['note', 'symptom', 'form', 'link', 'calculator'] as const
   const allResults: UnifiedResult[] = [
-    ...results.notes, ...results.forms, ...results.links, ...results.calculators,
+    ...results.notes, ...results.symptoms, ...results.forms, ...results.links, ...results.calculators,
   ]
   allResults.forEach(r => flatItems.push({ ...r, _flatIdx: flatItems.length }))
 
@@ -129,6 +130,10 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
         window.dispatchEvent(new CustomEvent('navigate-note', { detail: { id: r.id, query: query.trim() } }))
         onClose()
         break
+      case 'symptom':
+        window.dispatchEvent(new CustomEvent('navigate-symptom', { detail: { id: r.id } }))
+        onClose()
+        break
       case 'form':
         if (r.formUrl) setPdf({ url: r.formUrl, title: r.label })
         break
@@ -170,6 +175,7 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
     .map(kind => ({
       kind,
       items: kind === 'note'       ? results.notes
+           : kind === 'symptom'    ? results.symptoms
            : kind === 'form'       ? results.forms
            : kind === 'link'       ? results.links
            : results.calculators,
@@ -236,7 +242,7 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
             value={query}
             onChange={e => setQuery(e.target.value)}
             onKeyDown={handleKey}
-            placeholder="Search notes, forms, links, calculators…"
+            placeholder="Search notes, symptoms, forms, links, calculators…"
             style={{
               flex: 1, border: 'none', outline: 'none',
               fontSize: 16, color: '#1e293b', fontFamily: 'inherit',
@@ -304,7 +310,7 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
                 Search everything
               </div>
               <div style={{ fontSize: 13, color: '#94a3b8', marginTop: 6, lineHeight: 1.5 }}>
-                Notes · Forms · Links · Calculators<br />
+                Notes · Symptoms · Forms · Links · Calculators<br />
                 or just type a clinical question for AI
               </div>
             </div>

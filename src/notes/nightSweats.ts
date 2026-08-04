@@ -4,7 +4,7 @@ export const nightSweats: Note = {
   id: 'night-sweats',
   title: 'Night Sweats & Non-Menopausal Flushing',
   subtitle: 'A structured approach to drenching night sweats — the serious causes, drugs, and when to investigate',
-  tags: ['symptoms'],
+  tags: ['general'],
 
   body: `night sweats drenching sweats lymphoma B symptoms tuberculosis HIV endocarditis menopause hyperthyroidism phaeochromocytoma carcinoid flushing GORD medication SSRI opioid anxiety weight loss malignancy investigations`,
 

@@ -4,7 +4,7 @@ export const acuteCough: Note = {
   id: 'acuteCough',
   title: 'Acute Cough — URTI & LRTI',
   subtitle: 'Assessment, antibiotic stewardship, back-up prescribing, and self-care',
-  tags: ['symptoms', 'Respiratory', 'Infection'],
+  tags: ['respiratory', 'infection'],
 
   body: 'acute cough URTI upper respiratory tract infection LRTI lower respiratory tract infection bronchitis pneumonia CRB65 antibiotic amoxicillin doxycycline clarithromycin back-up prescription delayed antibiotic saline nasal spray NICE NG120 antimicrobial stewardship self-care children paediatric fever sore throat colds',
 

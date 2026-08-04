@@ -4,7 +4,7 @@ export const weightLoss: Note = {
   id: 'weight-loss',
   title: 'Unintentional Weight Loss',
   subtitle: 'A structured approach to a red-flag symptom — malignancy, organic and psychosocial causes, and what to test',
-  tags: ['symptoms'],
+  tags: ['general'],
 
   body: `unintentional weight loss unexplained weight loss malignancy cancer 2WW hyperthyroidism diabetes malabsorption coeliac depression dementia frailty sarcopenia appetite cachexia investigations CT FIT chest x-ray myeloma`,
 

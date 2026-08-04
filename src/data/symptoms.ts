@@ -7,6 +7,7 @@
  *
  * TO ADD A SYMPTOM: add one entry below. `note` on any ddx/related item is a
  * note id — clicking it jumps to that note. Keep ids valid (see src/notes).
+ * Prefer ONE condition per ddx item so each links to its own note.
  */
 
 export interface DdxItem {
@@ -76,8 +77,9 @@ export const SYMPTOMS: Symptom[] = [
       ]},
       { heading: O, variant: 'other', items: [
         { label: 'Coeliac disease', note: 'coeliac-disease' },
-        { label: 'Vitamin B12 / D deficiency', note: 'vitamin-b12' },
-        { label: 'Chronic kidney/liver disease', note: 'ckd' },
+        { label: 'Vitamin B12 / folate deficiency', note: 'vitamin-b12' },
+        { label: 'Chronic kidney disease', note: 'ckd' },
+        { label: 'Chronic liver disease', note: 'chronic-liver-disease' },
         { label: 'CFS/ME (diagnosis of exclusion)', note: 'cfs-me' },
         { label: 'Medication / alcohol', note: 'alcohol-etoh' },
       ]},
@@ -86,7 +88,7 @@ export const SYMPTOMS: Symptom[] = [
       ]},
     ],
     investigations: ['FBC, ferritin, U&E, LFT, TFT, HbA1c, calcium', 'Coeliac serology; B12/folate; CRP/ESR', 'Consider a myeloma screen / imaging if red flags'],
-    related: [{ label: 'Unintentional weight loss', note: 'weight-loss' }, { label: 'Insomnia', note: 'insomnia' }],
+    related: [{ label: 'Unintentional weight loss', note: 'weight-loss' }, { label: 'Insomnia', note: 'insomnia' }, { label: 'Night sweats', note: 'night-sweats' }],
   },
   {
     id: 'weight-loss-symptom',
@@ -107,16 +109,48 @@ export const SYMPTOMS: Symptom[] = [
         { label: 'Hyperthyroidism', note: 'hyperthyroidism' },
         { label: 'New / poorly controlled diabetes', note: 'diabetes-diagnosis' },
         { label: 'Depression / anxiety', note: 'depression' },
-        { label: 'Malabsorption (coeliac, IBD, pancreatic)', note: 'coeliac-disease' },
+        { label: 'Coeliac disease / malabsorption', note: 'coeliac-disease' },
       ]},
       { heading: O, variant: 'other', items: [
-        { label: 'COPD / heart failure / CKD cachexia', note: 'copd' },
+        { label: 'COPD cachexia', note: 'copd' },
+        { label: 'Heart failure', note: 'heart-failure' },
+        { label: 'Chronic kidney disease', note: 'ckd' },
         { label: 'Frailty & sarcopenia', note: 'frailty' },
         { label: 'Alcohol / substance misuse', note: 'substance-misuse' },
       ]},
     ],
     investigations: ['FBC, U&E, LFT, calcium, glucose/HbA1c, TFT, CRP/ESR, coeliac serology, ferritin', 'Urinalysis; CXR; consider FIT, myeloma screen, HIV', 'Site-directed imaging / 2WW as guided'],
     related: [{ label: 'Full weight-loss note', note: 'weight-loss' }, { label: 'Night sweats', note: 'night-sweats' }],
+  },
+  {
+    id: 'night-sweats-symptom',
+    name: 'Night sweats',
+    icon: '💦',
+    system: 'General & non-specific',
+    blurb: 'Usually benign (menopause, environment) — but exclude infection and malignancy.',
+    redFlags: [
+      'Drenching sweats with weight loss / lymphadenopathy → lymphoma',
+      'Fever, foreign travel, or IVDU → TB, HIV, endocarditis',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Menopause / perimenopause', note: 'menopause' },
+        { label: 'Anxiety', note: 'anxiety-gad' },
+        { label: 'Medication (SSRIs, hormones)', note: 'individual-drug-cautions' },
+        { label: 'Alcohol', note: 'alcohol-etoh' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Lymphoma / leukaemia', note: 'haem-malignancies' },
+        { label: 'Tuberculosis', note: 'tuberculosis' },
+        { label: 'HIV', note: 'hiv' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Hyperthyroidism', note: 'hyperthyroidism' },
+        { label: 'Sarcoidosis', note: 'sarcoidosis' },
+      ]},
+    ],
+    investigations: ['FBC, LFT, LDH, CRP/ESR, TFT, glucose', 'CXR; consider HIV & TB testing', 'Malignancy screen if B-symptoms'],
+    related: [{ label: 'Full night-sweats note', note: 'night-sweats' }],
   },
   {
     id: 'dizziness',
@@ -138,7 +172,7 @@ export const SYMPTOMS: Symptom[] = [
       ]},
       { heading: O, variant: 'other', items: [
         { label: 'Hypoglycaemia', note: 'hypoglycaemia' },
-        { label: 'Arrhythmia (AF)', note: 'atrialFibrillation' },
+        { label: 'Atrial fibrillation / arrhythmia', note: 'atrialFibrillation' },
         { label: 'Medication (antihypertensives, sedatives)', note: 'polypharmacy' },
       ]},
       { heading: S, variant: 'serious', items: [
@@ -146,6 +180,130 @@ export const SYMPTOMS: Symptom[] = [
       ]},
     ],
     investigations: ['Lying/standing BP; ECG; capillary glucose', 'FBC; U&E; consider HbA1c', 'Dix-Hallpike / HINTS for vertigo'],
+  },
+  {
+    id: 'confusion-delirium',
+    name: 'Confusion / delirium',
+    icon: '🧠',
+    system: 'General & non-specific',
+    blurb: 'Acute confusion is delirium until proven otherwise — find and treat the cause.',
+    redFlags: [
+      'Acute change in cognition/consciousness → screen for sepsis, hypoxia, hypoglycaemia',
+      'Fever + confusion + headache/neck stiffness → CNS infection',
+      'Focal neurology, head injury, or anticoagulated → intracranial cause',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Delirium (infection, drugs, retention, constipation)', note: 'delirium' },
+        { label: 'UTI / chest infection', note: 'uti-women' },
+        { label: 'Medication / opioids / sedatives', note: 'polypharmacy' },
+        { label: 'Alcohol intoxication / withdrawal', note: 'alcohol-etoh' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Sepsis', note: 'delirium' },
+        { label: 'Hypoglycaemia', note: 'hypoglycaemia' },
+        { label: 'Stroke / intracranial event', note: 'stroke-tia' },
+        { label: 'Meningitis / encephalitis', note: 'meningitis' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Hyponatraemia / hypercalcaemia', note: 'hyponatraemia' },
+        { label: 'Underlying dementia', note: 'dementia' },
+      ]},
+    ],
+    investigations: ['4AT / confusion screen; obs incl. SpO₂ & glucose', 'FBC, U&E, calcium, glucose, LFT, CRP, TFT; urine dip + MC&S', 'CXR/ECG; CT head if focal signs or head injury'],
+    related: [{ label: 'Dementia (chronic)', note: 'dementia' }],
+  },
+  {
+    id: 'falls-symptom',
+    name: 'Falls (older adult)',
+    icon: '🧍',
+    system: 'General & non-specific',
+    blurb: 'A multifactorial syndrome — separate a mechanical trip from syncope and assess future risk.',
+    redFlags: [
+      'Fall with loss of consciousness / no memory → treat as syncope (ECG)',
+      'Head injury on anticoagulant → CT head',
+      'Fall with new focal neurology, or the “long lie”',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Postural hypotension', note: 'syncope' },
+        { label: 'Polypharmacy / sedatives', note: 'polypharmacy' },
+        { label: 'Gait / balance / vision impairment', note: 'elderly-falls' },
+        { label: 'Vertigo', note: 'vertigo' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Cardiac syncope / arrhythmia', note: 'atrialFibrillation' },
+        { label: 'Stroke / TIA', note: 'stroke-tia' },
+        { label: 'Sepsis / acute illness', note: 'delirium' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Fragility fracture / osteoporosis', note: 'osteoporosis' },
+        { label: 'Hypoglycaemia', note: 'hypoglycaemia' },
+      ]},
+    ],
+    investigations: ['Lying/standing BP; ECG; medication review', 'FBC, U&E, calcium, glucose, TFT, vitamin D', 'Gait & balance assessment; bone-health / FRAX'],
+    related: [{ label: 'Full falls note', note: 'elderly-falls' }, { label: 'Blackout / collapse', note: 'syncope' }],
+  },
+  {
+    id: 'fever-adult',
+    name: 'Fever in adults',
+    icon: '🌡️',
+    system: 'General & non-specific',
+    blurb: 'Find the source; screen for sepsis and ask about travel and immunosuppression.',
+    redFlags: [
+      'Sepsis: NEWS2 ↑, mottled/cold, confusion, low BP, low urine output → admit',
+      'Non-blanching rash, neck stiffness, photophobia → meningococcal disease',
+      'Recent travel (malaria) / neutropenia / returning traveller',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Viral / URTI', note: 'acuteCough' },
+        { label: 'UTI / pyelonephritis', note: 'uti-women' },
+        { label: 'Cellulitis / skin infection', note: 'cellulitis' },
+        { label: 'Gastroenteritis', note: 'gastroenteritis-adult' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Sepsis (any source)', note: 'delirium' },
+        { label: 'Meningitis', note: 'meningitis' },
+        { label: 'Malaria (returning traveller)', note: 'tuberculosis' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Glandular fever', note: 'glandular-fever' },
+        { label: 'HIV seroconversion', note: 'hiv' },
+        { label: 'Endocarditis; PUO', note: 'night-sweats' },
+      ]},
+    ],
+    investigations: ['Observations + NEWS2; identify a source', 'FBC, U&E, LFT, CRP, cultures per source; urine dip', 'Travel screen (malaria films) / HIV where relevant'],
+  },
+  {
+    id: 'lymphadenopathy',
+    name: 'Lymphadenopathy (swollen glands)',
+    icon: '🫧',
+    system: 'General & non-specific',
+    blurb: 'Most is reactive — persistent, hard, fixed or generalised nodes need investigation.',
+    redFlags: [
+      'Hard, fixed, painless node >2 cm, or persisting >6 weeks → 2WW',
+      'Generalised lymphadenopathy + B-symptoms (weight loss, night sweats)',
+      'Supraclavicular node at any time',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Reactive (local infection)', note: 'neck-lumps' },
+        { label: 'Glandular fever (EBV)', note: 'glandular-fever' },
+        { label: 'Tonsillitis / dental', note: 'sorethroat-tonsillitis' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Lymphoma / leukaemia', note: 'haem-malignancies' },
+        { label: 'Metastatic carcinoma (neck)', note: 'neck-lumps' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'HIV', note: 'hiv' },
+        { label: 'Tuberculosis', note: 'tuberculosis' },
+        { label: 'Sarcoidosis', note: 'sarcoidosis' },
+      ]},
+    ],
+    investigations: ['FBC + film, LDH, CRP/ESR, monospot; HIV where relevant', 'CXR; USS ± FNA/biopsy of a persistent node', '2WW haematology/head-and-neck per features'],
+    related: [{ label: 'Neck lumps', note: 'neck-lumps' }],
   },
 
   // ── Cardiorespiratory ─────────────────────────────────────────────────────
@@ -172,7 +330,7 @@ export const SYMPTOMS: Symptom[] = [
         { label: 'Anxiety / panic', note: 'anxiety-gad' },
       ]},
       { heading: O, variant: 'other', items: [
-        { label: 'Pericarditis; pneumonia', note: 'acuteCough' },
+        { label: 'Pneumonia / pleurisy', note: 'acuteCough' },
         { label: 'Shingles (before the rash)', note: 'shingles-chickenpox' },
       ]},
     ],
@@ -204,7 +362,7 @@ export const SYMPTOMS: Symptom[] = [
       ]},
       { heading: O, variant: 'other', items: [
         { label: 'Interstitial lung disease', note: 'interstitial-lung-disease' },
-        { label: 'Lung cancer / effusion', note: 'lung-cancer' },
+        { label: 'Lung cancer / pleural effusion', note: 'lung-cancer' },
       ]},
     ],
     investigations: ['SpO₂, RR, PEFR; ECG', 'Spirometry; FBC; BNP; CXR', 'Consider D-dimer / Wells for PE'],
@@ -226,12 +384,15 @@ export const SYMPTOMS: Symptom[] = [
         { label: 'Atrial fibrillation / flutter', note: 'atrialFibrillation' },
         { label: 'Anxiety', note: 'anxiety-gad' },
         { label: 'Hyperthyroidism', note: 'hyperthyroidism' },
+        { label: 'Anaemia', note: 'normocytic-anaemia' },
       ]},
       { heading: S, variant: 'serious', items: [
-        { label: 'SVT / VT; cardiomyopathy (HOCM); long QT', note: 'cardiomyopathies' },
+        { label: 'SVT / VT', note: 'palpitations' },
+        { label: 'Cardiomyopathy (HOCM) / long QT', note: 'cardiomyopathies' },
       ]},
       { heading: O, variant: 'other', items: [
-        { label: 'Anaemia; hypoglycaemia; phaeochromocytoma', note: 'phaeochromocytoma' },
+        { label: 'Hypoglycaemia', note: 'hypoglycaemia' },
+        { label: 'Phaeochromocytoma', note: 'phaeochromocytoma' },
       ]},
     ],
     investigations: ['12-lead ECG; ambulatory ECG to capture episodes', 'FBC; TFT; U&E; glucose', 'Echo if structural disease suspected'],
@@ -259,11 +420,42 @@ export const SYMPTOMS: Symptom[] = [
         { label: 'Tuberculosis', note: 'tuberculosis' },
       ]},
       { heading: O, variant: 'other', items: [
-        { label: 'COPD; bronchiectasis; ILD; heart failure', note: 'bronchiectasis' },
-        { label: 'Whooping cough (pertussis)', note: 'childhood-viral-rashes' },
+        { label: 'COPD', note: 'copd' },
+        { label: 'Bronchiectasis', note: 'bronchiectasis' },
+        { label: 'Interstitial lung disease', note: 'interstitial-lung-disease' },
+        { label: 'Heart failure', note: 'heart-failure' },
       ]},
     ],
     investigations: ['Examination + SpO₂; PEFR/spirometry', 'CXR if >3 weeks or red flags', 'Consider FeNO / sputum'],
+    related: [{ label: 'Haemoptysis', note: 'lung-cancer' }],
+  },
+  {
+    id: 'haemoptysis',
+    name: 'Haemoptysis (coughing blood)',
+    icon: '🩸',
+    system: 'Cardiorespiratory',
+    blurb: 'Coughing up blood needs a CXR and, in smokers, a low threshold for a 2WW.',
+    redFlags: [
+      'Haemoptysis + weight loss / smoker >40 → lung-cancer 2WW',
+      'Massive haemoptysis, or with breathlessness/hypoxia → 999',
+      'Pleuritic pain + risk factors → PE',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Chest infection / bronchitis', note: 'acuteCough' },
+        { label: 'Bronchiectasis', note: 'bronchiectasis' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Lung cancer', note: 'lung-cancer' },
+        { label: 'Pulmonary embolism', note: 'pulmonary-embolism' },
+        { label: 'Tuberculosis', note: 'tuberculosis' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Pulmonary oedema (pink froth)', note: 'heart-failure' },
+        { label: 'Anticoagulation; nasal/GI source (mimic)', note: 'epistaxis' },
+      ]},
+    ],
+    investigations: ['CXR (all); FBC, clotting, U&E', '2WW / urgent CXR per NICE if cancer suspected', 'CTPA if PE suspected'],
   },
   {
     id: 'oedema',
@@ -288,7 +480,8 @@ export const SYMPTOMS: Symptom[] = [
         { label: 'Cellulitis (unilateral)', note: 'cellulitis' },
       ]},
       { heading: O, variant: 'other', items: [
-        { label: 'Chronic liver disease; hypothyroidism', note: 'chronic-liver-disease' },
+        { label: 'Chronic liver disease', note: 'chronic-liver-disease' },
+        { label: 'Hypothyroidism', note: 'hypothyroidism' },
       ]},
     ],
     investigations: ['Assess uni- vs bilateral; U&E, LFT, BNP; urine ACR', 'D-dimer / Wells if unilateral (DVT)', 'ECG; consider echo'],
@@ -315,7 +508,8 @@ export const SYMPTOMS: Symptom[] = [
         { label: 'Epileptic seizure', note: 'epilepsyAdults' },
       ]},
       { heading: O, variant: 'other', items: [
-        { label: 'Hypoglycaemia; dissociative attacks', note: 'fnd' },
+        { label: 'Hypoglycaemia', note: 'hypoglycaemia' },
+        { label: 'Dissociative (functional) attacks', note: 'fnd' },
       ]},
     ],
     investigations: ['12-lead ECG (all); lying/standing BP; glucose', 'FBC; U&E', 'Ambulatory ECG / echo per suspicion; consider DVLA advice'],
@@ -351,10 +545,106 @@ export const SYMPTOMS: Symptom[] = [
         { label: 'Mesenteric ischaemia', note: 'mesenteric-ischaemia' },
       ]},
       { heading: O, variant: 'other', items: [
-        { label: 'Diverticular disease; IBD; coeliac', note: 'diverticular-disease' },
+        { label: 'Diverticular disease', note: 'diverticular-disease' },
+        { label: 'Inflammatory bowel disease', note: 'ibd' },
+        { label: 'Coeliac disease', note: 'coeliac-disease' },
       ]},
     ],
     investigations: ['Pregnancy test (any woman of childbearing age); urine dip', 'FBC, U&E, LFT, amylase/lipase, CRP', 'Imaging (USS/CT) per suspicion'],
+  },
+  {
+    id: 'nausea-vomiting',
+    name: 'Nausea & vomiting',
+    icon: '🤮',
+    system: 'Gastrointestinal',
+    blurb: 'Usually benign/GI — but exclude bowel obstruction, raised ICP and metabolic causes.',
+    redFlags: [
+      'Vomiting + severe abdominal pain / distension / no flatus → obstruction',
+      'Vomiting + headache worse on lying, or focal neurology → raised ICP',
+      'Haematemesis or coffee-ground vomit → upper GI bleed',
+      'Vomiting with ketones / dehydration → DKA or hyperemesis',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Gastroenteritis', note: 'gastroenteritis-adult' },
+        { label: 'Gastritis / peptic ulcer / GORD', note: 'gord-dyspepsia' },
+        { label: 'Medication (opioids, SSRIs, chemo)', note: 'individual-drug-cautions' },
+        { label: 'Pregnancy / hyperemesis', note: 'antiemetics-vertigo' },
+        { label: 'Vertigo / labyrinthitis', note: 'vertigo' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Bowel obstruction', note: 'two-week-wait' },
+        { label: 'Raised intracranial pressure', note: 'brain-tumour' },
+        { label: 'DKA', note: 'diabetes-diagnosis' },
+        { label: 'Upper GI bleed (haematemesis)', note: 'gord-dyspepsia' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Migraine', note: 'migraine' },
+        { label: 'Hypercalcaemia', note: 'hypercalcaemia' },
+        { label: 'Cyclical vomiting / functional', note: 'antiemetics-vertigo' },
+      ]},
+    ],
+    investigations: ['Pregnancy test; capillary glucose/ketones; hydration status', 'U&E, FBC, calcium, LFT, amylase per suspicion', 'Imaging if obstruction or neuro cause suspected'],
+    related: [{ label: 'Antiemetic choice', note: 'antiemetics-vertigo' }],
+  },
+  {
+    id: 'diarrhoea',
+    name: 'Diarrhoea',
+    icon: '💩',
+    system: 'Gastrointestinal',
+    blurb: 'Split acute (usually infective) from chronic (>4 weeks — investigate).',
+    redFlags: [
+      'Blood in stool + weight loss / change in bowel habit → colorectal cancer (FIT/2WW)',
+      'Dehydration, or diarrhoea in the frail/immunosuppressed',
+      'Recent antibiotics + severe diarrhoea → C. difficile',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Gastroenteritis (infective)', note: 'gastroenteritis-adult' },
+        { label: 'IBS', note: 'ibs' },
+        { label: 'Medication (metformin, PPIs, antibiotics)', note: 'individual-drug-cautions' },
+        { label: 'Overflow (constipation)', note: 'adult-constipation' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Colorectal cancer', note: 'colorectal-cancer' },
+        { label: 'Inflammatory bowel disease', note: 'ibd' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Coeliac disease', note: 'coeliac-disease' },
+        { label: 'Bile-acid malabsorption / pancreatic', note: 'chronic-liver-disease' },
+        { label: 'Hyperthyroidism', note: 'hyperthyroidism' },
+      ]},
+    ],
+    investigations: ['Stool culture / C. diff if indicated; FIT if red flags', 'FBC, ferritin, U&E, CRP, TFT, coeliac serology', 'Faecal calprotectin (IBD vs IBS)'],
+  },
+  {
+    id: 'constipation-symptom',
+    name: 'Constipation',
+    icon: '🚽',
+    system: 'Gastrointestinal',
+    blurb: 'Usually functional — but a new persistent change in an older adult is a red flag.',
+    redFlags: [
+      'New constipation ≥60 with weight loss / rectal bleeding → colorectal cancer',
+      'Absolute constipation + distension/vomiting → obstruction',
+      'Red-flag back pain + bowel change → cord/cauda equina',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Functional / low fibre / dehydration', note: 'adult-constipation' },
+        { label: 'Medication (opioids, iron, CCBs)', note: 'individual-drug-cautions' },
+        { label: 'IBS-C', note: 'ibs' },
+        { label: 'Immobility', note: 'frailty' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Colorectal cancer / obstruction', note: 'colorectal-cancer' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Hypothyroidism', note: 'hypothyroidism' },
+        { label: 'Hypercalcaemia', note: 'hypercalcaemia' },
+      ]},
+    ],
+    investigations: ['Abdominal + rectal examination', 'FBC, calcium, TFT if atypical; FIT if red flags', 'Treat cause; laxative choice if functional'],
+    related: [{ label: 'Faecal incontinence', note: 'faecal-incontinence' }],
   },
   {
     id: 'dyspepsia',
@@ -378,7 +668,8 @@ export const SYMPTOMS: Symptom[] = [
         { label: 'Oesophageal / gastric cancer', note: 'oesophagogastric-cancer' },
       ]},
       { heading: O, variant: 'other', items: [
-        { label: 'Barrett’s oesophagus; biliary/cardiac pain', note: 'barretts-oesophagus' },
+        { label: 'Barrett’s oesophagus', note: 'barretts-oesophagus' },
+        { label: 'Biliary or cardiac pain (mimic)', note: 'gallstones-pancreatitis' },
       ]},
     ],
     investigations: ['H. pylori test (stool antigen / breath); FBC/ferritin', 'OGD if alarm features', 'Review NSAIDs; PPI trial'],
@@ -399,11 +690,13 @@ export const SYMPTOMS: Symptom[] = [
         { label: 'Oesophageal / gastric cancer', note: 'oesophagogastric-cancer' },
       ]},
       { heading: C, variant: 'common', items: [
-        { label: 'GORD / oesophagitis / stricture', note: 'gord-dyspepsia' },
+        { label: 'GORD / oesophagitis / peptic stricture', note: 'gord-dyspepsia' },
         { label: 'Neurological (stroke, bulbar)', note: 'stroke-tia' },
       ]},
       { heading: O, variant: 'other', items: [
-        { label: 'Achalasia; pharyngeal pouch; MND; globus', note: 'ent-emergencies' },
+        { label: 'Achalasia', note: 'dysphagia' },
+        { label: 'Motor neuron disease', note: 'motor-neuron-disease' },
+        { label: 'Globus (functional)', note: 'dysphagia' },
       ]},
     ],
     investigations: ['Urgent OGD (2WW)', 'FBC/ferritin', 'SALT assessment if neurological / aspiration'],
@@ -430,12 +723,41 @@ export const SYMPTOMS: Symptom[] = [
       { heading: S, variant: 'serious', items: [
         { label: 'Colorectal cancer', note: 'colorectal-cancer' },
         { label: 'Inflammatory bowel disease', note: 'ibd' },
+        { label: 'Anal cancer', note: 'anal-cancer' },
       ]},
       { heading: O, variant: 'other', items: [
-        { label: 'Coeliac; anal cancer; ischaemic colitis', note: 'mesenteric-ischaemia' },
+        { label: 'Coeliac disease', note: 'coeliac-disease' },
+        { label: 'Ischaemic colitis', note: 'mesenteric-ischaemia' },
       ]},
     ],
     investigations: ['FIT test; FBC/ferritin', 'DRE; examine perianal area', '2WW / colonoscopy per thresholds'],
+  },
+  {
+    id: 'bloating',
+    name: 'Bloating & distension',
+    icon: '🎈',
+    system: 'Gastrointestinal',
+    blurb: 'Very common and usually functional — but persistent bloating in women flags ovarian cancer.',
+    redFlags: [
+      'Persistent bloating (≥12×/month), esp. women >50 → CA125 / ovarian cancer',
+      'Weight loss, rectal bleeding or a mass',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'IBS', note: 'ibs' },
+        { label: 'Constipation', note: 'adult-constipation' },
+        { label: 'Functional / dietary (FODMAPs)', note: 'ibs' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Ovarian cancer', note: 'ovarian-cancer' },
+        { label: 'Colorectal / gastric cancer', note: 'colorectal-cancer' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Coeliac disease', note: 'coeliac-disease' },
+        { label: 'Ascites (liver disease)', note: 'chronic-liver-disease' },
+      ]},
+    ],
+    investigations: ['CA125 in women with persistent symptoms; FBC/ferritin', 'Coeliac serology; FIT if bowel symptoms', 'USS/pelvic imaging per suspicion'],
   },
   {
     id: 'jaundice',
@@ -495,7 +817,8 @@ export const SYMPTOMS: Symptom[] = [
       ]},
       { heading: O, variant: 'other', items: [
         { label: 'Idiopathic intracranial hypertension', note: 'iih' },
-        { label: 'Trigeminal neuralgia; sinusitis', note: 'trigeminal-neuralgia' },
+        { label: 'Trigeminal neuralgia', note: 'trigeminal-neuralgia' },
+        { label: 'Sinusitis', note: 'rhinosinusitis' },
       ]},
     ],
     investigations: ['Full neuro exam incl. fundoscopy & BP', 'ESR/CRP if GCA suspected (do not delay steroids)', 'Imaging for red flags'],
@@ -523,8 +846,8 @@ export const SYMPTOMS: Symptom[] = [
         { label: 'Functional neurological disorder', note: 'fnd' },
       ]},
       { heading: O, variant: 'other', items: [
-        { label: 'Multiple sclerosis; motor neuron disease', note: 'multiple-sclerosis' },
-        { label: 'Peripheral nerve palsy (foot drop)', note: 'myofascial-pain' },
+        { label: 'Multiple sclerosis', note: 'multiple-sclerosis' },
+        { label: 'Motor neuron disease', note: 'motor-neuron-disease' },
       ]},
     ],
     investigations: ['Full neuro exam; localise UMN vs LMN', 'Glucose; consider FBC/U&E/B12', 'Urgent imaging / admission per red flags'],
@@ -566,7 +889,7 @@ export const SYMPTOMS: Symptom[] = [
       { heading: C, variant: 'common', items: [
         { label: 'Carpal tunnel syndrome', note: 'carpal-tunnel' },
         { label: 'Diabetic / peripheral neuropathy', note: 'diabetic-neuropathy' },
-        { label: 'Cervical/lumbar radiculopathy', note: 'neck-pain' },
+        { label: 'Cervical / lumbar radiculopathy', note: 'neck-pain' },
         { label: 'Hyperventilation / anxiety', note: 'anxiety-gad' },
       ]},
       { heading: O, variant: 'other', items: [
@@ -578,6 +901,33 @@ export const SYMPTOMS: Symptom[] = [
       ]},
     ],
     investigations: ['Examine sensory distribution & reflexes', 'HbA1c; B12/folate; TFT', 'Nerve conduction studies if focal/uncertain'],
+  },
+  {
+    id: 'memory-problems',
+    name: 'Memory problems / cognitive decline',
+    icon: '🧩',
+    system: 'Neurology',
+    blurb: 'Separate dementia from delirium, depression and reversible causes before labelling.',
+    redFlags: [
+      'Rapid decline (weeks), young onset, or focal neurology → urgent referral',
+      'Acute fluctuating confusion → delirium (not dementia)',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Dementia (Alzheimer’s, vascular)', note: 'dementia' },
+        { label: 'Depression (pseudodementia)', note: 'depression' },
+        { label: 'Delirium (acute)', note: 'delirium' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'B12 / folate deficiency', note: 'vitamin-b12' },
+        { label: 'Hypothyroidism', note: 'hypothyroidism' },
+        { label: 'Medication / alcohol', note: 'alcohol-etoh' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Space-occupying lesion / NPH', note: 'brain-tumour' },
+      ]},
+    ],
+    investigations: ['Cognitive testing (6-CIT/MMSE); collateral history', 'Dementia bloods: FBC, U&E, calcium, LFT, TFT, glucose, B12/folate', 'Consider CT/MRI; memory-clinic referral'],
   },
 
   // ── Urogenital ────────────────────────────────────────────────────────────
@@ -640,9 +990,63 @@ export const SYMPTOMS: Symptom[] = [
     related: [{ label: 'Full haematuria note', note: 'haematuria' }],
   },
   {
+    id: 'urinary-incontinence-symptom',
+    name: 'Urinary incontinence',
+    icon: '💧',
+    system: 'Urogenital',
+    blurb: 'Classify stress vs urge vs overflow — it directs conservative and drug treatment.',
+    redFlags: [
+      'Visible haematuria, or a pelvic mass → urgent referral',
+      'New incontinence + neurology (leg weakness, saddle numbness) → cauda equina',
+      'Recurrent UTI / retention with overflow',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Stress incontinence', note: 'urinary-incontinence' },
+        { label: 'Urge / overactive bladder', note: 'urinary-incontinence' },
+        { label: 'Mixed incontinence', note: 'urinary-incontinence' },
+        { label: 'BPH with overflow (men)', note: 'bph-luts' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'UTI', note: 'uti-women' },
+        { label: 'Vaginal atrophy', note: 'menopause' },
+        { label: 'Constipation / medications', note: 'adult-constipation' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Neurological (cord/cauda equina)', note: 'lower-back-pain' },
+      ]},
+    ],
+    investigations: ['Bladder diary; urine dip + MC&S', 'Post-void residual if retention suspected', 'Pelvic-floor / examination; treat by type'],
+  },
+  {
+    id: 'erectile-dysfunction-symptom',
+    name: 'Erectile dysfunction',
+    icon: '♂️',
+    system: 'Urogenital',
+    blurb: 'Often the first sign of vascular disease — screen cardiovascular risk.',
+    redFlags: [
+      'ED is an independent cardiovascular risk marker → assess QRISK / do bloods',
+      'Sudden onset with a clear psychological trigger (still assess organically)',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Vascular / cardiovascular disease', note: 'erectile-dysfunction' },
+        { label: 'Diabetes', note: 'diabetes-diagnosis' },
+        { label: 'Psychogenic / relationship', note: 'erectile-dysfunction' },
+        { label: 'Medication (antihypertensives, SSRIs)', note: 'individual-drug-cautions' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Hypogonadism / low testosterone', note: 'erectile-dysfunction' },
+        { label: 'Hyperprolactinaemia / thyroid', note: 'hyperthyroidism' },
+        { label: 'Alcohol / smoking', note: 'alcohol-etoh' },
+      ]},
+    ],
+    investigations: ['HbA1c, lipids, U&E; 9am testosterone (± prolactin, LH/FSH)', 'BP & cardiovascular risk (QRISK)', 'PDE5-inhibitor trial; treat reversible causes'],
+  },
+  {
     id: 'scrotal-symptom',
     name: 'Scrotal / testicular pain & lumps',
-    icon: '♂️',
+    icon: '⚕️',
     system: 'Urogenital',
     blurb: 'Acute severe pain is torsion until proven otherwise; a solid lump is cancer.',
     redFlags: [
@@ -692,27 +1096,86 @@ export const SYMPTOMS: Symptom[] = [
     investigations: ['FBC/ferritin; consider TFT & coagulation', 'Pelvic/TV ultrasound if structural cause suspected', 'Smear up to date; refer if IMB/PCB'],
   },
   {
-    id: 'pmb',
-    name: 'Postmenopausal bleeding',
-    icon: '⚠️',
+    id: 'irregular-periods',
+    name: 'Irregular or absent periods',
+    icon: '📅',
     system: "Women's health",
-    blurb: 'Endometrial cancer until proven otherwise — 2WW.',
+    blurb: 'Always exclude pregnancy first, then work through the hormonal axis.',
     redFlags: [
-      'ANY bleeding ≥12 months after the last period → 2WW gynaecology',
+      'Postcoital / intermenstrual bleeding → cervical assessment',
+      'Amenorrhoea + headache/visual field loss / galactorrhoea → pituitary',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Pregnancy', note: 'amenorrhoea' },
+        { label: 'PCOS', note: 'pcos' },
+        { label: 'Perimenopause', note: 'menopause' },
+        { label: 'Contraception (progestogen)', note: 'larcs' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Thyroid disease', note: 'hypothyroidism' },
+        { label: 'Hyperprolactinaemia', note: 'amenorrhoea' },
+        { label: 'Hypothalamic (weight, stress, exercise)', note: 'amenorrhoea' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Premature ovarian insufficiency', note: 'menopause' },
+      ]},
+    ],
+    investigations: ['Pregnancy test always; FSH/LH, oestradiol, prolactin, TFT', 'Testosterone/SHBG if PCOS features', 'Pelvic USS per suspicion'],
+    related: [{ label: 'Full amenorrhoea note', note: 'amenorrhoea' }],
+  },
+  {
+    id: 'menopause-symptom',
+    name: 'Menopausal symptoms',
+    icon: '🔥',
+    system: "Women's health",
+    blurb: 'A clinical diagnosis over 45 — vasomotor, genitourinary and psychological.',
+    redFlags: [
+      'Postmenopausal bleeding → 2WW (see that presentation)',
       'Unscheduled bleeding on HRT that persists',
     ],
     ddx: [
-      { heading: S, variant: 'serious', items: [
-        { label: 'Endometrial cancer', note: 'endometrial-cancer' },
-        { label: 'Cervical cancer', note: 'cervical-cancer' },
-      ]},
       { heading: C, variant: 'common', items: [
-        { label: 'Vaginal atrophy', note: 'menopause' },
-        { label: 'Endometrial / cervical polyps', note: 'endometrial-cancer' },
-        { label: 'HRT-related bleeding', note: 'bleeding-on-hrt' },
+        { label: 'Perimenopause / menopause', note: 'menopause' },
+        { label: 'Vaginal atrophy (GSM)', note: 'menopause' },
+        { label: 'Anxiety / low mood', note: 'anxiety-gad' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Thyroid disease', note: 'hyperthyroidism' },
+        { label: 'Premature ovarian insufficiency (<40)', note: 'menopause' },
       ]},
     ],
-    investigations: ['2WW referral; TV ultrasound (endometrial thickness)', 'Examine cervix; smear if due', 'Hysteroscopy/biopsy in secondary care'],
+    investigations: ['Clinical diagnosis if ≥45 with typical symptoms', 'FSH only if <45 or diagnostic doubt', 'Assess HRT suitability & cardiovascular risk'],
+    related: [{ label: 'Bleeding on HRT', note: 'bleeding-on-hrt' }, { label: 'Postmenopausal bleeding', note: 'endometrial-cancer' }],
+  },
+  {
+    id: 'vaginal-discharge-symptom',
+    name: 'Vaginal discharge',
+    icon: '🌸',
+    system: "Women's health",
+    blurb: 'Separate the non-sexually-transmitted causes from STIs; treat empirically where clear.',
+    redFlags: [
+      'Discharge + pelvic pain / fever / deep dyspareunia → PID',
+      'Postcoital / intermenstrual bleeding → cervical assessment',
+      'Discharge in pregnancy',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Bacterial vaginosis', note: 'vaginal-discharge' },
+        { label: 'Vulvovaginal candidiasis', note: 'vaginal-discharge' },
+        { label: 'Chlamydia / gonorrhoea', note: 'stis' },
+        { label: 'Trichomonas', note: 'stis' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Pelvic inflammatory disease', note: 'stis' },
+        { label: 'Cervical cancer (with bleeding)', note: 'cervical-cancer' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Atrophic vaginitis', note: 'menopause' },
+        { label: 'Retained tampon / foreign body', note: 'vaginal-discharge' },
+      ]},
+    ],
+    investigations: ['Vaginal pH; high vaginal + endocervical/NAAT swabs', 'STI screen where relevant', 'Examine cervix; treat empirically if classic'],
   },
   {
     id: 'breast-lump-symptom',
@@ -738,7 +1201,7 @@ export const SYMPTOMS: Symptom[] = [
   {
     id: 'pelvic-pain-symptom',
     name: 'Pelvic pain (women)',
-    icon: '🌸',
+    icon: '🎗️',
     system: "Women's health",
     blurb: 'Cyclical vs acute vs chronic guides the differential.',
     redFlags: [
@@ -761,6 +1224,30 @@ export const SYMPTOMS: Symptom[] = [
     ],
     investigations: ['Pregnancy test; STI/HVS swabs', 'Pelvic/TV ultrasound', 'CA125 per ovarian-cancer pathway'],
     related: [{ label: 'Chronic pelvic pain', note: 'chronic-pelvic-pain' }],
+  },
+  {
+    id: 'subfertility-symptom',
+    name: 'Difficulty conceiving',
+    icon: '👶',
+    system: "Women's health",
+    blurb: 'Investigate after 12 months (or 6 if ≥36 / risk factors) — assess both partners.',
+    redFlags: [
+      'Amenorrhoea / very irregular cycles → anovulation workup',
+      'Previous PID, ectopic or pelvic surgery → tubal factor',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Anovulation / PCOS', note: 'pcos' },
+        { label: 'Male factor', note: 'subfertility' },
+        { label: 'Tubal / pelvic factor', note: 'subfertility' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Endometriosis', note: 'endometriosis' },
+        { label: 'Thyroid / prolactin', note: 'hypothyroidism' },
+        { label: 'Age-related / unexplained', note: 'subfertility' },
+      ]},
+    ],
+    investigations: ['Day-21 progesterone; rubella; chlamydia; TFT/prolactin', 'Semen analysis for the male partner', 'Refer per NICE; pre-conception advice (folic acid)'],
   },
 
   // ── Musculoskeletal ───────────────────────────────────────────────────────
@@ -819,8 +1306,127 @@ export const SYMPTOMS: Symptom[] = [
     ],
     investigations: ['Aspirate any acute hot joint (microscopy, culture, crystals)', 'FBC, inflammatory markers, urate, RF/anti-CCP', 'X-ray / refer per pattern'],
   },
+  {
+    id: 'shoulder-pain-symptom',
+    name: 'Shoulder pain',
+    icon: '💪',
+    system: 'Musculoskeletal',
+    blurb: 'Localise to the joint vs referred; range of movement points to the structure.',
+    redFlags: [
+      'Trauma with loss of rotation / deformity → fracture or dislocation',
+      'Referred pain: cardiac, diaphragmatic or apical lung → look beyond the shoulder',
+      'Hot swollen joint, or mass → septic arthritis / tumour',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Rotator cuff / subacromial pain', note: 'shoulder-problems' },
+        { label: 'Frozen shoulder (adhesive capsulitis)', note: 'shoulder-problems' },
+        { label: 'Glenohumeral osteoarthritis', note: 'osteoarthritis' },
+        { label: 'Acromioclavicular joint pain', note: 'shoulder-problems' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Cervical radiculopathy (referred)', note: 'neck-pain' },
+        { label: 'Polymyalgia rheumatica', note: 'pmr' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Referred cardiac / lung pathology', note: 'angina-ihd' },
+      ]},
+    ],
+    investigations: ['Examine active/passive ROM; painful arc tests', 'X-ray if trauma or OA; consider USS', 'Refer physiotherapy; inject per protocol'],
+  },
+  {
+    id: 'widespread-pain-symptom',
+    name: 'Widespread / chronic pain',
+    icon: '🕸️',
+    system: 'Musculoskeletal',
+    blurb: 'Distinguish fibromyalgia and chronic primary pain from inflammatory and endocrine mimics.',
+    redFlags: [
+      'Proximal pain + stiffness >50 with raised ESR → PMR / GCA',
+      'Weight loss, fevers, or objective weakness → inflammatory/malignant cause',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Fibromyalgia', note: 'fibromyalgia' },
+        { label: 'Chronic primary pain', note: 'chronic-pain' },
+        { label: 'Osteoarthritis (generalised)', note: 'osteoarthritis' },
+        { label: 'Depression / poor sleep', note: 'depression' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Polymyalgia rheumatica', note: 'pmr' },
+        { label: 'Inflammatory arthritis', note: 'inflammatory-arthritis' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Hypothyroidism', note: 'hypothyroidism' },
+        { label: 'Vitamin D deficiency', note: 'vitamin-b12' },
+        { label: 'Statin-related myalgia', note: 'individual-drug-cautions' },
+      ]},
+    ],
+    investigations: ['FBC, ESR/CRP, TFT, calcium, vitamin D, CK', 'Consider RF/anti-CCP only if synovitis', 'Diagnose fibromyalgia positively (avoid over-investigation)'],
+  },
 
   // ── Skin ──────────────────────────────────────────────────────────────────
+  {
+    id: 'acute-rash',
+    name: 'Acute rash (approach)',
+    icon: '🌡️',
+    system: 'Skin',
+    blurb: 'Describe morphology and distribution; spot the few rashes that signal an emergency.',
+    redFlags: [
+      'Non-blanching (purpuric) rash + unwell → meningococcal sepsis (see purpura)',
+      'Blistering / mucosal involvement / skin pain → SJS/TEN or eczema herpeticum',
+      'Rash + facial/tongue swelling or wheeze → anaphylaxis',
+      'Widespread erythema + systemic upset → erythroderma',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Eczema / dermatitis', note: 'atopic-eczema' },
+        { label: 'Contact / allergic dermatitis', note: 'contact-dermatitis' },
+        { label: 'Urticaria', note: 'urticaria-angioedema' },
+        { label: 'Viral exanthem', note: 'childhood-viral-rashes' },
+        { label: 'Drug eruption', note: 'individual-drug-cautions' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Anaphylaxis (with airway/systemic signs)', note: 'anaphylaxis' },
+        { label: 'Meningococcal / purpuric rash', note: 'meningitis' },
+        { label: 'Eczema herpeticum', note: 'atopic-eczema' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Psoriasis', note: 'psoriasis' },
+        { label: 'Cellulitis (localised, hot)', note: 'cellulitis' },
+        { label: 'Fungal / tinea', note: 'fungal-skin-infections' },
+        { label: 'Erythema nodosum', note: 'erythema-nodosum' },
+      ]},
+    ],
+    investigations: ['Describe: morphology, distribution, blanching, mucosae', 'Obs if systemically unwell; photograph for records', 'Swab if infected/weeping; refer urgently for red flags'],
+    related: [{ label: 'Describing skin lesions', note: 'skin-lesion-morphology' }, { label: 'Non-blanching rash', note: 'meningitis' }],
+  },
+  {
+    id: 'purpura-symptom',
+    name: 'Non-blanching rash / purpura',
+    icon: '🟣',
+    system: 'Skin',
+    blurb: 'A non-blanching rash always needs a cause — some are immediately life-threatening.',
+    redFlags: [
+      'Non-blanching rash + fever / unwell (any age) → meningococcal sepsis (999)',
+      'Widespread petechiae + bleeding → thrombocytopenia / leukaemia',
+      'Purpura + acute kidney or joint involvement → vasculitis (HSP)',
+    ],
+    ddx: [
+      { heading: S, variant: 'serious', items: [
+        { label: 'Meningococcal septicaemia', note: 'meningitis' },
+        { label: 'Thrombocytopenia / leukaemia (ITP)', note: 'haem-malignancies' },
+        { label: 'Henoch-Schönlein purpura / vasculitis', note: 'childhood-viral-rashes' },
+      ]},
+      { heading: C, variant: 'common', items: [
+        { label: 'Senile / actinic purpura', note: 'skin-lesion-morphology' },
+        { label: 'Trauma / steroid-related', note: 'skin-lesion-morphology' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Anticoagulant-related bleeding', note: 'individual-drug-cautions' },
+      ]},
+    ],
+    investigations: ['Glass (tumbler) test; full obs incl. temperature', 'FBC + film, clotting, U&E, CRP; urine dip (vasculitis)', 'Emergency admission if febrile/unwell'],
+  },
   {
     id: 'itch-symptom',
     name: 'Itch (pruritus)',
@@ -840,7 +1446,8 @@ export const SYMPTOMS: Symptom[] = [
       ]},
       { heading: O, variant: 'other', items: [
         { label: 'Cholestatic (liver) itch', note: 'chronic-liver-disease' },
-        { label: 'Renal (uraemic) / iron deficiency', note: 'ckd' },
+        { label: 'Renal (uraemic) itch', note: 'ckd' },
+        { label: 'Iron deficiency', note: 'normocytic-anaemia' },
         { label: 'Thyroid disease', note: 'hyperthyroidism' },
       ]},
       { heading: S, variant: 'serious', items: [
@@ -897,7 +1504,8 @@ export const SYMPTOMS: Symptom[] = [
       ]},
       { heading: O, variant: 'other', items: [
         { label: 'Bipolar disorder', note: 'mania-hypomania' },
-        { label: 'Hypothyroidism / anaemia', note: 'hypothyroidism' },
+        { label: 'Hypothyroidism', note: 'hypothyroidism' },
+        { label: 'Anaemia', note: 'normocytic-anaemia' },
         { label: 'Perinatal depression', note: 'perinatal-mh' },
       ]},
       { heading: S, variant: 'serious', items: [
@@ -905,6 +1513,36 @@ export const SYMPTOMS: Symptom[] = [
       ]},
     ],
     investigations: ['PHQ-9 / GAD-7; risk assessment', 'Consider FBC, TFT, ferritin, B12 if fatigue-predominant', 'Screen for bipolarity and alcohol'],
+  },
+  {
+    id: 'anxiety-symptom',
+    name: 'Anxiety',
+    icon: '😰',
+    system: 'Mental health',
+    blurb: 'Common and treatable — but exclude the physical mimics before labelling.',
+    redFlags: [
+      'Palpitations/sweats/weight loss → hyperthyroidism or arrhythmia',
+      'Panic with chest pain/breathlessness → rule out cardiac/PE first',
+      'Suicidal ideation or severe functional impairment',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Generalised anxiety disorder', note: 'anxiety-gad' },
+        { label: 'Panic disorder', note: 'anxiety-gad' },
+        { label: 'Depression (mixed)', note: 'depression' },
+        { label: 'Stress / adjustment', note: 'stress-grief-adjustment' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Hyperthyroidism', note: 'hyperthyroidism' },
+        { label: 'Caffeine / stimulants / substance misuse', note: 'substance-misuse' },
+        { label: 'Medication / withdrawal', note: 'individual-drug-cautions' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Arrhythmia / phaeochromocytoma (mimic)', note: 'phaeochromocytoma' },
+      ]},
+    ],
+    investigations: ['GAD-7; risk assessment', 'TFT (± ECG) where physical symptoms predominate', 'Screen for depression and substance use'],
+    related: [{ label: 'Insomnia', note: 'insomnia' }],
   },
 
   // ── ENT & eyes ────────────────────────────────────────────────────────────
@@ -952,7 +1590,9 @@ export const SYMPTOMS: Symptom[] = [
       ]},
       { heading: S, variant: 'serious', items: [
         { label: 'Acute angle-closure glaucoma', note: 'glaucoma' },
-        { label: 'Keratitis / corneal ulcer; uveitis; scleritis', note: 'red-eye' },
+        { label: 'Keratitis / corneal ulcer', note: 'red-eye' },
+        { label: 'Anterior uveitis / iritis', note: 'red-eye' },
+        { label: 'Scleritis', note: 'red-eye' },
       ]},
     ],
     investigations: ['Visual acuity; fluorescein; pupil reaction', 'Same-day referral for any red-flag red eye', 'Swab if severe/neonatal conjunctivitis'],
@@ -984,6 +1624,93 @@ export const SYMPTOMS: Symptom[] = [
     ],
     investigations: ['FeverPAIN / Centor score', 'Consider monospot if glandular fever likely', 'Do not examine the throat if epiglottitis suspected'],
   },
+  {
+    id: 'ear-pain-symptom',
+    name: 'Ear pain (otalgia)',
+    icon: '👂',
+    system: 'ENT & eyes',
+    blurb: 'Otoscopy separates middle- from outer-ear causes; a normal ear means look for referred pain.',
+    redFlags: [
+      'Persistent unilateral otalgia with a normal ear (esp. smoker) → head & neck cancer',
+      'Pain, swelling behind the ear + pushed-forward pinna → mastoiditis',
+      'Diabetic/immunosuppressed with severe otitis externa → malignant otitis externa',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Acute otitis media', note: 'acute-otitis-media' },
+        { label: 'Otitis externa', note: 'otitis-externa' },
+        { label: 'Referred (TMJ, dental, throat)', note: 'sorethroat-tonsillitis' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Mastoiditis', note: 'acute-otitis-media' },
+        { label: 'Head & neck cancer (referred)', note: 'neck-lumps' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Ear wax / foreign body', note: 'hearing-loss' },
+        { label: 'Herpes zoster (Ramsay Hunt)', note: 'shingles-chickenpox' },
+      ]},
+    ],
+    investigations: ['Otoscopy (both ears); examine throat, TMJ, teeth', 'Consider referral if persistent unilateral with normal ear', 'Swab if resistant otitis externa'],
+  },
+  {
+    id: 'hearing-loss-symptom',
+    name: 'Hearing loss & tinnitus',
+    icon: '🦻',
+    system: 'ENT & eyes',
+    blurb: 'Separate conductive from sensorineural; sudden SNHL is an emergency.',
+    redFlags: [
+      'Sudden sensorineural hearing loss → same-week ENT (steroids window)',
+      'Unilateral hearing loss / tinnitus → exclude acoustic neuroma (MRI)',
+      'Pulsatile tinnitus, or with neurology',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Ear wax / conductive', note: 'hearing-loss' },
+        { label: 'Age-related (presbycusis)', note: 'hearing-loss' },
+        { label: 'Otitis media / effusion', note: 'acute-otitis-media' },
+        { label: 'Noise-induced', note: 'tinnitus' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Sudden sensorineural hearing loss', note: 'hearing-loss' },
+        { label: 'Acoustic neuroma (unilateral)', note: 'tinnitus' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Ménière’s disease', note: 'vertigo' },
+        { label: 'Ototoxic drugs', note: 'individual-drug-cautions' },
+      ]},
+    ],
+    investigations: ['Otoscopy; tuning-fork (Rinne/Weber); whisper test', 'Audiometry; MRI for unilateral SNHL/tinnitus', 'Urgent ENT for sudden SNHL'],
+    related: [{ label: 'Full tinnitus note', note: 'tinnitus' }],
+  },
+  {
+    id: 'neck-lump-symptom',
+    name: 'Neck lump',
+    icon: '🫙',
+    system: 'ENT & eyes',
+    blurb: 'Reactive nodes are common; a persistent adult neck lump needs a cancer pathway.',
+    redFlags: [
+      'Persistent (>3 weeks) unexplained neck lump in an adult → 2WW head & neck',
+      'Hard fixed node, hoarseness, dysphagia, or a smoker',
+      'Thyroid lump with stridor / rapid growth',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Reactive lymph node', note: 'neck-lumps' },
+        { label: 'Glandular fever', note: 'glandular-fever' },
+        { label: 'Thyroid nodule / goitre', note: 'goitre-thyroid-cancer' },
+        { label: 'Salivary gland (stone, sialadenitis)', note: 'salivary-gland-disease' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Head & neck cancer', note: 'neck-lumps' },
+        { label: 'Lymphoma', note: 'haem-malignancies' },
+        { label: 'Thyroid cancer', note: 'goitre-thyroid-cancer' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Thyroglossal / branchial cyst; lipoma', note: 'neck-lumps' },
+      ]},
+    ],
+    investigations: ['Examine site, mobility, relation to swallowing/tongue', 'USS ± FNA; TFT if thyroid; monospot/FBC', '2WW head-and-neck per NICE'],
+  },
 
   // ── Paediatrics ───────────────────────────────────────────────────────────
   {
@@ -1000,20 +1727,55 @@ export const SYMPTOMS: Symptom[] = [
     ddx: [
       { heading: C, variant: 'common', items: [
         { label: 'Viral URTI / viral exanthem', note: 'childhood-viral-rashes' },
-        { label: 'Otitis media / tonsillitis', note: 'acute-otitis-media' },
+        { label: 'Otitis media', note: 'acute-otitis-media' },
+        { label: 'Tonsillitis', note: 'sorethroat-tonsillitis' },
         { label: 'UTI', note: 'uti-children' },
         { label: 'Gastroenteritis', note: 'gastroenteritis-children' },
       ]},
       { heading: S, variant: 'serious', items: [
-        { label: 'Meningitis / sepsis', note: 'meningitis' },
+        { label: 'Meningitis', note: 'meningitis' },
+        { label: 'Sepsis (any source)', note: 'meningitis' },
         { label: 'Kawasaki disease (>5 days fever)', note: 'childhood-viral-rashes' },
       ]},
       { heading: O, variant: 'other', items: [
-        { label: 'Croup; bronchiolitis; pneumonia', note: 'croup' },
+        { label: 'Croup', note: 'croup' },
+        { label: 'Bronchiolitis', note: 'bronchiolitis' },
+        { label: 'Pneumonia', note: 'feverish-child' },
       ]},
     ],
     investigations: ['NICE traffic-light assessment; observations', 'Urine dip (clean catch) — always consider UTI', 'Safety-net; same-day review if any amber/red'],
     related: [{ label: 'Feverish child (full note)', note: 'feverish-child' }],
+  },
+  {
+    id: 'rash-in-child',
+    name: 'Rash in a child',
+    icon: '🧒',
+    system: 'Paediatrics',
+    blurb: 'Most are benign viral exanthems — the priority is spotting the non-blanching rash.',
+    redFlags: [
+      'Non-blanching rash + fever / unwell → meningococcal sepsis (999)',
+      'Mucosal involvement / blistering / very unwell → SJS or staph scalded skin',
+      'Fever >5 days + rash + red eyes/lips → Kawasaki disease',
+    ],
+    ddx: [
+      { heading: C, variant: 'common', items: [
+        { label: 'Viral exanthem (measles, slapped cheek, roseola)', note: 'childhood-viral-rashes' },
+        { label: 'Chickenpox', note: 'shingles-chickenpox' },
+        { label: 'Hand, foot & mouth', note: 'childhood-viral-rashes' },
+        { label: 'Eczema', note: 'atopic-eczema' },
+        { label: 'Impetigo', note: 'cellulitis' },
+      ]},
+      { heading: S, variant: 'serious', items: [
+        { label: 'Meningococcal (non-blanching)', note: 'meningitis' },
+        { label: 'Kawasaki disease', note: 'childhood-viral-rashes' },
+      ]},
+      { heading: O, variant: 'other', items: [
+        { label: 'Scarlet fever (Strep A)', note: 'toxic-shock' },
+        { label: 'Urticaria / allergy', note: 'urticaria-angioedema' },
+        { label: 'Henoch-Schönlein purpura', note: 'childhood-viral-rashes' },
+      ]},
+    ],
+    investigations: ['Glass test; obs incl. temperature & cap refill', 'Usually clinical — describe morphology & distribution', 'Safety-net; admit if non-blanching/unwell'],
   },
   {
     id: 'limping-child-symptom',
@@ -1038,7 +1800,8 @@ export const SYMPTOMS: Symptom[] = [
         { label: 'Leukaemia / bone tumour', note: 'paediatric-cancer' },
       ]},
       { heading: O, variant: 'other', items: [
-        { label: 'DDH; JIA', note: 'paediatric-lower-limb' },
+        { label: 'Developmental dysplasia of the hip', note: 'paediatric-lower-limb' },
+        { label: 'Juvenile idiopathic arthritis', note: 'inflammatory-arthritis' },
       ]},
     ],
     investigations: ['Examine hip/knee, gait, temperature', 'FBC, CRP/ESR, blood film if systemic; X-ray/USS', 'Urgent referral for hot joint or SUFE/Perthes'],

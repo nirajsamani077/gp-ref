@@ -4,7 +4,7 @@ export const coPoisoning: Note = {
   id: 'co-poisoning',
   title: 'Carbon Monoxide Poisoning',
   subtitle: 'The great mimic — flu-like symptoms that improve away from home, carboxyhaemoglobin and 100% oxygen',
-  tags: ['symptoms'],
+  tags: ['general'],
 
   body: `carbon monoxide poisoning CO headache flu-like nausea faulty boiler gas fire cherry red COHb carboxyhaemoglobin pulse oximetry falsely normal 100% oxygen hyperbaric occupancy alarm winter delayed neurological`,
 

@@ -4,7 +4,7 @@ export const depression: Note = {
   id: 'depression',
   title: 'Depression',
   subtitle: 'Screening, CBT framework, stepped care, pharmacotherapy, SAD, and safety planning',
-  tags: ['mental', 'symptoms'],
+  tags: ['mental'],
 
   body: 'depression low mood PHQ9 PHQ-9 PHQ2 screening anhedonia biological symptoms sleep appetite weight tired TATT CBT cognitive behavioural therapy stepped care SSRI antidepressant behavioural activation guided self help IAPT talking therapies bipolar SAD seasonal affective disorder lightbox safety plan crisis relapse counselling mindfulness sertraline fluoxetine mirtazapine venlafaxine CMHT referral SPA suicidal thoughts self-harm psychosis',
 

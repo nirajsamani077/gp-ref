@@ -4,7 +4,7 @@ export const anxiety: Note = {
   id: 'anxiety-gad',
   title: 'Anxiety Disorders',
   subtitle: 'GAD, panic disorder, social anxiety, health anxiety — assessment, CBT principles and management in primary care',
-  tags: ['mental', 'symptoms'],
+  tags: ['mental'],
 
   body: 'anxiety GAD generalised anxiety disorder panic disorder social anxiety health anxiety agoraphobia phobia worry CBT cognitive behavioural therapy stepped care sertraline SSRI pregabalin venlafaxine benzodiazepine avoidance serotonin GAD-2 PHQ breathing graded exposure mindfulness relaxation self-help talking therapies Staffordshire IAPT CMHT flight fight',
 

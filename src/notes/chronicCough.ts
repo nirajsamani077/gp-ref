@@ -4,7 +4,7 @@ export const chronicCough: Note = {
   id: 'chronicCough',
   title: 'Chronic Cough',
   subtitle: 'Causes, investigation, red flags, and management by aetiology',
-  tags: ['symptoms', 'Respiratory'],
+  tags: ['respiratory'],
 
   body: 'chronic cough >8 weeks causes differential diagnosis GORD gastro-oesophageal reflux asthma upper airway cough syndrome post-nasal drip ACE inhibitor NAEB non-asthmatic eosinophilic bronchitis COPD bronchiectasis idiopathic refractory chronic cough red flags 2WW investigation chest X-ray spirometry CXR haemoptysis weight loss night sweats smoking flowchart morphine low-dose gabapentin speech therapy',
 

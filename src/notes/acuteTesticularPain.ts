@@ -4,7 +4,7 @@ export const acuteTesticularPain: Note = {
   id: 'acute-testicular-pain',
   title: 'Acute Testicular Pain',
   subtitle: 'Torsion vs epididymo-orchitis — diagnosis, antibiotics, and safety-netting',
-  tags: ['symptoms', 'urology'],
+  tags: ['urology'],
 
   body: 'acute testicular pain scrotum scrotal swelling torsion epididymo-orchitis epididymitis orchitis STI UTI chlamydia gonorrhoea Neisseria doxycycline ceftriaxone ofloxacin levofloxacin ciprofloxacin cremasteric reflex Prehn sign bell clapper deformity horizontal lie high riding testis USS ultrasound NAAT first pass urine GUM sexual health hydrocele epididymal cyst mumps distinguish differential diagnosis urgent emergency refer',
 

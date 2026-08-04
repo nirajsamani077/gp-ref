@@ -4,7 +4,7 @@ export const stressGrief: Note = {
   id: 'stress-grief-adjustment',
   title: 'Stress, Grief & Adjustment Disorder',
   subtitle: 'Stress reactions, adjustment disorder, normal and prolonged grief — assessment and management',
-  tags: ['mental', 'symptoms'],
+  tags: ['mental'],
 
   body: 'stress reaction adjustment disorder grief bereavement loss prolonged grief disorder CRUSE counselling behavioural activation microsteps CBT psychoeducation acute stressor life events depression PTSD alcohol substance misuse self-harm suicide risk normal bereavement prolonged grief 6 months disproportionate CRUSE family bereavement Edwards Trust',
 

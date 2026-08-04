@@ -25,11 +25,14 @@ export default function App() {
   const [highlightedCalcId, setHighlightedCalcId]       = useState<string | null>(null)
   const [highlightedNoteId, setHighlightedNoteId]       = useState<string | null>(null)
   const [highlightedNoteQuery, setHighlightedNoteQuery] = useState<string | undefined>(undefined)
+  const [highlightedSymptomId, setHighlightedSymptomId] = useState<string | null>(null)
+  const [noteBackRef, setNoteBackRef]       = useState<{ id: string; name: string } | null>(null)
   const [paletteOpen, setPaletteOpen]       = useState(false)
   const [pendingAskQuery, setPendingAskQuery] = useState<string | undefined>(undefined)
   const isDesktop = useIsDesktop()
 
   const handleTabSelect = useCallback((tabId: TabId) => {
+    setNoteBackRef(null)
     if (tabId === 'notes' && activeTab === 'notes') {
       window.dispatchEvent(new CustomEvent('gpr-home'))
     } else {
@@ -38,9 +41,18 @@ export default function App() {
   }, [activeTab])
 
   const handleGoHome = useCallback(() => {
+    setNoteBackRef(null)
     setActiveTab('notes')
     window.dispatchEvent(new CustomEvent('gpr-home'))
   }, [])
+
+  // Return from a note back to the differential it was opened from
+  const handleBackToSymptom = useCallback(() => {
+    if (!noteBackRef) return
+    setHighlightedSymptomId(noteBackRef.id)
+    setActiveTab('symptoms')
+    setNoteBackRef(null)
+  }, [noteBackRef])
 
   const handleNavigate = useCallback((tab: TabId, id: string) => {
     setActiveTab(tab)
@@ -80,12 +92,28 @@ export default function App() {
       const detail = (e as CustomEvent).detail
       const noteId = typeof detail === 'string' ? detail : (detail?.id ?? '')
       const query  = typeof detail === 'object' ? (detail?.query ?? undefined) : undefined
+      const from   = typeof detail === 'object' ? detail?.from : undefined
       setActiveTab('notes')
       setHighlightedNoteId(noteId)
       setHighlightedNoteQuery(query)
+      // Remember a symptom origin so the note can offer "back to differentials"
+      setNoteBackRef(from?.type === 'symptom' ? { id: from.id, name: from.name } : null)
     }
     window.addEventListener('navigate-note', handler)
     return () => window.removeEventListener('navigate-note', handler)
+  }, [])
+
+  // Listen for command-palette navigation to a symptom / presentation
+  useEffect(() => {
+    function handler(e: Event) {
+      const detail = (e as CustomEvent).detail
+      const id = typeof detail === 'string' ? detail : (detail?.id ?? '')
+      setActiveTab('symptoms')
+      setHighlightedSymptomId(id)
+      setNoteBackRef(null)
+    }
+    window.addEventListener('navigate-symptom', handler)
+    return () => window.removeEventListener('navigate-symptom', handler)
   }, [])
 
   return (
@@ -110,6 +138,9 @@ export default function App() {
           highlightedCalcId={highlightedCalcId}
           highlightedNoteId={highlightedNoteId}
           highlightedNoteQuery={highlightedNoteQuery}
+          highlightedSymptomId={highlightedSymptomId}
+          noteBackRef={noteBackRef}
+          onBackToSymptom={handleBackToSymptom}
           pendingAskQuery={pendingAskQuery}
           onClearPendingAskQuery={() => setPendingAskQuery(undefined)}
         />

@@ -4,7 +4,7 @@ export const dysuria: Note = {
   id: 'dysuria',
   title: 'Dysuria (Symptom Differential)',
   subtitle: 'Painful urination beyond UTI — STIs, non-infective and the red flags not to miss',
-  tags: ['symptoms'],
+  tags: ['urology'],
 
   body: `dysuria painful urination burning UTI urethritis STI chlamydia gonorrhoea vaginitis candida atrophic vaginitis prostatitis bladder cancer haematuria sterile pyuria interstitial cystitis dermatological genital`,
 

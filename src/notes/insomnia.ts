@@ -4,7 +4,7 @@ export const insomnia: Note = {
   id: 'insomnia',
   title: 'Insomnia',
   subtitle: 'Sleep hygiene, CBT-I, digital sleep programmes, and prescribing — including z-drugs, melatonin and daridorexant',
-  tags: ['mental', 'prescribing', 'symptoms'],
+  tags: ['mental', 'prescribing'],
 
   body: 'insomnia poor sleep sleep hygiene CBT-I cognitive behavioural therapy insomnia zopiclone zolpidem z-drug melatonin daridorexant Quviviq promethazine mirtazapine trazodone hydroxyzine sleep diary Sleepstation Sleepio Sleepful sleep hygiene hyperarousal chronic insomnia short term acute sleep disorder deprescribing hypnotic withdrawal benzodiazepine',
 

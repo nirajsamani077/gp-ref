@@ -3,8 +3,9 @@ import { NOTES } from '../data/notes'
 import type { Note } from '../data/notes'
 import { FORMS } from '../data/forms'
 import { LINK_CATEGORIES } from '../data/links'
+import { SYMPTOMS } from '../data/symptoms'
 
-export type ResultKind = 'note' | 'form' | 'link' | 'calculator'
+export type ResultKind = 'note' | 'form' | 'link' | 'calculator' | 'symptom'
 
 export interface UnifiedResult {
   kind: ResultKind
@@ -387,6 +388,29 @@ const calcsFuse = new Fuse(CALC_CORPUS, {
   minMatchCharLength: 2,
 })
 
+// ── Symptoms / presentations ────────────────────────────────────────────────
+const symptomsCorpus = SYMPTOMS.map(s => ({
+  id:       s.id,
+  label:    s.name,
+  system:   s.system,
+  // Differential labels make each presentation findable by its conditions too
+  ddx:      s.ddx.flatMap(g => g.items.map(i => i.label)).join(' '),
+  blurb:    s.blurb,
+}))
+
+const symptomsFuse = new Fuse(symptomsCorpus, {
+  keys: [
+    { name: 'label',  weight: 5 },
+    { name: 'system', weight: 1 },
+    { name: 'ddx',    weight: 2 },
+    { name: 'blurb',  weight: 1 },
+  ],
+  threshold: 0.4,
+  includeScore: true,
+  ignoreLocation: true,
+  minMatchCharLength: 2,
+})
+
 // ── Category labels (for form sublabels) ───────────────────────────────────
 const CAT_LABELS: Record<string, string> = {
   Darwin: '📍 Darwin Referrals', Cardiology: 'Cardiology', Respiratory: 'Respiratory',
@@ -401,14 +425,22 @@ const CAT_LABELS: Record<string, string> = {
 // ── Main unified search ────────────────────────────────────────────────────
 export function searchAll(query: string, maxPerKind = 4): {
   notes: UnifiedResult[]
+  symptoms: UnifiedResult[]
   forms: UnifiedResult[]
   links: UnifiedResult[]
   calculators: UnifiedResult[]
 } {
   const q = query.trim()
-  if (q.length < 2) return { notes: [], forms: [], links: [], calculators: [] }
+  if (q.length < 2) return { notes: [], symptoms: [], forms: [], links: [], calculators: [] }
 
   const notes = runNoteSearch(q, maxPerKind)
+
+  const symptoms: UnifiedResult[] = symptomsFuse.search(q).slice(0, maxPerKind).map(r => ({
+    kind:     'symptom',
+    label:    r.item.label,
+    sublabel: `${r.item.system} · DDx`,
+    id:       r.item.id,
+  }))
 
   // Darwin forms first, then others
   const formHits = formsFuse.search(q)
@@ -437,7 +469,7 @@ export function searchAll(query: string, maxPerKind = 4): {
     id:       r.item.id,
   }))
 
-  return { notes, forms, links, calculators }
+  return { notes, symptoms, forms, links, calculators }
 }
 
 // ── Notes-tab search — returns more results with richer ranking ────────────
