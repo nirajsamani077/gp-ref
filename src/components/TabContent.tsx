@@ -55,7 +55,7 @@ export default function TabContent({ active, highlightedLinkUrl, highlightedCalc
 
   if (active === 'links') {
     return (
-      <main style={{ flex: 1, overflowY: 'auto', backgroundColor: '#f7f9fb' }}>
+      <main style={{ flex: 1, overflow: 'hidden', backgroundColor: '#f7f9fb', display: 'flex', flexDirection: 'column' }}>
         <LinksTab highlightedUrl={highlightedLinkUrl} />
       </main>
     )
