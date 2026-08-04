@@ -47,7 +47,7 @@ export default function TabContent({ active, highlightedLinkUrl, highlightedCalc
 
   if (active === 'symptoms') {
     return (
-      <main style={{ flex: 1, overflow: 'hidden', backgroundColor: '#f0fff4', display: 'flex', flexDirection: 'column' }}>
+      <main style={{ flex: 1, overflow: 'hidden', backgroundColor: '#fbfdff', display: 'flex', flexDirection: 'column' }}>
         <SymptomsTab />
       </main>
     )
