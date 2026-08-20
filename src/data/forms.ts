@@ -4,8 +4,9 @@ export interface GPForm {
   category: string
   url: string
   keywords: string
-  /** 'uhdb' marks a UHDB shared-care result protocol (badged & filterable). */
-  source?: 'uhdb'
+  /** Source marker for badging & filtering: UHDB shared-care protocol, or a
+   *  Darwin practice-specific admin/policy document. */
+  source?: 'uhdb' | 'darwin'
 }
 
 export const FORMS: GPForm[] = [

@@ -2,16 +2,19 @@ import { useState, useMemo, useRef, useEffect } from 'react'
 import { FORMS } from '../data/forms'
 import type { GPForm } from '../data/forms'
 import { SHARED_CARE } from '../data/sharedCare'
+import { EXTRA_DOCS } from '../data/extraDocs'
 import { REFERRAL_FORMS, REFERRAL_CATEGORIES, REFERRAL_TRUSTS, REFERRAL_PROVIDERS, TRUST_FULL } from '../data/referralForms'
 import type { ReferralForm } from '../data/referralForms'
+import ReferralGuidance from './ReferralGuidance'
+import { guidanceForForm } from '../data/referralGuidance'
 
 const NAVY = '#1a365d'
 
 type Mode = 'referral' | 'pathway'
-interface OpenDoc { title: string; url: string }
+interface OpenDoc { title: string; url: string; referral?: ReferralForm }
 
-// Pathways view = existing PILs + UHDB shared-care result protocols
-const PATHWAY_DOCS: GPForm[] = [...FORMS, ...SHARED_CARE]
+// Pathways view = existing PILs + UHDB shared-care protocols + extra library docs
+const PATHWAY_DOCS: GPForm[] = [...FORMS, ...SHARED_CARE, ...EXTRA_DOCS]
 
 // ── Pathways category labels ────────────────────────────────────────────────
 const PATH_LABELS: Record<string, string> = {
@@ -19,9 +22,14 @@ const PATH_LABELS: Record<string, string> = {
   Diabetes: 'Diabetes', MSK: 'MSK', Gastro: 'Gastro', Gynae: 'Gynaecology', Paeds: 'Paediatrics',
   Neuro: 'Neurology', Endocrine: 'Endocrine', Renal: 'Renal', Infection: 'Infection', Haem: 'Haematology',
   Urology: 'Urology', ENT: 'ENT', Ophthalmology: 'Ophthalmology', Breast: 'Breast', Rheumatology: 'Rheumatology',
-  Allergy: 'Allergy', Palliative: 'Palliative', Meds: 'Medications', Surgical: 'Surgical', UGI: 'Upper GI', DVLA: 'DVLA',
+  Allergy: 'Allergy', Practice: 'Practice', Palliative: 'Palliative', Meds: 'Medications', Surgical: 'Surgical', UGI: 'Upper GI', DVLA: 'DVLA',
 }
 const PATH_CATEGORIES = Object.keys(PATH_LABELS)
+
+// Source labels for the pathways 'source' filter
+const SOURCE_LABELS: Record<string, string> = {
+  pil: 'PILs & flowcharts', uhdb: 'UHDB shared care', darwin: 'Darwin practice',
+}
 
 // ── Colour by category (shared palette) ─────────────────────────────────────
 const CAT_COLORS: Record<string, string> = {
@@ -34,7 +42,7 @@ const CAT_COLORS: Record<string, string> = {
   Derm: '#d69e2e', MH: '#805ad5', Diabetes: '#38a169', MSK: '#dd6b20', Gynae: '#d53f8c', Paeds: '#00b5d8',
   Neuro: '#6b46c1', Endocrine: '#2f855a', Renal: '#2b6cb0', Infection: '#c53030', Haem: '#9b2335',
   Urology: '#2c7a7b', ENT: '#285e61', Ophthalmology: '#553c9a', Breast: '#b83280', Rheumatology: '#744210',
-  Allergy: '#65a30d', Meds: '#1a365d', Surgical: '#2d3748', UGI: '#7b341e', DVLA: '#4a5568',
+  Allergy: '#65a30d', Practice: '#334155', Meds: '#1a365d', Surgical: '#2d3748', UGI: '#7b341e', DVLA: '#4a5568',
 }
 const catColor = (c: string) => CAT_COLORS[c] ?? '#64748b'
 
@@ -57,12 +65,13 @@ export default function FormsTab({ formOpenReq }: { formOpenReq?: { id: string; 
   const [trust, setTrust]           = useState<string>('')
   const [provider, setProvider]     = useState<string>('')
   const [age, setAge]               = useState<string>('')
-  const [uhdbOnly, setUhdbOnly]     = useState(false)
+  const [sourceFilter, setSourceFilter] = useState<string>('')  // '' | 'pil' | 'uhdb' | 'darwin'
   const [openDoc, setOpenDoc]       = useState<OpenDoc | null>(null)
+  const [showGuidance, setShowGuidance] = useState(false)
   const [isMobile]                  = useState(() => window.innerWidth < 768)
   const searchRef                   = useRef<HTMLInputElement>(null)
 
-  const switchMode = (m: Mode) => { setMode(m); setCat(null); setTrust(''); setProvider(''); setAge(''); setUhdbOnly(false) }
+  const switchMode = (m: Mode) => { setMode(m); setCat(null); setTrust(''); setProvider(''); setAge(''); setSourceFilter('') }
 
   // Open a specific doc when linked from a note (form:<id> cross-link)
   useEffect(() => {
@@ -70,7 +79,7 @@ export default function FormsTab({ formOpenReq }: { formOpenReq?: { id: string; 
     if (!reqId) return
     const ref = REFERRAL_FORMS.find(f => f.id === reqId)
     const doc = ref ?? PATHWAY_DOCS.find(f => f.id === reqId)
-    if (doc) { setMode(ref ? 'referral' : 'pathway'); setOpenDoc({ title: doc.title, url: doc.url }) }
+    if (doc) { setMode(ref ? 'referral' : 'pathway'); setOpenDoc({ title: doc.title, url: doc.url, referral: ref }) }
   }, [formOpenReq?.seq, formOpenReq?.id])
 
   // ── Referral results ──
@@ -88,26 +97,30 @@ export default function FormsTab({ formOpenReq }: { formOpenReq?: { id: string; 
     return rows.map(x => x.f)
   }, [search, cat, trust, provider, age])
 
-  // ── Pathway results (PILs + UHDB shared-care) ──
+  // ── Pathway results (PILs + UHDB shared-care + Darwin practice + resources) ──
+  const srcMatch = (f: GPForm) =>
+    !sourceFilter ||
+    (sourceFilter === 'pil' ? !f.source : f.source === sourceFilter)
+
   const pathwayResults = useMemo(() => {
     const q = search.toLowerCase().trim()
     return PATHWAY_DOCS.filter(f => {
       const catMatch = !cat || f.category === cat
-      const uhdbMatch = !uhdbOnly || f.source === 'uhdb'
       const sMatch = !q || f.title.toLowerCase().includes(q) || f.keywords.includes(q) || f.category.toLowerCase().includes(q)
-      return catMatch && uhdbMatch && sMatch
+      return catMatch && srcMatch(f) && sMatch
     })
-  }, [search, cat, uhdbOnly])
+  }, [search, cat, sourceFilter])
 
   const isReferral = mode === 'referral'
   const results = isReferral ? referralResults : pathwayResults
   const catList = isReferral
     ? REFERRAL_CATEGORIES.filter(c => REFERRAL_FORMS.some(f => f.category === c))
-    : PATH_CATEGORIES.filter(c => PATHWAY_DOCS.some(f => f.category === c && (!uhdbOnly || f.source === 'uhdb')))
+    : PATH_CATEGORIES.filter(c => PATHWAY_DOCS.some(f => f.category === c && srcMatch(f)))
   const labelFor = (c: string) => isReferral ? c : (PATH_LABELS[c] ?? c)
 
   // ── PDF viewer ──
   if (openDoc) {
+    const tip = openDoc.referral ? guidanceForForm(openDoc.referral) : null
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 14px', backgroundColor: NAVY, color: '#fff', flexShrink: 0 }}>
@@ -115,7 +128,20 @@ export default function FormsTab({ formOpenReq }: { formOpenReq?: { id: string; 
           <div style={{ flex: 1, fontSize: 13, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{openDoc.title}</div>
           <a href={openDoc.url} target="_blank" rel="noopener noreferrer" style={{ background: 'rgba(255,255,255,0.15)', borderRadius: 8, padding: '5px 12px', color: '#fff', fontSize: 12, textDecoration: 'none', fontWeight: 600, whiteSpace: 'nowrap' }}>↗ Open</a>
         </div>
+        {/* Contextual "how to send" banner (referral forms only) */}
+        {tip && (
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: 9, padding: '8px 14px', backgroundColor: '#fffaf0', borderBottom: '1px solid #f0e0c0', flexShrink: 0, flexWrap: 'wrap' }}>
+            <span style={{ fontSize: 15, lineHeight: 1.3 }}>📮</span>
+            <div style={{ flex: 1, minWidth: 200, fontSize: 12.5, color: '#7b4a12', lineHeight: 1.45 }}>
+              <b style={{ color: '#92400e' }}>How to send:</b> {tip.method}
+              {tip.email && <> — <a href={`mailto:${tip.email}`} style={{ color: '#2b6cb0', fontWeight: 600 }}>{tip.email}</a></>}
+              {tip.note && <div style={{ marginTop: 2, color: '#8a6d3b' }}>{tip.note}</div>}
+            </div>
+            <button onClick={() => setShowGuidance(true)} style={{ border: '1px solid #e0c88a', background: '#fff', color: '#92400e', borderRadius: 8, padding: '4px 10px', fontSize: 11.5, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap' }}>Full guidance →</button>
+          </div>
+        )}
         <iframe src={openDoc.url} style={{ flex: 1, border: 'none', width: '100%' }} title={openDoc.title} />
+        {showGuidance && <ReferralGuidance onClose={() => setShowGuidance(false)} />}
       </div>
     )
   }
@@ -162,7 +188,7 @@ export default function FormsTab({ formOpenReq }: { formOpenReq?: { id: string; 
 
       {/* Facet filters (referral only) */}
       {showFacets && (
-        <div style={{ display: 'flex', gap: 6, padding: '2px 12px 6px', flexShrink: 0, backgroundColor: '#fff', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: 6, padding: '2px 12px 6px', flexShrink: 0, backgroundColor: '#fff', flexWrap: 'wrap', alignItems: 'center' }}>
           <FacetSelect label="Trust" value={trust} setValue={setTrust} options={REFERRAL_TRUSTS} />
           <FacetSelect label="Provider" value={provider} setValue={setProvider} options={REFERRAL_PROVIDERS} />
           <FacetSelect label="Age" value={age} setValue={setAge} options={['Adult', 'Child']} />
@@ -170,21 +196,32 @@ export default function FormsTab({ formOpenReq }: { formOpenReq?: { id: string; 
             <button onClick={() => { setTrust(''); setProvider(''); setAge('') }}
               style={{ border: 'none', background: 'none', color: NAVY, fontSize: 12, fontWeight: 600, cursor: 'pointer', padding: '4px 6px' }}>Clear filters ✕</button>
           )}
+          <button onClick={() => setShowGuidance(true)} title="How to process referrals (Lexacom, Accumail, e-RS, emails)"
+            style={{ marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: 6, padding: '5px 11px', borderRadius: 8, border: '1.5px solid #e0c88a', background: '#fffaf0', color: '#92400e', fontSize: 12.5, fontWeight: 700, cursor: 'pointer' }}>
+            📮 How to send referrals
+          </button>
         </div>
       )}
 
-      {/* UHDB shared-care toggle (pathways only) */}
+      {/* Source filter (pathways only) */}
       {!isReferral && (
-        <div style={{ display: 'flex', gap: 6, padding: '2px 12px 6px', flexShrink: 0, backgroundColor: '#fff', alignItems: 'center' }}>
-          <button onClick={() => setUhdbOnly(v => !v)} style={{
-            display: 'inline-flex', alignItems: 'center', gap: 6, padding: '5px 11px', borderRadius: 20, cursor: 'pointer',
-            border: `1.5px solid ${uhdbOnly ? '#2b6cb0' : '#dde6f0'}`, background: uhdbOnly ? '#2b6cb0' : '#fff',
-            color: uhdbOnly ? '#fff' : '#475569', fontSize: 12, fontWeight: uhdbOnly ? 700 : 600, transition: 'all 0.12s',
-          }}>
-            🧪 UHDB shared-care results
-            <span style={{ fontSize: 10.5, opacity: 0.75 }}>{SHARED_CARE.length}</span>
-          </button>
-          <span style={{ fontSize: 11, color: '#94a3b8' }}>result & abnormality protocols</span>
+        <div style={{ display: 'flex', gap: 6, padding: '2px 12px 6px', flexShrink: 0, backgroundColor: '#fff', alignItems: 'center', flexWrap: 'wrap' }}>
+          <span style={{ fontSize: 11, color: '#94a3b8', fontWeight: 600 }}>Source:</span>
+          {(['', 'pil', 'uhdb', 'darwin'] as const).map(s => {
+            const on = sourceFilter === s
+            const label = s === '' ? 'All' : SOURCE_LABELS[s]
+            const n = s === '' ? PATHWAY_DOCS.length : PATHWAY_DOCS.filter(f => s === 'pil' ? !f.source : f.source === s).length
+            return (
+              <button key={s || 'all'} onClick={() => setSourceFilter(s)} style={{
+                display: 'inline-flex', alignItems: 'center', gap: 5, padding: '4px 10px', borderRadius: 20, cursor: 'pointer',
+                border: `1.5px solid ${on ? '#2b6cb0' : '#dde6f0'}`, background: on ? '#2b6cb0' : '#fff',
+                color: on ? '#fff' : '#475569', fontSize: 12, fontWeight: on ? 700 : 600, transition: 'all 0.12s',
+              }}>
+                {s === 'uhdb' ? '🧪 ' : s === 'darwin' ? '🏠 ' : ''}{label}
+                <span style={{ fontSize: 10, opacity: 0.7 }}>{n}</span>
+              </button>
+            )
+          })}
         </div>
       )}
 
@@ -209,10 +246,12 @@ export default function FormsTab({ formOpenReq }: { formOpenReq?: { id: string; 
             No {isReferral ? 'referral forms' : 'documents'} found{search ? ` for “${search}”` : ''}
           </div>
         ) : isReferral
-          ? (results as ReferralForm[]).map(f => <ReferralCard key={f.id} form={f} onOpen={() => setOpenDoc({ title: f.title, url: f.url })} />)
-          : (results as typeof FORMS).map(f => <PathwayCard key={f.id} form={f} onOpen={() => setOpenDoc({ title: f.title, url: f.url })} />)
+          ? (results as ReferralForm[]).map(f => <ReferralCard key={f.id} form={f} onOpen={() => setOpenDoc({ title: f.title, url: f.url, referral: f })} />)
+          : (results as GPForm[]).map(f => <PathwayCard key={f.id} form={f} onOpen={() => setOpenDoc({ title: f.title, url: f.url })} />)
         }
       </div>
+
+      {showGuidance && <ReferralGuidance onClose={() => setShowGuidance(false)} />}
     </div>
   )
 }
@@ -259,16 +298,17 @@ function ReferralCard({ form, onOpen }: { form: ReferralForm; onOpen: () => void
 function PathwayCard({ form, onOpen }: { form: GPForm; onOpen: () => void }) {
   const [hovered, setHovered] = useState(false)
   const color = catColor(form.category)
-  const isUhdb = form.source === 'uhdb'
+  const icon = form.source === 'uhdb' ? '🧪' : form.source === 'darwin' ? '🏠' : '📄'
   return (
     <div onClick={onOpen} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
       style={{ background: hovered ? '#f0f5ff' : '#fff', border: `1px solid ${hovered ? '#b3c8f0' : '#e2ecf7'}`, borderRadius: 10, padding: '10px 12px', cursor: 'pointer', transition: 'all 0.12s', display: 'flex', alignItems: 'flex-start', gap: 10 }}>
-      <div style={{ flexShrink: 0, width: 36, height: 36, borderRadius: 8, background: color + '18', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>{isUhdb ? '🧪' : '📄'}</div>
+      <div style={{ flexShrink: 0, width: 36, height: 36, borderRadius: 8, background: color + '18', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>{icon}</div>
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ fontSize: 13, fontWeight: 600, color: '#1e293b', lineHeight: 1.3, marginBottom: 4 }}>{form.title}</div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
           <Badge text={PATH_LABELS[form.category] ?? form.category} color={color} solid />
-          {isUhdb && <Badge text="UHDB shared care" color="#2b6cb0" title="UHDB shared-care result protocol" />}
+          {form.source === 'uhdb' && <Badge text="UHDB shared care" color="#2b6cb0" title="UHDB shared-care result protocol" />}
+          {form.source === 'darwin' && <Badge text="Darwin practice" color="#334155" title="Darwin practice-specific document" />}
         </div>
       </div>
       <div style={{ flexShrink: 0, color: '#94a3b8', fontSize: 16, alignSelf: 'center' }}>›</div>

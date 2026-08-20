@@ -3,6 +3,7 @@ import { NOTES } from '../data/notes'
 import type { Note } from '../data/notes'
 import { FORMS } from '../data/forms'
 import { SHARED_CARE } from '../data/sharedCare'
+import { EXTRA_DOCS } from '../data/extraDocs'
 import { REFERRAL_FORMS } from '../data/referralForms'
 import { LINK_CATEGORIES } from '../data/links'
 import { SYMPTOMS } from '../data/symptoms'
@@ -350,9 +351,10 @@ const referralFuse = new Fuse(referralCorpus, {
 })
 
 // ── Forms (pathways / PILs + UHDB shared-care result protocols) ─────────────
-const formsCorpus = [...FORMS, ...SHARED_CARE].map(f => ({
+const formsCorpus = [...FORMS, ...SHARED_CARE, ...EXTRA_DOCS].map(f => ({
   id:       f.id,
-  label:    f.source === 'uhdb' ? `${f.title} (UHDB shared care)` : f.title,
+  label:    f.source === 'uhdb' ? `${f.title} (UHDB shared care)`
+          : f.source === 'darwin' ? `${f.title} (Darwin practice)` : f.title,
   category: f.category,
   url:      f.url,
   keywords: f.keywords,
