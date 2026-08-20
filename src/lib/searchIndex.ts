@@ -2,10 +2,11 @@ import Fuse from 'fuse.js'
 import { NOTES } from '../data/notes'
 import type { Note } from '../data/notes'
 import { FORMS } from '../data/forms'
+import { REFERRAL_FORMS } from '../data/referralForms'
 import { LINK_CATEGORIES } from '../data/links'
 import { SYMPTOMS } from '../data/symptoms'
 
-export type ResultKind = 'note' | 'form' | 'link' | 'calculator' | 'symptom'
+export type ResultKind = 'note' | 'referral' | 'form' | 'link' | 'calculator' | 'symptom'
 
 export interface UnifiedResult {
   kind: ResultKind
@@ -324,7 +325,30 @@ function runNoteSearch(q: string, maxN: number): UnifiedResult[] {
   }).slice(0, maxN)
 }
 
-// ── Forms ──────────────────────────────────────────────────────────────────
+// ── Referral forms (local SES) ──────────────────────────────────────────────
+const referralCorpus = REFERRAL_FORMS.map(f => ({
+  id:       f.id,
+  label:    f.title,
+  category: f.category,
+  trust:    f.trust ?? '',
+  url:      f.url,
+  keywords: f.keywords,
+}))
+
+const referralFuse = new Fuse(referralCorpus, {
+  keys: [
+    { name: 'label',    weight: 6 },
+    { name: 'category', weight: 1 },
+    { name: 'trust',    weight: 1 },
+    { name: 'keywords', weight: 1 },
+  ],
+  threshold: 0.38,
+  includeScore: true,
+  ignoreLocation: true,
+  minMatchCharLength: 2,
+})
+
+// ── Forms (pathways / PILs) ─────────────────────────────────────────────────
 const formsCorpus = FORMS.map(f => ({
   id:       f.id,
   label:    f.title,
@@ -413,7 +437,7 @@ const symptomsFuse = new Fuse(symptomsCorpus, {
 
 // ── Category labels (for form sublabels) ───────────────────────────────────
 const CAT_LABELS: Record<string, string> = {
-  Darwin: '📍 Darwin Referrals', Cardiology: 'Cardiology', Respiratory: 'Respiratory',
+  Cardiology: 'Cardiology', Respiratory: 'Respiratory',
   Derm: 'Dermatology', MH: 'Mental Health', Diabetes: 'Diabetes', MSK: 'MSK',
   Gastro: 'Gastro', Gynae: 'Gynaecology', Paeds: 'Paediatrics', Neuro: 'Neurology',
   Endocrine: 'Endocrine', Renal: 'Renal', Infection: 'Infection', Haem: 'Haematology',
@@ -426,12 +450,13 @@ const CAT_LABELS: Record<string, string> = {
 export function searchAll(query: string, maxPerKind = 4): {
   notes: UnifiedResult[]
   symptoms: UnifiedResult[]
+  referrals: UnifiedResult[]
   forms: UnifiedResult[]
   links: UnifiedResult[]
   calculators: UnifiedResult[]
 } {
   const q = query.trim()
-  if (q.length < 2) return { notes: [], symptoms: [], forms: [], links: [], calculators: [] }
+  if (q.length < 2) return { notes: [], symptoms: [], referrals: [], forms: [], links: [], calculators: [] }
 
   const notes = runNoteSearch(q, maxPerKind)
 
@@ -442,11 +467,18 @@ export function searchAll(query: string, maxPerKind = 4): {
     id:       r.item.id,
   }))
 
-  // Darwin forms first, then others
-  const formHits = formsFuse.search(q)
-  const darwin   = formHits.filter(r => r.item.category === 'Darwin')
-  const otherF   = formHits.filter(r => r.item.category !== 'Darwin')
-  const forms: UnifiedResult[] = [...darwin, ...otherF].slice(0, maxPerKind).map(r => ({
+  // Local SES referral forms
+  const referrals: UnifiedResult[] = referralFuse.search(q).slice(0, maxPerKind).map(r => ({
+    kind:     'referral',
+    label:    r.item.label,
+    sublabel: r.item.trust ? `${r.item.category} · ${r.item.trust}` : r.item.category,
+    id:       r.item.id,
+    formUrl:  r.item.url,
+    category: r.item.category,
+  }))
+
+  // Pathways / PILs
+  const forms: UnifiedResult[] = formsFuse.search(q).slice(0, maxPerKind).map(r => ({
     kind:     'form',
     label:    r.item.label,
     sublabel: CAT_LABELS[r.item.category] ?? r.item.category,
@@ -469,7 +501,7 @@ export function searchAll(query: string, maxPerKind = 4): {
     id:       r.item.id,
   }))
 
-  return { notes, symptoms, forms, links, calculators }
+  return { notes, symptoms, referrals, forms, links, calculators }
 }
 
 // ── Notes-tab search — returns more results with richer ranking ────────────
@@ -556,11 +588,10 @@ export function getBlockExcerpts(
   return results
 }
 
-// ── Related Darwin forms — used by AskTab after answer completes ───────────
+// ── Related local referral forms — used by AskTab after answer completes ───
 export function findRelatedForms(query: string, maxN = 3): Array<{ id: string; title: string; url: string }> {
-  return formsFuse
+  return referralFuse
     .search(query)
-    .filter(r => r.item.category === 'Darwin')
     .slice(0, maxN)
     .map(r => ({ id: r.item.id, title: r.item.label, url: r.item.url }))
 }

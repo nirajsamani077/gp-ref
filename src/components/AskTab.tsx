@@ -618,7 +618,7 @@ export default function AskTab({ pendingQuery, onClearPendingQuery }: AskTabProp
                   {msg.relatedForms && msg.relatedForms.length > 0 && (
                     <div style={{ marginTop: 10, maxWidth: '92%' }}>
                       <div style={{ fontSize: 10, color: '#64748b', marginBottom: 6, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                        📋 Darwin Forms
+                        🏥 Referral Forms
                       </div>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
                         {msg.relatedForms.map(form => (

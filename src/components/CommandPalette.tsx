@@ -15,7 +15,8 @@ interface Props {
 const KIND_META: Record<string, { icon: string; section: string }> = {
   note:       { icon: '📝', section: 'Notes' },
   symptom:    { icon: '🩺', section: 'Symptoms & DDx' },
-  form:       { icon: '📋', section: 'Forms' },
+  referral:   { icon: '🏥', section: 'Referral Forms' },
+  form:       { icon: '📋', section: 'Pathways & Guidance' },
   link:       { icon: '🔗', section: 'Links' },
   calculator: { icon: '🧮', section: 'Calculators' },
 }
@@ -65,7 +66,7 @@ function PdfViewer({
 export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: Props) {
   const [query, setQuery]   = useState('')
   const [results, setResults] = useState<ReturnType<typeof searchAll>>({
-    notes: [], symptoms: [], forms: [], links: [], calculators: [],
+    notes: [], symptoms: [], referrals: [], forms: [], links: [], calculators: [],
   })
   const [activeIdx, setActiveIdx] = useState(0)
   const [pdf, setPdf] = useState<{ url: string; title: string } | null>(null)
@@ -76,9 +77,9 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
   const flatItems: Array<{ type: 'ask' } | (UnifiedResult & { _flatIdx: number })> = []
   if (hasQuery) flatItems.push({ type: 'ask' })
 
-  const SECTION_ORDER = ['note', 'symptom', 'form', 'link', 'calculator'] as const
+  const SECTION_ORDER = ['note', 'symptom', 'referral', 'form', 'link', 'calculator'] as const
   const allResults: UnifiedResult[] = [
-    ...results.notes, ...results.symptoms, ...results.forms, ...results.links, ...results.calculators,
+    ...results.notes, ...results.symptoms, ...results.referrals, ...results.forms, ...results.links, ...results.calculators,
   ]
   allResults.forEach(r => flatItems.push({ ...r, _flatIdx: flatItems.length }))
 
@@ -134,6 +135,7 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
         window.dispatchEvent(new CustomEvent('navigate-symptom', { detail: { id: r.id } }))
         onClose()
         break
+      case 'referral':
       case 'form':
         if (r.formUrl) setPdf({ url: r.formUrl, title: r.label })
         break
@@ -176,6 +178,7 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
       kind,
       items: kind === 'note'       ? results.notes
            : kind === 'symptom'    ? results.symptoms
+           : kind === 'referral'   ? results.referrals
            : kind === 'form'       ? results.forms
            : kind === 'link'       ? results.links
            : results.calculators,
@@ -242,7 +245,7 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
             value={query}
             onChange={e => setQuery(e.target.value)}
             onKeyDown={handleKey}
-            placeholder="Search notes, symptoms, forms, links, calculators…"
+            placeholder="Search notes, symptoms, referral forms, pathways…"
             style={{
               flex: 1, border: 'none', outline: 'none',
               fontSize: 16, color: '#1e293b', fontFamily: 'inherit',
@@ -310,7 +313,7 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
                 Search everything
               </div>
               <div style={{ fontSize: 13, color: '#94a3b8', marginTop: 6, lineHeight: 1.5 }}>
-                Notes · Symptoms · Forms · Links · Calculators<br />
+                Notes · Symptoms · Referral forms · Pathways · Links · Calculators<br />
                 or just type a clinical question for AI
               </div>
             </div>
@@ -338,7 +341,7 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
                 {items.map(item => {
                   const myIdx = idxMap.get(item.kind + item.id) ?? 0
                   const isActive = activeIdx === myIdx
-                  const isDarwin = item.category === 'Darwin'
+                  const isReferral = item.kind === 'referral'
                   return (
                     <button
                       key={item.kind + item.id}
@@ -355,11 +358,11 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
                       {/* Icon */}
                       <div style={{
                         width: 34, height: 34, borderRadius: 8, flexShrink: 0,
-                        background: isDarwin ? '#1a365d1a' : '#f0f4f8',
+                        background: isReferral ? '#1a365d14' : '#f0f4f8',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                         fontSize: 16,
                       }}>
-                        {isDarwin ? '🏥' : meta.icon}
+                        {meta.icon}
                       </div>
 
                       {/* Label + sublabel + snippet */}
@@ -386,7 +389,7 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
 
                       {/* Action hint */}
                       <span style={{ flexShrink: 0, fontSize: 11, color: '#94a3b8' }}>
-                        {item.kind === 'form'       ? 'View PDF →' :
+                        {item.kind === 'form' || item.kind === 'referral' ? 'View PDF →' :
                          item.kind === 'link'       ? '↗ Open'     :
                          item.kind === 'calculator' ? '→ Open'     :
                          '→'}
