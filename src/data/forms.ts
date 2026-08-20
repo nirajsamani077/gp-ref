@@ -4,6 +4,8 @@ export interface GPForm {
   category: string
   url: string
   keywords: string
+  /** 'uhdb' marks a UHDB shared-care result protocol (badged & filterable). */
+  source?: 'uhdb'
 }
 
 export const FORMS: GPForm[] = [

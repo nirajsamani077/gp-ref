@@ -1,9 +1,21 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
-import type { Note } from '../data/notes'
+import type { Note, ContentBlock } from '../data/notes'
 import { NOTES } from '../data/notes'
 import { searchNotesForTab } from '../lib/searchIndex'
 import { getSpecialtyStyle, SPECIALTY_STYLES } from '../data/specialties'
+import { NOTE_SHARED_CARE } from '../data/noteSharedCare'
 import NoteRenderer from './NoteRenderer'
+
+/** Append a UHDB shared-care protocol link block when the note has a mapping. */
+function blocksWithSharedCare(note: Note): ContentBlock[] {
+  const links = NOTE_SHARED_CARE[note.id]
+  if (!links || links.length === 0) return note.content
+  return [
+    ...note.content,
+    { type: 'heading', level: 3, text: '🧪 Local UHDB shared-care protocol' },
+    { type: 'linkrow', links: links.map(l => ({ label: l.label, url: `form:${l.id}` })) },
+  ]
+}
 
 /* ───────────────────────── search helpers ───────────────────────── */
 
@@ -448,7 +460,7 @@ function NotePane({ note, highlight, autoJump, isFav, onToggleFav, showBack, onB
         {/* body — NoteRenderer handles live highlighting + match navigator */}
         <NoteRenderer
           key={note.id}
-          blocks={note.content}
+          blocks={blocksWithSharedCare(note)}
           searchQuery={highlight}
           autoJump={autoJump}
           jumpToBlock={null}

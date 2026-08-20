@@ -26,6 +26,7 @@ export default function App() {
   const [highlightedNoteId, setHighlightedNoteId]       = useState<string | null>(null)
   const [highlightedNoteQuery, setHighlightedNoteQuery] = useState<string | undefined>(undefined)
   const [highlightedSymptomId, setHighlightedSymptomId] = useState<string | null>(null)
+  const [formOpenReq, setFormOpenReq]       = useState<{ id: string; seq: number } | null>(null)
   const [noteBackRef, setNoteBackRef]       = useState<{ id: string; name: string } | null>(null)
   const [paletteOpen, setPaletteOpen]       = useState(false)
   const [pendingAskQuery, setPendingAskQuery] = useState<string | undefined>(undefined)
@@ -116,6 +117,20 @@ export default function App() {
     return () => window.removeEventListener('navigate-symptom', handler)
   }, [])
 
+  // Listen for in-note form/protocol link clicks (form:<id> linkrow)
+  useEffect(() => {
+    function handler(e: Event) {
+      const detail = (e as CustomEvent).detail
+      const id = typeof detail === 'string' ? detail : (detail?.id ?? '')
+      if (!id) return
+      setActiveTab('forms')
+      // seq bump guarantees FormsTab re-opens even when the same id is re-clicked
+      setFormOpenReq(r => ({ id, seq: (r?.seq ?? 0) + 1 }))
+    }
+    window.addEventListener('navigate-form', handler)
+    return () => window.removeEventListener('navigate-form', handler)
+  }, [])
+
   return (
     <div style={{
       display: 'flex', flexDirection: 'column',
@@ -139,6 +154,7 @@ export default function App() {
           highlightedNoteId={highlightedNoteId}
           highlightedNoteQuery={highlightedNoteQuery}
           highlightedSymptomId={highlightedSymptomId}
+          formOpenReq={formOpenReq}
           noteBackRef={noteBackRef}
           onBackToSymptom={handleBackToSymptom}
           pendingAskQuery={pendingAskQuery}

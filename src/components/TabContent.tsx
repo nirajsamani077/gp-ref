@@ -17,13 +17,14 @@ interface Props {
   highlightedNoteId?: string | null
   highlightedNoteQuery?: string
   highlightedSymptomId?: string | null
+  formOpenReq?: { id: string; seq: number } | null
   noteBackRef?: { id: string; name: string } | null
   onBackToSymptom?: () => void
   pendingAskQuery?: string
   onClearPendingAskQuery?: () => void
 }
 
-export default function TabContent({ active, highlightedLinkUrl, highlightedCalcId, highlightedNoteId, highlightedNoteQuery, highlightedSymptomId, noteBackRef, onBackToSymptom, pendingAskQuery, onClearPendingAskQuery }: Props) {
+export default function TabContent({ active, highlightedLinkUrl, highlightedCalcId, highlightedNoteId, highlightedNoteQuery, highlightedSymptomId, formOpenReq, noteBackRef, onBackToSymptom, pendingAskQuery, onClearPendingAskQuery }: Props) {
   if (active === 'notes') {
     return (
       <main style={{ flex: 1, overflow: 'hidden', backgroundColor: '#f7f9fb', display: 'flex', flexDirection: 'column' }}>
@@ -49,7 +50,7 @@ export default function TabContent({ active, highlightedLinkUrl, highlightedCalc
   if (active === 'forms') {
     return (
       <main style={{ flex: 1, overflow: 'hidden', backgroundColor: '#f7f9fb', display: 'flex', flexDirection: 'column' }}>
-        <FormsTab />
+        <FormsTab formOpenReq={formOpenReq} />
       </main>
     )
   }

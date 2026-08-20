@@ -1,5 +1,7 @@
-import { useState, useMemo, useRef } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import { FORMS } from '../data/forms'
+import type { GPForm } from '../data/forms'
+import { SHARED_CARE } from '../data/sharedCare'
 import { REFERRAL_FORMS, REFERRAL_CATEGORIES, REFERRAL_TRUSTS, REFERRAL_PROVIDERS, TRUST_FULL } from '../data/referralForms'
 import type { ReferralForm } from '../data/referralForms'
 
@@ -8,13 +10,16 @@ const NAVY = '#1a365d'
 type Mode = 'referral' | 'pathway'
 interface OpenDoc { title: string; url: string }
 
-// ── Pathways (existing PILs) category labels ────────────────────────────────
+// Pathways view = existing PILs + UHDB shared-care result protocols
+const PATHWAY_DOCS: GPForm[] = [...FORMS, ...SHARED_CARE]
+
+// ── Pathways category labels ────────────────────────────────────────────────
 const PATH_LABELS: Record<string, string> = {
   Cardiology: 'Cardiology', Respiratory: 'Respiratory', Derm: 'Dermatology', MH: 'Mental Health',
   Diabetes: 'Diabetes', MSK: 'MSK', Gastro: 'Gastro', Gynae: 'Gynaecology', Paeds: 'Paediatrics',
   Neuro: 'Neurology', Endocrine: 'Endocrine', Renal: 'Renal', Infection: 'Infection', Haem: 'Haematology',
   Urology: 'Urology', ENT: 'ENT', Ophthalmology: 'Ophthalmology', Breast: 'Breast', Rheumatology: 'Rheumatology',
-  Palliative: 'Palliative', Meds: 'Medications', Surgical: 'Surgical', UGI: 'Upper GI', DVLA: 'DVLA',
+  Allergy: 'Allergy', Palliative: 'Palliative', Meds: 'Medications', Surgical: 'Surgical', UGI: 'Upper GI', DVLA: 'DVLA',
 }
 const PATH_CATEGORIES = Object.keys(PATH_LABELS)
 
@@ -29,7 +34,7 @@ const CAT_COLORS: Record<string, string> = {
   Derm: '#d69e2e', MH: '#805ad5', Diabetes: '#38a169', MSK: '#dd6b20', Gynae: '#d53f8c', Paeds: '#00b5d8',
   Neuro: '#6b46c1', Endocrine: '#2f855a', Renal: '#2b6cb0', Infection: '#c53030', Haem: '#9b2335',
   Urology: '#2c7a7b', ENT: '#285e61', Ophthalmology: '#553c9a', Breast: '#b83280', Rheumatology: '#744210',
-  Meds: '#1a365d', Surgical: '#2d3748', UGI: '#7b341e', DVLA: '#4a5568',
+  Allergy: '#65a30d', Meds: '#1a365d', Surgical: '#2d3748', UGI: '#7b341e', DVLA: '#4a5568',
 }
 const catColor = (c: string) => CAT_COLORS[c] ?? '#64748b'
 
@@ -45,18 +50,28 @@ function scoreReferral(f: ReferralForm, q: string, tokens: string[]): number {
   return 120 // matched only via keywords / facets
 }
 
-export default function FormsTab() {
+export default function FormsTab({ formOpenReq }: { formOpenReq?: { id: string; seq: number } | null }) {
   const [mode, setMode]             = useState<Mode>('referral')
   const [search, setSearch]         = useState('')
   const [cat, setCat]               = useState<string | null>(null)
   const [trust, setTrust]           = useState<string>('')
   const [provider, setProvider]     = useState<string>('')
   const [age, setAge]               = useState<string>('')
+  const [uhdbOnly, setUhdbOnly]     = useState(false)
   const [openDoc, setOpenDoc]       = useState<OpenDoc | null>(null)
   const [isMobile]                  = useState(() => window.innerWidth < 768)
   const searchRef                   = useRef<HTMLInputElement>(null)
 
-  const switchMode = (m: Mode) => { setMode(m); setCat(null); setTrust(''); setProvider(''); setAge('') }
+  const switchMode = (m: Mode) => { setMode(m); setCat(null); setTrust(''); setProvider(''); setAge(''); setUhdbOnly(false) }
+
+  // Open a specific doc when linked from a note (form:<id> cross-link)
+  useEffect(() => {
+    const reqId = formOpenReq?.id
+    if (!reqId) return
+    const ref = REFERRAL_FORMS.find(f => f.id === reqId)
+    const doc = ref ?? PATHWAY_DOCS.find(f => f.id === reqId)
+    if (doc) { setMode(ref ? 'referral' : 'pathway'); setOpenDoc({ title: doc.title, url: doc.url }) }
+  }, [formOpenReq?.seq, formOpenReq?.id])
 
   // ── Referral results ──
   const referralResults = useMemo(() => {
@@ -73,21 +88,22 @@ export default function FormsTab() {
     return rows.map(x => x.f)
   }, [search, cat, trust, provider, age])
 
-  // ── Pathway results ──
+  // ── Pathway results (PILs + UHDB shared-care) ──
   const pathwayResults = useMemo(() => {
     const q = search.toLowerCase().trim()
-    return FORMS.filter(f => {
+    return PATHWAY_DOCS.filter(f => {
       const catMatch = !cat || f.category === cat
+      const uhdbMatch = !uhdbOnly || f.source === 'uhdb'
       const sMatch = !q || f.title.toLowerCase().includes(q) || f.keywords.includes(q) || f.category.toLowerCase().includes(q)
-      return catMatch && sMatch
+      return catMatch && uhdbMatch && sMatch
     })
-  }, [search, cat, mode])
+  }, [search, cat, uhdbOnly])
 
   const isReferral = mode === 'referral'
   const results = isReferral ? referralResults : pathwayResults
   const catList = isReferral
     ? REFERRAL_CATEGORIES.filter(c => REFERRAL_FORMS.some(f => f.category === c))
-    : PATH_CATEGORIES.filter(c => FORMS.some(f => f.category === c))
+    : PATH_CATEGORIES.filter(c => PATHWAY_DOCS.some(f => f.category === c && (!uhdbOnly || f.source === 'uhdb')))
   const labelFor = (c: string) => isReferral ? c : (PATH_LABELS[c] ?? c)
 
   // ── PDF viewer ──
@@ -114,7 +130,7 @@ export default function FormsTab() {
         {(['referral', 'pathway'] as Mode[]).map(m => {
           const on = mode === m
           const label = m === 'referral' ? `Referral forms` : 'Pathways & guidance'
-          const count = m === 'referral' ? REFERRAL_FORMS.length : FORMS.length
+          const count = m === 'referral' ? REFERRAL_FORMS.length : PATHWAY_DOCS.length
           return (
             <button key={m} onClick={() => switchMode(m)} style={{
               flex: 1, padding: '9px 12px', borderRadius: 10, cursor: 'pointer',
@@ -154,6 +170,21 @@ export default function FormsTab() {
             <button onClick={() => { setTrust(''); setProvider(''); setAge('') }}
               style={{ border: 'none', background: 'none', color: NAVY, fontSize: 12, fontWeight: 600, cursor: 'pointer', padding: '4px 6px' }}>Clear filters ✕</button>
           )}
+        </div>
+      )}
+
+      {/* UHDB shared-care toggle (pathways only) */}
+      {!isReferral && (
+        <div style={{ display: 'flex', gap: 6, padding: '2px 12px 6px', flexShrink: 0, backgroundColor: '#fff', alignItems: 'center' }}>
+          <button onClick={() => setUhdbOnly(v => !v)} style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6, padding: '5px 11px', borderRadius: 20, cursor: 'pointer',
+            border: `1.5px solid ${uhdbOnly ? '#2b6cb0' : '#dde6f0'}`, background: uhdbOnly ? '#2b6cb0' : '#fff',
+            color: uhdbOnly ? '#fff' : '#475569', fontSize: 12, fontWeight: uhdbOnly ? 700 : 600, transition: 'all 0.12s',
+          }}>
+            🧪 UHDB shared-care results
+            <span style={{ fontSize: 10.5, opacity: 0.75 }}>{SHARED_CARE.length}</span>
+          </button>
+          <span style={{ fontSize: 11, color: '#94a3b8' }}>result & abnormality protocols</span>
         </div>
       )}
 
@@ -225,16 +256,20 @@ function ReferralCard({ form, onOpen }: { form: ReferralForm; onOpen: () => void
 }
 
 // ── Pathway card ────────────────────────────────────────────────────────────
-function PathwayCard({ form, onOpen }: { form: typeof FORMS[number]; onOpen: () => void }) {
+function PathwayCard({ form, onOpen }: { form: GPForm; onOpen: () => void }) {
   const [hovered, setHovered] = useState(false)
   const color = catColor(form.category)
+  const isUhdb = form.source === 'uhdb'
   return (
     <div onClick={onOpen} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
       style={{ background: hovered ? '#f0f5ff' : '#fff', border: `1px solid ${hovered ? '#b3c8f0' : '#e2ecf7'}`, borderRadius: 10, padding: '10px 12px', cursor: 'pointer', transition: 'all 0.12s', display: 'flex', alignItems: 'flex-start', gap: 10 }}>
-      <div style={{ flexShrink: 0, width: 36, height: 36, borderRadius: 8, background: color + '18', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>📄</div>
+      <div style={{ flexShrink: 0, width: 36, height: 36, borderRadius: 8, background: color + '18', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>{isUhdb ? '🧪' : '📄'}</div>
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ fontSize: 13, fontWeight: 600, color: '#1e293b', lineHeight: 1.3, marginBottom: 4 }}>{form.title}</div>
-        <Badge text={PATH_LABELS[form.category] ?? form.category} color={color} solid />
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+          <Badge text={PATH_LABELS[form.category] ?? form.category} color={color} solid />
+          {isUhdb && <Badge text="UHDB shared care" color="#2b6cb0" title="UHDB shared-care result protocol" />}
+        </div>
       </div>
       <div style={{ flexShrink: 0, color: '#94a3b8', fontSize: 16, alignSelf: 'center' }}>›</div>
     </div>

@@ -420,19 +420,29 @@ function Block({ block, blockIdx, onImageClick, searchQuery }: BlockProps) {
     case 'linkrow':
       return (
         <div {...bx} style={{ display: 'flex', flexWrap: 'wrap', gap: 8, margin: '0 0 14px' }}>
-          {block.links.map((link, i) => (
-            <a
-              key={i}
-              href={link.url.startsWith('/') ? resolveImg(link.url) : link.url}
-              target="_blank" rel="noopener noreferrer"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '6px 12px', backgroundColor: '#eef4fb', border: '1px solid #c3d9f0', borderRadius: 20, fontSize: 13, fontWeight: 600, color: '#2b6cb0', textDecoration: 'none', transition: 'background 0.15s, color 0.15s' }}
-              onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#2b6cb0'; e.currentTarget.style.color = '#fff' }}
-              onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#eef4fb'; e.currentTarget.style.color = '#2b6cb0' }}
-            >
-              <span style={{ fontSize: 14 }}>▶</span>
-              {link.label}
-            </a>
-          ))}
+          {block.links.map((link, i) => {
+            // `form:<id>` opens a referral form / protocol PDF in the Forms tab
+            const isForm = link.url.startsWith('form:')
+            const style = { display: 'inline-flex', alignItems: 'center', gap: 6, padding: '6px 12px', backgroundColor: '#eef4fb', border: '1px solid #c3d9f0', borderRadius: 20, fontSize: 13, fontWeight: 600, color: '#2b6cb0', textDecoration: 'none', cursor: 'pointer', transition: 'background 0.15s, color 0.15s' } as const
+            const hoverIn = (e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.backgroundColor = '#2b6cb0'; e.currentTarget.style.color = '#fff' }
+            const hoverOut = (e: React.MouseEvent<HTMLElement>) => { e.currentTarget.style.backgroundColor = '#eef4fb'; e.currentTarget.style.color = '#2b6cb0' }
+            if (isForm) {
+              const id = link.url.slice('form:'.length)
+              return (
+                <button key={i} onClick={() => window.dispatchEvent(new CustomEvent('navigate-form', { detail: { id } }))}
+                  style={style} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>
+                  <span style={{ fontSize: 14 }}>📄</span>{link.label}
+                </button>
+              )
+            }
+            return (
+              <a key={i} href={link.url.startsWith('/') ? resolveImg(link.url) : link.url}
+                target="_blank" rel="noopener noreferrer"
+                style={style} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>
+                <span style={{ fontSize: 14 }}>▶</span>{link.label}
+              </a>
+            )
+          })}
         </div>
       )
 

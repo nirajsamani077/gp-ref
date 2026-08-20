@@ -2,6 +2,7 @@ import Fuse from 'fuse.js'
 import { NOTES } from '../data/notes'
 import type { Note } from '../data/notes'
 import { FORMS } from '../data/forms'
+import { SHARED_CARE } from '../data/sharedCare'
 import { REFERRAL_FORMS } from '../data/referralForms'
 import { LINK_CATEGORIES } from '../data/links'
 import { SYMPTOMS } from '../data/symptoms'
@@ -348,10 +349,10 @@ const referralFuse = new Fuse(referralCorpus, {
   minMatchCharLength: 2,
 })
 
-// ── Forms (pathways / PILs) ─────────────────────────────────────────────────
-const formsCorpus = FORMS.map(f => ({
+// ── Forms (pathways / PILs + UHDB shared-care result protocols) ─────────────
+const formsCorpus = [...FORMS, ...SHARED_CARE].map(f => ({
   id:       f.id,
-  label:    f.title,
+  label:    f.source === 'uhdb' ? `${f.title} (UHDB shared care)` : f.title,
   category: f.category,
   url:      f.url,
   keywords: f.keywords,
