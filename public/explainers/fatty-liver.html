@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en-GB" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Fatty Liver Explained</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap">
+<style>
+/* Layout: step bar, canvas stage (liver cells left, readout right), per-step controls, caption card. Same family as the other clinic explainers */
+:root{
+  --bg:#f6f8f8; --card:#ffffff; --ink:#15302e; --muted:#5a6e6c; --line:#d9e2e1; --accent:#0f6e64; --accent-bg:#dff1ee;
+  --stage:#eef4f6; --vessel:#f7e1dc; --label:#3d5452; --grid:#cbd8d6; --panel:#ffffff; --err:#a83a26;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1716; --card:#162120; --ink:#e3eeec; --muted:#9db1ae; --line:#2a3a38; --accent:#5cc7b8; --accent-bg:#173733;
+  --stage:#13201f; --vessel:#3a2522; --label:#b9cbc8; --grid:#2c3d3b; --panel:#182624; --err:#f4a38f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1716; --card:#162120; --ink:#e3eeec; --muted:#9db1ae; --line:#2a3a38; --accent:#5cc7b8; --accent-bg:#173733;
+  --stage:#13201f; --vessel:#3a2522; --label:#b9cbc8; --grid:#2c3d3b; --panel:#182624; --err:#f4a38f; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+.wrap{max-width:960px;margin:0 auto;padding-block:18px 36px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:14px}
+h1{font-family:var(--display);font-weight:700;font-size:1.8rem;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:2px 0 0;max-width:62ch}
+.steps{display:flex;flex-wrap:wrap;gap:8px}
+.steps button{font:inherit;font-size:.95rem;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.steps button[aria-current="true"]{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.ctl{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;align-items:end}
+.ctl:empty{display:none}
+.ctl label{display:flex;flex-direction:column;gap:4px;font-size:.85rem;color:var(--muted)}
+.ctl input{font:inherit;font-size:1.1rem;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);width:100%;box-sizing:border-box;font-variant-numeric:tabular-nums}
+.ctl .err{grid-column:1/-1;color:var(--err);font-size:.85rem;margin:0}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stage{background:var(--stage);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+canvas{display:block;width:100%;height:auto;max-width:100%}
+.cap{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 20px;align-items:start}
+.cap h2{font-family:var(--display);font-weight:700;font-size:1.35rem;margin:0}
+.cap p{margin:6px 0 0;max-width:62ch}
+.meas{background:var(--accent-bg);color:var(--accent);border-radius:10px;padding:10px 14px;font-weight:700;text-align:center;min-width:160px;max-width:230px}
+.meas small{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.nav{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap}
+.nav button{font:inherit;padding:8px 16px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.nav button.primary{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.foot{font-size:.8rem;color:var(--muted);margin:0;max-width:80ch}
+@media (max-width:560px){.cap{grid-template-columns:minmax(0,1fr)}.meas{text-align:left;max-width:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Fatty liver</h1>
+    <p class="sub">Your liver is the body's factory. It is made of millions of small cells, and each one can fill up with fat when there is more energy than the body needs.</p>
+  </header>
+  <nav class="steps" id="steps" aria-label="Steps"></nav>
+  <div class="stage"><canvas id="cv" role="img" aria-label="Animation of liver cells filling with fat, becoming inflamed and scarring"></canvas></div>
+  <div class="ctl" id="ctl"></div>
+  <section class="cap" aria-live="polite">
+    <div><h2 id="cTitle"></h2><p id="cText"></p></div>
+    <div class="meas"><small>What we check</small><span id="cMeas"></span></div>
+  </section>
+  <div class="nav">
+    <button type="button" id="prev">Previous</button>
+    <button type="button" id="replay">Replay</button>
+    <button type="button" id="next" class="primary">Next</button>
+  </div>
+  <p class="foot">Now called MASLD (metabolic dysfunction-associated steatotic liver disease), previously NAFLD. ALT can be normal even with significant fatty liver. FIB-4 = (age × AST) ÷ (platelets × √ALT); under 1.3 low risk of advanced fibrosis (use 2.0 if aged 65 or over), over 3.25 high risk; not validated under 35. Indeterminate results go on to an ELF blood test or FibroScan per NICE NG49 and local pathway. Weight loss of 7 to 10% improved inflammation, and 10% or more improved fibrosis in many patients (Vilar-Gomez 2015). Heart disease, not liver disease, is the commonest cause of death in people with fatty liver. Simplified for explaining results.</p>
+</div>
+
+<script>
+const STEPS=[
+ {k:'1 The factory',title:'The liver is the body\'s factory',meas:'Liver blood tests (LFTs)',dur:8,
+  text:'Everything you absorb from food goes to the liver first. Its cells store energy, make proteins, clear alcohol and medicines, and pack fat into the tankers that carry it round the body.'},
+ {k:'2 Fat builds up',title:'Fat builds up in the cells',meas:'Often normal blood tests. Seen on ultrasound',dur:9,
+  text:'When the fat cupboard under the skin is full, extra fat ends up stored inside liver cells. Sugary drinks and alcohol add to it. Once more than about 5% of the liver is fat, it is called fatty liver. It is very common, affecting around 1 in 4 adults, and usually causes no symptoms.'},
+ {k:'3 Irritation',title:'Irritation: why ALT goes up',meas:'ALT and GGT in the liver blood tests',dur:9,
+  text:'In some people the fat irritates the cells and they become inflamed. Stressed cells leak a substance called ALT into the blood, which is why it shows up on a blood test. ALT can also be normal even when there is a lot of fat, so a normal result doesn\'t rule it out.'},
+ {k:'4 Scarring',title:'Scarring builds up silently',meas:'Scarring risk score (FIB-4)',dur:10,
+  text:'Years of irritation leave scar tissue between the cells, and the liver gradually stiffens. Early scarring can heal. Heavy scarring, called cirrhosis, does not, and can lead to liver failure or liver cancer. There are usually no symptoms until late, which is why we check.'},
+ {k:'5 Checking for scarring',title:'Checking for scarring: FIB-4',meas:'FIB-4 from age, AST, ALT and platelets',dur:4,
+  text:'We can estimate the chance of scarring from four routine results. A low score means scarring is very unlikely. An unclear score needs a further blood test (ELF) or a FibroScan. A high score needs a liver specialist. Change the numbers to see where a result lands.'},
+ {k:'6 Reversing it',title:'Fatty liver can reverse',meas:'Weight, waist, liver tests and repeat FIB-4',dur:12,
+  text:'Liver fat is the first fat to go when you lose weight. Losing 5% of body weight cuts liver fat, 7 to 10% calms the inflammation, and 10% or more can let early scarring heal. Cutting sugary drinks and alcohol and being active all help. Your heart risk matters too, as it is the bigger danger.'},
+];
+const W=800,H=420;
+const cv=document.getElementById('cv'),cx=cv.getContext('2d');const dpr=Math.max(1,window.devicePixelRatio||1);
+cv.width=W*dpr;cv.height=H*dpr;cx.scale(dpr,dpr);
+const COL={cell:'#e9bfa6',cellLine:'#b67c62',nuc:'#8a4a3a',fat:'#f3d27a',fatLine:'#b8902c',inflam:'#d9453a',scar:'#8e8a86',alt:'#d9453a',tank:'#e9a32b',cab:'#3f4a48',glu:'#e8b923',gluLine:'#9c7a0c',green:'#3aa76d',amber:'#e1a72a',red:'#d9534a'};
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+const ease=p=>p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+const lerp=(a,b,p)=>a+(b-a)*p;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function rnd(seed){let s=seed;return()=>{s=(s*9301+49297)%233280;return s/233280}}
+function text(s,x,y,o={}){cx.font=`${o.b?'700 ':''}${o.s||14}px "Atkinson Hyperlegible", system-ui, sans-serif`;cx.fillStyle=o.c||css('--label');cx.textAlign=o.a||'left';cx.textBaseline='middle';cx.fillText(s,x,y)}
+function big(s,x,y,c,sz=40){cx.font=`700 ${sz}px "Bricolage Grotesque", system-ui, sans-serif`;cx.fillStyle=c||css('--ink');cx.textAlign='left';cx.textBaseline='middle';cx.fillText(s,x,y)}
+function rr(x,y,w,h,r,f,s,lw=1.5){cx.beginPath();cx.roundRect(x,y,w,h,r);if(f){cx.fillStyle=f;cx.fill()}if(s){cx.strokeStyle=s;cx.lineWidth=lw;cx.stroke()}}
+function note(s,x,y,c){cx.font='700 14px "Atkinson Hyperlegible", system-ui, sans-serif';const w=cx.measureText(s).width+24;rr(x-w/2,y-16,w,32,16,css('--card'),css('--line'),1);text(s,x,y,{s:14,b:1,a:'center',c:c||css('--ink')})}
+function glu(x,y,r=5){cx.fillStyle=COL.glu;cx.strokeStyle=COL.gluLine;cx.lineWidth=1;cx.beginPath();for(let i=0;i<6;i++){const a=Math.PI/3*i;cx.lineTo(x+r*Math.cos(a),y+r*Math.sin(a))}cx.closePath();cx.fill();cx.stroke()}
+function drop(x,y,r){cx.fillStyle=COL.fat;cx.strokeStyle=COL.fatLine;cx.lineWidth=1.2;cx.beginPath();cx.arc(x,y,r,0,7);cx.fill();cx.stroke()}
+function tanker(x,y){rr(x,y,44,18,4,COL.tank);rr(x+46,y+5,10,13,3,COL.cab);cx.fillStyle=COL.cab;cx.beginPath();cx.arc(x+8,y+21,3.5,0,7);cx.arc(x+50,y+21,3.5,0,7);cx.fill()}
+
+const R=34,HW=Math.sqrt(3)*R,OX=60,OY=62,COLS=7,ROWS=5;
+const cells=[];for(let r=0;r<ROWS;r++)for(let c=0;c<COLS;c++){cells.push({x:OX+c*HW+(r%2?HW/2:0),y:OY+r*1.5*R,r,c})}
+const rn=rnd(17);cells.forEach(c=>{c.f=rn();c.inf=rn();c.d=[[rn()*14-7,rn()*14-7],[rn()*14-7,rn()*14-7],[rn()*14-7,rn()*14-7]]});
+function hexPath(x,y,r){cx.beginPath();for(let i=0;i<6;i++){const a=Math.PI/180*(60*i-30);cx.lineTo(x+r*Math.cos(a),y+r*Math.sin(a))}cx.closePath()}
+const edges=[];cells.forEach(c=>{for(let i=0;i<6;i++){const a1=Math.PI/180*(60*i-30),a2=Math.PI/180*(60*(i+1)-30);edges.push([c.x+R*Math.cos(a1),c.y+R*Math.sin(a1),c.x+R*Math.cos(a2),c.y+R*Math.sin(a2),rn()])}});
+edges.sort((a,b)=>a[4]-b[4]);
+function liver(o){
+  const {fat=0,inflam=0,scar=0,T=0}=o;
+  cells.forEach(c=>{hexPath(c.x,c.y,R-2);cx.fillStyle=COL.cell;cx.fill();cx.strokeStyle=COL.cellLine;cx.lineWidth=1.2;cx.stroke();
+    const fv=clamp(fat*1.3-c.f*0.3);
+    if(fv>0){const sizes=[16,9,7];for(let k=0;k<3;k++){const rad=sizes[k]*fv;if(rad>1.5)drop(c.x+c.d[k][0],c.y+c.d[k][1],rad)}}
+    cx.fillStyle=COL.nuc;cx.beginPath();cx.arc(c.x+(fv>0.5?14:0),c.y+(fv>0.5?-14:0),5,0,7);cx.fill();
+    if(inflam>0&&c.inf<inflam){const pul=reduce?1:0.6+0.4*Math.sin(T*4+c.inf*10);hexPath(c.x,c.y,R-4);cx.strokeStyle=COL.inflam;cx.globalAlpha=pul;cx.lineWidth=3.5;cx.stroke();cx.globalAlpha=1}});
+  const n=Math.round(edges.length*scar);cx.strokeStyle=COL.scar;cx.lineCap='round';cx.lineWidth=7;
+  for(let i=0;i<n;i++){const e=edges[i];cx.beginPath();cx.moveTo(e[0],e[1]);cx.lineTo(e[2],e[3]);cx.stroke()}
+}
+function panel(){rr(560,30,220,350,14,css('--panel'),css('--line'),1)}
+
+let fib={age:58,ast:42,alt:55,plt:210};let fibPrev=null,fibT0=0;
+function fib4(){return (fib.age*fib.ast)/(fib.plt*Math.sqrt(fib.alt))}
+
+const DRAW=[
+ function factory(T){cx.clearRect(0,0,W,H);liver({fat:0.08,T});
+  for(let i=0;i<6;i++){const p=((T*0.35+i/6)%1);const x=lerp(80+i*70,cells[(i*5)%cells.length].x,p),y=lerp(14,cells[(i*5)%cells.length].y,p);cx.globalAlpha=1-p*0.6;i%2?drop(x,y,6):glu(x,y,6);cx.globalAlpha=1}
+  text('From your gut',300,14,{s:13,b:1,a:'center'});
+  for(let i=0;i<2;i++){const p=((T*0.25+i/2)%1);tanker(lerp(290,500,p),366+i*0);}
+  text('Fat packed into tankers',380,404,{s:13,b:1,a:'center'});
+  panel();text('Jobs',580,58,{s:15,b:1,c:css('--ink')});
+  ['Stores energy','Makes proteins','Clears alcohol and','medicines','Packs fat into tankers'].forEach((s,i)=>{const p=seg(T,0.4+i*0.5,0.9+i*0.5);cx.globalAlpha=p;text((i===3?'   ':'✓  ')+s,580,98+i*36,{s:14,b:1,c:COL.green});cx.globalAlpha=1});
+ },
+ function fat(T){const g=ease(seg(T,0.5,7.5));cx.clearRect(0,0,W,H);liver({fat:g,T});
+  if(T<7.5){for(let i=0;i<5;i++){const p=((T*0.6+i/5)%1);const c=cells[(i*7+3)%cells.length];drop(lerp(100+i*80,c.x,p),lerp(10,c.y,p),6)}}
+  text('Overflow from the fat cupboard, sugary drinks, alcohol',300,14,{s:13,b:1,a:'center'});
+  panel();text('Liver fat',580,58,{s:15,b:1,c:css('--ink')});
+  const pct=lerp(2,22,g);big(`${Math.round(pct)}%`,580,108,pct>=5?COL.amber:COL.green);
+  const bx=590,by=150,bh=200;rr(bx,by,30,bh,8,css('--grid'));rr(bx,by+bh-bh*(pct/30),30,bh*(pct/30),8,COL.fat,COL.fatLine,1);
+  const y5=by+bh-bh*(5/30);cx.setLineDash([4,4]);cx.strokeStyle=css('--ink');cx.lineWidth=1.5;cx.beginPath();cx.moveTo(bx-6,y5);cx.lineTo(bx+40,y5);cx.stroke();cx.setLineDash([]);
+  text('5%: fatty liver',bx+46,y5,{s:12,b:1});
+  if(pct>=5)text('Fatty liver',bx+46,by+20,{s:14,b:1,c:COL.amber});
+ },
+ function inflam(T){const g=ease(seg(T,0.5,6.5));cx.clearRect(0,0,W,H);liver({fat:1,inflam:g*0.55,T});
+  rr(30,368,500,40,20,css('--vessel'));text('Blood',48,388,{s:13,b:1});
+  const r=rnd(3);const n=Math.round(g*18);for(let i=0;i<n;i++){const c=cells.filter(c=>c.inf<0.55)[i%cells.filter(c=>c.inf<0.55).length];if(!c)break;const p=((T*0.5+r())%1);
+    const x=lerp(c.x,100+r()*400,p),y=lerp(c.y,388,p);cx.fillStyle=COL.alt;cx.beginPath();cx.arc(x,y,4.5,0,7);cx.fill()}
+  panel();text('ALT in the blood',580,58,{s:15,b:1,c:css('--ink')});
+  const alt=Math.round(lerp(25,82,g));big(String(alt),580,108,alt>45?COL.red:COL.green);text('units/L',580,140,{s:13});
+  text(alt>45?'Raised':'Normal range',580,170,{s:14,b:1,c:alt>45?COL.red:COL.green});
+  hexPath(600,230,18);cx.strokeStyle=COL.inflam;cx.lineWidth=3;cx.stroke();text('Irritated cell',626,230,{s:13});
+  cx.fillStyle=COL.alt;cx.beginPath();cx.arc(600,272,5,0,7);cx.fill();text('ALT leaking out',626,272,{s:13});
+ },
+ function scar(T){const g=ease(seg(T,0.5,8.5));cx.clearRect(0,0,W,H);liver({fat:1,inflam:0.4,scar:g*0.55,T});
+  panel();text('Scarring stage',580,58,{s:15,b:1,c:css('--ink')});
+  const st=Math.min(4,Math.floor(g*5));const lbl=['F0 none','F1 mild','F2 moderate','F3 severe','F4 cirrhosis'];
+  lbl.forEach((s,i)=>{const on=i<=st;rr(590,90+i*52,160,40,8,on?(i<2?COL.green:i<3?COL.amber:COL.red):css('--grid'));text(s,604,110+i*52,{s:14,b:1,c:on?'#ffffff':css('--label')})});
+  if(st>=2)note('Liver stiffening',300,392,COL.scar);
+  if(st===4)text('Does not heal',670,360,{s:13,b:1,a:'center',c:COL.red});else if(st>=1)text('Early scarring can heal',670,360,{s:13,b:1,a:'center',c:COL.green});
+ },
+ function fibStep(T){cx.clearRect(0,0,W,H);
+  const v=fib4();const ok=isFinite(v)&&v>0;const lowCut=fib.age>=65?2.0:1.3;
+  const bins=[{x:40,c:COL.green,t:'Low risk',s1:`Under ${lowCut}`,s2:'Recheck in a few years'},{x:290,c:COL.amber,t:'Unclear',s1:`${lowCut} to 3.25`,s2:'ELF blood test or FibroScan'},{x:540,c:COL.red,t:'High risk',s1:'Over 3.25',s2:'See a liver specialist'}];
+  const bi=!ok?-1:v<lowCut?0:v<=3.25?1:2;
+  bins.forEach((b,i)=>{const act=i===bi;rr(b.x,250,220,140,14,act?b.c:css('--panel'),b.c,act?0:2);
+    text(b.t,b.x+110,280,{s:18,b:1,a:'center',c:act?'#ffffff':b.c});text(b.s1,b.x+110,312,{s:14,b:1,a:'center',c:act?'#ffffff':css('--ink')});text(b.s2,b.x+110,340,{s:13,a:'center',c:act?'#ffffff':css('--label')})});
+  rr(220,20,360,110,14,css('--panel'),css('--line'),1);
+  text('FIB-4',240,44,{s:15,b:1,c:css('--ink')});
+  text(`(${fib.age} × ${fib.ast}) ÷ (${fib.plt} × √${fib.alt})`,240,74,{s:14});
+  big(ok?v.toFixed(2):'-',240,108,bi>=0?bins[bi].c:css('--ink'),30);
+  if(ok){const tx=bins[bi].x+110;const p=ease(seg(T,0.2,1.4));const y=lerp(140,235,p)+(p>=1?0:0);const x=lerp(400,tx,p);cx.fillStyle=bins[bi].c;cx.beginPath();cx.arc(x,y,12,0,7);cx.fill();
+    cx.setLineDash([4,5]);cx.strokeStyle=css('--grid');cx.lineWidth=2;cx.beginPath();cx.moveTo(400,132);cx.lineTo(tx,232);cx.stroke();cx.setLineDash([])}
+  if(fib.age>=65)text('Lower cut-off of 2.0 used for age 65 and over',400,410,{s:12,a:'center'});
+ },
+ function reverse(T){const g=ease(seg(T,0.5,10));cx.clearRect(0,0,W,H);
+  liver({fat:lerp(1,0.12,ease(seg(T,0.5,5))),inflam:lerp(0.4,0,ease(seg(T,3,8))),scar:lerp(0.3,0.1,ease(seg(T,6,10.5))),T});
+  panel();text('Weight lost',580,58,{s:15,b:1,c:css('--ink')});
+  const steps=[['5%','Less liver fat',0.5],['7 to 10%','Inflammation calms',3],['10%+','Early scarring heals',6]];
+  steps.forEach(([w,s,start],i)=>{const on=T>start+1;rr(580,90+i*80,180,62,10,on?COL.green:css('--grid'));big(w,594,112+i*80,on?'#ffffff':css('--label'),20);text(s,594,138+i*80,{s:13,b:1,c:on?'#ffffff':css('--label')})});
+  text('Also: fewer sugary drinks,',580,346,{s:12});text('less alcohol, more activity',580,364,{s:12});
+ },
+];
+
+let step=0,t0=performance.now();
+const stepsEl=document.getElementById('steps'),ctl=document.getElementById('ctl');
+STEPS.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.textContent=s.k;b.addEventListener('click',()=>go(i));stepsEl.appendChild(b)});
+function controls(){ctl.innerHTML='';if(step!==4)return;
+  const F=[['age','Age (years)',18,100,1],['ast','AST (units/L)',1,2000,1],['alt','ALT (units/L)',1,2000,1],['plt','Platelets (×10⁹/L)',1,1500,1]];
+  const err=document.createElement('p');err.className='err';err.hidden=true;
+  F.forEach(([k,l,mn,mx,st])=>{const lab=document.createElement('label');lab.htmlFor='f-'+k;lab.textContent=l;const i=document.createElement('input');i.type='number';i.id='f-'+k;i.min=mn;i.max=mx;i.step=st;i.inputMode='numeric';i.value=fib[k];
+    i.addEventListener('input',()=>{const n=parseFloat(i.value);if(isNaN(n)||n<mn||n>mx){err.textContent=`Enter ${l.split(' (')[0].toLowerCase()} between ${mn} and ${mx}.`;err.hidden=false;return}err.hidden=true;fib[k]=n;t0=performance.now()});lab.appendChild(i);ctl.appendChild(lab)});
+  ctl.appendChild(err);
+}
+function go(i){step=(i+STEPS.length)%STEPS.length;t0=performance.now();const s=STEPS[step];
+  [...stepsEl.children].forEach((b,j)=>b.setAttribute('aria-current',j===step?'true':'false'));
+  document.getElementById('cTitle').textContent=s.title;document.getElementById('cText').textContent=s.text;document.getElementById('cMeas').textContent=s.meas;
+  document.getElementById('next').textContent=step===STEPS.length-1?'Start again':'Next';controls()}
+document.getElementById('prev').addEventListener('click',()=>go(step-1));
+document.getElementById('next').addEventListener('click',()=>go(step+1));
+document.getElementById('replay').addEventListener('click',()=>go(step));
+function frame(now){const s=STEPS[step];let T=(now-t0)/1000;if(reduce)T=s.dur;else if(step!==4){T=T%(s.dur+2);T=Math.min(T,s.dur)}DRAW[step](T);requestAnimationFrame(frame)}
+go(0);requestAnimationFrame(frame);
+</script>
+
+</body>
+</html>

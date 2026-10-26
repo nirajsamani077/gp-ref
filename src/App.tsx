@@ -36,6 +36,8 @@ export default function App() {
     setNoteBackRef(null)
     if (tabId === 'notes' && activeTab === 'notes') {
       window.dispatchEvent(new CustomEvent('gpr-home'))
+    } else if (tabId === 'explainers' && activeTab === 'explainers') {
+      window.dispatchEvent(new CustomEvent('gpr-explainers-home'))
     } else {
       setActiveTab(tabId)
     }

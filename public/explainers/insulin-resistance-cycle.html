@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en-GB" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Insulin Resistance Cycle</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap">
+<style>
+/* Layout: step bar, canvas stage, caption card. Same family as Cholesterol Lorries and Sugar and Insulin */
+:root{
+  --bg:#f6f8f8; --card:#ffffff; --ink:#15302e; --muted:#5a6e6c; --line:#d9e2e1; --accent:#0f6e64; --accent-bg:#dff1ee;
+  --stage:#eef4f6; --vessel:#f7e1dc; --cellfill:#e3efe9; --cellline:#6f9c8a; --label:#3d5452; --grid:#cbd8d6; --frame:#8a7a5c;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1716; --card:#162120; --ink:#e3eeec; --muted:#9db1ae; --line:#2a3a38; --accent:#5cc7b8; --accent-bg:#173733;
+  --stage:#13201f; --vessel:#3a2522; --cellfill:#1d3029; --cellline:#6f9c8a; --label:#b9cbc8; --grid:#2c3d3b; --frame:#b8a57e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1716; --card:#162120; --ink:#e3eeec; --muted:#9db1ae; --line:#2a3a38; --accent:#5cc7b8; --accent-bg:#173733;
+  --stage:#13201f; --vessel:#3a2522; --cellfill:#1d3029; --cellline:#6f9c8a; --label:#b9cbc8; --grid:#2c3d3b; --frame:#b8a57e; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+.wrap{max-width:960px;margin:0 auto;padding-block:18px 36px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:14px}
+h1{font-family:var(--display);font-weight:700;font-size:1.8rem;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:2px 0 0;max-width:62ch}
+.steps{display:flex;flex-wrap:wrap;gap:8px}
+.steps button{font:inherit;font-size:.95rem;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.steps button[aria-current="true"]{background:var(--accent);border-color:var(--accent);color:var(--card)}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stage{background:var(--stage);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+canvas{display:block;width:100%;height:auto;max-width:100%}
+.cap{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 20px;align-items:start}
+.cap h2{font-family:var(--display);font-weight:700;font-size:1.35rem;margin:0}
+.cap p{margin:6px 0 0;max-width:62ch}
+.meas{background:var(--accent-bg);color:var(--accent);border-radius:10px;padding:10px 14px;font-weight:700;text-align:center;min-width:160px;max-width:230px}
+.meas small{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.nav{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap}
+.nav button{font:inherit;padding:8px 16px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.nav button.primary{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.foot{font-size:.8rem;color:var(--muted);margin:0;max-width:80ch}
+@media (max-width:560px){.cap{grid-template-columns:minmax(0,1fr)}.meas{text-align:left;max-width:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>How weight, insulin and sugar are linked</h1>
+    <p class="sub">Spare energy is stored as fat in a cupboard under the skin. Insulin is the key that lets sugar into cells. Step through to see what happens when the cupboard overflows.</p>
+  </header>
+  <nav class="steps" id="steps" aria-label="Steps"></nav>
+  <div class="stage"><canvas id="cv" role="img" aria-label="Animation of fat storage, insulin keys and cell locks"></canvas></div>
+  <section class="cap" aria-live="polite">
+    <div><h2 id="cTitle"></h2><p id="cText"></p></div>
+    <div class="meas"><small>What we check</small><span id="cMeas"></span></div>
+  </section>
+  <div class="nav">
+    <button type="button" id="prev">Previous</button>
+    <button type="button" id="replay">Replay</button>
+    <button type="button" id="next" class="primary">Next</button>
+  </div>
+  <p class="foot">Lifestyle change reduced progression from prediabetes to diabetes by 58% in the Diabetes Prevention Program (Knowler 2002). In DiRECT, nearly half of people with type 2 diabetes for under 6 years were in remission at 1 year after a structured weight-loss programme (Lean 2018). HbA1c 42 to 47 mmol/mol: offer referral to the NHS Diabetes Prevention Programme (Healthier You) via the GP. Simplified for explaining results.</p>
+</div>
+
+<script>
+const STEPS=[
+ {k:'1 Cupboard overflows',dur:10.5,title:'The fat cupboard overflows',meas:'Waist, triglycerides, liver tests (ALT)',
+  text:'Spare energy is stored as fat, first in a cupboard under the skin, which is fairly safe. Once it is full, fat overflows into the liver and muscles. A fatty liver also sends out extra fuel tankers, which is why triglycerides rise.'},
+ {k:'2 Fat jams the lock',dur:7,title:'Fat jams the lock',meas:'Not measured directly',
+  text:'Insulin is the key that unlocks cells so sugar can get in. Fat stuck inside the muscle and liver gums up the lock. The key goes in but won\'t turn, and sugar is left waiting outside. This is insulin resistance.'},
+ {k:'3 More keys',dur:8.5,title:'The key factory makes more keys',meas:'HbA1c, often still normal here',
+  text:'The pancreas is the key factory. To get the door open, it sends more and more keys. Eventually enough of them force it open, so blood sugar stays normal. This can go on quietly for years.'},
+ {k:'4 Vicious cycle',dur:9.5,title:'Too many keys feed the cupboard',meas:'Waist creeping up',
+  text:'All those extra keys also unlock the fat stores, so more sugar gets turned into fat, and high insulin can make you hungrier. More fat ends up in the liver and muscle, the locks jam further, and even more keys are needed.'},
+ {k:'5 Factory wears out',dur:9.5,title:'The key factory wears out',meas:'HbA1c: 42 to 47 prediabetes, 48 or more diabetes',
+  text:'After years of working overtime, the pancreas can\'t keep making so many keys. Fewer keys means sugar stays in the blood and builds up. HbA1c climbs into the prediabetes range and then into diabetes.'},
+ {k:'6 Unjamming the locks',dur:9.5,title:'Unjamming the locks',meas:'Weight, waist and HbA1c at follow-up',
+  text:'Losing 5 to 10% of body weight takes fat out of the liver first, then the muscles. The locks clear, one key works again, and the factory can rest. Moving your muscles also pulls sugar in without needing as much insulin. Prediabetes often goes back to normal.'},
+];
+const W=800,H=420;
+const cv=document.getElementById('cv'),cx=cv.getContext('2d');const dpr=Math.max(1,window.devicePixelRatio||1);
+cv.width=W*dpr;cv.height=H*dpr;cx.scale(dpr,dpr);
+const COL={glu:'#e8b923',gluLine:'#9c7a0c',key:'#1f9e8f',fat:'#f3d27a',fatLine:'#b8902c',panc:'#d98ba2',pancWorn:'#b8a7ac',pancInk:'#5e1e33',liver:'#9c4a37',lock:'#c9ced0',lockInk:'#3f4a48',tank:'#e9a32b',cab:'#3f4a48',smoke:'#b9c3c6',red:'#cf3f35',amber:'#e8b923',green:'#3aa76d'};
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+const ease=p=>p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+const lerp=(a,b,p)=>a+(b-a)*p;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function rnd(seed){let s=seed;return()=>{s=(s*9301+49297)%233280;return s/233280}}
+function text(s,x,y,o={}){cx.font=`${o.b?'700 ':''}${o.s||14}px "Atkinson Hyperlegible", system-ui, sans-serif`;cx.fillStyle=o.c||css('--label');cx.textAlign=o.a||'left';cx.textBaseline='middle';cx.fillText(s,x,y)}
+function rr(x,y,w,h,r,f,s,lw=2){cx.beginPath();cx.roundRect(x,y,w,h,r);if(f){cx.fillStyle=f;cx.fill()}if(s){cx.strokeStyle=s;cx.lineWidth=lw;cx.stroke()}}
+function glu(x,y,r=5){cx.fillStyle=COL.glu;cx.strokeStyle=COL.gluLine;cx.lineWidth=1;cx.beginPath();for(let i=0;i<6;i++){const a=Math.PI/3*i;cx.lineTo(x+r*Math.cos(a),y+r*Math.sin(a))}cx.closePath();cx.fill();cx.stroke()}
+function key(x,y,ang=0){cx.save();cx.translate(x,y);cx.rotate(ang);cx.strokeStyle=COL.key;cx.lineWidth=4;cx.lineCap='round';
+  cx.beginPath();cx.arc(-12,0,8,0,7);cx.stroke();cx.beginPath();cx.moveTo(-4,0);cx.lineTo(18,0);cx.moveTo(11,0);cx.lineTo(11,7);cx.moveTo(17,0);cx.lineTo(17,6);cx.stroke();cx.restore()}
+function fatBox(x,y,w=40,h=30,a=1){cx.globalAlpha=a;rr(x,y,w,h,6,COL.fat,COL.fatLine,1.5);cx.globalAlpha=1}
+function drop(x,y,r,a=1){cx.globalAlpha=a;cx.fillStyle=COL.fat;cx.strokeStyle=COL.fatLine;cx.lineWidth=1.5;cx.beginPath();cx.arc(x,y,r,0,7);cx.fill();cx.stroke();cx.globalAlpha=1}
+function cupboard(x,y,n,extra=0){
+  rr(x,y,170,300,10,css('--card'),css('--frame'),3);
+  for(let i=0;i<21;i++){const c=i%3,r=6-Math.floor(i/3);const bx=x+10+c*52,by=y+10+r*41;if(i<n)fatBox(bx,by,46,34);else rr(bx,by,46,34,6,null,css('--grid'),1)}
+  for(let i=0;i<extra;i++)fatBox(x+20+(i%3)*44,y-30-Math.floor(i/3)*26,40,24);
+  text('Fat store under the skin',x+85,y+322,{s:13,b:1,a:'center'});
+}
+function liver(x,y,fat,a=1){cx.fillStyle=COL.liver;cx.beginPath();cx.ellipse(x,y,95,62,-0.15,0,7);cx.fill();
+  const r=rnd(5);for(let i=0;i<fat;i++){const px=x-55+r()*110,py=y-30+r()*60;drop(px,py,7+r()*4,a)}
+  text('Liver',x,y+80,{s:14,b:1,a:'center'})}
+function cell(x,y,w,h,label){rr(x,y,w,h,24,css('--cellfill'),css('--cellline'),2);if(label)text(label,x+w/2,y+26,{s:15,b:1,a:'center',c:css('--ink')})}
+function door(x,y,h,open){cx.fillStyle=css('--cellfill');cx.fillRect(x-3,y,6,h);cx.fillStyle=css('--cellline');cx.fillRect(x-5,y-open*h,10,h)}
+function lock(x,y,gum,a=1){cx.fillStyle=COL.lock;cx.strokeStyle=COL.lockInk;cx.lineWidth=2;cx.beginPath();cx.arc(x,y,17,0,7);cx.fill();cx.stroke();
+  cx.fillStyle=COL.lockInk;cx.beginPath();cx.arc(x,y-4,4.5,0,7);cx.fill();cx.fillRect(x-2.5,y-2,5,11);
+  const g=[[-8,-6,7],[7,5,6],[-4,9,6],[9,-9,5],[0,0,5],[-11,5,4]];for(let i=0;i<Math.min(gum,g.length);i++)drop(x+g[i][0],y+g[i][1],g[i][2],a)}
+function factory(x,y,t,rate,worn=0){
+  const col=worn>0?`rgb(${lerp(217,184,worn)},${lerp(139,167,worn)},${lerp(162,172,worn)})`:COL.panc;
+  rr(x+118,y-28,20,34,3,col);
+  for(let i=0;i<Math.round(rate*4);i++){const p=((t*0.6+i/(rate*4))%1);cx.globalAlpha=1-p;cx.fillStyle=COL.smoke;cx.beginPath();cx.arc(x+128+p*20,y-32-p*40,6+p*8,0,7);cx.fill();cx.globalAlpha=1}
+  rr(x,y,160,68,8,col);
+  if(worn>0.3){cx.strokeStyle=COL.pancInk;cx.lineWidth=1.5;cx.globalAlpha=worn;cx.beginPath();cx.moveTo(x+30,y+8);cx.lineTo(x+40,y+28);cx.lineTo(x+32,y+44);cx.moveTo(x+120,y+40);cx.lineTo(x+134,y+60);cx.stroke();cx.globalAlpha=1}
+  text('Pancreas',x+80,y+26,{s:15,b:1,a:'center',c:COL.pancInk});text('key factory',x+80,y+46,{s:12,a:'center',c:COL.pancInk});
+}
+function tanker(x,y){rr(x,y,52,22,5,COL.tank);rr(x+54,y+7,12,15,3,COL.cab);cx.fillStyle=COL.cab;cx.beginPath();cx.arc(x+9,y+25,4,0,7);cx.arc(x+58,y+25,4,0,7);cx.fill();
+  cx.fillStyle='#8a5a0c';for(let i=0;i<4;i++){cx.beginPath();cx.arc(x+12+i*10,y+11,3,0,7);cx.fill()}}
+function gauge(x,y,v){const r=96;const a=val=>Math.PI+(clamp((val-34)/22))*Math.PI;
+  [[34,42,COL.green],[42,48,COL.amber],[48,56,COL.red]].forEach(([s,e,c])=>{cx.strokeStyle=c;cx.lineWidth=20;cx.beginPath();cx.arc(x,y,r,a(s),a(e));cx.stroke()});
+  const an=a(v);cx.strokeStyle=css('--ink');cx.lineWidth=4;cx.lineCap='round';cx.beginPath();cx.moveTo(x,y);cx.lineTo(x+Math.cos(an)*(r-6),y+Math.sin(an)*(r-6));cx.stroke();
+  cx.fillStyle=css('--ink');cx.beginPath();cx.arc(x,y,7,0,7);cx.fill();
+  text('HbA1c',x,y+28,{s:14,b:1,a:'center',c:css('--ink')});text(`${Math.round(v)} mmol/mol`,x,y+50,{s:16,b:1,a:'center',c:css('--ink')});
+  text(v>=48?'Diabetes':v>=42?'Prediabetes':'Normal',x,y+72,{s:13,a:'center'});
+  text('42',x+Math.cos(a(42))*(r+22),y+Math.sin(a(42))*(r+22),{s:12,a:'center'});text('48',x+Math.cos(a(48))*(r+22),y+Math.sin(a(48))*(r+22),{s:12,a:'center'})}
+function note(s,x,y){cx.font='700 14px "Atkinson Hyperlegible", system-ui, sans-serif';const w=cx.measureText(s).width+24;rr(x-w/2,y-16,w,32,16,css('--card'),css('--line'),1);text(s,x,y,{s:14,b:1,a:'center',c:css('--ink')})}
+
+const DRAW=[
+ function overflow(t){
+  cx.clearRect(0,0,W,H);
+  const n=Math.min(21,Math.floor(t/0.24));cupboard(30,70,n);
+  if(n>=21)note('Full',115,46);
+  const L={x:420,y:170},M={x:575,y:250,w:200,h:150};
+  cell(M.x,M.y,M.w,M.h,'Muscle');
+  let lf=0,mf=0;
+  for(let k=0;k<10;k++){const s=5.4+k*0.38,p=ease(seg(t,s,s+0.9));if(p<=0)continue;const toL=k%2===0;const tx=toL?L.x-40+(k%5)*18:M.x+40+(k%4)*35,ty=toL?L.y-10+(k%3)*12:M.y+70+(k%3)*22;
+    if(p<1){fatBox(lerp(110,tx,p)-14,lerp(60,ty,p)-10-Math.sin(p*Math.PI)*60,28,20)}else{toL?lf++:mf++}}
+  liver(L.x,L.y,lf);
+  const r=rnd(9);for(let i=0;i<mf;i++)drop(M.x+30+r()*140,M.y+60+r()*70,8+r()*3);
+  if(t>8.5){const p=seg(t,8.5,10.5);tanker(lerp(510,820,p),70);text('More fuel tankers (triglycerides)',640,40,{s:13,b:1,a:'center'})}
+  if(t>5.4)text('Overflow',265,110,{s:13,b:1,a:'center',c:COL.fatLine});
+ },
+ function jam(t){
+  cx.clearRect(0,0,W,H);rr(10,40,400,340,24,css('--vessel'));text('Bloodstream',30,62,{s:13});
+  const C={x:430,y:40,w:350,h:340};cell(C.x,C.y,C.w,C.h,'Muscle cell');
+  const r=rnd(4);for(let i=0;i<9;i++)drop(C.x+60+r()*260,C.y+70+r()*230,8+r()*4);
+  door(C.x,180,90,0);lock(C.x,225,6);
+  const g=rnd(12);for(let i=0;i<12;i++){glu(40+g()*330,110+g()*240+Math.sin(t*1.4+i)*6,6)}
+  const p=ease(seg(t,0,2));const kx=lerp(70,C.x-40,p),ky=lerp(80,225,p);const wob=t>2?Math.sin(t*16)*0.4:0;key(kx,ky,wob);
+  text('Insulin key',kx-10,ky-24,{s:13,b:1,a:'center',c:COL.key});
+  if(t>2.8)note("Won't turn",C.x-110,150);
+  if(t>2.8)text('Fat gums up the lock',C.x+110,225,{s:13,b:1,c:COL.fatLine});
+ },
+ function moreKeys(t){
+  cx.clearRect(0,0,W,H);rr(10,110,400,270,24,css('--vessel'));text('Bloodstream',30,132,{s:13});
+  factory(20,20,t,1);
+  const C={x:430,y:40,w:350,h:340};cell(C.x,C.y,C.w,C.h,'Muscle cell');
+  const r=rnd(4);for(let i=0;i<9;i++)drop(C.x+60+r()*260,C.y+70+r()*230,8+r()*4);
+  const open=0.45*ease(seg(t,5,6));door(C.x,180,90,open);lock(C.x,225,6);
+  let sent=0;for(let k=0;k<5;k++){const s=k*0.8,p=ease(seg(t,s,s+1.6));if(p<=0)continue;sent++;const ty=200+k*13;key(lerp(190,C.x-40,p),lerp(70,ty,p),p>=1?Math.sin(t*14+k)*0.35:0)}
+  const g=rnd(12);let inside=0;for(let i=0;i<12;i++){let x=40+g()*330,y=170+g()*190;y+=Math.sin(t*1.4+i)*6;
+    if(i<4){const s=6+i*0.55,p=ease(seg(t,s,s+1));if(p>0){x=lerp(x,C.x+80+i*50,p);y=lerp(y,250,p)}}glu(x,y,6)}
+  note(`Keys sent: ${sent} instead of 1`,215,350);
+  if(t>6)text('Blood sugar: still normal',C.x+175,330,{s:14,b:1,a:'center',c:css('--accent')});
+ },
+ function cycle(t){
+  cx.clearRect(0,0,W,H);
+  const extra=Math.min(6,Math.floor(seg(t,1,8)*6+0.001));cupboard(30,88,21,extra);
+  liver(380,250,4+Math.floor(seg(t,1,8)*6));
+  const C={x:590,y:170,w:190,h:180};cell(C.x,C.y,C.w,C.h,'Muscle');door(C.x,235,60,0);lock(C.x,265,Math.min(6,3+Math.floor(t/2.5)));
+  for(let k=0;k<9;k++){const ph=(t*0.7+k/9)%1;const x=lerp(200,560,ph),y=60+Math.sin(ph*Math.PI*2+k)*18;key(x,y,0)}
+  text('Lots of insulin keys',380,24,{s:13,b:1,a:'center',c:COL.key});
+  for(let k=0;k<6;k++){const s=0.8+k*1.2,p=ease(seg(t,s,s+1));if(p<=0||p>=1)continue;const toC=k%2===0;const tx=toC?115:380,ty=toC?90:230;glu(lerp(330,tx,p),lerp(80,ty,p),6)}
+  const hun=seg(t,0.5,8.5);rr(540,380,220,18,9,css('--grid'));rr(540,380,220*hun,18,9,COL.red);text('Hunger',530,389,{s:13,b:1,a:'right'});
+  if(t>7)note('Back to the start: more fat, stiffer locks',520,130);
+ },
+ function wornOut(t){
+  cx.clearRect(0,0,W,H);
+  const worn=seg(t,0.5,7);factory(30,50,t,lerp(1,0.25,worn),worn);
+  note(`Keys made: ${Math.round(lerp(5,2,worn))}`,110,158);
+  rr(20,200,440,190,24,css('--vessel'));text('Bloodstream',40,222,{s:13});
+  const n=Math.round(lerp(8,34,seg(t,1,8)));const g=rnd(21);for(let i=0;i<n;i++)glu(45+g()*390,245+g()*130+Math.sin(t*1.2+i)*5,6);
+  gauge(630,220,lerp(39,52,ease(seg(t,1,8.5))));
+ },
+ function unjam(t){
+  cx.clearRect(0,0,W,H);
+  factory(20,30,t,0.3);
+  liver(200,260,Math.round(lerp(8,0,seg(t,0.3,3))),1);
+  if(t<3.2)text('Liver fat goes first',200,170,{s:13,b:1,a:'center',c:COL.fatLine});
+  const C={x:430,y:40,w:350,h:340};cell(C.x,C.y,C.w,C.h,'Muscle cell');
+  const fa=1-seg(t,2.5,5);const r=rnd(4);for(let i=0;i<9;i++){const px=C.x+60+r()*260,py=C.y+70+r()*230,rad=8+r()*4;if(fa>0)drop(px,py,rad,fa)}
+  const open=ease(seg(t,6,6.6));door(C.x,180,90,open);lock(C.x,225,6,fa);
+  const p=ease(seg(t,4.4,6));if(p>0)key(lerp(190,C.x-40,p),lerp(90,225,p),p>=1?ease(seg(t,6,6.4))*1.4:0);
+  const g=rnd(13);for(let i=0;i<8;i++){let x=40+g()*300,y=110+g()*80;const s=6.6+i*0.25,q=ease(seg(t,s,s+1));if(q>0){x=lerp(x,C.x+60+(i%4)*70,q);y=lerp(y,140+Math.floor(i/4)*60,q)}glu(x,y,6)}
+  if(t>6.6)note('One key works again',C.x+175,320);
+ },
+];
+
+let step=0,t0=performance.now();
+const stepsEl=document.getElementById('steps');
+STEPS.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.textContent=s.k;b.addEventListener('click',()=>go(i));stepsEl.appendChild(b)});
+function go(i){step=(i+STEPS.length)%STEPS.length;t0=performance.now();const s=STEPS[step];
+  [...stepsEl.children].forEach((b,j)=>b.setAttribute('aria-current',j===step?'true':'false'));
+  document.getElementById('cTitle').textContent=s.title;document.getElementById('cText').textContent=s.text;document.getElementById('cMeas').textContent=s.meas;
+  document.getElementById('next').textContent=step===STEPS.length-1?'Start again':'Next'}
+document.getElementById('prev').addEventListener('click',()=>go(step-1));
+document.getElementById('next').addEventListener('click',()=>go(step+1));
+document.getElementById('replay').addEventListener('click',()=>go(step));
+function frame(now){const s=STEPS[step];let t=(now-t0)/1000;if(reduce)t=s.dur;else{t=t%(s.dur+2);t=Math.min(t,s.dur)}DRAW[step](t);requestAnimationFrame(frame)}
+go(0);requestAnimationFrame(frame);
+</script>
+
+</body>
+</html>

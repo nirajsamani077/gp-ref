@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en-GB" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Weight Loss Medicines</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap">
+<style>
+/* Layout: step bar, canvas stage, per-step controls, caption card. Same family as the other clinic explainers */
+:root{
+  --bg:#f6f8f8; --card:#ffffff; --ink:#15302e; --muted:#5a6e6c; --line:#d9e2e1; --accent:#0f6e64; --accent-bg:#dff1ee;
+  --stage:#eef4f6; --label:#3d5452; --grid:#cbd8d6; --panel:#ffffff; --organ:#f2d4c8;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1716; --card:#162120; --ink:#e3eeec; --muted:#9db1ae; --line:#2a3a38; --accent:#5cc7b8; --accent-bg:#173733;
+  --stage:#13201f; --label:#b9cbc8; --grid:#2c3d3b; --panel:#182624; --organ:#4a312a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1716; --card:#162120; --ink:#e3eeec; --muted:#9db1ae; --line:#2a3a38; --accent:#5cc7b8; --accent-bg:#173733;
+  --stage:#13201f; --label:#b9cbc8; --grid:#2c3d3b; --panel:#182624; --organ:#4a312a; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+.wrap{max-width:960px;margin:0 auto;padding-block:18px 36px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:14px}
+h1{font-family:var(--display);font-weight:700;font-size:1.8rem;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:2px 0 0;max-width:62ch}
+.steps,.ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.steps button,.ctl button{font:inherit;font-size:.95rem;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.steps button[aria-current="true"],.ctl button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.ctl:empty{display:none}
+.ctl span{font-size:.9rem;color:var(--muted)}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stage{background:var(--stage);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+canvas{display:block;width:100%;height:auto;max-width:100%}
+.cap{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 20px;align-items:start}
+.cap h2{font-family:var(--display);font-weight:700;font-size:1.35rem;margin:0}
+.cap p{margin:6px 0 0;max-width:62ch}
+.meas{background:var(--accent-bg);color:var(--accent);border-radius:10px;padding:10px 14px;font-weight:700;text-align:center;min-width:160px;max-width:230px}
+.meas small{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.nav{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap}
+.nav button{font:inherit;padding:8px 16px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.nav button.primary{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.foot{font-size:.8rem;color:var(--muted);margin:0;max-width:80ch}
+@media (max-width:560px){.cap{grid-template-columns:minmax(0,1fr)}.meas{text-align:left;max-width:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Weight loss medicines</h1>
+    <p class="sub">How semaglutide (Wegovy), tirzepatide (Mounjaro) and the newer tablets work, what to expect, and what to watch for.</p>
+  </header>
+  <nav class="steps" id="steps" aria-label="Steps"></nav>
+  <div class="stage"><canvas id="cv" role="img" aria-label="Animation explaining GLP-1 weight loss medicines"></canvas></div>
+  <div class="ctl" id="ctl"></div>
+  <section class="cap" aria-live="polite">
+    <div><h2 id="cTitle"></h2><p id="cText"></p></div>
+    <div class="meas"><small>Key point</small><span id="cMeas"></span></div>
+  </section>
+  <div class="nav">
+    <button type="button" id="prev">Previous</button>
+    <button type="button" id="replay">Replay</button>
+    <button type="button" id="next" class="primary">Next</button>
+  </div>
+  <p class="foot">Average weight loss at around 68 to 72 weeks in the main trials alongside lifestyle support: semaglutide 2.4 mg about 15% (STEP 1), tirzepatide 15 mg about 21% (SURMOUNT-1), oral options about 12 to 14% (orforglipron ATTAIN-1, oral semaglutide 25 mg OASIS 4), placebo with lifestyle about 2 to 3%. After stopping semaglutide, people regained about two thirds of the weight lost within a year (STEP 1 extension). Semaglutide cut heart attack, stroke and cardiovascular death by 20% in people with heart disease (SELECT). MHRA: strengthened pancreatitis warning (Jan 2026); effective contraception needed, add a non-oral method for 4 weeks after starting or increasing tirzepatide, avoid in pregnancy and breastfeeding (Jun 2025). NICE lowers BMI thresholds by 2.5 for people of South Asian, Chinese, other Asian, Middle Eastern, Black African or African-Caribbean background. NHS England tirzepatide primary care cohorts as published by ICBs; check local criteria. Wegovy tablet authorised in the UK June 2026 and orforglipron (Foundayo) August 2026, neither currently on the NHS.</p>
+</div>
+
+<script>
+const STEPS=[
+ {k:'1 Fullness messenger',title:'Your body\'s own "I\'m full" messenger',meas:'GLP-1 is a natural gut hormone',dur:9,
+  text:'When food reaches your gut, it sends out a messenger called GLP-1. It tells your brain you have eaten, slows your stomach, and helps the pancreas release insulin. Your own GLP-1 only lasts a couple of minutes before it is broken down.'},
+ {k:'2 Long-lasting copy',title:'The medicine is a long-lasting copy',meas:'Injections weekly, tablets daily',dur:8,
+  text:'These medicines copy GLP-1 but last much longer, so the "I\'m full" message stays switched on. Semaglutide is a weekly injection. Tirzepatide sends two messengers, GLP-1 and a second gut hormone called GIP, which is why it tends to work more strongly. Newer tablets are taken every day.'},
+ {k:'3 What it does',title:'Three things it turns down',meas:'Smaller portions feel like enough',dur:9,
+  text:'It turns down the volume on hunger and "food noise" in the brain. It slows the stomach so food leaves more gradually and you stay full for longer. And it helps the pancreas release insulin when sugar is high, which is why it also treats diabetes.'},
+ {k:'4 How much weight',title:'How much weight people lose',meas:'Averages: individuals vary a lot',dur:8,
+  text:'In the big trials, alongside diet and activity support, people lost on average about 15% of their weight on semaglutide and about 21% on the highest dose of tirzepatide over about a year and a half. The newer tablets were around 12 to 14%. Some people lose much more, and some much less.'},
+ {k:'5 Side effects and safety',title:'Side effects and safety',meas:'Start low and go up slowly',dur:12,
+  text:'Feeling sick, constipation, diarrhoea and indigestion are common, mainly in the first weeks and after each dose increase, which is why the dose goes up in steps. A few things need urgent attention or planning ahead.'},
+ {k:'6 Muscle and stopping',title:'Protecting muscle, and what happens if you stop',meas:'A long-term treatment, like blood pressure tablets',dur:10,
+  text:'Some of the weight lost is muscle, so eating enough protein and doing strength exercise matters. The medicine controls appetite while you take it, but does not cure it. When people stop, most of the weight tends to come back over the following year.'},
+ {k:'7 Getting it in the UK',title:'Who can get it, and where',meas:'NHS access is limited and phased',dur:8,
+  text:'On the NHS, these medicines are available through specialist weight services and, for tirzepatide, a GP rollout that is being widened in stages. Most people currently pay privately. Only get them from a registered prescriber and pharmacy, never unregulated online sellers.'},
+];
+const W=800,H=420;
+const cv=document.getElementById('cv'),cx=cv.getContext('2d');const dpr=Math.max(1,window.devicePixelRatio||1);
+cv.width=W*dpr;cv.height=H*dpr;cx.scale(dpr,dpr);
+const COL={glp:'#1f9e8f',gip:'#7f77dd',brain:'#e7b3c4',brainD:'#9b4a66',stomach:'#e9a98f',panc:'#d98ba2',pancInk:'#5e1e33',gut:'#e2b48a',food:'#e1a72a',key:'#1f9e8f',glu:'#e8b923',gluLine:'#9c7a0c',red:'#d9534a',green:'#3aa76d',amber:'#e1a72a',fat:'#f3d27a',fatLine:'#b8902c',muscle:'#c9564b',grey:'#8fa3a0',tab:'#5b8fd9'};
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+const ease=p=>p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+const lerp=(a,b,p)=>a+(b-a)*p;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function rnd(seed){let s=seed;return()=>{s=(s*9301+49297)%233280;return s/233280}}
+function text(s,x,y,o={}){cx.font=`${o.b?'700 ':''}${o.s||14}px "Atkinson Hyperlegible", system-ui, sans-serif`;cx.fillStyle=o.c||css('--label');cx.textAlign=o.a||'left';cx.textBaseline='middle';cx.fillText(s,x,y)}
+function big(s,x,y,c,sz=40,a='left'){cx.font=`700 ${sz}px "Bricolage Grotesque", system-ui, sans-serif`;cx.fillStyle=c||css('--ink');cx.textAlign=a;cx.textBaseline='middle';cx.fillText(s,x,y)}
+function rr(x,y,w,h,r,f,s,lw=1.5){cx.beginPath();cx.roundRect(x,y,w,h,r);if(f){cx.fillStyle=f;cx.fill()}if(s){cx.strokeStyle=s;cx.lineWidth=lw;cx.stroke()}}
+function note(s,x,y,c){cx.font='700 14px "Atkinson Hyperlegible", system-ui, sans-serif';const w=cx.measureText(s).width+24;rr(x-w/2,y-16,w,32,16,css('--card'),css('--line'),1);text(s,x,y,{s:14,b:1,a:'center',c:c||css('--ink')})}
+function msg(x,y,col,a=1){cx.globalAlpha=a;rr(x-9,y-6,18,12,2,col);cx.strokeStyle='#ffffff';cx.lineWidth=1.3;cx.beginPath();cx.moveTo(x-9,y-6);cx.lineTo(x,y+1);cx.lineTo(x+9,y-6);cx.stroke();cx.globalAlpha=1}
+function glu(x,y,r=5){cx.fillStyle=COL.glu;cx.strokeStyle=COL.gluLine;cx.lineWidth=1;cx.beginPath();for(let i=0;i<6;i++){const a=Math.PI/3*i;cx.lineTo(x+r*Math.cos(a),y+r*Math.sin(a))}cx.closePath();cx.fill();cx.stroke()}
+function key(x,y){cx.save();cx.translate(x,y);cx.strokeStyle=COL.key;cx.lineWidth=3.5;cx.lineCap='round';cx.beginPath();cx.arc(-10,0,6.5,0,7);cx.stroke();cx.beginPath();cx.moveTo(-3,0);cx.lineTo(14,0);cx.moveTo(9,0);cx.lineTo(9,5);cx.moveTo(13,0);cx.lineTo(13,4);cx.stroke();cx.restore()}
+
+const ORG={brain:{x:150,y:90},stomach:{x:330,y:200},panc:{x:330,y:320},gut:{x:590,y:260}};
+function organs(){
+  cx.fillStyle=COL.brain;cx.beginPath();cx.ellipse(ORG.brain.x,ORG.brain.y,78,52,0,0,7);cx.fill();cx.strokeStyle=COL.brainD;cx.lineWidth=1.5;for(let i=0;i<3;i++){cx.beginPath();cx.arc(ORG.brain.x-30+i*30,ORG.brain.y,16,Math.PI,0);cx.stroke()}
+  text('Brain',ORG.brain.x,ORG.brain.y+68,{s:14,b:1,a:'center'});
+  cx.fillStyle=COL.stomach;cx.beginPath();cx.ellipse(ORG.stomach.x,ORG.stomach.y,70,46,-0.4,0,7);cx.fill();text('Stomach',ORG.stomach.x-100,ORG.stomach.y-40,{s:14,b:1,a:'center'});
+  rr(ORG.panc.x-75,ORG.panc.y-18,150,36,18,COL.panc);text('Pancreas',ORG.panc.x,ORG.panc.y,{s:13,b:1,a:'center',c:COL.pancInk});
+  cx.strokeStyle=COL.gut;cx.lineWidth=22;cx.lineCap='round';cx.beginPath();cx.moveTo(400,220);cx.bezierCurveTo(520,180,700,200,690,250);cx.bezierCurveTo(680,300,500,280,520,320);cx.bezierCurveTo(540,360,700,350,720,380);cx.stroke();
+  text('Gut',720,220,{s:14,b:1,a:'center'});
+}
+function meter(x,y,label,v,col){text(label,x,y,{s:13,b:1});rr(x,y+12,160,14,7,css('--grid'));rr(x,y+12,160*clamp(v),14,7,col)}
+
+let med='sema';
+function level(day,kind){
+  if(kind==='natural'){let v=0;for(let d=0;d<7;d++)for(const h of [0.33,0.55,0.8]){const t=day-(d+h);if(t>=0)v+=Math.exp(-t*25)*0.9}return Math.min(1,v)}
+  if(kind==='sema'){const t=day%7;return 0.7+0.12*Math.exp(-t/2)}
+  if(kind==='tirz'){const t=day%7;return 0.75+0.14*Math.exp(-t/1.6)}
+  if(kind==='tab'){const t=day%1;return 0.62+0.1*Math.exp(-t*4)}
+}
+const DRAW=[
+ function messenger(T){cx.clearRect(0,0,W,H);organs();
+  const meal=seg(T,0.3,1.5);for(let i=0;i<4;i++){const p=seg(T,0.2+i*0.25,1.4+i*0.25);if(p>0&&p<1){cx.fillStyle=COL.food;cx.beginPath();cx.arc(lerp(330,600,p),lerp(120,250,p),7,0,7);cx.fill()}}
+  text('Food arrives',330,60,{s:13,b:1,a:'center'});
+  const targets=[ORG.brain,ORG.stomach,ORG.panc];let full=0;
+  for(let i=0;i<9;i++){const s=1.6+i*0.35,p=ease(seg(T,s,s+1.3));if(p<=0)continue;const tg=targets[i%3];const life=1-seg(T,s+1.3,s+2.3);if(life<=0)continue;
+    msg(lerp(590,tg.x+30,p),lerp(250,tg.y,p)-Math.sin(p*Math.PI)*40,COL.glp,life);if(p>=1&&tg===ORG.brain)full=Math.max(full,life)}
+  const fl=Math.max(0,Math.min(1,(seg(T,3,4.2))-(seg(T,6,8.5))));
+  rr(560,30,220,110,14,css('--panel'),css('--line'),1);meter(578,50,'Feeling full',fl,COL.glp);
+  text(T>6?'Message fades in minutes':'GLP-1 messengers sent',578,108,{s:13,b:1,c:T>6?COL.red:COL.glp});
+  msg(578+8,128,COL.glp);text('GLP-1',600,128,{s:12});
+ },
+ function copy(T){cx.clearRect(0,0,W,H);
+  const X0=90,X1=760,Y0=330,Y1=80;const Y=v=>Y0-v*(Y0-Y1);
+  cx.strokeStyle=css('--grid');cx.lineWidth=1;cx.beginPath();cx.moveTo(X0,Y0);cx.lineTo(X1,Y0);cx.stroke();
+  ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].forEach((d,i)=>text(d,lerp(X0,X1,(i+0.5)/7),Y0+18,{s:12,a:'center'}));
+  text('Message level',X0-10,Y1-20,{s:13,b:1,a:'right'});
+  const end=reduce?7:clamp(T/6)*7;
+  function line(kind,col,lw,dash){cx.strokeStyle=col;cx.lineWidth=lw;cx.setLineDash(dash||[]);cx.beginPath();for(let i=0;i<=1400;i++){const d=i/200;if(d>end)break;const x=lerp(X0,X1,d/7),y=Y(level(d,kind));i?cx.lineTo(x,y):cx.moveTo(x,y)}cx.stroke();cx.setLineDash([])}
+  line('natural',COL.grey,2);
+  if(med==='tirz'){line('tirz',COL.glp,5);line('tirz',COL.gip,5,[10,10])}else line(med,med==='tab'?COL.tab:COL.glp,5);
+  const lx=X0+10;rr(lx,20,14,4,2,COL.grey);text('Your own GLP-1 after meals',lx+22,22,{s:12});
+  const lbl={sema:'Semaglutide: weekly injection',tirz:'Tirzepatide: weekly, GLP-1 + GIP',tab:'Tablet: taken every day'}[med];
+  rr(lx+260,20,14,4,2,med==='tab'?COL.tab:COL.glp);text(lbl,lx+282,22,{s:12,b:1});
+  if(med!=='tab'){for(let w=0;w<1;w++){const x=lerp(X0,X1,0.02);cx.fillStyle=css('--ink');cx.beginPath();cx.moveTo(x,Y1-6);cx.lineTo(x-6,Y1-16);cx.lineTo(x+6,Y1-16);cx.fill();text('Injection',x+10,Y1-12,{s:12,b:1})}}
+ },
+ function dials(T){cx.clearRect(0,0,W,H);const g=ease(seg(T,0.8,4));
+  const P=[[20,'Brain','Hunger and food noise'],[280,'Stomach','Empties more slowly'],[540,'Pancreas','Insulin when sugar is high']];
+  P.forEach(([x,t1,t2])=>{rr(x,20,240,370,14,css('--panel'),css('--line'),1);text(t1,x+120,46,{s:16,b:1,a:'center',c:css('--ink')});text(t2,x+120,68,{s:13,a:'center'})});
+  const kx=140,ky=200,v=lerp(9,3,g);cx.strokeStyle=css('--grid');cx.lineWidth=14;cx.beginPath();cx.arc(kx,ky,70,Math.PI*0.75,Math.PI*2.25);cx.stroke();
+  cx.strokeStyle=COL.brainD;cx.beginPath();cx.arc(kx,ky,70,Math.PI*0.75,Math.PI*0.75+Math.PI*1.5*v/10);cx.stroke();
+  const an=Math.PI*0.75+Math.PI*1.5*v/10;cx.fillStyle=COL.brain;cx.beginPath();cx.arc(kx,ky,48,0,7);cx.fill();cx.strokeStyle=css('--ink');cx.lineWidth=4;cx.lineCap='round';cx.beginPath();cx.moveTo(kx,ky);cx.lineTo(kx+Math.cos(an)*40,ky+Math.sin(an)*40);cx.stroke();
+  big(String(Math.round(v)),kx,ky+90,css('--ink'),28,'center');text('Volume',kx,ky+116,{s:13,a:'center'});
+  if(g>0.9)text('Quieter',kx,ky+146,{s:14,b:1,a:'center',c:COL.green});
+  const sy=170;cx.fillStyle=COL.stomach;cx.beginPath();cx.ellipse(400,sy,80,52,-0.3,0,7);cx.fill();
+  rr(300,280,200,22,11,css('--grid'));text('Leaving the stomach',400,320,{s:13,a:'center'});
+  const speed=lerp(1,0.3,g);for(let i=0;i<6;i++){const p=((T*0.25*speed*4+i/6)%1);cx.fillStyle=COL.food;cx.beginPath();cx.arc(lerp(310,490,p),291,7,0,7);cx.fill()}
+  const r=rnd(3);for(let i=0;i<Math.round(lerp(3,8,g));i++){cx.fillStyle=COL.food;cx.beginPath();cx.arc(370+r()*60,sy-15+r()*30,7,0,7);cx.fill()}
+  if(g>0.9)text('Full for longer',400,354,{s:14,b:1,a:'center',c:COL.green});
+  rr(590,120,140,50,12,COL.panc);text('Key factory',660,145,{s:13,b:1,a:'center',c:COL.pancInk});
+  const sugarHigh=(T%4)<2;for(let i=0;i<(sugarHigh?6:2);i++){glu(600+i*22,230+Math.sin(T*2+i)*4,6)}
+  text(sugarHigh?'Sugar high: keys sent':'Sugar normal: few keys',660,360,{s:13,b:1,a:'center',c:sugarHigh?COL.glp:css('--label')});
+  for(let i=0;i<(sugarHigh?4:1);i++){const p=((T*0.8+i/4)%1);key(lerp(620,700,i/4)+10,lerp(180,320,p))}
+ },
+ function weight(T){cx.clearRect(0,0,W,H);
+  const X0=90,X1=620,Y0=50,Y1=360;const Y=v=>Y0+v/25*(Y1-Y0);
+  cx.strokeStyle=css('--grid');cx.lineWidth=1;[0,5,10,15,20,25].forEach(v=>{cx.beginPath();cx.moveTo(X0,Y(v));cx.lineTo(X1,Y(v));cx.stroke();text(`-${v}%`,X0-10,Y(v),{s:12,a:'right'})});
+  [0,24,48,72].forEach(w=>text(`${w} wks`,lerp(X0,X1,w/72),Y1+18,{s:12,a:'center'}));
+  text('Weight lost',X0-10,Y0-24,{s:13,b:1,a:'right'});
+  const L=[['Diet and activity',2.5,COL.grey],['Tablets',13,COL.tab],['Semaglutide',15,COL.glp],['Tirzepatide',21,COL.gip]];
+  const end=reduce?72:clamp(T/5.5)*72;const f=w=>(1-Math.exp(-w/20))/(1-Math.exp(-72/20));
+  L.forEach(([n,fin,c],i)=>{cx.strokeStyle=c;cx.lineWidth=4;cx.beginPath();for(let w=0;w<=end;w+=1){const x=lerp(X0,X1,w/72),y=Y(fin*f(w));w?cx.lineTo(x,y):cx.moveTo(x,y)}cx.stroke();
+    if(end>=72){text(`${fin}%`,X1+10,Y(fin),{s:14,b:1,c});text(n,X1+56,Y(fin),{s:13,b:1,c})}});
+  if(end>=72)note('Tirzepatide 21% = about 21 kg for someone who weighs 100 kg',360,404);
+ },
+ function safety(T){cx.clearRect(0,0,W,H);
+  const doses=['2.5','5','7.5','10','12.5','15'];const sx=40,sy=330;
+  text('Tirzepatide dose (mg), up every 4 weeks',sx,30,{s:13,b:1});
+  const n=Math.min(6,Math.floor(T/1)+1);
+  for(let i=0;i<6;i++){const x=sx+i*58,h=40+i*38;rr(x,sy-h,52,h,6,i<n?COL.gip:css('--grid'));text(doses[i],x+26,sy-h+16,{s:13,b:1,a:'center',c:i<n?'#ffffff':css('--label')})}
+  cx.strokeStyle=COL.red;cx.lineWidth=2.5;cx.beginPath();for(let x=0;x<=348;x+=3){const t=x/58;const k=Math.floor(t);if(k>=n)break;const ph=t-k;const nz=(k<3?1:0.6)*Math.exp(-ph*3.5)*(1-k*0.08);const y=sy+50-nz*40;x?cx.lineTo(sx+x,y):cx.moveTo(sx+x,y)}cx.stroke();
+  text('Feeling sick: peaks after each step, then settles',sx,sy+68,{s:12,b:1,c:COL.red});
+  const cards=[['Severe tummy pain going to the back','Get urgent help: possible pancreatitis',COL.red],['Contraception','Needed. With Mounjaro add a non-oral method for 4 weeks after each dose rise',COL.amber],['Pregnancy and breastfeeding','Don\'t use. Stop 1 to 2 months before trying',COL.amber],['Operations and procedures','Tell the anaesthetist you take it',COL.amber],['Pain under the right ribs, vomiting','Can be gallstones: get checked',COL.amber]];
+  cards.forEach(([a,b,c],i)=>{const p=seg(T,1.5+i*1.4,2+i*1.4);if(p<=0)return;cx.globalAlpha=p;rr(420,24+i*76,360,66,10,css('--panel'),c,2);text(a,436,46+i*76,{s:14,b:1,c});
+    const words=b.split(' ');let line='',ly=68+i*76;cx.font='13px "Atkinson Hyperlegible", system-ui, sans-serif';words.forEach(w=>{if(cx.measureText(line+w).width>330){text(line,436,ly,{s:13});line='';ly+=16}line+=w+' '});text(line,436,ly,{s:13});cx.globalAlpha=1});
+ },
+ function stopping(T){cx.clearRect(0,0,W,H);
+  rr(20,20,260,370,14,css('--panel'),css('--line'),1);text('What is lost',150,46,{s:15,b:1,a:'center',c:css('--ink')});
+  const g=ease(seg(T,0.5,3));const fatH=180,musH=60;const bx=90,by=330;
+  rr(bx,by-fatH*g-musH*g,120,fatH*g,6,COL.fat,COL.fatLine,1);rr(bx,by-musH*g,120,musH*g,6,COL.muscle);
+  if(g>0.9){text('Fat: about 3/4',bx+60,by-musH-fatH/2,{s:13,b:1,a:'center',c:'#6b4d0c'});text('Muscle: 1/4',bx+60,by-musH/2,{s:13,b:1,a:'center',c:'#ffffff'})}
+  text('Protein and strength',150,356,{s:13,b:1,a:'center',c:COL.green});text('exercise protect muscle',150,374,{s:13,b:1,a:'center',c:COL.green});
+  const X0=340,X1=770,Y0=60,Y1=330;const Y=v=>Y0+v/20*(Y1-Y0);
+  cx.strokeStyle=css('--grid');cx.lineWidth=1;[0,5,10,15,20].forEach(v=>{cx.beginPath();cx.moveTo(X0,Y(v));cx.lineTo(X1,Y(v));cx.stroke();text(`-${v}%`,X0-8,Y(v),{s:12,a:'right'})});
+  [0,34,68,94,120].forEach(w=>text(`${w}`,lerp(X0,X1,w/120),Y1+16,{s:12,a:'center'}));text('Weeks',(X0+X1)/2,Y1+36,{s:13,b:1,a:'center'});
+  const on=w=>17.3*(1-Math.exp(-w/18))/(1-Math.exp(-68/18));const off=w=>w<=68?on(w):17.3-11.7*(1-Math.exp(-(w-68)/20))/(1-Math.exp(-52/20));
+  const end=reduce?120:clamp(T/7)*120;
+  cx.lineWidth=4;cx.strokeStyle=COL.glp;cx.beginPath();for(let w=0;w<=end;w++){const x=lerp(X0,X1,w/120),y=Y(Math.min(on(w),17.3));w?cx.lineTo(x,y):cx.moveTo(x,y)}cx.stroke();
+  if(end>68){cx.strokeStyle=COL.red;cx.beginPath();for(let w=68;w<=end;w++){const x=lerp(X0,X1,w/120),y=Y(off(w));w>68?cx.lineTo(x,y):cx.moveTo(x,y)}cx.stroke();
+    const sx=lerp(X0,X1,68/120);cx.setLineDash([4,5]);cx.strokeStyle=css('--label');cx.lineWidth=1.5;cx.beginPath();cx.moveTo(sx,Y0);cx.lineTo(sx,Y1);cx.stroke();cx.setLineDash([]);text('Stopped',sx+6,Y0+10,{s:12,b:1})}
+  if(end>=120){text('Kept taking it',X1,Y(17.3)-14,{s:13,b:1,a:'right',c:COL.glp});text('Stopped: about 2/3 regained',X1,Y(5.6)-14,{s:13,b:1,a:'right',c:COL.red})}
+ },
+ function access(T){cx.clearRect(0,0,W,H);
+  const C=[['NHS specialist weight service',COL.glp,['Semaglutide or tirzepatide','BMI 35+ with a weight-related','condition (some 30+)','Referral via your GP','Semaglutide up to 2 years']],
+    ['NHS GP rollout (tirzepatide)',COL.gip,['Being widened in stages','2025/26: BMI 40+ and 4 of:','diabetes, high BP, cholesterol,','sleep apnoea, heart disease','2026/27: BMI 35 to 39.9 with 4,','or BMI 40+ with 3']],
+    ['Private prescription',COL.tab,['Licensed from BMI 30, or 27+','with a weight-related condition','Wegovy tablet (Jun 2026) and','orforglipron (Aug 2026) now','authorised, not yet on NHS','Registered prescriber only']]];
+  C.forEach(([t,c,lines],i)=>{const x=20+i*260;const p=seg(T,0.3+i*0.8,0.9+i*0.8);cx.globalAlpha=p;rr(x,30,240,330,14,css('--panel'),c,2.5);rr(x,30,240,46,[14,14,0,0],c);text(t,x+120,53,{s:14,b:1,a:'center',c:'#ffffff'});
+    lines.forEach((l,j)=>text(l,x+16,100+j*26,{s:13,b:j===0||(i===1&&(j===1||j===4)),c:css('--ink')}));cx.globalAlpha=1});
+  if(T>3)note('Lower BMI thresholds apply for some ethnic backgrounds',400,392);
+ },
+];
+
+let step=0,t0=performance.now();
+const stepsEl=document.getElementById('steps'),ctl=document.getElementById('ctl');
+STEPS.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.textContent=s.k;b.addEventListener('click',()=>go(i));stepsEl.appendChild(b)});
+function controls(){ctl.innerHTML='';if(step!==1)return;const l=document.createElement('span');l.textContent='Medicine:';ctl.appendChild(l);
+  [['sema','Semaglutide (Wegovy)'],['tirz','Tirzepatide (Mounjaro)'],['tab','Tablet']].forEach(([k,t])=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.setAttribute('aria-pressed',med===k);b.addEventListener('click',()=>{med=k;t0=performance.now();controls()});ctl.appendChild(b)})}
+function go(i){step=(i+STEPS.length)%STEPS.length;t0=performance.now();const s=STEPS[step];
+  [...stepsEl.children].forEach((b,j)=>b.setAttribute('aria-current',j===step?'true':'false'));
+  document.getElementById('cTitle').textContent=s.title;document.getElementById('cText').textContent=s.text;document.getElementById('cMeas').textContent=s.meas;
+  document.getElementById('next').textContent=step===STEPS.length-1?'Start again':'Next';controls()}
+document.getElementById('prev').addEventListener('click',()=>go(step-1));
+document.getElementById('next').addEventListener('click',()=>go(step+1));
+document.getElementById('replay').addEventListener('click',()=>go(step));
+function frame(now){const s=STEPS[step];let T=(now-t0)/1000;if(reduce)T=s.dur;else{T=T%(s.dur+2);T=Math.min(T,s.dur)}DRAW[step](T);requestAnimationFrame(frame)}
+go(0);requestAnimationFrame(frame);
+</script>
+
+</body>
+</html>

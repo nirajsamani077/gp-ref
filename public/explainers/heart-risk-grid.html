@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en-GB" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Heart Risk Grid</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap">
+<style>
+/* Layout: controls column beside a 10x10 people grid; stacks on narrow screens. Same visual family as Cholesterol Lorries */
+:root{
+  --bg:#f6f8f8; --card:#ffffff; --ink:#15302e; --muted:#5a6e6c; --line:#d9e2e1; --accent:#0f6e64; --accent-bg:#dff1ee;
+  --p-clear:#d6e2e0; --p-event:#d9573f; --p-saved:#2a9d8f; --event-bg:#fbe3dc; --event-ink:#a83a26;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1716; --card:#162120; --ink:#e3eeec; --muted:#9db1ae; --line:#2a3a38; --accent:#5cc7b8; --accent-bg:#173733;
+  --p-clear:#2c3d3b; --p-event:#ef7a62; --p-saved:#4fc3b3; --event-bg:#3d2017; --event-ink:#f4a38f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1716; --card:#162120; --ink:#e3eeec; --muted:#9db1ae; --line:#2a3a38; --accent:#5cc7b8; --accent-bg:#173733;
+  --p-clear:#2c3d3b; --p-event:#ef7a62; --p-saved:#4fc3b3; --event-bg:#3d2017; --event-ink:#f4a38f; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+.wrap{max-width:980px;margin:0 auto;padding-block:18px 36px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:16px}
+h1{font-family:var(--display);font-weight:700;font-size:1.8rem;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:2px 0 0;max-width:62ch}
+.main{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:760px){.main{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:14px}
+.panel h2{font-family:var(--display);font-weight:500;font-size:1.05rem;margin:0}
+label.num{display:flex;flex-direction:column;gap:4px;font-size:.9rem;color:var(--muted)}
+.num input{font:inherit;font-size:1.6rem;font-weight:700;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%;box-sizing:border-box;font-variant-numeric:tabular-nums}
+.tog{display:flex;gap:10px;align-items:flex-start;cursor:pointer;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+.tog:has(input:checked){border-color:var(--accent);background:var(--accent-bg)}
+.tog input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--accent);flex:none}
+.tog b{display:block}
+.tog span{font-size:.85rem;color:var(--muted)}
+input:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.err{color:var(--event-ink);font-size:.85rem;margin:0}
+.gridcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.people{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px 4px;max-width:520px;width:100%;margin:0 auto}
+.people svg{width:100%;height:auto;display:block}
+.people .f{fill:var(--p-clear);transition:fill .45s ease, transform .45s ease;transform-origin:50% 100%}
+.people .event .f{fill:var(--p-event)}
+.people .saved .f{fill:var(--p-saved)}
+.people .saved svg{animation:pop .5s ease}
+@keyframes pop{50%{transform:scale(1.15)}}
+@media (prefers-reduced-motion:reduce){.people .f{transition:none}.people .saved svg{animation:none}}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.9rem;color:var(--muted);justify-content:center}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.say{font-size:1.15rem;margin:0;text-align:center;text-wrap:balance}
+.say strong{font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.stat{background:var(--bg);border-radius:10px;padding:10px 12px;text-align:center}
+.stat small{display:block;font-size:.8rem;color:var(--muted)}
+.stat b{font-size:1.5rem;font-variant-numeric:tabular-nums}
+.stat.ev b{color:var(--p-event)} .stat.sv b{color:var(--p-saved)}
+.flag{background:var(--accent-bg);color:var(--accent);border-radius:8px;padding:8px 12px;font-size:.9rem;margin:0}
+.foot{font-size:.8rem;color:var(--muted);margin:0;max-width:80ch}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>100 people like you</h1>
+    <p class="sub">Your heart risk score shows how many people exactly like you would have a heart attack or stroke in the next 10 years.</p>
+  </header>
+
+  <div class="main">
+    <section class="panel" aria-labelledby="c-h">
+      <h2 id="c-h">Your score</h2>
+      <label class="num" for="risk">QRISK3 10-year risk (%)
+        <input id="risk" type="number" min="0" max="80" step="0.1" inputmode="decimal" value="14.2">
+      </label>
+      <p class="err" id="err" hidden>Enter a score between 0 and 80.</p>
+      <h2>What could change it</h2>
+      <label class="tog" for="t-statin"><input type="checkbox" id="t-statin"><div><b>Statin</b><span>Atorvastatin 20 mg. About 30% lower risk</span></div></label>
+      <label class="tog" for="t-bp"><input type="checkbox" id="t-bp"><div><b>Blood pressure 10 lower</b><span>Top number down by 10. About 20% lower risk</span></div></label>
+      <label class="tog" for="t-smoke"><input type="checkbox" id="t-smoke"><div><b>Stop smoking</b><span>About a third lower risk, building over a few years</span></div></label>
+      <p class="sub" style="font-size:.85rem">Example score shown. Nothing typed here is saved.</p>
+    </section>
+
+    <section class="gridcard" aria-labelledby="g-h">
+      <h2 id="g-h" class="say"></h2>
+      <div class="people" id="people" role="img" aria-label="Grid of 100 people"></div>
+      <div class="legend">
+        <span><i style="background:var(--p-event)"></i>Heart attack or stroke</span>
+        <span><i style="background:var(--p-saved)"></i>Avoided with changes</span>
+        <span><i style="background:var(--p-clear)"></i>No heart attack or stroke</span>
+      </div>
+      <div class="stats">
+        <div class="stat ev"><small>Now</small><b id="s-now"></b></div>
+        <div class="stat"><small>With changes</small><b id="s-new"></b></div>
+        <div class="stat sv"><small>Avoided</small><b id="s-saved"></b></div>
+      </div>
+      <p class="flag" id="flag"></p>
+    </section>
+  </div>
+
+  <p class="foot">Risk reductions are approximate relative effects from trial meta-analyses (statin: CTT, about 22% per 1 mmol/L LDL fall, roughly 30% for atorvastatin 20 mg; blood pressure: Ettehad et al 2016, about 20% per 10 mmHg systolic; smoking: Critchley and Capewell 2003). Combined effects are multiplied, not added. For an exact figure after stopping smoking or a BP change, rerun QRISK3. NICE NG238 offers atorvastatin 20 mg for primary prevention at QRISK3 10% or more.</p>
+</div>
+
+<script>
+const EFFECT={statin:0.30,bp:0.20,smoke:0.35};
+const people=document.getElementById('people');
+const fig='<svg viewBox="0 0 20 40" aria-hidden="true"><g class="f"><circle cx="10" cy="7" r="6"/><rect x="3" y="15" width="14" height="24" rx="6"/></g></svg>';
+for(let i=0;i<100;i++){const d=document.createElement('div');d.innerHTML=fig;d.querySelector('.f').style.transitionDelay=(i*12)+'ms';people.appendChild(d)}
+const $=id=>document.getElementById(id);
+function fmt(x){return (Math.round(x*10)/10).toFixed(1)+'%'}
+function render(){
+  const v=parseFloat($('risk').value);
+  if(isNaN(v)||v<0||v>80){$('err').hidden=false;return}
+  $('err').hidden=true;
+  let m=1;if($('t-statin').checked)m*=1-EFFECT.statin;if($('t-bp').checked)m*=1-EFFECT.bp;if($('t-smoke').checked)m*=1-EFFECT.smoke;
+  const nr=v*m;const ev=Math.round(v),ne=Math.round(nr),sv=ev-ne;
+  [...people.children].forEach((d,i)=>{d.className=i<ne?'event':i<ev?'saved':''});
+  const any=m<1;
+  $('g-h').innerHTML=any
+    ? `Of 100 people like you, <strong>${ne}</strong> would have a heart attack or stroke instead of <strong>${ev}</strong>. <strong>${100-ne}</strong> would not.`
+    : `Of 100 people like you, <strong>${ev}</strong> would have a heart attack or stroke in the next 10 years. <strong>${100-ev}</strong> would not.`;
+  $('s-now').textContent=fmt(v);$('s-new').textContent=fmt(nr);
+  $('s-saved').textContent=any?`${sv} in 100`:'–';
+  const nnt=any&&v-nr>0?Math.round(100/(v-nr)):null;
+  $('flag').textContent=(v>=10?'Score is 10% or more, so NICE recommends offering a statin.':'Score is under 10%. A statin can still be discussed if the person wants it.')
+    +(nnt?` With these changes, about 1 in ${nnt} people like you avoids a heart attack or stroke over 10 years.`:'');
+}
+['risk','t-statin','t-bp','t-smoke'].forEach(id=>$(id).addEventListener('input',render));
+['t-statin','t-bp','t-smoke'].forEach(id=>$(id).addEventListener('change',render));
+render();
+</script>
+
+</body>
+</html>

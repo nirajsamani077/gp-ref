@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en-GB" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Blood Pressure Pump</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap">
+<style>
+/* Layout: step bar, canvas stage, per-step controls, caption card. Same family as the other clinic explainers */
+:root{
+  --bg:#f6f8f8; --card:#ffffff; --ink:#15302e; --muted:#5a6e6c; --line:#d9e2e1; --accent:#0f6e64; --accent-bg:#dff1ee;
+  --stage:#eef4f6; --label:#3d5452; --grid:#cbd8d6; --panel:#ffffff;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1716; --card:#162120; --ink:#e3eeec; --muted:#9db1ae; --line:#2a3a38; --accent:#5cc7b8; --accent-bg:#173733;
+  --stage:#13201f; --label:#b9cbc8; --grid:#2c3d3b; --panel:#182624; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1716; --card:#162120; --ink:#e3eeec; --muted:#9db1ae; --line:#2a3a38; --accent:#5cc7b8; --accent-bg:#173733;
+  --stage:#13201f; --label:#b9cbc8; --grid:#2c3d3b; --panel:#182624; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+.wrap{max-width:960px;margin:0 auto;padding-block:18px 36px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:14px}
+h1{font-family:var(--display);font-weight:700;font-size:1.8rem;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:2px 0 0;max-width:62ch}
+.steps,.ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.steps button,.ctl button{font:inherit;font-size:.95rem;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.steps button[aria-current="true"],.ctl button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.ctl{min-height:40px}
+.ctl span{font-size:.9rem;color:var(--muted)}
+.ctl label{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:.95rem;padding:6px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.ctl label:has(input:checked){border-color:var(--accent);background:var(--accent-bg)}
+.ctl input{width:18px;height:18px;accent-color:var(--accent)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stage{background:var(--stage);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+canvas{display:block;width:100%;height:auto;max-width:100%}
+.cap{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 20px;align-items:start}
+.cap h2{font-family:var(--display);font-weight:700;font-size:1.35rem;margin:0}
+.cap p{margin:6px 0 0;max-width:62ch}
+.meas{background:var(--accent-bg);color:var(--accent);border-radius:10px;padding:10px 14px;font-weight:700;text-align:center;min-width:160px;max-width:230px}
+.meas small{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.nav{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap}
+.nav button{font:inherit;padding:8px 16px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.nav button.primary{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.foot{font-size:.8rem;color:var(--muted);margin:0;max-width:80ch}
+@media (max-width:560px){.cap{grid-template-columns:minmax(0,1fr)}.meas{text-align:left;max-width:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Your blood pressure</h1>
+    <p class="sub">Your heart is a pump and your arteries are stretchy hoses. Blood pressure is how hard the blood pushes on the hose walls.</p>
+  </header>
+  <nav class="steps" id="steps" aria-label="Steps"></nav>
+  <div class="stage"><canvas id="cv" role="img" aria-label="Animation of the heart pumping blood through arteries with a live pressure trace"></canvas></div>
+  <div class="ctl" id="ctl"></div>
+  <section class="cap" aria-live="polite">
+    <div><h2 id="cTitle"></h2><p id="cText"></p></div>
+    <div class="meas"><small>What we check</small><span id="cMeas"></span></div>
+  </section>
+  <div class="nav">
+    <button type="button" id="prev">Previous</button>
+    <button type="button" id="replay">Replay</button>
+    <button type="button" id="next" class="primary">Next</button>
+  </div>
+  <p class="foot">NICE NG136: clinic 140/90 or more is confirmed with home or ambulatory readings; home average 135/85 or more is stage 1, 150/95 or more is stage 2. Treatment target under 140/90 in clinic (135/85 at home), under 150/90 if aged 80 or over. In middle age, each 20 mmHg higher systolic roughly doubles the risk of dying from heart disease or stroke (Prospective Studies Collaboration, Lewington 2002). Typical systolic falls: salt under 6 g a day about 5, about 1 per kg lost, regular aerobic exercise about 4 to 5, cutting heavy drinking about 3 to 5, one standard-dose tablet about 9 (Law 2009). Effects vary and roughly add up.</p>
+</div>
+
+<script>
+const STEPS=[
+ {k:'1 Two numbers',dur:99,title:'The two numbers',meas:'Blood pressure, written as top over bottom',
+  text:'Each heartbeat is a squeeze, then a rest. The top number (systolic) is the pressure at the peak of the squeeze. The bottom number (diastolic) is the pressure left in the pipes while the heart rests between beats. 120/80 means 120 at the push and 80 at rest.'},
+ {k:'2 Stretchy pipes',dur:99,title:'Stretchy pipes smooth it out',meas:'Pulse and blood pressure',
+  text:'Healthy arteries stretch as each squeeze arrives, soaking up the push. Between beats they spring back, which keeps blood moving and holds up the bottom number. Like a balloon that stretches and then gently lets the air out.'},
+ {k:'3 Stiff or tight pipes',dur:99,title:'When pipes get stiff or tight',meas:'Both numbers, and the gap between them',
+  text:'With age and smoking, arteries stiffen like an old garden hose. They can\'t stretch, so the push hits harder and the top number climbs while the bottom may even fall. When the small pipes are tightened, or there is extra fluid from salt or weight, both numbers go up.'},
+ {k:'4 Home readings',dur:7,title:'Why we check at home',meas:'Home readings over a week, or a 24-hour monitor',
+  text:'Pressure goes up when you are nervous, rushed or have just walked in, so one clinic reading can mislead. A week of home readings, morning and evening, gives a truer average. Sometimes it confirms high blood pressure, and sometimes it shows a white coat effect.'},
+ {k:'5 What it damages',dur:9,title:'What high pressure does over time',meas:'Urine protein (ACR), kidney test (eGFR), ECG, eye check',
+  text:'Years of high pressure strain the smallest, most delicate pipes and make the heart work harder. Weak spots can burst or block in the brain, the kidney filters start to leak protein, and the heart muscle thickens. There are usually no symptoms until damage is done.'},
+ {k:'6 What lowers it',dur:99,title:'What brings it down, and by how much',meas:'Recheck readings after changes',
+  text:'Small changes add up. Tick each change to see its typical effect on someone starting at 150/94. Lifestyle changes together can match a tablet, and many people need both.'},
+];
+const W=800,H=420;
+const cv=document.getElementById('cv'),cx=cv.getContext('2d');const dpr=Math.max(1,window.devicePixelRatio||1);
+cv.width=W*dpr;cv.height=H*dpr;cx.scale(dpr,dpr);
+const COL={heart:'#cf3f35',heartD:'#a92f27',blood:'#b8322b',cell:'#f08a80',wall:'#eaa7a0',stiff:'#b9b2a8',calc:'#8f877b',trace:'#cf3f35',sys:'#cf3f35',dia:'#1d5fa5',green:'#3aa76d',amber:'#e8b923',protein:'#7f77dd',brain:'#e7c3cf'};
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+const ease=p=>p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+const lerp=(a,b,p)=>a+(b-a)*p;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function rnd(seed){let s=seed;return()=>{s=(s*9301+49297)%233280;return s/233280}}
+function text(s,x,y,o={}){cx.font=`${o.b?'700 ':''}${o.s||14}px "Atkinson Hyperlegible", system-ui, sans-serif`;cx.fillStyle=o.c||css('--label');cx.textAlign=o.a||'left';cx.textBaseline='middle';cx.fillText(s,x,y)}
+function rr(x,y,w,h,r,f,s,lw=1.5){cx.beginPath();cx.roundRect(x,y,w,h,r);if(f){cx.fillStyle=f;cx.fill()}if(s){cx.strokeStyle=s;cx.lineWidth=lw;cx.stroke()}}
+function note(s,x,y,c){cx.font='700 14px "Atkinson Hyperlegible", system-ui, sans-serif';const w=cx.measureText(s).width+24;rr(x-w/2,y-16,w,32,16,css('--card'),css('--line'),1);text(s,x,y,{s:14,b:1,a:'center',c:c||css('--ink')})}
+
+const PERIOD=1.0;
+function shape(ph){if(ph<0.14)return Math.sin(ph/0.14*Math.PI/2);const k=3.2,x=ph-0.14,e=Math.exp(-k*0.86);let f=(Math.exp(-k*x)-e)/(1-e);f+=0.07*Math.exp(-Math.pow((ph-0.38)/0.035,2));return Math.min(1,f)}
+function pressure(T,s,d){const ph=((T%PERIOD)+PERIOD)%PERIOD/PERIOD;return d+(s-d)*shape(ph)}
+const cur={sys:120,dia:80,el:1,rad:24,wall:6,stiff:0};let tgt={...cur};
+function setTarget(o){tgt={...tgt,...o}}
+
+function heart(x,y,sq){const s=1.5*(1-0.13*sq);cx.save();cx.translate(x,y);cx.scale(s,s);cx.fillStyle=COL.heart;cx.beginPath();cx.moveTo(0,30);cx.bezierCurveTo(-55,-5,-40,-55,0,-28);cx.bezierCurveTo(40,-55,55,-5,0,30);cx.fill();
+  cx.fillStyle=COL.heartD;cx.beginPath();cx.ellipse(-14,-14,8,12,-.5,0,7);cx.fill();cx.restore()}
+let parts=[];for(let i=0;i<16;i++)parts.push({x:150+i*20,o:Math.random()});
+function artery(T,x0,x1,y,showLabels){
+  const ph=((T%PERIOD)+PERIOD)%PERIOD/PERIOD;const sq=ph<0.3?Math.sin(ph/0.3*Math.PI):0;
+  heart(x0-50,y,sq);text(ph<0.3?'Squeeze':'Rest',x0-50,y+66,{s:14,b:1,a:'center',c:COL.heart});
+  const R=cur.rad;const amp=10*cur.el*(cur.sys-cur.dia)/40;const xw=x0+ph*(x1-x0)*1.5;
+  const b=x=>amp*Math.exp(-Math.pow((x-xw)/45,2));
+  const xs=[];for(let x=x0;x<=x1;x+=5)xs.push(x);
+  cx.fillStyle=COL.blood;cx.beginPath();xs.forEach((x,i)=>{const yy=y-R-b(x);i?cx.lineTo(x,yy):cx.moveTo(x,yy)});[...xs].reverse().forEach(x=>cx.lineTo(x,y+R+b(x)));cx.closePath();cx.fill();
+  parts.forEach(p=>{const yy=y+(p.o-.5)*R*1.3;cx.fillStyle=COL.cell;cx.beginPath();cx.ellipse(p.x,yy,6,3.5,0,0,7);cx.fill()});
+  const wcol=cur.stiff>0.5?COL.stiff:COL.wall;cx.strokeStyle=wcol;cx.lineWidth=cur.wall;cx.lineCap='round';
+  [-1,1].forEach(sg=>{cx.beginPath();xs.forEach((x,i)=>{const yy=y+sg*(R+b(x)+cur.wall/2);i?cx.lineTo(x,yy):cx.moveTo(x,yy)});cx.stroke()});
+  if(cur.stiff>0.5){cx.fillStyle=COL.calc;const r=rnd(3);for(let i=0;i<14;i++){const x=x0+r()*(x1-x0),sg=r()<.5?-1:1;cx.beginPath();cx.arc(x,y+sg*(R+b(x)+cur.wall/2),2.2,0,7);cx.fill()}}
+  if(showLabels){if(ph>0.06&&ph<0.4&&cur.el>0.5)text('Pipe stretches',xw,y-R-amp-26,{s:13,b:1,a:'center'});
+    if(ph>0.5&&cur.el>0.5)text('Springs back, keeps blood moving',(x0+x1)/2,y+R+46,{s:13,b:1,a:'center'})}
+  return ph;
+}
+function moveParts(dt,T,x0,x1){const ph=((T%PERIOD)+PERIOD)%PERIOD/PERIOD;const v=40+150*shape(ph)*(0.5+0.5*cur.el)+ (cur.el>0.5&&ph>0.3?40:0);parts.forEach(p=>{p.x+=v*dt;if(p.x>x1-6)p.x=x0+6})}
+function trace(T,x,y,w,h,targetLine){
+  rr(x,y,w,h,12,css('--panel'),css('--line'),1);
+  const lo=50,hi=190;const Y=v=>y+h-16-(v-lo)/(hi-lo)*(h-32);
+  cx.strokeStyle=css('--grid');cx.lineWidth=1;[80,120,160].forEach(v=>{cx.beginPath();cx.moveTo(x+36,Y(v));cx.lineTo(x+w-10,Y(v));cx.stroke();text(String(v),x+30,Y(v),{s:11,a:'right'})});
+  if(targetLine){cx.setLineDash([5,5]);cx.strokeStyle=COL.green;cx.beginPath();cx.moveTo(x+36,Y(140));cx.lineTo(x+w-10,Y(140));cx.stroke();cx.setLineDash([]);text('Target under 140',x+w-14,Y(140)-10,{s:11,b:1,a:'right',c:COL.green})}
+  const win=3.2;cx.strokeStyle=COL.trace;cx.lineWidth=3;cx.lineJoin='round';cx.beginPath();
+  for(let i=0;i<=160;i++){const s=i/160;const v=pressure(T-win+s*win,cur.sys,cur.dia);const px=x+40+s*(w-56),py=Y(v);i?cx.lineTo(px,py):cx.moveTo(px,py)}cx.stroke();
+  cx.setLineDash([4,4]);cx.lineWidth=1.5;cx.strokeStyle=COL.sys;cx.beginPath();cx.moveTo(x+36,Y(cur.sys));cx.lineTo(x+w-10,Y(cur.sys));cx.stroke();
+  cx.strokeStyle=COL.dia;cx.beginPath();cx.moveTo(x+36,Y(cur.dia));cx.lineTo(x+w-10,Y(cur.dia));cx.stroke();cx.setLineDash([]);
+  text(`Top (systolic) ${Math.round(cur.sys)}`,x+44,Y(cur.sys)-11,{s:12,b:1,c:COL.sys});
+  text(`Bottom (diastolic) ${Math.round(cur.dia)}`,x+44,Y(cur.dia)+13,{s:12,b:1,c:COL.dia});
+  text('Pressure in the pipe',x+w/2,y-12,{s:12,b:1,a:'center'});
+}
+function reading(x,y){cx.font='700 40px "Bricolage Grotesque", system-ui, sans-serif';cx.textAlign='center';cx.textBaseline='middle';
+  const s=String(Math.round(cur.sys)),d=String(Math.round(cur.dia));const ws=cx.measureText(s+'/').width,wd=cx.measureText(d).width;const tot=ws+wd;
+  cx.fillStyle=COL.sys;cx.textAlign='left';cx.fillText(s+'/',x-tot/2,y);cx.fillStyle=COL.dia;cx.fillText(d,x-tot/2+ws,y);text('mmHg',x+tot/2+8,y+8,{s:13})}
+
+let stiffMode='healthy',homeMode='high';
+const RED=[['salt','Salt under 6 g a day',5],['weight','Lose 5 kg',5],['exercise','Regular exercise',5],['alcohol','Cut down alcohol',3],['tab1','One tablet',9],['tab2','Second tablet',8]];
+let on={};
+
+const DRAW=[
+ function two(T,dt){setTarget({sys:120,dia:80,el:1,rad:24,wall:6,stiff:0});
+  cx.clearRect(0,0,W,H);moveParts(dt,T,150,450);artery(T,150,450,190,false);
+  trace(T,480,40,300,260);reading(630,350);
+  text('Heart (pump)',100,290,{s:13,b:1,a:'center'});text('Artery (hose)',300,262,{s:13,b:1,a:'center'});
+ },
+ function stretchy(T,dt){setTarget({sys:120,dia:80,el:1,rad:24,wall:6,stiff:0});
+  cx.clearRect(0,0,W,H);moveParts(dt,T,150,450);artery(T,150,450,190,true);
+  trace(T,480,40,300,260);reading(630,350);
+ },
+ function stiff(T,dt){
+  const S={healthy:{sys:120,dia:80,el:1,rad:24,wall:6,stiff:0},stiff:{sys:165,dia:78,el:0.12,rad:24,wall:7,stiff:1},tight:{sys:152,dia:98,el:0.6,rad:16,wall:11,stiff:0}}[stiffMode];setTarget(S);
+  cx.clearRect(0,0,W,H);moveParts(dt,T,150,450);artery(T,150,450,190,false);
+  trace(T,480,40,300,260);reading(630,350);
+  const lbl={healthy:'Healthy stretchy pipe',stiff:'Stiff pipe: can\'t stretch',tight:'Tight pipe, thick wall'}[stiffMode];note(lbl,300,320);
+  if(stiffMode==='stiff')text(`Gap between numbers: ${Math.round(cur.sys-cur.dia)}`,300,360,{s:13,b:1,a:'center'});
+ },
+ function home(T){
+  cx.clearRect(0,0,W,H);
+  const X0=110,X1=760,Y0=370,Y1=50;const lo=60,hi=170;const Y=v=>Y0-(v-lo)/(hi-lo)*(Y0-Y1);
+  rr(20,40,80,64,10,css('--panel'),css('--line'),1);text('Clinic',60,58,{s:12,a:'center'});text('152/94',60,84,{s:16,b:1,a:'center',c:COL.sys});
+  cx.strokeStyle=css('--grid');cx.lineWidth=1;[80,100,120,140,160].forEach(v=>{cx.beginPath();cx.moveTo(X0,Y(v));cx.lineTo(X1,Y(v));cx.stroke();text(String(v),X0-8,Y(v),{s:11,a:'right'})});
+  ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].forEach((d,i)=>text(d,lerp(X0+30,X1-30,i/6),Y0+18,{s:12,a:'center'}));
+  cx.setLineDash([6,5]);cx.lineWidth=1.5;cx.strokeStyle=COL.sys;cx.beginPath();cx.moveTo(X0,Y(135));cx.lineTo(X1,Y(135));cx.stroke();cx.strokeStyle=COL.dia;cx.beginPath();cx.moveTo(X0,Y(85));cx.lineTo(X1,Y(85));cx.stroke();cx.setLineDash([]);
+  text('Home limit 135',X1,Y(135)-10,{s:11,b:1,a:'right',c:COL.sys});text('Home limit 85',X1,Y(85)+12,{s:11,b:1,a:'right',c:COL.dia});
+  const base=homeMode==='high'?{s:138,d:87}:{s:126,d:79};const r=rnd(homeMode==='high'?5:8);let ss=0,dd=0,n=0;
+  for(let i=0;i<14;i++){const sv=base.s+(r()-.5)*12,dv=base.d+(r()-.5)*8;const p=seg(T,0.3+i*0.3,0.6+i*0.3);if(p<=0){continue}
+    const x=lerp(X0+30,X1-30,Math.floor(i/2)/6)+(i%2?10:-10);cx.globalAlpha=p;cx.fillStyle=COL.sys;cx.beginPath();cx.arc(x,Y(sv),6,0,7);cx.fill();cx.fillStyle=COL.dia;cx.beginPath();cx.arc(x,Y(dv),6,0,7);cx.fill();cx.globalAlpha=1;
+    if(p>=1){ss+=sv;dd+=dv;n++}}
+  if(n>=14){const as=ss/n,ad=dd/n;cx.lineWidth=3;cx.strokeStyle=COL.sys;cx.beginPath();cx.moveTo(X0,Y(as));cx.lineTo(X1,Y(as));cx.stroke();cx.strokeStyle=COL.dia;cx.beginPath();cx.moveTo(X0,Y(ad));cx.lineTo(X1,Y(ad));cx.stroke();
+    note(homeMode==='high'?`Home average ${Math.round(as)}/${Math.round(ad)}: high blood pressure (stage 1)`:`Home average ${Math.round(as)}/${Math.round(ad)}: normal. White coat effect`,(X0+X1)/2,Y(112),homeMode==='high'?COL.sys:COL.green)}
+  text('Morning and evening readings',(X0+X1)/2,24,{s:13,b:1,a:'center'});
+ },
+ function damage(T){
+  cx.clearRect(0,0,W,H);const p=seg(T,1.5,8);
+  const panels=[['Brain','Weak spots burst or block',20],['Kidneys','Filters leak protein',280],['Heart','Muscle thickens',540]];
+  panels.forEach(([t1,t2,x])=>{rr(x,20,240,320,14,css('--panel'),css('--line'),1);text(t1,x+120,46,{s:16,b:1,a:'center',c:css('--ink')});text(t2,x+120,68,{s:13,a:'center'})});
+  const pulse=(T%1);
+  cx.fillStyle=COL.brain;cx.beginPath();cx.ellipse(140,200,92,78,0,0,7);cx.fill();
+  cx.strokeStyle=COL.blood;cx.lineWidth=5;cx.beginPath();cx.moveTo(60,250);cx.bezierCurveTo(100,200,120,170,140,160);cx.bezierCurveTo(160,150,190,170,215,140);cx.stroke();
+  const bul=6+p*10+Math.sin(pulse*Math.PI*2)*2;cx.fillStyle=COL.blood;cx.beginPath();cx.arc(178,158,bul*0.6,0,7);cx.fill();
+  if(T>7){const q=seg(T,7,9);cx.globalAlpha=0.7;cx.fillStyle=COL.blood;cx.beginPath();cx.arc(185,170,8+q*24,0,7);cx.fill();cx.globalAlpha=1;text('Stroke',140,300,{s:14,b:1,a:'center',c:COL.sys})}
+  cx.fillStyle='#b5574a';cx.beginPath();cx.ellipse(400,190,62,82,0,0,7);cx.fill();cx.fillStyle=css('--panel');cx.beginPath();cx.ellipse(445,190,22,26,0,0,7);cx.fill();
+  cx.strokeStyle='#f5d0c8';cx.lineWidth=2;for(let i=0;i<5;i++){cx.beginPath();cx.moveTo(355,140+i*24);cx.lineTo(420,140+i*24);cx.stroke()}
+  const leaks=Math.round(p*12);for(let i=0;i<leaks;i++){const q=((T*0.5+i/12)%1);cx.fillStyle=COL.protein;cx.beginPath();cx.arc(390+(i%3)*12,200+q*120,4,0,7);cx.fill()}
+  if(p>0.3)text('Protein in urine',400,312,{s:14,b:1,a:'center',c:COL.protein});
+  const thick=6+p*16;const sq=pulse<0.3?Math.sin(pulse/0.3*Math.PI):0;const s=1.9*(1-0.08*sq);cx.save();cx.translate(660,190);cx.scale(s,s);cx.strokeStyle=COL.heart;cx.lineWidth=thick/s;cx.fillStyle='rgba(207,63,53,.15)';
+  cx.beginPath();cx.moveTo(0,30);cx.bezierCurveTo(-55,-5,-40,-55,0,-28);cx.bezierCurveTo(40,-55,55,-5,0,30);cx.fill();cx.stroke();cx.restore();
+  if(p>0.3)text('Works harder, may fail',660,300,{s:14,b:1,a:'center',c:COL.sys});
+  note('Each 20 higher on the top number roughly doubles the risk',400,382);
+ },
+ function lower(T,dt){
+  let s=0;RED.forEach(([k,,v])=>{if(on[k])s+=v});const sys=150-s,dia=94-Math.round(s*0.55);setTarget({sys,dia,el:1,rad:24,wall:6,stiff:0});
+  cx.clearRect(0,0,W,H);
+  text('Typical drop in top number',220,34,{s:13,b:1,a:'center'});
+  let y=64;RED.forEach(([k,lbl,v])=>{const act=!!on[k];text(lbl,30,y+12,{s:13,c:act?css('--ink'):css('--label')});rr(190,y,200,24,6,css('--grid'));if(act)rr(190,y,v*20,24,6,COL.green);text(`-${v}`,190+v*20+8,y+12,{s:13,b:1,c:act?COL.green:css('--label')});y+=40});
+  text(`Total: -${s} mmHg`,30,y+16,{s:16,b:1,c:s?COL.green:css('--ink')});
+  trace(T,460,40,320,260,true);reading(620,350);
+ },
+];
+
+let step=0,t0=performance.now(),last=performance.now();
+const stepsEl=document.getElementById('steps'),ctl=document.getElementById('ctl');
+STEPS.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.textContent=s.k;b.addEventListener('click',()=>go(i));stepsEl.appendChild(b)});
+function pills(label,opts,getv,setv){const l=document.createElement('span');l.textContent=label;ctl.appendChild(l);
+  opts.forEach(([k,txt])=>{const b=document.createElement('button');b.type='button';b.textContent=txt;b.setAttribute('aria-pressed',getv()===k);b.addEventListener('click',()=>{setv(k);t0=performance.now();controls()});ctl.appendChild(b)})}
+function controls(){ctl.innerHTML='';
+  if(step===2)pills('Show:',[['healthy','Healthy'],['stiff','Stiff pipes (age, smoking)'],['tight','Tight pipes (salt, weight, stress)']],()=>stiffMode,v=>stiffMode=v);
+  if(step===3)pills('Show:',[['high','True high blood pressure'],['white','White coat effect']],()=>homeMode,v=>homeMode=v);
+  if(step===5)RED.forEach(([k,lbl])=>{const l=document.createElement('label');l.htmlFor='r-'+k;l.innerHTML=`<input type="checkbox" id="r-${k}"> ${lbl}`;const c=l.querySelector('input');c.checked=!!on[k];c.addEventListener('change',()=>{on[k]=c.checked;controls()});ctl.appendChild(l)});
+}
+function go(i){step=(i+STEPS.length)%STEPS.length;t0=performance.now();const s=STEPS[step];
+  [...stepsEl.children].forEach((b,j)=>b.setAttribute('aria-current',j===step?'true':'false'));
+  document.getElementById('cTitle').textContent=s.title;document.getElementById('cText').textContent=s.text;document.getElementById('cMeas').textContent=s.meas;
+  document.getElementById('next').textContent=step===STEPS.length-1?'Start again':'Next';controls()}
+document.getElementById('prev').addEventListener('click',()=>go(step-1));
+document.getElementById('next').addEventListener('click',()=>go(step+1));
+document.getElementById('replay').addEventListener('click',()=>go(step));
+function frame(now){const dt=Math.min(0.05,(now-last)/1000);last=now;const s=STEPS[step];let T=(now-t0)/1000;
+  const k=reduce?1:0.06;for(const key in tgt)cur[key]+=(tgt[key]-cur[key])*k;
+  if(s.dur<99){T=reduce?s.dur:Math.min(T%(s.dur+2),s.dur)}else if(reduce){T=0.15}
+  DRAW[step](T,reduce?0:dt);requestAnimationFrame(frame)}
+go(0);requestAnimationFrame(frame);
+</script>
+
+</body>
+</html>

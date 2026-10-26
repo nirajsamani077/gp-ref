@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en-GB" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Cholesterol Lorries</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap">
+<style>
+/* Layout: one stage (canvas scene) with a step bar above and a caption card below, sized for screen-sharing in clinic */
+:root{
+  --bg:#f6f8f8; --card:#ffffff; --ink:#15302e; --muted:#5a6e6c; --line:#d9e2e1; --accent:#0f6e64; --accent-bg:#dff1ee;
+  --stage:#eef4f6; --wall:#efd3c9; --wall-line:#b98577; --label:#3d5452;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1716; --card:#162120; --ink:#e3eeec; --muted:#9db1ae; --line:#2a3a38; --accent:#5cc7b8; --accent-bg:#173733;
+  --stage:#13201f; --wall:#4a2f2a; --wall-line:#b98577; --label:#b9cbc8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1716; --card:#162120; --ink:#e3eeec; --muted:#9db1ae; --line:#2a3a38; --accent:#5cc7b8; --accent-bg:#173733;
+  --stage:#13201f; --wall:#4a2f2a; --wall-line:#b98577; --label:#b9cbc8; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+.wrap{max-width:960px;margin:0 auto;padding-block:18px 36px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:14px}
+h1{font-family:var(--display);font-weight:700;font-size:1.8rem;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:2px 0 0}
+.steps{display:flex;flex-wrap:wrap;gap:8px}
+.steps button{font:inherit;font-size:.95rem;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.steps button[aria-current="true"]{background:var(--accent);border-color:var(--accent);color:var(--card)}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.stage{background:var(--stage);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+canvas{display:block;width:100%;height:auto;max-width:100%}
+.cap{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 20px;align-items:start}
+.cap h2{font-family:var(--display);font-weight:700;font-size:1.35rem;margin:0}
+.cap p{margin:6px 0 0;max-width:62ch}
+.meas{background:var(--accent-bg);color:var(--accent);border-radius:10px;padding:10px 14px;font-weight:700;text-align:center;min-width:150px}
+.meas small{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.nav{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap}
+.nav button{font:inherit;padding:8px 16px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.nav button.primary{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.foot{font-size:.82rem;color:var(--muted);margin:0}
+@media (max-width:560px){.cap{grid-template-columns:minmax(0,1fr)}.meas{text-align:left}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>How cholesterol travels</h1>
+    <p class="sub">Fat can't mix with blood, so it's carried in lorries. Each step shows one lorry and the test that measures it.</p>
+  </header>
+  <nav class="steps" id="steps" aria-label="Steps"></nav>
+  <div class="stage"><canvas id="cv" role="img" aria-label="Animation of lipoprotein lorries in the bloodstream"></canvas></div>
+  <section class="cap" aria-live="polite">
+    <div><h2 id="cTitle"></h2><p id="cText"></p></div>
+    <div class="meas"><small>Measured by</small><span id="cMeas"></span></div>
+  </section>
+  <div class="nav">
+    <button type="button" id="prev">Previous</button>
+    <button type="button" id="replay">Replay</button>
+    <button type="button" id="next" class="primary">Next</button>
+  </div>
+  <p class="foot">A simplified picture for explaining results. Fuel = triglyceride. Bricks = cholesterol.</p>
+</div>
+
+<script>
+const STEPS=[
+ {k:'VLDL tanker',title:'The tanker (VLDL)',meas:'Triglycerides',dur:7.5,
+  text:'Made in the liver and filled mostly with fuel (triglyceride). It drives round dropping fuel off at muscle for energy and at fat for storage. As it empties, it shrinks.'},
+ {k:'LDL lorry',title:'The LDL lorry',meas:'LDL cholesterol',dur:8.5,
+  text:'What is left once the fuel has gone: a small lorry carrying mostly bricks (cholesterol). It delivers bricks to cells that need them. Because it is small, it can slip through the artery lining. Once inside it gets stuck, and the bricks pile up into plaque.'},
+ {k:'HDL bin lorry',title:'The bin lorry (HDL)',meas:'HDL cholesterol',dur:8.5,
+  text:'HDL collects spare bricks, including some from the artery wall, and takes them back to the liver to be cleared. A low level is a warning sign that often goes with weight, diabetes or smoking.'},
+ {k:'Lp(a)',title:'The lorry with a hook (Lp(a))',meas:'Lp(a), tested once',dur:7.5,
+  text:'An LDL lorry with a hook built in. The hook catches on the artery lining and encourages small clots. Whether your lorries have hooks is set by your genes, so the level does not change with diet or exercise.'},
+ {k:'ApoB and non-HDL',title:'Counting the harmful lorries',meas:'ApoB and non-HDL',dur:9,
+  text:'Every harmful lorry carries one ApoB tag (blue). The bin lorry does not. ApoB counts the tags, so it tells us how many lorries could get into the wall. Non-HDL adds up the bricks in all the tagged lorries.'},
+];
+const W=800,H=400,WALL=292;
+const cv=document.getElementById('cv'),cx=cv.getContext('2d');const dpr=Math.max(1,window.devicePixelRatio||1);
+cv.width=W*dpr;cv.height=H*dpr;cx.scale(dpr,dpr);
+const COL={tank:'#e9a32b',fuel:'#8a5a0c',ldl:'#ee9a78',brick:'#7a2e15',hdl:'#55c3a0',cab:'#3f4a48',tag:'#1d5fa5',hook:'#7f77dd',liver:'#9c4a37',box:'#cfe3ea',boxInk:'#24484f',clot:'#c8322b',plaque:'#e8c66a'};
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+const ease=p=>p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+const lerp=(a,b,p)=>a+(b-a)*p;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function text(s,x,y,o={}){cx.font=`${o.b?'700 ':''}${o.s||14}px "Atkinson Hyperlegible", system-ui, sans-serif`;cx.fillStyle=o.c||css('--label');cx.textAlign=o.a||'left';cx.textBaseline='middle';cx.fillText(s,x,y)}
+function rr(x,y,w,h,r,f){cx.fillStyle=f;cx.beginPath();cx.roundRect(x,y,w,h,r);cx.fill()}
+
+function scene(opt={}){
+  cx.clearRect(0,0,W,H);
+  cx.fillStyle=css('--wall');cx.fillRect(0,WALL,W,H-WALL);
+  cx.strokeStyle=css('--wall-line');cx.setLineDash([8,6]);cx.lineWidth=1.5;cx.beginPath();cx.moveTo(130,WALL);cx.lineTo(W,WALL);cx.stroke();cx.setLineDash([]);
+  text('Bloodstream',150,108,{s:13});
+  text('Artery wall',W-14,H-16,{s:13,a:'right'});
+  text('lining',W-14,WALL-10,{s:12,a:'right'});
+  cx.fillStyle=COL.liver;cx.beginPath();cx.ellipse(70,200,62,92,0,0,7);cx.fill();
+  text('Liver',70,200,{s:16,b:1,c:'#fbe9e4',a:'center'});
+  if(opt.box){rr(480,16,190,64,10,COL.box);text(opt.box,575,48,{s:15,b:1,c:COL.boxInk,a:'center'})}
+}
+function plaque(n,cxp=590){
+  if(n<=0)return;const w=24+n*9;
+  cx.fillStyle=COL.plaque;cx.beginPath();cx.ellipse(cxp,WALL+26,w,14+n*2.2,0,0,7);cx.fill();
+  for(let i=0;i<Math.round(n);i++){const r=Math.floor(i/4),c=i%4;cx.fillStyle=COL.brick;cx.fillRect(cxp-20+c*11-r*3,WALL+18+r*11,8,8)}
+}
+function lorry(o){
+  const {x,y,type}=o;const w=o.w||40,h=o.h||22;const dir=o.dir||1;
+  cx.save();cx.globalAlpha=o.alpha??1;
+  if(dir<0){cx.translate(x*2+w+14,0);cx.scale(-1,1)}
+  const body=type==='tank'?COL.tank:type==='hdl'?COL.hdl:COL.ldl;
+  if(o.ring){cx.strokeStyle=COL.tag;cx.lineWidth=3;cx.beginPath();cx.roundRect(x-10,y-8,w+30,h+22,10);cx.stroke()}
+  rr(x,y,w,h,5,body);
+  rr(x+w+2,y+h*.32,13,h*.68,3,COL.cab);
+  cx.fillStyle=COL.cab;cx.beginPath();cx.arc(x+9,y+h+4,4.5,0,7);cx.arc(x+w+6,y+h+4,4.5,0,7);cx.fill();
+  const f=Math.round(o.fuel||0);for(let i=0;i<f;i++){cx.fillStyle=COL.fuel;cx.beginPath();cx.arc(x+20+i*8,y+h/2,3.2,0,7);cx.fill()}
+  const b=Math.round(o.bricks||0);const bx=f>0?x+5:x+6;for(let i=0;i<b;i++){cx.fillStyle=COL.brick;cx.fillRect(f>0?bx:bx+i*8,y+h/2-3.5,7,7)}
+  if(o.tag!==false&&type!=='hdl'){cx.fillStyle=COL.tag;cx.fillRect(x-5,y+3,5,h-6)}
+  if(o.hook){const d=o.hookDown||0;cx.strokeStyle=COL.hook;cx.lineWidth=3.5;cx.lineCap='round';cx.beginPath();
+    if(d>0){cx.moveTo(x+w*.4,y+h);cx.lineTo(x+w*.4,y+h+d);cx.lineTo(x+w*.4+8,y+h+d)}
+    else{cx.moveTo(x+w*.4,y);cx.lineTo(x+w*.4,y-10);cx.lineTo(x+w*.4+9,y-10)}cx.stroke()}
+  cx.restore();
+  if(o.label)text(o.label,x+(w+14)/2,y-(o.hook&&!o.hookDown?22:14),{s:13,b:1,a:'center',c:css('--ink')});
+}
+function flyer(fromX,fromY,toX,toY,p,kind){
+  const x=lerp(fromX,toX,p),y=lerp(fromY,toY,p)-Math.sin(p*Math.PI)*30;
+  if(kind==='fuel'){cx.fillStyle=COL.fuel;cx.beginPath();cx.arc(x,y,4,0,7);cx.fill()}else{cx.fillStyle=COL.brick;cx.fillRect(x-4,y-4,8,8)}
+}
+
+const DRAW=[
+ function vldl(t){
+  scene({box:'Muscle and fat'});
+  const out=ease(seg(t,0,1));const drive=ease(seg(t,1,3.2));const drop=seg(t,3.4,5.6);const leave=ease(seg(t,5.8,7.5));
+  const fuel=6-6*drop;const w=lerp(70,40,drop),h=lerp(30,22,drop);
+  const x=t<1?lerp(40,140,out):t<5.8?lerp(140,500,drive):lerp(500,820,leave);
+  lorry({type:'tank',x,y:160,w,h,fuel,bricks:1,label:drop<1?'VLDL tanker':'smaller lorry'});
+  for(let i=0;i<6;i++){const s=3.4+i*.36,p=seg(t,s,s+.6);if(p>0&&p<1)flyer(x+20+i*8,170,560,62,p,'fuel')}
+  if(drop>0){const n=Math.round(6*drop);for(let i=0;i<n;i++){cx.fillStyle=COL.fuel;cx.beginPath();cx.arc(520+i*18,70,3.5,0,7);cx.fill()}}
+ },
+ function ldl(t){
+  const deliver=seg(t,2.6,3.6);const dip=ease(seg(t,4.4,5.8));const pile=seg(t,5.8,7.2);
+  scene({box:'Body cells'});plaque(4*pile);
+  const drive1=ease(seg(t,0,2.4)),drive2=ease(seg(t,3.6,4.4));
+  let x=t<2.6?lerp(140,470,drive1):t<4.4?lerp(470,560,drive2):lerp(560,575,dip);
+  let y=t<4.4?lerp(200,240,drive2):lerp(240,WALL+6,dip);
+  const bricks=t<3.1?5:Math.max(0,4-Math.floor(4*pile));
+  lorry({type:'ldl',x,y,w:44,h:22,bricks,alpha:t>5.8?lerp(1,.45,pile):1,label:t<4.4?'LDL lorry':(t<5.8?'slips through':'' )});
+  if(deliver>0&&deliver<1)flyer(490,205,560,58,deliver,'brick');
+  if(t>3.6){cx.fillStyle=COL.brick;cx.fillRect(555,56,8,8)}
+  if(pile>.2)text('Plaque building',590,H-40,{s:13,b:1,a:'center',c:COL.brick});
+ },
+ function hdl(t){
+  const go=ease(seg(t,0,2.6)),pick=seg(t,2.8,4.6),back=ease(seg(t,4.8,7.4));
+  scene();plaque(6-2*pick);
+  const x=t<4.8?lerp(140,555,go):lerp(555,120,back);const dir=t<4.8?1:-1;
+  const bricks=Math.floor(2*pick+.001);
+  lorry({type:'hdl',x,y:252,w:40,h:22,bricks,dir,alpha:t>7.2?lerp(1,0,seg(t,7.2,7.6)):1,label:'HDL bin lorry'});
+  for(let i=0;i<2;i++){const s=2.8+i*.8,p=seg(t,s,s+.9);if(p>0&&p<1)flyer(585-i*12,WALL+20,x+12+i*8,262,p,'brick')}
+  if(t>4.8)text('Back to the liver to be cleared',300,355,{s:13,b:1,a:'center',c:COL.brick});
+ },
+ function lpa(t){
+  scene();plaque(4);
+  const go=ease(seg(t,0,2.4)),hook=seg(t,2.6,3.2),drag=ease(seg(t,3.2,4.2)),clot=seg(t,4.4,6.6);
+  const x=lerp(140,410,go);const y=lerp(236,252,go)+drag*14;
+  lorry({type:'lpa',x,y,w:44,h:22,bricks:4,hook:true,hookDown:hook*(WALL-(y+22))+(drag*6),label:t<3.2?'Lp(a): LDL + hook':'snagged'});
+  const n=Math.round(8*clot);for(let i=0;i<n;i++){const a=i*.8,r=16+(i%3)*6;cx.fillStyle=COL.clot;cx.beginPath();cx.arc(x+22+Math.cos(a)*r*1.5,WALL-4+Math.sin(a)*r*.5,4,0,7);cx.fill()}
+  if(clot>.3)text('Clot-forming bits stick here',x+28,WALL+40,{s:13,b:1,a:'center',c:COL.clot});
+ },
+ function apob(t){
+  scene();plaque(3);
+  const drift=reduce?0:(t*8);
+  const L=[
+   {type:'tank',x:170,y:150,w:66,h:28,fuel:5,bricks:1,label:'VLDL'},
+   {type:'ldl',x:330,y:220,w:44,h:22,bricks:4,label:'LDL'},
+   {type:'ldl',x:480,y:140,w:38,h:20,fuel:2,bricks:2,label:'remnant',rem:1},
+   {type:'lpa',x:620,y:220,w:44,h:22,bricks:4,hook:true,label:'Lp(a)'},
+   {type:'hdl',x:440,y:240,w:40,h:22,bricks:1,label:'HDL'},
+  ];
+  if(L[2].rem)L[2].type='tank';
+  let k=0;
+  L.forEach(o=>{o.x+=drift;if(o.x>W+20)o.x-=W-120;
+    if(o.type!=='hdl'){k++;const on=t>k*1.1;o.ring=on&&t<6;lorry(o);
+      if(on){cx.fillStyle=COL.tag;cx.beginPath();cx.arc(o.x-5,o.y-4,11,0,7);cx.fill();text(String(k),o.x-5,o.y-4,{s:13,b:1,a:'center',c:'#ffffff'})}}
+    else{lorry(o);if(t>5)text('no tag',o.x+27,o.y+40,{s:12,a:'center'})}
+    if(t>6&&o.type!=='hdl'){const b=Math.round(o.bricks||0);for(let i=0;i<b;i++){cx.strokeStyle=COL.plaque;cx.lineWidth=2;cx.strokeRect((o.fuel?o.x+5:o.x+6+i*8)-1,o.y+o.h/2-4.5,9,9)}}
+  });
+  const n=Math.min(4,Math.floor(t/1.1));
+  rr(500,14,280,t>6?78:46,10,COL.box);
+  text(`ApoB: ${n} harmful lorr${n===1?'y':'ies'}`,516,37,{s:16,b:1,c:COL.boxInk});
+  if(t>6)text('Non-HDL: all bricks in tagged lorries',516,68,{s:13,c:COL.boxInk});
+ },
+];
+
+let step=0,t0=performance.now();
+const stepsEl=document.getElementById('steps');
+STEPS.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.textContent=s.k;b.addEventListener('click',()=>go(i));stepsEl.appendChild(b)});
+function go(i){step=(i+STEPS.length)%STEPS.length;t0=performance.now();
+  [...stepsEl.children].forEach((b,j)=>b.setAttribute('aria-current',j===step?'true':'false'));
+  document.getElementById('cTitle').textContent=STEPS[step].title;
+  document.getElementById('cText').textContent=STEPS[step].text;
+  document.getElementById('cMeas').textContent=STEPS[step].meas;
+  document.getElementById('next').textContent=step===STEPS.length-1?'Start again':'Next';}
+document.getElementById('prev').addEventListener('click',()=>go(step-1));
+document.getElementById('next').addEventListener('click',()=>go(step+1));
+document.getElementById('replay').addEventListener('click',()=>go(step));
+function frame(now){const s=STEPS[step];const hold=2;let t=(now-t0)/1000;
+  if(reduce)t=s.dur;else{t=t%(s.dur+hold);t=Math.min(t,s.dur)}
+  DRAW[step](t);requestAnimationFrame(frame)}
+go(0);requestAnimationFrame(frame);
+</script>
+
+</body>
+</html>
