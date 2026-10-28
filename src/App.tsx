@@ -1,12 +1,18 @@
 import { useState, useEffect, useCallback } from 'react'
 import type { TabId } from './types'
-import { TABS } from './tabs'
+import { tabsFor } from './tabs'
+import { EDITION } from './edition'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import BottomTabBar from './components/BottomTabBar'
 import TabContent from './components/TabContent'
 import CommandPalette from './components/CommandPalette'
+import Disclaimer from './components/Disclaimer'
 import { UpdateBanner } from './components/UpdateBanner'
+
+const VISIBLE_TABS = tabsFor(EDITION.tabIds)
+
+export interface FormsIntent { mode?: 'referral' | 'pathway'; guidance?: boolean; seq: number }
 
 function useIsDesktop() {
   const [isDesktop, setIsDesktop] = useState(() => window.innerWidth >= 768)
@@ -20,13 +26,14 @@ function useIsDesktop() {
 }
 
 export default function App() {
-  const [activeTab, setActiveTab]           = useState<TabId>('notes')
+  const [activeTab, setActiveTab]           = useState<TabId>(EDITION.defaultTab)
   const [highlightedLinkUrl, setHighlightedLinkUrl]     = useState<string | null>(null)
   const [highlightedCalcId, setHighlightedCalcId]       = useState<string | null>(null)
   const [highlightedNoteId, setHighlightedNoteId]       = useState<string | null>(null)
   const [highlightedNoteQuery, setHighlightedNoteQuery] = useState<string | undefined>(undefined)
   const [highlightedSymptomId, setHighlightedSymptomId] = useState<string | null>(null)
   const [formOpenReq, setFormOpenReq]       = useState<{ id: string; seq: number } | null>(null)
+  const [formsIntent, setFormsIntent]       = useState<FormsIntent | null>(null)
   const [noteBackRef, setNoteBackRef]       = useState<{ id: string; name: string } | null>(null)
   const [paletteOpen, setPaletteOpen]       = useState(false)
   const [pendingAskQuery, setPendingAskQuery] = useState<string | undefined>(undefined)
@@ -45,7 +52,7 @@ export default function App() {
 
   const handleGoHome = useCallback(() => {
     setNoteBackRef(null)
-    setActiveTab('notes')
+    setActiveTab(EDITION.defaultTab)
     window.dispatchEvent(new CustomEvent('gpr-home'))
   }, [])
 
@@ -61,6 +68,12 @@ export default function App() {
     setActiveTab(tab)
     if (tab === 'links')       setHighlightedLinkUrl(id)
     if (tab === 'calculators') setHighlightedCalcId(id)
+  }, [])
+
+  // Home dashboard → open the Forms tab in a specific mode / the guidance hub
+  const handleOpenForms = useCallback((intent: { mode?: 'referral' | 'pathway'; guidance?: boolean }) => {
+    setActiveTab('forms')
+    setFormsIntent(f => ({ ...intent, seq: (f?.seq ?? 0) + 1 }))
   }, [])
 
   // Command palette — open via button or ⌘K event from CommandPalette
@@ -147,7 +160,7 @@ export default function App() {
 
       <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
         {isDesktop && (
-          <Sidebar tabs={TABS} active={activeTab} onSelect={handleTabSelect} />
+          <Sidebar tabs={VISIBLE_TABS} active={activeTab} onSelect={handleTabSelect} />
         )}
         <TabContent
           active={activeTab}
@@ -157,15 +170,19 @@ export default function App() {
           highlightedNoteQuery={highlightedNoteQuery}
           highlightedSymptomId={highlightedSymptomId}
           formOpenReq={formOpenReq}
+          formsIntent={formsIntent}
           noteBackRef={noteBackRef}
           onBackToSymptom={handleBackToSymptom}
+          onOpenForms={handleOpenForms}
+          onOpenLinks={() => setActiveTab('links')}
+          onOpenSearch={handleOpenPalette}
           pendingAskQuery={pendingAskQuery}
           onClearPendingAskQuery={() => setPendingAskQuery(undefined)}
         />
       </div>
 
       {!isDesktop && (
-        <BottomTabBar tabs={TABS} active={activeTab} onSelect={handleTabSelect} />
+        <BottomTabBar tabs={VISIBLE_TABS} active={activeTab} onSelect={handleTabSelect} />
       )}
 
       <CommandPalette
@@ -175,6 +192,7 @@ export default function App() {
         onAsk={handleAsk}
       />
 
+      {EDITION.disclaimer && <Disclaimer />}
       <UpdateBanner />
     </div>
   )

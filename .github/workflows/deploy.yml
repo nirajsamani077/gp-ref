@@ -29,10 +29,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build full edition (GP Os) → dist/
         run: npm run build
         env:
           VITE_ANTHROPIC_API_KEY: ${{ secrets.VITE_ANTHROPIC_API_KEY }}
+
+      - name: Build Darwin edition (Darwin Os) → dist/darwin/
+        run: npm run build:darwin
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

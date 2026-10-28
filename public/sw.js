@@ -1,19 +1,23 @@
-const CACHE = 'gp-ref-v1'
+// Scope-relative so one file works at any base (/gp-ref/ and /gp-ref/darwin/),
+// and each edition keeps its own isolated cache bucket on the shared origin.
+const ROOT = new URL('./', self.location).pathname   // e.g. /gp-ref/ or /gp-ref/darwin/
+const PREFIX = `gpos:${ROOT}:`
+const CACHE = `${PREFIX}v1`
 
 // ── INSTALL ──────────────────────────────────────────────────────────────────
 // Pre-cache the app shell (index.html) so the app loads offline immediately.
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE).then(cache => cache.add('/gp-ref/'))
+    caches.open(CACHE).then(cache => cache.add(ROOT))
   )
 })
 
 // ── ACTIVATE ─────────────────────────────────────────────────────────────────
-// Delete caches from previous versions, then claim all open tabs.
+// Delete only THIS edition's previous-version caches, then claim all open tabs.
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
+      .then(keys => Promise.all(keys.filter(k => k.startsWith(PREFIX) && k !== CACHE).map(k => caches.delete(k))))
       .then(() => self.clients.claim())
   )
 })
@@ -38,7 +42,7 @@ self.addEventListener('fetch', event => {
           }
           return res
         })
-        .catch(() => caches.match('/gp-ref/'))
+        .catch(() => caches.match(ROOT))
     )
     return
   }

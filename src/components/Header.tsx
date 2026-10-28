@@ -1,4 +1,5 @@
 import type { TabId } from '../types'
+import { EDITION } from '../edition'
 
 interface Props {
   onNavigate: (tab: TabId, id: string) => void
@@ -20,7 +21,7 @@ export default function Header({ onHome, onOpenPalette }: Props) {
       <button
         onClick={onHome}
         title="Return to home"
-        aria-label="GP Os — return to home"
+        aria-label={`${EDITION.title} — return to home`}
         style={{
           background: 'none', border: 'none', cursor: 'pointer',
           padding: '4px 6px', borderRadius: 8, flexShrink: 0,
@@ -40,7 +41,7 @@ export default function Header({ onHome, onOpenPalette }: Props) {
           <path d="M17.9 6 A8.5 8.5 0 1 1 6.1 6" fill="none" stroke="white" strokeWidth="2.4" strokeLinecap="round"/>
         </svg>
         <span style={{ display: 'flex', alignItems: 'baseline', gap: 0, lineHeight: 1 }}>
-          <span style={{ color: '#fff', fontWeight: 800, fontSize: 18, letterSpacing: '-0.3px' }}>GP</span>
+          <span style={{ color: '#fff', fontWeight: 800, fontSize: 18, letterSpacing: '-0.3px' }}>{EDITION.brand}</span>
           <span style={{
             fontWeight: 700, fontSize: 18, letterSpacing: '-0.3px',
             background: 'linear-gradient(135deg, #a5f3fc 0%, #a78bfa 100%)',

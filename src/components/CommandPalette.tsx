@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { searchAll } from '../lib/searchIndex'
 import type { UnifiedResult } from '../lib/searchIndex'
 import type { TabId } from '../types'
+import { EDITION } from '../edition'
 
 const NAVY = '#1a365d'
 
@@ -72,14 +73,25 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
   const [pdf, setPdf] = useState<{ url: string; title: string } | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
+  // Scope results to the current edition (Darwin hides notes/symptoms/calculators)
+  const K = EDITION.searchKinds
+  const res = {
+    notes:       K.has('note')       ? results.notes       : [],
+    symptoms:    K.has('symptom')    ? results.symptoms    : [],
+    referrals:   K.has('referral')   ? results.referrals   : [],
+    forms:       K.has('form')       ? results.forms       : [],
+    links:       K.has('link')       ? results.links       : [],
+    calculators: K.has('calculator') ? results.calculators : [],
+  }
+
   // ── Build flat list for keyboard nav ──────────────────────────────────────
   const hasQuery = query.trim().length >= 1
   const flatItems: Array<{ type: 'ask' } | (UnifiedResult & { _flatIdx: number })> = []
-  if (hasQuery) flatItems.push({ type: 'ask' })
+  if (hasQuery && EDITION.ask) flatItems.push({ type: 'ask' })
 
   const SECTION_ORDER = ['note', 'symptom', 'referral', 'form', 'link', 'calculator'] as const
   const allResults: UnifiedResult[] = [
-    ...results.notes, ...results.symptoms, ...results.referrals, ...results.forms, ...results.links, ...results.calculators,
+    ...res.notes, ...res.symptoms, ...res.referrals, ...res.forms, ...res.links, ...res.calculators,
   ]
   allResults.forEach(r => flatItems.push({ ...r, _flatIdx: flatItems.length }))
 
@@ -176,12 +188,12 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
   const sections = SECTION_ORDER
     .map(kind => ({
       kind,
-      items: kind === 'note'       ? results.notes
-           : kind === 'symptom'    ? results.symptoms
-           : kind === 'referral'   ? results.referrals
-           : kind === 'form'       ? results.forms
-           : kind === 'link'       ? results.links
-           : results.calculators,
+      items: kind === 'note'       ? res.notes
+           : kind === 'symptom'    ? res.symptoms
+           : kind === 'referral'   ? res.referrals
+           : kind === 'form'       ? res.forms
+           : kind === 'link'       ? res.links
+           : res.calculators,
     }))
     .filter(s => s.items.length > 0)
 
@@ -245,7 +257,7 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
             value={query}
             onChange={e => setQuery(e.target.value)}
             onKeyDown={handleKey}
-            placeholder="Search notes, symptoms, referral forms, pathways…"
+            placeholder={EDITION.ask ? 'Search notes, symptoms, referral forms, pathways…' : 'Search referral forms, pathways & links…'}
             style={{
               flex: 1, border: 'none', outline: 'none',
               fontSize: 16, color: '#1e293b', fontFamily: 'inherit',
@@ -272,8 +284,8 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
         {/* Results area */}
         <div style={{ overflowY: 'auto', flex: 1 }}>
 
-          {/* Ask AI — pinned first when there's a query */}
-          {hasQuery && (
+          {/* Ask AI — pinned first when there's a query (full edition only) */}
+          {hasQuery && EDITION.ask && (
             <button
               onClick={() => { onAsk(query.trim()); onClose() }}
               onMouseEnter={() => setActiveIdx(0)}
@@ -313,8 +325,9 @@ export default function CommandPalette({ isOpen, onClose, onNavigate, onAsk }: P
                 Search everything
               </div>
               <div style={{ fontSize: 13, color: '#94a3b8', marginTop: 6, lineHeight: 1.5 }}>
-                Notes · Symptoms · Referral forms · Pathways · Links · Calculators<br />
-                or just type a clinical question for AI
+                {EDITION.ask
+                  ? <>Notes · Symptoms · Referral forms · Pathways · Links · Calculators<br />or just type a clinical question for AI</>
+                  : <>Referral forms · Pathways & guidance · Links</>}
               </div>
             </div>
           )}

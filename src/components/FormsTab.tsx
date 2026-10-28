@@ -58,7 +58,10 @@ function scoreReferral(f: ReferralForm, q: string, tokens: string[]): number {
   return 120 // matched only via keywords / facets
 }
 
-export default function FormsTab({ formOpenReq }: { formOpenReq?: { id: string; seq: number } | null }) {
+export default function FormsTab({ formOpenReq, formsIntent }: {
+  formOpenReq?: { id: string; seq: number } | null
+  formsIntent?: { mode?: 'referral' | 'pathway'; guidance?: boolean; seq: number } | null
+}) {
   const [mode, setMode]             = useState<Mode>('referral')
   const [search, setSearch]         = useState('')
   const [cat, setCat]               = useState<string | null>(null)
@@ -72,6 +75,14 @@ export default function FormsTab({ formOpenReq }: { formOpenReq?: { id: string; 
   const searchRef                   = useRef<HTMLInputElement>(null)
 
   const switchMode = (m: Mode) => { setMode(m); setCat(null); setTrust(''); setProvider(''); setAge(''); setSourceFilter('') }
+
+  // Home-dashboard intent: switch mode / open the guidance hub
+  useEffect(() => {
+    if (!formsIntent) return
+    setOpenDoc(null)
+    if (formsIntent.mode) { setMode(formsIntent.mode); setCat(null); setTrust(''); setProvider(''); setAge(''); setSourceFilter('') }
+    if (formsIntent.guidance) setShowGuidance(true)
+  }, [formsIntent?.seq])
 
   // Open a specific doc when linked from a note (form:<id> cross-link)
   useEffect(() => {

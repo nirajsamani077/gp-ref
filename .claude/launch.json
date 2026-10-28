@@ -9,6 +9,14 @@
       "autoPort": true
     },
     {
+      "name": "GP Ref — Darwin",
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["/Users/nirajsamani/Desktop/gp-ref/node_modules/.bin/vite"],
+      "port": 5175,
+      "autoPort": true,
+      "env": { "VITE_EDITION": "darwin" }
+    },
+    {
       "name": "GP Ref — Preview",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "preview"],

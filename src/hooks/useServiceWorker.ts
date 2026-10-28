@@ -9,8 +9,10 @@ export function useServiceWorker() {
 
     const register = async () => {
       try {
-        const reg = await navigator.serviceWorker.register('/gp-ref/sw.js', {
-          scope: '/gp-ref/',
+        // Base-relative so each edition registers its own SW under its own base
+        const base = import.meta.env.BASE_URL
+        const reg = await navigator.serviceWorker.register(`${base}sw.js`, {
+          scope: base,
         })
 
         // New SW already waiting (e.g. user refreshed before banner was dismissed)

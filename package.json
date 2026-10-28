@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:darwin": "VITE_EDITION=darwin vite",
     "build": "vite build",
+    "build:darwin": "VITE_EDITION=darwin vite build",
+    "build:all": "npm run build && npm run build:darwin",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -1,4 +1,5 @@
 import type { TabId } from '../types'
+import type { FormsIntent } from '../App'
 import LinksTab from './LinksTab'
 import CalculatorsTab from './CalculatorsTab'
 import NotesTab from './NotesTab'
@@ -6,6 +7,7 @@ import SymptomsTab from './SymptomsTab'
 import AskTab from './AskTab'
 import FormsTab from './FormsTab'
 import ExplainersTab from './ExplainersTab'
+import HomeDarwin from './HomeDarwin'
 
 const PLACEHOLDERS: Partial<Record<TabId, string>> = {
   images: 'Images coming soon',
@@ -19,13 +21,29 @@ interface Props {
   highlightedNoteQuery?: string
   highlightedSymptomId?: string | null
   formOpenReq?: { id: string; seq: number } | null
+  formsIntent?: FormsIntent | null
   noteBackRef?: { id: string; name: string } | null
   onBackToSymptom?: () => void
+  onOpenForms?: (intent: { mode?: 'referral' | 'pathway'; guidance?: boolean }) => void
+  onOpenLinks?: () => void
+  onOpenSearch?: () => void
   pendingAskQuery?: string
   onClearPendingAskQuery?: () => void
 }
 
-export default function TabContent({ active, highlightedLinkUrl, highlightedCalcId, highlightedNoteId, highlightedNoteQuery, highlightedSymptomId, formOpenReq, noteBackRef, onBackToSymptom, pendingAskQuery, onClearPendingAskQuery }: Props) {
+export default function TabContent({ active, highlightedLinkUrl, highlightedCalcId, highlightedNoteId, highlightedNoteQuery, highlightedSymptomId, formOpenReq, formsIntent, noteBackRef, onBackToSymptom, onOpenForms, onOpenLinks, onOpenSearch, pendingAskQuery, onClearPendingAskQuery }: Props) {
+  if (active === 'home') {
+    return (
+      <main style={{ flex: 1, overflow: 'hidden', backgroundColor: '#f7f9fb', display: 'flex', flexDirection: 'column' }}>
+        <HomeDarwin
+          onOpenForms={onOpenForms ?? (() => {})}
+          onOpenLinks={onOpenLinks ?? (() => {})}
+          onOpenSearch={onOpenSearch ?? (() => {})}
+        />
+      </main>
+    )
+  }
+
   if (active === 'notes') {
     return (
       <main style={{ flex: 1, overflow: 'hidden', backgroundColor: '#f7f9fb', display: 'flex', flexDirection: 'column' }}>
@@ -51,7 +69,7 @@ export default function TabContent({ active, highlightedLinkUrl, highlightedCalc
   if (active === 'forms') {
     return (
       <main style={{ flex: 1, overflow: 'hidden', backgroundColor: '#f7f9fb', display: 'flex', flexDirection: 'column' }}>
-        <FormsTab formOpenReq={formOpenReq} />
+        <FormsTab formOpenReq={formOpenReq} formsIntent={formsIntent} />
       </main>
     )
   }
